@@ -1,0 +1,49 @@
+= content_for :javascript do
+  javascript:
+    $(function(){
+      OurvoyceApp.init(#{@keywords.to_json.html_safe}, #{@items.to_json.html_safe});
+    });
+
+
+#popular-keywords
+
+#items(style="float: left; border: solid 1px red;")
+#details(style="float: right; border: solid 1px green;")
+
+script(id="keyword_template" type="text/html")
+  | <a href='/k/{{ path }}'>{{ friendly_name }}</a>
+
+
+script(id="popular_keywords_template" type="text/html")
+  h1 Popular Keywords
+  ul.keywords
+
+script(id="item_template" type="text/html")
+  a(class="vote thumbs_up" href="#")Thumbs Up
+  br
+  a(class="vote neutral" href="#")Neutral
+  br
+  a(class="vote thumbs_down" href="#")Thumbs Down
+  br
+  | {{name}}
+  br
+  | {{logo}}
+  br
+  | {{thumbs_up_count}}
+  br
+  | {{neutral_count}}
+  br
+  | {{thumbs_down_count}}
+  br
+  a(class="details" href="#")Details
+
+script(id="detail_template" type="text/html")
+  h1 Details
+  h2 Wikipedia:
+  | {{wikipedia}}
+  h2 Website:
+  | {{website}}
+
+script(id="items_template" type="text/html")
+  h1 Items
+  .items

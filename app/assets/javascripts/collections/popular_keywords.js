@@ -1,0 +1,1 @@
+var PopularKeywords = Keywords.extend({});
