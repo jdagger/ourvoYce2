@@ -1,6 +1,8 @@
+$(function(){
 window.ItemView = Backbone.View.extend({
   tag: 'div',
   className: 'item',
+  template: JST['items/item'],
 
   events: {
     'click .thumbs_up': 'thumbs_up_vote',
@@ -18,13 +20,13 @@ window.ItemView = Backbone.View.extend({
   },
 
   render: function(){
-    $(this.el).html(ich.item_template(this.model.toJSON()));
+    $(this.el).html(this.template(this.model.toJSON()));
     return this;
   },
 
   details: function(e){
     e.preventDefault();
-    window.details.load(this.model.get("id"));
+    window.details.load(this.model.get("_id"));
   },
 
   thumbs_up_vote: function(e){
@@ -42,4 +44,5 @@ window.ItemView = Backbone.View.extend({
     this.model.neutral();
   }
 
+});
 });

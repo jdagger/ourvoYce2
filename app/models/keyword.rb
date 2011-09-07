@@ -5,23 +5,10 @@ class Keyword
   field :path, type: String
   field :item_ids, type: Array
 
-  scope :items_by_path, lambda { |path|
-    where(:path => path)
-  }
-  #scope :items_by_path, lambda { |path| 
-    #all(:select => [:item_ids], :conditions => {:path => path})
-    #select('item_ids').where(:path => path)
-    #find_all_by_path(path)
-  #}
+  def self.keyword_by_path(path)
+    where(path: path).only([:friendly_name, :item_ids]).first
+  end 
 
-  class << self
-     # def items_by_path(path)
-      #find_by_path(path)
-    #end
-
-    def keyword_list
-      all(:select => [:friendly_name, :path])
-    end
-  end
+  scope :keyword_list, all.only([:friendly_name, :path])
 
 end

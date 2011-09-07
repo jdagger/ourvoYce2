@@ -1,6 +1,8 @@
+$(function(){
 window.DetailView = Backbone.View.extend({
   tag: 'div',
   el: '#details',
+  template: JST['details/detail'],
   
   initialize: function(){
     _.bindAll(this, 'render');
@@ -8,8 +10,9 @@ window.DetailView = Backbone.View.extend({
   },
 
   render: function(){
-    $(this.el).html(ich.detail_template(this.model.toJSON()));
+    $(this.el).html(this.template(this.model.toJSON()));
     return this;
   }
 
+});
 });

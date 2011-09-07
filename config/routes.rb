@@ -1,4 +1,7 @@
 Ourvoyce::Application.routes.draw do
+  match "/login" => 'sessions#login', :as => :login
+  match "/logout" => 'sessions#logout', :as => :logout
+
   match '/k/:keyword_path' => 'defaults#keyword', :as => :keyword
 
   match '/items/keyword/:keyword' => 'items#keyword'

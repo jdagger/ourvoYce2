@@ -1,5 +1,13 @@
 class ItemsController < ApplicationController
+  include Items::LoadItems
   def vote
+    item_id = params[:item_id]
+    user_id = current_user.id
+    vote = params[:vote]
+    #TODO: validate vote/item_id/check user_id (through authentication requirement)
+
+    UserVote.update_vote(item_id, user_id, vote)
+
     respond_to do |format|
       format.json { render :json => {success: 1}.to_json }
     end
@@ -14,8 +22,8 @@ class ItemsController < ApplicationController
 
   def keyword
     keyword = params[:keyword]
-    item_ids = Keyword.items_by_path(keyword).item_ids
-    @items = Item.get_by_ids(item_ids)
+
+    load_items(keyword)
 
     respond_to do |format|
       format.html { render :text => @items.to_json }

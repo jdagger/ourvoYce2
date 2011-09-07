@@ -1,10 +1,10 @@
 development:
   host: localhost
-  database: ourvoyce_development
+  database: ourvoyce
 
 test:
   host: localhost
-  database: ourvoyce_test
+  database: ourvoyce
 
 # set these environment variables on your prod server
 production:

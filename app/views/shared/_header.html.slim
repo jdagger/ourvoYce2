@@ -1,0 +1,32 @@
+- if logged_in?
+  = render "shared/header_authenticated"
+- else
+  = render "shared/header_not_authenticated"
+div(class="header-wrapper")
+  div(class="header-left")
+    #logo
+      a(href="vote-default.html")
+        img(src="/assets/site/ourvoyce.png" width="282" height="58" alt="ourvoYce")
+    h1
+      span.bluebold Current Tag:
+      == '&nbsp;'
+      span#current_keyword
+      
+  div(class="header-right")
+    a(href="help.html") Help
+    == '&nbsp;&nbsp;'
+    img(src="/assets/site/dot.gif" width="3" height="9")
+    == '&nbsp;&nbsp;'
+    a(href="about.html") About
+    == '&nbsp;&nbsp;'
+    img(src="/assets/site/dot.gif" width="3" height="9")
+    == '&nbsp;&nbsp;'
+    a(href="#") Contact
+    == '&nbsp;&nbsp;'
+    img(src="/assets/site/dot.gif" width="3" height="9")
+    == '&nbsp;&nbsp;'
+    a(href="#") Donate
+    #search
+      input(type="text" name="search" class="searchbox" maxlength="32" value="What's on your mind? Search" onblur="if(this.value=='') this.value='What\'s on your mind? Search'" onfocus="if(this.value =='What\'s on your mind? Search' ) this.value=''")
+      input(type="image" name="submit" src="/assets/site/searchbtn.gif" border="0" width="17" height="18" class="submitbtn")
+  .clear

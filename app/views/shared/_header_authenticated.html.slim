@@ -1,0 +1,21 @@
+div(class="topbar-wrapper")
+  div(class="topbar-left")
+    = "You are logged in as #{current_user.email}."
+  div(class="topbar-right")
+    .socialtop
+      span.large
+        | Follow us on
+      == '&nbsp;&nbsp;'
+      a(href="#")
+        img(src="/assets/site/twitter.gif" alt="Twitter" width="32" height="22" style="vertical-align:middle")
+      == '&nbsp;&nbsp;'
+      a(href="#")
+        img(src="/assets/site/facebook.gif" alt="Facebook" width="12" height="22" style="vertical-align:middle")
+    .left
+      ul.toplist
+        li
+          a(class="no-padleft" href="#") Settings
+        li
+          a(href="#{logout_path}" class="no-border no-padright") Logout
+    .clear      
+  .clear

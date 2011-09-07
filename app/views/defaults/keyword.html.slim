@@ -1,49 +1,76 @@
 = content_for :javascript do
   javascript:
     $(function(){
-      OurvoyceApp.init(#{@keywords.to_json.html_safe}, #{@items.to_json.html_safe});
+      OurvoyceApp.init('#{@keyword_friendly_name}', #{@keywords.to_json.html_safe}, #{@items.to_json.html_safe});
     });
 
 
-#popular-keywords
+#items
+.pullout2
+  div(class="pullout-item")
+    .itemblock
+      h3
+        ' Number of ourvoYce users: 
+        strong(class="bluebold")= "96"
+  div(class="pullout-item")
+    .itemblock
+      h3.redbold
+        a(href="#")
+          img(src="/assets/site/star.png" width="18" height="19" alt="star")
+          | Show Favorites (18)
+      h3
+        ' You have voted on 
+        strong.bluebold= "215 items"
+      h3
+        ' Member since
+        strong.bluebold= "8/4/2011"
+  div(class="pullout-item")
+    .itemblock
+      h3 Hot Topics
+      div(class="pullout-col")
+        ul
+          li
+            a(href="#") Raising the debt ceiling
+      div(class="pullout-col2")
+        ul
+          li
+            a(href="#") Starbucks
+      .clear
+      br
+      p
+        a(href="#")
+          strong
+            ' View All
+        == "&nbsp;"
+        img(src="/assets/site/arrow-right.png" width="7" height="13" style="padding-bottom:3px;" class="bottom")
+  div(class="pullout-item")
+    .itemblock
+      h3 Popular Tags
+      #popular-keywords
+      .clear
+      br
+      p
+        a href="#"
+          strong= "View All"
+        == "&nbsp;"
+        img src="/assets/site/arrow-right.png" width="7" height="13" style="padding-bottom:3px;" class="bottom"
+  div(class="pullout-item")
+    .itemblock
+      h3= "Suggest a Topic:"
+      input type="text" class="inputbox" name="topic" maxlength="35"
+      br
+      input type="image" name="submit" src="/assets/site/btnsubmit.gif" border="0" width="52" height="22" class="submitbtn2"
+      .clear
+  div(class="pullout-item last")
+    .itemblock
+      #footer
+        ul#footerlist
+          li
+            a href="/privacy" class="no-padleft"
+              ' Privacy Policy
+          li
+            a href="/terms" class="no-padleft"
+              ' Terms of Service
 
-#items(style="float: left; border: solid 1px red;")
-#details(style="float: right; border: solid 1px green;")
-
-script(id="keyword_template" type="text/html")
-  | <a href='/k/{{ path }}'>{{ friendly_name }}</a>
-
-
-script(id="popular_keywords_template" type="text/html")
-  h1 Popular Keywords
-  ul.keywords
-
-script(id="item_template" type="text/html")
-  a(class="vote thumbs_up" href="#")Thumbs Up
-  br
-  a(class="vote neutral" href="#")Neutral
-  br
-  a(class="vote thumbs_down" href="#")Thumbs Down
-  br
-  | {{name}}
-  br
-  | {{logo}}
-  br
-  | {{thumbs_up_count}}
-  br
-  | {{neutral_count}}
-  br
-  | {{thumbs_down_count}}
-  br
-  a(class="details" href="#")Details
-
-script(id="detail_template" type="text/html")
-  h1 Details
-  h2 Wikipedia:
-  | {{wikipedia}}
-  h2 Website:
-  | {{website}}
-
-script(id="items_template" type="text/html")
-  h1 Items
-  .items
+          li
+            == "&copy; ourVoyce"

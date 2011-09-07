@@ -1,4 +1,6 @@
 class DefaultsController < ApplicationController
+  include Items::LoadItems
+
   def index
     @keywords = Keyword.all
   end
@@ -6,9 +8,8 @@ class DefaultsController < ApplicationController
   def keyword
     keyword_path = params[:keyword_path]
 
-    item_ids = Keyword.items_by_path(keyword_path)[:item_ids]
+    load_items(keyword_path)
 
-    @items = Item.get_by_ids(item_ids)
     @keywords = Keyword.keyword_list
   end
 

@@ -283,18 +283,18 @@ db[:zips].insert(zips)
 
 
 db[:users].remove({})
-User.create(:username => 'test', :password => 'test', :zip => '28801', :state => 'NC', :birth_year => 1970)
+User.create(:email => 'test', :password => 'test', :zip => '28801', :state => 'NC', :birth_year => 1970)
 
 exit
 
 #Create 100 random users
 
 (1..100).each do
-  #Generate 8 letter random username
-  username = (1..8).map { ('a'..'z').to_a.sample }.join
+  #Generate 8 letter random email
+  email = (1..8).map { ('a'..'z').to_a.sample }.join
   password = 'abcd'
   birth_year = (1930..1990).to_a.sample
   state = 'NC'
   zip = '28801'
-  User.create(:username => username, :password => password, :zip => zip, :state => state, :birth_year => birth_year)
+  User.create(:email => email, :password => password, :zip => zip, :state => state, :birth_year => birth_year)
 end

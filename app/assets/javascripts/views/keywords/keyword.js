@@ -1,6 +1,8 @@
-window.KeywordView = Backbone.View.extend({
-  tag: 'li',
+$(function(){
+  window.KeywordView = Backbone.View.extend({
+    tag: 'li',
   className: 'keyword',
+  template: JST['keywords/keyword'],
 
   events: {
     'click a': 'click'
@@ -12,12 +14,13 @@ window.KeywordView = Backbone.View.extend({
 
   click: function(e){
     e.preventDefault();
-    var keyword = this.model.get('path');
-    window.items.fetch_items(keyword);
+    window.router.navigate('k/' + this.model.get('path'));
+    window.items.fetch_items(this.model);
   },
 
   render: function(){
-    $(this.el).html(ich.keyword_template(this.model.toJSON()));
+    $(this.el).html(this.template(this.model.toJSON()));
     return this;
   }
+  });
 });

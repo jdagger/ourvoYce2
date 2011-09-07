@@ -1,0 +1,31 @@
+div(class="topbar-wrapper")
+  div(class="topbar-left")
+    #login_form
+      .login_label
+        strong
+          ' LOGIN
+      = simple_form_for User.new, url: login_path do |f|
+        = f.input :email, label: false, input_html: {class: 'loginbox', maxlength: "25", value: "email address", onblur: "if(this.value=='') this.value='email address'",  onfocus: "if(this.value =='email address' ) this.value=''"}
+        = f.input :password, label: false, input_html: {class: 'loginbox', maxlength: "25"}
+        input type="image" name="loginsubmit" src="/assets/site/btnarrow.gif" border="0" width="17" height="18" class="loginbtn"
+        input type="checkbox" style="vertical-align:middle;" 
+          ' Remember me? 
+  div(class="topbar-center")
+    ' Login with: 
+    a href="#"
+      img src="/assets/site/twitter.gif" alt="Twitter" width="32" height="22" style="vertical-align:middle"
+    == "&nbsp;"
+    a href="#"
+      img src="/assets/site/facebook.gif" alt="Facebook" width="12" height="22" style="vertical-align:middle"
+  div(class="topbar-right")
+    ul.toplist
+      li
+        a href="#" class="no-padleft"
+          | Reset Password
+      li
+        a href="#"
+          | Change Email Address
+      li
+        a href="#" class="no-border no-padright"
+          | Resend Account Verfication
+.clear
