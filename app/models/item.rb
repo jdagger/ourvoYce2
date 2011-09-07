@@ -16,7 +16,6 @@ class Item
 
   #scope :get_by_ids, lambda{ |ids|
   def self.get_by_ids(ids)
-    #where(:id.in => ids)
     find(ids)
   end 
 end
