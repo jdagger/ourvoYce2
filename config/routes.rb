@@ -4,6 +4,8 @@ Ourvoyce::Application.routes.draw do
 
   match '/k/:keyword_path' => 'defaults#keyword', :as => :keyword
 
+  match '/utilities/generate_random_votes' => 'utilities#generate_random_votes', :as => :generate_random_votes
+
   match '/items/keyword/:keyword' => 'items#keyword'
   resources :items do
     match "/vote" => "items#vote"

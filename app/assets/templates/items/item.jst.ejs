@@ -1,85 +1,62 @@
 <div class="chart-item">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="chartblock">
-    <tr>
-      <td rowspan="2" valign="top" class="voting">
-        <div class="tagsimg">
-          <a href="#" class="vote thumbs_up">
-            <img src="/assets/site/thumbup.gif" alt="Like" title="Like" width="30" height="30" />
-          </a>
-          &nbsp;
-          <a href="#" class="vote neutral">
-            <img src="/assets/site/thumbneutral.gif" alt="Neutral" title="Neutral" width="24" height="30" />
-          </a>
-          &nbsp;
-          <a href="#" class="vote thumbs_down">
-            <img src="/assets/site/thumbdown.gif" alt="Dislike" title="Dislike" width="30" height="30" />
-          </a>
-        </div>
+  <div class="chartblock" style="overflow: hidden;">
+    <div class="voting" style="float: left; width: 110px;">
+      <div class="tagsimg">
+        <a href="#" class="vote thumbs_up">
+          <img src="/assets/site/thumbup.gif" alt="Like" title="Like" width="30" height="30" />
+        </a>
+        <a href="#" class="vote neutral">
+          <img src="/assets/site/thumbneutral.gif" alt="Neutral" title="Neutral" width="24" height="30" />
+        </a>
+        <a href="#" class="vote thumbs_down">
+          <img src="/assets/site/thumbdown.gif" alt="Dislike" title="Dislike" width="30" height="30" />
+        </a>
+      </div>
+      <div class="pins">
         <img src="/assets/site/star.gif" width="18" height="19" alt="Star" title="Favorite this listing" />
         &nbsp;&nbsp;
         <img src="/assets/site/pushpin.gif" width="12" height="19" alt="Pushpin" title="Remember this listing" />
-      </td>
-      <td align="left" valign="top" class="storelogo">
-        <a href="vote-detail.html" class="imagelink">
-          <img src="https://s3.amazonaws.com/ourvoYce/images/<%= logo %>" alt="<%= name %>" />
-        </a>
-      </td>
-      <td align="left" class="description">
-        <%= name %>
-      </td>
-      <td class="spacing"></td>
-      <td rowspan="2" align="center" class="minichart bluebg">
-        <table>
-          <tr>
-            <td class="bottom">
-              <table width="18" border="0" cellspacing="0" cellpadding="0" class="minichart-table">
-                <tr>
-                  <td class="green-top"></td>
-                </tr>
-                <tr>
-                  <td bgcolor="#57b70e" height="10"></td>
-                </tr>
-              </table>
-            </td>
-            <td class="bottom">
-              <table width="18" border="0" cellspacing="0" cellpadding="0" class="minichart-table2">
-                <tr>
-                  <td class="orange-top"></td>
-                </tr>
-                <tr>
-                  <td bgcolor="#f08127" height="30"></td>
-                </tr>
-              </table>
-            </td>
-            <td class="bottom">
-              <table width="18" border="0" cellspacing="0" cellpadding="0" class="minichart-table3">
-                <tr>
-                  <td class="red-top"></td>
-                </tr>
-                <tr>
-                  <td bgcolor="#cb2c1e" height="15"></td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-        <img src="/assets/site/arrow-left.png" width="7" height="13" style="position:absolute;top:9px;right:11px;" />
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" align="left" valign="middle" class="tags">
+      </div>
+    </div>
+    <div class="middle" style="float: left;">
+      <div class="details" style="overflow: hidden;">
+        <div class="storelogo" style="float: left;">
+          <a href="vote-detail.html" class="imagelink">
+            <img src="https://s3.amazonaws.com/ourvoYce/images/<%= logo %>" alt="<%= name %>" />
+          </a>
+        </div>
+        <div class="description" style="float: left;">
+          <%= name %>
+        </div>
+      </div>
+      <div class="related-tags tags">
         Related Tags: 
         <a href="vote-default.html">Corporate</a>
-        ,&nbsp;
+        ,
         <a href="vote-default.html">Fortune 500</a>
-        ,&nbsp;
+        ,
         <a href="vote-default.html">Lorem</a>
-        ,&nbsp;
+        ,
         <a href="vote-default.html">Appetizer</a>
-        ,&nbsp;
+        ,
         <a href="vote-default.html">Retailers</a>
-      </td>
-      <td class="spacing"></td>
-    </tr>
-  </table>
+      </div>
+    </div>
+    <div class="toggle-details minichart" style="float: left; overflow: hidden; width: 100px; height: 100%; position: absolute; right: 0px;">
+      <div class="mini-vote-chart" style="height: 40px; width: 66px; position: absolute; left: 10px; bottom: 10px;">
+        <div class="thumbs-up" style="width: 18px; padding-top: 3px; position: absolute; bottom: 0px; background: url(/assets/site/graph-green-top.png) no-repeat;">
+          <div style="height: 0px; background-color: #57b70e;"></div>
+        </div>
+        <div class="neutral" style="width: 18px; padding-top: 3px; position: absolute; left: 33%; bottom: 0px; background: url(/assets/site/graph-orange-top.png) no-repeat;">
+          <div style="height: 0px; background-color: #f08127;"></div>
+        </div>
+        <div class="thumbs-down" style="width: 18px; padding-top: 3px; position: absolute; left: 66%; bottom: 0px; background: url(/assets/site/graph-red-top.png) no-repeat;">
+          <div style="height: 0px; background-color: #cb2c1e;"></div>
+        </div>
+      </div>
+      <div class="details-arrow" style="position: absolute; top: 10px; right: 11px; height: 13px; width: 7px;">
+        <img src="/assets/site/arrow-right.png" width="7" height="13" />
+      </div>
+    </div>
+  </div>
 </div>

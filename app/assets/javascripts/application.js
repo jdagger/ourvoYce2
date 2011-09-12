@@ -7,6 +7,7 @@
 //= require modernizr
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //
 //= require underscore
 //= require json2
@@ -14,6 +15,8 @@
 //= require backbone.authtokenadapter
 //
 //= require ourvoyce_app
+//= require swfobject
+//= require map_graph
 //
 //= require_tree ./models
 //= require_tree ./collections

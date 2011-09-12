@@ -8,7 +8,7 @@ window.ItemView = Backbone.View.extend({
     'click .thumbs_up': 'thumbs_up_vote',
     'click .neutral': 'neutral_vote',
     'click .thumbs_down': 'thumbs_down_vote',
-    'click .details': 'details'
+    'click .toggle-details': 'toggle_details',
   },
 
   initialize: function(){
@@ -16,7 +16,9 @@ window.ItemView = Backbone.View.extend({
       'thumbs_up_vote', 
       'thumbs_down_vote', 
       'neutral_vote',
-      'details');
+      'toggle_details',
+      'selected_details_changed');
+    window.details.bind('change:current_details', this.selected_details_changed);
   },
 
   render: function(){
@@ -43,12 +45,39 @@ window.ItemView = Backbone.View.extend({
       }
     }
 
+    thumbs_up_count = this.model.get('thumbs_up_count');
+    thumbs_down_count = this.model.get('thumbs_down_count');
+    neutral_count = this.model.get('neutral_count');
+    max_count = Math.max(thumbs_up_count, thumbs_down_count, neutral_count);
+
+    //-3 at end is for the cap height at the top of the bars
+    container_height = $(this.el).find('.mini-vote-chart').css('height').replace(/px/, "") - 3;
+
+    thumbs_up_bar = $(this.el).find('.mini-vote-chart .thumbs-up div');
+    thumbs_down_bar = $(this.el).find('.mini-vote-chart .thumbs-down div');
+    neutral_bar = $(this.el).find('.mini-vote-chart .neutral div');
+
+    thumbs_up_bar.css('height', Math.ceil(container_height * thumbs_up_count / max_count) + "px");
+    thumbs_down_bar.css('height', Math.ceil(container_height * thumbs_down_count / max_count) + "px");
+    neutral_bar.css('height', Math.ceil(container_height * neutral_count / max_count) + "px");
+
+
     return this;
   },
 
-  details: function(e){
+  toggle_details: function(e){
     e.preventDefault();
-    window.details.load(this.model.get("_id"));
+    window.details.load(this.model.get('_id'));
+  },
+
+  selected_details_changed: function(details){
+    current_id = details.get('current_details');
+    if(this.model.get('_id') == current_id){
+      $(this.el).find('.toggle-details').addClass('bluebg');
+    }
+    else{
+      $(this.el).find('.toggle-details').removeClass('bluebg');
+    }
   },
 
   thumbs_up_vote: function(e){

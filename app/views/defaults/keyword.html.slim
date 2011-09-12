@@ -4,14 +4,13 @@
       OurvoyceApp.init('#{@keyword_friendly_name}', #{@keywords.to_json.html_safe}, #{@items.to_json.html_safe});
     });
 
-
 #items
 .pullout2
   div(class="pullout-item")
     .itemblock
       h3
         ' Number of ourvoYce users: 
-        strong(class="bluebold")= "96"
+        strong(class="bluebold")= "#{number_with_delimiter(@total_users)}"
   div(class="pullout-item")
     .itemblock
       h3.redbold
@@ -71,6 +70,10 @@
           li
             a href="/terms" class="no-padleft"
               ' Terms of Service
+          li
+            a href="/utilities/generate_random_votes" class="no-padleft"
+              ' Generate Random Votes
 
           li
             == "&copy; ourVoyce"
+#details

@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
     vote = params[:vote]
     #TODO: validate vote/item_id/check user_id (through authentication requirement)
 
-    UserVote.update_vote(item_id, user_id, vote)
+    Vote.record_vote(current_user.id, item_id, vote)
 
     respond_to do |format|
       format.json { render :json => {success: 1}.to_json }

@@ -10,6 +10,7 @@ class DefaultsController < ApplicationController
 
     load_items(keyword_path)
 
+    @total_users = User.count
     @keywords = Keyword.keyword_list
   end
 

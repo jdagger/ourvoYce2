@@ -2,13 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
 gem 'mongo'
-#gem 'mongo_mapper'
 gem 'mongoid'
 gem 'bson_ext'
+
+gem 'forgery'
 
 gem 'slim'
 gem 'ejs'

@@ -1,78 +1,99 @@
-.pullout
-  div(class="pullout-item")
-    .itemblock 
-      h2= "Walmart Stores, Inc."
-      div class="whitebox"
-        img src="/assets/site/socialmedia.gif" width="293" height="22"
-      table align="center" style="margin:0 auto;"
-        tr
-          td class="bottom"
-            table width="47" border="0" cellspacing="0" cellpadding="0" class="largechart-table"
-              tr
-                td class="votenumber green" align="center"
-                  | 115
-              tr
-                td class="greenlg-top"
-              tr
-                td class="greenlg-bot" bgcolor="#57b70e" height="60"
-          td.bottom
-            table width="47" border="0" cellspacing="0" cellpadding="0" class="largechart-table2"
-              tr
-                td class="votenumber orange" align="center"
-                  | 145
-              tr
-                td class="orangelg-top"
-              tr
-                td class="orangelg-bot" bgcolor="#f08127" height="80"
-          td class="bottom"
-            table width="47" border="0" cellspacing="0" cellpadding="0" class="largechart-table3"
-              tr
-                td class="votenumber red" align="center"
-                  | 80
-              tr
-                td class="redlg-top"
-              tr
-                td class="redlg-bot" bgcolor="#cb2c1e" height="30"
+<div class="pullout">
+  <div class="pullout-item">
+    <div class="itemblock">
+      <h2><%= name %></h2>
+      <div class="whitebox">
+        <img src="/assets/site/socialmedia.gif" width="293" height="22" />
+      </div>
+      <div class="vote-chart" style="height: 120px; position: relative; width: 160px; margin: 0px auto;">
+        <div class="thumbs-up" style="width: 47px; position: absolute; bottom: 0px;">
+          <div class="votenumber green" style="width: 47px; text-align: center;">100</div>
+          <div class="greenlg-top" style="height: 7px;"></div>
+          <div class="green-height" style="height: 10px; background-color: #57b70e;"></div>
+          <div class="greenlg-bot" style="height: 38px;"></div>
+        </div>
+        <div class="neutral" style="width: 47px; position: absolute; left: 33%; bottom: 0px;">
+          <div class="votenumber orange" style="width: 47px; text-align: center;">100</div>
+          <div class="orangelg-top" style="height: 7px;"></div>
+          <div class="orange-height" style="height: 40px; background-color: #f08127;"></div>
+          <div class="orangelg-bot" style="height: 38px;"></div>
+        </div>
+        <div class="thumbs-down" style="width: 47px; position: absolute; left: 66%; bottom: 0px;">
+          <div class="votenumber red" style="width: 47px; text-align: center;">100</div>
+          <div class="redlg-top" style="height: 7px;"></div>
+          <div class="red-height" style="height: 80px; background-color: #cb2c1e;"></div>
+          <div class="redlg-bot" style="height: 38px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pullout-item">
+    <div class="itemblock">
+      <!-- <img src="/assets/site/charts.jpg" width="315" height="413" alt="Charts" /> -->
+      <div class="maps-container">
+        <div id="map">
+          <!-- <object type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" wmode="transparent" data="/swf/map.swf" width="350" height="270" id="map" style="visibility: visible; "><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="xmlpath=product/map/1634/&amp;baseURL=/services/website/"></object> -->
+          <object type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" wmode="transparent" data="/swf/map.swf" width="300" height="220" id="map" style="visibility: visible; "><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="baseURL=/"></object>
+        </div>
+        <div>
+          <img src="/assets/site/legend.png" alt="wikipedia" />
+        </div>
+        <div id="bar-graph">
+          <!-- <object type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" wmode="transparent" data="/swf/bar-graph.swf" width="350" height="240" id="bar-graph" style="visibility: visible; "><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="xmlpath=product/age/1634/&amp;baseURL=/services/website/&amp;barwidth=25"></object> -->
 
-  div(class="pullout-item")
-    .itemblock
-      img src="/assets/site/charts.jpg" width="315" height="413" alt="Charts"
-  div(class="pullout-item")
-    .itemblock
-      div(class="pullout-col")
-        h3 
-          | Score:
-          span.redbold
-            == "&nbsp;82%"
-      div(class="pullout-col2")
-        h3 
-          | Participation:
-          span.redbold
-            == "&nbsp;45%"
-      .clear
-  div(class="pullout-item last")
-    .itemblock
-      div(class="pullout-col")
-        h3 
-          | Related Tags
-        ul
-          li
-            a(href="vote-default.html") Starbucks
-          li
-            a(href="vote-default.html") Fox News
-          li
-            a(href="vote-default.html") Obama
-          li
-            a(href="vote-default.html") French Fries
-          li
-            a(href="vote-default.html") NFL
-          li
-            a(href="vote-default.html") Auto Dealers
-      div(class="pullout-col2")
-        h3 Related Websites
-        ul
-          li
-            a(href="#") Corporate site
-          li
-            a(href="#") Wikipedia page
-      .clear
+          <object type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" wmode="transparent" data="/swf/bar-graph.swf" width="300" height="200" id="bar-graph" style="visibility: visible; "><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="baseURL=/&amp;barwidth=25"></object>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pullout-item">
+    <div class="itemblock">
+      <div class="pullout-col">
+        <h3>Score: <span class="redbold">82%</span></h3>
+      </div>
+      <div class="pullout-col2">
+        <h3>Participation: <span class="redbold">45%</span></h3>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="pullout-item last">
+    <div class="itemblock">
+      <div class="pullout-col">
+        <h3>Related Tags</h3>
+        <ul>
+          <li>
+            <a href="vote-default.html">Starbucks</a>
+          </li>
+          <li>
+            <a href="vote-default.html">Fox News</a>
+          </li>
+          <li>
+            <a href="vote-default.html">Obama</a>
+          </li>
+          <li>
+            <a href="vote-default.html">French Fries</a>
+          </li>
+          <li>
+            <a href="vote-default.html">NFL</a>
+          </li>
+          <li>
+            <a href="vote-default.html">Auto Dealers</a>
+          </li>
+        </ul>
+      </div>
+      <div class="pullout-col2">
+        <h3>Related Websites</h3>
+        <ul>
+          <li>
+            <a target="_blank" href="http://<%= website %>">Item site</a>
+          </li>
+          <li>
+            <a target="_blank" href="http://<%= wikipedia %>">Wikipedia page</a>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
