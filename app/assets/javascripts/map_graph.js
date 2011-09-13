@@ -125,7 +125,7 @@ $(function(){
     //swfobject.embedSWF("/swf/map.swf", "map", "350", "270","10.0.0", "", mapgraph_mapvars(), mapgraph_params, mapgraph_attributes, barEmbedded);
     //swfobject.embedSWF("/swf/bar-graph.swf", "bar-graph", "350", "240","10.0.0", "", mapgraph_agevars(), mapgraph_params, mapgraph_attributes, mapEmbedded);     
     swfobject.embedSWF("/swf/map.swf", "map", "320", "246","10.0.0", "", mapgraph_mapvars(), mapgraph_params, mapgraph_attributes, barEmbedded);
-    swfobject.embedSWF("/swf/bar-graph.swf", "bar-graph", "320", "220","10.0.0", "", mapgraph_agevars(), mapgraph_params, mapgraph_attributes, mapEmbedded);     
+    swfobject.embedSWF("/swf/bar-graph.swf", "bar-graph", "320", "150","10.0.0", "", mapgraph_agevars(), mapgraph_params, mapgraph_attributes, mapEmbedded);     
   }
 
 });

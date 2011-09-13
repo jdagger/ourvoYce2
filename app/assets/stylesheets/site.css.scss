@@ -477,7 +477,7 @@ vertical-align:middle;}
 /* LARGE chart/bargraph */
 .largechart-table, .largechart-table2, .largechart-table3 {float:left;width:47px;margin-right:5px;vertical-align:bottom;}
 .greenlg-top, .orangelg-top, .redlg-top {width:47px;height:9px;}
-.greenlg-bot, .orangelg-bot, .redlg-bot {width:47px;}
+.greenlg-bot, .orangelg-bot, .redlg-bot {padding-top: 5px; width:47px;}
 .greenlg-top {background: image-url('site/graphlg-green-top.png') no-repeat;}
 .greenlg-bot {background:#57b70e  image-url('site/thumbup-white.png') bottom no-repeat;}
 .orangelg-top {background: image-url('site/graphlg-orange-top.png') no-repeat;}
@@ -520,6 +520,7 @@ vertical-align:middle;}
   outline: medium none;
   position: relative;
 }
+
 .last {
   border-bottom:none;
 }
