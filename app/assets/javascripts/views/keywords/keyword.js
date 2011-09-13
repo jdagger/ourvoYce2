@@ -14,8 +14,8 @@ $(function(){
 
   click: function(e){
     e.preventDefault();
-    window.router.navigate('k/' + this.model.get('path'));
-    window.items.fetch_items(this.model);
+    OurvoyceApp.router.navigate('k/' + this.model.get('path'));
+    OurvoyceApp.items.fetch_items(this.model);
   },
 
   render: function(){

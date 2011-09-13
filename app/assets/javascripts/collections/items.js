@@ -3,7 +3,7 @@ var Items = Backbone.Collection.extend({
   url: '/items',
   fetch_items: function(keyword){
     var url = "/items/keyword/" + keyword.get('path');
-    window.current_keyword.set({friendly_name: keyword.get('friendly_name')});
+    OurvoyceApp.current_keyword.set({friendly_name: keyword.get('friendly_name')});
     this.fetch({url: url});
   }
 });

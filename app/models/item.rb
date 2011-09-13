@@ -9,12 +9,8 @@ class Item
   field :wikipedia, type: String
   field :website, type: String
   embeds_many :related_tags
-  field :thumbs_up_count, type: Integer, :default => 0
-  field :thumbs_down_count, type: Integer, :default => 0
-  field :neutral_count, type: Integer, :default => 0
-  field :total_vote_count, type: Integer, :default => 0
+  embeds_one :vote
 
-  #scope :get_by_ids, lambda{ |ids|
   def self.get_by_ids(ids)
     find(ids)
   end 

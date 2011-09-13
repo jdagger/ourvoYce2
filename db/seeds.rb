@@ -283,12 +283,15 @@ db[:zips].insert(zips)
 
 
 db[:users].remove({})
+db[:user_votes].remove({})
+db[:national_state_stats].remove({})
+db[:national_year_stats].remove({})
 
 #Create test user
 User.create(:email => 'test', :password => 'test', :zip => '28801', :state => 'NC', :birth_year => 1970)
 
 users = []
-(1..94545).each do |i|
+(1..104545).each do |i|
   random_zip = zips.sample
   email = Forgery(:internet).email_address
   password = Forgery(:basic).password
@@ -298,9 +301,16 @@ users = []
     email: email,
     password: password,
     zip: random_zip[:zip],
+    latitude: random_zip[:latitude],
+    longitude: random_zip[:longitude],
     state: random_zip[:state],
     birth_year: birth_year
   }
+
+  if(users.count > 50000)
+    db[:users].insert(users)
+    users = []
+  end
 end
 
 db[:users].insert(users)

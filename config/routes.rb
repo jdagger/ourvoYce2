@@ -10,6 +10,8 @@ Ourvoyce::Application.routes.draw do
   resources :items do
     match "/vote" => "items#vote"
     match "/details" => "items#details"
+    match "/map(/:state)" => "items#map"
+    match "/age(/:state)" => "items#age"
   end
 
   root :to => 'defaults#index'

@@ -4,23 +4,24 @@ var OurvoyceRouter = Backbone.Router.extend({
   },
 
     initialize: function(){
-      this.popularKeywordsView = new PopularKeywordsView({collection: window.popular_keywords});
+      this.popularKeywordsView = new PopularKeywordsView({collection: OurvoyceApp.popular_keywords});
+
       this.popularKeywordsView.render();
       
-      this.currentKeywordView = new CurrentKeywordView({model: window.current_keyword});
+      this.currentKeywordView = new CurrentKeywordView({model: OurvoyceApp.current_keyword});
       this.currentKeywordView.render();
 
-      this.itemsView = new ItemsView({collection: window.items});
+      this.itemsView = new ItemsView({collection: OurvoyceApp.items});
       this.itemsView.render();
 
-      this.detailView = new DetailView({model: window.details});
+      this.detailView = new DetailView({model: OurvoyceApp.details});
     },
 
     keyword: function(keyword){
       //alert('navigate');
       //TODO: this is firing on initial load.  Try to block
-      keyword_model = window.popular_keywords.find_by_path(keyword);
-      window.items.fetch_items(keyword_model);
+      keyword_model = OurvoyceApp.popular_keywords.find_by_path(keyword);
+      OurvoyceApp.items.fetch_items(keyword_model);
     }
 
 });

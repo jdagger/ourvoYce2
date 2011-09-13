@@ -18,7 +18,7 @@ module Items
       unless user_votes.nil? || user_votes.empty?
         item_arr.each do |item|
           idx = user_votes.find_index{ |x| x[:item_id].to_s == item.id.to_s }
-          item[:vote] = user_votes[idx][:vote] unless idx.nil?
+          item[:user_vote] = user_votes[idx][:vote] unless idx.nil?
         end
       end
 

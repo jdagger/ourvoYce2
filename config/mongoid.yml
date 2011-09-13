@@ -1,6 +1,8 @@
 development:
   host: localhost
   database: ourvoyce
+  logger: false
+  persist_in_safe_mode: false
 
 test:
   host: localhost

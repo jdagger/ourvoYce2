@@ -6,8 +6,7 @@ var Detail = Backbone.Model.extend({
   },
 
   load: function(id){
-    current = this.get('current_details');
-    if(current == id){
+    if(this.current_details() == id){
       this.set({current_details: null});
       this.trigger('hide')
       return;
@@ -21,6 +20,10 @@ var Detail = Backbone.Model.extend({
       url: url,
       success: this.triggerRedraw
     });
+  },
+
+  current_details: function(){
+    return this.get('current_details');
   },
 
   triggerRedraw: function(){

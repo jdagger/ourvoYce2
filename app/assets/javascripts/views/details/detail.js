@@ -1,8 +1,8 @@
 $(function(){
   window.DetailView = Backbone.View.extend({
     tag: 'div',
-  el: '#details',
-  template: JST['details/detail'],
+    el: '#details',
+    template: JST['details/detail'],
 
   initialize: function(){
     _.bindAll(this, 'render', 'hide');
@@ -13,10 +13,20 @@ $(function(){
   render: function(){
     $(this.el).html(this.template(this.model.toJSON()));
 
-    thumbs_up_count = this.model.get('thumbs_up_count');
-    neutral_count = this.model.get('neutral_count');
-    thumbs_down_count = this.model.get('thumbs_down_count');
-    max_height = Math.max(thumbs_up_count, thumbs_down_count, neutral_count);
+    window.createSWFObjects();
+
+    var thumbs_up_count = 0;
+    var neutral_count = 0;
+    var thumbs_down_count = 0;
+
+    var vote = this.model.get('vote')
+    if(vote != undefined){
+      thumbs_up_count = vote['thumbs_up_count'];
+      neutral_count = vote['neutral_count'];
+      thumbs_down_count = vote['thumbs_down_count'];
+    }
+    max_height = Math.max(thumbs_up_count, thumbs_down_count, neutral_count, 1);
+
 
     //container_height = $(this.el).find('.vote-chart').css('height').replace(/px/, '');
     container_height = 50;
@@ -34,14 +44,14 @@ $(function(){
     thumbs_down_element.css('height', Math.ceil(container_height * thumbs_down_count / max_height) + "px");
 
     if(! $(this.el).is(':visible')){
-      $(this.el).show('slide', {direction: 'left'}, 1000);
+      $(this.el).show('slide', {direction: 'left'}, 500);
     }
     return this;
   },
 
   hide: function(){
     if($(this.el).is(':visible')){
-      $(this.el).hide('slide', {direction: 'left'}, 1000);
+      $(this.el).hide('slide', {direction: 'left'}, 500);
     }
 
   }

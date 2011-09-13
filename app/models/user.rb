@@ -8,7 +8,10 @@ class User
   field :password_digest, type: String
   field :country, type: String
   field :zip, type: String
-  field :year_born, type: String
+  field :state, type: String
+  field :latitude, type: String
+  field :longitude, type: String
+  field :birth_year, type: Integer
   field :member_since, type: Date
   field :vote_count, type: Integer
   field :confirmed, type: Boolean

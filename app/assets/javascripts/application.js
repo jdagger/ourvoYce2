@@ -15,6 +15,7 @@
 //= require backbone.authtokenadapter
 //
 //= require ourvoyce_app
+//
 //= require swfobject
 //= require map_graph
 //
@@ -23,4 +24,5 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree ../templates
+//
 //= require_tree .

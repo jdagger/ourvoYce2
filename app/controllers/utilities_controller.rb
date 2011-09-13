@@ -1,20 +1,21 @@
 class UtilitiesController < ApplicationController
   def generate_random_votes
 
-    votes_to_insert = 2000
+    votes_to_insert = 1000
 
     start_time = Time.now
 
-    users = User.only(:id).to_a
+    #users = User.only(:id).to_a
+    users = User.all.to_a
     items = Item.only(:id).to_a
 
     setup_time = Time.now
 
     (1..votes_to_insert).each do |i|
-      user_id = users.sample[:_id]
+      user = users.sample
       item_id = items.sample[:_id]
       vote = [-1, 0, 1].sample
-      Vote.record_vote(user_id, item_id, vote)
+      Vote.record_vote(user[:_id], user[:state], user[:zip], user[:latitude], user[:longitude], user[:birth_year], item_id, vote)
     end
 
     insert_time = Time.now
