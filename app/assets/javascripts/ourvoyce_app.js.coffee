@@ -1,4 +1,4 @@
-@OurvoyceApp =
+window.OurvoyceApp =
   Models: {}
   Collections: {}
   Views: {}

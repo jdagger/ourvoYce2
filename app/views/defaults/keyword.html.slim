@@ -1,7 +1,7 @@
 = content_for :javascript do
   javascript:
     $(function(){
-      OurvoyceApp.init('#{@keyword_friendly_name}', #{@keywords.to_json.html_safe}, #{@items.to_json.html_safe});
+      window.OurvoyceApp.init('#{@keyword_friendly_name}', #{@keywords.to_json.html_safe}, #{@items.to_json.html_safe});
     });
 
 #items

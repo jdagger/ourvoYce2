@@ -2,6 +2,7 @@
   initialize: () ->
     _.extend(this, Backbone.Events)
     _.bindAll(this, 'load', 'triggerRedraw')
+    return
 
   load: (id) ->
     if this.current_details() == id
