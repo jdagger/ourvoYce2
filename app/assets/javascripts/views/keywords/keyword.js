@@ -2,7 +2,7 @@ $(function(){
   window.KeywordView = Backbone.View.extend({
     tag: 'li',
   className: 'keyword',
-  template: JST['keywords/keyword'],
+  template: 'keywords/keyword',
 
   events: {
     'click a': 'click'
@@ -19,7 +19,7 @@ $(function(){
   },
 
   render: function(){
-    $(this.el).html(this.template(this.model.toJSON()));
+    $(this.el).html($.tmpl(this.template, this.model.toJSON()));
     return this;
   }
   });

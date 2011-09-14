@@ -12,41 +12,66 @@ class Vote
 
 
   def self.record_vote(user_id, state, zip, latitude, longitude, birth_year, item_id, vote)
+    @timing = {}
 
-    return false if user_id.nil?
+    start_time = Time.now
 
-    return false unless [-1, 0, 1].include?(vote)
+    item = nil
 
-    item = Item.find(item_id) rescue nil
-    return false if item.nil?
+    record_time :item_lookup_time do
+      return false if user_id.nil?
+      return false unless [-1, 0, 1].include?(vote)
 
+      item = Item.find(item_id) rescue nil
+      return false if item.nil?
+    end
 
-    #Update the user_vote table
-    user_vote = UserVote.find_or_initialize_by({user_id: user_id, item_id: item_id})
+    new_vote = false
+    previous_vote = -2
 
-    previous_vote = user_vote.vote
-    new_vote = user_vote.new_record?
+    record_time :user_vote_time do
+      #Update the user_vote table
+      user_vote = UserVote.find_or_initialize_by({user_id: user_id, item_id: item_id})
+      previous_vote = user_vote.vote
+      new_vote = user_vote.new_record?
 
+      return false if previous_vote == vote
 
-    return false if previous_vote == vote
+      #Store the vote to the UserVote table
+      user_vote.vote = vote
+      user_vote.vote_date = Time.now
+      user_vote.save!
+    end
 
-
-    #Store the vote to the UserVote table
-    user_vote.vote = vote
-    user_vote.vote_date = Time.now
-    user_vote.save!
 
     #Update counts in Item table
-    Vote.update_votes(Item, item, new_vote, vote, previous_vote)
+    record_time :update_item_votes_time do
+      Vote.update_votes(Item, item, new_vote, vote, previous_vote)
+    end
+    
 
 
     #Increment national votes
-    national_year_stat = NationalYearStat.find_or_create_by({:item_id => item_id, :birth_year => birth_year})
-    Vote.update_votes(NationalYearStat, national_year_stat, new_vote, vote, previous_vote)
+    record_time :update_national_year_time do
+      national_year_stat = NationalYearStat.find_or_create_by({:item_id => item_id, :birth_year => birth_year})
+      Vote.update_votes(NationalYearStat, national_year_stat, new_vote, vote, previous_vote)
+    end
 
-    national_state_stat = NationalStateStat.find_or_create_by({:item_id => item_id, :state => state})
-    Vote.update_votes(NationalStateStat, national_state_stat, new_vote, vote, previous_vote)
+
+    record_time :update_national_state_time do
+      national_state_stat = NationalStateStat.find_or_create_by({:item_id => item_id, :state => state})
+      Vote.update_votes(NationalStateStat, national_state_stat, new_vote, vote, previous_vote)
+    end
+
+    @timing[:total_time] = Time.now - start_time
       
+    return @timing
+  end
+
+  def self.record_time(name, &block)
+    start = Time.now
+    yield
+    @timing[name] = Time.now - start 
   end
 
   def self.update_votes(model, entity, new_vote, current_vote, previous_vote)

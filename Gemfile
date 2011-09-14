@@ -9,7 +9,7 @@ gem 'bson_ext'
 gem 'forgery'
 
 gem 'slim'
-gem 'ejs'
+gem 'jquery-tmpl-rails'
 
 gem 'simple_form'
 

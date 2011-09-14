@@ -291,7 +291,7 @@ db[:national_year_stats].remove({})
 User.create(:email => 'test', :password => 'test', :zip => '28801', :state => 'NC', :birth_year => 1970)
 
 users = []
-(1..104545).each do |i|
+(1..500).each do |i|
   random_zip = zips.sample
   email = Forgery(:internet).email_address
   password = Forgery(:basic).password

@@ -14,6 +14,8 @@
 //= require backbone
 //= require backbone.authtokenadapter
 //
+//= require jquery-tmpl
+//
 //= require ourvoyce_app
 //
 //= require swfobject

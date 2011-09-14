@@ -1,7 +1,7 @@
 $(function(){
   window.ItemsView = Backbone.View.extend({
     el: '#items',
-    template: JST['items/items'],
+    template: 'items/items',
 
     initialize: function(){
       _.bindAll(this, 'render', 'renderItem');
@@ -9,7 +9,7 @@ $(function(){
     },
 
     render: function() {
-      $(this.el).html(this.template());
+      $(this.el).html($.tmpl(this.template, {}));
       this.collection.each(this.renderItem);
       return this;
     },

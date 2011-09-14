@@ -2,12 +2,12 @@ $(function(){
 window.ItemView = Backbone.View.extend({
   tag: 'div',
   className: 'item',
-  template: JST['items/item'],
+  template: 'items/item',
 
   events: {
-    'click .thumbs_up': 'thumbs_up_vote',
-    'click .neutral': 'neutral_vote',
-    'click .thumbs_down': 'thumbs_down_vote',
+    'click .voting .thumbs_up': 'thumbs_up_vote',
+    'click .voting .neutral': 'neutral_vote',
+    'click .voting .thumbs_down': 'thumbs_down_vote',
     'click .toggle-details': 'toggle_details',
   },
 
@@ -22,7 +22,7 @@ window.ItemView = Backbone.View.extend({
   },
 
   render: function(){
-    $(this.el).html(this.template(this.model.toJSON()));
+    $(this.el).html($.tmpl(this.template, this.model.toJSON()));
 
     vote = this.model.get('user_vote'); 
     if(vote != null)

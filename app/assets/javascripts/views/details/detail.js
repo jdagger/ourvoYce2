@@ -2,7 +2,7 @@ $(function(){
   window.DetailView = Backbone.View.extend({
     tag: 'div',
     el: '#details',
-    template: JST['details/detail'],
+    template: 'details/detail',
 
   initialize: function(){
     _.bindAll(this, 'render', 'hide');
@@ -11,7 +11,7 @@ $(function(){
   },
 
   render: function(){
-    $(this.el).html(this.template(this.model.toJSON()));
+    $(this.el).html($.tmpl(this.template, this.model.toJSON()));
 
     window.createSWFObjects();
 
@@ -28,7 +28,7 @@ $(function(){
     max_height = Math.max(thumbs_up_count, thumbs_down_count, neutral_count, 1);
 
 
-    //container_height = $(this.el).find('.vote-chart').css('height').replace(/px/, '');
+    //TODO: Determine actual height by examining html
     container_height = 50;
 
     thumbs_up_element = $(this.el).find('.vote-chart .green-height');
