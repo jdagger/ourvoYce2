@@ -9,7 +9,6 @@
 
 
   render: () ->
-    alert($.tmpl(this.template, {}))
     $(this.el).html($.tmpl(this.template, {}))
     this.collection.each(this.renderKeyword)
     return this
