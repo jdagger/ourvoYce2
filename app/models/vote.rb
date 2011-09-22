@@ -8,11 +8,15 @@ class Vote
 
   embedded_in :national_state_stat
   embedded_in :national_year_stat
+  embedded_in :birth_year_vote_count
   embedded_in :item
+
 
 
   def self.record_vote(user_id, state, zip, latitude, longitude, birth_year, item_id, vote)
     @timing = {}
+
+    state = state.downcase
 
     start_time = Time.now
 
@@ -63,6 +67,12 @@ class Vote
       Vote.update_votes(NationalStateStat, national_state_stat, new_vote, vote, previous_vote)
     end
 
+    record_time :update_state_stats do
+      state_stat = StateStat.find_or_create_by({:state => state, :item_id => item_id})
+      update_votes(StateStat, state_stat, new_vote, vote, previous_vote, "#{birth_year}.")
+    end
+
+
     @timing[:total_time] = Time.now - start_time
       
     return @timing
@@ -74,29 +84,34 @@ class Vote
     @timing[name] = Time.now - start 
   end
 
-  def self.update_votes(model, entity, new_vote, current_vote, previous_vote)
+  def self.build_increment_logic(new_vote, current_vote, previous_vote, prefix)
     vote_changes = {}
+
     if new_vote
-      vote_changes['vote.total_vote_count'] = 1
+      vote_changes["#{prefix}vote.total_vote_count"] = 1
     else
       if(previous_vote == 1)
-        vote_changes['vote.thumbs_up_count'] = -1
+        vote_changes["#{prefix}vote.thumbs_up_count"] = -1
       elsif(previous_vote == 0)
-        vote_changes['vote.neutral_count'] = -1
+        vote_changes["#{prefix}vote.neutral_count"] = -1
       else
-        vote_changes['vote.thumbs_down_count'] = -1
+        vote_changes["#{prefix}vote.thumbs_down_count"] = -1
       end
     end
 
     if(current_vote == 1)
-      vote_changes['vote.thumbs_up_count'] = 1
+      vote_changes["#{prefix}vote.thumbs_up_count"] = 1
     elsif(current_vote == 0)
-      vote_changes['vote.neutral_count'] = 1
+      vote_changes["#{prefix}vote.neutral_count"] = 1
     else
-      vote_changes['vote.thumbs_down_count'] = 1
+      vote_changes["#{prefix}vote.thumbs_down_count"] = 1
     end
 
-    #entity.update({'$inc' => vote_changes})
+    return vote_changes
+  end
+
+  def self.update_votes(model, entity, new_vote, current_vote, previous_vote, prefix="")
+    vote_changes = self.build_increment_logic(new_vote, current_vote, previous_vote, prefix)
     model.collection.update({'_id' => entity.id}, {'$inc' => vote_changes})
   end
 end

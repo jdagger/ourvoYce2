@@ -39,17 +39,14 @@
         thumbs_up_img.attr('src', '/assets/site/thumbup-gray.gif')
         neutral_img.attr('src', '/assets/site/thumbneutral-gray.gif')
 
-    vote_counts = this.model.get('vote')
-    if vote_counts == undefined
-      thumbs_up_count = 0
-      thumbs_down_count = 0
-      neutral_count = 0
-    else
-      thumbs_up_count = vote_counts['thumbs_up_count']
-      thumbs_down_count = vote_counts['thumbs_down_count']
-      neutral_count = vote_counts['neutral_count']
+    thumbs_up_count = this.model.thumbs_up_count()
+    thumbs_down_count = this.model.thumbs_down_count()
+    neutral_count = this.model.neutral_count()
 
     max_count = Math.max(thumbs_up_count, thumbs_down_count, neutral_count)
+    console.log("Invalid vote count detected(ItemView)") if Math.min(thumbs_up_count, thumbs_down_count, neutral_count)
+
+    console.log("Max count: #{max_count}")
 
     # -3 at end is for the cap height at the top of the bars
     container_height = $(this.el).find('.mini-vote-chart').css('height').replace(/px/, "") - 3

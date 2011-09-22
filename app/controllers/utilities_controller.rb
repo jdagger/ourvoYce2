@@ -12,13 +12,8 @@ class UtilitiesController < ApplicationController
     setup_time = Time.now
 
     total_sample_time = 0
+    total_times = {}
 
-    total_db_time = 0
-    item_lookup_time = 0
-    user_vote_time = 0
-    update_item_votes_time = 0
-    update_national_year_time = 0
-    update_national_state_time = 0
     (1..votes_to_insert).each do |i|
       sample_start = Time.now
       user = users.sample
@@ -28,12 +23,11 @@ class UtilitiesController < ApplicationController
 
       timings = Vote.record_vote(user[:_id], user[:state], user[:zip], user[:latitude], user[:longitude], user[:birth_year], item_id, vote)
       if timings
-        total_db_time = total_db_time + timings[:total_time]
-        item_lookup_time = item_lookup_time + timings[:item_lookup_time]
-        user_vote_time = user_vote_time + timings[:user_vote_time]
-        update_item_votes_time = update_item_votes_time + timings[:update_item_votes_time]
-        update_national_year_time = update_national_year_time + timings[:update_national_year_time]
-        update_national_state_time = update_national_state_time + timings[:update_national_state_time]
+        timings.keys.each do |key|
+          total = total_times[key] || 0
+          total = total + timings[key]
+          total_times[key] = total
+        end
       end
     end
 
@@ -41,19 +35,14 @@ class UtilitiesController < ApplicationController
 
     total_user_votes = UserVote.count
 
-    render :json => {
+    render :xml => {
       success: 1, 
       votes_recorded: votes_to_insert, 
       setup_time: "#{setup_time - start_time}", 
       sample_time: "#{total_sample_time}",  
-      total_db_time: total_db_time,
-      item_lookup_time: item_lookup_time , 
-      user_vote_time: user_vote_time , 
-      update_item_votes_time: update_item_votes_time , 
-      update_national_year_time: update_national_year_time , 
-      update_national_state_time: update_national_state_time , 
       vote_time: "#{insert_time - setup_time}", 
+      total_time: total_times,
       total_user_votes: total_user_votes
-    }.to_json
+    }.to_xml
   end
 end
