@@ -21,18 +21,62 @@ class ItemsController < ApplicationController
   end
 
   def map
+    if params[:state].blank?
+      build_national_map
+    else
+      build_state_map
+    end
+  end
+
+  def build_state_map
+    state = params[:state].downcase
+    state_zip_stat = StateZipStat.where(:item_id => params[:item_id], :state => state).first
+
+    #Had problems iterating the state_zip_stat zip collection, so converting to json first
+
+
+    @zips = []
+    max = 1
+    state_zip_stat["zips"].each do |key, value|
+      tu = value["vote"]["thumbs_up_count"] || 0
+      td = value["vote"]["thumbs_down_count"] || 0
+      n = value["vote"]["neutral_count"] || 0
+
+      @zips << {
+        name: key,
+        scale: 1.00,
+        lat: value['latitude'],
+        long: value['longitude'],
+        color: votes_to_color(tu, td, n),
+        thumbs_up_count: tu,
+        thumbs_down_count: td,
+        neutral_count: n,
+        total_count: tu + td + n
+      }
+      max = [max, tu + td + n].max
+    end
+
+    @zips.each do |zip|
+      zip[:scale] = zip[:total_count] / max
+    end
+
+    render :template => 'items/state_map'
+  end
+
+  def build_national_map
     national_state_stat = NationalStateStat.where(:item_id => params[:item_id])
     @states = []
 
     national_state_stat.each do |stat|
       tu = stat.vote.thumbs_up_count rescue 0
       td = stat.vote.thumbs_down_count rescue 0
-      score = 100 * tu / (tu + td) rescue 50
-      color = score_to_color(score)
+      n = stat.vote.neutral_count rescue 0
+      color = votes_to_color(tu, td, n) 
       @states << {name: stat[:state], color: color}
     end
 
     render :template => 'items/national_map'
+
   end
 
   def age
@@ -81,7 +125,7 @@ class ItemsController < ApplicationController
   end
 
   def build_state_age
-    state_stat = StateStat.where(item_id: params[:item_id], state: params[:state].downcase).first
+    state_stat = StateYearStat.where(item_id: params[:item_id], state: params[:state].downcase).first
 
     buckets = get_buckets
 
@@ -117,14 +161,19 @@ class ItemsController < ApplicationController
     buckets.each do |bucket|
       bucket[:scale] = (bucket[:thumbs_up_count] + bucket[:thumbs_down_count] + bucket[:neutral_count]).to_f / @results[:max] rescue 0
       score = (bucket[:thumbs_up_count] / (bucket[:thumbs_up_count] + bucket[:thumbs_down_count])) * 100 rescue 0
-      bucket[:color] = score_to_color(score)
+      bucket[:color] = votes_to_color(bucket[:thumbs_up_count], bucket[:thumbs_down_count], bucket[:neutral_count])
     end
 
     @results[:ages] = buckets
 
   end
 
-  def score_to_color(score)
+  def votes_to_color(thumbs_up, thumbs_down, neutral)
+    thumbs_up = thumbs_up || 0
+    thumbs_down = thumbs_down || 0
+    neutral = neutral || 0
+
+    score = 100 * thumbs_up / (thumbs_up + thumbs_down) rescue 50
     if(score > 66)
       return "57B70E"
     elsif(score < 33)

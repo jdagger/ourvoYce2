@@ -286,10 +286,19 @@ db[:users].remove({})
 db[:user_votes].remove({})
 db[:national_state_stats].remove({})
 db[:national_year_stats].remove({})
-db[:state_stats].remove({})
+db[:state_year_stats].remove({})
+db[:state_zip_stats].remove({})
 
 #Create test user
-User.create(:email => 'test', :password => 'test', :zip => '28801', :state => 'NC', :birth_year => 1970)
+User.create(
+  :email => 'test', 
+  :password => 'test', 
+  :zip => '28801', 
+  :state => 'NC', 
+  :birth_year => 1970,
+  :latitude => 35.595,
+  :longitude => -82.556
+)
 
 users = []
 (1..500).each do |i|

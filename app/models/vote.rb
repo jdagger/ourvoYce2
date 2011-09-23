@@ -8,10 +8,7 @@ class Vote
 
   embedded_in :national_state_stat
   embedded_in :national_year_stat
-  embedded_in :birth_year_vote_count
   embedded_in :item
-
-
 
   def self.record_vote(user_id, state, zip, latitude, longitude, birth_year, item_id, vote)
     @timing = {}
@@ -67,9 +64,19 @@ class Vote
       Vote.update_votes(NationalStateStat, national_state_stat, new_vote, vote, previous_vote)
     end
 
-    record_time :update_state_stats do
-      state_stat = StateStat.find_or_create_by({:state => state, :item_id => item_id})
-      update_votes(StateStat, state_stat, new_vote, vote, previous_vote, "#{birth_year}.")
+    record_time :update_state_year_stats do
+      state_year_stat = StateYearStat.find_or_create_by({:state => state, :item_id => item_id})
+      update_votes(StateYearStat, state_year_stat, new_vote, vote, previous_vote, "#{birth_year}.")
+    end
+
+    record_time :update_state_zip_stats do
+      state_zip_stat = StateZipStat.find_or_create_by({:state => state, :item_id => item_id})
+
+      if state_zip_stat["zips.#{zip}"].nil?
+        state_zip_stat["zips.#{zip}"] = {:latitude => latitude, :longitude => longitude}
+        state_zip_stat.save
+      end
+      update_votes(StateZipStat, state_zip_stat, new_vote, vote, previous_vote, "zips.#{zip}.")
     end
 
 
