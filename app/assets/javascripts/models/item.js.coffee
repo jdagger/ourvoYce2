@@ -1,9 +1,6 @@
 @Item = Backbone.Model.extend
   initialize: (attributes) ->
-    console.log "ITEM INITIALIZER"
-    console.log attributes
     this.set({vote: new Vote(attributes.vote)})
-    console.log this
     return
 
   thumbs_up: () ->
@@ -43,7 +40,6 @@
   change_vote: (new_vote) ->
     url = "/items/#{this.get('_id')}/vote"
     previous_vote = this.get('user_vote')
-    console.log("Previous Vote: #{previous_vote}")
     return if previous_vote == new_vote
 
     this.save({new_vote: new_vote}, {url: url})
@@ -56,9 +52,7 @@
 
 
     if previous_vote == 1
-      console.log("Before: " + this.thumbs_up_count())
       this.set_thumbs_up_count(this.thumbs_up_count() - 1)
-      console.log("After: " + this.thumbs_up_count())
     else if previous_vote == 0
       #vote.set({neutral_count: this.neutral_count() - 1})
       this.set_neutral_count(this.neutral_count() - 1)

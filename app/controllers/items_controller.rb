@@ -13,6 +13,28 @@ class ItemsController < ApplicationController
     end
   end
 
+  #Retrieve the items for the specified item_ids
+  def fetch
+    item_ids = params[:item_ids]
+    load_items_by_id(item_ids)
+
+    respond_to do |format|
+      format.json { render :json => {:item_ids => @item_ids, :items => @items}.to_json}
+    end
+
+  end
+
+  def keyword
+    keyword = params[:keyword]
+
+    load_items(keyword)
+
+    respond_to do |format|
+      format.json { render :json => {:item_ids => @item_ids, :items => @items}.to_json}
+    end
+  end
+
+
   def details
     item = Item.find(params[:item_id])
     respond_to do |format|
@@ -184,14 +206,4 @@ class ItemsController < ApplicationController
 
   end
 
-  def keyword
-    keyword = params[:keyword]
-
-    load_items(keyword)
-
-    respond_to do |format|
-      format.html { render :text => @items.to_json }
-      format.json { render :json => @items.to_json }
-    end
-  end
 end

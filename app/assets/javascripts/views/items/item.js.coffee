@@ -20,6 +20,7 @@
     return
 
 
+
   render: () ->
     $(this.el).html($.tmpl(this.template, this.model.toJSON()))
 

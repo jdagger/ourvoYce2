@@ -7,6 +7,7 @@ Ourvoyce::Application.routes.draw do
   match '/utilities/generate_random_votes' => 'utilities#generate_random_votes', :as => :generate_random_votes
 
   match '/items/keyword/:keyword' => 'items#keyword'
+  match '/items/fetch' => 'items#fetch'
   resources :items do
     match "/vote" => "items#vote"
     match "/details" => "items#details"
