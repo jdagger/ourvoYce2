@@ -54,23 +54,17 @@
     if previous_vote == 1
       this.set_thumbs_up_count(this.thumbs_up_count() - 1)
     else if previous_vote == 0
-      #vote.set({neutral_count: this.neutral_count() - 1})
       this.set_neutral_count(this.neutral_count() - 1)
     else if previous_vote == -1
-      #vote.set({thumbs_down_count: this.thumbs_down_count() - 1})
       this.set_thumbs_down_count(this.thumbs_down_count() - 1)
 
     if previous_vote == 1
-      #vote.set({thumbs_up_count: this.thumbs_up_count() + 1})
       this.set_thumbs_up_count(this.thumbs_up_count() + 1)
     else if previous_vote == 0
-      #vote.set({neutral_count: this.neutral_count() + 1})
       this.set_neutral_count(this.neutral_count() + 1)
     else if previous_vote == -1
-      #vote.set({thumbs_down_count: this.thumbs_down_count() + 1})
       this.set_thumbs_down_count(this.thumbs_down_count() + 1)
 
-    #this.set({vote: vote})
     return
 
 

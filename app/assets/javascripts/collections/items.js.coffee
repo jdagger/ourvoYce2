@@ -26,10 +26,6 @@
       add: true
       data: 
         item_ids: items_to_fetch
-
-      success: (collection, response) ->
-        console.log(response)
-        return
     return
 
 

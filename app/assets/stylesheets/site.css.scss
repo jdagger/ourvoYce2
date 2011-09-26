@@ -421,7 +421,8 @@ vertical-align:middle;}
 }
 
 /* ------------------- chart */
-.content-chart {
+//.content-chart {
+#items {
   background: none repeat scroll 0 0 #fff;
   /* Do rounding (native in Opera, Firefox and Safari) */
   border-radius:8px 0 0 8px;
@@ -438,6 +439,7 @@ vertical-align:middle;}
   min-height: 200px;
   position: relative;
   width: 653px;
+  //width: 660px;
   z-index:50;
   margin:5px 0 5px 5px;
   color:#2158b0;
@@ -487,7 +489,7 @@ vertical-align:middle;}
 .votenumber {font-size:16px;font-weight:bold;padding-bottom:6px;}
 
 /* ----------------- pullout */
-.pullout, .pullout2 {
+.pullout, .pullout2, #details {
   margin:5px 0 5px 0;
   /* Do rounding (native in Opera, Firefox and Safari) */
   border-radius:0 8px 8px 0;
@@ -498,8 +500,9 @@ vertical-align:middle;}
   box-shadow: 0px 0px 7px #999;
   -moz-box-shadow: 0px 0px 7px #999;
   -webkit-box-shadow: 0px 0px 7px #999;
-  min-width: 257px;
-  max-width:357px;
+  //min-width: 257px;
+  //max-width:357px;
+  width: 357px;
   min-height:300px;
   overflow: hidden;
   padding:0 0 10px 0;
@@ -509,7 +512,7 @@ vertical-align:middle;}
   background:#e1eef6  image-url('site/bg-pullout.jpg') repeat-x;
   z-index: 48;
 }
-.pullout2 {
+.pullout2, #details {
   background:#fff  image-url('site/bg-pullout2.jpg') repeat-x;
 }
 .pullout-item, .chart-item {
@@ -627,12 +630,6 @@ a.vote:hover{
   left: 660px;
   z-index: 49;
 }
-
-
-
-
-
-
 
 #bar-graph-wrap{
   

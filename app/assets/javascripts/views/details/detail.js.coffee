@@ -4,9 +4,10 @@
   template: 'details/detail'
 
   initialize: () ->
-    _.bindAll(this, 'render', 'hide')
+    _.bindAll(this, 'render', 'hide', 'scroll')
     this.model.bind('redraw', this.render)
     this.model.bind('hide', this.hide)
+    $(window).scroll(this.scroll)
     return
 
   render: () ->
@@ -42,10 +43,43 @@
     neutral_element.css('height', Math.ceil(container_height * neutral_count / max_height) + "px")
     thumbs_down_element.css('height', Math.ceil(container_height * thumbs_down_count / max_height) + "px")
 
-    $(this.el).show('slide', {direction: 'left'}, 500) unless $(this.el).is(':visible')
+    this.setPosition()
+    if ! $(this.el).is(':visible')
+      $(this.el).show('slide', {direction: 'left'}, 500, () ->
+        $('#pullout').hide()
+      ) 
     return this
 
 
   hide: () ->
-    $(this.el).hide('slide', {direction: 'left'}, 500) if $(this.el).is(':visible')
+    if $(this.el).is(':visible')
+      $('#pullout').show()
+      $(this.el).hide('slide', {direction: 'left'}, 500)
     return this
+
+
+  setPosition: () ->
+    items = $("#items")
+    content_top = items.offset().top
+    window_top = $(window).scrollTop()
+    window_left = $(window).scrollLeft()
+
+    if(window_top > content_top)
+      $("#details").css("position", "fixed")
+      top_margin = $("#details").css('margin-top')
+      $("#details").css("top", "-#{top_margin}")
+      console.log(items.offset().left)
+      console.log(window_left)
+      console.log(items.outerWidth())
+      left = items.offset().left + items.outerWidth() - window_left
+      $("#details").css("left", "#{left}px")
+    else
+      $("#details").css("position", "absolute")
+      $("#details").css("top", "0px")
+      $("#details").css("left", "")
+
+
+
+  scroll: () ->
+    this.setPosition()
+    return
