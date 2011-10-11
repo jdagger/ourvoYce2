@@ -7,8 +7,10 @@ class DefaultsController < ApplicationController
 
   def keyword
     keyword_path = params[:keyword_path]
+    filter = params[:filter]
+    sort = params[:sort]
 
-    load_items(keyword_path)
+    load_items(keyword_path, filter, sort)
 
     @total_users = User.count
     @keywords = Keyword.keyword_list

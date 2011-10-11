@@ -13,8 +13,7 @@
 
   click: (e) ->
     e.preventDefault()
-    OurvoyceApp.router.navigate('k/' + this.model.get('path'))
-    OurvoyceApp.items.fetch_items(this.model)
+    KeywordNavigate(this.model.get('_id'))
     return
 
   render: () ->

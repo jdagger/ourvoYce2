@@ -1,7 +1,6 @@
 class UtilitiesController < ApplicationController
   def generate_random_votes
-
-    votes_to_insert = 500
+    votes_to_insert = params[:count].to_i
 
     start_time = Time.now
 
@@ -18,7 +17,7 @@ class UtilitiesController < ApplicationController
       sample_start = Time.now
       user = users.sample
       item_id = items.sample[:_id]
-      vote = [-1, 0, 1].sample
+      vote = [-1, -1, -1, 0, 0, 1, 1, 1, 1, 1, 1].sample
       total_sample_time = total_sample_time + (Time.now - sample_start)
 
       timings = Vote.record_vote(user[:_id], user[:state], user[:zip], user[:latitude], user[:longitude], user[:birth_year], item_id, vote)

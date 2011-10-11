@@ -11,8 +11,12 @@ gem 'forgery'
 gem 'slim'
 gem 'jquery-tmpl-rails'
 
+gem 'pg'
+
 gem 'simple_form'
 
+
+gem 'compass','0.12.alpha.0'
 
 # Gems used only for assets and not required
 # in production environments by default.

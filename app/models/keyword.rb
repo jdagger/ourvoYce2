@@ -1,8 +1,8 @@
 class Keyword
   include Mongoid::Document
 
+  key :path, type: String
   field :friendly_name, type: String
-  field :path, type: String
   field :item_ids, type: Array
 
   def self.keyword_by_path(path)

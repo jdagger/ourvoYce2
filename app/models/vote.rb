@@ -11,6 +11,11 @@ class Vote
   embedded_in :item
 
   def self.record_vote(user_id, state, zip, latitude, longitude, birth_year, item_id, vote)
+    return false if user_id.nil?
+    return false unless [-1, 0, 1].include?(vote)
+
+    item_id = item_id.to_s unless item_id.kind_of? String
+
     @timing = {}
 
     state = state.downcase
@@ -19,23 +24,19 @@ class Vote
 
     item = nil
 
-    record_time :item_lookup_time do
-      return false if user_id.nil?
-      return false unless [-1, 0, 1].include?(vote)
-
-      item = Item.find(item_id) rescue nil
-      return false if item.nil?
-    end
-
     new_vote = false
     previous_vote = -2
 
-    record_time :user_vote_time do
-      #Update the user_vote table
-      user_vote = UserVote.find_or_initialize_by({user_id: user_id, item_id: item_id})
-      previous_vote = user_vote.vote
-      new_vote = user_vote.new_record?
+    user_vote = nil
 
+    record_time :user_vote_lookup_time do
+      user_vote = UserVote.find_or_create_by({item_id: item_id, user_id: user_id})
+    end
+
+    record_time :user_vote_update_time do
+      previous_vote = user_vote.vote
+      #new_vote = user_vote.new_record?
+      new_vote = user_vote.vote.nil?
       return false if previous_vote == vote
 
       #Store the vote to the UserVote table
@@ -47,38 +48,35 @@ class Vote
 
     #Update counts in Item table
     record_time :update_item_votes_time do
-      Vote.update_votes(Item, item, new_vote, vote, previous_vote)
+      vote_changes = build_increment_logic(new_vote, vote, previous_vote)
+      Item.collection.update({'_id' => BSON::ObjectId.convert(Item, item_id)}, {'$inc' => vote_changes})
     end
     
 
-
     #Increment national votes
     record_time :update_national_year_time do
-      national_year_stat = NationalYearStat.find_or_create_by({:item_id => item_id, :birth_year => birth_year})
-      Vote.update_votes(NationalYearStat, national_year_stat, new_vote, vote, previous_vote)
+      id = "#{item_id} #{birth_year}"
+      vote_changes = self.build_increment_logic(new_vote, vote, previous_vote)
+      NationalYearStat.collection.update({"_id" => id, :birth_year => birth_year, :item_id => item_id}, {'$inc' => vote_changes}, {:upsert => true})
     end
 
-
     record_time :update_national_state_time do
-      national_state_stat = NationalStateStat.find_or_create_by({:item_id => item_id, :state => state})
-      Vote.update_votes(NationalStateStat, national_state_stat, new_vote, vote, previous_vote)
+      id = "#{item_id} #{state}"
+      vote_changes = self.build_increment_logic(new_vote, vote, previous_vote)
+      NationalStateStat.collection.update({"_id" => id, :state => state, :item_id => item_id}, {'$inc' => vote_changes}, {:upsert => true})
     end
 
     record_time :update_state_year_stats do
-      state_year_stat = StateYearStat.find_or_create_by({:state => state, :item_id => item_id})
-      update_votes(StateYearStat, state_year_stat, new_vote, vote, previous_vote, "#{birth_year}.")
+      id = "#{item_id} #{state}"
+      vote_changes = self.build_increment_logic(new_vote, vote, previous_vote, "#{birth_year}.")
+      StateYearStat.collection.update({"_id" => id, :state => state, :item_id => item_id}, {'$inc' => vote_changes}, {:upsert => true})
     end
 
     record_time :update_state_zip_stats do
-      state_zip_stat = StateZipStat.find_or_create_by({:state => state, :item_id => item_id})
-
-      if state_zip_stat["zips.#{zip}"].nil?
-        state_zip_stat["zips.#{zip}"] = {:latitude => latitude, :longitude => longitude}
-        state_zip_stat.save
-      end
-      update_votes(StateZipStat, state_zip_stat, new_vote, vote, previous_vote, "zips.#{zip}.")
+      id = "#{item_id} #{state}"
+      vote_changes = self.build_increment_logic(new_vote, vote, previous_vote, "zips.#{zip}.")
+      StateZipStat.collection.update({"_id" => id, :state => state, :item_id => item_id}, {'$inc' => vote_changes, '$set' => {"zips.#{zip}.latitude" => latitude, "zips.#{zip}.longitude" => longitude}}, {:upsert => true})
     end
-
 
     @timing[:total_time] = Time.now - start_time
       
@@ -91,7 +89,7 @@ class Vote
     @timing[name] = Time.now - start 
   end
 
-  def self.build_increment_logic(new_vote, current_vote, previous_vote, prefix)
+  def self.build_increment_logic(new_vote, current_vote, previous_vote, prefix = "")
     vote_changes = {}
 
     if new_vote
@@ -115,10 +113,5 @@ class Vote
     end
 
     return vote_changes
-  end
-
-  def self.update_votes(model, entity, new_vote, current_vote, previous_vote, prefix="")
-    vote_changes = self.build_increment_logic(new_vote, current_vote, previous_vote, prefix)
-    model.collection.update({'_id' => entity.id}, {'$inc' => vote_changes})
   end
 end

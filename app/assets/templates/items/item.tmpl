@@ -31,15 +31,9 @@
       </div>
       <div class="related-tags tags">
         Related Tags: 
-        <a href="vote-default.html">Corporate</a>
-        ,
-        <a href="vote-default.html">Fortune 500</a>
-        ,
-        <a href="vote-default.html">Lorem</a>
-        ,
-        <a href="vote-default.html">Appetizer</a>
-        ,
-        <a href="vote-default.html">Retailers</a>
+        {{each related_tags}}
+          <a href="/k/${path}">${friendly_name}</a>
+        {{/each}}
       </div>
     </div>
     <div class="toggle-details minichart" style="float: left; overflow: hidden; width: 100px; height: 100%; position: absolute; right: 0px;">

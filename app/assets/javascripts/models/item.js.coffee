@@ -1,6 +1,7 @@
 @Item = Backbone.Model.extend
   initialize: (attributes) ->
     this.set({vote: new Vote(attributes.vote)})
+    console.log attributes.vote
     return
 
   thumbs_up: () ->

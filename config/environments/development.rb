@@ -24,4 +24,7 @@ Ourvoyce::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+  #config.after_initialize do |app|
+    #app.assets.logger = Logger.new('/dev/null')
+  #end
 end

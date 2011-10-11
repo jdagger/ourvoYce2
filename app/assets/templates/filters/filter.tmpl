@@ -1,0 +1,36 @@
+<div id="filter_box">
+  <div id="tag">
+    <h1>
+        <span class="bluebold">Current Tag: </span>
+        <span id="current_keyword"></span>
+    </h1>
+  </div>
+  <div>
+    <select id="filter" name="filter">
+      <option value="all">All Records</option>
+      <option value="voted">Voted</option>
+      <option value="no-vote">No Vote</option>
+    </select>
+  </div>
+  <div>
+    <select id="sort" name="sort">
+      <option value="default">Default</option>
+      <option value="popularity">Popularity</option>
+      <option value="name">Name</option>
+    </select>
+    <select id="sort_direction" name="sort_direction">
+      <option value="desc">Descending</option>
+      <option value="asc">Ascending</option>
+    </select>
+  </div>
+  <div id="search">
+      <input type="text" name="search" 
+        class="searchbox" maxlength="32" 
+        value="What's on your mind? Search" 
+        onblur="if(this.value=='') this.value='What\'s on your mind? Search'" 
+        onfocus="if(this.value =='What\'s on your mind? Search' ) this.value=''" />
+      <input type="image" name="submit" 
+        src="/assets/site/searchbtn.gif" border="0" 
+        width="17" height="18" class='search_button' />
+  </div>
+</div>

@@ -1,3 +1,5 @@
+@import 'compass/css3';
+
 /* css reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -66,11 +68,15 @@ body {
   background: image-url('site/bg-crowd.jpg') 0 0 no-repeat;
   z-index:-1;
 }
+
+$content_width: 1024px;
 .wrapper {
-  position: absolute;
+  //position: absolute;
+  position: relative;
   top: 0px;
-  left:61px;
-  width: 1024px;
+  //left:61px;
+  margin: 0px auto;
+  width: $content_width;
   text-align: left;
   padding:1px 0 20px 0;
 }
@@ -214,7 +220,7 @@ font-size:15px;}
 
 .topbar-wrapper {
   color:#fff;
-  width:1024px;
+  width:$content_width;
   height:33px;
 }
 .topbar-wrapper a {
@@ -266,26 +272,12 @@ font-size:15px;}
   background-color:transparent;
   text-decoration:underline;
 }
-#search {
-  margin:10px 0;
-
-}
 
 /* --- Forms ------------------------------------------------------------ */
 
 input {
   border:0;
   background-color:transparent;	
-}
-.searchbox {
-  background: image-url('site/search.gif') top left no-repeat;
-  height:35px;
-  padding-left:15px;
-  padding-bottom:5px;
-  width:302px;
-  text-align:left;
-  color:#888;
-  font-size:16px;	
 }
 .submitbtn {
   position:absolute;
@@ -366,11 +358,143 @@ vertical-align:middle;}
 
 /* --- Content ------------------------------------------------------------ */
 
+$items-width: 653px;
+$searchbox_height: 35px;
+$filter-padding: 3px; //Padding around filter box
+$filter-height: $searchbox_height + 2 * $filter-padding;
+$searchbox_width: 302px;
+
 #content-container {
   overflow: hidden;
   position: relative;
   text-align: left;
-  width: 1024px;
+  width: $content_width;
+
+  #filter_container{
+    position: relative;
+    height: $filter-height;
+    z-index: 100;
+    width: $content_width;
+
+    #filter_box{
+      padding: $filter-padding;
+      margin: 0px;
+      height: $filter-height;
+      width: $content_width;
+      overflow: hidden;
+
+      div{
+        float: left;
+      }
+
+      #search {
+        position: absolute;
+        right: 0px;
+        margin:0px;
+
+        .searchbox {
+          background: image-url('site/search.gif') top left no-repeat;
+          height:$searchbox_height;
+          padding-left:15px;
+          //padding-bottom:5px;
+          width:$searchbox_width;
+          text-align:left;
+          color:#888;
+          font-size:16px;	
+        }
+
+        .search_button{
+          position: absolute;
+          top: $searchbox_height / 2 - 8px;;
+          right: 10px;
+        }
+      }
+    }
+
+    #filter_box.fixed{
+      position: fixed;
+      top: 0px;
+      //background:#e1eef6;
+      //background-color: rgba(225, 238, 246, 0.95);
+      background-color: rgb(121, 164, 209);
+      background-color: rgba(121, 164, 209, 0.95);
+      /* For IE 5.5 - 7*/
+      //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+      /* For IE 8*/
+      //-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+      @include single-box-shadow;
+
+      //box-shadow: 0px 0px 7px #999;
+      //-moz-box-shadow: 0px 0px 7px #999;
+      //-webkit-box-shadow: 0px 0px 7px #999;
+    }
+  }
+
+  #items_container {
+    position: relative;
+
+    #items {
+      background: none repeat scroll 0 0 #fff;
+      border-radius:8px 0 0 8px;
+      -moz-border-radius:8px 0 0 8px;
+      -webkit-border-top-left-radius:8px;
+      -webkit-border-bottom-left-radius:8px;
+      box-shadow: 0px 0px 7px #999;
+      -moz-box-shadow: 0px 0px 7px #999;
+      -webkit-box-shadow: 0px 0px 7px #999;
+      height: 100%;
+      min-height: 200px;
+      position: relative;
+      width: 653px;
+      z-index:50;
+      margin:5px 0px 5px 5px;
+      color:#2158b0;
+
+      .items{
+        position: relative;
+      }
+    }
+
+    #details.fixed{
+      position: fixed;
+      top: $filter-height;
+
+    }
+
+    #details {
+      position: absolute;
+      background:#e1eef6  image-url('site/bg-pullout.jpg') repeat-x;
+      left: 653px;
+      top: 0px;
+      margin:0px 0px 5px 0;
+      border-radius:0 8px 8px 0;
+      -moz-border-radius:0 8px 8px 0;
+      -webkit-border-top-right-radius:8px;
+      -webkit-border-bottom-right-radius:8px;
+      box-shadow: 0px 0px 7px #999;
+      -moz-box-shadow: 0px 0px 7px #999;
+      -webkit-box-shadow: 0px 0px 7px #999;
+      width: 368px;
+      min-height:300px;
+      overflow: visible;
+      padding:0 0 10px 0;
+      white-space: wrap;
+      
+
+      #general_details {
+        //background:#e1eef6  image-url('site/bg-pullout.jpg') repeat-x;
+        //background:#e1eef6 ;
+        //margin-top: 6px;
+        //margin-right: 6px;
+        z-index: 48;
+      }
+      #item_details {
+        //background:#fff  image-url('site/bg-pullout2.jpg') repeat-x;
+        display: none;
+        z-index: 49;
+      }
+    }
+  }
 }
 
 #content-container2 {
@@ -420,30 +544,6 @@ vertical-align:middle;}
   margin-left: 40px;
 }
 
-/* ------------------- chart */
-//.content-chart {
-#items {
-  background: none repeat scroll 0 0 #fff;
-  /* Do rounding (native in Opera, Firefox and Safari) */
-  border-radius:8px 0 0 8px;
-  -moz-border-radius:8px 0 0 8px;
-  -webkit-border-top-left-radius:8px;
-  -webkit-border-bottom-left-radius:8px;
-  /* shadow */
-  box-shadow: 0px 0px 7px #999;
-  -moz-box-shadow: 0px 0px 7px #999;
-  -webkit-box-shadow: 0px 0px 7px #999;
-  display: inline-block;
-  float: left;
-  height: 100%;
-  min-height: 200px;
-  position: relative;
-  width: 653px;
-  //width: 660px;
-  z-index:50;
-  margin:5px 0 5px 5px;
-  color:#2158b0;
-}
 .chartblock {
   margin-left:17px;
   width:636px;
@@ -488,33 +588,16 @@ vertical-align:middle;}
 .redlg-bot {background:#cb2c1e  image-url('site/thumbdown-white.png') bottom no-repeat;}
 .votenumber {font-size:16px;font-weight:bold;padding-bottom:6px;}
 
+#record_counter{
+  position: fixed;
+  bottom: 15px;
+  right: 40px;
+  color: #777;
+}
+
+
+
 /* ----------------- pullout */
-.pullout, .pullout2, #details {
-  margin:5px 0 5px 0;
-  /* Do rounding (native in Opera, Firefox and Safari) */
-  border-radius:0 8px 8px 0;
-  -moz-border-radius:0 8px 8px 0;
-  -webkit-border-top-right-radius:8px;
-  -webkit-border-bottom-right-radius:8px;
-  /* shadow */
-  box-shadow: 0px 0px 7px #999;
-  -moz-box-shadow: 0px 0px 7px #999;
-  -webkit-box-shadow: 0px 0px 7px #999;
-  //min-width: 257px;
-  //max-width:357px;
-  width: 357px;
-  min-height:300px;
-  overflow: hidden;
-  padding:0 0 10px 0;
-  position:relative;
-}
-.pullout {
-  background:#e1eef6  image-url('site/bg-pullout.jpg') repeat-x;
-  z-index: 48;
-}
-.pullout2, #details {
-  background:#fff  image-url('site/bg-pullout2.jpg') repeat-x;
-}
 .pullout-item, .chart-item {
   border-bottom: 1px dashed #85bada;
   clear: both;
@@ -623,37 +706,25 @@ a.vote:hover{
   background-color:none;
 }
 
-#details{
-  position: absolute;
-  display: none;
-  top: 0px;
-  left: 660px;
-  z-index: 49;
-}
 
 #bar-graph-wrap{
-  
-  height:230px;
-  float: right;
+  //height:230px;
 }
 
 
 #bar-graph{
-  float:right;
 }
 
-.maps-container{
-  padding-top:10px;
-  width:370px;
-  float:right;
+#maps-container{
+  width:350px;
   background: image-url('site/map-rounded-back.gif') no-repeat top right;
 }
 
 
 #map{
-  border: solid 0px red;
-  float:right;
+  //border: solid 0px red;
+  //float:right;
   margin-top:10px;
-  margin-right:10px;
+  //margin-right:10px;
   margin-bottom:0px;
 }

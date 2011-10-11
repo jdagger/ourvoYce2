@@ -26,8 +26,10 @@ class ItemsController < ApplicationController
 
   def keyword
     keyword = params[:keyword]
+    filter = params[:filter]
+    sort = params[:sort]
 
-    load_items(keyword)
+    load_items(keyword, filter, sort)
 
     respond_to do |format|
       format.json { render :json => {:item_ids => @item_ids, :items => @items}.to_json}
@@ -59,23 +61,25 @@ class ItemsController < ApplicationController
 
     @zips = []
     max = 1
-    state_zip_stat["zips"].each do |key, value|
-      tu = value["vote"]["thumbs_up_count"] || 0
-      td = value["vote"]["thumbs_down_count"] || 0
-      n = value["vote"]["neutral_count"] || 0
+    unless state_zip_stat.nil?
+      state_zip_stat["zips"].each do |key, value|
+        tu = value["vote"]["thumbs_up_count"] || 0
+        td = value["vote"]["thumbs_down_count"] || 0
+        n = value["vote"]["neutral_count"] || 0
 
-      @zips << {
-        name: key,
-        scale: 1.00,
-        lat: value['latitude'],
-        long: value['longitude'],
-        color: votes_to_color(tu, td, n),
-        thumbs_up_count: tu,
-        thumbs_down_count: td,
-        neutral_count: n,
-        total_count: tu + td + n
-      }
-      max = [max, tu + td + n].max
+        @zips << {
+          name: key,
+          scale: 1.00,
+          lat: value['latitude'],
+          long: value['longitude'],
+          color: votes_to_color(tu, td, n),
+          thumbs_up_count: tu,
+          thumbs_down_count: td,
+          neutral_count: n,
+          total_count: tu + td + n
+        }
+        max = [max, tu + td + n].max
+      end
     end
 
     @zips.each do |zip|

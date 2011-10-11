@@ -1,8 +1,7 @@
 class RelatedTag
-  include MongoMapper::EmbeddedDocument
+  include Mongoid::Document
 
-  key :key_id, ObjectId
-  key :friendly_name, String
-  key :path, String
-  embedd_in :item, inverse_of: related_tags
+  field :path, type: String
+  field :friendly_name, type: String
+  embedded_in :item
 end

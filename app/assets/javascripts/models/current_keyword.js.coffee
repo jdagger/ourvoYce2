@@ -1,1 +1,0 @@
-@CurrentKeyword = Backbone.Model.extend({})

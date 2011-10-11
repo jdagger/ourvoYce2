@@ -13,10 +13,15 @@ File.open("#{Rails.root}/db/keywords.txt", "r") do |infile|
     vals = line.split('::').collect { |val| val.strip }
     friendly_name = vals[2]
     path = vals[3]
+    #keywords << {
+      #friendly_name: 
+      #friendly_name, 
+      #path: path
+    #}
     keywords << {
-      friendly_name: 
-      friendly_name, 
-      path: path}
+      friendly_name: friendly_name, 
+      "_id" => path
+    }
   end
 end
 
@@ -46,7 +51,11 @@ File.open("#{Rails.root}/db/media.txt", "r") do |infile|
       logo: logo, 
       website: website, 
       wikipedia: wikipedia, 
-      type: 'Media'
+      type: 'Media',
+      related_tags: [{
+        path: 'media',
+        friendly_name: 'Media'
+      }]
     }
 
   end
@@ -91,7 +100,11 @@ File.open("#{Rails.root}/db/senate.txt", "r") do |infile|
       logo: logo, 
       website: website, 
       wikipedia: wikipedia, 
-      type: 'Senate'
+      type: 'Senate',
+      related_tags: [{
+        path: 'senate',
+        friendly_name: 'Senate'
+      }]
     }
 
   end
@@ -135,7 +148,11 @@ File.open("#{Rails.root}/db/house.txt", "r") do |infile|
       logo: logo, 
       website: website, 
       wikipedia: wikipedia, 
-      type: 'House'
+      type: 'House',
+      related_tags: [{
+        path: 'house',
+        friendly_name: 'House'
+      }]
     }
   end
 end
@@ -172,7 +189,11 @@ File.open("#{Rails.root}/db/executive.txt", "r") do |infile|
       logo: logo, 
       website: website, 
       wikipedia: wikipedia, 
-      type: 'Executive'
+      type: 'Executive',
+      related_tags: [{
+        path: 'executive',
+        friendly_name: 'Executive'
+      }]
     }
   end
 end
@@ -207,7 +228,11 @@ File.open("#{Rails.root}/db/fortune_500.txt", "r") do |infile|
       logo: logo, 
       website: website, 
       wikipedia: wikipedia, 
-      type: 'Fortune500'
+      type: 'Fortune500',
+      related_tags: [{
+        path: 'fortune500',
+        friendly_name: 'Fortune 500'
+      }]
     }
   end
 end
@@ -241,7 +266,11 @@ File.open("#{Rails.root}/db/agencies.txt", "r") do |infile|
       logo: logo, 
       website: website, 
       wikipedia: wikipedia, 
-      type: 'Agency'
+      type: 'Agency',
+      related_tags: [{
+        path: 'agency',
+        friendly_name: 'Agency'
+      }]
     }
   end
 end
@@ -301,7 +330,9 @@ User.create(
 )
 
 users = []
-(1..500).each do |i|
+#users_to_create = 100
+users_to_create = 92754
+(1..users_to_create).each do |i|
   random_zip = zips.sample
   email = Forgery(:internet).email_address
   password = Forgery(:basic).password

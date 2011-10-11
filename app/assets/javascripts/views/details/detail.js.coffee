@@ -1,6 +1,6 @@
 @DetailView = Backbone.View.extend
   tag: 'div'
-  el: '#details'
+  el: '#item_details'
   template: 'details/detail'
 
   initialize: () ->
@@ -21,9 +21,9 @@
 
     vote = this.model.get('vote')
     if vote != undefined
-      thumbs_up_count = vote['thumbs_up_count']
-      neutral_count = vote['neutral_count']
-      thumbs_down_count = vote['thumbs_down_count']
+      thumbs_up_count = vote.thumbs_up_count
+      neutral_count = vote.neutral_count
+      thumbs_down_count = vote.thumbs_down_count
 
     max_height = Math.max(thumbs_up_count, thumbs_down_count, neutral_count, 1)
 
@@ -46,37 +46,41 @@
     this.setPosition()
     if ! $(this.el).is(':visible')
       $(this.el).show('slide', {direction: 'left'}, 500, () ->
-        $('#pullout').hide()
+        #$('#general_details').hide()
       ) 
     return this
 
 
   hide: () ->
     if $(this.el).is(':visible')
-      $('#pullout').show()
+      #$('#general_details').show()
       $(this.el).hide('slide', {direction: 'left'}, 500)
     return this
 
 
   setPosition: () ->
     items = $("#items")
+    filter = $("#filter_box")
+    details = $("#details")
     content_top = items.offset().top
     window_top = $(window).scrollTop()
     window_left = $(window).scrollLeft()
+    filter_height = parseInt(filter.css("height").replace(/px/, ''))
+    filter_bottom = filter.offset().top + filter_height
 
-    if(window_top > content_top)
-      $("#details").css("position", "fixed")
-      top_margin = $("#details").css('margin-top')
-      $("#details").css("top", "-#{top_margin}")
-      console.log(items.offset().left)
-      console.log(window_left)
-      console.log(items.outerWidth())
+    #if(window_top > content_top)
+    if(filter_bottom > content_top)
+      details.addClass("fixed")
       left = items.offset().left + items.outerWidth() - window_left
-      $("#details").css("left", "#{left}px")
+      #details.css("position", "fixed")
+      #margin_top = parseInt($("#items").css('margin-top').replace(/px/, ''))
+      #details.css("top", "#{filter_height + margin_top}px")
+      details.css("left", "#{left}px")
     else
-      $("#details").css("position", "absolute")
-      $("#details").css("top", "0px")
-      $("#details").css("left", "")
+      #details.css("position", "absolute")
+      #details.css("top", "0px")
+      details.css("left", "")
+      details.removeClass("fixed")
 
 
 

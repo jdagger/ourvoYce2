@@ -2,9 +2,9 @@ Ourvoyce::Application.routes.draw do
   match "/login" => 'sessions#login', :as => :login
   match "/logout" => 'sessions#logout', :as => :logout
 
-  match '/k/:keyword_path' => 'defaults#keyword', :as => :keyword
+  match '/k/:keyword_path(/:filter(/:sort))' => 'defaults#keyword', :as => :keyword, :defaults => {:sort => 'default', :filter => 'all'}
 
-  match '/utilities/generate_random_votes' => 'utilities#generate_random_votes', :as => :generate_random_votes
+  match '/utilities/generate_random_votes(/:count)' => 'utilities#generate_random_votes', :as => :generate_random_votes, :defaults => {:count => 100}
 
   match '/items/keyword/:keyword' => 'items#keyword'
   match '/items/fetch' => 'items#fetch'
