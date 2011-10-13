@@ -4,32 +4,39 @@
   template: 'filters/filter'
 
   events: 
-    "change #sort > select": "update_filter"
-    "change #sort_direction > select": "update_filter"
-    "change #filter > select": "update_filter"
+    "change #sort": "update_sort"
+    "change #sort_direction": "update_sort"
+    "change #filter": "update_filter"
+
 
 
   initialize: () ->
     _.bindAll(this, 'render', 'scroll')
-    #this.collection.bind('all', this.render)
     $(window).scroll(this.scroll)
     return
 
+  update_sort: () ->
+    keyword = OurvoyceApp.items.keyword
+    filter = OurvoyceApp.items.filter
+
+    sort_name = $(this.el).find("#sort").val()
+    sort_direction = $(this.el).find("#sort_direction").val()
+    KeywordNavigate(keyword, filter, sort_name, sort_direction)
+
+    return
+
   update_filter: () ->
-    console.log "UPDATE_FILTER: " + window.OurvoyceApp.current_keyword.get('path');
-    OurvoyceApp.router.navigate('k/' + this.model.get('_id'), true)
+    keyword = OurvoyceApp.items.keyword
+    sort_name = OurvoyceApp.items.sort_name
+    sort_direction = OurvoyceApp.items.sort_direction
+    filter = $(this.el).find("#filter").val()
+
+    KeywordNavigate(keyword, filter, sort_name, sort_direction)
+
     return
 
   render: () ->
-    #records_loaded = this.collection.length
-    #total_records = OurvoyceApp.item_ids.length
-
-    #if records_loaded >= total_records
-    #$(this.el).html("all records loaded")
-    #else
-    #$(this.el).html("(#{records_loaded} / #{total_records})")
-    #$(this.el).html($.tmpl(this.template, this.model.toJSON()))
-    $(this.el).html($.tmpl(this.template))
+    $(this.el).html($.tmpl(this.template, {filter: OurvoyceApp.items.filter, sort_name: OurvoyceApp.items.sort_name, sort_direction: OurvoyceApp.items.sort_direction}))
     return this
 
   scroll: () ->
@@ -37,10 +44,6 @@
     content_top = $("#content_container").offset().top
     if(window_top > content_top)
       $("#filter_box").addClass("fixed")
-      #$(this.el).css("position", "fixed")
-      #$(this.el).css("top", "0px")
     else
       $("#filter_box").removeClass("fixed")
-      #$(this.el).css("position", "relative")
-      #$(this.el).css("top", "")
     return

@@ -1,7 +1,8 @@
 = content_for :javascript do
   javascript:
     $(function(){
-      window.OurvoyceApp.init('#{@keyword_friendly_name}', '#{@keyword_path}', #{@keywords.to_json.html_safe}, #{@items.to_json.html_safe}, #{@item_ids.to_json.html_safe});
+      window.OurvoyceApp.init(#{@user_vote_count}, '#{@keyword_friendly_name}', '#{@keyword_path}',
+      '#{@filter}', '#{@sort_name}', '#{@sort_direction}', #{@keywords.to_json.html_safe}, #{@items.to_json.html_safe}, #{@item_ids.to_json.html_safe});
     });
 
 #content_container
@@ -24,7 +25,10 @@
                 | Show Favorites (18)
             h3
               ' You have voted on 
-              strong.bluebold= "215 items"
+              strong.bluebold
+                span#user_vote_count
+                  | 0
+                | &nbsp;items
             h3
               ' Member since
               strong.bluebold= "8/4/2011"

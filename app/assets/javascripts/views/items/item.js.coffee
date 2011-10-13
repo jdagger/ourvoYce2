@@ -40,12 +40,12 @@
         thumbs_up_img.attr('src', '/assets/site/thumbup-gray.gif')
         neutral_img.attr('src', '/assets/site/thumbneutral-gray.gif')
 
-    thumbs_up_count = this.model.thumbs_up_count()
-    thumbs_down_count = this.model.thumbs_down_count()
-    neutral_count = this.model.neutral_count()
+    thumbs_up_vote_count = this.model.thumbs_up_vote_count()
+    thumbs_down_vote_count = this.model.thumbs_down_vote_count()
+    neutral_vote_count = this.model.neutral_vote_count()
 
-    max_count = Math.max(thumbs_up_count, thumbs_down_count, neutral_count)
-    console.log("Invalid vote count detected(ItemView)") if Math.min(thumbs_up_count, thumbs_down_count, neutral_count)
+    max_count = Math.max(thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count)
+    console.log("Invalid vote count detected(ItemView)") if Math.min(thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count) < 0
 
     #console.log("Max count: #{max_count}")
 
@@ -56,26 +56,25 @@
     thumbs_down_bar = $(this.el).find('.mini-vote-chart .thumbs-down div')
     neutral_bar = $(this.el).find('.mini-vote-chart .neutral div')
 
-    thumbs_up_bar.css('height', Math.ceil(container_height * thumbs_up_count / max_count) + "px")
-    thumbs_down_bar.css('height', Math.ceil(container_height * thumbs_down_count / max_count) + "px")
-    neutral_bar.css('height', Math.ceil(container_height * neutral_count / max_count) + "px")
+    thumbs_up_bar.css('height', Math.ceil(container_height * thumbs_up_vote_count / max_count) + "px")
+    thumbs_down_bar.css('height', Math.ceil(container_height * thumbs_down_vote_count / max_count) + "px")
+    neutral_bar.css('height', Math.ceil(container_height * neutral_vote_count / max_count) + "px")
     return this
 
 
   toggle_details: (e) ->
     e.preventDefault()
-    OurvoyceApp.details.load(this.model.get('_id'))
+    OurvoyceApp.details.load(this.model.get('id'))
     return
 
 
   selected_details_changed: (details) ->
     current_id = details.get('current_details')
-    if this.model.get('_id') == current_id
+    if this.model.get('id') == current_id
       $(this.el).find('.toggle-details').addClass('bluebg')
     else
       $(this.el).find('.toggle-details').removeClass('bluebg')
     return
-
 
   thumbs_up_vote: (e) ->
     e.preventDefault()

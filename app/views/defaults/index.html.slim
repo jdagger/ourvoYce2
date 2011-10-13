@@ -1,7 +1,7 @@
 h1 Index
 - @keywords.each do |keyword|
   h2= keyword.friendly_name
-  = keyword._id
+  = keyword.path
   br
   - unless keyword.item_ids.nil?
     - keyword.item_ids.each do |item_id|

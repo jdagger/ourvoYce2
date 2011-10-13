@@ -1,10 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 
-gem 'mongo'
-gem 'mongoid'
-gem 'bson_ext'
+#gem 'mongo'
+#gem 'mongoid'
+#gem 'bson_ext'
 
 gem 'forgery'
 
@@ -14,6 +14,8 @@ gem 'jquery-tmpl-rails'
 gem 'pg'
 
 gem 'simple_form'
+
+gem 'bcrypt-ruby'
 
 
 gem 'compass','0.12.alpha.0'

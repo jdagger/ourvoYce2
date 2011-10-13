@@ -15,18 +15,21 @@
 
     window.createSWFObjects()
 
-    thumbs_up_count = 0
-    neutral_count = 0
-    thumbs_down_count = 0
+    thumbs_up_vote_count = 0
+    neutral_vote_count = 0
+    thumbs_down_vote_count = 0
 
-    vote = this.model.get('vote')
-    if vote != undefined
-      thumbs_up_count = vote.thumbs_up_count
-      neutral_count = vote.neutral_count
-      thumbs_down_count = vote.thumbs_down_count
+    #vote = this.model.get('vote')
+    #if vote != undefined
+      #thumbs_up_vote_count = vote.thumbs_up_vote_count
+      #neutral_vote_count = vote.neutral_vote_count
+      #thumbs_down_vote_count = vote.thumbs_down_vote_count
 
-    max_height = Math.max(thumbs_up_count, thumbs_down_count, neutral_count, 1)
+    thumbs_up_vote_count = this.model.get('thumbs_up_vote_count')
+    neutral_vote_count = this.model.get('neutral_vote_count')
+    thumbs_down_vote_count = this.model.get('thumbs_down_vote_count')
 
+    max_height = Math.max(thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count, 1)
 
     #TODO: Determine actual height by examining html
     container_height = 50
@@ -35,13 +38,13 @@
     neutral_element = $(this.el).find('.vote-chart .orange-height')
     thumbs_down_element = $(this.el).find('.vote-chart .red-height')
 
-    $(this.el).find('.thumbs-up .votenumber').html(thumbs_up_count)
-    $(this.el).find('.neutral .votenumber').html(neutral_count)
-    $(this.el).find('.thumbs-down .votenumber').html(thumbs_down_count)
+    $(this.el).find('.thumbs-up .votenumber').html(thumbs_up_vote_count)
+    $(this.el).find('.neutral .votenumber').html(neutral_vote_count)
+    $(this.el).find('.thumbs-down .votenumber').html(thumbs_down_vote_count)
 
-    thumbs_up_element.css('height', Math.ceil(container_height * thumbs_up_count / max_height) + "px")
-    neutral_element.css('height', Math.ceil(container_height * neutral_count / max_height) + "px")
-    thumbs_down_element.css('height', Math.ceil(container_height * thumbs_down_count / max_height) + "px")
+    thumbs_up_element.css('height', Math.ceil(container_height * thumbs_up_vote_count / max_height) + "px")
+    neutral_element.css('height', Math.ceil(container_height * neutral_vote_count / max_height) + "px")
+    thumbs_down_element.css('height', Math.ceil(container_height * thumbs_down_vote_count / max_height) + "px")
 
     this.setPosition()
     if ! $(this.el).is(':visible')

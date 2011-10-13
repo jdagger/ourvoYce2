@@ -13,7 +13,7 @@
 
   click: (e) ->
     e.preventDefault()
-    KeywordNavigate(this.model.get('_id'))
+    KeywordNavigate(this.model.get('path'))
     return
 
   render: () ->

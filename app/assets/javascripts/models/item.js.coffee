@@ -1,7 +1,7 @@
 @Item = Backbone.Model.extend
   initialize: (attributes) ->
-    this.set({vote: new Vote(attributes.vote)})
-    console.log attributes.vote
+    _.extend(this, Backbone.Events)
+    #this.set({vote: new Vote(attributes)})
     return
 
   thumbs_up: () ->
@@ -17,30 +17,34 @@
     return
 
 
-  thumbs_down_count: () ->
-    return this.get('vote').get('thumbs_down_count')
+  thumbs_down_vote_count: () ->
+    return this.get('thumbs_down_vote_count')
 
 
-  neutral_count: () ->
-    return this.get('vote').get('neutral_count')
+  neutral_vote_count: () ->
+    return this.get('neutral_vote_count')
 
 
-  thumbs_up_count: () ->
-    return this.get('vote').get('thumbs_up_count')
+  thumbs_up_vote_count: () ->
+    return this.get('thumbs_up_vote_count')
 
-  set_thumbs_up_count: (val) ->
-    this.get('vote').set({thumbs_up_count: val})
+  set_thumbs_up_vote_count: (val) ->
+    this.set({thumbs_up_vote_count: val})
 
-  set_thumbs_down_count: (val) ->
-    this.get('vote').set({thumbs_down_count: val})
+  set_thumbs_down_vote_count: (val) ->
+    this.set({thumbs_down_vote_count: val})
 
-  set_neutral_count: (val) ->
-    this.get('vote').set({neutral_count: val})
+  set_neutral_vote_count: (val) ->
+    this.set({neutral_vote_count: val})
 
   
   change_vote: (new_vote) ->
-    url = "/items/#{this.get('_id')}/vote"
+    url = "/items/#{this.get('id')}/vote"
     previous_vote = this.get('user_vote')
+
+    if ! previous_vote?
+      this.trigger('new_vote')
+
     return if previous_vote == new_vote
 
     this.save({new_vote: new_vote}, {url: url})
@@ -53,18 +57,18 @@
 
 
     if previous_vote == 1
-      this.set_thumbs_up_count(this.thumbs_up_count() - 1)
+      this.set_thumbs_up_vote_count(this.thumbs_up_vote_count() - 1)
     else if previous_vote == 0
-      this.set_neutral_count(this.neutral_count() - 1)
+      this.set_neutral_vote_count(this.neutral_vote_count() - 1)
     else if previous_vote == -1
-      this.set_thumbs_down_count(this.thumbs_down_count() - 1)
+      this.set_thumbs_down_vote_count(this.thumbs_down_vote_count() - 1)
 
     if previous_vote == 1
-      this.set_thumbs_up_count(this.thumbs_up_count() + 1)
+      this.set_thumbs_up_vote_count(this.thumbs_up_vote_count() + 1)
     else if previous_vote == 0
-      this.set_neutral_count(this.neutral_count() + 1)
+      this.set_neutral_vote_count(this.neutral_vote_count() + 1)
     else if previous_vote == -1
-      this.set_thumbs_down_count(this.thumbs_down_count() + 1)
+      this.set_thumbs_down_vote_count(this.thumbs_down_vote_count() + 1)
 
     return
 

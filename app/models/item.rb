@@ -1,17 +1,11 @@
-class Item
-  include Mongoid::Document
+class Item < ActiveRecord::Base
+  has_many :keyword_items, :dependent => :destroy
+  has_many :keywords, :through => :keyword_items, :uniq => true
 
-  field :name, type: String
-  field :type, type: String
-  field :description, type: String
-  field :logo, type: String
-  field :hot_topic, type: Boolean
-  field :wikipedia, type: String
-  field :website, type: String
-  embeds_many :related_tags
-  embeds_one :vote
+  has_many :user_votes, :dependent => :destroy
+  has_many :users, :through => :user_votes, :uniq => true
 
   def self.get_by_ids(ids)
-    find(ids)
+    Item.select('id, name, description, logo, wikipedia, website, thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count').includes(:keyword_items => :keyword).where(:id => ids)
   end 
 end
