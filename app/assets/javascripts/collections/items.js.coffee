@@ -5,14 +5,17 @@
   initialize: (collection, params) ->
     this.tag = params.tag_path
     this.friendly_name = params.tag_friendly_name
+    this.base_url = params.base_url
     this.filter = params.filter
     this.sort_name = params.sort_name
     this.sort_direction = params.sort_direction
-    this.base_url = params.base_url
 
   fetch_hot_topics: (filter, sort_name, sort_direction) ->
     url = "/hot_topics"
     $("#record_counter").html("retrieving records...")
+    this.base_url = 'hot_topics'
+    this.tag = ''
+    this.friendly_name = 'Hot Topics'
     this.parse_parameters filter, sort_name, sort_direction
     this.fetch({url: url, data: {filter: this.filter, sort: this.sort_details}});
     return
@@ -20,12 +23,16 @@
   fetch_favorites: (filter, sort_name, sort_direction) ->
     url = "/favorites"
     $("#record_counter").html("retrieving records...")
+    this.base_url = 'favorites'
+    this.tag = ''
+    this.friendly_name = 'Favorites'
     this.parse_parameters filter, sort_name, sort_direction
     this.fetch({url: url, data: {filter: this.filter, sort: this.sort_details}});
     return
 
   fetch_items: (tag, filter, sort_name, sort_direction) ->
     $("#record_counter").html("retrieving records...")
+    this.base_url = 'tag'
     this.tag = tag
     this.parse_parameters filter, sort_name, sort_direction
     url = "/items/tag/#{this.tag}"

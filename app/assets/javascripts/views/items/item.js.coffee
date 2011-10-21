@@ -83,8 +83,6 @@
     max_count = Math.max(thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count)
     console.log("Invalid vote count detected(ItemView)") if Math.min(thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count) < 0
 
-    #console.log("Max count: #{max_count}")
-
     # -3 at end is for the cap height at the top of the bars
     container_height = $(this.el).find('.mini-vote-chart').css('height').replace(/px/, "") - 3
 

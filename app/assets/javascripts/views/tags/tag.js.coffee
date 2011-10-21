@@ -13,7 +13,6 @@
 
   click: (e) ->
     e.preventDefault()
-    console.log 'navigating tag clicked'
     Navigate("tag", this.model.get('path'))
     return
 

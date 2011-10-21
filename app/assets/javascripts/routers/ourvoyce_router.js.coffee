@@ -22,6 +22,5 @@
     return
 
   tag: (tag, filter, sort_name, sort_direction) ->
-    console.log 'fetch tag'
     OurvoyceApp.items.fetch_items(tag, filter, sort_name, sort_direction)
     return
