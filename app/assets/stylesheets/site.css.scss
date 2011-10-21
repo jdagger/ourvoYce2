@@ -145,9 +145,11 @@ a { color: #d81a1e;
   padding-left: 2px;
   padding-right: 2px;
 }
-a:hover {
-  color:#fff;
-  background-color:#d81a1e;
+.tags {
+  a:hover {
+    color:#fff;
+    background-color:#d81a1e;
+  }
 }
 
 .header-right ul {
@@ -443,7 +445,7 @@ $searchbox_width: 302px;
       -moz-box-shadow: 0px 0px 7px #999;
       -webkit-box-shadow: 0px 0px 7px #999;
       height: 100%;
-      min-height: 200px;
+      min-height: 800px;
       position: relative;
       width: 653px;
       z-index:50;
@@ -453,6 +455,44 @@ $searchbox_width: 302px;
       .items{
         position: relative;
       }
+
+      .item{
+        position: relative;
+        .chart-item{
+          .chartblock {
+            margin-left:17px;
+            width:636px;
+            overflow: hidden;
+
+            .voting{
+              float: left;
+              width:110px;
+              vertical-align:top;
+
+              .tagsimg{
+                margin:11px 0 9px 0;
+              }
+            }
+          }
+        }
+
+        .favorite
+        {
+          a
+          {
+            display: block;
+            width: 19px;
+            height: 19px;
+            background: image-url('site/star_gray.gif') no-repeat;
+          }
+
+          a.selected
+          {
+            background: image-url('site/star.gif') no-repeat;
+          }
+        }
+      }
+
     }
 
     #details.fixed{
@@ -479,7 +519,7 @@ $searchbox_width: 302px;
       overflow: visible;
       padding:0 0 10px 0;
       white-space: wrap;
-      
+
 
       #general_details {
         //background:#e1eef6  image-url('site/bg-pullout.jpg') repeat-x;
@@ -544,15 +584,9 @@ $searchbox_width: 302px;
   margin-left: 40px;
 }
 
-.chartblock {
-  margin-left:17px;
-  width:636px;
-}
 /* col1 */
-.voting {width:110px;vertical-align:top;}
 /* col2 */
 .tags {font-size:11px;padding-bottom:8px;}
-.tagsimg {margin:11px 0 9px 0;}
 .storelogo {width:220px;vertical-align:top;padding-top:11px;}
 /* col3 */
 .description {width:191px;font-size:13px;vertical-align:middle;padding-top:11px;}
@@ -616,8 +650,8 @@ $searchbox_width: 302px;
 .pullout-col, .pullout-col2 {width:155px;float:left;}
 .pullout-col {margin-right:5px;}
 
-#popular-keywords{
-  .keyword{
+#popular-tags{
+  .tag{
     display: block;
     width: 150px;
     margin-right: 5px;

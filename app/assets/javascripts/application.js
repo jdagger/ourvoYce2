@@ -18,10 +18,12 @@
 //
 //= require ourvoyce_app
 //
+//
 //= require swfobject
 //= require map_graph
 //
 //= require_tree ./models
+//= require ./collections/tags
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers

@@ -1,6 +1,19 @@
 @Item = Backbone.Model.extend
   initialize: (attributes) ->
     _.extend(this, Backbone.Events)
+    _(this).bindAll('change_vote',
+      'thumbs_up',
+      'thumbs_down',
+      'neutral',
+      'thumbs_down_vote_count',
+      'thumbs_up_vote_count',
+      'neutral_vote_count',
+      'set_thumbs_down_vote_count',
+      'set_thumbs_up_vote_count',
+      'set_neutral_vote_count',
+      'update_vote_counts',
+      'toggle_favorite'
+    )
     #this.set({vote: new Vote(attributes)})
     return
 
@@ -16,6 +29,12 @@
     this.change_vote(0)
     return
 
+  toggle_favorite: () ->
+    url = "/items/#{this.get('id')}/toggle_favorite"
+    this.save({}, {url: url, success: (model, response) =>
+      this.set({favorite: response['favorite']})
+    })
+    return
 
   thumbs_down_vote_count: () ->
     return this.get('thumbs_down_vote_count')
@@ -45,7 +64,12 @@
     if ! previous_vote?
       this.trigger('new_vote')
 
-    return if previous_vote == new_vote
+    if previous_vote == new_vote
+      return
+    else
+      this.trigger('vote_changed')
+
+
 
     this.save({new_vote: new_vote}, {url: url})
     this.set({user_vote: new_vote})

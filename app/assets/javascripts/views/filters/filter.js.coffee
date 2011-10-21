@@ -16,22 +16,24 @@
     return
 
   update_sort: () ->
-    keyword = OurvoyceApp.items.keyword
+    tag = OurvoyceApp.items.tag
     filter = OurvoyceApp.items.filter
+    base_url = OurvoyceApp.items.base_url
 
     sort_name = $(this.el).find("#sort").val()
     sort_direction = $(this.el).find("#sort_direction").val()
-    KeywordNavigate(keyword, filter, sort_name, sort_direction)
+    Navigate(base_url, tag, filter, sort_name, sort_direction)
 
     return
 
   update_filter: () ->
-    keyword = OurvoyceApp.items.keyword
+    tag = OurvoyceApp.items.tag
     sort_name = OurvoyceApp.items.sort_name
     sort_direction = OurvoyceApp.items.sort_direction
+    base_url = OurvoyceApp.items.base_url
     filter = $(this.el).find("#filter").val()
 
-    KeywordNavigate(keyword, filter, sort_name, sort_direction)
+    Navigate(base_url, tag, filter, sort_name, sort_direction)
 
     return
 

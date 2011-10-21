@@ -1,0 +1,8 @@
+:: 1 :: Fortune 500 :: fortune500 :: true  :: false ::
+:: 3 :: Media       :: media      :: true  :: true  ::
+:: 4 :: Agency      :: agency     :: true  :: true  ::
+:: 5 :: House       :: house      :: true  :: false ::
+:: 6 :: Senate      :: senate     :: true  :: false ::
+:: 7 :: Executive   :: executive  :: true  :: true  ::
+:: 8 :: Sample      :: sample     :: false :: false ::
+:: 9 :: Not Popular :: notpopular :: false :: false ::

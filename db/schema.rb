@@ -11,14 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111012183530) do
+ActiveRecord::Schema.define(:version => 20111013130316) do
+
+  create_table "favorites", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "items", :force => true do |t|
     t.string  "name"
     t.string  "item_type"
     t.string  "description"
     t.string  "logo"
-    t.boolean "hot_topic",              :default => false
     t.string  "wikipedia"
     t.string  "website"
     t.integer "default_order",          :default => 1000
@@ -27,16 +33,6 @@ ActiveRecord::Schema.define(:version => 20111012183530) do
     t.integer "thumbs_down_vote_count", :default => 0
     t.integer "neutral_vote_count",     :default => 0
     t.integer "total_vote_count",       :default => 0
-  end
-
-  create_table "keyword_items", :force => true do |t|
-    t.integer "keyword_id"
-    t.integer "item_id"
-  end
-
-  create_table "keywords", :force => true do |t|
-    t.string "path"
-    t.string "friendly_name"
   end
 
   create_table "stats", :force => true do |t|
@@ -52,6 +48,18 @@ ActiveRecord::Schema.define(:version => 20111012183530) do
   end
 
   add_index "stats", ["item_id", "birth_year", "zip"], :name => "index_stats_on_item_id_and_birth_year_and_zip", :unique => true
+
+  create_table "tag_items", :force => true do |t|
+    t.integer "tag_id"
+    t.integer "item_id"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string  "path"
+    t.string  "friendly_name"
+    t.boolean "popular",       :default => false
+    t.boolean "hot_topic",     :default => false
+  end
 
   create_table "user_votes", :force => true do |t|
     t.integer  "user_id"

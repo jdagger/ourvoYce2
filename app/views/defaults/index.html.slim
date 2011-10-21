@@ -1,9 +1,9 @@
 h1 Index
-- @keywords.each do |keyword|
-  h2= keyword.friendly_name
-  = keyword.path
+- @tags.each do |tag|
+  h2= tag.friendly_name
+  = tag.path
   br
-  - unless keyword.item_ids.nil?
-    - keyword.item_ids.each do |item_id|
+  - unless tag.item_ids.nil?
+    - tag.item_ids.each do |item_id|
       = "#{item_id}, "
     

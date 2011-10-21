@@ -1,6 +1,6 @@
 <div class="chart-item">
-  <div class="chartblock" style="overflow: hidden;">
-    <div class="voting" style="float: left; width: 110px;">
+  <div class="chartblock">
+    <div class="voting">
       <div class="tagsimg">
         <a href="#" class="vote thumbs_up">
           <img src="/assets/site/thumbup.gif" alt="Like" title="Like" width="30" height="30" />
@@ -13,9 +13,13 @@
         </a>
       </div>
       <div class="pins">
-        <img src="/assets/site/star.gif" width="18" height="19" alt="Star" title="Favorite this listing" />
+        <div class="favorite">
+          <a href="#" class="${(favorite === true) ? 'selected' : 'not-selected'}"></a>
+        </div>
+        <!--
         &nbsp;&nbsp;
         <img src="/assets/site/pushpin.gif" width="12" height="19" alt="Pushpin" title="Remember this listing" />
+        -->
       </div>
     </div>
     <div class="middle" style="float: left;">
@@ -27,13 +31,17 @@
         </div>
         <div class="description" style="float: left;">
           ${name}
+          <br />
+          ${description}
         </div>
       </div>
-      <div class="related-tags tags">
+      <div>
         Related Tags: 
-        {{each related_keywords}}
-          <a href="/k/${path}">${friendly_name}</a>
-        {{/each}}
+        <span class='related-tags'>
+          {{each related_tags}}
+            <a href="/tag/${path}">${friendly_name}</a>
+          {{/each}}
+        </span>
       </div>
     </div>
     <div class="toggle-details minichart" style="float: left; overflow: hidden; width: 100px; height: 100%; position: absolute; right: 0px;">

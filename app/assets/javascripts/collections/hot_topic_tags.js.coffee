@@ -1,0 +1,1 @@
+@HotTopicTags = Tags.extend({})

@@ -1,37 +1,154 @@
 module Items
   module LoadItems
-    def load_items(keyword, filter, sort, user_id)
 
+    def load_hot_topic_items(filter, sort, user_id)
       @filter = filter
       @sort_name = ""
       @sort_direction = ""
 
-      keyword_record = Keyword.where("path=?", keyword).first
-      @keyword_friendly_name = keyword_record[:friendly_name]
-      @keyword_path = keyword_record[:path]
+      @tag_friendly_name = 'Hot Topics'
+      @tag_path = ''
 
       _item_ids = nil
 
       case filter.downcase
       when 'voted'
-        _item_ids = Item.joins(:keyword_items => :keyword).joins(:user_votes).where('keywords.path' => keyword, 'user_votes.user_id' => user_id).select('items.id')
+        _item_ids = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.hot_topic' => true, 'user_votes.user_id' => user_id).select('items.id')
       when 'no-vote'
-        voted_items = Item.joins(:keyword_items => :keyword).joins(:user_votes).where('keywords.path' => keyword, 'user_votes.user_id' => user_id).select('items.id')
+        voted_items = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.hot_topic' => true, 'user_votes.user_id' => user_id).select('items.id')
         if voted_items.length > 0
-          _item_ids = Item.joins(:keyword_items => :keyword).where('keywords.path' => keyword).where('items.id not in (?)', voted_items).select('items.id')
+          _item_ids = Item.joins(:tag_items => :tag).where('tags.hot_topic' => true).where('items.id not in (?)', voted_items).select('items.id')
         else
-          _item_ids = Item.joins(:keyword_items => :keyword).where('keywords.path' => keyword).select('items.id')
+          _item_ids = Item.joins(:tag_items => :tag).where('tags.hot_topic' => true).select('items.id')
         end
       else
         @filter = 'all'
-        _item_ids = Item.joins(:keyword_items => :keyword).where('keywords.path' => keyword).select('items.id')
+        _item_ids = Item.joins(:tag_items => :tag).where('tags.hot_topic' => true).select('items.id')
       end
 
       unless sort.blank?
         sort_name, sort_direction = sort.downcase.split(':')
 
         unless sort_name.blank? || sort_direction.blank?
-          sort_direction = sort_direction == 'asc' ? 'asc' : 'desc'
+          sort_direction = sort_direction == 'desc' ? 'desc' : 'asc'
+
+          @sort_name = sort_name
+          @sort_direction = sort_direction
+
+          case sort_name
+          when 'name'
+            _item_ids = _item_ids.order("name #{sort_direction}")
+          when 'popularity'
+            _item_ids = _item_ids.order("total_vote_count #{sort_direction}")
+          else
+            _item_ids = _item_ids.order("default_order #{sort_direction}")
+            @sort_name = 'default_order'
+            @sort_direction = sort_direction
+          end
+        end
+      end
+
+      #@item_ids = _item_ids.collect{|x| x[:_id] }
+      @item_ids = _item_ids.map{ |x| x[:id] }
+
+
+      #Load the first 10 records
+      initial_items = @item_ids[0, 10]
+
+      load_items_by_id(initial_items)
+    end
+
+
+    def load_favorite_items(filter, sort, user_id)
+      @filter = filter
+      @sort_name = ""
+      @sort_direction = ""
+
+      @tag_friendly_name = 'Favorites'
+      @tag_path = ''
+
+      _item_ids = nil
+
+      case filter.downcase
+      when 'voted'
+        _item_ids = Item.joins(:favorites).joins(:user_votes).where('favorites.user_id' => user_id, 'user_votes.user_id' => user_id).select('items.id')
+      when 'no-vote'
+        voted_items = Item.joins(:favorites).joins(:user_votes).where('favorites.user_id' => user_id, 'user_votes.user_id' => user_id).select('items.id')
+        if voted_items.length > 0
+          _item_ids = Item.joins(:favorites).where('favorites.user_id' => user_id).where('items.id not in (?)', voted_items).select('items.id')
+        else
+          _item_ids = Item.joins(:favorites).where('favorites.user_id' => user_id).select('items.id')
+        end
+      else
+        @filter = 'all'
+        _item_ids = Item.joins(:favorites).where('favorites.user_id' => user_id).select('items.id')
+      end
+
+      unless sort.blank?
+        sort_name, sort_direction = sort.downcase.split(':')
+
+        unless sort_name.blank? || sort_direction.blank?
+          sort_direction = sort_direction == 'desc' ? 'desc' : 'asc'
+
+          @sort_name = sort_name
+          @sort_direction = sort_direction
+
+          case sort_name
+          when 'name'
+            _item_ids = _item_ids.order("name #{sort_direction}")
+          when 'popularity'
+            _item_ids = _item_ids.order("total_vote_count #{sort_direction}")
+          else
+            _item_ids = _item_ids.order("favorites.updated_at #{sort_direction}")
+            @sort_name = 'default_order'
+            @sort_direction = sort_direction
+          end
+        end
+      end
+
+      #@item_ids = _item_ids.collect{|x| x[:_id] }
+      @item_ids = _item_ids.map{ |x| x[:id] }
+
+
+      #Load the first 10 records
+      initial_items = @item_ids[0, 10]
+
+      load_items_by_id(initial_items)
+
+    end
+
+    def load_tag_items(tag, filter, sort, user_id)
+
+      @filter = filter
+      @sort_name = ""
+      @sort_direction = ""
+
+      tag_record = Tag.where("path=?", tag).first
+      @tag_friendly_name = tag_record[:friendly_name]
+      @tag_path = tag_record[:path]
+
+      _item_ids = nil
+
+      case filter.downcase
+      when 'voted'
+        _item_ids = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.path' => tag, 'user_votes.user_id' => user_id).select('items.id')
+      when 'no-vote'
+        voted_items = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.path' => tag, 'user_votes.user_id' => user_id).select('items.id')
+        if voted_items.length > 0
+          _item_ids = Item.joins(:tag_items => :tag).where('tags.path' => tag).where('items.id not in (?)', voted_items).select('items.id')
+        else
+          _item_ids = Item.joins(:tag_items => :tag).where('tags.path' => tag).select('items.id')
+        end
+      else
+        @filter = 'all'
+        _item_ids = Item.joins(:tag_items => :tag).where('tags.path' => tag).select('items.id')
+      end
+
+      unless sort.blank?
+        sort_name, sort_direction = sort.downcase.split(':')
+
+        unless sort_name.blank? || sort_direction.blank?
+          sort_direction = sort_direction == 'desc' ? 'desc' : 'asc'
 
           @sort_name = sort_name
           @sort_direction = sort_direction
@@ -64,9 +181,9 @@ module Items
       item_arr = Item.get_by_ids(item_ids).to_a
       
       item_arr.each do |item|
-        item[:related_keywords] = []
-        item.keyword_items.each do |keyword_item|
-          item[:related_keywords] << {friendly_name: keyword_item.keyword.friendly_name, path: keyword_item.keyword.path}
+        item[:related_tags] = []
+        item.tag_items.each do |tag_item|
+          item[:related_tags] << {friendly_name: tag_item.tag.friendly_name, path: tag_item.tag.path}
         end
       end
 
@@ -78,6 +195,7 @@ module Items
 
       if(!current_user.nil? && item_ids.count > 0)
         user_votes = UserVote.where(:user_id => current_user.id, :item_id => item_ids).to_a
+        favorites = Favorite.where(:user_id => current_user.id, :item_id => item_ids).to_a
       end
 
       #unless user_votes.nil? || user_votes.empty?
@@ -85,6 +203,15 @@ module Items
         sorted_arr.each do |item|
           idx = user_votes.find_index{ |x| x[:item_id].to_s == item.id.to_s }
           item[:user_vote] = user_votes[idx][:vote] unless idx.nil?
+        end
+      end
+
+      sorted_arr.each do |item|
+        idx = favorites.find_index{ |x| x[:item_id].to_s == item.id.to_s }
+        if idx.blank? 
+          item[:favorite] = false
+        else
+          item[:favorite] = true
         end
       end
 

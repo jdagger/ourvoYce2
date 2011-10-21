@@ -1,7 +1,7 @@
-@KeywordView = Backbone.View.extend
+@TagView = Backbone.View.extend
   tag: 'li'
-  className: 'keyword'
-  template: 'keywords/keyword'
+  className: 'tag'
+  template: 'tags/tag'
 
   events: 
     'click a': 'click'
@@ -13,7 +13,8 @@
 
   click: (e) ->
     e.preventDefault()
-    KeywordNavigate(this.model.get('path'))
+    console.log 'navigating tag clicked'
+    Navigate("tag", this.model.get('path'))
     return
 
   render: () ->

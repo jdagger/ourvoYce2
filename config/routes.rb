@@ -2,15 +2,18 @@ Ourvoyce::Application.routes.draw do
   match "/login" => 'sessions#login', :as => :login
   match "/logout" => 'sessions#logout', :as => :logout
 
-  match '/k/:keyword_path(/:filter(/:sort))' => 'defaults#keyword', :as => :keyword, :defaults => {:sort => 'default', :filter => 'all'}
+  match '/favorites(/:filter(/:sort))' => 'items#favorites', :as => :favorites
+  match '/hot_topics(/:filter(/:sort))' => 'items#hot_topics', :as => :hot_topics
+  match '/tag/:tag(/:filter(/:sort))' => 'items#tag', :as => :tag, :defaults => {:sort => 'default:all', :filter => 'all'}
 
   match '/utilities/generate_random_votes(/:count)' => 'utilities#generate_random_votes', :as => :generate_random_votes, :defaults => {:count => 100}
 
-  match '/items/keyword/:keyword' => 'items#keyword'
+  match '/items/tag/:tag' => 'items#tag'
   match '/items/fetch' => 'items#fetch'
   resources :items do
     match "/vote" => "items#vote"
     match "/details" => "items#details"
+    match "/toggle_favorite" => "items#toggle_favorite"
     match "/map(/:state)" => "items#map"
     match "/age(/:state)" => "items#age"
   end

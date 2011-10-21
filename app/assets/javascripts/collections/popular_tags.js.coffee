@@ -1,0 +1,1 @@
+@PopularTags = Tags.extend({})

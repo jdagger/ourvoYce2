@@ -1,8 +1,10 @@
 = content_for :javascript do
   javascript:
     $(function(){
-      window.OurvoyceApp.init(#{@user_vote_count}, '#{@keyword_friendly_name}', '#{@keyword_path}',
-      '#{@filter}', '#{@sort_name}', '#{@sort_direction}', #{@keywords.to_json.html_safe}, #{@items.to_json.html_safe}, #{@item_ids.to_json.html_safe});
+      window.OurvoyceApp.init('#{@base_url}', #{@user_vote_count}, '#{@tag_friendly_name}',
+      '#{@tag_path}', '#{@filter}', '#{@sort_name}', '#{@sort_direction}',
+      #{@popular_tags.to_json.html_safe}, #{@hot_topic_tags.to_json.html_safe}, #{@items.to_json.html_safe},
+        #{@item_ids.to_json.html_safe});
     });
 
 #content_container
@@ -20,9 +22,9 @@
         div(class="pullout-item")
           .itemblock
             h3.redbold
-              a(href="#")
+              a(href='/favorites')
                 img(src="/assets/site/star.png" width="18" height="19" alt="star")
-                | Show Favorites (18)
+                == "Show Favorites (<span id='favorites_count'>#{@favorites_count}</span>)"
             h3
               ' You have voted on 
               strong.bluebold
@@ -34,15 +36,9 @@
               strong.bluebold= "8/4/2011"
         div(class="pullout-item")
           .itemblock
-            h3 Hot Topics
-            div(class="pullout-col")
-              ul
-                li
-                  a(href="#") Raising the debt ceiling
-            div(class="pullout-col2")
-              ul
-                li
-                  a(href="#") Starbucks
+            h3
+              = link_to "Hot Topics", hot_topics_path
+            #hot-topic-tags.tags
             .clear
             br
             p
@@ -54,7 +50,7 @@
         div(class="pullout-item")
           .itemblock
             h3 Popular Tags
-            #popular-keywords
+            #popular-tags.tags
             .clear
             br
             p

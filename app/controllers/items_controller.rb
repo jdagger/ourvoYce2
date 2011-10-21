@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   include Items::LoadItems
+
+  #Vote sent from user
   def vote
     item_id = params[:item_id]
     user_id = current_user.id
@@ -13,8 +15,28 @@ class ItemsController < ApplicationController
     end
   end
 
-  #Retrieve the items for the specified item_ids
+
+  #Toggle favorite setting for record
+  def toggle_favorite
+    is_favorite = false
+
+    favorite = Favorite.where(:item_id => params[:item_id], :user_id => current_user.id).first
+
+    if favorite.nil?
+      Favorite.create(:item_id => params[:item_id], :user_id => current_user.id)
+      is_favorite = true
+    else
+      favorite.delete
+      is_favorite = false
+    end
+    respond_to do |format|
+      format.json { render :json => {favorite: is_favorite}.to_json }
+    end
+  end
+
+  #Given a list of item_ids, retrieve items
   def fetch
+    #TODO: Cap item_ids to some max length (10?)
     item_ids = params[:item_ids]
 
     load_items_by_id(item_ids)
@@ -25,19 +47,67 @@ class ItemsController < ApplicationController
 
   end
 
-  def keyword
-    keyword = params[:keyword]
-    filter = params[:filter]
-    sort = params[:sort]
+  #Load data for the specified tag
+  def tag
+    tag = params[:tag]
+    filter = params[:filter] || 'all'
+    sort = params[:sort] || 'default:asc'
 
-    load_items(keyword, filter, sort, current_user.id)
+    load_tag_items(tag, filter, sort, current_user.id)
+
+    load_default_item_data if request.format.html?
+
+    @base_url = "tag"
 
     respond_to do |format|
-      format.json { render :json => {:item_ids => @item_ids, :items => @items, :keyword_friendly_name => @keyword_friendly_name, :keyword_path => @keyword_path, :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction}.to_json}
+      format.json { render :json => {:item_ids => @item_ids, :items => @items, :tag_friendly_name => @tag_friendly_name, :tag_path => @tag_path, :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction}.to_json}
+      format.html {render :template => 'items/items' }
     end
   end
 
+  #Retrieve the favorites
+  def favorites
+    filter = params[:filter] || 'all'
+    sort = params[:sort] || 'default:asc'
+    load_favorite_items(filter, sort, current_user.id)
 
+    load_default_item_data if request.format.html?
+
+    @base_url = "favorites"
+
+    respond_to do |format|
+      format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Favorites', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction}.to_json}
+      format.html {render :template => 'items/items' }
+    end
+
+  end
+
+  #Retrieve hot topics
+  def hot_topics
+    filter = params[:filter] || 'all'
+    sort = params[:sort] || 'default:asc'
+    load_hot_topic_items(filter, sort, current_user.id)
+
+    load_default_item_data if request.format.html?
+
+    @base_url = "hot_topics"
+
+    respond_to do |format|
+      format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction}.to_json}
+      format.html {render :template => 'items/items' }
+    end
+  end
+
+  #Load the default data needed to render the page.  Required for full page loads
+  def load_default_item_data
+      @total_users = User.count
+      @popular_tags = Tag.popular_tags
+      @hot_topic_tags = Tag.hot_topics
+      @favorites_count = Favorite.where(user_id: current_user.id).count
+      @user_vote_count = UserVote.where(user_id: current_user.id).count
+  end
+
+  #Load details for specified item
   def details
     item = Item.find(params[:item_id])
     respond_to do |format|

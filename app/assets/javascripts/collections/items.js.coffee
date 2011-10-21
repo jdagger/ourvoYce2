@@ -3,34 +3,34 @@
   url: '/Items'
 
   initialize: (collection, params) ->
-    this.keyword = params.keyword_path
-    this.friendly_name = params.keyword_friendly_name
+    this.tag = params.tag_path
+    this.friendly_name = params.tag_friendly_name
     this.filter = params.filter
     this.sort_name = params.sort_name
     this.sort_direction = params.sort_direction
+    this.base_url = params.base_url
 
-  fetch_items: (keyword, filter, sort_name, sort_direction) ->
-    #TODO Move record_counter to own view
+  fetch_hot_topics: (filter, sort_name, sort_direction) ->
+    url = "/hot_topics"
     $("#record_counter").html("retrieving records...")
-
-    this.keyword = keyword
-
-    if filter? and filter.length > 0
-      this.filter = filter
-    if sort_name? and sort_name.length > 0 and sort_direction? and sort_direction.length > 0
-      this.sort_details = "#{sort_name}:#{sort_direction}"
-
-    url = "/items/keyword/#{this.keyword}"
+    this.parse_parameters filter, sort_name, sort_direction
     this.fetch({url: url, data: {filter: this.filter, sort: this.sort_details}});
-
     return
 
-  parse: (data) ->
-    OurvoyceApp.item_ids = data.item_ids if data.item_ids?
-    this.friendly_name = data.keyword_friendly_name if data.keyword_friendly_name
-    this.keyword = data.keyword_path if data.keyword_path
-    return data.items
+  fetch_favorites: (filter, sort_name, sort_direction) ->
+    url = "/favorites"
+    $("#record_counter").html("retrieving records...")
+    this.parse_parameters filter, sort_name, sort_direction
+    this.fetch({url: url, data: {filter: this.filter, sort: this.sort_details}});
+    return
 
+  fetch_items: (tag, filter, sort_name, sort_direction) ->
+    $("#record_counter").html("retrieving records...")
+    this.tag = tag
+    this.parse_parameters filter, sort_name, sort_direction
+    url = "/items/tag/#{this.tag}"
+    this.fetch({url: url, data: {filter: this.filter, sort: this.sort_details}});
+    return
 
   fetch_next: () ->
     $("#record_counter").html("retrieving records...")
@@ -49,5 +49,19 @@
       data: 
         item_ids: items_to_fetch
     return
+
+  parse: (data) ->
+    OurvoyceApp.item_ids = data.item_ids if data.item_ids?
+    this.friendly_name = data.tag_friendly_name if data.tag_friendly_name
+    this.tag = data.tag_path if data.tag_path
+    return data.items
+
+  parse_parameters: (filter, sort_name, sort_direction) ->
+    if filter? and filter.length > 0
+      this.filter = filter
+    if sort_name? and sort_name.length > 0 and sort_direction? and sort_direction.length > 0 
+      this.sort_details = "#{sort_name}:#{sort_direction}"
+    return
+
 
 

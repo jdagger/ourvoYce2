@@ -3,17 +3,18 @@ window.OurvoyceApp =
   Collections: {}
   Views: {}
   Routers: {}
-  init: (vote_count, keyword_friendly_name, keyword_path, filter, sort_name, sort_direction, popular_keywords, items, item_ids) ->
-    this.popular_keywords = new PopularKeywords(popular_keywords)
+  init: (base_url, vote_count, tag_friendly_name, tag_path, filter, sort_name, sort_direction, popular_tags, hot_topic_tags, items, item_ids) ->
+    this.popular_tags = new PopularTags(popular_tags)
+    this.hot_topic_tags = new HotTopicTags(hot_topic_tags)
 
 
-    #this.items = new Items(items, [{keyword_friendly_name: keyword_friendly_name, keyword_path: keyword_path}])
-    this.items = new Items(items, {keyword_friendly_name: keyword_friendly_name, keyword_path: keyword_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction})
+    #this.items = new Items(items, [{tag_friendly_name: tag_friendly_name, tag_path: tag_path}])
+    this.items = new Items(items, {base_url: base_url, tag_friendly_name: tag_friendly_name, tag_path: tag_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction})
     this.item_ids = item_ids
 
     this.user_vote_count = new UserVoteCount({user_vote_count: vote_count})
     this.user_vote_count_view = new UserVoteCountView({model: this.user_vote_count})
-    #this.current_keyword = new CurrentKeyword({friendly_name: keyword_friendly_name})
+    #this.current_tag = new CurrentTag({friendly_name: tag_friendly_name})
 
     this.details = new Detail()
 
@@ -22,8 +23,8 @@ window.OurvoyceApp =
     this.itemsView = new ItemsView({collection: OurvoyceApp.items})
     this.itemsView.render()
 
-    this.popularKeywordsView = new PopularKeywordsView({collection: OurvoyceApp.popular_keywords})
-    this.popularKeywordsView.render()
+    this.popularTagsView = new PopularTagsView({collection: OurvoyceApp.popular_tags})
+    this.hotTopicTagsView = new HotTopicTagsView({collection: OurvoyceApp.hot_topic_tags})
 
     this.recordCounterView = new RecordCounterView({collection: OurvoyceApp.items})
     this.recordCounterView.render()
@@ -32,12 +33,12 @@ window.OurvoyceApp =
     this.filterView = new FilterView()
     this.filterView.render()
 
-    this.currentKeywordView = new CurrentKeywordView({collection: OurvoyceApp.items})
-    this.currentKeywordView.render()
+    this.currentTagView = new CurrentTagView({collection: OurvoyceApp.items})
+    this.currentTagView.render()
 
     #Render after filter because contained within filter. Possibly make nested
-    #this.currentKeywordView = new CurrentKeywordView({model: OurvoyceApp.current_keyword})
-    #this.currentKeywordView.render()
+    #this.currentTagView = new CurrentTagView({model: OurvoyceApp.current_tag})
+    #this.currentTagView.render()
 
     this.detailView = new DetailView({model: OurvoyceApp.details})
 

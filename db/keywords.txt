@@ -1,6 +1,0 @@
-:: 1 :: Fortune 500 :: fortune500 ::
-:: 3 :: Media       :: media      ::
-:: 4 :: Agency      :: agency     ::
-:: 5 :: House       :: house      ::
-:: 6 :: Senate      :: senate     ::
-:: 7 :: Executive   :: executive  ::

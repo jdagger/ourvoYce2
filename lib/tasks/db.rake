@@ -1,9 +1,17 @@
 namespace :db do
+  desc "Drop, create, migrate, seed"
+  task :full_reset => :environment do
+    Rake::Task['db:drop'].invoke
+    Rake::Task['db:create'].invoke
+    Rake::Task['db:migrate'].invoke
+    Rake::Task['db:seed'].invoke
+  end
+
   namespace :seed do
 
     desc "Seed all data"
     task :all => :environment do
-      Rake::Task['db:seed:keyword:all'].invoke
+      Rake::Task['db:seed:tag:all'].invoke
       Rake::Task['db:seed:zip:all'].invoke
       Rake::Task['db:seed:user:all'].invoke
       Rake::Task['db:seed:item:all'].invoke
@@ -36,7 +44,7 @@ namespace :db do
       task :insert_items, [:item_arr] => :environment do |t, args|
         items_to_insert = []
         ids = []
-        keywords_to_insert = []
+        tags_to_insert = []
         args[:item_arr].each do |item|
           id = item[:id]
           name = item[:name].gsub(/'/, "''")
@@ -46,10 +54,10 @@ namespace :db do
           type = item[:type].gsub(/'/, "''")
           default_order = item[:default_order]
           ids << id
-          if item.has_key? :keywords
-            keywords = item[:keywords].split(',').collect { |val| val.strip }
-            keywords.each do |keyword|
-              keywords_to_insert << "(#{id}, #{keyword})"
+          if item.has_key? :tags
+            tags = item[:tags].split(',').collect { |val| val.strip }
+            tags.each do |tag|
+              tags_to_insert << "(#{id}, #{tag})"
             end
           end
           items_to_insert << "(#{id}, '#{name}', '#{logo}', '#{website}', '#{wikipedia}', '#{type}', #{default_order})"
@@ -58,13 +66,13 @@ namespace :db do
         sql = "INSERT INTO items (id, name, logo, website, wikipedia, item_type, default_order) VALUES #{items_to_insert.join(", ")}"
         Item.connection.execute sql
 
-        if keywords_to_insert.length > 0
-          #First, remove all existing keywords for item
-          sql = "DELETE FROM keyword_items WHERE item_id IN (#{ids.join(", ")})"
-          KeywordItem.connection.execute sql
+        if tags_to_insert.length > 0
+          #First, remove all existing tags for item
+          sql = "DELETE FROM tag_items WHERE item_id IN (#{ids.join(", ")})"
+          TagItem.connection.execute sql
 
-          sql = "INSERT INTO keyword_items (item_id, keyword_id) VALUES #{keywords_to_insert.join(", ")}"
-          KeywordItem.connection.execute sql
+          sql = "INSERT INTO tag_items (item_id, tag_id) VALUES #{tags_to_insert.join(", ")}"
+          TagItem.connection.execute sql
         end
 
         #Might be a better way to do this
@@ -104,9 +112,9 @@ namespace :db do
             #data1 = vals[15]
             #data2 = vals[16]
             state = vals[17]
-            keywords = vals[18]
+            tags = vals[18]
 
-            items << {id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'senate', keywords: keywords, default_order: 1000}
+            items << {id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'senate', tags: tags, default_order: 1000}
 
           end
         end
@@ -148,8 +156,8 @@ namespace :db do
             #data1 = vals[15]
             #data2 = vals[16]
             state = vals[17]
-            keywords = vals[18]
-            items << { id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'house', keywords: keywords, default_order: 1000 }
+            tags = vals[18]
+            items << { id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'house', tags: tags, default_order: 1000 }
           end
         end
         Rake::Task['db:seed:item:insert_items'].invoke(items)
@@ -185,8 +193,8 @@ namespace :db do
             #branch = vals[9]
             #data1 = vals[10]
             #data2 = vals[11]
-            keywords = vals[12]
-            items << { id: id, name: name, default_order: default_order, logo: logo, website: website, wikipedia: wikipedia, type: 'executive', keywords: keywords }
+            tags = vals[12]
+            items << { id: id, name: name, default_order: default_order, logo: logo, website: website, wikipedia: wikipedia, type: 'executive', tags: tags }
           end
         end
         Rake::Task['db:seed:item:insert_items'].invoke(items)
@@ -220,8 +228,8 @@ namespace :db do
             profit = vals[5]
             website = vals[6]
             wikipedia = vals[7]
-            keywords = vals[10]
-            items << { id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'fortune500', keywords: keywords, default_order: 1000}
+            tags = vals[10]
+            items << { id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'fortune500', tags: tags, default_order: 1000}
           end
         end
 
@@ -254,8 +262,8 @@ namespace :db do
             website = vals[3]
             wikipedia = vals[4]
             logo = vals[5]
-            keywords = vals[6]
-            items << { id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'agency', keywords: keywords, default_order: 1000 }
+            tags = vals[6]
+            items << { id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'agency', tags: tags, default_order: 1000 }
           end
         end
         Rake::Task['db:seed:item:insert_items'].invoke(items)
@@ -288,9 +296,9 @@ namespace :db do
             logo = vals[5]
             #parent_id = vals[6]
             wikipedia = vals[7]
-            keywords = vals[9]
+            tags = vals[9]
 
-            items << {id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'media', keywords: keywords, default_order: 1000}
+            items << {id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'media', tags: tags, default_order: 1000}
           end
         end
 
@@ -366,26 +374,28 @@ namespace :db do
       end
     end
 
-    namespace :keyword do
+    namespace :tag do
       task :all => :environment do
-        print "Removing keyword records..."
-        Keyword.delete_all
+        print "Removing tag records..."
+        Tag.delete_all
         puts "done"
 
-        print "Creating keyword records..."
-        keywords_to_insert = []
-        File.open("#{Rails.root}/db/keywords.txt", "r") do |infile|
+        print "Creating tag records..."
+        tags_to_insert = []
+        File.open("#{Rails.root}/db/tags.txt", "r") do |infile|
           while (line = infile.gets)
             vals = line.split('::').collect { |val| val.strip }
             id = vals[1]
             friendly_name = vals[2]
             path = vals[3]
-            keywords_to_insert << "(#{id}, '#{friendly_name}', '#{path}')"
+            popular = vals[4]
+            hot_topic = vals[5]
+            tags_to_insert << "(#{id}, '#{friendly_name}', '#{path}', #{popular}, #{hot_topic})"
           end
         end
 
-        sql = "INSERT INTO keywords (id, friendly_name, path) VALUES #{keywords_to_insert.join(", ")}"
-        Keyword.connection.execute sql
+        sql = "INSERT INTO tags (id, friendly_name, path, popular, hot_topic) VALUES #{tags_to_insert.join(", ")}"
+        Tag.connection.execute sql
         puts "done"
       end
     end

@@ -8,6 +8,8 @@
     'click .voting .neutral': 'neutral_vote'
     'click .voting .thumbs_down': 'thumbs_down_vote'
     'click .toggle-details': 'toggle_details'
+    'click .favorite > a': 'toggle_favorite'
+    'click .related-tags > a': 'related_tag_click'
 
   initialize: () ->
     _.bindAll(this, 'render', 
@@ -15,10 +17,44 @@
       'thumbs_down_vote', 
       'neutral_vote',
       'toggle_details',
-      'selected_details_changed')
+      'selected_details_changed',
+      'vote_changed',
+      'toggle_favorite',
+      'favorite_changed',
+      'related_tag_click'
+    )
     OurvoyceApp.details.bind('change:current_details', this.selected_details_changed)
+    this.model.bind('vote_changed', this.vote_changed)
+    this.model.bind('change:favorite', this.favorite_changed)
     return
 
+  vote_changed: () ->
+    #Possibly add some sort of animation indicating vote has changed
+    return
+
+  related_tag_click: (e) ->
+    e.preventDefault()
+    OurvoyceApp.router.navigate($(e.target).attr('href').substr(1), true)
+    return
+
+  favorite_changed: (model, val) ->
+    favorite_link = $(this.el).find('.favorite > a')
+
+    #Should create a popout view to update this count
+    count_element = $("#favorites_count")
+    favorite_count = parseInt(count_element.html())
+    if(val)
+      favorite_link.removeClass('not-selected').addClass('selected')
+      count_element.html(favorite_count + 1)
+    else
+      favorite_link.removeClass('selected').addClass('not-selected')
+      count_element.html(favorite_count - 1)
+    return
+
+  toggle_favorite: (e) ->
+    e.preventDefault()
+    this.model.toggle_favorite()
+    return
 
 
   render: () ->

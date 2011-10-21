@@ -1,5 +1,5 @@
-@CurrentKeywordView = Backbone.View.extend
-  el: '#current_keyword'
+@CurrentTagView = Backbone.View.extend
+  el: '#current_tag'
 
   initialize: () ->
     _.bindAll(this, 'render')

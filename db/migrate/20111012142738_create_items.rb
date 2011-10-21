@@ -5,7 +5,6 @@ class CreateItems < ActiveRecord::Migration
       t.string :item_type
       t.string :description
       t.string :logo
-      t.boolean :hot_topic, :default => false
       t.string :wikipedia
       t.string :website
       t.integer :default_order, :default => 1000

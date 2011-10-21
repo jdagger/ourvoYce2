@@ -1,0 +1,2 @@
+@Tag = Backbone.Model.extend({})
+
