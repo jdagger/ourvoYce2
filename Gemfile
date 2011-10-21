@@ -18,16 +18,14 @@ gem 'simple_form'
 gem 'bcrypt-ruby'
 
 
-gem 'compass','0.12.alpha.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :development, :test do
-  group :assets do
-    gem 'sass-rails'
-    gem 'coffee-rails'
-    gem 'uglifier'
-  end
+group :assets do
+  gem 'sass-rails'
+  gem 'compass','0.12.alpha.0'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
