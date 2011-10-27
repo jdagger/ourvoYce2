@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111013130316) do
+ActiveRecord::Schema.define(:version => 20111027211418) do
 
   create_table "favorites", :force => true do |t|
     t.integer  "user_id"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(:version => 20111013130316) do
     t.integer "thumbs_down_vote_count", :default => 0
     t.integer "neutral_vote_count",     :default => 0
     t.integer "total_vote_count",       :default => 0
+  end
+
+  create_table "states", :force => true do |t|
+    t.string "name"
+    t.string "abbreviation"
   end
 
   create_table "stats", :force => true do |t|

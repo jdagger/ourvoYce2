@@ -1,0 +1,28 @@
+#items
+  h1 Items
+  h3 Favorites
+  h3 Stats
+  h3 Tags
+  =will_paginate @items
+  table
+    thead
+      tr
+        th
+        th= "name"
+        th= "item_type"
+        th= "logo"
+    tbody
+      -  @items.each do |item|
+        tr
+          td
+            = link_to 'Edit', edit_admin_item_path(item)
+            br
+            = link_to 'Show', [:admin, item]
+            br
+            = link_to 'Destroy', [:admin, item], :confirm => 'Are you sure?', :method => :delete
+          td= item.name
+          td= item.item_type
+          td
+            img(src="https://s3.amazonaws.com/ourvoYce/images/#{item.logo}" alt="#{item.logo}")
+            br
+            = item.logo

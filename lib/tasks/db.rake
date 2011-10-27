@@ -11,6 +11,7 @@ namespace :db do
 
     desc "Seed all data"
     task :all => :environment do
+      Rake::Task['db:seed:state:all'].invoke
       Rake::Task['db:seed:tag:all'].invoke
       Rake::Task['db:seed:zip:all'].invoke
       Rake::Task['db:seed:user:all'].invoke
@@ -65,6 +66,7 @@ namespace :db do
 
         sql = "INSERT INTO items (id, name, logo, website, wikipedia, item_type, default_order) VALUES #{items_to_insert.join(", ")}"
         Item.connection.execute sql
+        ActiveRecord::Base.connection.reset_pk_sequence!('items')
 
         if tags_to_insert.length > 0
           #First, remove all existing tags for item
@@ -73,6 +75,7 @@ namespace :db do
 
           sql = "INSERT INTO tag_items (item_id, tag_id) VALUES #{tags_to_insert.join(", ")}"
           TagItem.connection.execute sql
+          ActiveRecord::Base.connection.reset_pk_sequence!('tag_items')
         end
 
         #Might be a better way to do this
@@ -358,20 +361,42 @@ namespace :db do
           birth_year = (1930..1990).to_a.sample
 
           users_to_insert << "('#{email}', '#{password}', '#{random_zip[:zip]}', '#{random_zip[:state]}', #{birth_year})"
-          #User.create(
-          #email: email,
-          #password: password,
-          #zip: random_zip[:zip],
-          #state: random_zip[:state],
-          #birth_year: birth_year
-          #)
 
         end
         sql = "INSERT INTO users (email, password_digest, zip, state, birth_year) VALUES #{users_to_insert.join(", ")}"
         User.connection.execute sql
+        ActiveRecord::Base.connection.reset_pk_sequence!('users')
         puts "done"
 
       end
+    end
+
+    namespace :state do
+      task :all => :environment do
+        print "Removing state records..."
+        State.delete_all
+        puts "done"
+
+        print "Creating state records..."
+        states_to_insert = []
+        File.open("#{Rails.root}/db/states.txt", "r") do |infile|
+          while (line = infile.gets)
+            vals = line.split('::').collect { |val| val.strip }
+            id = vals[1]
+            name = vals[2]
+            abbreviation = vals[3]
+            states_to_insert << "(#{id}, '#{name}', '#{abbreviation}')"
+          end
+        end
+
+        sql = "INSERT INTO states (id, name, abbreviation) VALUES #{states_to_insert.join(", ")}"
+        State.connection.execute sql
+        ActiveRecord::Base.connection.reset_pk_sequence!('states')
+
+        puts "done"
+
+      end
+
     end
 
     namespace :tag do
@@ -396,6 +421,7 @@ namespace :db do
 
         sql = "INSERT INTO tags (id, friendly_name, path, popular, hot_topic) VALUES #{tags_to_insert.join(", ")}"
         Tag.connection.execute sql
+        ActiveRecord::Base.connection.reset_pk_sequence!('tags')
         puts "done"
       end
     end
@@ -420,6 +446,7 @@ namespace :db do
         end
         sql = "INSERT INTO zips (zip, state, latitude, longitude, city) VALUES #{zip_inserts.join(", ")}"
         Zip.connection.execute sql
+        ActiveRecord::Base.connection.reset_pk_sequence!('zips')
         puts "done"
       end
     end

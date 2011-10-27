@@ -5,4 +5,6 @@ class Tag < ActiveRecord::Base
   scope :popular_tags, select([:friendly_name, :path]).where(:popular => true)
   scope :hot_topics, select([:friendly_name, :path]).where(:hot_topic => true)
 
+  default_scope :order => 'friendly_name asc'
+
 end

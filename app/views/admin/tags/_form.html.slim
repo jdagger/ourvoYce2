@@ -1,0 +1,9 @@
+= flash_messages
+= simple_form_for [:admin, @tag] do |f|
+  = f.input :path
+  = f.input :friendly_name
+  = f.input :popular
+  = f.input :hot_topic
+  = f.submit
+  = link_to 'Cancel', admin_tags_path
+

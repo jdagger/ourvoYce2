@@ -1,0 +1,19 @@
+h1= @tag.friendly_name
+=render 'navigate'
+
+
+.field
+  .column Path
+  .value= @tag.path
+.field 
+  .column Popular
+  .value= link_to @tag.popular
+.field
+  .column Hot Topic
+  .value= @tag.hot_topic
+
+.tag-list
+  h3 Items
+  - @tag.items.order('name asc').each do |item|
+    = item.name
+    br

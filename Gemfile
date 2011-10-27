@@ -2,9 +2,10 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
-#gem 'mongo'
-#gem 'mongoid'
-#gem 'bson_ext'
+gem 'simple_form'
+gem 'client_side_validations'
+gem 'will_paginate'
+gem 'flash_messages_helper'
 
 gem 'forgery'
 
@@ -12,8 +13,6 @@ gem 'slim'
 gem 'jquery-tmpl-rails'
 
 gem 'pg'
-
-gem 'simple_form'
 
 gem 'bcrypt-ruby'
 

@@ -1,0 +1,59 @@
+:: 1  :: ALABAMA                        :: AL ::
+:: 2  :: ALASKA                         :: AK ::
+:: 3  :: AMERICAN SAMOA                 :: AS ::
+:: 4  :: ARIZONA                        :: AZ ::
+:: 5  :: ARKANSAS                       :: AR ::
+:: 6  :: CALIFORNIA                     :: CA ::
+:: 7  :: COLORADO                       :: CO ::
+:: 8  :: CONNECTICUT                    :: CT ::
+:: 9  :: DELAWARE                       :: DE ::
+:: 10 :: DISTRICT OF COLUMBIA           :: DC ::
+:: 11 :: FEDERATED STATES OF MICRONESIA :: FM ::
+:: 12 :: FLORIDA                        :: FL ::
+:: 13 :: GEORGIA                        :: GA ::
+:: 14 :: GUAM GU                        :: GU ::
+:: 15 :: HAWAII                         :: HI ::
+:: 16 :: IDAHO                          :: ID ::
+:: 17 :: ILLINOIS                       :: IL ::
+:: 18 :: INDIANA                        :: IN ::
+:: 19 :: IOWA                           :: IA ::
+:: 20 :: KANSAS                         :: KS ::
+:: 21 :: KENTUCKY                       :: KY ::
+:: 22 :: LOUISIANA                      :: LA ::
+:: 23 :: MAINE                          :: ME ::
+:: 24 :: MARSHALL ISLANDS               :: MH ::
+:: 25 :: MARYLAND                       :: MD ::
+:: 26 :: MASSACHUSETTS                  :: MA ::
+:: 27 :: MICHIGAN                       :: MI ::
+:: 28 :: MINNESOTA                      :: MN ::
+:: 29 :: MISSISSIPPI                    :: MS ::
+:: 30 :: MISSOURI                       :: MO ::
+:: 31 :: MONTANA                        :: MT ::
+:: 32 :: NEBRASKA                       :: NE ::
+:: 33 :: NEVADA                         :: NV ::
+:: 34 :: NEW HAMPSHIRE                  :: NH ::
+:: 35 :: NEW JERSEY                     :: NJ ::
+:: 36 :: NEW MEXICO                     :: NM ::
+:: 37 :: NEW YORK                       :: NY ::
+:: 38 :: NORTH CAROLINA                 :: NC ::
+:: 39 :: NORTH DAKOTA                   :: ND ::
+:: 40 :: NORTHERN MARIANA ISLANDS       :: MP ::
+:: 41 :: OHIO                           :: OH ::
+:: 42 :: OKLAHOMA                       :: OK ::
+:: 43 :: OREGON                         :: OR ::
+:: 44 :: PALAU                          :: PW ::
+:: 45 :: PENNSYLVANIA                   :: PA ::
+:: 46 :: PUERTO RICO                    :: PR ::
+:: 47 :: RHODE ISLAND                   :: RI ::
+:: 48 :: SOUTH CAROLINA                 :: SC ::
+:: 49 :: SOUTH DAKOTA                   :: SD ::
+:: 50 :: TENNESSEE                      :: TN ::
+:: 51 :: TEXAS                          :: TX ::
+:: 52 :: UTAH                           :: UT ::
+:: 53 :: VERMONT                        :: VT ::
+:: 54 :: VIRGIN ISLANDS                 :: VI ::
+:: 55 :: VIRGINIA                       :: VA ::
+:: 56 :: WASHINGTON                     :: WA ::
+:: 57 :: WEST VIRGINIA                  :: WV ::
+:: 58 :: WISCONSIN                      :: WI ::
+:: 59 :: WYOMING                        :: WY ::

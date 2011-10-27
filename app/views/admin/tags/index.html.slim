@@ -1,0 +1,24 @@
+#tags
+  h1 Tags
+  =will_paginate @tags
+  table
+    thead
+      tr
+        th
+        th Path
+        th Friendly Name
+        th Popular?
+        th Hot Topic?
+    tbody
+      -  @tags.each do |tag|
+        tr
+          td
+            = link_to 'Edit', edit_admin_tag_path(tag)
+            br
+            = link_to 'Show', [:admin, tag]
+            br
+            = link_to 'Destroy', [:admin, tag], :confirm => 'Are you sure?', :method => :delete
+          td= tag.path
+          td= tag.friendly_name
+          td= tag.popular
+          td= tag.hot_topic

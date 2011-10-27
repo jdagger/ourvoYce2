@@ -1,0 +1,12 @@
+.navigate
+  .link
+    = link_to 'New', new_admin_user_path
+  - unless @user.blank? || @user.new_record?
+    .link
+      = link_to 'Edit', edit_admin_user_path(@user)
+    .link
+      = link_to 'Show', [:admin, @user]
+    .link
+      = link_to 'Delete', [:admin, @user], :method => :delete, :confirm => 'Are you sure?'
+  .link
+    = link_to 'View All Users', admin_users_path

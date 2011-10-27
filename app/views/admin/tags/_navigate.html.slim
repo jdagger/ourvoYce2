@@ -1,0 +1,12 @@
+.navigate
+  .link
+    = link_to 'New', new_admin_tag_path
+  - unless @tag.blank? || @tag.new_record?
+    .link
+      = link_to 'Edit', edit_admin_tag_path(@tag)
+    .link
+      = link_to 'Show', [:admin, @tag]
+    .link
+      = link_to 'Delete', [:admin, @tag], :method => :delete, :confirm => 'Are you sure?'
+  .link
+    = link_to 'View All Tags', admin_tags_path

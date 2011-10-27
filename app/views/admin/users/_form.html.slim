@@ -1,0 +1,12 @@
+= flash_messages
+= simple_form_for [:admin, @user] do |f|
+  = f.input :email
+  = f.input :password
+  = f.input :country
+  = f.input :state, :collection => State.order('name asc'), :label_method => :name, :value_method => :abbreviation
+  = f.input :zip
+  = f.input :birth_year
+  = f.input :confirmed
+  = f.submit
+  = link_to 'Cancel', admin_users_path
+

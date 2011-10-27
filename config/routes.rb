@@ -18,6 +18,12 @@ Ourvoyce::Application.routes.draw do
     match "/age(/:state)" => "items#age"
   end
 
+  namespace :admin do
+    resources :items
+    resources :users
+    resources :tags
+  end
+
   root :to => 'defaults#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

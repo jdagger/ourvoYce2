@@ -1,0 +1,13 @@
+= flash_messages
+= simple_form_for [:admin, @item] do |f|
+  = f.input :name
+  /= f.input :item_type
+  = f.input :description
+  = f.input :logo
+  = f.input :wikipedia
+  = f.input :website
+  = f.input :default_order
+  = f.association :tags, :as => :check_boxes, :value_method => :id, :label_method => :friendly_name
+  = f.submit
+  = link_to 'Cancel', admin_items_path
+

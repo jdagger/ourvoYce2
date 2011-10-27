@@ -1,5 +1,6 @@
 class DefaultsController < ApplicationController
-  #include Items::LoadItems
+  # include Items::LoadItems
+  #
 
   def index
     @tags = Tag.all

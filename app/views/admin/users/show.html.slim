@@ -1,0 +1,21 @@
+h1= @user.email
+=render 'navigate'
+
+.field
+  .column Country:
+  .value= @user.country
+.field 
+  .column Zip:
+  .value= @user.zip
+.field 
+  .column State:
+  .value= @user.state
+.field 
+  .column Birth Year:
+  .value= @user.birth_year
+.field 
+  .column Member Since:
+  .value= @user.member_since
+.field 
+  .column Confirmed?:
+  .value= @user.confirmed

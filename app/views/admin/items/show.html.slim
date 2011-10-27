@@ -1,0 +1,40 @@
+h1= @item.name
+=render 'navigate'
+
+img(src="https://s3.amazonaws.com/ourvoYce/images/#{@item.logo}" alt="#{@item.logo}")
+table
+  thead
+    tr
+      th Thumbs Up
+      th Thumbs Down
+      th Neutral
+      th Total
+  tbody
+    tr
+      td= @item.thumbs_up_vote_count
+      td= @item.thumbs_down_vote_count
+      td= @item.neutral_vote_count
+      td= @item.total_vote_count
+
+
+.tag-list
+  h3 Tags
+  - @item.tags.each do |tag|
+    .tag
+      = tag.friendly_name
+
+.field
+  .column Description:
+  .value= @item.description
+.field 
+  .column Wikipedia:
+  .value= link_to @item.wikipedia
+.field 
+  .column Website:
+  .value= link_to @item.website
+.field
+  .column Default Order:
+  .value= @item.default_order
+.field
+  .column Type: 
+  .value = @item.item_type
