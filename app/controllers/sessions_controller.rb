@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     user = User.first(conditions: {email: params[:user][:email]})
     if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
-      redirect_to tag_path('executive')
+      redirect_to hot_topics_path
     else
       redirect_to request.referrer
     end
