@@ -4,3 +4,6 @@ log/*.log
 tmp/
 .sass-cache/
 .DS_Store
+ourvoYce_web2.xcodeproj/project.pbxproj
+ourvoYce_web2.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+ourvoYce_web2.xcodeproj/project.xcworkspace/xcuserdata/jdagger.xcuserdatad/UserInterfaceState.xcuserstate
