@@ -3,7 +3,9 @@ window.OurvoyceApp =
   Collections: {}
   Views: {}
   Routers: {}
-  init: (base_url, vote_count, tag_friendly_name, tag_path, filter, sort_name, sort_direction, popular_tags, hot_topic_tags, items, item_ids) ->
+  init: (base_url, vote_count, tag_friendly_name, tag_path, filter, sort_name, sort_direction, popular_tags, hot_topic_tags, items, item_ids, authenticated) ->
+    this.authenticated = authenticated
+
     this.popular_tags = new PopularTags(popular_tags)
     this.hot_topic_tags = new HotTopicTags(hot_topic_tags)
 

@@ -112,18 +112,27 @@
 
   thumbs_up_vote: (e) ->
     e.preventDefault()
+    if ! OurvoyceApp.authenticated
+      alert('Create an account to vote') 
+      return
     this.model.thumbs_up()
     this.render()
     return
 
   thumbs_down_vote: (e) ->
     e.preventDefault()
+    if ! OurvoyceApp.authenticated
+      alert('Create an account to vote') 
+      return
     this.model.thumbs_down()
     this.render()
     return
 
   neutral_vote: (e) ->
     e.preventDefault()
+    if ! OurvoyceApp.authenticated
+      alert('Create an account to vote') 
+      return
     this.model.neutral()
     this.render()
     return

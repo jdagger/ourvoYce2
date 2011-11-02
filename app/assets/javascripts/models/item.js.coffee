@@ -58,6 +58,10 @@
 
   
   change_vote: (new_vote) ->
+
+    alert(OurvoyceApp.authenticated)
+
+
     url = "/items/#{this.get('id')}/vote"
     previous_vote = this.get('user_vote')
 

@@ -1,7 +1,8 @@
 module Items
   module LoadItems
 
-    def load_hot_topic_items(filter, sort, user_id)
+    def load_hot_topic_items(filter, sort, current_user)
+
       @filter = filter
       @sort_name = ""
       @sort_direction = ""
@@ -11,19 +12,25 @@ module Items
 
       _item_ids = nil
 
-      case filter.downcase
-      when 'voted'
-        _item_ids = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.hot_topic' => true, 'user_votes.user_id' => user_id).select('items.id')
-      when 'no-vote'
-        voted_items = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.hot_topic' => true, 'user_votes.user_id' => user_id).select('items.id')
-        if voted_items.length > 0
-          _item_ids = Item.joins(:tag_items => :tag).where('tags.hot_topic' => true).where('items.id not in (?)', voted_items).select('items.id')
-        else
-          _item_ids = Item.joins(:tag_items => :tag).where('tags.hot_topic' => true).select('items.id')
-        end
+      default_search = Item.joins(:tag_items => :tag).where('tags.hot_topic' => true).select('items.id')
+
+      if current_user.nil?
+        _item_ids = default_search
       else
-        @filter = 'all'
-        _item_ids = Item.joins(:tag_items => :tag).where('tags.hot_topic' => true).select('items.id')
+        case filter.downcase
+        when 'voted'
+          _item_ids = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.hot_topic' => true, 'user_votes.user_id' => current_user.id).select('items.id')
+        when 'no-vote'
+          voted_items = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.hot_topic' => true, 'user_votes.user_id' => current_user.id).select('items.id')
+          if voted_items.length > 0
+            _item_ids = Item.joins(:tag_items => :tag).where('tags.hot_topic' => true).where('items.id not in (?)', voted_items).select('items.id')
+          else
+            _item_ids = Item.joins(:tag_items => :tag).where('tags.hot_topic' => true).select('items.id')
+          end
+        else
+          @filter = 'all'
+          _item_ids = default_search
+        end
       end
 
       unless sort.blank?
@@ -59,7 +66,12 @@ module Items
     end
 
 
-    def load_favorite_items(filter, sort, user_id)
+    def load_favorite_items(filter, sort, current_user)
+
+      return nil if current_user.nil?
+
+
+
       @filter = filter
       @sort_name = ""
       @sort_direction = ""
@@ -71,17 +83,17 @@ module Items
 
       case filter.downcase
       when 'voted'
-        _item_ids = Item.joins(:favorites).joins(:user_votes).where('favorites.user_id' => user_id, 'user_votes.user_id' => user_id).select('items.id')
+        _item_ids = Item.joins(:favorites).joins(:user_votes).where('favorites.user_id' => current_user.id, 'user_votes.user_id' => current_user.id).select('items.id')
       when 'no-vote'
-        voted_items = Item.joins(:favorites).joins(:user_votes).where('favorites.user_id' => user_id, 'user_votes.user_id' => user_id).select('items.id')
+        voted_items = Item.joins(:favorites).joins(:user_votes).where('favorites.user_id' => current_user.id, 'user_votes.user_id' => current_user.id).select('items.id')
         if voted_items.length > 0
-          _item_ids = Item.joins(:favorites).where('favorites.user_id' => user_id).where('items.id not in (?)', voted_items).select('items.id')
+          _item_ids = Item.joins(:favorites).where('favorites.user_id' => current_user.id).where('items.id not in (?)', voted_items).select('items.id')
         else
-          _item_ids = Item.joins(:favorites).where('favorites.user_id' => user_id).select('items.id')
+          _item_ids = Item.joins(:favorites).where('favorites.user_id' => current_user.id).select('items.id')
         end
       else
         @filter = 'all'
-        _item_ids = Item.joins(:favorites).where('favorites.user_id' => user_id).select('items.id')
+        _item_ids = Item.joins(:favorites).where('favorites.user_id' => current_user.id).select('items.id')
       end
 
       unless sort.blank?
@@ -193,6 +205,8 @@ module Items
         sorted_arr << item_arr.select { |x| x[:id] == item.to_i}.first
       end
 
+      favorites = nil
+
       if(!current_user.nil? && item_ids.count > 0)
         user_votes = UserVote.where(:user_id => current_user.id, :item_id => item_ids).to_a
         favorites = Favorite.where(:user_id => current_user.id, :item_id => item_ids).to_a
@@ -206,12 +220,14 @@ module Items
         end
       end
 
-      sorted_arr.each do |item|
-        idx = favorites.find_index{ |x| x[:item_id].to_s == item.id.to_s }
-        if idx.blank? 
-          item[:favorite] = false
-        else
-          item[:favorite] = true
+      unless favorites.nil? || favorites.count == 0
+        sorted_arr.each do |item|
+          idx = favorites.find_index{ |x| x[:item_id].to_s == item.id.to_s }
+          if idx.blank? 
+            item[:favorite] = false
+          else
+            item[:favorite] = true
+          end
         end
       end
 

@@ -16,6 +16,8 @@ gem 'pg'
 
 gem 'bcrypt-ruby'
 
+gem 'thin'
+
 
 
 # Gems used only for assets and not required

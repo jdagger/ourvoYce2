@@ -3,15 +3,18 @@ class ItemsController < ApplicationController
 
   #Vote sent from user
   def vote
-    item_id = params[:item_id]
-    user_id = current_user.id
-    vote = params[:new_vote]
-    #TODO: validate vote/item_id/check user_id (through authentication requirement)
 
-    Vote.record_vote(current_user.id, current_user.state, current_user.zip, current_user.birth_year, item_id, vote)
+    unless current_user.nil?
+      item_id = params[:item_id]
+      user_id = current_user.id
+      vote = params[:new_vote]
+      #TODO: validate vote/item_id/check user_id (through authentication requirement)
+
+      Vote.record_vote(current_user.id, current_user.state, current_user.zip, current_user.birth_year, item_id, vote)
+    end
 
     respond_to do |format|
-      format.json { render :json => {success: 1}.to_json }
+      format.json { render :json => {success: 0, message: 'Not authenticate'}.to_json }
     end
   end
 
@@ -60,7 +63,7 @@ class ItemsController < ApplicationController
     @base_url = "tag"
 
     respond_to do |format|
-      format.json { render :json => {:item_ids => @item_ids, :items => @items, :tag_friendly_name => @tag_friendly_name, :tag_path => @tag_path, :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction}.to_json}
+      format.json { render :json => {:item_ids => @item_ids, :items => @items, :tag_friendly_name => @tag_friendly_name, :tag_path => @tag_path, :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json}
       format.html {render :template => 'items/items' }
     end
   end
@@ -69,14 +72,14 @@ class ItemsController < ApplicationController
   def favorites
     filter = params[:filter] || 'all'
     sort = params[:sort] || 'default:asc'
-    load_favorite_items(filter, sort, current_user.id)
+    load_favorite_items(filter, sort, current_user)
 
     load_default_item_data if request.format.html?
 
     @base_url = "favorites"
 
     respond_to do |format|
-      format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Favorites', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction}.to_json}
+      format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Favorites', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json}
       format.html {render :template => 'items/items' }
     end
 
@@ -86,25 +89,31 @@ class ItemsController < ApplicationController
   def hot_topics
     filter = params[:filter] || 'all'
     sort = params[:sort] || 'default:asc'
-    load_hot_topic_items(filter, sort, current_user.id)
+    load_hot_topic_items(filter, sort, current_user)
 
     load_default_item_data if request.format.html?
 
     @base_url = "hot_topics"
 
     respond_to do |format|
-      format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction}.to_json}
+      format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json}
       format.html {render :template => 'items/items' }
     end
   end
 
   #Load the default data needed to render the page.  Required for full page loads
   def load_default_item_data
-      @total_users = User.count
-      @popular_tags = Tag.popular_tags
-      @hot_topic_tags = Tag.hot_topics
+    @total_users = User.count
+    @popular_tags = Tag.popular_tags
+    @hot_topic_tags = Tag.hot_topics
+    @authenticated = !current_user.nil?
+    if current_user.nil?
+      @favorites_count = 0
+      @user_vote_count = 0
+    else
       @favorites_count = Favorite.where(user_id: current_user.id).count
       @user_vote_count = UserVote.where(user_id: current_user.id).count
+    end
   end
 
   #Load details for specified item
@@ -216,36 +225,19 @@ class ItemsController < ApplicationController
   end
 
   def build_state_age
-    #state_stat = StateYearStat.where(item_id: params[:item_id], state: params[:state].downcase).first
     state_stat = Stat.select('birth_year, sum(thumbs_up_vote_count) as thumbs_up_vote_count, sum(thumbs_down_vote_count) as thumbs_down_vote_count, sum(neutral_vote_count) as neutral_vote_count').where(item_id: params[:item_id], state: params[:state].downcase).group(:birth_year)
 
 
     buckets = get_buckets
 
 
-    #(1900..2020).to_a.each do |year|
-      #unless state_stat.nil? || state_stat[year].nil?
     state_stat.each do |stat|
-        buckets.each do |bucket|
-          if(bucket[:range].include?(Time.now.year - stat.birth_year))
-            #vote = state_stat[year.to_s]["vote"]
-            #unless vote.nil?
-            #  unless vote["thumbs_up_vote_count"].blank?
-                #bucket[:thumbs_up_vote_count] = bucket[:thumbs_up_vote_count] + vote["thumbs_up_vote_count"] 
-                bucket[:thumbs_up_vote_count] = bucket[:thumbs_up_vote_count] + stat.thumbs_up_vote_count
-            #  end
-            #  unless vote["thumbs_down_vote_count"].blank?
-                #bucket[:thumbs_down_vote_count] = bucket[:thumbs_down_vote_count] + vote["thumbs_down_vote_count"] 
-                bucket[:thumbs_down_vote_count] = bucket[:thumbs_down_vote_count] + stat.thumbs_down_vote_count
-            #  end
-            #  unless vote["neutral_vote_count"].blank?
-                #bucket[:neutral_vote_count] = bucket[:neutral_vote_count] + vote["neutral_vote_count"] 
-                bucket[:neutral_vote_count] = bucket[:neutral_vote_count] + stat.neutral_vote_count
-            #  end
-            #  break
-            #end
-          end
-        #end
+      buckets.each do |bucket|
+        if(bucket[:range].include?(Time.now.year - stat.birth_year))
+          bucket[:thumbs_up_vote_count] = bucket[:thumbs_up_vote_count] + stat.thumbs_up_vote_count
+          bucket[:thumbs_down_vote_count] = bucket[:thumbs_down_vote_count] + stat.thumbs_down_vote_count
+          bucket[:neutral_vote_count] = bucket[:neutral_vote_count] + stat.neutral_vote_count
+        end
       end
     end
 
