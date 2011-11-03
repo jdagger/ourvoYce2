@@ -2,6 +2,16 @@ Ourvoyce::Application.routes.draw do
   match "/login" => 'sessions#login', :as => :login
   match "/logout" => 'sessions#logout', :as => :logout
 
+  match '/signup' => 'users#new', :as => :sign_up
+
+  match '/help' => 'sites#help', :as => :help
+  match '/about' => 'sites#about', :as => :about
+  match '/contact' => 'sites#contact', :as => :contact
+  match '/donate' => 'sites#donate', :as => :donate
+  match '/terms' => 'sites#terms', :as => :terms
+  match '/privacy' => 'sites#privacy_policy', :as => :privacy_policy
+  match '/membership' => 'sites#membership', :as => :membership
+
   match '/favorites(/:filter(/:sort))' => 'items#favorites', :as => :favorites
   match '/hot_topics(/:filter(/:sort))' => 'items#hot_topics', :as => :hot_topics
   match '/tag/:tag(/:filter(/:sort))' => 'items#tag', :as => :tag, :defaults => {:sort => 'default:all', :filter => 'all'}

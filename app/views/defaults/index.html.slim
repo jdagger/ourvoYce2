@@ -1,118 +1,71 @@
-#content-container2
-  #row1
-    div(class="content-col1")
-      #logolarge
-        a.imagelink(href="vote-default.html")
-          img(src="images/ourvoycelogo.png" width="360" height="74" alt="ourvoYce")
-      h1.shadow Giving a Voice to the People.
-      p.blue
-        |
-          The idea is simple. We the people should vote on everything and vote often. 
-          Your opinion does matter, so look around for a while and vote! ourvoYce was 
-          created to give everyone an easy and simple way to be heard, and to share 
-          that information just as simply. 
-        a(href="about.html")(more)
-      .followus
-        span.huge.red
-          | Follow us on
-        a.imagelink(href="#")
-          img(src="images/twitter-red.gif" alt="Twitter" width="32" height="22")
-        | &nbsp;
-        a.imagelink(href="#")
-          img(src="images/facebook-red.gif" alt="Facebook" width="12" height="22")
-    div(class="content-col2")
-      h3.white View Our Hottest Topics:
-      div(class="thin-col1")
-        ul
-          li
-            a(href="vote-default.html")Starbucks
-          li
-            a(href="vote-default.html")Fox News
-          li
-            a(href="vote-default.html")Obama
-          li
-            a(href="vote-default.html")French Fries
-          li
-            a(href="vote-default.html")NFL
-          li
-            a(href="vote-default.html")Auto Manufacturers
-          li
-            a(href="vote-default.html")McDonalds
-          li
-            a(href="vote-default.html")CNN
-          li
-            a(href="vote-default.html")US Military
-          li
-            a(href="vote-default.html")Web Browsers
-          li
-            a(href="vote-default.html")Congress
-          li
-            a(href="vote-default.html")2012 Candidates
-      div(class="thin-col2")
-        ul
-          li 
-            a(href="vote-default.html")Starbucks
-          li 
-            a(href="vote-default.html")Fox News
-          li 
-            a(href="vote-default.html")Obama
-          li 
-            a(href="vote-default.html")French Fries
-          li 
-            a(href="vote-default.html")NFL
-          li 
-            a(href="vote-default.html")Auto Manufacturers
-          li 
-            a(href="vote-default.html")McDonalds
-          li 
-            a(href="vote-default.html")CNN
-          li 
-            a(href="vote-default.html")US Military
-          li 
-            a(href="vote-default.html")Web Browsers
-          li 
-            a(href="vote-default.html")Congress
-          li 
-            a(href="vote-default.html")2012 Candidates
+#front-page
+  #content-container2
+    #row1
+      div(class="content-col1")
+        /#logolarge
+        /  a.imagelink(href="vote-default.html")
+        /    img(src="images/ourvoycelogo.png" width="360" height="74" alt="ourvoYce")
+        h1.shadow Giving a Voice to the People.
+        p.blue
+          |
+            The idea is simple. We the people should vote on everything and vote often. 
+            Your opinion does matter, so look around for a while and vote! ourvoYce was 
+            created to give everyone an easy and simple way to be heard, and to share 
+            that information just as simply. 
+          a(href="about.html")(more)
+        .followus
+          span.huge.red
+            | Follow us on
+          a.imagelink(href="#")
+            = image_tag "site/twitter-red.gif", alt: "Twitter", width: "32", height: "22"
+          | &nbsp;
+          a.imagelink(href="#")
+            = image_tag "site/facebook-red.gif", alt: "Twitter", width: "12", height: "22"
+      div(class="content-col2")
+        h3.white View Our Hottest Topics:
+        #hot_topics
+          - @hot_topics.each do |hot_topic|
+            .hot_topic
+              = link_to hot_topic.friendly_name, tag_path(hot_topic.path)
+        = link_to sign_up_path, class: 'imagelink' do 
+          = image_tag "site/btnsignuptovote.gif", width: "212", height: "41", alt: "or Sign up to Vote!"
+      div(class="content-col3")
+        = image_tag "site/placeholder.gif", width: '348', height: '272'
       .clear
-      a.imagelink(href="signup.html")
-        img(src="images/btnsignuptovote.gif" width="212" height="41" alt="or Sign up to Vote!")
-    div(class="content-col3")
-      img(src="images/placeholder.gif" width="348" height="272")
-    .clear
-  #row2
-    div(class="content-col1")
-      h2.thin.red Why Participate?
-      p
-        | You know you have an opinion. Let's face it, you have many. We all do.
-      p
-        | In this era of the 24/7 news cycle, of CNN, FOX, MSNBC, Headline news and Internet blogs, 
-        | don't you find yourself sometimes shouting, 
-      h4
-        | &quot;Hey, wait a sec… that's not what I think.&quot; 
-      p
-        | With ourvoYce, you now have a great way to voice your opinion without media hype. Without 
-        | a lot of talking heads babbling about how you should think or feel. Or vote. Without having 
-        | to defend your position. And, by participating in ourvoYce, who knows? We could have a big impact. 
-        a(href="about.html#whyparticipate")= "(more)"
-    div(class="content-col2")
-      h2.thin.red How it Works.
-      p
-        | ourvoYce is elegantly simple. We tally the number of people participating and collect a &quot;thumbs up, 
-        | thumbs down&quot; vote. That's it. The more people who vote, the better the data will be. It's your chance 
-        | to tell us how you feel about a whole lot of things: From corporations and the media, politics and pop culture. 
-        a(href="about.html#howitworks")= "(more)"
-      h4
-        | IT'S FAST and SIMPLE. Did we mention &quot;FUN?&quot;
-      p
-    div(class="content-col3")
-      h2.thin.red Our Opinions Connect Us.
-      img(src="images/usmap.jpg" width="199" height="125" alt="map of the United States")
-      p
-        | 
-          ourvoYce is interested in statistical data. Don't worry, we won't get too wonky, 
-          so here's an example: Ask ten people whether they prefer the taste of Coke over Pepsi 
-          and you'll get some interesting feedback. Maybe even an argument. Now, ask ten THOUSAND 
-          people to answer that same question, and you'll start to see a trends. 
-        a(href="about.html#ouropinions")= "(more)"
-    .clear
+    #row2
+      div(class="content-col1")
+        h2.thin.red Why Participate?
+        p
+          | You know you have an opinion. Let's face it, you have many. We all do.
+        p
+          | In this era of the 24/7 news cycle, of CNN, FOX, MSNBC, Headline news and Internet blogs, 
+          | don't you find yourself sometimes shouting, 
+        h4
+          | &quot;Hey, wait a sec… that's not what I think.&quot; 
+        p
+          | With ourvoYce, you now have a great way to voice your opinion without media hype. Without 
+          | a lot of talking heads babbling about how you should think or feel. Or vote. Without having 
+          | to defend your position. And, by participating in ourvoYce, who knows? We could have a big impact. 
+          a(href="about.html#whyparticipate")= "(more)"
+      div(class="content-col2")
+        h2.thin.red How it Works.
+        p
+          | ourvoYce is elegantly simple. We tally the number of people participating and collect a &quot;thumbs up, 
+          | thumbs down&quot; vote. That's it. The more people who vote, the better the data will be. It's your chance 
+          | to tell us how you feel about a whole lot of things: From corporations and the media, politics and pop culture. 
+          a(href="about.html#howitworks")= "(more)"
+        h4
+          | IT'S FAST and SIMPLE. Did we mention &quot;FUN?&quot;
+        p
+      div(class="content-col3")
+        h2.thin.red Our Opinions Connect Us.
+        = image_tag "site/usmap.jpg", width: "199", height: "125", alt: "map of the United States"
+
+        p
+          | 
+            ourvoYce is interested in statistical data. Don't worry, we won't get too wonky, 
+            so here's an example: Ask ten people whether they prefer the taste of Coke over Pepsi 
+            and you'll get some interesting feedback. Maybe even an argument. Now, ask ten THOUSAND 
+            people to answer that same question, and you'll start to see a trends. 
+          a(href="about.html#ouropinions")= "(more)"
+      .clear

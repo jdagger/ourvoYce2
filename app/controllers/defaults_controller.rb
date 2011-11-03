@@ -1,9 +1,6 @@
 class DefaultsController < ApplicationController
-  # include Items::LoadItems
-  #
-
   def index
-    @tags = Tag.all
+    @hot_topics = Tag.where(hot_topic: true).limit(24)
   end
 
 end

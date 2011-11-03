@@ -5,28 +5,15 @@
 div(class="header-wrapper")
   div(class="header-left")
     #logo
-      a(href="vote-default.html")
-        img(src="/assets/site/ourvoyce.png" width="282" height="58" alt="ourvoYce")
-    /h1
-      /span.bluebold Current Tag:
-      /== '&nbsp;'
-      /span#current_tag
+      = link_to root_path, class: 'imagelink' do
+        = image_tag 'site/ourvoyce.png', width: '282', height: '58', alt: 'ourvoYce'
       
   div(class="header-right")
-    a(href="help.html") Help
-    == '&nbsp;&nbsp;'
-    img(src="/assets/site/dot.gif" width="3" height="9")
-    == '&nbsp;&nbsp;'
-    a(href="about.html") About
-    == '&nbsp;&nbsp;'
-    img(src="/assets/site/dot.gif" width="3" height="9")
-    == '&nbsp;&nbsp;'
-    a(href="#") Contact
-    == '&nbsp;&nbsp;'
-    img(src="/assets/site/dot.gif" width="3" height="9")
-    == '&nbsp;&nbsp;'
-    a(href="#") Donate
-    /#search
-    /  input(type="text" name="search" class="searchbox" maxlength="32" value="What's on your mind? Search" onblur="if(this.value=='') this.value='What\'s on your mind? Search'" onfocus="if(this.value =='What\'s on your mind? Search' ) this.value=''")
-    /  input(type="image" name="submit" src="/assets/site/searchbtn.gif" border="0" width="17" height="18" class="submitbtn")
+    = link_to 'Help', help_path
+    = image_tag 'site/dot.gif', width: '3', height: '9', class: 'dot'
+    = link_to 'About', about_path
+    = image_tag 'site/dot.gif', width: '3', height: '9', class: 'dot'
+    = link_to 'Contact', contact_path
+    = image_tag 'site/dot.gif', width: '3', height: '9', class: 'dot'
+    = link_to 'Donate', donate_path
   .clear
