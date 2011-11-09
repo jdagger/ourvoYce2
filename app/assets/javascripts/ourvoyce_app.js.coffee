@@ -41,7 +41,7 @@ window.OurvoyceApp =
 
     this.detailView = new DetailView({model: OurvoyceApp.details})
 
-    Backbone.history.start({pushState: false, silent: true})
+    Backbone.history.start({pushState: true, silent: true})
     return
 
 $ ->
