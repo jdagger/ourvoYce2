@@ -1,10 +1,7 @@
 = content_for :javascript do
   javascript:
     $(function(){
-      window.OurvoyceApp.init('#{@base_url}', #{@user_vote_count}, '#{@tag_friendly_name}',
-      '#{@tag_path}', '#{@filter}', '#{@sort_name}', '#{@sort_direction}',
-      #{@popular_tags.to_json.html_safe}, #{@hot_topic_tags.to_json.html_safe}, #{@items.to_json.html_safe},
-      #{@item_ids.to_json.html_safe}, #{@authenticated});
+      window.OurvoyceApp.init('#{@base_url}', #{@user_vote_count}, '#{@tag_friendly_name}', '#{@tag_path}', '#{@filter}', '#{@sort_name}', '#{@sort_direction}', #{@popular_tags.to_json.html_safe}, #{@hot_topic_tags.to_json.html_safe}, #{@items.to_json.html_safe}, #{@item_ids.to_json.html_safe}, #{@authenticated});
     });
 
 #content_container

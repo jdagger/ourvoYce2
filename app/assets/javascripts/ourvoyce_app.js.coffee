@@ -10,6 +10,7 @@ window.OurvoyceApp =
     this.hot_topic_tags = new HotTopicTags(hot_topic_tags)
 
 
+
     #this.items = new Items(items, [{tag_friendly_name: tag_friendly_name, tag_path: tag_path}])
     this.items = new Items(items, {base_url: base_url, tag_friendly_name: tag_friendly_name, tag_path: tag_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction})
     this.item_ids = item_ids
@@ -38,13 +39,9 @@ window.OurvoyceApp =
     this.currentTagView = new CurrentTagView({collection: OurvoyceApp.items})
     this.currentTagView.render()
 
-    #Render after filter because contained within filter. Possibly make nested
-    #this.currentTagView = new CurrentTagView({model: OurvoyceApp.current_tag})
-    #this.currentTagView.render()
-
     this.detailView = new DetailView({model: OurvoyceApp.details})
 
-    Backbone.history.start({pushState: true, silent: true})
+    Backbone.history.start({pushState: false, silent: true})
     return
 
 $ ->

@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
     #TODO: Cap item_ids to some max length (10?)
     item_ids = params[:item_ids]
 
-    load_items_by_id(item_ids)
+    load_items_by_id(item_ids, current_user)
 
     respond_to do |format|
       format.json { render :json => {:item_ids => @item_ids, :items => @items}.to_json}
@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
     filter = params[:filter] || 'all'
     sort = params[:sort] || 'default:asc'
 
-    load_tag_items(tag, filter, sort, current_user.id)
+    load_tag_items(tag, filter, sort, current_user)
 
     load_default_item_data if request.format.html?
 

@@ -62,7 +62,7 @@ module Items
       #Load the first 10 records
       initial_items = @item_ids[0, 10]
 
-      load_items_by_id(initial_items)
+      load_items_by_id(initial_items, current_user)
     end
 
 
@@ -125,11 +125,11 @@ module Items
       #Load the first 10 records
       initial_items = @item_ids[0, 10]
 
-      load_items_by_id(initial_items)
+      load_items_by_id(initial_items, current_user)
 
     end
 
-    def load_tag_items(tag, filter, sort, user_id)
+    def load_tag_items(tag, filter, sort, current_user)
 
       @filter = filter
       @sort_name = ""
@@ -139,21 +139,22 @@ module Items
       @tag_friendly_name = tag_record[:friendly_name]
       @tag_path = tag_record[:path]
 
-      _item_ids = nil
-
-      case filter.downcase
-      when 'voted'
-        _item_ids = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.path' => tag, 'user_votes.user_id' => user_id).select('items.id')
-      when 'no-vote'
-        voted_items = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.path' => tag, 'user_votes.user_id' => user_id).select('items.id')
-        if voted_items.length > 0
-          _item_ids = Item.joins(:tag_items => :tag).where('tags.path' => tag).where('items.id not in (?)', voted_items).select('items.id')
+      #Default query
+      _item_ids = Item.joins(:tag_items => :tag).where('tags.path' => tag).select('items.id')
+      unless current_user.nil?
+        case filter.downcase
+        when 'voted'
+          _item_ids = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.path' => tag, 'user_votes.user_id' => current_user.id).select('items.id')
+        when 'no-vote'
+          voted_items = Item.joins(:tag_items => :tag).joins(:user_votes).where('tags.path' => tag, 'user_votes.user_id' => current_user.id).select('items.id')
+          if voted_items.length > 0
+            _item_ids = Item.joins(:tag_items => :tag).where('tags.path' => tag).where('items.id not in (?)', voted_items).select('items.id')
+          else
+            _item_ids = Item.joins(:tag_items => :tag).where('tags.path' => tag).select('items.id')
+          end
         else
-          _item_ids = Item.joins(:tag_items => :tag).where('tags.path' => tag).select('items.id')
+          @filter = 'all'
         end
-      else
-        @filter = 'all'
-        _item_ids = Item.joins(:tag_items => :tag).where('tags.path' => tag).select('items.id')
       end
 
       unless sort.blank?
@@ -185,10 +186,10 @@ module Items
       #Load the first 10 records
       initial_items = @item_ids[0, 10]
 
-      load_items_by_id(initial_items)
+      load_items_by_id(initial_items, current_user)
     end
 
-    def load_items_by_id(item_ids)
+    def load_items_by_id(item_ids, current_user)
       #Retrieve the items for the specified IDS
       item_arr = Item.get_by_ids(item_ids).to_a
       
@@ -205,7 +206,7 @@ module Items
         sorted_arr << item_arr.select { |x| x[:id] == item.to_i}.first
       end
 
-      favorites = nil
+      favorites = []
 
       if(!current_user.nil? && item_ids.count > 0)
         user_votes = UserVote.where(:user_id => current_user.id, :item_id => item_ids).to_a
@@ -220,14 +221,12 @@ module Items
         end
       end
 
-      unless favorites.nil? || favorites.count == 0
-        sorted_arr.each do |item|
-          idx = favorites.find_index{ |x| x[:item_id].to_s == item.id.to_s }
-          if idx.blank? 
-            item[:favorite] = false
-          else
-            item[:favorite] = true
-          end
+      sorted_arr.each do |item|
+        idx = favorites.find_index{ |x| x[:item_id].to_s == item.id.to_s }
+        if idx.blank? 
+          item[:favorite] = false
+        else
+          item[:favorite] = true
         end
       end
 

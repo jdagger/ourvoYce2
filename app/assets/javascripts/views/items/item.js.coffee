@@ -9,7 +9,7 @@
     'click .voting .thumbs_down': 'thumbs_down_vote'
     'click .toggle-details': 'toggle_details'
     'click .favorite > a': 'toggle_favorite'
-    'click .related-tags > a': 'related_tag_click'
+    #'click .related-tags > a': 'related_tag_click'
 
   initialize: () ->
     _.bindAll(this, 'render', 
@@ -20,8 +20,8 @@
       'selected_details_changed',
       'vote_changed',
       'toggle_favorite',
-      'favorite_changed',
-      'related_tag_click'
+      'favorite_changed'
+      #'related_tag_click'
     )
     OurvoyceApp.details.bind('change:current_details', this.selected_details_changed)
     this.model.bind('vote_changed', this.vote_changed)
@@ -32,10 +32,10 @@
     #Possibly add some sort of animation indicating vote has changed
     return
 
-  related_tag_click: (e) ->
-    e.preventDefault()
-    OurvoyceApp.router.navigate($(e.target).attr('href').substr(1), true)
-    return
+  #related_tag_click: (e) ->
+  #e.preventDefault()
+  #OurvoyceApp.router.navigate($(e.target).attr('href').substr(1), true)
+  #return
 
   favorite_changed: (model, val) ->
     favorite_link = $(this.el).find('.favorite > a')
@@ -53,6 +53,9 @@
 
   toggle_favorite: (e) ->
     e.preventDefault()
+
+    window.location = "/signup" unless OurvoyceApp.authenticated
+
     this.model.toggle_favorite()
     return
 
@@ -113,7 +116,7 @@
   thumbs_up_vote: (e) ->
     e.preventDefault()
     if ! OurvoyceApp.authenticated
-      alert('Create an account to vote') 
+      window.location = "/signup"
       return
     this.model.thumbs_up()
     this.render()
@@ -122,7 +125,7 @@
   thumbs_down_vote: (e) ->
     e.preventDefault()
     if ! OurvoyceApp.authenticated
-      alert('Create an account to vote') 
+      window.location = "/signup"
       return
     this.model.thumbs_down()
     this.render()
@@ -131,7 +134,7 @@
   neutral_vote: (e) ->
     e.preventDefault()
     if ! OurvoyceApp.authenticated
-      alert('Create an account to vote') 
+      window.location = "/signup"
       return
     this.model.neutral()
     this.render()

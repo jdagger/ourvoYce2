@@ -43,4 +43,14 @@ gem 'unicorn'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+
+  gem 'database_cleaner'
+  gem 'rails3-generators'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails'
+  gem 'capybara'
+
+  gem 'spork', '~> 0.9.0.rc'
+
 end

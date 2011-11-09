@@ -59,7 +59,7 @@
   
   change_vote: (new_vote) ->
 
-    alert(OurvoyceApp.authenticated)
+    return unless OurvoyceApp.authenticated
 
 
     url = "/items/#{this.get('id')}/vote"
