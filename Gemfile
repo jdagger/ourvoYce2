@@ -40,7 +40,9 @@ gem 'unicorn'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
+group :development, :test do
+  gem 'railroady' #UML generation
+
   # Pretty printed test output
   gem 'turn', :require => false
 
@@ -50,7 +52,12 @@ group :test do
   gem 'factory_girl_rails'
   gem 'cucumber-rails'
   gem 'capybara'
-
+  gem 'launchy'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM=~ /darwin/i
+  gem 'shoulda-matchers'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
   gem 'spork', '~> 0.9.0.rc'
+  gem 'valid_attribute'
 
 end

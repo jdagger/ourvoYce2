@@ -1,0 +1,61 @@
+.content-col1
+  h1.shadow Join. Start voting. Be counted.
+  p.blue
+    | Joining ourvoYce is quick and simple:
+    br
+    strong 1.
+    | Fill in the blanks.
+    br
+    strong 2.
+    | Read the membership agreement.
+    strong 3.
+    | Vote.
+  p.blue &nbsp;
+
+  #column1
+    h2.thin.red Already a member?
+    p Please login using the form in the upper left corner.
+    p &nbsp;
+
+    h2.thin.red Waiting for your confirmation email?
+    p Check your spam folder. It could be there. 
+    p &nbsp;
+
+    h2.thin.red Need help? 
+    p 
+      | Send an email to 
+      a(href="mailto:accounts@ourvoyce.com")accounts@ourvoyce.com
+      | .
+      br
+      | We'll be glad to help. 
+
+.content-col2wide
+  br
+  br
+  br
+  br
+  br
+
+  h1 form class is newaccount
+  #newaccount
+    = simple_form_for @user, :url => sign_up_path, :html => {:class => 'newaccount'} do |f|
+      h2.thin.blue Your sign-in information:
+      / label is class large, hint is class fineprint
+      = f.input :email, :input_html => {class: 'inputbox'}, :label => "Choose the email address you want to use to sign in:", :hint => "This is also where we will send your confirmation to activate your membership"
+      = f.input :password, input_html: {class: 'inputbox'},  :label => "Create a password:", :hint => "Chose a unique, strong password, letters and numbers, 6 minimum"
+
+      h2.thin.blue Your demographics:
+      = f.input :country
+      = f.input :zip, input_html: {class: 'inputbox'}, :label => "Zip Code:", :hint => "Just the five digits"
+      = f.input :birth_year, input_html: {class: 'inputbox'}, :label => "Year you were born:", :hint => "You must be at least 13 years old"
+      /= f.input 'membership_agreement', :label => "I have read and agree to thea href=membership.html Membership Agreement"
+      | Membership agreement
+      = check_box_tag :membership_agreement
+      = f.submit
+      h1= " Submit Image: images/btncreateaccount.gif border=0 width=166 height=37" 
+
+  p
+    strong Check your email and confirm your membership. 
+    | You will then be able to sign in just by putting in your Email Address and Password at the top of the page or from here. 
+
+.pad-bottom

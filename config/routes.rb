@@ -2,7 +2,10 @@ Ourvoyce::Application.routes.draw do
   match "/login" => 'sessions#login', :as => :login
   match "/logout" => 'sessions#logout', :as => :logout
 
-  match '/signup' => 'users#new', :as => :sign_up
+  match '/signup' => 'users#new', :as => :sign_up, :via => :get
+  match '/signup' => 'users#create', :as => :sign_up, :via => :post
+  match '/account' => 'users#edit', :as => :account, :via => :get
+  match '/account' => 'users#update', :as => :account, :via => :put
 
   match '/help' => 'sites#help', :as => :help
   match '/about' => 'sites#about', :as => :about
@@ -24,8 +27,10 @@ Ourvoyce::Application.routes.draw do
     match "/vote" => "items#vote"
     match "/details" => "items#details"
     match "/toggle_favorite" => "items#toggle_favorite"
-    match "/map(/:state)" => "items#map"
-    match "/age(/:state)" => "items#age"
+    match "/map/:state" => "maps#state_vote_map"
+    match "/map" => "maps#national_vote_map"
+    match "/age/:state" => "graphs#state_age_graph"
+    match "/age" => "graphs#national_age_graph"
   end
 
   namespace :admin do

@@ -97,6 +97,7 @@ h1 {
   font-weight:normal;
   color:#2158b0;
 }
+
 .shadow {text-shadow:0.05em 0.05em 0.05em #7198b8;}
 
 h2 {
@@ -351,12 +352,14 @@ vertical-align:middle;}
   margin:10px 10px 0 0;
 }
 
-.newaccount select {
-  border:1px solid #d6d6d6;
-  font: 12px/18px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
-  color:#666;
-  padding:3px 0 3px 5px;
-  width:172px;
+#newaccount{
+  select {
+    border:1px solid #d6d6d6;
+    font: 12px/18px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color:#666;
+    padding:3px 0 3px 5px;
+    width:172px;
+  }
 }
 #mainselection {
   overflow:hidden;

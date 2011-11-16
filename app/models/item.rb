@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  include VoteCounter
+
   has_many :tag_items, :dependent => :destroy
   has_many :tags, :through => :tag_items, :uniq => true
 
@@ -8,7 +10,24 @@ class Item < ActiveRecord::Base
   has_many :favorites, :dependent => :destroy, :foreign_key => :item_id
   has_many :users, :through => :favorites, :uniq => true
 
-  def self.get_by_ids(ids)
-    Item.select('id, name, description, logo, wikipedia, website, thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count').includes(:tag_items => :tag).where(:id => ids)
-  end 
+  class << self
+    def get_by_ids(ids)
+      Item.select('id, name, description, logo, wikipedia, website, thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count').includes(:tag_items => :tag).where(:id => ids)
+    end 
+
+    def record_vote(item_id, previous_vote, new_vote)
+      return nil unless [-1, 0, 1].include?(new_vote)
+      return nil unless [nil, -1, 0, 1].include?(previous_vote)
+
+      return true if previous_vote == new_vote
+
+      item = Item.where(:id => item_id).first
+      return nil if item.nil?
+
+      item.update_vote_counts(previous_vote, new_vote)
+
+      item.save
+    end
+  end
+
 end
