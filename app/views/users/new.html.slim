@@ -38,7 +38,7 @@
 
   h1 form class is newaccount
   #newaccount
-    = simple_form_for @user, :url => sign_up_path, :html => {:class => 'newaccount'} do |f|
+    = simple_form_for @user, :url => new_user_session_path, :html => {:class => 'newaccount'} do |f|
       h2.thin.blue Your sign-in information:
       / label is class large, hint is class fineprint
       = f.input :email, :input_html => {class: 'inputbox'}, :label => "Choose the email address you want to use to sign in:", :hint => "This is also where we will send your confirmation to activate your membership"

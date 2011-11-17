@@ -14,11 +14,14 @@ gem 'jquery-tmpl-rails'
 
 gem 'pg'
 
+#Authentication
+gem 'devise'
+gem 'omniauth'
+#gem 'omniauth-identity'
+
 gem 'bcrypt-ruby'
 
 gem 'thin'
-
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,10 +42,16 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+#
+group :development do
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'ruby-debug19'
+  #gem 'ruby-debug-base19'
+  #gem 'ruby-debug-ide19'
+end
 
 group :development, :test do
-  gem 'railroady' #UML generation
-
   # Pretty printed test output
   gem 'turn', :require => false
 
@@ -59,5 +68,7 @@ group :development, :test do
   gem 'guard-livereload'
   gem 'spork', '~> 0.9.0.rc'
   gem 'valid_attribute'
+
+  gem 'jasmine'
 
 end

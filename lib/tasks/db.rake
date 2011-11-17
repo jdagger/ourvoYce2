@@ -329,13 +329,17 @@ namespace :db do
       desc "Seeding default user"
       task :create_default_user => :environment do
         print "Seeding default User..."
-        User.create(
-          :email => 'test', 
-          :password => 'test', 
+        user = User.new(
+          :email => 'test@ourvoyce.com', 
+          :password => 'test123', 
           :zip => '28801', 
-          :state => 'NC', 
           :birth_year => 1970,
+          :country => 'United States',
+          :state => 'NC'
         )
+        user.confirmed_at = Time.now
+        user.save
+
         puts "done"
       end
 
@@ -354,16 +358,14 @@ namespace :db do
         print "Creating random user records..."
 
         users_to_insert = []
-        (1..users_to_create).each do
+        (1..users_to_create).each do |i|
           random_zip = zips.sample
-          email = Forgery(:internet).email_address
-          password = Forgery(:basic).password
+          #email = Forgery(:internet).email_address
+          email = "test_#{i}@ourvoyce.com"
           birth_year = (1930..1990).to_a.sample
-
-          users_to_insert << "('#{email}', '#{password}', '#{random_zip[:zip]}', '#{random_zip[:state]}', #{birth_year})"
-
+          users_to_insert << "('#{email}', '#{random_zip[:zip]}', '#{random_zip[:state]}', #{birth_year})"
         end
-        sql = "INSERT INTO users (email, password_digest, zip, state, birth_year) VALUES #{users_to_insert.join(", ")}"
+        sql = "INSERT INTO users (email, zip, state, birth_year) VALUES #{users_to_insert.join(", ")}"
         User.connection.execute sql
         ActiveRecord::Base.connection.reset_pk_sequence!('users')
         puts "done"

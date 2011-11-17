@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+=begin
   def login
     user = User.first(conditions: {email: params[:user][:email]})
     if user && user.authenticate(params[:user][:password])
@@ -13,4 +14,9 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path
   end
+
+  def create
+  end
+=end
+
 end

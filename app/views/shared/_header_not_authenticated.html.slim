@@ -4,7 +4,7 @@ div(class="topbar-wrapper")
       .login_label
         strong
           ' LOGIN
-      = simple_form_for User.new, url: login_path do |f|
+      = simple_form_for User.new, url: new_user_session_path do |f|
         = f.input :email, label: false, input_html: {class: 'loginbox', maxlength: "25", value: "email address", onblur: "if(this.value=='') this.value='email address'",  onfocus: "if(this.value =='email address' ) this.value=''"}
         = f.input :password, label: false, input_html: {class: 'loginbox', maxlength: "25"}
         input type="image" name="loginsubmit" src="/assets/site/btnarrow.gif" border="0" width="17" height="18" class="loginbtn"

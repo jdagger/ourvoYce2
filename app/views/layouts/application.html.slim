@@ -12,6 +12,7 @@ html
     .wrapper
       == render 'shared/header'
       div(id="content-container")
+        = flash_messages
         = yield
       == render 'shared/footer'
     = yield :javascript
