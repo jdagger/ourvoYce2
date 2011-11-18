@@ -14,12 +14,12 @@ describe User do
       it{ should_not have_valid(:email).when('test@ourvoyce.com', 'abc', '', nil) }
     end
 
-    context "#password" do
+    #context "#password" do
       #TODO - Verify password requirements. Add pass and fail examples
       
-      it{ should have_valid(:password).when('abcd1234') }
-      it{ should_not have_valid(:password).when(nil, '', 'abcde', '12345678901234') }
-    end
+      #it{ should have_valid(:password).when('abcd1234') }
+      #it{ should_not have_valid(:password).when(nil, '', 'abcde', '12345678901234') }
+    #end
 
     context "#country" do
       it{ should have_valid(:country).when('United States') }
@@ -33,10 +33,11 @@ describe User do
       it{ should_not have_valid(:zip).when(nil, 0, '', 'abcde', 99999, 00000, 000, 00000) }
     end
 
-    context "#state" do
-      it{ should have_valid(:state).when('NC', 'AL') }
-      it{ should_not have_valid(:state).when(nil, '', 'nc', 'NA') }
-    end
+    #State will be set by the system
+    #context "#state" do
+      #it{ should have_valid(:state).when('NC', 'AL') }
+      #it{ should_not have_valid(:state).when(nil, '', 'nc', 'NA') }
+    #end
 
     context '#birth_year' do
       it{ should have_valid(:birth_year).when(1970) }

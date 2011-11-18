@@ -14,7 +14,7 @@ div(class="topbar-wrapper")
     .left
       ul.toplist
         li
-          a(class="no-padleft" href="#") Settings
+          = link_to "Settings", edit_registration_path(current_user), :class => 'no-padleft'
         li
           = link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'no-border no-padright'
     .clear      

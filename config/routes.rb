@@ -1,17 +1,7 @@
 Ourvoyce::Application.routes.draw do
-  devise_for :users #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
-  #devise_scope :user do
-    #get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
-  #end
+  devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'join', :registration => 'account'} #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
 
   #match "/auth/:provider/callback" => "sessions#create"
-  #match "/login" => 'sessions#login', :as => :login
-  #match "/logout" => 'sessions#logout', :as => :logout
-
-  #match '/signup' => 'users#new', :as => :sign_up, :via => :get
-  #match '/signup' => 'users#create', :as => :sign_up, :via => :post
-  #match '/account' => 'users#edit', :as => :account, :via => :get
-  #match '/account' => 'users#update', :as => :account, :via => :put
 
   match '/help' => 'sites#help', :as => :help
   match '/about' => 'sites#about', :as => :about

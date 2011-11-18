@@ -6,5 +6,6 @@ FactoryGirl.define do
     birth_year 1960
     country 'United States'
     state {|a| State.first.abbreviation || a.association(:state).abbreviation }
+    confirmed_at { Time.now }
   end
 end

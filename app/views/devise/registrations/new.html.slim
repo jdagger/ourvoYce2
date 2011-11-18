@@ -30,19 +30,15 @@
       | We'll be glad to help. 
 
 .content-col2wide
-  br
-  br
-  br
-  br
-  br
-
-  h1 form class is newaccount
   #newaccount
-    = simple_form_for @user, :url => new_user_session_path, :html => {:class => 'newaccount'} do |f|
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {class: 'newaccount'}) do |f| 
       h2.thin.blue Your sign-in information:
+      = f.error_notification 
       / label is class large, hint is class fineprint
       = f.input :email, :input_html => {class: 'inputbox'}, :label => "Choose the email address you want to use to sign in:", :hint => "This is also where we will send your confirmation to activate your membership"
       = f.input :password, input_html: {class: 'inputbox'},  :label => "Create a password:", :hint => "Chose a unique, strong password, letters and numbers, 6 minimum"
+      = f.input :password_confirmation
+
 
       h2.thin.blue Your demographics:
       = f.input :country
@@ -52,6 +48,8 @@
       | Membership agreement
       = check_box_tag :membership_agreement
       = f.submit
+      = render :partial => "devise/shared/links" 
+
       h1= " Submit Image: images/btncreateaccount.gif border=0 width=166 height=37" 
 
   p
