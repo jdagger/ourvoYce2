@@ -25,7 +25,7 @@ class Tag < ActiveRecord::Base
 
   class << self
     def do_search(value)
-      search(value, :star => true, :order => "@relevance DESC").map{ |x| {label: x.friendly_name, value: x.friendly_name } }
+      search(value, :star => true, :order => "@relevance DESC").map{ |x| {friendly_name: x.friendly_name, path: x.path } }
     end
   end
 end

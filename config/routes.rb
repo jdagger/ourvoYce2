@@ -19,6 +19,7 @@ Ourvoyce::Application.routes.draw do
 
   match "/search/lookup" => "searches#lookup"
   match "/search/autocomplete" => "searches#autocomplete"
+  match "/search/notfound(/:term)" => "searches#not_found", :as => :not_found
 
   match '/items/tag/:tag' => 'items#tag'
   match '/items/fetch' => 'items#fetch'

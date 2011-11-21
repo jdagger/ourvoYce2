@@ -58,7 +58,7 @@
           data: {term: request.term}
           success: (data) ->
             response $.map(data, (item) =>
-              return {label: _highlight(item.label, request.term), value: item.value}
+              return {label: _highlight(item.friendly_name, request.term), value: item.friendly_name}
             )
             return
         return

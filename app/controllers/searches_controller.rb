@@ -6,9 +6,16 @@ class SearchesController < ApplicationController
 
     record = Tag.by_friendly_name(search_term).first
 
-    unless record.nil?
+    if record.nil?
+      redirect_to not_found_path(search_term)
+    else
       redirect_to tag_path(record.path)
     end
+  end
+
+  def not_found
+    @term = params[:term]
+    @suggestions = Tag.do_search(params[:term])
   end
 
   def autocomplete

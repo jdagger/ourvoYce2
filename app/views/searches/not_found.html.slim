@@ -1,0 +1,13 @@
+h1= "#{params[:term]} could not be found"
+h2 Suggestions:
+- if @suggestions.count > 0
+  - @suggestions.each do |suggestion|
+    = link_to suggestion[:friendly_name], tag_path(suggestion[:path])
+    br
+- else
+  | No suggestions could be found.
+  br
+
+| Suggest a data set (link to suggestion form)
+
+
