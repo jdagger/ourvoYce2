@@ -39,8 +39,43 @@
 
   render: () ->
     $(this.el).html($.tmpl(this.template, {filter: OurvoyceApp.items.filter, sort_name: OurvoyceApp.items.sort_name, sort_direction: OurvoyceApp.items.sort_direction}))
+    this.setup_autocomplete()
+    #$(this.el).find('#tag_search').submit(this.search)
     return this
 
+  #search: () ->
+  #return true
+
+  setup_autocomplete: () ->
+    _highlight = this.highlight
+    $(this.el).find("#search_field").autocomplete
+      minLength: 1
+      delay: 200
+      source: (request, response) ->
+        $.ajax
+          url: "/search/autocomplete"
+          dataType: 'json'
+          data: {term: request.term}
+          success: (data) ->
+            response $.map(data, (item) =>
+              return {label: _highlight(item.label, request.term), value: item.value}
+            )
+            return
+        return
+      select: (event, ui) ->
+        $('#search_field').val(ui.item.value)
+        $('#tag_search').submit()
+        return
+      change: (event, ui) ->
+        return
+    $(this.el).find("#search_field").data('autocomplete')._renderItem = (ul, item) ->
+      #only change here was to replace .text() with .html()
+      return $( "<li></li>" ).data( "item.autocomplete", item ).append( $( "<a></a>" ).html(item.label) ).appendTo( ul )
+    return
+
+  highlight: (s, t) ->
+    matcher = new RegExp("("+$.ui.autocomplete.escapeRegex(t)+")", "ig" )
+    return s.replace(matcher, "<strong>$1</strong>")
   scroll: () ->
     window_top = $(window).scrollTop()
     content_top = $("#content_container").offset().top

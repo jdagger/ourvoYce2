@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable #, :omniauthable
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :zip, :country, :birth_year, :state
@@ -9,16 +9,16 @@ class User < ActiveRecord::Base
   #has_secure_password
 
   def self.new_with_session(params, session)
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "User.new_with_session"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    #super.tap do |user|
-    #if data = session[:omniauth]
-    #user.user_tokens.build(:provider => data['provider'], :uid => data['uid'])
-    #end
-    #end
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "User.new_with_session"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    super.tap do |user|
+      if data = session[:omniauth]
+        user.user_tokens.build(:provider => data['provider'], :uid => data['uid'])
+      end
+    end
   end
 
   def apply_omniauth(omniauth)

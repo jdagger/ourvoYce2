@@ -23,6 +23,8 @@ gem 'bcrypt-ruby'
 
 gem 'thin'
 
+gem 'thinking-sphinx', '~> 2.0.10'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -44,6 +46,7 @@ gem 'unicorn'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 #
 group :development do
+  gem 'heroku'
   gem 'pry'
   gem 'pry-doc'
   gem 'ruby-debug19'

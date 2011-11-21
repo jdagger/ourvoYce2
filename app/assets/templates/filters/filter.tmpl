@@ -24,7 +24,8 @@
     </select>
   </div>
   <div id="search">
-      <input type="text" name="search" 
+    <form action="/search/lookup" method="post" id="tag_search">
+      <input type="text" id="search_field" name="search" 
         class="searchbox" maxlength="32" 
         value="What's on your mind? Search" 
         onblur="if(this.value=='') this.value='What\'s on your mind? Search'" 
@@ -32,5 +33,6 @@
       <input type="image" name="submit" 
         src="/assets/site/searchbtn.gif" border="0" 
         width="17" height="18" class='search_button' />
+    </form>
   </div>
 </div>

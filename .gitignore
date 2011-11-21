@@ -1,5 +1,11 @@
 .bundle
+.autotest
+.todo.done
+NERD_tree_1
+db/sphinx/*
 db/*.sqlite3
+log/searchd.development.pid
+config/development.sphinx.conf
 log/*.log
 tmp/
 .sass-cache/

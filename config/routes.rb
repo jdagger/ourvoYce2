@@ -17,6 +17,9 @@ Ourvoyce::Application.routes.draw do
 
   match '/utilities/generate_random_votes(/:count)' => 'utilities#generate_random_votes', :as => :generate_random_votes, :defaults => {:count => 100}
 
+  match "/search/lookup" => "searches#lookup"
+  match "/search/autocomplete" => "searches#autocomplete"
+
   match '/items/tag/:tag' => 'items#tag'
   match '/items/fetch' => 'items#fetch'
   resources :items do

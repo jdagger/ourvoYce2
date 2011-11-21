@@ -31,27 +31,23 @@
 
 .content-col2wide
   #newaccount
-    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {class: 'newaccount'}) do |f| 
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| 
       h2.thin.blue Your sign-in information:
       = f.error_notification 
       / label is class large, hint is class fineprint
-      = f.input :email, :input_html => {class: 'inputbox'}, :label => "Choose the email address you want to use to sign in:", :hint => "This is also where we will send your confirmation to activate your membership"
-      = f.input :password, input_html: {class: 'inputbox'},  :label => "Create a password:", :hint => "Chose a unique, strong password, letters and numbers, 6 minimum"
+      = f.input :email, :label => "Choose the email address you want to use to sign in:", :hint => "This is also where we will send your confirmation to activate your membership"
+      = f.input :password, :label => "Create a password:", :hint => "Chose a unique, strong password, letters and numbers, 6 minimum"
       = f.input :password_confirmation
 
 
       h2.thin.blue Your demographics:
       = f.input :country
-      = f.input :zip, input_html: {class: 'inputbox'}, :label => "Zip Code:", :hint => "Just the five digits"
-      = f.input :birth_year, input_html: {class: 'inputbox'}, :label => "Year you were born:", :hint => "You must be at least 13 years old"
-      /= f.input 'membership_agreement', :label => "I have read and agree to thea href=membership.html Membership Agreement"
+      = f.input :zip, :label => "Zip Code:", :hint => "Just the five digits"
+      = f.input :birth_year, :label => "Year you were born:", :hint => "You must be at least 13 years old"
       | Membership agreement
       = check_box_tag :membership_agreement
-      = f.submit
+      = f.submit ''
       = render :partial => "devise/shared/links" 
-
-      h1= " Submit Image: images/btncreateaccount.gif border=0 width=166 height=37" 
-
   p
     strong Check your email and confirm your membership. 
     | You will then be able to sign in just by putting in your Email Address and Password at the top of the page or from here. 

@@ -1,0 +1,6 @@
+Items list empty result display | id:0a33d9d8aec59d55f3231df65be95715714dcc0e
+unique index on tag friendly name column | id:0cdf8d8487b6c9eb467135ef25d6e4eae00c4d07
+Remove fixed positioning on filter | id:11959e00c97f8b6c5823dbbb6d844a4839b1d5e0
+Add button to load more records | id:1e1e8a061b66e2265fc36713c9adcf9b824dd9df
+Click on Favotites when not signed in generates error - invalid url | id:293429bee25eb24dc9a4c62276f20b1550b6eb76
+Style items in completion list | id:3b01128bbb58e3867d432c758e144a56f1a6f809

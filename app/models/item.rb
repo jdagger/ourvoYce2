@@ -10,6 +10,11 @@ class Item < ActiveRecord::Base
   has_many :favorites, :dependent => :destroy, :foreign_key => :item_id
   has_many :users, :through => :favorites, :uniq => true
 
+  #Thinking Sphinx index
+  define_index do
+    indexes name, :sortable => true
+  end
+
   class << self
     def get_by_ids(ids)
       Item.select('id, name, description, logo, wikipedia, website, thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count').includes(:tag_items => :tag).where(:id => ids)

@@ -1,5 +1,7 @@
 @import 'compass/css3';
 
+@mixin large{ font-size:18px; }
+@mixin fineprint { font-size:12px; font-style:italic; }
 /* css reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -323,7 +325,7 @@ input {
 .loginbtn {
 vertical-align:middle;}
 
-.inputbox {
+@mixin inputbox{
   background: image-url('site/bg-inputbox.png') top left no-repeat;
   height:46px;
   padding-left:15px;
@@ -335,6 +337,7 @@ vertical-align:middle;}
   vertical-align:middle;
   margin-top:5px;
 }
+
 .inputboxsmall {
   background: image-('site/bg-inputboxsmall.png') top left no-repeat;
   height:46px;
@@ -353,6 +356,26 @@ vertical-align:middle;}
 }
 
 #newaccount{
+  label{
+    @include large;
+  }
+
+  span.hint{
+    display: block;
+    @include fineprint;
+  }
+
+  input[type=text], input[type=password] {
+    @include inputbox;
+  }
+
+  input[type=submit]{
+    display: block;
+    width: 166px;
+    height: 37px;
+    background: image-url('site/btncreateaccount.gif') top left no-repeat;
+  }
+
   select {
     border:1px solid #d6d6d6;
     font: 12px/18px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -736,6 +759,8 @@ $searchbox_width: 302px;
   clear:both;
   visibility:hidden;
 }
+
+
 .left {float:left;}
 .right {float:right;}
 .imageleftsm {float:left;padding:0 20px 5px 0;}
@@ -744,7 +769,7 @@ $searchbox_width: 302px;
 .imageright {float:right;padding:0 0 20px 20px;}
 .top {vertical-align:top;}
 .pad-bottom {padding-bottom:12px;}
-.fineprint {font-size:12px;font-style:italic;}
+.fineprint { @include fineprint; }
 .graybold {color:#666;font-weight:bold;}
 .gray {color:#666;}
 .white {color:#fff;}
@@ -757,7 +782,7 @@ $searchbox_width: 302px;
 .greenbold {color:#57b70e;font-weight:bold;}
 .orange {color:#f08127;}
 .orangebold {color:#f08127;font-weight:bold;}
-.large {font-size:18px;}
+.large { @include large; }
 .huge {font-size:31px;}
 
 a.vote:hover{
