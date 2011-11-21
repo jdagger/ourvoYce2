@@ -7,9 +7,9 @@
   </div>
   <div>
     <select id="filter" name="filter">
-      <option value="all" ${filter === 'all' ? 'selected' : ''}>All Records</option>
-      <option value="voted" ${filter === 'voted' ? 'selected' : ''}>Voted</option>
-      <option value="no-vote" ${filter === 'no-vote' ? 'selected' : ''}>No Vote</option>
+      <option value="all" <%= OurvoyceApp.selected_option('all', filter) %>>All Records</option>
+      <option value="voted" <%= OurvoyceApp.selected_option('voted', filter) %>>Voted</option>
+      <option value="no-vote" <%= OurvoyceApp.selected_option('no-vote', filter) %>>No Vote</option>
     </select>
   </div>
   <div>

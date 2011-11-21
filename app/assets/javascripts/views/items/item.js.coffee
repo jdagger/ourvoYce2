@@ -61,7 +61,7 @@
 
 
   render: () ->
-    $(this.el).html($.tmpl(this.template, this.model.toJSON()))
+    $(this.el).html(JST[this.template](this.model.toJSON()))
 
     vote = this.model.get('user_vote')
     if vote != null

@@ -44,9 +44,16 @@ window.OurvoyceApp =
     Backbone.history.start({pushState: true, silent: true})
     return
 
+  selected_option: (val, left) ->
+    if(val == left)
+      return "selected"
+    else
+      return ""
+
 $ ->
-  $(window).scroll(() ->
-    if($(window).scrollTop() == $(document).height() - $(window).height())
-      window.OurvoyceApp.items.fetch_next()
-    return
-  )
+  return
+  #$(window).scroll(() ->
+  #if($(window).scrollTop() == $(document).height() - $(window).height())
+  #window.OurvoyceApp.items.fetch_next()
+  #return
+  #)

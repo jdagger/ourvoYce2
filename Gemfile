@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.1.2'
 
 gem 'simple_form'
 gem 'client_side_validations'
@@ -10,7 +10,9 @@ gem 'flash_messages_helper'
 gem 'forgery'
 
 gem 'slim'
-gem 'jquery-tmpl-rails'
+#gem 'jquery-tmpl-rails'
+gem 'ejs'
+gem 'rails-backbone'
 
 gem 'pg'
 

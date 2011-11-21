@@ -9,7 +9,7 @@
     return
 
   render: () ->
-    $(this.el).html($.tmpl(this.template, {}))
+    $(this.el).html(JST[this.template]({}))
     this.collection.each(this.renderTag)
     return this
 

@@ -1,9 +1,8 @@
 @ItemsView = Backbone.View.extend
   el: '#items'
-  template: 'items/items'
 
   initialize: () ->
-    _.bindAll(this, 'render', 'renderItem', 'itemAdded')
+    _.bindAll(this, 'render', 'renderItem', 'renderNoItem', 'itemAdded')
     this.collection.bind('reset', this.render)
     this.collection.bind('add', this.renderItem)
     return
@@ -12,9 +11,15 @@
     return
 
   render: () ->
-    $(this.el).html($.tmpl(this.template, {}))
-    this.collection.each(this.renderItem)
+    $(this.el).html(JST['items/items']({}))
+    if this.collection.length > 0
+      this.collection.each(this.renderItem)
+    else
+      this.renderNoItem()
     return this
+
+  renderNoItem: () ->
+    this.$('.items').html(JST['items/no_items']({}))
 
   renderItem: (item) ->
     itemView = new ItemView({model: item})

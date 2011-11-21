@@ -38,7 +38,7 @@
     return
 
   render: () ->
-    $(this.el).html($.tmpl(this.template, {filter: OurvoyceApp.items.filter, sort_name: OurvoyceApp.items.sort_name, sort_direction: OurvoyceApp.items.sort_direction}))
+    $(this.el).html(JST[this.template]({filter: OurvoyceApp.items.filter, sort_name: OurvoyceApp.items.sort_name, sort_direction: OurvoyceApp.items.sort_direction}))
     this.setup_autocomplete()
     #$(this.el).find('#tag_search').submit(this.search)
     return this
@@ -77,10 +77,10 @@
     matcher = new RegExp("("+$.ui.autocomplete.escapeRegex(t)+")", "ig" )
     return s.replace(matcher, "<strong>$1</strong>")
   scroll: () ->
-    window_top = $(window).scrollTop()
-    content_top = $("#content_container").offset().top
-    if(window_top > content_top)
-      $("#filter_box").addClass("fixed")
-    else
-      $("#filter_box").removeClass("fixed")
+    #window_top = $(window).scrollTop()
+    #content_top = $("#content_container").offset().top
+    #if(window_top > content_top)
+    #  $("#filter_box").addClass("fixed")
+    #else
+    #  $("#filter_box").removeClass("fixed")
     return

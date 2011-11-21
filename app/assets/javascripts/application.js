@@ -14,7 +14,6 @@
 //= require backbone
 //= require backbone.authtokenadapter
 //
-//= require jquery-tmpl
 //= require rails.validations
 //
 //= require ourvoyce_app
