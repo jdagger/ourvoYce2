@@ -30,6 +30,14 @@
     this.fetch({url: url, data: {filter: this.filter, sort: this.sort_details}});
     return
 
+  loaded_item_count: () ->
+    return this.length
+
+  all_records_loaded: () ->
+    item_count = _.size(OurvoyceApp.item_ids)
+
+    return this.loaded_item_count() >= item_count
+
   fetch_items: (tag, filter, sort_name, sort_direction) ->
     $("#record_counter").html("retrieving records...")
     this.base_url = 'tag'
@@ -41,14 +49,12 @@
 
   fetch_next: () ->
     $("#record_counter").html("retrieving records...")
-    item_count = _.size(OurvoyceApp.item_ids)
-    size = this.length
 
-    if size >= item_count
+    if this.all_records_loaded()
       $("#record_counter").html("all records loaded")
       return
 
-    items_to_fetch = OurvoyceApp.item_ids.slice(size, size + 10)
+    items_to_fetch = OurvoyceApp.item_ids.slice(this.loaded_item_count(), this.loaded_item_count() + 10)
     url = "/items/fetch"
     this.fetch
       url: "/items/fetch"

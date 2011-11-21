@@ -60,7 +60,7 @@ module Items
 
 
       #Load the first 10 records
-      initial_items = @item_ids[0, 10]
+      initial_items = @item_ids[0, OURVOYCE_CONFIG['initial_items_to_load']]
 
       load_items_by_id(initial_items, current_user)
     end
@@ -123,7 +123,7 @@ module Items
 
 
       #Load the first 10 records
-      initial_items = @item_ids[0, 10]
+      initial_items = @item_ids[0, OURVOYCE_CONFIG['initial_items_to_load']]
 
       load_items_by_id(initial_items, current_user)
 
@@ -136,6 +136,9 @@ module Items
       @sort_direction = ""
 
       tag_record = Tag.where("path=?", tag).first
+
+      return if tag_record.nil?
+
       @tag_friendly_name = tag_record[:friendly_name]
       @tag_path = tag_record[:path]
 
@@ -184,7 +187,7 @@ module Items
 
 
       #Load the first 10 records
-      initial_items = @item_ids[0, 10]
+      initial_items = @item_ids[0, OURVOYCE_CONFIG['initial_items_to_load']]
 
       load_items_by_id(initial_items, current_user)
     end
@@ -228,6 +231,12 @@ module Items
         else
           item[:favorite] = true
         end
+      end
+
+      #Correct logo path
+      sorted_arr.each do |item|
+        Rails.logger.error "#{OURVOYCE_CONFIG['image_path']}/#{item[:logo]}"
+        item[:logo] = "#{OURVOYCE_CONFIG['image_path']}/#{item[:logo]}"
       end
 
       @items = sorted_arr

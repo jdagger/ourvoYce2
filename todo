@@ -1,7 +1,6 @@
-Items list empty result display | id:0a33d9d8aec59d55f3231df65be95715714dcc0e
 unique index on tag friendly name column | id:0cdf8d8487b6c9eb467135ef25d6e4eae00c4d07
-Add button to load more records | id:1e1e8a061b66e2265fc36713c9adcf9b824dd9df
 Click on Favotites when not signed in generates error - invalid url | id:293429bee25eb24dc9a4c62276f20b1550b6eb76
 Style items in completion list | id:3b01128bbb58e3867d432c758e144a56f1a6f809
 Fix scroll position of details pane | id:aca0e1b6a6b928e9cd3e03e3e63fa9abc72c3249
+Auto Scroll load more records. | id:b5756e73eb44060a8469460b46bc1cac93a2e1d6
 Fix member since label | id:bc7e183458125c78062de4dd1513c5e0505511bb

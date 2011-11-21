@@ -1,5 +1,7 @@
 @import 'compass/css3';
 
+$dark-blue: #2E3A75;
+
 @mixin large{ font-size:18px; }
 @mixin fineprint { font-size:12px; font-style:italic; }
 /* css reset */
@@ -261,7 +263,6 @@ font-size:15px;}
   padding:4px 8px 0 0;
 }
 .socialtop {float:left;margin-right:15px;}
-
 .header-wrapper {
   margin:6px 8px 0px 7px;
   color:#fff;
@@ -677,7 +678,40 @@ $searchbox_width: 302px;
   color: #777;
 }
 
+$light-blue-background: #739FCE;
 
+.items-load-message{
+  text-align: center;
+  padding: 1.3em 0em;
+  color: white;
+  font-size: 1.3em;
+
+  div{
+    width: 70%;
+    background: $light-blue-background;
+    margin: 0px auto;
+  }
+
+  .load-more-records{
+    a{
+      padding: 1.3em 0em;
+      color: white;
+      display: block;
+      &:hover{
+        background: $light-blue-background + #111;
+      }
+    }
+  }
+
+  .all-records-loaded-message{
+      padding: 1.3em 0em;
+  }
+}
+
+.no-items-found{
+  font-size: 1.3em;
+  padding: 1.3em 0.5em;
+}
 
 /* ----------------- pullout */
 .pullout-item, .chart-item {

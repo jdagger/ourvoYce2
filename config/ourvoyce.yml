@@ -1,0 +1,12 @@
+development:
+  image_path: '/images'
+  initial_items_to_load: 10
+  additional_items_to_load: 10
+test:
+  image_path: 'https://s3.amazonaws.com/ourvoYce/images'
+  initial_items_to_load: 10
+  additional_items_to_load: 10
+production:
+  image_path: 'https://s3.amazonaws.com/ourvoYce/images'
+  initial_items_to_load: 10
+  additional_items_to_load: 10

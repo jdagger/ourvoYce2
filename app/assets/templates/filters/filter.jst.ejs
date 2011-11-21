@@ -14,13 +14,13 @@
   </div>
   <div>
     <select id="sort" name="sort">
-      <option value="default_order" ${sort_name == 'default_order' ? 'selected' : ''}>Default</option>
-      <option value="popularity" ${sort_name == 'popularity' ? 'selected' : ''}>Popularity</option>
-      <option value="name" ${sort_name == 'name' ? 'selected' : ''}>Name</option>
+      <option value="default_order" <%= OurvoyceApp.selected_option('default_order', sort_name) %>>Default</option>
+      <option value="popularity" <%= OurvoyceApp.selected_option('popularity', sort_name) %>>Popularity</option>
+      <option value="name" <%= OurvoyceApp.selected_option('name', sort_name) %>>Name</option>
     </select>
     <select id="sort_direction" name="sort_direction">
-      <option value="desc" ${sort_direction == 'desc' ? 'selected' : ''}>Descending</option>
-      <option value="asc" ${sort_direction == 'asc' ? 'selected' : ''}>Ascending</option>
+      <option value="desc" <%= OurvoyceApp.selected_option(sort_direction, 'desc') %>>Descending</option>
+      <option value="asc" <%= OurvoyceApp.selected_option(sort_direction, 'asc') %>>Ascending</option>
     </select>
   </div>
   <div id="search">

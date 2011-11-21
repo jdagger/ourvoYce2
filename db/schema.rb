@@ -66,6 +66,9 @@ ActiveRecord::Schema.define(:version => 20111116172258) do
     t.boolean "hot_topic",     :default => false
   end
 
+  add_index "tags", ["friendly_name"], :name => "index_tags_on_friendly_name", :unique => true
+  add_index "tags", ["path"], :name => "index_tags_on_path", :unique => true
+
   create_table "user_tokens", :force => true do |t|
     t.integer  "user_id"
     t.string   "provider"

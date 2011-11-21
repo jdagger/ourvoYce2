@@ -39,6 +39,10 @@ Ourvoyce::Application.routes.draw do
   end
 
   root :to => 'defaults#index'
+
+  #Point not found images to a default
+  get "/images/*image" => "images#not_found"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
