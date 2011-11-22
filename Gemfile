@@ -67,7 +67,7 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM=~ /darwin/i
+  #gem 'rb-fsevent', :require => false if RUBY_PLATFORM=~ /darwin/i
   gem 'shoulda-matchers'
   gem 'guard-rspec'
   gem 'guard-livereload'
