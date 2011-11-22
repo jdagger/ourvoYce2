@@ -1,5 +1,9 @@
 Ourvoyce::Application.routes.draw do
-  devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'join', :registration => 'account'} #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
+  devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup', :registration => 'account'} do #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
+    get "/signup" => "devise/registrations#new"
+    get "/resend_verification" => "devise/confirmations#new"
+    get "/reset_password" => "devise/passwords#new"
+  end
   #match "/auth/:provider/callback" => "sessions#create"
 
   match '/help' => 'sites#help', :as => :help

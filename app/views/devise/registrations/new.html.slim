@@ -14,11 +14,17 @@
 
   #column1
     h2.thin.red Already a member?
-    p Please login using the form in the upper left corner.
+    p
+      | Visit the 
+      = link_to 'log in page', '/login'
+      | .
     p &nbsp;
 
     h2.thin.red Waiting for your confirmation email?
-    p Check your spam folder. It could be there. 
+    p 
+      Check your spam folder. It could be there. 
+      br
+      = link_to 'Resend confirmation email', '/resend_verification'
     p &nbsp;
 
     h2.thin.red Need help? 
@@ -35,19 +41,21 @@
       h2.thin.blue Your sign-in information:
       = f.error_notification 
       / label is class large, hint is class fineprint
-      = f.input :email, :label => "Choose the email address you want to use to sign in:", :hint => "This is also where we will send your confirmation to activate your membership"
-      = f.input :password, :label => "Create a password:", :hint => "Chose a unique, strong password, letters and numbers, 6 minimum"
+      = f.input :email, :label => "Email Address:", :required => false, :hint => "You will need to confirm your address"
+      = f.input :password, :label => "Password:", :hint => "Must be at least six characters"
       = f.input :password_confirmation
 
 
       h2.thin.blue Your demographics:
-      = f.input :country
-      = f.input :zip, :label => "Zip Code:", :hint => "Just the five digits"
-      = f.input :birth_year, :label => "Year you were born:", :hint => "You must be at least 13 years old"
-      | Membership agreement
-      = check_box_tag :membership_agreement
-      = f.submit ''
-      = render :partial => "devise/shared/links" 
+      = f.input :country, :required => false
+      = f.input :zip, :label => "Zip Code:", :required => false, :hint => "Just the five digits"
+      = f.input :birth_year, :required => false, :label => "Year you were born:", :hint => "You must be at least 13 years old"
+      div
+        = link_to "Membership agreement", membership_path, :target => '_blank'
+        = check_box_tag :membership_agreement
+      div.submit 
+        = f.submit "Sign Up"
+    /= render :partial => "devise/shared/links" 
   p
     strong Check your email and confirm your membership. 
     | You will then be able to sign in just by putting in your Email Address and Password at the top of the page or from here. 

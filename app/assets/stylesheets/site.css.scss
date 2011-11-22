@@ -1,6 +1,8 @@
 @import 'compass/css3';
 
 $dark-blue: #2E3A75;
+$light-blue: #739FCE;
+$red: #AF191D;
 
 @mixin large{ font-size:18px; }
 @mixin fineprint { font-size:12px; font-style:italic; }
@@ -180,7 +182,7 @@ a { color: #d81a1e;
 #headernav ul li { display: inline; }
 
 #headernav ul li a {
-  color:#af191d;
+  color: $red;
   padding: 0 8px 0 6px;
   float: left;
   background: image-url('site/dot.gif') center right no-repeat;
@@ -278,7 +280,7 @@ font-size:15px;}
   width:600px;
 }
 .header-wrapper a {
-  color:#af191d;
+  color: $red;
 }
 .header-wrapper a:hover {
   background-color:transparent;
@@ -287,18 +289,55 @@ font-size:15px;}
 
 /* --- Forms ------------------------------------------------------------ */
 
-input {
-  border:0;
-  background-color:transparent;	
-}
-.submitbtn {
-  position:absolute;
-  top:77px;
-  right:27px;
+form{
+  input[type=text], input[type=password], select{
+    border: solid 1px $light-blue;
+    @include border-radius(10px);
+    padding: 5px 10px;
+    width: 180px;
+  }
+
+  input[type=submit]{
+    background: $red;
+    border: none;
+    padding: 7px 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    @include border-radius(5px);
+
+    &:hover{
+      background: $red + #111;
+    }
+  }
+
+  div.submit{
+    margin: 10px 0px;
+  }
+
+  label{
+    font-weight: bold;
+  }
+
+  span.error{
+    color: white;
+    background: red;
+    padding: 2px 3px;
+    border: solid 0px red;
+  }
+
+  div.input{
+    overflow: hidden;
+    span.hint{
+      display: block;
+    }
+  }
 }
 
 #login_form{
   .login_label{
+    font-weight: bold;
     float: left;
   }
   form{
@@ -306,26 +345,30 @@ input {
 
     div{
       display: inline;
+      overflow: hidden;
+    }
+    input[type=text], input[type=password] {
+      //background: image-url('site/bg-loginbox.gif') top left no-repeat;
+      padding: 3px;
+      padding-left: 10px;
+      height: 12px;
+      width:150px;
+      color:#c03030;
+      font-size:12px;
+      vertical-align: middle;	
+    }
+
+    input[type=submit] {
+      vertical-align: middle;
+      background: image-url("site/btnarrow.gif") top left no-repeat;
+      border: none;
+      width: 17px;
+      height: 18px;
     }
   }
-  overflow: hidden;
-
 }
 
-.loginbox {
-  background: image-url('site/bg-loginbox.gif') top left no-repeat;
-  height:15px;
-  padding-left:10px;
-  padding-bottom:3px;
-  width:107px;
-  text-align:left;
-  color:#c03030;
-  font-size:12px;
-  vertical-align:middle;	
-}
-.loginbtn {
-vertical-align:middle;}
-
+/*
 @mixin inputbox{
   background: image-url('site/bg-inputbox.png') top left no-repeat;
   height:46px;
@@ -337,6 +380,50 @@ vertical-align:middle;}
   font-size:15px;
   vertical-align:middle;
   margin-top:5px;
+}
+label{
+  @include large;
+}
+
+span.hint{
+  display: block;
+  @include fineprint;
+}
+
+input {
+  border:0;
+  background-color:transparent;	
+}
+
+input[type=text], input[type=password] {
+  @include inputbox;
+}
+
+input[type=submit]{
+  display: block;
+  width: 166px;
+  height: 37px;
+}
+
+select {
+  border:1px solid #d6d6d6;
+  font: 12px/18px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+  color:#666;
+  padding:3px 0 3px 5px;
+  width:172px;
+}
+
+
+
+.submitbtn {
+  position:absolute;
+  top:77px;
+  right:27px;
+}
+
+
+.inputbox{
+  @include inputbox;
 }
 
 .inputboxsmall {
@@ -356,40 +443,12 @@ vertical-align:middle;}
   margin:10px 10px 0 0;
 }
 
-#newaccount{
-  label{
-    @include large;
-  }
-
-  span.hint{
-    display: block;
-    @include fineprint;
-  }
-
-  input[type=text], input[type=password] {
-    @include inputbox;
-  }
-
-  input[type=submit]{
-    display: block;
-    width: 166px;
-    height: 37px;
-    background: image-url('site/btncreateaccount.gif') top left no-repeat;
-  }
-
-  select {
-    border:1px solid #d6d6d6;
-    font: 12px/18px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color:#666;
-    padding:3px 0 3px 5px;
-    width:172px;
-  }
-}
-#mainselection {
-  overflow:hidden;
-  margin:8px 0 5px 0;
-  height:30px;	
-}
+*/
+//#mainselection {
+//overflow:hidden;
+//margin:8px 0 5px 0;
+//height:30px;	
+//}
 
 $content-col2-width: 228px;
 /* --- Content ------------------------------------------------------------ */
@@ -678,7 +737,6 @@ $searchbox_width: 302px;
   color: #777;
 }
 
-$light-blue-background: #739FCE;
 
 .items-load-message{
   text-align: center;
@@ -688,7 +746,7 @@ $light-blue-background: #739FCE;
 
   div{
     width: 70%;
-    background: $light-blue-background;
+    background: $light-blue;
     margin: 0px auto;
   }
 
@@ -698,13 +756,13 @@ $light-blue-background: #739FCE;
       color: white;
       display: block;
       &:hover{
-        background: $light-blue-background + #111;
+        background: $light-blue + #111;
       }
     }
   }
 
   .all-records-loaded-message{
-      padding: 1.3em 0em;
+    padding: 1.3em 0em;
   }
 }
 
