@@ -51,7 +51,7 @@ group :development do
   gem 'heroku'
   gem 'pry'
   gem 'pry-doc'
-  gem 'ruby-debug19'
+  #gem 'ruby-debug19'
   #gem 'ruby-debug-base19'
   #gem 'ruby-debug-ide19'
 end
