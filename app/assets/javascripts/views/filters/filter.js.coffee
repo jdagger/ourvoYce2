@@ -13,6 +13,7 @@
   initialize: () ->
     _.bindAll(this, 'render', 'scroll')
     $(window).scroll(this.scroll)
+    this.render()
     return
 
   update_sort: () ->

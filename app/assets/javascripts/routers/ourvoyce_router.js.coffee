@@ -1,5 +1,6 @@
 @OurvoyceRouter = Backbone.Router.extend
   routes: 
+    '': 'default'
     'hot_topics': 'hot_topics'
     'hot_topics/:filter': 'hot_topics'
     'hot_topics/:filter/:sort_name::sort_direction': 'hot_topics'
@@ -11,6 +12,11 @@
     'tag/:tag/:filter/:sort_name::sort_direction': 'tag'
 
   initialize: () ->
+    return
+
+  default: () ->
+    console.log "default"
+    Navigate('hot_topics')
     return
 
   hot_topics: (filter, sort_name, sort_direction) ->

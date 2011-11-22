@@ -1,15 +1,15 @@
 <div class="chart-item">
   <div class="chartblock">
     <div class="voting">
-      <div class="tagsimg">
+      <div class="vote-container">
         <a href="#" class="vote thumbs_up">
-          <img src="/assets/site/thumbup.gif" alt="Like" title="Like" width="30" height="30" />
+          <div class="thumbs-up-vote" title="Like" />
         </a>
         <a href="#" class="vote neutral">
-          <img src="/assets/site/thumbneutral.gif" alt="Neutral" title="Neutral" width="24" height="30" />
+          <div class="neutral-vote" title="Neutral" />
         </a>
         <a href="#" class="vote thumbs_down">
-          <img src="/assets/site/thumbdown.gif" alt="Dislike" title="Dislike" width="30" height="30" />
+          <div class="thumbs-down-vote" title="Dislike" />
         </a>
       </div>
       <div class="pins">
@@ -20,6 +20,7 @@
             <a href="#" class="not-selected"></a>
           <% } %>
         </div>
+        <div class="vote-message"></div>
       </div>
     </div>
     <div class="middle" style="float: left;">

@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   include Items::LoadItems
 
+  def default
+    load_default_item_data if request.format.html?
+  end
+
   #Vote sent from user
   def vote
     unless current_user.nil?
@@ -54,32 +58,46 @@ class ItemsController < ApplicationController
     filter = params[:filter] || 'all'
     sort = params[:sort] || 'default:asc'
 
+    if request.format.html?
+      redirect_to "/i#tag/#{tag}/#{filter}/#{sort}"
+      return
+    end
+
+
     load_tag_items(tag, filter, sort, current_user)
 
-    load_default_item_data if request.format.html?
+    #load_default_item_data if request.format.html?
 
     @base_url = "tag"
 
-    respond_to do |format|
-      format.json { render :json => {:item_ids => @item_ids, :items => @items, :tag_friendly_name => @tag_friendly_name, :tag_path => @tag_path, :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json}
-      format.html {render :template => 'items/items' }
-    end
+    #respond_to do |format|
+      #format.json { render :json => {:item_ids => @item_ids, :items => @items, :tag_friendly_name => @tag_friendly_name, :tag_path => @tag_path, :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json}
+      render :json => {:item_ids => @item_ids, :items => @items, :tag_friendly_name => @tag_friendly_name, :tag_path => @tag_path, :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json
+      #format.html {render :template => 'items/items' }
+    #end
   end
 
   #Retrieve the favorites
   def favorites
     filter = params[:filter] || 'all'
     sort = params[:sort] || 'default:asc'
+
+    if request.format.html?
+      redirect_to "/i#favorites/#{filter}/#{sort}"
+      return
+    end
+
     load_favorite_items(filter, sort, current_user)
 
-    load_default_item_data if request.format.html?
+    #load_default_item_data if request.format.html?
 
     @base_url = "favorites"
 
-    respond_to do |format|
-      format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Favorites', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json}
-      format.html {render :template => 'items/items' }
-    end
+    #respond_to do |format|
+      #format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Favorites', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json}
+      render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Favorites', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json
+      #format.html {render :template => 'items/items' }
+    #end
 
   end
 
@@ -87,16 +105,23 @@ class ItemsController < ApplicationController
   def hot_topics
     filter = params[:filter] || 'all'
     sort = params[:sort] || 'default:asc'
+
+    if request.format.html?
+      redirect_to "/i#hot_topics/#{filter}/#{sort}"
+      return
+    end
+    
     load_hot_topic_items(filter, sort, current_user)
 
-    load_default_item_data if request.format.html?
+    #load_default_item_data if request.format.html?
 
     @base_url = "hot_topics"
 
-    respond_to do |format|
-      format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json}
-      format.html {render :template => 'items/items' }
-    end
+    #respond_to do |format|
+      #format.json { render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json}
+      render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json
+      #format.html {render :template => 'items/items' }
+    #end
   end
 
   #Load the default data needed to render the page.  Required for full page loads

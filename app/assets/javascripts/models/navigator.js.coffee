@@ -1,9 +1,8 @@
 @Navigate = (base_url, argument, filter, sort_name, sort_direction) ->
-  #url = "tag/#{tag}"
-  if base_url.length > 0
+  if base_url? && base_url.length > 0
     url = "#{base_url}"
 
-  if argument.length > 0
+  if argument? && argument.length > 0
     if url.length > 0
       url += "/"
     url += argument

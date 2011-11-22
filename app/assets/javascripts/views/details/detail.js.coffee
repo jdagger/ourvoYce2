@@ -11,7 +11,7 @@
     return
 
   render: () ->
-    $(this.el).html($.tmpl(this.template, this.model.toJSON()))
+    $(this.el).html(JST[this.template](this.model.toJSON()))
 
     window.createSWFObjects()
 

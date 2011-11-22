@@ -13,23 +13,36 @@
 
   initialize: () ->
     _.bindAll(this, 'render', 
+      'renderVoteIndicators',
+      'renderVoteMessage',
       'thumbs_up_vote', 
       'thumbs_down_vote', 
       'neutral_vote',
       'toggle_details',
       'selected_details_changed',
       'vote_changed',
+      'vote_saved',
+      'vote_error',
       'toggle_favorite',
       'favorite_changed'
       #'related_tag_click'
     )
     OurvoyceApp.details.bind('change:current_details', this.selected_details_changed)
     this.model.bind('vote_changed', this.vote_changed)
+    this.model.bind('vote_saved', this.vote_saved)
+    this.model.bind('vote_error', this.vote_error)
     this.model.bind('change:favorite', this.favorite_changed)
     return
 
   vote_changed: () ->
     #Possibly add some sort of animation indicating vote has changed
+    return
+
+  vote_saved: () ->
+    this.renderVoteMessage('saved')
+    return
+  vote_error: () ->
+    this.renderVoteMessage('error')
     return
 
   #related_tag_click: (e) ->
@@ -51,6 +64,10 @@
       count_element.html(favorite_count - 1)
     return
 
+  renderVoteMessage: (message) ->
+    $(this.el).find('.vote-message').html(message)
+    return
+
   toggle_favorite: (e) ->
     e.preventDefault()
 
@@ -59,25 +76,32 @@
     this.model.toggle_favorite()
     return
 
+  renderVoteIndicators: () ->
+    vote = this.model.get('user_vote')
+    if vote != null
+      thumbs_up_div = $(this.el).find('.vote-container .thumbs_up div')
+      neutral_div = $(this.el).find('.vote-container .neutral div')
+      thumbs_down_div = $(this.el).find('.vote-container .thumbs_down div')
+
+      if vote == 1
+        thumbs_up_div.removeClass('thumbs-up-vote-gray').addClass('thumbs-up-vote')
+        thumbs_down_div.removeClass('thumbs-down-vote').addClass('thumbs-down-vote-gray')
+        neutral_div.removeClass('neutral-vote').addClass('neutral-vote-gray')
+      else if vote == 0
+        thumbs_up_div.removeClass('thumbs-up-vote').addClass('thumbs-up-vote-gray')
+        neutral_div.removeClass('neutral-vote-gray').addClass('neutral-vote')
+        thumbs_down_div.removeClass('thumbs-down-vote').addClass('thumbs-down-vote-gray')
+      else if vote == -1
+        thumbs_up_div.removeClass('thumbs-up-vote').addClass('thumbs-up-vote-gray')
+        thumbs_down_div.removeClass('thumbs-down-vote-gray').addClass('thumbs-down-vote')
+        neutral_div.removeClass('neutral-vote').addClass('neutral-vote-gray')
+    return
+
 
   render: () ->
     $(this.el).html(JST[this.template](this.model.toJSON()))
 
-    vote = this.model.get('user_vote')
-    if vote != null
-      thumbs_up_img = $(this.el).find('.thumbs_up img')
-      thumbs_down_img = $(this.el).find('.thumbs_down img')
-      neutral_img = $(this.el).find('.neutral img')
-
-      if vote == 1
-        thumbs_down_img.attr('src', '/assets/site/thumbdown-gray.gif')
-        neutral_img.attr('src', '/assets/site/thumbneutral-gray.gif')
-      else if vote == 0
-        thumbs_down_img.attr('src', '/assets/site/thumbdown-gray.gif')
-        thumbs_up_img.attr('src', '/assets/site/thumbup-gray.gif')
-      else if vote == -1
-        thumbs_up_img.attr('src', '/assets/site/thumbup-gray.gif')
-        neutral_img.attr('src', '/assets/site/thumbneutral-gray.gif')
+    this.renderVoteIndicators()
 
     thumbs_up_vote_count = this.model.thumbs_up_vote_count()
     thumbs_down_vote_count = this.model.thumbs_down_vote_count()
@@ -118,8 +142,9 @@
     if ! OurvoyceApp.authenticated
       window.location = "/signup"
       return
+    this.renderVoteMessage('saving...')
     this.model.thumbs_up()
-    this.render()
+    this.renderVoteIndicators()
     return
 
   thumbs_down_vote: (e) ->
@@ -127,8 +152,9 @@
     if ! OurvoyceApp.authenticated
       window.location = "/signup"
       return
+    this.renderVoteMessage('saving...')
     this.model.thumbs_down()
-    this.render()
+    this.renderVoteIndicators()
     return
 
   neutral_vote: (e) ->
@@ -136,6 +162,7 @@
     if ! OurvoyceApp.authenticated
       window.location = "/signup"
       return
+    this.renderVoteMessage('saving...')
     this.model.neutral()
-    this.render()
+    this.renderVoteIndicators()
     return

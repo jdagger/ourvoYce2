@@ -24,24 +24,19 @@ window.OurvoyceApp =
     this.router = new OurvoyceRouter()
 
     this.itemsView = new ItemsView({collection: OurvoyceApp.items})
-    this.itemsView.render()
 
     this.popularTagsView = new PopularTagsView({collection: OurvoyceApp.popular_tags})
     this.hotTopicTagsView = new HotTopicTagsView({collection: OurvoyceApp.hot_topic_tags})
 
     this.recordCounterView = new RecordCounterView({collection: OurvoyceApp.items})
-    this.recordCounterView.render()
-
 
     this.filterView = new FilterView()
-    this.filterView.render()
 
     this.currentTagView = new CurrentTagView({collection: OurvoyceApp.items})
-    this.currentTagView.render()
 
     this.detailView = new DetailView({model: OurvoyceApp.details})
 
-    Backbone.history.start({pushState: true, silent: true})
+    Backbone.history.start({pushState: false, silent: false})
     return
 
   selected_option: (val, left) ->

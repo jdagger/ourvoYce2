@@ -573,11 +573,23 @@ $searchbox_width: 302px;
 
             .voting{
               float: left;
-              width:110px;
+              width:90px;
               vertical-align:top;
+              padding-right: 20px;
 
-              .tagsimg{
+              .vote-container{
                 margin:11px 0 9px 0;
+                overflow: hidden;
+              }
+              .pins{
+                overflow: hidden;
+                margin: 11px 0 9px 0;
+                .favorite{
+                  float: left;
+                }
+                .vote-message{
+                  float: right;
+                }
               }
             }
           }
@@ -730,6 +742,14 @@ $searchbox_width: 302px;
 .redlg-bot {background:#cb2c1e  image-url('site/thumbdown-white.png') bottom no-repeat;}
 .votenumber {font-size:16px;font-weight:bold;padding-bottom:6px;}
 
+/*Votes */
+div.thumbs-up-vote { float: left ; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 0; }
+div.thumbs-up-vote-gray { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -30px; }
+div.neutral-vote { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -60px; }
+div.neutral-vote-gray { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -90px; }
+div.thumbs-down-vote { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -120px; }
+div.thumbs-down-vote-gray { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -150px; }
+
 #record_counter{
   position: fixed;
   bottom: 15px;
@@ -764,6 +784,15 @@ $searchbox_width: 302px;
   .all-records-loaded-message{
     padding: 1.3em 0em;
   }
+
+  .loading-message{
+    width: 100%;
+    padding-left: 1em;
+    text-align: left;
+    background: white;
+    color: #777;
+  }
+
 }
 
 .no-items-found{

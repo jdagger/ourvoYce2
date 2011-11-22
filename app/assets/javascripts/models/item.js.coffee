@@ -75,10 +75,19 @@
 
 
 
-    this.save({new_vote: new_vote}, {url: url})
+    this.save({new_vote: new_vote}, 
+      url: url, 
+      success: (model, response) =>
+        this.trigger('vote_saved')
+        return
+      error: (model, response) =>
+        this.trigger('vote_error')
+        return
+    )
     this.set({user_vote: new_vote})
     this.update_vote_counts(previous_vote, new_vote)
     return
+
 
   update_vote_counts: (previous_vote, new_vote) ->
     return if previous_vote == new_vote
