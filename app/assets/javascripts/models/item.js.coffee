@@ -61,31 +61,24 @@
 
     return unless OurvoyceApp.authenticated
 
-
-    url = "/items/#{this.get('id')}/vote"
     previous_vote = this.get('user_vote')
+    return if previous_vote == new_vote
 
-    if ! previous_vote?
-      this.trigger('new_vote')
-
-    if previous_vote == new_vote
-      return
-    else
-      this.trigger('vote_changed')
-
-
+    this.trigger('vote_saving')
 
     this.save({new_vote: new_vote}, 
-      url: url, 
+      url: "/items/#{this.get('id')}/vote",
       success: (model, response) =>
+        this.update_vote_counts(previous_vote, new_vote)
+        this.set({user_vote: new_vote})
+        this.trigger('new_vote') if ! previous_vote?
+        this.trigger('vote_changed') if previous_vote != new_vote
         this.trigger('vote_saved')
         return
       error: (model, response) =>
         this.trigger('vote_error')
         return
     )
-    this.set({user_vote: new_vote})
-    this.update_vote_counts(previous_vote, new_vote)
     return
 
 
@@ -100,13 +93,12 @@
     else if previous_vote == -1
       this.set_thumbs_down_vote_count(this.thumbs_down_vote_count() - 1)
 
-    if previous_vote == 1
+    if new_vote == 1
       this.set_thumbs_up_vote_count(this.thumbs_up_vote_count() + 1)
-    else if previous_vote == 0
+    else if new_vote == 0
       this.set_neutral_vote_count(this.neutral_vote_count() + 1)
-    else if previous_vote == -1
+    else if new_vote == -1
       this.set_thumbs_down_vote_count(this.thumbs_down_vote_count() + 1)
-
     return
 
 

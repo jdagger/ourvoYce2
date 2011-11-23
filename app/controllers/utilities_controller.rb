@@ -21,14 +21,15 @@ class UtilitiesController < ApplicationController
       vote = [-1, -1, -1, 0, 0, 1, 1, 1, 1, 1, 1].sample
       total_sample_time = total_sample_time + (Time.now - sample_start)
 
-      timings = Vote.record_vote(user[:id], user[:state], user[:zip], user[:birth_year], item_id, vote)
-      if timings
-        timings.keys.each do |key|
-          total = total_times[key] || 0
-          total = total + timings[key]
-          total_times[key] = total
-        end
-      end
+      Vote.record_vote(user[:id], user[:state], user[:zip], user[:birth_year], item_id, vote)
+      #timings = Vote.record_vote(user[:id], user[:state], user[:zip], user[:birth_year], item_id, vote)
+      #if timings
+        #timings.keys.each do |key|
+          #total = total_times[key] || 0
+          #total = total + timings[key]
+          #total_times[key] = total
+        #end
+      #end
     end
 
     insert_time = Time.now

@@ -59,7 +59,7 @@ class ItemsController < ApplicationController
     sort = params[:sort] || 'default:asc'
 
     if request.format.html?
-      redirect_to "/i#tag/#{tag}/#{filter}/#{sort}"
+      redirect_to "/!#tag/#{tag}/#{filter}/#{sort}"
       return
     end
 
@@ -83,7 +83,7 @@ class ItemsController < ApplicationController
     sort = params[:sort] || 'default:asc'
 
     if request.format.html?
-      redirect_to "/i#favorites/#{filter}/#{sort}"
+      redirect_to "/!#favorites/#{filter}/#{sort}"
       return
     end
 
@@ -107,7 +107,7 @@ class ItemsController < ApplicationController
     sort = params[:sort] || 'default:asc'
 
     if request.format.html?
-      redirect_to "/i#hot_topics/#{filter}/#{sort}"
+      redirect_to "/!#hot_topics/#{filter}/#{sort}"
       return
     end
     
@@ -134,6 +134,7 @@ class ItemsController < ApplicationController
       @favorites_count = 0
       @user_vote_count = 0
     else
+      @member_since = current_user.member_since
       @favorites_count = Favorite.where(user_id: current_user.id).count
       @user_vote_count = UserVote.where(user_id: current_user.id).count
     end

@@ -2,7 +2,7 @@ var mapgraph_mapLoaded = false;
 var mapgraph_barLoaded = false;
 
 function setState(st){
-  window.sendToGraph(OurvoyceApp.details.current_details() + "/age/" + st);
+  window.sendToGraph(OurvoyceApp.details.current_item().get('id') + "/age/" + st);
 }
 
 window.sendToMap = function(dataString) {
@@ -38,14 +38,14 @@ window.barEmbedded = function(e){
 //window.mapgraph_mapvars = {
 window.mapgraph_mapvars = function(){
   return {
-    xmlpath: OurvoyceApp.details.current_details() + "/map/",
+    xmlpath: OurvoyceApp.details.current_item_id() + "/map/",
     baseURL: "/items/"
   };
 }
 
 window.mapgraph_agevars = function(){
   return {
-    xmlpath: OurvoyceApp.details.current_details() + "/age/",
+    xmlpath: OurvoyceApp.details.current_item_id() + "/age/",
     baseURL:"/items/",
     barwidth: 25
   };
@@ -64,8 +64,6 @@ var mapgraph_attributes = {
 
 $(function(){
   window.createSWFObjects = function(){
-    //swfobject.embedSWF("/swf/map.swf", "map", "350", "270","10.0.0", "", mapgraph_mapvars(), mapgraph_params, mapgraph_attributes, barEmbedded);
-    //swfobject.embedSWF("/swf/bar-graph.swf", "bar-graph", "350", "240","10.0.0", "", mapgraph_agevars(), mapgraph_params, mapgraph_attributes, mapEmbedded);     
     swfobject.embedSWF("/swf/map.swf", "map", "320", "246","10.0.0", "", window.mapgraph_mapvars(), mapgraph_params, mapgraph_attributes, window.mapEmbedded);
     swfobject.embedSWF("/swf/bar-graph.swf", "bar-graph", "320", "150","10.0.0", "", window.mapgraph_agevars(), mapgraph_params, mapgraph_attributes, window.barEmbedded);     
   }

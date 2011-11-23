@@ -9,33 +9,40 @@
     'click .voting .thumbs_down': 'thumbs_down_vote'
     'click .toggle-details': 'toggle_details'
     'click .favorite > a': 'toggle_favorite'
-    #'click .related-tags > a': 'related_tag_click'
 
   initialize: () ->
     _.bindAll(this, 'render', 
       'renderVoteIndicators',
       'renderVoteMessage',
+      'renderVoteGraph',
       'thumbs_up_vote', 
       'thumbs_down_vote', 
       'neutral_vote',
       'toggle_details',
-      'selected_details_changed',
+      'details_changed',
       'vote_changed',
       'vote_saved',
+      'vote_saving',
       'vote_error',
       'toggle_favorite',
       'favorite_changed'
-      #'related_tag_click'
     )
-    OurvoyceApp.details.bind('change:current_details', this.selected_details_changed)
+    this.model.bind('vote_saving', this.vote_saving)
     this.model.bind('vote_changed', this.vote_changed)
     this.model.bind('vote_saved', this.vote_saved)
     this.model.bind('vote_error', this.vote_error)
     this.model.bind('change:favorite', this.favorite_changed)
+    this.model.bind('change:details_displayed', this.details_changed)
     return
 
   vote_changed: () ->
+    this.renderVoteIndicators()
+    this.renderVoteGraph()
     #Possibly add some sort of animation indicating vote has changed
+    return
+
+  vote_saving: () ->
+    this.renderVoteMessage('saving...')
     return
 
   vote_saved: () ->
@@ -97,12 +104,7 @@
         neutral_div.removeClass('neutral-vote').addClass('neutral-vote-gray')
     return
 
-
-  render: () ->
-    $(this.el).html(JST[this.template](this.model.toJSON()))
-
-    this.renderVoteIndicators()
-
+  renderVoteGraph: () ->
     thumbs_up_vote_count = this.model.thumbs_up_vote_count()
     thumbs_down_vote_count = this.model.thumbs_down_vote_count()
     neutral_vote_count = this.model.neutral_vote_count()
@@ -117,24 +119,38 @@
     thumbs_down_bar = $(this.el).find('.mini-vote-chart .thumbs-down div')
     neutral_bar = $(this.el).find('.mini-vote-chart .neutral div')
 
-    thumbs_up_bar.css('height', Math.ceil(container_height * thumbs_up_vote_count / max_count) + "px")
-    thumbs_down_bar.css('height', Math.ceil(container_height * thumbs_down_vote_count / max_count) + "px")
-    neutral_bar.css('height', Math.ceil(container_height * neutral_vote_count / max_count) + "px")
+    thumbs_up_bar.animate
+      height: Math.ceil(container_height * thumbs_up_vote_count / max_count) + "px"
+    thumbs_down_bar.animate
+      height: Math.ceil(container_height * thumbs_down_vote_count / max_count) + "px"
+    neutral_bar.animate
+      height: Math.ceil(container_height * neutral_vote_count / max_count) + "px"
+    return
+
+
+  render: () ->
+    $(this.el).html(JST[this.template](this.model.toJSON()))
+
+    this.renderVoteIndicators()
+    this.renderVoteGraph()
+
     return this
 
 
   toggle_details: (e) ->
     e.preventDefault()
-    OurvoyceApp.details.load(this.model.get('id'))
+    #OurvoyceApp.details.load(this.model.get('id'))
+    OurvoyceApp.details.show(this.model)
     return
 
 
-  selected_details_changed: (details) ->
-    current_id = details.get('current_details')
-    if this.model.get('id') == current_id
+  details_changed: (details) ->
+    if this.model.get('details_displayed')
       $(this.el).find('.toggle-details').addClass('bluebg')
+      $(this.el).find('.toggle-details .details-arrow').removeClass('hidden').addClass('expanded')
     else
       $(this.el).find('.toggle-details').removeClass('bluebg')
+      $(this.el).find('.toggle-details .details-arrow').removeClass('expanded').addClass('hidden')
     return
 
   thumbs_up_vote: (e) ->
@@ -142,9 +158,7 @@
     if ! OurvoyceApp.authenticated
       window.location = "/signup"
       return
-    this.renderVoteMessage('saving...')
     this.model.thumbs_up()
-    this.renderVoteIndicators()
     return
 
   thumbs_down_vote: (e) ->
@@ -152,9 +166,7 @@
     if ! OurvoyceApp.authenticated
       window.location = "/signup"
       return
-    this.renderVoteMessage('saving...')
     this.model.thumbs_down()
-    this.renderVoteIndicators()
     return
 
   neutral_vote: (e) ->
@@ -162,7 +174,5 @@
     if ! OurvoyceApp.authenticated
       window.location = "/signup"
       return
-    this.renderVoteMessage('saving...')
     this.model.neutral()
-    this.renderVoteIndicators()
     return

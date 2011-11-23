@@ -10,14 +10,11 @@ window.OurvoyceApp =
     this.hot_topic_tags = new HotTopicTags(hot_topic_tags)
 
 
-
-    #this.items = new Items(items, [{tag_friendly_name: tag_friendly_name, tag_path: tag_path}])
     this.items = new Items(items, {base_url: base_url, tag_friendly_name: tag_friendly_name, tag_path: tag_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction})
     this.item_ids = item_ids
 
     this.user_vote_count = new UserVoteCount({user_vote_count: vote_count})
     this.user_vote_count_view = new UserVoteCountView({model: this.user_vote_count})
-    #this.current_tag = new CurrentTag({friendly_name: tag_friendly_name})
 
     this.details = new Detail()
 
@@ -44,6 +41,19 @@ window.OurvoyceApp =
       return "selected"
     else
       return ""
+
+
+window.preload = (arrayOfImages) ->
+  _.each(arrayOfImages, (element) ->
+    $('<img/>')[0].src = element
+  )
+  return
+
+preload(['/assets/site/ajax-loader.gif'])
+
+
+
+
 
 $ ->
   return

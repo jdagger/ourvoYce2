@@ -1,65 +1,62 @@
-<div class="chart-item">
-  <div class="chartblock">
-    <div class="voting">
-      <div class="vote-container">
-        <a href="#" class="vote thumbs_up">
-          <div class="thumbs-up-vote" title="Like" />
-        </a>
-        <a href="#" class="vote neutral">
-          <div class="neutral-vote" title="Neutral" />
-        </a>
-        <a href="#" class="vote thumbs_down">
-          <div class="thumbs-down-vote" title="Dislike" />
+<div class="item-container">
+  <div class="voting">
+    <div class="vote-container">
+      <a href="#" class="vote thumbs_up">
+        <div class="thumbs-up-vote" title="Like" />
+      </a>
+      <a href="#" class="vote neutral">
+        <div class="neutral-vote" title="Neutral" />
+      </a>
+      <a href="#" class="vote thumbs_down">
+        <div class="thumbs-down-vote" title="Dislike" />
+      </a>
+    </div>
+    <div class="pins">
+      <div class="favorite">
+        <% if(favorite) { %>
+          <a href="#" class="selected"></a>
+        <% }else{ %>
+          <a href="#" class="not-selected"></a>
+        <% } %>
+      </div>
+      <div class="vote-message"></div>
+    </div>
+  </div>
+  <div class="middle" style="float: left;">
+    <div class="details" style="overflow: hidden;">
+      <div class="storelogo" style="float: left;">
+        <a href="vote-detail.html" class="imagelink">
+          <img src="<%= logo %>" alt="<%= name %>" />
         </a>
       </div>
-      <div class="pins">
-        <div class="favorite">
-          <% if(favorite) { %>
-            <a href="#" class="selected"></a>
-          <% }else{ %>
-            <a href="#" class="not-selected"></a>
-          <% } %>
-        </div>
-        <div class="vote-message"></div>
+      <div class="description" style="float: left;">
+        <%= name %>
+        <br />
+        <%= description %>
       </div>
     </div>
-    <div class="middle" style="float: left;">
-      <div class="details" style="overflow: hidden;">
-        <div class="storelogo" style="float: left;">
-          <a href="vote-detail.html" class="imagelink">
-            <img src="<%= logo %>" alt="<%= name %>" />
-          </a>
-        </div>
-        <div class="description" style="float: left;">
-          <%= name %>
-          <br />
-          <%= description %>
-        </div>
+    <div>
+      Related Tags: 
+      <span class='related-tags'>
+        <% _.each(related_tags, function(related_tag){ %>
+          <a href="/tag/<%= related_tag.path %>"><%= related_tag.friendly_name %></a>
+        <% }); %>
+      </span>
+    </div>
+  </div>
+  <div class="toggle-details minichart">
+    <div class="mini-vote-chart" style="height: 45px;">
+      <div class="thumbs-up">
+        <div></div>
       </div>
-      <div>
-        Related Tags: 
-        <span class='related-tags'>
-          <% _.each(related_tags, function(related_tag){ %>
-            <a href="/tag/<%= related_tag.path %>"><%= related_tag.friendly_name %></a>
-          <% }); %>
-        </span>
+      <div class="neutral">
+        <div></div>
+      </div>
+      <div class="thumbs-down">
+        <div></div>
       </div>
     </div>
-    <div class="toggle-details minichart" style="float: left; overflow: hidden; width: 100px; height: 100%; position: absolute; right: 0px;">
-      <div class="mini-vote-chart" style="height: 40px; width: 66px; position: absolute; left: 10px; bottom: 10px;">
-        <div class="thumbs-up" style="width: 18px; padding-top: 3px; position: absolute; bottom: 0px; background: url(/assets/site/graph-green-top.png) no-repeat;">
-          <div style="height: 0px; background-color: #57b70e;"></div>
-        </div>
-        <div class="neutral" style="width: 18px; padding-top: 3px; position: absolute; left: 33%; bottom: 0px; background: url(/assets/site/graph-orange-top.png) no-repeat;">
-          <div style="height: 0px; background-color: #f08127;"></div>
-        </div>
-        <div class="thumbs-down" style="width: 18px; padding-top: 3px; position: absolute; left: 66%; bottom: 0px; background: url(/assets/site/graph-red-top.png) no-repeat;">
-          <div style="height: 0px; background-color: #cb2c1e;"></div>
-        </div>
-      </div>
-      <div class="details-arrow" style="position: absolute; top: 10px; right: 11px; height: 13px; width: 7px;">
-        <img src="/assets/site/arrow-right.png" width="7" height="13" />
-      </div>
+    <div class="details-arrow hidden">
     </div>
   </div>
 </div>

@@ -16,21 +16,22 @@
             h3
               ' Number of ourvoYce users: 
               strong(class="bluebold")= "#{number_with_delimiter(@total_users)}"
-        div(class="pullout-item")
-          .itemblock
-            h3.redbold
-              a(href='/favorites')
-                img(src="/assets/site/star.png" width="18" height="19" alt="star")
-                == "Show Favorites (<span id='favorites_count'>#{@favorites_count}</span>)"
-            h3
-              ' You have voted on 
-              strong.bluebold
-                span#user_vote_count
-                  | 0
-                | &nbsp;items
-            h3
-              ' Member since
-              strong.bluebold= "8/4/2011"
+        - if signed_in?
+          div(class="pullout-item")
+            .itemblock
+              h3.redbold
+                a(href='/favorites')
+                  img(src="/assets/site/star.png" width="18" height="19" alt="star")
+                  == "Show Favorites (<span id='favorites_count'>#{@favorites_count}</span>)"
+              h3
+                ' You have voted on 
+                strong.bluebold
+                  span#user_vote_count
+                    | 0
+                  | &nbsp;items
+              h3
+                ' Member since
+                strong.bluebold= @member_since.strftime('%m/%d/%Y')
         div(class="pullout-item")
           .itemblock
             h3

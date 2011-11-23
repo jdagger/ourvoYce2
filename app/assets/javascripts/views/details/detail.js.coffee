@@ -5,7 +5,7 @@
 
   initialize: () ->
     _.bindAll(this, 'render', 'hide', 'scroll')
-    this.model.bind('redraw', this.render)
+    this.model.bind('show', this.render)
     this.model.bind('hide', this.hide)
     $(window).scroll(this.scroll)
     return
@@ -18,12 +18,6 @@
     thumbs_up_vote_count = 0
     neutral_vote_count = 0
     thumbs_down_vote_count = 0
-
-    #vote = this.model.get('vote')
-    #if vote != undefined
-      #thumbs_up_vote_count = vote.thumbs_up_vote_count
-      #neutral_vote_count = vote.neutral_vote_count
-      #thumbs_down_vote_count = vote.thumbs_down_vote_count
 
     thumbs_up_vote_count = this.model.get('thumbs_up_vote_count')
     neutral_vote_count = this.model.get('neutral_vote_count')

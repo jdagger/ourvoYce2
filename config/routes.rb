@@ -24,7 +24,7 @@ Ourvoyce::Application.routes.draw do
   match "/search/autocomplete" => "searches#autocomplete"
   match "/search/notfound(/:term)" => "searches#not_found", :as => :not_found
 
-  match '/i' => 'items#default'
+  match '/!' => 'items#default'
   match '/items/tag/:tag' => 'items#tag'
   match '/items/fetch' => 'items#fetch'
   resources :items do
