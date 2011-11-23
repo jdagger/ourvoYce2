@@ -338,7 +338,7 @@ namespace :db do
           :state => 'NC'
         )
         user.confirmed_at = Time.now
-        user.member_since => Time.now
+        user.member_since = Time.now
         user.save
 
         puts "done"
