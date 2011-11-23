@@ -1,7 +1,7 @@
 @DetailView = Backbone.View.extend
-  tag: 'div'
-  el: '#item_details'
-  template: 'details/detail'
+  #tag: 'div'
+  el: '#item-details-pane'
+  #template: 'details/detail'
 
   initialize: () ->
     _.bindAll(this, 'render', 'hide', 'scroll')
@@ -11,9 +11,25 @@
     return
 
   render: () ->
-    $(this.el).html(JST[this.template](this.model.toJSON()))
+    this.setPosition()
+    if ! $(this.el).is(':visible')
+      $(this.el).show('slide', {direction: 'left'}, 500, () =>
+        #$('#general-details').hide()
+        console.log "Mapping"
+        try
+          window.sendToMap(this.model.get('id'))
+          window.sendToGraph(this.model.get('id'), '')
+        catch error
+      ) 
+    else
+      console.log "Mapping2"
+      try
+        window.sendToMap(this.model.get('id'))
+        window.sendToGraph(this.model.get('id'), '')
+      catch error
+    #$(this.el).html(JST[this.template](this.model.toJSON()))
 
-    window.createSWFObjects()
+    #window.createSWFObjects()
 
     thumbs_up_vote_count = 0
     neutral_vote_count = 0
@@ -40,22 +56,18 @@
     neutral_element.css('height', Math.ceil(container_height * neutral_vote_count / max_height) + "px")
     thumbs_down_element.css('height', Math.ceil(container_height * thumbs_down_vote_count / max_height) + "px")
 
-    this.setPosition()
-    if ! $(this.el).is(':visible')
-      $(this.el).show('slide', {direction: 'left'}, 500, () ->
-        #$('#general_details').hide()
-      ) 
     return this
 
 
   hide: () ->
     if $(this.el).is(':visible')
-      #$('#general_details').show()
+      #$('#general-details').show()
       $(this.el).hide('slide', {direction: 'left'}, 500)
     return this
 
 
   setPosition: () ->
+    return
     items = $("#items")
     filter = $("#filter_box")
     details = $("#details")
