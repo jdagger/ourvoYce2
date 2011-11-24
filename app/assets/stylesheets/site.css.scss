@@ -22,6 +22,21 @@ $red-chart: #cb2c1e;
 
 @mixin large{ font-size:18px; }
 @mixin fineprint { font-size:12px; font-style:italic; }
+@mixin details-pane{
+  margin:0px 0px 5px 0;
+  border-radius:0 8px 8px 0;
+  -moz-border-radius:0 8px 8px 0;
+  -webkit-border-top-right-radius:8px;
+  -webkit-border-bottom-right-radius:8px;
+  box-shadow: 0px 0px 7px #999;
+  -moz-box-shadow: 0px 0px 7px #999;
+  -webkit-box-shadow: 0px 0px 7px #999;
+  width: 368px;
+  min-height:300px;
+  overflow: hidden;
+  padding:0 0 10px 0;
+  white-space: wrap;
+}
 /* css reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -608,41 +623,71 @@ form{
 
     #details {
       position: absolute;
-      //background:#e1eef6  image-url('site/bg-pullout.jpg') repeat-x;
       left: 653px;
       top: 0px;
-      margin:0px 0px 5px 0;
-      border-radius:0 8px 8px 0;
-      -moz-border-radius:0 8px 8px 0;
-      -webkit-border-top-right-radius:8px;
-      -webkit-border-bottom-right-radius:8px;
-      box-shadow: 0px 0px 7px #999;
-      -moz-box-shadow: 0px 0px 7px #999;
-      -webkit-box-shadow: 0px 0px 7px #999;
-      width: 368px;
-      min-height:300px;
-      overflow: visible;
-      padding:0 0 10px 0;
-      white-space: wrap;
-
       #sidebar {
         position: relative;
-
-
         #general-details {
+          @include details-pane;
           background:#e1eef6  image-url('site/bg-pullout.jpg') repeat-x;
-          //background:#e1eef6 ;
-          //margin-top: 6px;
-          //margin-right: 6px;
           z-index: 48;
         }
         #item-details-pane {
+          @include details-pane;
           position: absolute;
           top: 0px;
           left: 0px;
           background:#fff  image-url('site/bg-pullout2.jpg') repeat-x;
           display: none;
           z-index: 49;
+
+          #item-detail-name{
+            height: 50px;
+          }
+
+          .vote-chart{
+            height: 120px; 
+            position: relative; 
+            width: 160px; 
+            margin: 0px auto;
+
+            .thumbs-up, .neutral, .thumbs-down{
+              width: 47px; 
+              position: absolute; 
+              bottom: 0px;
+              text-align: center;
+
+              .top {height:7px;}
+              .bottom {padding-top: 38px;}
+
+              .votenumber {
+                font-size: 16px;
+                font-weight: bold;
+                padding-bottom: 6px;
+              }
+            }
+
+            .thumbs-up{
+              color: $green-chart;
+              .top {background: image-url('site/graphlg-green-top.png') no-repeat;}
+              .height { background: $green-chart; }
+              .bottom {background: $green-chart image-url('site/thumbup-white.png') bottom no-repeat;}
+            }
+            .neutral{
+              color: $orange-chart;
+              left: 33%; 
+              .top {background: image-url('site/graphlg-orange-top.png') no-repeat;}
+              .height { background: $orange-chart; }
+              .bottom {background:$orange-chart image-url('site/thumbneutral-white.png') bottom no-repeat;}
+            }
+            .thumbs-down{
+              color: $red-chart;
+              left: 66%; 
+              .top {background: image-url('site/graphlg-red-top.png') no-repeat;}
+              .height { background: $red-chart; }
+              .bottom {background:$red-chart image-url('site/thumbdown-white.png') bottom no-repeat;}
+            }
+          }
         }
       }
     }
@@ -720,17 +765,6 @@ form{
 .red-top {background: image-url('site/graph-red-top.png') no-repeat;}
 .red-bot {background: image-url('site/graph-red-bot.png') no-repeat;}
 
-/* LARGE chart/bargraph */
-.largechart-table, .largechart-table2, .largechart-table3 {float:left;width:47px;margin-right:5px;vertical-align:bottom;}
-.greenlg-top, .orangelg-top, .redlg-top {width:47px;height:9px;}
-.greenlg-bot, .orangelg-bot, .redlg-bot {padding-top: 5px; width:47px;}
-.greenlg-top {background: image-url('site/graphlg-green-top.png') no-repeat;}
-.greenlg-bot {background: $green-chart image-url('site/thumbup-white.png') bottom no-repeat;}
-.orangelg-top {background: image-url('site/graphlg-orange-top.png') no-repeat;}
-.orangelg-bot {background:$orange-chart image-url('site/thumbneutral-white.png') bottom no-repeat;}
-.redlg-top {background: image-url('site/graphlg-red-top.png') no-repeat;}
-.redlg-bot {background:$red-chart image-url('site/thumbdown-white.png') bottom no-repeat;}
-.votenumber {font-size:16px;font-weight:bold;padding-bottom:6px;}
 
 /*Votes */
 div.thumbs-up-vote { float: left ; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 0; }
@@ -918,7 +952,6 @@ a.vote:hover{
 
 
 #map{
-  //border: solid 0px red;
   //float:right;
   margin-top:10px;
   //margin-right:10px;

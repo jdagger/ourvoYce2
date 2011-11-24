@@ -12,7 +12,8 @@
       'set_thumbs_up_vote_count',
       'set_neutral_vote_count',
       'update_vote_counts',
-      'toggle_favorite'
+      'toggle_favorite',
+      'showDetails'
     )
     #this.set({vote: new Vote(attributes)})
     return
@@ -27,6 +28,10 @@
 
   neutral: () ->
     this.change_vote(0)
+    return
+
+  showDetails: () ->
+    this.collection.showDetails(this)
     return
 
   toggle_favorite: () ->

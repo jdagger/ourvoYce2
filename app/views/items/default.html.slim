@@ -11,13 +11,13 @@
     #details
       #sidebar
         #general-details
-          div(class="pullout-item")
+          .pullout-item
             .itemblock
               h3
                 ' Number of ourvoYce users: 
                 strong(class="bluebold")= "#{number_with_delimiter(@total_users)}"
           - if signed_in?
-            div(class="pullout-item")
+            .pullout-item
               .itemblock
                 h3.redbold
                   a(href='/favorites')
@@ -32,7 +32,7 @@
                 h3
                   ' Member since
                   strong.bluebold= @member_since.strftime('%m/%d/%Y')
-          div(class="pullout-item")
+          .pullout-item
             .itemblock
               h3
                 = link_to "Hot Topics", hot_topics_path
@@ -45,7 +45,7 @@
                     ' View All
                 == "&nbsp;"
                 img(src="/assets/site/arrow-right.png" width="7" height="13" style="padding-bottom:3px;" class="bottom")
-          div(class="pullout-item")
+          .pullout-item
             .itemblock
               h3 Popular Tags
               #popular-tags.tags
@@ -56,14 +56,14 @@
                   strong= "View All"
                 == "&nbsp;"
                 img src="/assets/site/arrow-right.png" width="7" height="13" style="padding-bottom:3px;" class="bottom"
-          div(class="pullout-item")
+          .pullout-item
             .itemblock
               h3= "Suggest a Topic:"
               input type="text" class="inputbox" name="topic" maxlength="35"
               br
               input type="image" name="submit" src="/assets/site/btnsubmit.gif" border="0" width="52" height="22" class="submitbtn2"
               .clear
-          div(class="pullout-item last")
+          .pullout-item.last
             .itemblock
               #footer
                 ul#footerlist
@@ -73,26 +73,31 @@
         #item-details-pane
           .pullout-item
             .itemblock
-              h2= "{name}"
+              h3#item-detail-name
               .whitebox
                 img(src="/assets/site/socialmedia.gif" width="293" height="22")
-              .vote-chart(style="height: 120px; position: relative; width: 160px; margin: 0px auto;")
-                .thumbs-up(style="width: 47px; position: absolute; bottom: 0px;")
-                  div(class="votenumber green" style="width: 47px; text-align: center;") 100
-                  .greenlg-top( style="height: 7px;")
-                  .green-height(style="height: 10px; background-color: #57b70e;")
-                  .greenlg-bot(style="height: 38px;")
-                .neutral(style="width: 47px; position: absolute; left: 33%; bottom: 0px;")
-                  div(class="votenumber orange" style="width: 47px; text-align: center;") 100
-                  .orangelg-top(style="height: 7px;")
-                  .orange-height(style="height: 40px; background-color: #f08127;")
-                  .orangelg-bot(style="height: 38px;")
-                .thumbs-down(style="width: 47px; position: absolute; left: 66%; bottom: 0px;")
-                  div(class="votenumber red" style="width: 47px; text-align: center;") 100
-                  .redlg-top(style="height: 7px;")
-                  .red-height(style="height: 80px; background-color: #cb2c1e;")
-                  .redlg-bot(style="height: 38px;")
-          .pullout-item
+              ul
+                li
+                  a#item-website(target="_blank")Website
+                li
+                  a#item-wikipedia(target="_blank")Wikipedia page
+              .vote-chart
+                .thumbs-up
+                  .votenumber
+                  .top
+                  .height
+                  .bottom
+                .neutral
+                  .votenumber
+                  .top
+                  .height
+                  .bottom
+                .thumbs-down
+                  .votenumber
+                  .top
+                  .height
+                  .bottom
+          .pullout-item.last
             .itemblock
               .maps-container
                 #map
@@ -121,41 +126,5 @@
                       param(name="menu" value="false")
                       param(name="wmode" value="transparent")
                       param(name="flashvars" value="baseURL=/items/&amp;barwidth=25")
-          .pullout-item
-            .itemblock
-              .pullout-col
-                h3 
-                  | Score:
-                  span.redbold 82%
-              .pullout-col2
-                h3
-                  | Participation: 
-                  span.redbold 45%
-              .clear
-          div(class="pullout-item last")
-            .itemblock
-              .pullout-col
-                h3 Related Tags
-                ul
-                  li
-                    a(href="vote-default.html")Starbucks
-                  li
-                    a(href="vote-default.html")Fox News
-                  li
-                    a(href="vote-default.html")Obama
-                  li
-                    a(href="vote-default.html")French Fries
-                  li
-                    a(href="vote-default.html")NFL
-                  li
-                    a(href="vote-default.html")Auto Dealers
-              .pullout-col2
-                h3 Related Websites
-                ul
-                  li
-                    a#item-website(target="_blank")Website
-                  li
-                    a#item-wikipedia(target="_blank")Wikipedia page
-              .clear
 
 #record_counter

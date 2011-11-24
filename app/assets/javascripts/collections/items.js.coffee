@@ -3,12 +3,34 @@
   url: '/Items'
 
   initialize: (collection, params) ->
+    _.extend(this, Backbone.Events)
     this.tag = params.tag_path
     this.friendly_name = params.tag_friendly_name
     this.base_url = params.base_url
     this.filter = params.filter
     this.sort_name = params.sort_name
     this.sort_direction = params.sort_direction
+    this.displayed_details_item = null
+    _.bindAll(this, 'change_selected_details')
+
+  #Set the item whos details are being shown
+  change_selected_details: (item) ->
+    if this.displayed_details_item == null
+      this.displayed_details_item = item
+      this.trigger('displayed_details_changed')
+      item.set({show_details: true})
+      this.trigger('show_details')
+    else if this.displayed_details_item.get('id') == item.get('id')
+      this.displayed_details_item = null
+      item.set({show_details: false})
+      this.trigger('hide_details')
+    else
+      this.displayed_details_item.set({show_details: false})
+      this.displayed_details_item = item
+      this.trigger('displayed_details_changed')
+      item.set({show_details: true})
+      this.trigger('show_details')
+    return
 
   fetch_hot_topics: (filter, sort_name, sort_direction) ->
     url = "/hot_topics"

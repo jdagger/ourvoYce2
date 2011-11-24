@@ -7,7 +7,7 @@
     'click .voting .thumbs_up': 'thumbs_up_vote'
     'click .voting .neutral': 'neutral_vote'
     'click .voting .thumbs_down': 'thumbs_down_vote'
-    'click .toggle-details': 'toggle_details'
+    'click .toggle-details': 'details_click'
     'click .favorite > a': 'toggle_favorite'
 
   initialize: () ->
@@ -18,7 +18,7 @@
       'thumbs_up_vote', 
       'thumbs_down_vote', 
       'neutral_vote',
-      'toggle_details',
+      'details_click',
       'details_changed',
       'vote_changed',
       'vote_saved',
@@ -32,7 +32,7 @@
     this.model.bind('vote_saved', this.vote_saved)
     this.model.bind('vote_error', this.vote_error)
     this.model.bind('change:favorite', this.favorite_changed)
-    this.model.bind('change:details_displayed', this.details_changed)
+    this.model.bind('change:show_details', this.details_changed)
     return
 
   vote_changed: () ->
@@ -77,9 +77,7 @@
 
   toggle_favorite: (e) ->
     e.preventDefault()
-
     window.location = "/signup" unless OurvoyceApp.authenticated
-
     this.model.toggle_favorite()
     return
 
@@ -137,15 +135,15 @@
     return this
 
 
-  toggle_details: (e) ->
+  details_click: (e) ->
     e.preventDefault()
-    #OurvoyceApp.details.load(this.model.get('id'))
-    OurvoyceApp.details.show(this.model)
+    this.model.collection.change_selected_details(this.model)
     return
 
 
-  details_changed: (details) ->
-    if this.model.get('details_displayed')
+  details_changed: () ->
+    #if OurvoyceApp.details.get('id') == this.model.get('id') && OurvoyceApp.detailView.isVisible()
+    if this.model.get('show_details')
       $(this.el).find('.toggle-details').addClass('bluebg')
       $(this.el).find('.toggle-details .details-arrow').removeClass('hidden').addClass('expanded')
     else
