@@ -56,7 +56,7 @@ group :development do
   #gem 'ruby-debug-ide19'
 end
 
-group :development, :test do
+group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 
@@ -75,5 +75,4 @@ group :development, :test do
   gem 'valid_attribute'
 
   gem 'jasmine'
-
 end
