@@ -15,7 +15,6 @@
       'toggle_favorite',
       'showDetails'
     )
-    #this.set({vote: new Vote(attributes)})
     return
 
   thumbs_up: () ->

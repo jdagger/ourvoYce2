@@ -4,12 +4,18 @@
   #template: 'details/detail'
 
   initialize: () ->
-    _.bindAll(this, 'render', 'renderVoteGraph', 'hide', 'show', 'isVisible', 'scroll')
+    _.bindAll(this, 'render', 'renderVoteGraph', 'hide', 'show', 'isVisible', 'scroll', 'hideDetailsClick')
     this.model.bind('change', this.render)
+    this.speed = 300
     OurvoyceApp.items.bind('show_details', this.show)
     OurvoyceApp.items.bind('hide_details', this.hide)
     $(window).scroll(this.scroll)
     return
+
+  events:
+    "click #hide-details": "hideDetailsClick"
+
+
 
   render: () ->
     this.displaying_item_id = this.model.get('id')
@@ -27,6 +33,11 @@
     this.model.set({displayed: true})
 
     return this
+
+  hideDetailsClick: (e) ->
+    e.preventDefault()
+    OurvoyceApp.items.hide_details()
+    return
 
   isVisible: () ->
     return $(this.el).is(':visible')
@@ -64,12 +75,12 @@
 
   hide: () ->
     if this.isVisible()
-      $(this.el).hide('slide', {direction: 'left'}, 500)
+      $(this.el).hide('slide', {direction: 'left'}, this.speed)
     return this
 
   show: () ->
     if !this.isVisible()
-      $(this.el).show('slide', {direction: 'left'}, 500)
+      $(this.el).show('slide', {direction: 'left'}, this.speed)
     return this
 
 

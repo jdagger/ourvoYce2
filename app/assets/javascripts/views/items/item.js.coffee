@@ -52,11 +52,6 @@
     this.renderVoteMessage('error')
     return
 
-  #related_tag_click: (e) ->
-  #e.preventDefault()
-  #OurvoyceApp.router.navigate($(e.target).attr('href').substr(1), true)
-  #return
-
   favorite_changed: (model, val) ->
     favorite_link = $(this.el).find('.favorite > a')
 

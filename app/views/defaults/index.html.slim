@@ -27,7 +27,7 @@
           - @hot_topics.each do |hot_topic|
             .hot_topic
               = link_to hot_topic.friendly_name, tag_path(hot_topic.path)
-        = link_to new_user_session_path, class: 'imagelink' do 
+        = link_to signup_path, class: 'imagelink' do 
           = image_tag "site/btnsignuptovote.gif", width: "212", height: "41", alt: "or Sign up to Vote!"
       div(class="content-col3")
         = image_tag "site/placeholder.gif", width: '348', height: '272'
