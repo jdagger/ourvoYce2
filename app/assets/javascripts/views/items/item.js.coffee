@@ -7,7 +7,7 @@
     'click .voting .thumbs_up': 'thumbs_up_vote'
     'click .voting .neutral': 'neutral_vote'
     'click .voting .thumbs_down': 'thumbs_down_vote'
-    'click .toggle-details': 'details_click'
+    'click .toggle-details': 'detailsClick'
     'click .favorite > a': 'toggle_favorite'
 
   initialize: () ->
@@ -18,21 +18,28 @@
       'thumbs_up_vote', 
       'thumbs_down_vote', 
       'neutral_vote',
-      'details_click',
-      'details_changed',
+      'detailsClick',
+      #'selectedDetailsChanged',
       'vote_changed',
       'vote_saved',
       'vote_saving',
       'vote_error',
       'toggle_favorite',
-      'favorite_changed'
+      'favorite_changed',
+      'showDetails',
+      'hideDetails',
+      'toggleDetails'
     )
     this.model.bind('vote_saving', this.vote_saving)
     this.model.bind('vote_changed', this.vote_changed)
     this.model.bind('vote_saved', this.vote_saved)
     this.model.bind('vote_error', this.vote_error)
     this.model.bind('change:favorite', this.favorite_changed)
-    this.model.bind('change:show_details', this.details_changed)
+
+    OurvoyceApp.detail.bind('showDetails', this.showDetails)
+    OurvoyceApp.detail.bind('hideDetails', this.hideDetails)
+
+    this.detailsDisplayed = false
     return
 
   vote_changed: () ->
@@ -130,21 +137,46 @@
     return this
 
 
-  details_click: (e) ->
+  #User clicked to expand details
+  detailsClick: (e) ->
     e.preventDefault()
-    this.model.collection.change_selected_details(this.model)
+    if this.detailsDisplayed
+      OurvoyceApp.detail.hideDetails()
+    else
+      OurvoyceApp.detail.showDetails(this.model)
     return
 
+  showDetails: (item) ->
+    if this.model.get('id') == item.get('id')
+      this.toggleDetails(true)
+    else
+      this.toggleDetails(false)
+    return
 
-  details_changed: () ->
-    #if OurvoyceApp.details.get('id') == this.model.get('id') && OurvoyceApp.detailView.isVisible()
-    if this.model.get('show_details')
+  hideDetails: () ->
+    this.toggleDetails(false)
+    return
+
+  toggleDetails: (visible) ->
+    this.detailsDisplayed = visible
+    if visible
       $(this.el).find('.toggle-details').addClass('bluebg')
       $(this.el).find('.toggle-details .details-arrow').removeClass('hidden').addClass('expanded')
     else
       $(this.el).find('.toggle-details').removeClass('bluebg')
       $(this.el).find('.toggle-details .details-arrow').removeClass('expanded').addClass('hidden')
     return
+
+  #selectedDetailsChanged: (id) ->
+  ##if OurvoyceApp.detail.get('id') == this.model.get('id') && OurvoyceApp.detailView.isVisible()
+  #console.log "toggle click"
+  ##if this.model.get('show_details')
+  #$(this.el).find('.toggle-details').addClass('bluebg')
+  #$(this.el).find('.toggle-details .details-arrow').removeClass('hidden').addClass('expanded')
+  #else
+  #$(this.el).find('.toggle-details').removeClass('bluebg')
+  #$(this.el).find('.toggle-details .details-arrow').removeClass('expanded').addClass('hidden')
+  #return
 
   thumbs_up_vote: (e) ->
     e.preventDefault()

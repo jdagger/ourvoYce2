@@ -3,10 +3,24 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  before_save :set_state
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :zip, :country, :birth_year, :state
   #include ActiveModel::SecurePassword
   #has_secure_password
+  
+  #Set the user's state based on their zip code
+  def set_state
+    if zip_changed? || state.blank?
+      begin
+        self.state = Zip.where(:zip => zip).first.state
+      rescue
+        Rails.logger.error "Error User#set_state"
+      end
+    end
+  end
+
 
   def self.new_with_session(params, session)
     #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -22,11 +36,7 @@ class User < ActiveRecord::Base
   end
 
   def apply_omniauth(omniauth)
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "User.apply_omniauth"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "User.apply_omniauth"
     #add some info about the user
     #self.name = omniauth['user_info']['name'] if name.blank?
     #self.nickname = omniauth['user_info']['nickname'] if nickname.blank?
@@ -47,11 +57,11 @@ class User < ActiveRecord::Base
 
   def password_required?
     #(user_tokens.empty? || !password.blank?) && super  
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "User.password_required?"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "User.password_required?"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
     true
   end
 

@@ -1,55 +1,60 @@
 @DetailView = Backbone.View.extend
-  #tag: 'div'
   el: '#item-details-pane'
-  #template: 'details/detail'
 
   initialize: () ->
-    _.bindAll(this, 'render', 'renderVoteGraph', 'hide', 'show', 'isVisible', 'scroll', 'hideDetailsClick')
-    this.model.bind('change', this.render)
-    this.speed = 300
-    OurvoyceApp.items.bind('show_details', this.show)
-    OurvoyceApp.items.bind('hide_details', this.hide)
+    _.bindAll(this, 'render', 'renderVoteGraph', 'renderMap', 'renderAgeGraph', 'showDetails', 'hideDetails')
+
+    #this.animateSpeed = 200
+
+    this.model.bind('newDetails', this.render)
+    this.model.bind('showDetails', this.showDetails)
+    this.model.bind('hideDetails', this.hideDetails)
+
     $(window).scroll(this.scroll)
     return
 
   events:
     "click #hide-details": "hideDetailsClick"
 
-
-
-  render: () ->
-    this.displaying_item_id = this.model.get('id')
-
-
-    $(this.el).find('#item-detail-name').html(this.model.get('name'))
-
-    try
-      window.sendToMap(this.model.get('id'))
-      window.sendToGraph(this.model.get('id'), '')
-    catch error
-
-    this.renderVoteGraph()
-
-    this.model.set({displayed: true})
-
+  #Event handler for showDetails
+  showDetails: (item) ->
+    $(this.el).find('#map').css('visibility', 'visible')
+    $(this.el).find('#bar-graph').css('visibility', 'visible')
+    $(this.el).css('visibility', 'visible')
     return this
 
+  #Event handler for hideDetails
+  hideDetails: () ->
+    $(this.el).find('#map').css('visibility', 'hidden')
+    $(this.el).find('#bar-graph').css('visibility', 'hidden')
+    $(this.el).css('visibility', 'hidden')
+    return this
+
+  #Click the hide details button on details pane
   hideDetailsClick: (e) ->
     e.preventDefault()
-    OurvoyceApp.items.hide_details()
+    OurvoyceApp.detail.hideDetails()
     return
+  
 
-  isVisible: () ->
-    return $(this.el).is(':visible')
+  render: () ->
+    $(this.el).find('#item-detail-name').html(this.model.name())
+    $(this.el).find('#item-detail-website').attr('href', this.model.website())
+    $(this.el).find('#item-detail-wikipedia').attr('href', this.model.wikipedia())
+    this.renderVoteGraph()
+    this.renderMap()
+    this.renderAgeGraph()
+
+    return this
 
   renderVoteGraph: () ->
     thumbs_up_vote_count = 0
     neutral_vote_count = 0
     thumbs_down_vote_count = 0
 
-    thumbs_up_vote_count = this.model.get('thumbs_up_vote_count')
-    neutral_vote_count = this.model.get('neutral_vote_count')
-    thumbs_down_vote_count = this.model.get('thumbs_down_vote_count')
+    thumbs_up_vote_count = this.model.thumbsUpVoteCount()
+    neutral_vote_count = this.model.neutralVoteCount()
+    thumbs_down_vote_count = this.model.thumbsDownVoteCount()
 
     max_height = Math.max(thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count, 1)
 
@@ -70,47 +75,51 @@
       height: Math.ceil(container_height * neutral_vote_count / max_height) + "px"
     thumbs_down_element.animate
       height: Math.ceil(container_height * thumbs_down_vote_count / max_height) + "px"
+
     return
 
-
-  hide: () ->
-    if this.isVisible()
-      $(this.el).hide('slide', {direction: 'left'}, this.speed)
-    return this
-
-  show: () ->
-    if !this.isVisible()
-      $(this.el).show('slide', {direction: 'left'}, this.speed)
-    return this
-
-
-  setPosition: () ->
+  renderMap: () ->
+    try
+      window.sendToMap(this.model.id())
+    catch error
+      console.log "Map Error:  #{error}"
     return
-    items = $("#items")
-    filter = $("#filter_box")
-    details = $("#details")
-    content_top = items.offset().top
-    window_top = $(window).scrollTop()
-    window_left = $(window).scrollLeft()
-    filter_height = parseInt(filter.css("height").replace(/px/, ''))
-    filter_bottom = filter.offset().top + filter_height
 
-    #if(window_top > content_top)
-    if(filter_bottom > content_top)
-      details.addClass("fixed")
-      left = items.offset().left + items.outerWidth() - window_left
-      #details.css("position", "fixed")
-      #margin_top = parseInt($("#items").css('margin-top').replace(/px/, ''))
-      #details.css("top", "#{filter_height + margin_top}px")
-      details.css("left", "#{left}px")
-    else
-      #details.css("position", "absolute")
-      #details.css("top", "0px")
-      details.css("left", "")
-      details.removeClass("fixed")
-
-
-
-  scroll: () ->
-    this.setPosition()
+  renderAgeGraph: () ->
+    try
+      window.sendToGraph(this.model.id(), '')
+    catch error
+      console.log "Graph Error: #{error}"
     return
+
+  #
+  #  setPosition: () ->
+  #    return
+  #    items = $("#items")
+  #    filter = $("#filter_box")
+  #    details = $("#details")
+  #    content_top = items.offset().top
+  #    window_top = $(window).scrollTop()
+  #    window_left = $(window).scrollLeft()
+  #    filter_height = parseInt(filter.css("height").replace(/px/, ''))
+  #    filter_bottom = filter.offset().top + filter_height
+  #
+  #    #if(window_top > content_top)
+  #    if(filter_bottom > content_top)
+  #      details.addClass("fixed")
+  #      left = items.offset().left + items.outerWidth() - window_left
+  #      #details.css("position", "fixed")
+  #      #margin_top = parseInt($("#items").css('margin-top').replace(/px/, ''))
+  #      #details.css("top", "#{filter_height + margin_top}px")
+  #      details.css("left", "#{left}px")
+  #    else
+  #      #details.css("position", "absolute")
+  #      #details.css("top", "0px")
+  #      details.css("left", "")
+  #      details.removeClass("fixed")
+  #
+  #
+
+  #scroll: () ->
+  #this.setPosition()
+  #return

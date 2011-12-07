@@ -21,7 +21,6 @@
 //
 //
 //= require swfobject
-//= require map_graph
 //
 //= require_tree ./models
 //= require ./collections/tags

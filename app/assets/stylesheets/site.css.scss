@@ -5,11 +5,11 @@ $item-height: 100px;
 $items-width: 653px;
 $content_width: 1024px;
 $content-col2-width: 228px;
-$filter-padding: 3px; //Padding around filter box
+$filter-padding: 0px 3px; //Padding around filter box
 
-$searchbox_height: 35px;
+$searchbox_height: 18px;
 $searchbox_width: 302px;
-$filter-height: $searchbox_height + 2 * $filter-padding;
+//$filter-height: $searchbox_height + 2 * $filter-padding;
 
 $dark-blue: #2E3A75;
 $light-blue: #739FCE;
@@ -424,42 +424,49 @@ form{
 
   #filter_container{
     position: relative;
-    height: $filter-height;
+    overflow: hidden;
+    //height: $filter-height;
     z-index: 100;
     width: $content_width;
 
     #filter_box{
       padding: $filter-padding;
       margin: 0px;
-      height: $filter-height;
-      width: $content_width;
+      //height: $filter-height;
+      width: $content_width / 2;
       overflow: hidden;
+      float: left;
+
+      h1{
+        padding: 0px;
+        margin: 0px;
+      }
 
       div{
         float: left;
       }
+    }
 
-      #search {
+    #search {
+      position: absolute;
+      right: 0px;
+      margin:0px;
+
+      .searchbox {
+        //background: image-url('site/search.gif') top left no-repeat;
+        height:$searchbox_height;
+        padding-left:15px;
+        //padding-bottom:5px;
+        width:$searchbox_width;
+        text-align:left;
+        color:#888;
+        font-size:1.1em;
+      }
+
+      .search_button{
         position: absolute;
-        right: 0px;
-        margin:0px;
-
-        .searchbox {
-          background: image-url('site/search.gif') top left no-repeat;
-          height:$searchbox_height;
-          padding-left:15px;
-          //padding-bottom:5px;
-          width:$searchbox_width;
-          text-align:left;
-          color:#888;
-          font-size:16px;	
-        }
-
-        .search_button{
-          position: absolute;
-          top: $searchbox_height / 2 - 8px;;
-          right: 10px;
-        }
+        top: $searchbox_height / 2 - 3px;;
+        right: 10px;
       }
     }
 
@@ -617,7 +624,7 @@ form{
 
     #details.fixed{
       position: fixed;
-      top: $filter-height;
+      //top: $filter-height;
 
     }
 
@@ -638,7 +645,8 @@ form{
           top: 0px;
           left: 0px;
           background:#fff  image-url('site/bg-pullout2.jpg') repeat-x;
-          display: none;
+          //display: none;
+          visibility: hidden;
           z-index: 49;
 
           #item-detail-name{

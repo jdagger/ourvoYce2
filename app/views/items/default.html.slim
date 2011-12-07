@@ -1,4 +1,5 @@
 = content_for :javascript do
+  = javascript_include_tag "map_graph" 
   javascript:
     $(function(){
       window.OurvoyceApp.init('#{@base_url}', #{@user_vote_count}, '#{@tag_friendly_name}', '#{@tag_path}', '#{@filter}', '#{@sort_name}', '#{@sort_direction}', #{@popular_tags.to_json.html_safe}, #{@hot_topic_tags.to_json.html_safe}, #{@items.to_json.html_safe}, #{@item_ids.to_json.html_safe}, #{@authenticated});
@@ -79,9 +80,9 @@
                 img(src="/assets/site/socialmedia.gif" width="293" height="22")
               ul
                 li
-                  a#item-website(target="_blank")Website
+                  a#item-detail-website(target="_blank")Website
                 li
-                  a#item-wikipedia(target="_blank")Wikipedia page
+                  a#item-detail-wikipedia(target="_blank")Wikipedia page
               .vote-chart
                 .thumbs-up
                   .votenumber
@@ -102,30 +103,5 @@
             .itemblock
               .maps-container
                 #map
-                  object(type="application/x-shockwave-flash" 
-                    allowfullscreen="true" 
-                    allowscriptaccess="always" 
-                    wmode="transparent" 
-                    data="/swf/map.swf" 
-                    width="320" 
-                    height="246" 
-                    id="map" 
-                    style="visibility: visible;")
-                      param(name="menu" value="false")
-                      param(name="wmode" value="transparent")
-                      param(name="flashvars" value="baseURL=/items/")
                 #bar-graph
-                  object(type="application/x-shockwave-flash" 
-                    allowfullscreen="true" 
-                    allowscriptaccess="always" 
-                    wmode="transparent" 
-                    data="/swf/bar-graph.swf" 
-                    width="320" 
-                    height="150" 
-                    id="bar-graph" 
-                    style="visibility: visible;")
-                      param(name="menu" value="false")
-                      param(name="wmode" value="transparent")
-                      param(name="flashvars" value="baseURL=/items/&amp;barwidth=25")
-
 #record_counter

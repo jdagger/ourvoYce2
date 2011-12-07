@@ -11,30 +11,8 @@
     this.sort_name = params.sort_name
     this.sort_direction = params.sort_direction
     this.displayed_details_item = null
-    _.bindAll(this, 'hide_details', 'change_selected_details')
-
-  hide_details: () ->
-    this.displayed_details_item.set({show_details: false})
-    this.displayed_details_item = null
-    this.trigger('hide_details')
     return
 
-  #Set the item whos details are being shown
-  change_selected_details: (item) ->
-    if this.displayed_details_item == null
-      this.displayed_details_item = item
-      this.trigger('displayed_details_changed')
-      this.displayed_details_item.set({show_details: true})
-      this.trigger('show_details')
-    else if this.displayed_details_item.get('id') == item.get('id')
-      this.hide_details()
-    else
-      this.displayed_details_item.set({show_details: false})
-      this.displayed_details_item = item
-      this.trigger('displayed_details_changed')
-      this.displayed_details_item.set({show_details: true})
-      this.trigger('show_details')
-    return
 
   fetch_hot_topics: (filter, sort_name, sort_direction) ->
     url = "/hot_topics"

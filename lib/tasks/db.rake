@@ -11,11 +11,39 @@ namespace :db do
 
     desc "Seed all data"
     task :all => :environment do
+      Rake::Task['db:seed:stat:reset'].invoke
+      Rake::Task['db:seed:favorite:reset'].invoke
+      Rake::Task['db:seed:user_vote:reset'].invoke
+
+
       Rake::Task['db:seed:state:all'].invoke
       Rake::Task['db:seed:tag:all'].invoke
       Rake::Task['db:seed:zip:all'].invoke
       Rake::Task['db:seed:user:all'].invoke
       Rake::Task['db:seed:item:all'].invoke
+    end
+
+    namespace :stat do
+      task :reset => :environment do
+        print "Deleting all vote stats..."
+        Stat.delete_all
+        puts "Done"
+      end
+    end
+    namespace :favorite do
+      task :reset => :environment do
+        print "Deleting favorites..."
+        Favorite.delete_all
+        puts "Done"
+      end
+    end
+
+    namespace :user_vote do
+      task :reset => :environment do
+        print "Deleting all user vote..."
+        UserVote.delete_all
+        puts "Done"
+      end
     end
 
     namespace :item do
