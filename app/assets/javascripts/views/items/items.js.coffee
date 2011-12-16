@@ -42,6 +42,7 @@
       when 'load_more'
         if $(this.el).find(this.loadMoreButton).length == 0
           this.loadMoreButton.click(this.loadMoreClick)
+          this.loadMoreButton.bind('inview', this.loadMoreClick)
           $(this.el).append(this.loadMoreButton)
     return
 

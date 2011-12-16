@@ -1,3 +1,6 @@
+window.barLoaded = false
+window.mapLoaded = false
+
 window.setState = (st) ->
   #Try to remove coupling to details
   window.sendToGraph(OurvoyceApp.detail.id(), st)
@@ -21,13 +24,14 @@ window.thisMovie = (movieName) ->
 
 
 window.barEmbedded = (e) ->
-  barLoaded = true
+  console.log "window.barLoaded: #{window.barLoaded}"
+  window.barLoaded = true
   
   #if mapLoaded && barLoaded
   return
 
 window.mapEmbedded = (e) ->
-  mapLoaded = true
+  window.mapLoaded = true
   #if( mapLoaded && barLoaded)
   
   return
@@ -46,8 +50,8 @@ $(() ->
     wmode: "transparent"
 
 	agevars =
-    baseURL: "/items/"
-	  barwidth: 25
+    baseURL: "/items/",
+    barwidth: "25"
 
   swfobject.switchOffAutoHideShow()
   swfobject.embedSWF("/swf/map.swf", "map", "320", "247","10.0.0", "", mapvars, params, attributes, window.barEmbedded)

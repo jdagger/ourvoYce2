@@ -2,7 +2,7 @@
   el: '#item-details-pane'
 
   initialize: () ->
-    _.bindAll(this, 'render', 'renderVoteGraph', 'renderMap', 'renderAgeGraph', 'showDetails', 'hideDetails')
+    _.bindAll(this, 'render', 'renderVoteGraph', 'filterInviewChange', 'resizeDetailsPane', 'positionDetailsPane', 'resize', 'renderMap', 'renderAgeGraph', 'showDetails', 'hideDetails', 'refreshMapClick')
 
     #this.animateSpeed = 200
 
@@ -10,11 +10,17 @@
     this.model.bind('showDetails', this.showDetails)
     this.model.bind('hideDetails', this.hideDetails)
 
-    $(window).scroll(this.scroll)
+    $(window).resize(this.resize)
+
+    $('#filter_container').bind('inview', this.filterInviewChange)
+
+    this.resizeDetailsPane()
+
     return
 
   events:
     "click #hide-details": "hideDetailsClick"
+    "click #refresh-map": "refreshMapClick"
 
   #Event handler for showDetails
   showDetails: (item) ->
@@ -29,6 +35,12 @@
     $(this.el).find('#bar-graph').css('visibility', 'hidden')
     $(this.el).css('visibility', 'hidden')
     return this
+
+  refreshMapClick: (e) ->
+    e.preventDefault()
+    this.renderMap()
+    this.renderAgeGraph()
+    return
 
   #Click the hide details button on details pane
   hideDetailsClick: (e) ->
@@ -92,34 +104,39 @@
       console.log "Graph Error: #{error}"
     return
 
-  #
-  #  setPosition: () ->
-  #    return
-  #    items = $("#items")
-  #    filter = $("#filter_box")
-  #    details = $("#details")
-  #    content_top = items.offset().top
-  #    window_top = $(window).scrollTop()
-  #    window_left = $(window).scrollLeft()
-  #    filter_height = parseInt(filter.css("height").replace(/px/, ''))
-  #    filter_bottom = filter.offset().top + filter_height
-  #
-  #    #if(window_top > content_top)
-  #    if(filter_bottom > content_top)
-  #      details.addClass("fixed")
-  #      left = items.offset().left + items.outerWidth() - window_left
-  #      #details.css("position", "fixed")
-  #      #margin_top = parseInt($("#items").css('margin-top').replace(/px/, ''))
-  #      #details.css("top", "#{filter_height + margin_top}px")
-  #      details.css("left", "#{left}px")
-  #    else
-  #      #details.css("position", "absolute")
-  #      #details.css("top", "0px")
-  #      details.css("left", "")
-  #      details.removeClass("fixed")
-  #
-  #
 
-  #scroll: () ->
-  #this.setPosition()
-  #return
+  positionDetailsPane: () ->
+    filter_inview = $('#filter_container').data('inview')
+
+    if filter_inview
+      $(this.el).css('left', '')
+      $(this.el).css('top', '')
+      $(this.el).removeClass("details-pane-fixed").addClass('details-pane-absolute')
+    else
+      items_container = $("#items")
+      window_left = $(window).scrollLeft()
+      #left =  items_container.offset().left + items_container.outerWidth() - window_left - 5
+      left =  items_container.offset().left + items_container.outerWidth() - window_left
+      #TODO - Determine where the 5px left and 4px top fudges are coming from
+      
+      $(this.el).css('left', "#{left}px")
+      #$(this.el).css('top', "4px")
+      $(this.el).addClass("details-pane-fixed").removeClass('details-pane-absolute')
+    return
+
+  resizeDetailsPane: () ->
+    $(this.el).height($(window).height() - 8)
+    return
+
+
+  #Determines if the filter box is in view
+  #If filter box is in view, display details pane regularly
+  #Otherwise, set as fixed position
+  filterInviewChange: (e, inview) ->
+    this.positionDetailsPane()
+    return
+
+  resize: () ->
+    this.resizeDetailsPane()
+    this.positionDetailsPane()
+    return

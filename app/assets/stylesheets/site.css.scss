@@ -24,17 +24,19 @@ $red-chart: #cb2c1e;
 @mixin fineprint { font-size:12px; font-style:italic; }
 @mixin details-pane{
   margin:0px 0px 5px 0;
-  border-radius:0 8px 8px 0;
-  -moz-border-radius:0 8px 8px 0;
-  -webkit-border-top-right-radius:8px;
-  -webkit-border-bottom-right-radius:8px;
+  @include border-radius(0 8px 8px 0);
+  //border-radius:0 8px 8px 0;
+  //-moz-border-radius:0 8px 8px 0;
+  //-webkit-border-top-right-radius:8px;
+  //-webkit-border-bottom-right-radius:8px;
   box-shadow: 0px 0px 7px #999;
   -moz-box-shadow: 0px 0px 7px #999;
   -webkit-box-shadow: 0px 0px 7px #999;
   width: 368px;
   min-height:300px;
   overflow: hidden;
-  padding:0 0 10px 0;
+  //padding:0 0 10px 0;
+  padding: 0px;
   white-space: wrap;
 }
 /* css reset */
@@ -96,6 +98,17 @@ body {
   color:#666;
   background: image-url('site/bg.jpg') 0 0 repeat-x;
 }
+
+.right-align {
+  text-align: right;
+}
+.left-align {
+  text-align: left;
+}
+.center-align {
+  text-align: center;
+}
+
 .wrapper-bg {
   width:805px;
   height:337px;
@@ -428,12 +441,12 @@ form{
     //height: $filter-height;
     z-index: 100;
     width: $content_width;
+    margin-bottom: 5px;
 
     #filter_box{
       padding: $filter-padding;
       margin: 0px;
-      //height: $filter-height;
-      width: $content_width / 2;
+      width: 66%;
       overflow: hidden;
       float: left;
 
@@ -504,7 +517,7 @@ form{
       position: relative;
       width: 653px;
       z-index:50;
-      margin:5px 0px 5px 5px;
+      //margin:5px 0px 5px 5px;
       color:#2158b0;
 
       .items{
@@ -647,7 +660,17 @@ form{
           background:#fff  image-url('site/bg-pullout2.jpg') repeat-x;
           //display: none;
           visibility: hidden;
+          overflow: auto;
           z-index: 49;
+
+          &.details-pane-absolute{
+          }
+
+          &.details-pane-fixed{
+            position: fixed;
+            left: 800px;
+            top: 0px;
+          }
 
           #item-detail-name{
             height: 50px;
