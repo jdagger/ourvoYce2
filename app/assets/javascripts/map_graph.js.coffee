@@ -24,7 +24,6 @@ window.thisMovie = (movieName) ->
 
 
 window.barEmbedded = (e) ->
-  console.log "window.barLoaded: #{window.barLoaded}"
   window.barLoaded = true
   
   #if mapLoaded && barLoaded

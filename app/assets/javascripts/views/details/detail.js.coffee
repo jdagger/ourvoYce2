@@ -94,14 +94,14 @@
     try
       window.sendToMap(this.model.id())
     catch error
-      console.log "Map Error:  #{error}"
+      #console.log "Map Error:  #{error}"
     return
 
   renderAgeGraph: () ->
     try
       window.sendToGraph(this.model.id(), '')
     catch error
-      console.log "Graph Error: #{error}"
+      #console.log "Graph Error: #{error}"
     return
 
 

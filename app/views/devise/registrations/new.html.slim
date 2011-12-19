@@ -3,14 +3,10 @@
   p.blue
     | Joining ourvoYce is quick and simple:
     br
-    strong 1.
-    | Fill in the blanks.
-    br
-    strong 2.
-    | Read the membership agreement.
-    strong 3.
-    | Vote.
-  p.blue &nbsp;
+    ol.number
+      li Fill in the blanks.
+      li Read the membership agreement.
+      li Vote.
 
   #column1
     h2.thin.red Already a member?
@@ -47,7 +43,7 @@
 
 
       h2.thin.blue Your demographics:
-      = f.input :country, :required => false
+      = f.input :country, :priority => ["United States"], :required => false
       = f.input :zip, :label => "Zip Code:", :required => false, :hint => "Just the five digits"
       = f.input :birth_year, :required => false, :label => "Year you were born:", :hint => "You must be at least 13 years old"
       div

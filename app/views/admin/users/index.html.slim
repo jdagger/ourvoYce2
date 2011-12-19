@@ -10,7 +10,7 @@
         th= "Zip"
         th= "Birth Year"
         th= "Confirmed?"
-        th= "Member Since"
+        th= "Confirmed At"
     tbody
       -  @users.each do |user|
         tr
@@ -25,4 +25,4 @@
           td= user.zip
           td= user.birth_year
           td= user.confirmed
-          td= user.member_since
+          td= user.confirmed_at

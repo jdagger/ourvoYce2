@@ -22,7 +22,11 @@ class Stat < ActiveRecord::Base
       stat = find_row(item_id, birth_year, zip)
 
       if stat.nil?
-        stat = Stat.new(:item_id => item_id, :zip => zip, :birth_year => birth_year, :state => state.downcase)
+        stat = Stat.new
+        stat.item_id = item_id
+        stat.zip = zip
+        stat.birth_year = birth_year
+        stat.state = state.downcase
       end
 
       stat.update_vote_counts(previous_vote, new_vote)

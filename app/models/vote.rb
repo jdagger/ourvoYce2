@@ -7,8 +7,6 @@ class Vote
 
     UserVote.record_vote(user_id, item_id, new_vote)
 
-
-
     Item.record_vote(item_id, previous_vote, new_vote)
     Stat.record_vote(item_id, birth_year, state, zip, previous_vote, new_vote)
   end

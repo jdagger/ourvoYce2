@@ -176,7 +176,7 @@ h4 {
 ol.number {
   color:#666666;
   list-style-type: decimal;
-  margin-left: 15px;
+  list-style-position: inside;
   margin-top: 0;
 }
 ol.letter {
@@ -330,6 +330,23 @@ font-size:15px;}
   background-color:transparent;
   text-decoration:underline;
 }
+
+/* --- Flash Messages --------------------------------------------------- */
+#flash-alert,
+#flash-notice{
+  font-size: 1.2em;
+  display: inline-block;
+  margin: 0.5em 0;
+  padding: 0.667em;
+  font-weight: bold;
+  border: solid 1px #D9131B;
+  @include border-radius(10px);
+  background: #D9131B;
+  color: white;
+
+}
+/* --- End Messages ----------------------------------------------------- */
+
 
 /* --- Forms ------------------------------------------------------------ */
 

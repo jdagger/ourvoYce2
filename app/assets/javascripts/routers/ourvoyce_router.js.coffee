@@ -15,21 +15,17 @@
     return
 
   default: () ->
-    console.log "default"
     Navigate('hot_topics')
     return
 
   hot_topics: (filter, sort_name, sort_direction) ->
-    console.log 'hot_topics router'
     OurvoyceApp.items.fetch_hot_topics(filter, sort_name, sort_direction)
     return
 
   favorites: (filter, sort_name, sort_direction) ->
-    console.log 'favorites router'
     OurvoyceApp.items.fetch_favorites(filter, sort_name, sort_direction)
     return
 
   tag: (tag, filter, sort_name, sort_direction) ->
-    console.log 'tag router'
     OurvoyceApp.items.fetch_items(tag, filter, sort_name, sort_direction)
     return

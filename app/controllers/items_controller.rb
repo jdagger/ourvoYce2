@@ -134,7 +134,7 @@ class ItemsController < ApplicationController
       @favorites_count = 0
       @user_vote_count = 0
     else
-      @member_since = current_user.member_since
+      @member_since = current_user.confirmed_at
       @favorites_count = Favorite.where(user_id: current_user.id).count
       @user_vote_count = UserVote.where(user_id: current_user.id).count
     end
