@@ -28,7 +28,8 @@ gem 'thin'
 gem 'thinking-sphinx', '~> 2.0.10'
 gem 'flying-sphinx',   '0.6.0'
 
-gem 'compass','0.12.alpha.0'
+#gem 'compass','0.12.alpha.0'
+gem 'bourbon'
 
 # Gems used only for assets and not required
 # in production environments by default.

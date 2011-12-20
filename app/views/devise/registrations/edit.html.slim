@@ -1,0 +1,20 @@
+h2= "Update #{resource_name.to_s.humanize}"
+
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :email, :required => true, :autofocus => true
+    /= f.input :password, :hint => "leave it blank if you don't want to change it", :required => false
+    /= f.input :password_confirmation, :required => false
+    /= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
+    = f.input :country
+    = f.input :zip
+    = f.input :birth_year
+
+  .actions
+    = f.button :submit, "Update"
+
+/<h3>Cancel my account</h3>
+/<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+/= link_to "Back", :back
