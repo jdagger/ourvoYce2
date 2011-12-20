@@ -55,6 +55,7 @@ namespace :db do
         Rake::Task['db:seed:executive:create'].invoke
         Rake::Task['db:seed:fortune500:create'].invoke
         Rake::Task['db:seed:agency:create'].invoke
+        Rake::Task['db:seed:restaurant:create'].invoke
       end
 
       task :reset => :environment do
@@ -109,6 +110,38 @@ namespace :db do
         #Might be a better way to do this
         #Ideally, can inspect self to reenable
         Rake::Task['db:seed:item:insert_items'].reenable() 
+      end
+    end
+
+    namespace :restaurant do
+      task :all => :environment do
+        Rake::Task['db:seed:restaurant:reset'].invoke
+        Rake::Task['db:seed:restaurant:create'].invoke
+      end
+
+      task :reset => :environment do
+        Rake::Task['db:seed:item:reset_by_type'].invoke('restaurant')
+      end
+
+      task :create => :environment do
+        print 'Inserting restaurants...'
+        items = []
+        File.open("#{Rails.root}/db/restaurants.txt", "r") do |infile|
+          while (line = infile.gets)
+            vals = line.split('::').collect { |val| val.strip }
+            id = vals[1]
+            name = "#{vals[2]}"
+            logo = vals[3]
+            website = ""
+            wikipedia = ""
+            tags = vals[7]
+
+            items << {id: id, name: name, logo: logo, website: website, wikipedia: wikipedia, type: 'restaurant', tags: tags, default_order: 1000}
+          end
+        end
+
+        Rake::Task['db:seed:item:insert_items'].invoke(items)
+        puts "done"
       end
     end
 

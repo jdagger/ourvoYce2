@@ -338,7 +338,7 @@ font-size:15px;}
   display: inline-block;
   margin: 0.5em 0;
   padding: 0.667em;
-  font-weight: bold;
+  //font-weight: bold;
   border: solid 1px #D9131B;
   @include border-radius(10px);
   background: #D9131B;
@@ -356,6 +356,10 @@ form{
     @include border-radius(10px);
     padding: 5px 10px;
     width: 180px;
+  }
+
+  input[type=checkbox]{
+    display: inline;
   }
 
   input[type=submit]{
@@ -379,6 +383,7 @@ form{
 
   label{
     font-weight: bold;
+    display: block;
   }
 
   span.error{
@@ -390,8 +395,10 @@ form{
 
   div.input{
     overflow: hidden;
+    margin-bottom: 20px;
     span.hint{
       display: block;
+      font-size: 0.8em;
     }
   }
 }

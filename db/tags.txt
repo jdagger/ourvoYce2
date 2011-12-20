@@ -1,189 +1,189 @@
-::	1	::	Corporation	::	corporation	::	FALSE	::	FALSE	::
-::	2	::	Government	::	government	::	FALSE	::	FALSE	::
-::	3	::	Hot Topic	::	hottopic	::	FALSE	::	FALSE	::
-::	4	::	Media	::	media	::	FALSE	::	FALSE	::
-::	5	::	Alabama	::	alabama	::	FALSE	::	FALSE	::
-::	6	::	Alaska	::	alaska	::	FALSE	::	FALSE	::
-::	7	::	Arizona	::	arizona	::	FALSE	::	FALSE	::
-::	8	::	Arkansas	::	arkansas	::	FALSE	::	FALSE	::
-::	9	::	California	::	california	::	FALSE	::	FALSE	::
-::	10	::	Colorado	::	colorado	::	FALSE	::	FALSE	::
-::	11	::	Connecticut	::	connecticut	::	FALSE	::	FALSE	::
-::	12	::	Delaware	::	delaware	::	FALSE	::	FALSE	::
-::	13	::	District of Columbia	::	district_of_columbia	::	FALSE	::	FALSE	::
-::	14	::	Florida	::	florida	::	FALSE	::	FALSE	::
-::	15	::	Georgia	::	georgia	::	FALSE	::	FALSE	::
-::	16	::	Hawaii	::	hawaii	::	FALSE	::	FALSE	::
-::	17	::	Idaho	::	idaho	::	FALSE	::	FALSE	::
-::	18	::	Illinois	::	illinois	::	FALSE	::	FALSE	::
-::	19	::	Indiana	::	indiana	::	FALSE	::	FALSE	::
-::	20	::	Iowa	::	iowa	::	FALSE	::	FALSE	::
-::	21	::	Kansas	::	kansas	::	FALSE	::	FALSE	::
-::	22	::	Kentucky	::	kentucky	::	FALSE	::	FALSE	::
-::	23	::	Louisiana	::	louisiana	::	FALSE	::	FALSE	::
-::	24	::	Maine	::	maine	::	FALSE	::	FALSE	::
-::	25	::	Maryland	::	maryland	::	FALSE	::	FALSE	::
-::	26	::	Massachusetts	::	massachusetts	::	FALSE	::	FALSE	::
-::	27	::	Michigan	::	michigan	::	FALSE	::	FALSE	::
-::	28	::	Minnesota	::	minnesota	::	FALSE	::	FALSE	::
-::	29	::	Mississippi	::	mississippi	::	FALSE	::	FALSE	::
-::	30	::	Missouri	::	missouri	::	FALSE	::	FALSE	::
-::	31	::	Montana	::	montana	::	FALSE	::	FALSE	::
-::	32	::	Nebraska	::	nebraska	::	FALSE	::	FALSE	::
-::	33	::	Nevada	::	nevada	::	FALSE	::	FALSE	::
-::	34	::	New Hampshire	::	new_hampshire	::	FALSE	::	FALSE	::
-::	35	::	New Jersey	::	new_jersey	::	FALSE	::	FALSE	::
-::	36	::	New Mexico	::	new_mexico	::	FALSE	::	FALSE	::
-::	37	::	New York	::	new_york	::	FALSE	::	FALSE	::
-::	38	::	North Carolina	::	north_carolina	::	FALSE	::	FALSE	::
-::	39	::	North Dakota	::	north_dakota	::	FALSE	::	FALSE	::
-::	40	::	Ohio	::	ohio	::	FALSE	::	FALSE	::
-::	41	::	Oklahoma	::	oklahoma	::	FALSE	::	FALSE	::
-::	42	::	Oregon	::	oregon	::	FALSE	::	FALSE	::
-::	43	::	Pennsylvania	::	pennsylvania	::	FALSE	::	FALSE	::
-::	44	::	Rhode Island	::	rhode_island	::	FALSE	::	FALSE	::
-::	45	::	South Carolina	::	south_carolina	::	FALSE	::	FALSE	::
-::	46	::	South Dakota	::	south_dakota	::	FALSE	::	FALSE	::
-::	47	::	Tennessee	::	tennessee	::	FALSE	::	FALSE	::
-::	48	::	Texas	::	texas	::	FALSE	::	FALSE	::
-::	49	::	Utah	::	utah	::	FALSE	::	FALSE	::
-::	50	::	Vermont	::	vermont	::	FALSE	::	FALSE	::
-::	51	::	Virginia	::	virginia	::	FALSE	::	FALSE	::
-::	52	::	Washington	::	washington	::	FALSE	::	FALSE	::
-::	53	::	West Virginia	::	west_virginia	::	FALSE	::	FALSE	::
-::	54	::	Wisconsin	::	wisconsin	::	FALSE	::	FALSE	::
-::	55	::	Wyoming	::	wyoming	::	FALSE	::	FALSE	::
-::	56	::	Fortune 500	::	fortune500	::	FALSE	::	FALSE	::
-::	57	::	Agency	::	agency	::	FALSE	::	TRUE	::
-::	58	::	Executive	::	executive	::	TRUE	::	TRUE	::
-::	59	::	House	::	house	::	FALSE	::	FALSE	::
-::	60	::	Senate	::	senate	::	FALSE	::	FALSE	::
-::	61	::	Police	::	police	::	TRUE	::	TRUE	::
-::	62	::	American Jobs Act	::	american_jobs_act	::	TRUE	::	TRUE	::
-::	63	::	NBA Lockout	::	nba_lockout	::	TRUE	::	TRUE	::
-::	64	::	Occupy Asheville	::	occupy_asheville	::	TRUE	::	TRUE	::
-::	65	::	Occupy Oakland	::	occupy_oakland	::	TRUE	::	TRUE	::
-::	66	::	Occupy Wallstreet	::	occupy_wallstreet	::	TRUE	::	TRUE	::
-::	67	::	Super Committee	::	super_committee	::	TRUE	::	TRUE	::
-::	68	::	Magazine	::	magazine	::	FALSE	::	FALSE	::
-::	69	::	Newspaper	::	newspaper	::	FALSE	::	FALSE	::
-::	70	::	Radio	::	radio	::	FALSE	::	FALSE	::
-::	71	::	Television	::	television	::	FALSE	::	FALSE	::
-::	72	::	AK House	::	ak_house	::	FALSE	::	FALSE	::
-::	73	::	AK Senate	::	ak_senate	::	FALSE	::	FALSE	::
-::	74	::	AL House	::	al_house	::	FALSE	::	FALSE	::
-::	75	::	AL Senate	::	al_senate	::	FALSE	::	FALSE	::
-::	76	::	AR House	::	ar_house	::	FALSE	::	FALSE	::
-::	77	::	AR Senate	::	ar_senate	::	FALSE	::	FALSE	::
-::	78	::	AZ House	::	az_house	::	FALSE	::	FALSE	::
-::	79	::	AZ Senate	::	az_senate	::	FALSE	::	FALSE	::
-::	80	::	CA House	::	ca_house	::	FALSE	::	FALSE	::
-::	81	::	CA Senate	::	ca_senate	::	FALSE	::	FALSE	::
-::	82	::	CO House	::	co_house	::	FALSE	::	FALSE	::
-::	83	::	CO Senate	::	co_senate	::	FALSE	::	FALSE	::
-::	84	::	CT House	::	ct_house	::	FALSE	::	FALSE	::
-::	85	::	CT Senate	::	ct_senate	::	FALSE	::	FALSE	::
-::	86	::	DC House	::	dc_house	::	FALSE	::	FALSE	::
-::	87	::	DC Senate	::	dc_senate	::	FALSE	::	FALSE	::
-::	88	::	DE House	::	de_house	::	FALSE	::	FALSE	::
-::	89	::	DE Senate	::	de_senate	::	FALSE	::	FALSE	::
-::	90	::	FL House	::	fl_house	::	FALSE	::	FALSE	::
-::	91	::	FL Senate	::	fl_senate	::	FALSE	::	FALSE	::
-::	92	::	GA House	::	ga_house	::	FALSE	::	FALSE	::
-::	93	::	GA Senate	::	ga_senate	::	FALSE	::	FALSE	::
-::	94	::	HI House	::	hi_house	::	FALSE	::	FALSE	::
-::	95	::	HI Senate	::	hi_senate	::	FALSE	::	FALSE	::
-::	96	::	IA House	::	ia_house	::	FALSE	::	FALSE	::
-::	97	::	IA Senate	::	ia_senate	::	FALSE	::	FALSE	::
-::	98	::	ID House	::	id_house	::	FALSE	::	FALSE	::
-::	99	::	ID Senate	::	id_senate	::	FALSE	::	FALSE	::
-::	100	::	IL House	::	il_house	::	FALSE	::	FALSE	::
-::	101	::	IL Senate	::	il_senate	::	FALSE	::	FALSE	::
-::	102	::	IN House	::	in_house	::	FALSE	::	FALSE	::
-::	103	::	IN Senate	::	in_senate	::	FALSE	::	FALSE	::
-::	104	::	KS House	::	ks_house	::	FALSE	::	FALSE	::
-::	105	::	KS Senate	::	ks_senate	::	FALSE	::	FALSE	::
-::	106	::	KY House	::	ky_house	::	FALSE	::	FALSE	::
-::	107	::	KY Senate	::	ky_senate	::	FALSE	::	FALSE	::
-::	108	::	LA House	::	la_house	::	FALSE	::	FALSE	::
-::	109	::	LA Senate	::	la_senate	::	FALSE	::	FALSE	::
-::	110	::	MA House	::	ma_house	::	FALSE	::	FALSE	::
-::	111	::	MA Senate	::	ma_senate	::	FALSE	::	FALSE	::
-::	112	::	MD House	::	md_house	::	FALSE	::	FALSE	::
-::	113	::	MD Senate	::	md_senate	::	FALSE	::	FALSE	::
-::	114	::	ME House	::	me_house	::	FALSE	::	FALSE	::
-::	115	::	ME Senate	::	me_senate	::	FALSE	::	FALSE	::
-::	116	::	MI House	::	mi_house	::	FALSE	::	FALSE	::
-::	117	::	MI Senate	::	mi_senate	::	FALSE	::	FALSE	::
-::	118	::	MN House	::	mn_house	::	FALSE	::	FALSE	::
-::	119	::	MN Senate	::	mn_senate	::	FALSE	::	FALSE	::
-::	120	::	MO House	::	mo_house	::	FALSE	::	FALSE	::
-::	121	::	MO Senate	::	mo_senate	::	FALSE	::	FALSE	::
-::	122	::	MS House	::	ms_house	::	FALSE	::	FALSE	::
-::	123	::	MS Senate	::	ms_senate	::	FALSE	::	FALSE	::
-::	124	::	MT House	::	mt_house	::	FALSE	::	FALSE	::
-::	125	::	MT Senate	::	mt_senate	::	FALSE	::	FALSE	::
-::	126	::	NC House	::	nc_house	::	FALSE	::	FALSE	::
-::	127	::	NC Senate	::	nc_senate	::	FALSE	::	FALSE	::
-::	128	::	ND House	::	nd_house	::	FALSE	::	FALSE	::
-::	129	::	ND Senate	::	nd_senate	::	FALSE	::	FALSE	::
-::	130	::	NE House	::	ne_house	::	FALSE	::	FALSE	::
-::	131	::	NE Senate	::	ne_senate	::	FALSE	::	FALSE	::
-::	132	::	NH House	::	nh_house	::	FALSE	::	FALSE	::
-::	133	::	NH Senate	::	nh_senate	::	FALSE	::	FALSE	::
-::	134	::	NJ House	::	nj_house	::	FALSE	::	FALSE	::
-::	135	::	NJ Senate	::	nj_senate	::	FALSE	::	FALSE	::
-::	136	::	NM House	::	nm_house	::	FALSE	::	FALSE	::
-::	137	::	NM Senate	::	nm_senate	::	FALSE	::	FALSE	::
-::	138	::	NV House	::	nv_house	::	FALSE	::	FALSE	::
-::	139	::	NV Senate	::	nv_senate	::	FALSE	::	FALSE	::
-::	140	::	NY House	::	ny_house	::	FALSE	::	FALSE	::
-::	141	::	NY Senate	::	ny_senate	::	FALSE	::	FALSE	::
-::	142	::	OH House	::	oh_house	::	FALSE	::	FALSE	::
-::	143	::	OH Senate	::	oh_senate	::	FALSE	::	FALSE	::
-::	144	::	OK House	::	ok_house	::	FALSE	::	FALSE	::
-::	145	::	OK Senate	::	ok_senate	::	FALSE	::	FALSE	::
-::	146	::	OR House	::	or_house	::	FALSE	::	FALSE	::
-::	147	::	OR Senate	::	or_senate	::	FALSE	::	FALSE	::
-::	148	::	PA House	::	pa_house	::	FALSE	::	FALSE	::
-::	149	::	PA Senate	::	pa_senate	::	FALSE	::	FALSE	::
-::	150	::	RI House	::	ri_house	::	FALSE	::	FALSE	::
-::	151	::	RI Senate	::	ri_senate	::	FALSE	::	FALSE	::
-::	152	::	SC House	::	sc_house	::	FALSE	::	FALSE	::
-::	153	::	SC Senate	::	sc_senate	::	FALSE	::	FALSE	::
-::	154	::	SD House	::	sd_house	::	FALSE	::	FALSE	::
-::	155	::	SD Senate	::	sd_senate	::	FALSE	::	FALSE	::
-::	156	::	TN House	::	tn_house	::	FALSE	::	FALSE	::
-::	157	::	TN Senate	::	tn_senate	::	FALSE	::	FALSE	::
-::	158	::	TX House	::	tx_house	::	FALSE	::	FALSE	::
-::	159	::	TX Senate	::	tx_senate	::	FALSE	::	FALSE	::
-::	160	::	UT House	::	ut_house	::	FALSE	::	FALSE	::
-::	161	::	UT Senate	::	ut_senate	::	FALSE	::	FALSE	::
-::	162	::	VA House	::	va_house	::	FALSE	::	FALSE	::
-::	163	::	VA Senate	::	va_senate	::	FALSE	::	FALSE	::
-::	164	::	VT House	::	vt_house	::	FALSE	::	FALSE	::
-::	165	::	VT Senate	::	vt_senate	::	FALSE	::	FALSE	::
-::	166	::	WA House	::	wa_house	::	FALSE	::	FALSE	::
-::	167	::	WA Senate	::	wa_senate	::	FALSE	::	FALSE	::
-::	168	::	WI House	::	wi_house	::	FALSE	::	FALSE	::
-::	169	::	WI Senate	::	wi_senate	::	FALSE	::	FALSE	::
-::	170	::	WV House	::	wv_house	::	FALSE	::	FALSE	::
-::	171	::	WV Senate	::	wv_senate	::	FALSE	::	FALSE	::
-::	172	::	WY House	::	wy_house	::	FALSE	::	FALSE	::
-::	173	::	WY Senate	::	wy_senate	::	FALSE	::	FALSE	::
-::	174	::	CNN	::	cnn	::	TRUE	::	FALSE	::
-::	175	::	Fox News	::	foxnews	::	TRUE	::	FALSE	::
-::	176	::	HLN	::	hln	::	FALSE	::	FALSE	::
-::	177	::	MSNBC	::	msnbc	::	TRUE	::	FALSE	::
-::	178	::	NBC News	::	nbcnews	::	TRUE	::	FALSE	::
-::	179	::	CNBC	::	cnbc	::	TRUE	::	FALSE	::
-::	180	::	CBS News	::	cbsnews	::	TRUE	::	FALSE	::
-::	181	::	ABC News	::	abcnews	::	TRUE	::	FALSE	::
-::	182	::	PBS	::	pbs	::	TRUE	::	FALSE	::
-::	183	::	Bloomberg	::	bloomberg	::	TRUE	::	FALSE	::
-::	184	::	Heavy Hundred (Radio)	::	heavyhundred	::	TRUE	::	FALSE	::
-::	185	::	National Public Radio	::	npr	::	TRUE	::	FALSE	::
-::	186	::	Public Radio International	::	pri	::	TRUE	::	FALSE	::
-::	187	::	American Public Media	::	apm	::	TRUE	::	FALSE	::
-::	188	::	McDonald''s	::	mcdonalds	::	TRUE	::	FALSE	::
-::	189	::	Starbucks	::	starbucks	::	TRUE	::	FALSE	::
+:: 1   :: Corporation                :: corporation          :: FALSE :: FALSE ::
+:: 2   :: Government                 :: government           :: FALSE :: FALSE ::
+:: 3   :: Hot Topic                  :: hottopic             :: FALSE :: FALSE ::
+:: 4   :: Media                      :: media                :: FALSE :: FALSE ::
+:: 5   :: Alabama                    :: alabama              :: FALSE :: FALSE ::
+:: 6   :: Alaska                     :: alaska               :: FALSE :: FALSE ::
+:: 7   :: Arizona                    :: arizona              :: FALSE :: FALSE ::
+:: 8   :: Arkansas                   :: arkansas             :: FALSE :: FALSE ::
+:: 9   :: California                 :: california           :: FALSE :: FALSE ::
+:: 10  :: Colorado                   :: colorado             :: FALSE :: FALSE ::
+:: 11  :: Connecticut                :: connecticut          :: FALSE :: FALSE ::
+:: 12  :: Delaware                   :: delaware             :: FALSE :: FALSE ::
+:: 13  :: District of Columbia       :: district_of_columbia :: FALSE :: FALSE ::
+:: 14  :: Florida                    :: florida              :: FALSE :: FALSE ::
+:: 15  :: Georgia                    :: georgia              :: FALSE :: FALSE ::
+:: 16  :: Hawaii                     :: hawaii               :: FALSE :: FALSE ::
+:: 17  :: Idaho                      :: idaho                :: FALSE :: FALSE ::
+:: 18  :: Illinois                   :: illinois             :: FALSE :: FALSE ::
+:: 19  :: Indiana                    :: indiana              :: FALSE :: FALSE ::
+:: 20  :: Iowa                       :: iowa                 :: FALSE :: FALSE ::
+:: 21  :: Kansas                     :: kansas               :: FALSE :: FALSE ::
+:: 22  :: Kentucky                   :: kentucky             :: FALSE :: FALSE ::
+:: 23  :: Louisiana                  :: louisiana            :: FALSE :: FALSE ::
+:: 24  :: Maine                      :: maine                :: FALSE :: FALSE ::
+:: 25  :: Maryland                   :: maryland             :: FALSE :: FALSE ::
+:: 26  :: Massachusetts              :: massachusetts        :: FALSE :: FALSE ::
+:: 27  :: Michigan                   :: michigan             :: FALSE :: FALSE ::
+:: 28  :: Minnesota                  :: minnesota            :: FALSE :: FALSE ::
+:: 29  :: Mississippi                :: mississippi          :: FALSE :: FALSE ::
+:: 30  :: Missouri                   :: missouri             :: FALSE :: FALSE ::
+:: 31  :: Montana                    :: montana              :: FALSE :: FALSE ::
+:: 32  :: Nebraska                   :: nebraska             :: FALSE :: FALSE ::
+:: 33  :: Nevada                     :: nevada               :: FALSE :: FALSE ::
+:: 34  :: New Hampshire              :: new_hampshire        :: FALSE :: FALSE ::
+:: 35  :: New Jersey                 :: new_jersey           :: FALSE :: FALSE ::
+:: 36  :: New Mexico                 :: new_mexico           :: FALSE :: FALSE ::
+:: 37  :: New York                   :: new_york             :: FALSE :: FALSE ::
+:: 38  :: North Carolina             :: north_carolina       :: FALSE :: FALSE ::
+:: 39  :: North Dakota               :: north_dakota         :: FALSE :: FALSE ::
+:: 40  :: Ohio                       :: ohio                 :: FALSE :: FALSE ::
+:: 41  :: Oklahoma                   :: oklahoma             :: FALSE :: FALSE ::
+:: 42  :: Oregon                     :: oregon               :: FALSE :: FALSE ::
+:: 43  :: Pennsylvania               :: pennsylvania         :: FALSE :: FALSE ::
+:: 44  :: Rhode Island               :: rhode_island         :: FALSE :: FALSE ::
+:: 45  :: South Carolina             :: south_carolina       :: FALSE :: FALSE ::
+:: 46  :: South Dakota               :: south_dakota         :: FALSE :: FALSE ::
+:: 47  :: Tennessee                  :: tennessee            :: FALSE :: FALSE ::
+:: 48  :: Texas                      :: texas                :: FALSE :: FALSE ::
+:: 49  :: Utah                       :: utah                 :: FALSE :: FALSE ::
+:: 50  :: Vermont                    :: vermont              :: FALSE :: FALSE ::
+:: 51  :: Virginia                   :: virginia             :: FALSE :: FALSE ::
+:: 52  :: Washington                 :: washington           :: FALSE :: FALSE ::
+:: 53  :: West Virginia              :: west_virginia        :: FALSE :: FALSE ::
+:: 54  :: Wisconsin                  :: wisconsin            :: FALSE :: FALSE ::
+:: 55  :: Wyoming                    :: wyoming              :: FALSE :: FALSE ::
+:: 56  :: Fortune 500                :: fortune500           :: FALSE :: FALSE ::
+:: 57  :: Agency                     :: agency               :: FALSE :: TRUE  ::
+:: 58  :: Executive                  :: executive            :: TRUE  :: TRUE  ::
+:: 59  :: House                      :: house                :: FALSE :: FALSE ::
+:: 60  :: Senate                     :: senate               :: FALSE :: FALSE ::
+:: 61  :: Police                     :: police               :: TRUE  :: TRUE  ::
+:: 62  :: American Jobs Act          :: american_jobs_act    :: TRUE  :: TRUE  ::
+:: 63  :: NBA Lockout                :: nba_lockout          :: TRUE  :: TRUE  ::
+:: 64  :: Occupy Asheville           :: occupy_asheville     :: TRUE  :: TRUE  ::
+:: 65  :: Occupy Oakland             :: occupy_oakland       :: TRUE  :: TRUE  ::
+:: 66  :: Occupy Wallstreet          :: occupy_wallstreet    :: TRUE  :: TRUE  ::
+:: 67  :: Super Committee            :: super_committee      :: TRUE  :: TRUE  ::
+:: 68  :: Magazine                   :: magazine             :: FALSE :: FALSE ::
+:: 69  :: Newspaper                  :: newspaper            :: FALSE :: FALSE ::
+:: 70  :: Radio                      :: radio                :: FALSE :: FALSE ::
+:: 71  :: Television                 :: television           :: FALSE :: FALSE ::
+:: 72  :: AK House                   :: ak_house             :: FALSE :: FALSE ::
+:: 73  :: AK Senate                  :: ak_senate            :: FALSE :: FALSE ::
+:: 74  :: AL House                   :: al_house             :: FALSE :: FALSE ::
+:: 75  :: AL Senate                  :: al_senate            :: FALSE :: FALSE ::
+:: 76  :: AR House                   :: ar_house             :: FALSE :: FALSE ::
+:: 77  :: AR Senate                  :: ar_senate            :: FALSE :: FALSE ::
+:: 78  :: AZ House                   :: az_house             :: FALSE :: FALSE ::
+:: 79  :: AZ Senate                  :: az_senate            :: FALSE :: FALSE ::
+:: 80  :: CA House                   :: ca_house             :: FALSE :: FALSE ::
+:: 81  :: CA Senate                  :: ca_senate            :: FALSE :: FALSE ::
+:: 82  :: CO House                   :: co_house             :: FALSE :: FALSE ::
+:: 83  :: CO Senate                  :: co_senate            :: FALSE :: FALSE ::
+:: 84  :: CT House                   :: ct_house             :: FALSE :: FALSE ::
+:: 85  :: CT Senate                  :: ct_senate            :: FALSE :: FALSE ::
+:: 86  :: DC House                   :: dc_house             :: FALSE :: FALSE ::
+:: 87  :: DC Senate                  :: dc_senate            :: FALSE :: FALSE ::
+:: 88  :: DE House                   :: de_house             :: FALSE :: FALSE ::
+:: 89  :: DE Senate                  :: de_senate            :: FALSE :: FALSE ::
+:: 90  :: FL House                   :: fl_house             :: FALSE :: FALSE ::
+:: 91  :: FL Senate                  :: fl_senate            :: FALSE :: FALSE ::
+:: 92  :: GA House                   :: ga_house             :: FALSE :: FALSE ::
+:: 93  :: GA Senate                  :: ga_senate            :: FALSE :: FALSE ::
+:: 94  :: HI House                   :: hi_house             :: FALSE :: FALSE ::
+:: 95  :: HI Senate                  :: hi_senate            :: FALSE :: FALSE ::
+:: 96  :: IA House                   :: ia_house             :: FALSE :: FALSE ::
+:: 97  :: IA Senate                  :: ia_senate            :: FALSE :: FALSE ::
+:: 98  :: ID House                   :: id_house             :: FALSE :: FALSE ::
+:: 99  :: ID Senate                  :: id_senate            :: FALSE :: FALSE ::
+:: 100 :: IL House                   :: il_house             :: FALSE :: FALSE ::
+:: 101 :: IL Senate                  :: il_senate            :: FALSE :: FALSE ::
+:: 102 :: IN House                   :: in_house             :: FALSE :: FALSE ::
+:: 103 :: IN Senate                  :: in_senate            :: FALSE :: FALSE ::
+:: 104 :: KS House                   :: ks_house             :: FALSE :: FALSE ::
+:: 105 :: KS Senate                  :: ks_senate            :: FALSE :: FALSE ::
+:: 106 :: KY House                   :: ky_house             :: FALSE :: FALSE ::
+:: 107 :: KY Senate                  :: ky_senate            :: FALSE :: FALSE ::
+:: 108 :: LA House                   :: la_house             :: FALSE :: FALSE ::
+:: 109 :: LA Senate                  :: la_senate            :: FALSE :: FALSE ::
+:: 110 :: MA House                   :: ma_house             :: FALSE :: FALSE ::
+:: 111 :: MA Senate                  :: ma_senate            :: FALSE :: FALSE ::
+:: 112 :: MD House                   :: md_house             :: FALSE :: FALSE ::
+:: 113 :: MD Senate                  :: md_senate            :: FALSE :: FALSE ::
+:: 114 :: ME House                   :: me_house             :: FALSE :: FALSE ::
+:: 115 :: ME Senate                  :: me_senate            :: FALSE :: FALSE ::
+:: 116 :: MI House                   :: mi_house             :: FALSE :: FALSE ::
+:: 117 :: MI Senate                  :: mi_senate            :: FALSE :: FALSE ::
+:: 118 :: MN House                   :: mn_house             :: FALSE :: FALSE ::
+:: 119 :: MN Senate                  :: mn_senate            :: FALSE :: FALSE ::
+:: 120 :: MO House                   :: mo_house             :: FALSE :: FALSE ::
+:: 121 :: MO Senate                  :: mo_senate            :: FALSE :: FALSE ::
+:: 122 :: MS House                   :: ms_house             :: FALSE :: FALSE ::
+:: 123 :: MS Senate                  :: ms_senate            :: FALSE :: FALSE ::
+:: 124 :: MT House                   :: mt_house             :: FALSE :: FALSE ::
+:: 125 :: MT Senate                  :: mt_senate            :: FALSE :: FALSE ::
+:: 126 :: NC House                   :: nc_house             :: FALSE :: FALSE ::
+:: 127 :: NC Senate                  :: nc_senate            :: FALSE :: FALSE ::
+:: 128 :: ND House                   :: nd_house             :: FALSE :: FALSE ::
+:: 129 :: ND Senate                  :: nd_senate            :: FALSE :: FALSE ::
+:: 130 :: NE House                   :: ne_house             :: FALSE :: FALSE ::
+:: 131 :: NE Senate                  :: ne_senate            :: FALSE :: FALSE ::
+:: 132 :: NH House                   :: nh_house             :: FALSE :: FALSE ::
+:: 133 :: NH Senate                  :: nh_senate            :: FALSE :: FALSE ::
+:: 134 :: NJ House                   :: nj_house             :: FALSE :: FALSE ::
+:: 135 :: NJ Senate                  :: nj_senate            :: FALSE :: FALSE ::
+:: 136 :: NM House                   :: nm_house             :: FALSE :: FALSE ::
+:: 137 :: NM Senate                  :: nm_senate            :: FALSE :: FALSE ::
+:: 138 :: NV House                   :: nv_house             :: FALSE :: FALSE ::
+:: 139 :: NV Senate                  :: nv_senate            :: FALSE :: FALSE ::
+:: 140 :: NY House                   :: ny_house             :: FALSE :: FALSE ::
+:: 141 :: NY Senate                  :: ny_senate            :: FALSE :: FALSE ::
+:: 142 :: OH House                   :: oh_house             :: FALSE :: FALSE ::
+:: 143 :: OH Senate                  :: oh_senate            :: FALSE :: FALSE ::
+:: 144 :: OK House                   :: ok_house             :: FALSE :: FALSE ::
+:: 145 :: OK Senate                  :: ok_senate            :: FALSE :: FALSE ::
+:: 146 :: OR House                   :: or_house             :: FALSE :: FALSE ::
+:: 147 :: OR Senate                  :: or_senate            :: FALSE :: FALSE ::
+:: 148 :: PA House                   :: pa_house             :: FALSE :: FALSE ::
+:: 149 :: PA Senate                  :: pa_senate            :: FALSE :: FALSE ::
+:: 150 :: RI House                   :: ri_house             :: FALSE :: FALSE ::
+:: 151 :: RI Senate                  :: ri_senate            :: FALSE :: FALSE ::
+:: 152 :: SC House                   :: sc_house             :: FALSE :: FALSE ::
+:: 153 :: SC Senate                  :: sc_senate            :: FALSE :: FALSE ::
+:: 154 :: SD House                   :: sd_house             :: FALSE :: FALSE ::
+:: 155 :: SD Senate                  :: sd_senate            :: FALSE :: FALSE ::
+:: 156 :: TN House                   :: tn_house             :: FALSE :: FALSE ::
+:: 157 :: TN Senate                  :: tn_senate            :: FALSE :: FALSE ::
+:: 158 :: TX House                   :: tx_house             :: FALSE :: FALSE ::
+:: 159 :: TX Senate                  :: tx_senate            :: FALSE :: FALSE ::
+:: 160 :: UT House                   :: ut_house             :: FALSE :: FALSE ::
+:: 161 :: UT Senate                  :: ut_senate            :: FALSE :: FALSE ::
+:: 162 :: VA House                   :: va_house             :: FALSE :: FALSE ::
+:: 163 :: VA Senate                  :: va_senate            :: FALSE :: FALSE ::
+:: 164 :: VT House                   :: vt_house             :: FALSE :: FALSE ::
+:: 165 :: VT Senate                  :: vt_senate            :: FALSE :: FALSE ::
+:: 166 :: WA House                   :: wa_house             :: FALSE :: FALSE ::
+:: 167 :: WA Senate                  :: wa_senate            :: FALSE :: FALSE ::
+:: 168 :: WI House                   :: wi_house             :: FALSE :: FALSE ::
+:: 169 :: WI Senate                  :: wi_senate            :: FALSE :: FALSE ::
+:: 170 :: WV House                   :: wv_house             :: FALSE :: FALSE ::
+:: 171 :: WV Senate                  :: wv_senate            :: FALSE :: FALSE ::
+:: 172 :: WY House                   :: wy_house             :: FALSE :: FALSE ::
+:: 173 :: WY Senate                  :: wy_senate            :: FALSE :: FALSE ::
+:: 174 :: CNN                        :: cnn                  :: TRUE  :: FALSE ::
+:: 175 :: Fox News                   :: foxnews              :: TRUE  :: FALSE ::
+:: 176 :: HLN                        :: hln                  :: FALSE :: FALSE ::
+:: 177 :: MSNBC                      :: msnbc                :: TRUE  :: FALSE ::
+:: 178 :: NBC News                   :: nbcnews              :: TRUE  :: FALSE ::
+:: 179 :: CNBC                       :: cnbc                 :: TRUE  :: FALSE ::
+:: 180 :: CBS News                   :: cbsnews              :: TRUE  :: FALSE ::
+:: 181 :: ABC News                   :: abcnews              :: TRUE  :: FALSE ::
+:: 182 :: PBS                        :: pbs                  :: TRUE  :: FALSE ::
+:: 183 :: Bloomberg                  :: bloomberg            :: TRUE  :: FALSE ::
+:: 184 :: Heavy Hundred (Radio)      :: heavyhundred         :: TRUE  :: FALSE ::
+:: 185 :: National Public Radio      :: npr                  :: TRUE  :: FALSE ::
+:: 186 :: Public Radio International :: pri                  :: TRUE  :: FALSE ::
+:: 187 :: American Public Media      :: apm                  :: TRUE  :: FALSE ::
+:: 188 :: McDonald''s                :: mcdonalds            :: TRUE  :: FALSE ::
+:: 189 :: Starbucks                  :: starbucks            :: TRUE  :: FALSE ::

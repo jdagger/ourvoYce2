@@ -4,7 +4,7 @@
 $offset: 20px;
 $border-color: #bbb;
 
-body{
+body.admin{
   background: #ddd;
   color: #333;
   font-family: 'Arial';
@@ -22,114 +22,114 @@ body{
     top: 0px;
     background: #eee;
   }
-}
 
-h1{font-size: 2.0em; margin: 0.5em 0em;}
-h2{font-size: 1.75em;margin: 0.875em 0em;}
-h3{font-size: 1.5em; margin: 0.75em 0em;}
+  h1{font-size: 2.0em; margin: 0.5em 0em;}
+  h2{font-size: 1.75em;margin: 0.875em 0em;}
+  h3{font-size: 1.5em; margin: 0.75em 0em;}
 
-.navigate{
-  margin: 10px 0px;
-  font-size: 1.2em;
-  .link{
-    display: inline;
-    //padding: 0px 10px;
-    a{
-      text-decoration: none;
-      color: #337;
-    }
-  }
-  .link:before{
-    content: '|';
-    padding: 0px 10px;
-  }
-
-  .link:first-of-type{ padding: 0px; }
-  .link:first-of-type:before{
-    content: '';
-    padding: 0px;
-  }
-}
-
-.tag-list{
-  overflow: hidden;
-  margin-bottom: $offset;
-  .tag{
-    float: left;
-    padding-right: 10px;
-  }
-}
-
-.field{
-  margin-bottom: $offset * 2/3;
-  padding-bottom: $offset * 2/3;
-  overflow: hidden;
-  border-bottom: dashed 1px #aaa;
-  .column{
-    font-weight: bold;
-    float: left;
-    width: 100px;
-  }
-
-  .value{
-  }
-}
-
-
-form{
-  padding: $offset 0px;
-  div.input{
-    margin-bottom: 20px;
-    overflow: hidden;
-
-    label {
-      display: block;
-    }
-
-
-  }
-
-  .check_boxes{
-    overflow: hidden;
-    span{
-      display: block;
-      float: left;
-      width: 150px;
-    }
-    label.collection_check_boxes{
+  .navigate{
+    margin: 10px 0px;
+    font-size: 1.2em;
+    .link{
       display: inline;
+      //padding: 0px 10px;
+      a{
+        text-decoration: none;
+        color: #337;
+      }
+    }
+    .link:before{
+      content: '|';
+      padding: 0px 10px;
+    }
+
+    .link:first-of-type{ padding: 0px; }
+    .link:first-of-type:before{
+      content: '';
+      padding: 0px;
     }
   }
-}
 
-.info, .success, .warning, .error, .validation {
+  .tag-list{
+    overflow: hidden;
+    margin-bottom: $offset;
+    .tag{
+      float: left;
+      padding-right: 10px;
+    }
+  }
+
+  .field{
+    margin-bottom: $offset * 2/3;
+    padding-bottom: $offset * 2/3;
+    overflow: hidden;
+    border-bottom: dashed 1px #aaa;
+    .column{
+      font-weight: bold;
+      float: left;
+      width: 100px;
+    }
+
+    .value{
+    }
+  }
+
+
+  form{
+    padding: $offset 0px;
+    div.input{
+      margin-bottom: 20px;
+      overflow: hidden;
+
+      label {
+        display: block;
+      }
+
+
+    }
+
+    .check_boxes{
+      overflow: hidden;
+      span{
+        display: block;
+        float: left;
+        width: 150px;
+      }
+      label.collection_check_boxes{
+        display: inline;
+      }
+    }
+  }
+
+  .info, .success, .warning, .error, .validation {
     border: 1px solid;
     margin: ($offset/2) 0px;
     padding:15px $offset;
     background-repeat: no-repeat;
     background-position: 10px center;
-}
-.info { color: #00529B; background-color: #BDE5F8; }
-.success { color: #4F8A10; background-color: #DFF2BF; }
-.warning { color: #9F6000; background-color: #FEEFB3; }
-.error { color: #D8000C; background-color: #FFBABA; }
-
-
-
-table {
-  border: solid 1px $border-color;
-  tr{
-    th, td{
-      border-right: solid 1px $border-color;
-      border-top: solid 1px $border-color;
-      padding: ($offset / 2) $offset;
-    }
-
-    th{
-      color: white;
-      background-color: #333;
-      font-weight: bold;
-    }
   }
+  .info { color: #00529B; background-color: #BDE5F8; }
+  .success { color: #4F8A10; background-color: #DFF2BF; }
+  .warning { color: #9F6000; background-color: #FEEFB3; }
+  .error { color: #D8000C; background-color: #FFBABA; }
 
+
+
+  table {
+    border: solid 1px $border-color;
+    tr{
+      th, td{
+        border-right: solid 1px $border-color;
+        border-top: solid 1px $border-color;
+        padding: ($offset / 2) $offset;
+      }
+
+      th{
+        color: white;
+        background-color: #333;
+        font-weight: bold;
+      }
+    }
+
+  }
 }
