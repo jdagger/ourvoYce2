@@ -51,7 +51,8 @@ class Graph
       @scale_top = [1, buckets.collect{ |x| x[:thumbs_up_vote_count] + x[:neutral_vote_count] + x[:thumbs_down_vote_count]}.max].max
 
       #Make sure all horizontal bars(4) in graph have a value
-      if @scale_top % 4 != 0
+      #If scale_top is 1 or 2, don't increase to multiple of four
+      if (@scale_top > 2) && (@scale_top % 4 != 0)
         @scale_top = @scale_top + 4 - (@scale_top % 4)
       end
 
