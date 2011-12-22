@@ -1,18 +1,21 @@
 window.barLoaded = false
 window.mapLoaded = false
+window.mapState = ''
 
 window.setState = (st) ->
   #Try to remove coupling to details
-  window.sendToGraph(OurvoyceApp.detail.id(), st)
+  window.mapState = st
+  window.sendToGraph(OurvoyceApp.detail.id())
   return
 
 window.sendToMap = (id) ->
+  console.log 'sendToMap'
   dataString = "#{id}/map/"
   window.thisMovie("map").sendTextToFlash(dataString)
   return
 
-window.sendToGraph = (id, st) ->
-  dataString = "#{id}/age/#{st}"
+window.sendToGraph = (id) ->
+  dataString = "#{id}/age/#{window.mapState}"
   window.thisMovie("bar-graph").sendTextToFlash(dataString)
   return
 
