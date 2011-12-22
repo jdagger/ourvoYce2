@@ -1,9 +1,10 @@
 development:
-  enable_star: 1
-  min_infix_len: 1
+  enable_star: 2
+  min_infix_len: 2
 test:
-  enable_star: 1
-  min_infix_len: 1
+  enable_star: 2
+  min_infix_len: 2
 production:
-  enable_star: 1
-  min_infix_len: 1
+  version: 1.10-beta
+  enable_star: 2
+  min_infix_len: 2
