@@ -49,6 +49,12 @@ class Graph
 
     def build_results_from_buckets(buckets)
       @scale_top = [1, buckets.collect{ |x| x[:thumbs_up_vote_count] + x[:neutral_vote_count] + x[:thumbs_down_vote_count]}.max].max
+
+      #Make sure all horizontal bars(4) in graph have a value
+      if @scale_top % 4 != 0
+        @scale_top = @scale_top + 4 - (@scale_top % 4)
+      end
+
       buckets.each do |bucket|
         bucket[:scale] = (bucket[:thumbs_up_vote_count] + bucket[:thumbs_down_vote_count] + bucket[:neutral_vote_count]).to_f / @scale_top rescue 0
         score = (bucket[:thumbs_up_vote_count] / (bucket[:thumbs_up_vote_count] + bucket[:thumbs_down_vote_count])) * 100 rescue 0
