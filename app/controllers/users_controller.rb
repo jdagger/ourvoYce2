@@ -1,15 +1,13 @@
 class UsersController < ApplicationController
-
-  def new
-    @user = User.new
-  end
-
-  def create
-  end
+  before_filter :authenticate_user!
 
   def edit
   end
 
   def update
+    if current_user.update_attributes(params[:user])
+      flash[:success] = 'Successfully updated settings'
+    end
+    render :edit
   end
 end

@@ -6,10 +6,35 @@ class User < ActiveRecord::Base
   before_save :set_state
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :zip, :country, :birth_year, :state
+  #attr_accessible :email, :remember_me, :zip, :country, :birth_year, :state
+  attr_accessible :email, :zip, :country, :birth_year, :state, :password, :password_confirmation
   #include ActiveModel::SecurePassword
   #has_secure_password
-  
+
+
+  #Allow records to be updated without specifying the password
+  #def update_with_password(params={})
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error params
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #if params[:password].strip.length == 0
+      #super(params)
+      #params.delete(:password)
+      #params.delete(:password_confirmation)
+    #end
+    #params.delete(:current_password)
+    #self.update_without_password(params)
+    #super(params)
+    #if password_required?
+    #Rails.logger.error "REQUIRED"
+    #self.update_with_password(params)
+    #else
+    #Rails.logger.error "NOT REQUIRED"
+    #end
+  #end	
+
   #Set the user's state based on their zip code
   def set_state
     if zip_changed? || state.blank?
@@ -55,15 +80,21 @@ class User < ActiveRecord::Base
 =end
   end
 
-  def password_required?
-    #(user_tokens.empty? || !password.blank?) && super  
-    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    #Rails.logger.error "User.password_required?"
-    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    true
-  end
+  #def password_required?
+  ##Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+  #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+  #Rails.logger.error "User.password_required?"
+  #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+  #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+  #true
+  #(user_tokens.empty? || !password.blank?) && super  
+  #Rails.logger.error "USER_TOKENS.empty?: #{user_tokens.empty?}"
+  #Rails.logger.error "!password.blank?: #{!password.blank?}"
+  #Rails.logger.error "super: #{super}"
+
+  #(user_tokens.empty? || !password.blank?) && super  
+  #(new_record? || !password.blank?)
+  #end
 
 
   validates :email, :presence => true, :uniqueness => true, :email => true

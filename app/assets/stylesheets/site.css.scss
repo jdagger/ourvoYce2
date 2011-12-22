@@ -488,6 +488,7 @@ form{
       position: absolute;
       right: 0px;
       margin:0px;
+      z-index: 100;
 
       .searchbox {
         //background: image-url('site/search.gif') top left no-repeat;
@@ -558,13 +559,25 @@ form{
 
           .voting{
             float: left;
-            width:90px;
+            width:105px;
             vertical-align:top;
-            padding-right: 20px;
+            margin-right: 20px;
 
             .vote-container{
-              margin:11px 0 9px 0;
               overflow: hidden;
+              margin:11px 0 9px 0;
+              width: 100%;
+
+              /*Votes */
+              a{
+                float: left;
+                .thumbs-up-vote { width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 0; }
+                .thumbs-up-vote-gray { width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -30px; }
+                .neutral-vote { width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -60px; }
+                .neutral-vote-gray { width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -90px; }
+                .thumbs-down-vote { width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -120px; }
+                .thumbs-down-vote-gray { width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -150px; }
+              }
             }
             .pins{
               overflow: hidden;
@@ -749,6 +762,33 @@ form{
   }
 }
 
+
+//Auto-complete styling
+ul.ui-autocomplete{
+  z-index: 99;
+  width: $searchbox_width;
+  background:#e1eef6  image-url('site/bg-pullout.jpg') repeat-x;
+  border: solid 2px $light-blue;
+  border-top: none;
+  @include border-radius(0px 0px 15px 15px / 0px 0px 10px 10px);
+  @include box-shadow(0px 0px 5px 2px #777);
+  z-index: 99 !important;
+  li{
+    padding: 5px 0px;
+    padding-left: 15px;
+    border-top: solid 1px #aaa;
+
+    a{
+      color: $dark-blue;
+      font-size: 1.2em;
+
+      strong{
+        color: $red;
+      }
+    }
+  }
+}
+
 #content-container2 {
   position: relative;
   text-align: left;
@@ -821,13 +861,6 @@ form{
 .red-bot {background: image-url('site/graph-red-bot.png') no-repeat;}
 
 
-/*Votes */
-div.thumbs-up-vote { float: left ; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 0; }
-div.thumbs-up-vote-gray { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -30px; }
-div.neutral-vote { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -60px; }
-div.neutral-vote-gray { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -90px; }
-div.thumbs-down-vote { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -120px; }
-div.thumbs-down-vote-gray { float: left; width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -150px; }
 
 #record_counter{
   position: fixed;

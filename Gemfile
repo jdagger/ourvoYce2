@@ -25,8 +25,8 @@ gem 'bcrypt-ruby'
 
 gem 'thin'
 
-gem 'thinking-sphinx', '~> 2.0.10'
-gem 'flying-sphinx',   '0.6.0'
+gem 'thinking-sphinx', '2.0.10'
+gem 'flying-sphinx',   '0.6.1'
 
 #gem 'compass','0.12.alpha.0'
 gem 'bourbon'

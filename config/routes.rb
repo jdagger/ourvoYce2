@@ -1,4 +1,7 @@
 Ourvoyce::Application.routes.draw do
+  #match "/account" => "users#edit", :via => [:get], :as => :edit_user
+  #match "/account" => "users#update", :via => [:put], :as => :update_user
+
   devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup', :registration => 'account'} do #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
     get "/signup" => "devise/registrations#new"
     get "/resend_verification" => "devise/confirmations#new"

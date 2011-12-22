@@ -1,13 +1,13 @@
 development:
   #image_path: '/images'
   image_path: 'https://s3.amazonaws.com/ourvoYce/images'
-  initial_items_to_load: 10
-  additional_items_to_load: 10
+  initial_items_to_load: 20
+  additional_items_to_load: 20
 test:
   image_path: 'https://s3.amazonaws.com/ourvoYce/images'
-  initial_items_to_load: 10
-  additional_items_to_load: 10
+  initial_items_to_load: 20
+  additional_items_to_load: 20
 production:
   image_path: 'https://s3.amazonaws.com/ourvoYce/images'
-  initial_items_to_load: 10
-  additional_items_to_load: 10
+  initial_items_to_load: 20
+  additional_items_to_load: 20
