@@ -9,6 +9,7 @@
     this.model.bind('newDetails', this.render)
     this.model.bind('showDetails', this.showDetails)
     this.model.bind('hideDetails', this.hideDetails)
+    this.model.bind('vote_changed', this.renderVoteGraph)
 
     $(window).resize(this.resize)
 
