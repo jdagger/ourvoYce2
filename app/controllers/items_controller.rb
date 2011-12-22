@@ -28,7 +28,10 @@ class ItemsController < ApplicationController
     favorite = Favorite.where(:item_id => params[:item_id], :user_id => current_user.id).first
 
     if favorite.nil?
-      Favorite.create(:item_id => params[:item_id], :user_id => current_user.id)
+      favorite = Favorite.new
+      favorite.item_id = params[:item_id]
+      favorite.user_id = current_user.id
+      favorite.save
       is_favorite = true
     else
       favorite.delete
