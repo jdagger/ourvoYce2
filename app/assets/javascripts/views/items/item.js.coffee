@@ -11,8 +11,11 @@
     'click .favorite > a': 'toggle_favorite'
 
   initialize: () ->
+    this.relatedTags = null
+
     _.bindAll(this, 'render', 
       'renderVoteIndicators',
+      'renderRelatedTags',
       'renderVoteMessage',
       'renderVoteGraph',
       'thumbs_up_vote', 
@@ -41,6 +44,7 @@
 
     this.detailsDisplayed = false
     return
+
 
   vote_changed: () ->
     this.renderVoteIndicators()
@@ -131,11 +135,15 @@
   render: () ->
     $(this.el).html(JST[this.template](this.model.toJSON()))
 
+    this.renderRelatedTags()
     this.renderVoteIndicators()
     this.renderVoteGraph()
 
     return this
 
+  renderRelatedTags: () ->
+    relatedTagView = new RelatedTagsView({el: $(this.el).find('.related-tags-container'), collection: this.relatedTags})
+    return
 
   #User clicked to expand details
   detailsClick: (e) ->

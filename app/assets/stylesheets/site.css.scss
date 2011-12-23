@@ -590,6 +590,13 @@ form{
               }
             }
           }
+          .middle{
+            height: $item-height;
+            .tags{
+              position: absolute;
+              bottom: 0px;
+            }
+          }
           .minichart {
             position: absolute; 
             overflow: hidden; 
@@ -938,6 +945,17 @@ ul.ui-autocomplete{
     width: 150px;
     margin-right: 5px;
     float: left;
+  }
+}
+
+
+.related-tags-container{
+  ul#related-tags{
+    display: inline;
+    li{
+      display: inline;
+      margin-right: 5px;
+    }
   }
 }
 

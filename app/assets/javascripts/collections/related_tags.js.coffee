@@ -1,0 +1,1 @@
+@RelatedTags = Tags.extend({})

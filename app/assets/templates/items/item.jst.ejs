@@ -33,13 +33,9 @@
         <%= description %>
       </div>
     </div>
-    <div>
-      Related Tags: 
-      <span class='related-tags'>
-        <% _.each(related_tags, function(related_tag){ %>
-          <a href="/tag/<%= related_tag.path %>"><%= related_tag.friendly_name %></a>
-        <% }); %>
-      </span>
+    <div class="tags">
+      <span class="tags-label">Related Tags:</span>
+      <span class="related-tags-container"></span>
     </div>
   </div>
   <div class="toggle-details minichart">

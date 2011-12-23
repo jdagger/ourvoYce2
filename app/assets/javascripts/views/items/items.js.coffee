@@ -3,7 +3,7 @@
 
   initialize: () ->
     this.initial_load = true
-    _.bindAll(this, 'render', 'renderMessage', 'renderItem', 'renderLoadMoreSection', 'renderNoItem', 'itemAdded', 'loadMoreClick')
+    _.bindAll(this, 'render', 'renderMessage', 'renderItem', 'renderLoadMoreSection', 'renderNoItem', 'loadMoreClick')
     this.collection.bind('reset', this.render)
     this.collection.bind('add', this.renderItem)
     this.loadMoreButton = $(JST['items/load_more_button']({}))
@@ -12,18 +12,18 @@
     this.render()
     return
 
-  itemAdded: (item) ->
-    return
-
   render: () ->
     $(this.el).html(JST['items/items']({}))
     if this.initial_load
       this.initial_load = false
       this.renderMessage('loading')
-    else if this.collection.length > 0
-      this.collection.each(this.renderItem)
     else
-      this.renderNoItem()
+      #window.scrollTo(0, $(this.el).offset().top)
+      window.scrollTo(0, $("#filter_container").offset().top)
+      if this.collection.length > 0
+        this.collection.each(this.renderItem)
+      else
+        this.renderNoItem()
     return this
 
   renderMessage: (message) ->
@@ -67,6 +67,10 @@
 
   renderItem: (item) ->
     itemView = new ItemView({model: item})
+    itemView.relatedTags = new RelatedTags()
+    _.each(item.get('related_tags'), (related_tag) ->
+      itemView.relatedTags.add(new Tag(related_tag))
+    )
     this.$('.items').append(itemView.render().el)
     this.renderLoadMoreSection()
     return this
