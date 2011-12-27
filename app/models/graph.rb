@@ -3,6 +3,8 @@ class Graph
     include VotesToColor
     def build_national_age_graph(item_id)
       records = Stat.select("birth_year, sum(thumbs_up_vote_count) as thumbs_up_vote_count, sum(thumbs_down_vote_count) as thumbs_down_vote_count, sum(neutral_vote_count) as neutral_vote_count").where(item_id: item_id).group(:birth_year)
+
+
       buckets = get_buckets
 
       records.each do |record|
@@ -58,8 +60,12 @@ class Graph
 
       buckets.each do |bucket|
         bucket[:scale] = (bucket[:thumbs_up_vote_count] + bucket[:thumbs_down_vote_count] + bucket[:neutral_vote_count]).to_f / @scale_top rescue 0
-        score = (bucket[:thumbs_up_vote_count] / (bucket[:thumbs_up_vote_count] + bucket[:thumbs_down_vote_count])) * 100 rescue 0
-        bucket[:color] = votes_to_color(bucket[:thumbs_up_vote_count], bucket[:thumbs_down_vote_count], bucket[:neutral_vote_count])
+        #score = (bucket[:thumbs_up_vote_count] / (bucket[:thumbs_up_vote_count] + bucket[:thumbs_down_vote_count])) * 100 rescue 0
+        bucket[:color] = votes_to_color(
+          thumbs_up: bucket[:thumbs_up_vote_count], 
+          thumbs_down: bucket[:thumbs_down_vote_count], 
+          neutral: bucket[:neutral_vote_count], 
+          use_default_color: true)
       end
 
       @ages = buckets

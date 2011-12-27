@@ -10,7 +10,7 @@ class Map
         tu = stat.thumbs_up_vote_count rescue 0
         td = stat.thumbs_down_vote_count rescue 0
         n = stat.neutral_vote_count rescue 0
-        color = votes_to_color(tu, td, n) 
+        color = votes_to_color(thumbs_up: tu, thumbs_down: td, neutral: n) 
         @states << {name: stat[:state], color: color}
       end
       return @states
@@ -33,7 +33,7 @@ class Map
             scale: 1.00,
             lat: stat.latitude,
             long: stat.longitude,
-            color: votes_to_color(tu, td, n),
+            color: votes_to_color(thumbs_up: tu, thumbs_down: td, neutral: n),
             thumbs_up_vote_count: tu,
             thumbs_down_vote_count: td,
             neutral_vote_count: n,
