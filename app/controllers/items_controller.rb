@@ -45,6 +45,7 @@ class ItemsController < ApplicationController
   #Given a list of item_ids, retrieve items
   def fetch
     #TODO: Cap item_ids to some max length (10?)
+    #max_additional_records = OURVOYCE_CONFIG['additional_items_to_load']
     item_ids = params[:item_ids]
 
     load_items_by_id(item_ids, current_user)
@@ -69,11 +70,11 @@ class ItemsController < ApplicationController
 
     load_tag_items(tag, filter, sort, current_user)
 
-    #load_default_item_data if request.format.html?
 
     @base_url = "tag"
 
-      render :json => {:item_ids => @item_ids, :items => @items, :tag_friendly_name => @tag_friendly_name, :tag_path => @tag_path, :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json
+    #render :json => {:item_ids => @item_ids, :items => @items, :tag_friendly_name => @tag_friendly_name, :tag_path => @tag_path, :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?, :records_to_fetch => OURVOYCE_CONFIG['additional_items_to_load']}.to_json
+    render :json => load_common_item_request_data.to_json
   end
 
   #Retrieve the favorites
@@ -89,8 +90,11 @@ class ItemsController < ApplicationController
     load_favorite_items(filter, sort, current_user)
 
     @base_url = "favorites"
+    @tag_friendly_name = 'Favorites'
+    @tag_path = ''
 
-    render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Favorites', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json
+    #render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Favorites', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?, :records_to_fetch => OURVOYCE_CONFIG['additional_items_to_load']}.to_json
+    render :json => load_common_item_request_data.to_json
 
   end
 
@@ -103,12 +107,31 @@ class ItemsController < ApplicationController
       redirect_to "/!#hot_topics/#{filter}/#{sort}"
       return
     end
-    
+
     load_hot_topic_items(filter, sort, current_user)
 
     @base_url = "hot_topics"
+    @tag_friendly_name = 'Hot Topics'
+    @tag_path = ''
 
-    render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json
+    render :json => load_common_item_request_data.to_json
+
+    #render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json
+  end
+
+  def load_common_item_request_data
+    #TODO: Refactor in view to remove order dependence. Use symbol names instead of ordered parameters
+    args = {}
+    args[:item_ids] = @item_ids
+    args[:items] = @items
+    args[:base_url] = @base_url
+    args[:tag_friendly_name] = @tag_friendly_name
+    args[:tag_path] = @tag_path
+    args[:filter] = @filter
+    args[:sort_name] = @sort_name
+    args[:sort_direction] = @sort_direction
+    args[:authenticated] = !current_user.nil?
+    return args
   end
 
   #Load the default data needed to render the page.  Required for full page loads
@@ -125,6 +148,7 @@ class ItemsController < ApplicationController
       @favorites_count = Favorite.where(user_id: current_user.id).count
       @user_vote_count = UserVote.where(user_id: current_user.id).count
     end
+    @records_to_fetch = OURVOYCE_CONFIG['additional_items_to_load']
   end
 
   #Load details for specified item

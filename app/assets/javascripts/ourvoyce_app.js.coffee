@@ -3,21 +3,17 @@ window.OurvoyceApp =
   Collections: {}
   Views: {}
   Routers: {}
-  init: (base_url, vote_count, tag_friendly_name, tag_path, filter, sort_name, sort_direction, popular_tags, hot_topic_tags, items, item_ids, authenticated) ->
+  init: (base_url, vote_count, tag_friendly_name, tag_path, filter, sort_name, sort_direction, popular_tags, hot_topic_tags, items, item_ids, authenticated, records_to_fetch) ->
     this.authenticated = authenticated
 
     this.popular_tags = new PopularTags(popular_tags)
     this.hot_topic_tags = new HotTopicTags(hot_topic_tags)
     
     this.detail = new Detail()
-    this.items = new Items(items, {base_url: base_url, tag_friendly_name: tag_friendly_name, tag_path: tag_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction})
+    this.items = new Items(items, {base_url: base_url, tag_friendly_name: tag_friendly_name, tag_path: tag_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction, records_to_fetch: records_to_fetch})
     this.item_ids = item_ids
 
-
     this.user_vote_count = new UserVoteCount({user_vote_count: vote_count})
-
-
-
 
     this.detailView = new DetailView({model: OurvoyceApp.detail})
     this.user_vote_count_view = new UserVoteCountView({model: this.user_vote_count})

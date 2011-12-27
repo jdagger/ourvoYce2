@@ -11,6 +11,7 @@
     this.sort_name = params.sort_name
     this.sort_direction = params.sort_direction
     this.displayed_details_item = null
+    this.records_to_fetch = params.records_to_fetch
     return
 
 
@@ -58,7 +59,7 @@
       $("#record_counter").html("all records loaded")
       return
 
-    items_to_fetch = OurvoyceApp.item_ids.slice(this.loaded_item_count(), this.loaded_item_count() + 10)
+    items_to_fetch = OurvoyceApp.item_ids.slice(this.loaded_item_count(), this.loaded_item_count() + this.records_to_fetch)
     url = "/items/fetch"
     this.fetch
       url: "/items/fetch"
