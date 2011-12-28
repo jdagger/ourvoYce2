@@ -1,25 +1,16 @@
+default: &defaults
+  image_path: 'https://s3.amazonaws.com/ourvoYce/images'
+  initial_items_to_load: 20
+  additional_items_to_load: 20
+  default_graph_color: '2E3A75'
+  thumbs_up_color: '57B70E'
+  thumbs_down_color: 'CB2C1E'
+  neutral_color: 'F08127'
+
 development:
+  <<: *defaults
   #image_path: '/images'
-  image_path: 'https://s3.amazonaws.com/ourvoYce/images'
-  initial_items_to_load: 20
-  additional_items_to_load: 20
-  default_graph_color: '2E3A75'
-  thumbs_up_color: '57B70E'
-  thumbs_down_color: 'CB2C1E'
-  neutral_color: 'F08127'
 test:
-  image_path: 'https://s3.amazonaws.com/ourvoYce/images'
-  initial_items_to_load: 20
-  additional_items_to_load: 20
-  default_graph_color: '2E3A75'
-  thumbs_up_color: '57B70E'
-  thumbs_down_color: 'CB2C1E'
-  neutral_color: 'F08127'
+  <<: *defaults
 production:
-  image_path: 'https://s3.amazonaws.com/ourvoYce/images'
-  initial_items_to_load: 20
-  additional_items_to_load: 20
-  default_graph_color: '2E3A75'
-  thumbs_up_color: '57B70E'
-  thumbs_down_color: 'CB2C1E'
-  neutral_color: 'F08127'
+  <<: *defaults
