@@ -4,14 +4,15 @@
   initialize: () ->
     _.bindAll(this, 'render', 'renderVoteGraph', 'filterInviewChange', 'resizeDetailsPane', 'positionDetailsPane', 'resize', 'renderMap', 'renderAgeGraph', 'showDetails', 'hideDetails', 'refreshMapClick')
 
-    #this.animateSpeed = 200
-
     this.model.bind('newDetails', this.render)
     this.model.bind('showDetails', this.showDetails)
     this.model.bind('hideDetails', this.hideDetails)
     this.model.bind('vote_changed', this.renderVoteGraph)
 
+    this.slide_speed = 500
+
     $(window).resize(this.resize)
+    #$(window).scroll(this.scroll)
 
     $('#filter_container').bind('inview', this.filterInviewChange)
 
@@ -23,18 +24,49 @@
     "click #hide-details": "hideDetailsClick"
     "click #refresh-map": "refreshMapClick"
 
+  slideWidth: () ->
+    return $(this.el).css('width')
+
   #Event handler for showDetails
   showDetails: (item) ->
+    #Stop any currently running animations
+    $(this.el).stop()
+
     $(this.el).find('#map').css('visibility', 'visible')
     $(this.el).find('#bar-graph').css('visibility', 'visible')
     $(this.el).css('visibility', 'visible')
+    $(this.el).animate({ left: "#{this.paneLeftPosition()}" }, this.slide_speed, 'easeOutExpo', () ->
+      return
+    )
+
+    #Begin orig
+    #$(this.el).find('#map').css('visibility', 'visible')
+    #$(this.el).find('#bar-graph').css('visibility', 'visible')
+    #$(this.el).css('visibility', 'visible')
+    #End orig
     return this
+
 
   #Event handler for hideDetails
   hideDetails: () ->
-    $(this.el).find('#map').css('visibility', 'hidden')
-    $(this.el).find('#bar-graph').css('visibility', 'hidden')
-    $(this.el).css('visibility', 'hidden')
+    #Begin orig
+    #$(this.el).find('#map').css('visibility', 'hidden')
+    #$(this.el).find('#bar-graph').css('visibility', 'hidden')
+    #$(this.el).css('visibility', 'hidden')
+    #End orig
+    
+
+    left = this.paneLeftPosition().replace(/px/, '') - this.slideWidth().replace(/px/, '')
+
+    #Stop any currently running animations
+    $(this.el).stop()
+    
+    $(this.el).animate({ left: "#{left}px"  }, this.slide_speed, 'easeOutExpo', () =>
+      $(this.el).find('#map').css('visibility', 'hidden')
+      $(this.el).find('#bar-graph').css('visibility', 'hidden')
+      $(this.el).css('visibility', 'hidden')
+      return
+    )
     return this
 
   refreshMapClick: (e) ->
@@ -52,8 +84,19 @@
 
   render: () ->
     $(this.el).find('#item-detail-name').html(this.model.name())
-    $(this.el).find('#item-detail-website').attr('href', this.model.website())
-    $(this.el).find('#item-detail-wikipedia').attr('href', this.model.wikipedia())
+    #Hide website link if doesn't contain content
+    if this.model.website().length > 0
+      $(this.el).find('#item-detail-website').show()
+      $(this.el).find('#item-detail-website').attr('href', this.model.website())
+    else
+      $(this.el).find('#item-detail-website').hide()
+
+    #Hide wikipedia link if doesn't contain content
+    if this.model.wikipedia().length > 0
+      $(this.el).find('#item-detail-wikipedia').show()
+      $(this.el).find('#item-detail-wikipedia').attr('href', this.model.wikipedia())
+    else
+      $(this.el).find('#item-detail-wikipedia').hide()
     this.renderVoteGraph()
     this.renderMap()
     this.renderAgeGraph()
@@ -105,24 +148,27 @@
       #console.log "Graph Error: #{error}"
     return
 
+  filterInView: () ->
+    return $('#filter_container').data('inview')
 
-  positionDetailsPane: () ->
-    filter_inview = $('#filter_container').data('inview')
 
-    if filter_inview
-      $(this.el).css('left', '')
-      $(this.el).css('top', '')
-      $(this.el).removeClass("details-pane-fixed").addClass('details-pane-absolute')
+  paneLeftPosition: () ->
+    if this.filterInView()
+      return '0px'
     else
       items_container = $("#items")
       window_left = $(window).scrollLeft()
-      #left =  items_container.offset().left + items_container.outerWidth() - window_left - 5
       left =  items_container.offset().left + items_container.outerWidth() - window_left
-      #TODO - Determine where the 5px left and 4px top fudges are coming from
-      
-      $(this.el).css('left', "#{left}px")
-      #$(this.el).css('top', "4px")
+      return "#{left}px"
+
+  positionDetailsPane: () ->
+    $(this.el).css('left', "#{this.paneLeftPosition()}")
+
+    if this.filterInView()
+      $(this.el).removeClass("details-pane-fixed").addClass('details-pane-absolute')
+    else
       $(this.el).addClass("details-pane-fixed").removeClass('details-pane-absolute')
+
     return
 
   resizeDetailsPane: () ->
@@ -136,6 +182,10 @@
   filterInviewChange: (e, inview) ->
     this.positionDetailsPane()
     return
+
+  #scroll: () ->
+  #this.positionDetailsPane()
+  #return
 
   resize: () ->
     this.resizeDetailsPane()
