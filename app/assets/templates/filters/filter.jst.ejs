@@ -5,34 +5,36 @@
         <span id="current_tag"></span>
     </h1>
   </div>
-  <div>
-    <select id="filter" name="filter">
-      <option value="all" <%= OurvoyceApp.selected_option('all', filter) %>>All Records</option>
-      <option value="voted" <%= OurvoyceApp.selected_option('voted', filter) %>>Voted</option>
-      <option value="no-vote" <%= OurvoyceApp.selected_option('no-vote', filter) %>>No Vote</option>
-    </select>
-  </div>
-  <div>
-    <select id="sort" name="sort">
-      <option value="default_order" <%= OurvoyceApp.selected_option('default_order', sort_name) %>>Default</option>
-      <option value="popularity" <%= OurvoyceApp.selected_option('popularity', sort_name) %>>Popularity</option>
-      <option value="name" <%= OurvoyceApp.selected_option('name', sort_name) %>>Name</option>
-    </select>
-    <select id="sort_direction" name="sort_direction">
-      <option value="desc" <%= OurvoyceApp.selected_option(sort_direction, 'desc') %>>Descending</option>
-      <option value="asc" <%= OurvoyceApp.selected_option(sort_direction, 'asc') %>>Ascending</option>
-    </select>
-  </div>
-  <div id="search">
-    <form action="/search/lookup" method="post" id="tag_search">
-      <input type="text" id="search_field" name="search" 
-        class="searchbox" maxlength="32" 
-        value="What's on your mind? Search" 
-        onblur="if(this.value=='') this.value='What\'s on your mind? Search'" 
-        onfocus="if(this.value =='What\'s on your mind? Search' ) this.value=''" />
-      <input type="image" name="submit" 
-        src="/assets/site/searchbtn.gif" border="0" 
-        width="17" height="18" class='search_button' />
-    </form>
+  <div id="filter_fields">
+    <div>
+      <select id="filter" name="filter">
+        <option value="all" <%= OurvoyceApp.selected_option('all', filter) %>>All Records</option>
+        <option value="voted" <%= OurvoyceApp.selected_option('voted', filter) %>>Voted</option>
+        <option value="no-vote" <%= OurvoyceApp.selected_option('no-vote', filter) %>>No Vote</option>
+      </select>
+    </div>
+    <div>
+      <select id="sort" name="sort">
+        <option value="default_order" <%= OurvoyceApp.selected_option('default_order', sort_name) %>>Default</option>
+        <option value="popularity" <%= OurvoyceApp.selected_option('popularity', sort_name) %>>Popularity</option>
+        <option value="name" <%= OurvoyceApp.selected_option('name', sort_name) %>>Name</option>
+      </select>
+      <select id="sort_direction" name="sort_direction">
+        <option value="desc" <%= OurvoyceApp.selected_option(sort_direction, 'desc') %>>Descending</option>
+        <option value="asc" <%= OurvoyceApp.selected_option(sort_direction, 'asc') %>>Ascending</option>
+      </select>
+    </div>
+    <div id="search">
+      <form action="/search/lookup" method="post" id="tag_search">
+        <input type="text" id="search_field" name="search" 
+          class="searchbox" maxlength="32" 
+          value="What's on your mind? Search" 
+          onblur="if(this.value=='') this.value='What\'s on your mind? Search'" 
+          onfocus="if(this.value =='What\'s on your mind? Search' ) this.value=''" />
+        <input type="image" name="submit" 
+          src="/assets/site/searchbtn.gif" border="0" 
+          width="17" height="18" class='search_button' />
+      </form>
+    </div>
   </div>
 </div>

@@ -9,7 +9,6 @@ window.setState = (st) ->
   return
 
 window.sendToMap = (id) ->
-  console.log 'sendToMap'
   dataString = "#{id}/map/"
   window.thisMovie("map").sendTextToFlash(dataString)
   return

@@ -2,7 +2,7 @@
   el: '#item-details-pane'
 
   initialize: () ->
-    _.bindAll(this, 'render', 'renderVoteGraph', 'filterInviewChange', 'resizeDetailsPane', 'positionDetailsPane', 'resize', 'renderMap', 'renderAgeGraph', 'showDetails', 'hideDetails', 'refreshMapClick')
+    _.bindAll(this, 'render', 'renderVoteGraph', 'filterInviewChange', 'renderFacebookLike', 'resizeDetailsPane', 'positionDetailsPane', 'resize', 'renderMap', 'renderAgeGraph', 'showDetails', 'hideDetails', 'refreshMapClick')
 
     this.model.bind('newDetails', this.render)
     this.model.bind('showDetails', this.showDetails)
@@ -81,9 +81,18 @@
     OurvoyceApp.detail.hideDetails()
     return
   
+  renderFacebookLike: () ->
+    base_url = window.location.href.replace(window.location.hash, '')
+    item_url = encodeURIComponent("#{base_url}#!/item/#{this.model.id()}")
+    like_button = "<iframe src=\"//www.facebook.com/plugins/like.php?href=#{item_url}&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden; width:100px; height:21px;\" allowTransparency=\"true\"></iframe>"
+    $(this.el).find('#facebook').html(like_button)
+    return
 
   render: () ->
     $(this.el).find('#item-detail-name').html(this.model.name())
+
+    this.renderFacebookLike()
+
     #Hide website link if doesn't contain content
     if this.model.website().length > 0
       $(this.el).find('#item-detail-website').show()

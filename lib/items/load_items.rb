@@ -1,6 +1,25 @@
 module Items
   module LoadItems
 
+    def load_item(item_id, current_user)
+
+      @filter = 'all'
+      @sort_name = 'default'
+      @sort_direction = 'asc'
+
+      @tag_friendly_name = 'Hot Topics'
+      @tag_path = ''
+
+
+      _item_ids = Item.where(:id => item_id)
+      @item_ids = _item_ids.map{ |x| x[:id] }
+
+      #Load the first 10 records
+      initial_items = @item_ids[0, OURVOYCE_CONFIG['initial_items_to_load']]
+
+      load_items_by_id(initial_items, current_user)
+    end
+
     def load_hot_topic_items(filter, sort, current_user)
 
       @filter = filter

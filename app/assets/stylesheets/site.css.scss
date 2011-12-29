@@ -353,9 +353,9 @@ font-size:15px;}
 /* --- Forms ------------------------------------------------------------ */
 
 form{
-  input[type=text], input[type=password], select{
+  input[type=text], input[type=password], select {
     border: solid 1px $light-blue;
-    @include border-radius(10px);
+    @include border-radius(5px);
     padding: 5px 10px;
     width: 180px;
   }

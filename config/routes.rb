@@ -17,6 +17,7 @@ Ourvoyce::Application.routes.draw do
   match '/privacy' => 'sites#privacy_policy', :as => :privacy_policy
   match '/membership' => 'sites#membership', :as => :membership
 
+  match '/item/:id' => 'items#fetch_item', :as => :fetch_item
   match '/favorites(/:filter(/:sort))' => 'items#favorites', :as => :favorites
   match '/hot_topics(/:filter(/:sort))' => 'items#hot_topics', :as => :hot_topics
   match '/tag/:tag(/:filter(/:sort))' => 'items#tag', :as => :tag, :defaults => {:sort => 'default:all', :filter => 'all'}
@@ -27,7 +28,6 @@ Ourvoyce::Application.routes.draw do
   match "/search/autocomplete" => "searches#autocomplete"
   match "/search/notfound(/:term)" => "searches#not_found", :as => :not_found
 
-  match '/!' => 'items#default'
   match '/items/tag/:tag' => 'items#tag'
   match '/items/fetch' => 'items#fetch'
   resources :items do
@@ -46,6 +46,7 @@ Ourvoyce::Application.routes.draw do
     resources :tags
   end
 
+  match '/ov' => 'items#default'
   root :to => 'defaults#index'
 
   #Point not found images to a default

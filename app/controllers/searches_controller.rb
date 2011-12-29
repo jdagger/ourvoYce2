@@ -9,7 +9,8 @@ class SearchesController < ApplicationController
     if record.nil?
       redirect_to not_found_path(search_term)
     else
-      redirect_to tag_path(record.path)
+      #redirect_to tag_path(record.path)
+      redirect_to "/ov/#!/tag/#{record.path}"
     end
   end
 

@@ -63,7 +63,7 @@ class ItemsController < ApplicationController
     sort = params[:sort] || 'default:asc'
 
     if request.format.html?
-      redirect_to "/!#tag/#{tag}/#{filter}/#{sort}"
+      redirect_to "/ov/#!/tag/#{tag}/#{filter}/#{sort}"
       return
     end
 
@@ -83,7 +83,7 @@ class ItemsController < ApplicationController
     sort = params[:sort] || 'default:asc'
 
     if request.format.html?
-      redirect_to "/!#favorites/#{filter}/#{sort}"
+      redirect_to "/ov/#!/favorites/#{filter}/#{sort}"
       return
     end
 
@@ -98,13 +98,35 @@ class ItemsController < ApplicationController
 
   end
 
+  #Retrieve single item
+  def fetch_item
+    filter = 'all'
+    sort = 'default:asc'
+    id = params[:id]
+
+    if request.format.html?
+      redirect_to "/ov/#!/item/#{id}"
+      return
+    end
+
+    load_item(id, current_user)
+
+    @base_url = "item"
+    @tag_friendly_name = 'Item'
+    @tag_path = ''
+
+    render :json => load_common_item_request_data.to_json
+
+    #render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json
+  end
+
   #Retrieve hot topics
   def hot_topics
     filter = params[:filter] || 'all'
     sort = params[:sort] || 'default:asc'
 
     if request.format.html?
-      redirect_to "/!#hot_topics/#{filter}/#{sort}"
+      redirect_to "/ov/#!/hot_topics/#{filter}/#{sort}"
       return
     end
 

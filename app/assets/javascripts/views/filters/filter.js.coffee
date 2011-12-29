@@ -8,12 +8,17 @@
     "change #sort_direction": "update_sort"
     "change #filter": "update_filter"
 
-
-
   initialize: () ->
-    _.bindAll(this, 'render', 'scroll')
-    $(window).scroll(this.scroll)
     this.render()
+    OurvoyceApp.items.bind('reset', this.items_reset)
+    return
+
+  items_reset: () ->
+    
+    if OurvoyceApp.items.friendly_name == 'Item'
+      $('#filter_fields').hide();
+    else
+      $('#filter_fields').show();
     return
 
   update_sort: () ->
@@ -43,9 +48,6 @@
     this.setup_autocomplete()
     #$(this.el).find('#tag_search').submit(this.search)
     return this
-
-  #search: () ->
-  #return true
 
   setup_autocomplete: () ->
     _highlight = this.highlight
@@ -77,11 +79,3 @@
   highlight: (s, t) ->
     matcher = new RegExp("("+$.ui.autocomplete.escapeRegex(t)+")", "ig" )
     return s.replace(matcher, "<strong>$1</strong>")
-  scroll: () ->
-    #window_top = $(window).scrollTop()
-    #content_top = $("#content_container").offset().top
-    #if(window_top > content_top)
-    #  $("#filter_box").addClass("fixed")
-    #else
-    #  $("#filter_box").removeClass("fixed")
-    return

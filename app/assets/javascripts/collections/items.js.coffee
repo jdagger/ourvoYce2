@@ -14,6 +14,14 @@
     this.records_to_fetch = params.records_to_fetch
     return
 
+  fetch_item: (id) ->
+    url = "/item/#{id}"
+    $("#record_counter").html("retrieving record...")
+    this.base_url = 'item'
+    this.tag = ''
+    this.friendly_name = 'Item'
+    this.fetch({url: url})
+    return
 
   fetch_hot_topics: (filter, sort_name, sort_direction) ->
     url = "/hot_topics"
