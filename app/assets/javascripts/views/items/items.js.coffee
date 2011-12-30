@@ -18,8 +18,7 @@
       this.initial_load = false
       this.renderMessage('loading')
     else
-      #window.scrollTo(0, $(this.el).offset().top)
-      window.scrollTo(0, $("#filter_container").offset().top)
+      #window.scrollTo(0, $("#filter_container").offset().top)
       if this.collection.length > 0
         this.collection.each(this.renderItem)
       else

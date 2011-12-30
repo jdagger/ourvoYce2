@@ -1,6 +1,6 @@
-div(class="topbar-wrapper")
-  div(class="topbar-left")
-    #login_form
+#header-topbar-wrapper
+  #header-topbar-left
+    #header-login-form
       .login_label
         ' LOGIN
       = simple_form_for User.new, url: new_user_session_path do |f|
@@ -11,16 +11,15 @@ div(class="topbar-wrapper")
           input(type="checkbox" name="user[remember_me]" value="1")
           | Remember me? 
         //input type="checkbox" 
-  div(class="topbar-center")
-    | &nbsp;
-    /' Login with: 
+  #header-topbar-center
+    ' Login with: 
     /a href="#"
       /img src="/assets/site/twitter.gif" alt="Twitter" width="32" height="22" style="vertical-align:middle"
     /== "&nbsp;"
-    /a href="#"
+    a href="#"
       img src="/assets/site/facebook.gif" alt="Facebook" width="12" height="22" style="vertical-align:middle"
-  div(class="topbar-right")
-    ul.toplist
+  #header-topbar-right
+    ul
       li
         a href="/reset_password" class="no-padleft"
           | Reset Password

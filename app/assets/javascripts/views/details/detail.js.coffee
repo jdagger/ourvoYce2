@@ -2,20 +2,23 @@
   el: '#item-details-pane'
 
   initialize: () ->
-    _.bindAll(this, 'render', 'renderVoteGraph', 'filterInviewChange', 'renderFacebookLike', 'resizeDetailsPane', 'positionDetailsPane', 'resize', 'renderMap', 'renderAgeGraph', 'showDetails', 'hideDetails', 'refreshMapClick')
+    _.bindAll(this, 'render', 'renderVoteGraph', 'filterInviewChange', 'renderFacebookLike', 'renderPlusOne', 'itemsReset', 'itemDetailUrl', 'renderTwitterShare', 'resizeDetailsPane', 'positionDetailsPane', 'resize', 'renderMap', 'renderAgeGraph', 'showDetails', 'hideDetails', 'refreshMapClick')
 
     this.model.bind('newDetails', this.render)
     this.model.bind('showDetails', this.showDetails)
     this.model.bind('hideDetails', this.hideDetails)
     this.model.bind('vote_changed', this.renderVoteGraph)
 
-    this.slide_speed = 500
+
+    this.slide_speed = 250
+
 
     $(window).resize(this.resize)
-    #$(window).scroll(this.scroll)
+
+    OurvoyceApp.items.bind('reset', this.itemsReset)
+
 
     $('#filter_container').bind('inview', this.filterInviewChange)
-
     this.resizeDetailsPane()
 
     return
@@ -27,6 +30,13 @@
   slideWidth: () ->
     return $(this.el).css('width')
 
+
+  itemsReset: () ->
+    if (OurvoyceApp.items.friendly_name == 'Item') && (OurvoyceApp.items.length == 1)
+      this.model.showDetails(OurvoyceApp.items.at(0))
+    return
+    
+
   #Event handler for showDetails
   showDetails: (item) ->
     #Stop any currently running animations
@@ -35,7 +45,9 @@
     $(this.el).find('#map').css('visibility', 'visible')
     $(this.el).find('#bar-graph').css('visibility', 'visible')
     $(this.el).css('visibility', 'visible')
-    $(this.el).animate({ left: "#{this.paneLeftPosition()}" }, this.slide_speed, 'easeOutExpo', () ->
+
+    #easeOutExpo
+    $(this.el).animate({ left: "#{this.paneLeftPosition()}" }, this.slide_speed, 'linear', () ->
       return
     )
 
@@ -55,13 +67,12 @@
     #$(this.el).css('visibility', 'hidden')
     #End orig
     
-
     left = this.paneLeftPosition().replace(/px/, '') - this.slideWidth().replace(/px/, '')
 
     #Stop any currently running animations
     $(this.el).stop()
     
-    $(this.el).animate({ left: "#{left}px"  }, this.slide_speed, 'easeOutExpo', () =>
+    $(this.el).animate({ left: "#{left}px"  }, this.slide_speed, 'linear', () =>
       $(this.el).find('#map').css('visibility', 'hidden')
       $(this.el).find('#bar-graph').css('visibility', 'hidden')
       $(this.el).css('visibility', 'hidden')
@@ -81,10 +92,25 @@
     OurvoyceApp.detail.hideDetails()
     return
   
-  renderFacebookLike: () ->
+  itemDetailUrl: () ->
     base_url = window.location.href.replace(window.location.hash, '')
-    item_url = encodeURIComponent("#{base_url}#!/item/#{this.model.id()}")
-    like_button = "<iframe src=\"//www.facebook.com/plugins/like.php?href=#{item_url}&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden; width:100px; height:21px;\" allowTransparency=\"true\"></iframe>"
+    return "#{base_url}#!/item/#{this.model.id()}"
+
+  renderTwitterShare: () ->
+    title = "Vote for #{this.model.name()} on OurVoyce"
+    html = JST['social/twitter']({url: encodeURIComponent(this.itemDetailUrl()), title: encodeURIComponent(title) })
+    $(this.el).find('#twitter').html(html)
+    return
+
+  renderPlusOne: () ->
+    #title = "Vote for #{this.model.name()} on OurVoyce"
+    html = JST['social/plusone']({url: this.itemDetailUrl()})
+    $(this.el).find('#plusone').html(html)
+    gapi.plusone.go()
+    return
+
+  renderFacebookLike: () ->
+    like_button = "<iframe src=\"//www.facebook.com/plugins/like.php?href=#{encodeURIComponent(this.itemDetailUrl())}&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden; width:100px; height:21px;\" allowTransparency=\"true\"></iframe>"
     $(this.el).find('#facebook').html(like_button)
     return
 
@@ -92,6 +118,8 @@
     $(this.el).find('#item-detail-name').html(this.model.name())
 
     this.renderFacebookLike()
+    this.renderPlusOne()
+    this.renderTwitterShare()
 
     #Hide website link if doesn't contain content
     if this.model.website().length > 0
@@ -158,6 +186,7 @@
     return
 
   filterInView: () ->
+    $(window).scroll()
     return $('#filter_container').data('inview')
 
 
@@ -191,10 +220,6 @@
   filterInviewChange: (e, inview) ->
     this.positionDetailsPane()
     return
-
-  #scroll: () ->
-  #this.positionDetailsPane()
-  #return
 
   resize: () ->
     this.resizeDetailsPane()

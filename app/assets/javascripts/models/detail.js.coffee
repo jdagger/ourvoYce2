@@ -2,7 +2,7 @@
 
   initialize: () ->
     _.extend(this, Backbone.Events)
-    _.bindAll(this, 'showDetails', 'hideDetails', 'vote_changed', 'fetchDetails')
+    _.bindAll(this, 'showDetails', 'hideDetails', 'voteChanged', 'fetchDetails')
     this.item_details = null
     this.item_model = null
     return
@@ -14,7 +14,7 @@
       success: () =>
         #TODO: Possible memory leak by not unbinding previously loaded items
         this.item_model = item
-        this.item_model.bind('vote_changed', this.vote_changed)
+        this.item_model.bind('vote_changed', this.voteChanged)
         this.trigger('newDetails')
         return
     return
@@ -24,7 +24,7 @@
     #return data.items
     return this
 
-  vote_changed: () ->
+  voteChanged: () ->
     this.trigger('vote_changed')
     return
 

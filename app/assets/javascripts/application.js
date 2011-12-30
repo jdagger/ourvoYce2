@@ -30,4 +30,5 @@
 //= require_tree ../templates
 //
 //= require jquery.inview
+//
 //= require_tree .

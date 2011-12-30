@@ -23,7 +23,7 @@
       'neutral_vote',
       'detailsClick',
       #'selectedDetailsChanged',
-      'vote_changed',
+      'voteChanged',
       'vote_saved',
       'vote_saving',
       'vote_error',
@@ -34,7 +34,7 @@
       'toggleDetails'
     )
     this.model.bind('vote_saving', this.vote_saving)
-    this.model.bind('vote_changed', this.vote_changed)
+    this.model.bind('vote_changed', this.voteChanged)
     this.model.bind('vote_saved', this.vote_saved)
     this.model.bind('vote_error', this.vote_error)
     this.model.bind('change:favorite', this.favorite_changed)
@@ -46,7 +46,7 @@
     return
 
 
-  vote_changed: () ->
+  voteChanged: () ->
     this.renderVoteIndicators()
     this.renderVoteGraph()
     #Possibly add some sort of animation indicating vote has changed
@@ -155,6 +155,7 @@
     return
 
   showDetails: (item) ->
+    console.log 'showDetails'
     if this.model.get('id') == item.get('id')
       this.toggleDetails(true)
     else

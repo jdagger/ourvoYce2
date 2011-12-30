@@ -1,7 +1,7 @@
-div(class="topbar-wrapper")
-  div(class="topbar-left")
+#header-topbar-wrapper
+  #header-topbar-left
     = "You are logged in as #{current_user.email}."
-  div(class="topbar-right")
+  #header-topbar-right
     .socialtop
       span.large
         | Follow us on
@@ -12,7 +12,7 @@ div(class="topbar-wrapper")
       a(href="#")
         img(src="/assets/site/facebook.gif" alt="Facebook" width="12" height="22" style="vertical-align:middle")
     .left
-      ul.toplist
+      ul
         li
           = link_to "Settings", edit_registration_path(current_user), :class => 'no-padleft'
         li

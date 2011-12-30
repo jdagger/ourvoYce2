@@ -7,20 +7,12 @@ html(xmlns:fb="http://ogp.me/ns/fb#")
      link href='/styles/ie.css' media='screen' rel='stylesheet' type='text/css'
     = javascript_include_tag "application"
     = csrf_meta_tags
+    script(type="text/javascript" src="https://apis.google.com/js/plusone.js")
+      == '{parsetags: "explicit"}'
+
   body
-    /Begin Facebook SDK code
-    /#fb-root
-    /javascript:
-      /(function(d, s, id) {
-        /var js, fjs = d.getElementsByTagName(s)[0];
-        /if (d.getElementById(id)) return;
-        /js = d.createElement(s); js.id = id;
-       /js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        /fjs.parentNode.insertBefore(js, fjs);
-      /}(document, 'script', 'facebook-jssdk'));
-    /End Facebook SDK code
-    div(class="wrapper-bg")
-    .wrapper
+    #body-background
+    #header
       == render 'shared/header'
       div(id="content-container")
         = yield

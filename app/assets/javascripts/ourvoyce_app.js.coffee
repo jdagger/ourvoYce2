@@ -24,9 +24,11 @@ window.OurvoyceApp =
     this.filterView = new FilterView()
     this.currentTagView = new CurrentTagView({collection: OurvoyceApp.items})
 
+
     this.router = new OurvoyceRouter()
 
     Backbone.history.start({pushState: false, silent: false})
+
     return
 
   selected_option: (val, left) ->
@@ -44,14 +46,5 @@ window.preload = (arrayOfImages) ->
 
 preload(['/assets/site/ajax-loader.gif'])
 
-
-
-
-
 $ ->
   return
-  #$(window).scroll(() ->
-  #if($(window).scrollTop() == $(document).height() - $(window).height())
-  #window.OurvoyceApp.items.fetch_next()
-  #return
-  #)
