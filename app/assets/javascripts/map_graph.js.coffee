@@ -37,7 +37,7 @@ window.mapEmbedded = (e) ->
   
   return
 
-$(() ->
+window.initializeMaps = () ->
 	mapvars =
     baseURL: "/items/"
 
@@ -58,4 +58,3 @@ $(() ->
   swfobject.embedSWF("/swf/map.swf", "map", "320", "247","10.0.0", "", mapvars, params, attributes, window.barEmbedded)
   swfobject.embedSWF("/swf/bar-graph.swf", "bar-graph", "320", "200","10.0.0", "", agevars, params, attributes, window.mapEmbedded)
   return
-)

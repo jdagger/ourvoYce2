@@ -2,6 +2,7 @@
   = javascript_include_tag "map_graph" 
   javascript:
     $(function(){
+      window.initializeMaps()
       window.OurvoyceApp.init('#{@base_url}', #{@user_vote_count}, '#{@tag_friendly_name}', '#{@tag_path}', '#{@filter}', '#{@sort_name}', '#{@sort_direction}', #{@popular_tags.to_json.html_safe}, #{@hot_topic_tags.to_json.html_safe}, #{@items.to_json.html_safe}, #{@item_ids.to_json.html_safe}, #{@authenticated}, #{@records_to_fetch});
     });
 
