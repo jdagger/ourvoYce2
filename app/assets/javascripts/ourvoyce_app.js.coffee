@@ -15,9 +15,9 @@ window.OurvoyceApp =
 
     this.user_vote_count = new UserVoteCount({user_vote_count: vote_count})
 
-    this.detailView = new DetailView({model: OurvoyceApp.detail})
     this.user_vote_count_view = new UserVoteCountView({model: this.user_vote_count})
     this.itemsView = new ItemsView({collection: OurvoyceApp.items})
+    this.detailView = new DetailView({model: OurvoyceApp.detail})
     this.popularTagsView = new PopularTagsView({collection: OurvoyceApp.popular_tags})
     this.hotTopicTagsView = new HotTopicTagsView({collection: OurvoyceApp.hot_topic_tags})
     this.recordCounterView = new RecordCounterView({collection: OurvoyceApp.items})
