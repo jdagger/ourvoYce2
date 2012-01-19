@@ -7,10 +7,12 @@ html
     = csrf_meta_tags
   body
     #admin
-      #menu
-        =link_to "Items", admin_items_path
-        =link_to "Users", admin_users_path
-        =link_to "Tags", admin_tags_path
+      header
+        #nav-menu
+          = render_navigation(:context => :admin)
+        #lookup
+          = render :partial => 'admin/items/item_lookup'
+          = render :partial => 'admin/tags/tag_lookup'
       #content
         = yield
     = yield :javascript

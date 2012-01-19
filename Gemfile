@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.2'
 
 gem 'simple_form'
+gem 'simple-navigation'
 gem 'client_side_validations'
 gem 'will_paginate'
 gem 'flash_messages_helper'
@@ -54,6 +55,7 @@ group :development do
   gem 'heroku'
   gem 'pry'
   gem 'pry-doc'
+  gem 'brakeman' #Security scan
   #gem 'ruby-debug19'
   #gem 'ruby-debug-base19'
   #gem 'ruby-debug-ide19'

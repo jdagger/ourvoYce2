@@ -27,5 +27,9 @@ class Tag < ActiveRecord::Base
     def do_search(value)
       search(value, :star => true, :order => "@relevance DESC").map{ |x| {friendly_name: x.friendly_name, path: x.path } }
     end
+
+    def lookup_by_name(name)
+      search(name, :star => true, :order => "@relevance DESC").map{ |x| {name: x.friendly_name, id: x.id } }
+    end
   end
 end

@@ -33,6 +33,10 @@ class Item < ActiveRecord::Base
 
       item.save
     end
+
+    def lookup_by_name(name)
+      search(name, :star => true, :order => "@relevance DESC").map{ |x| {name: x.name, id: x.id } }
+    end
   end
 
 end

@@ -41,6 +41,9 @@ Ourvoyce::Application.routes.draw do
   end
 
   namespace :admin do
+    match "/" => "admins#index", :as => :admin
+    match "/items/lookup_by_name" => "items#lookup_by_name", :as => :item_lookup_by_name
+    match "/tags/lookup_by_name" => "tags#lookup_by_name", :as => :tag_lookup_by_name
     resources :items
     resources :users
     resources :tags

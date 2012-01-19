@@ -1,137 +1,70 @@
-/*
-@import 'compass/css3';
-@import 'compass/reset';
+@import 'bourbon';
+@import 'boilerplate';
+@import 'admin/flutie';
+@import 'admin/jquery_ui';
 
-$offset: 20px;
-$border-color: #bbb;
-
-body.admin{
+$blue1: #172741;
+$blue2: #243e67;
+$blue3: #32548c;
+header{
   background: #ddd;
-  color: #333;
-  font-family: 'Arial';
-  font-size: 12px;
-  line-height: 18px;
+  overflow: hidden;
+  padding: 15px 20px;
+  border-bottom: solid 1px #aaa;
+  @include box-shadow(0px 0px 3px #aaa);
 
-  #admin{
-    @include single-box-shadow(#000);
-    //margin: 0px auto;
-    padding: $offset $offset;
-    //width: 90%;
-    position: absolute;
-    left: $offset * 2;
-    right: $offset * 2;
-    top: 0px;
-    background: #eee;
-  }
+  #nav-menu{
+    float: left;
 
-  h1{font-size: 2.0em; margin: 0.5em 0em;}
-  h2{font-size: 1.75em;margin: 0.875em 0em;}
-  h3{font-size: 1.5em; margin: 0.75em 0em;}
-
-  .navigate{
-    margin: 10px 0px;
-    font-size: 1.2em;
-    .link{
+    ul{
       display: inline;
-      //padding: 0px 10px;
-      a{
-        text-decoration: none;
-        color: #337;
-      }
-    }
-    .link:before{
-      content: '|';
-      padding: 0px 10px;
-    }
-
-    .link:first-of-type{ padding: 0px; }
-    .link:first-of-type:before{
-      content: '';
       padding: 0px;
-    }
-  }
-
-  .tag-list{
-    overflow: hidden;
-    margin-bottom: $offset;
-    .tag{
-      float: left;
-      padding-right: 10px;
-    }
-  }
-
-  .field{
-    margin-bottom: $offset * 2/3;
-    padding-bottom: $offset * 2/3;
-    overflow: hidden;
-    border-bottom: dashed 1px #aaa;
-    .column{
-      font-weight: bold;
-      float: left;
-      width: 100px;
-    }
-
-    .value{
-    }
-  }
-
-
-  form{
-    padding: $offset 0px;
-    div.input{
-      margin-bottom: 20px;
-      overflow: hidden;
-
-      label {
-        display: block;
-      }
-
-
-    }
-
-    .check_boxes{
-      overflow: hidden;
-      span{
-        display: block;
-        float: left;
-        width: 150px;
-      }
-      label.collection_check_boxes{
+      li{
+        list-style: none;
         display: inline;
+        margin-right: 10px;
+        a{
+          background: $blue1;
+          @include border-radius(5px);
+          color: white;
+          padding: 5px 10px;
+          text-decoration: none;
+          display: inline-block;
+          letter-spacing: 0.15em;
+          &:hover{
+            background: $blue2;
+          }
+        }
       }
     }
   }
 
-  .info, .success, .warning, .error, .validation {
-    border: 1px solid;
-    margin: ($offset/2) 0px;
-    padding:15px $offset;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-  }
-  .info { color: #00529B; background-color: #BDE5F8; }
-  .success { color: #4F8A10; background-color: #DFF2BF; }
-  .warning { color: #9F6000; background-color: #FEEFB3; }
-  .error { color: #D8000C; background-color: #FFBABA; }
-
-
-
-  table {
-    border: solid 1px $border-color;
-    tr{
-      th, td{
-        border-right: solid 1px $border-color;
-        border-top: solid 1px $border-color;
-        padding: ($offset / 2) $offset;
-      }
-
-      th{
-        color: white;
-        background-color: #333;
-        font-weight: bold;
+  #lookup{
+    float: right;
+    .search-box-container{
+      float: right;
+      margin-left: 10px;
+      .searchbox{
+          @include box-shadow(0px 0px 3px $blue3);
       }
     }
-
   }
 }
-*/
+
+
+input[type='text']{
+  @include border-radius(3px);
+  border: solid 1px $blue1;
+}
+
+input:focus{
+  outline-width: 0;
+}
+
+//Main body content
+#content{
+  margin: 0px 20px;
+}
+
+
+

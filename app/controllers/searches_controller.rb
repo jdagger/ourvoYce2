@@ -21,7 +21,7 @@ class SearchesController < ApplicationController
 
   def autocomplete
     results = Tag.do_search(params[:term]).to_json
-    Rails.logger.error results.inspect
+    #Rails.logger.error results.inspect
     render :json => results
   end
 end

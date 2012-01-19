@@ -1,6 +1,5 @@
 //@import 'compass/css3';
 
-
 $item-height: 100px;
 $items-width: 653px;
 $content_width: 1024px;
@@ -410,7 +409,7 @@ $header-logo-wrapper-height: 70px;
 form{
   input[type=text], input[type=password], select {
     border: solid 1px $light-blue;
-    @include border-radius(5px);
+    @include border-radius(10px);
     padding: 5px 10px;
     width: 180px;
   }

@@ -52,7 +52,8 @@
   setup_autocomplete: () ->
     _highlight = this.highlight
     $(this.el).find("#search_field").autocomplete
-      minLength: 1
+      autofocus: true
+      minLength: 2
       delay: 200
       source: (request, response) ->
         $.ajax

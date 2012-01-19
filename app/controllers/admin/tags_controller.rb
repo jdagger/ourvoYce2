@@ -34,4 +34,9 @@ class Admin::TagsController < Admin::ApplicationController
     flash[:success] = 'Successfully deleted tag'
     redirect_to admin_tags_path
   end
+
+  def lookup_by_name
+    results = Tag.lookup_by_name(params[:name]).to_json
+    render :json => results
+  end
 end

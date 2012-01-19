@@ -35,6 +35,14 @@ GEM
     bcrypt-ruby (3.0.1)
     bourbon (1.2.0)
       sass (>= 3.1)
+    brakeman (1.2.0)
+      activesupport
+      erubis (~> 2.6)
+      haml (~> 3.0)
+      i18n
+      ruby2ruby (~> 1.2)
+      ruport (~> 1.6)
+      sass (~> 3.0)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -54,6 +62,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.3)
+    color (1.4.1)
     cucumber (1.1.2)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
@@ -90,6 +99,7 @@ GEM
       rack (>= 1.1.0, < 2)
     faraday_middleware (0.7.0)
       faraday (~> 0.7.3)
+    fastercsv (1.5.4)
     ffi (1.0.11)
     flash_messages_helper (0.2.1)
     flying-sphinx (0.6.1)
@@ -110,6 +120,7 @@ GEM
       multi_json (~> 1.0.3)
     guard-rspec (0.5.5)
       guard (>= 0.8.4)
+    haml (3.1.4)
     hashie (1.2.0)
     heroku (2.14.0)
       launchy (>= 0.3.2)
@@ -117,6 +128,8 @@ GEM
       rubyzip
       term-ansicolor (~> 1.0.5)
     hike (1.2.1)
+    hoe (2.12.5)
+      rake (~> 0.8)
     i18n (0.6.0)
     jasmine (1.1.2)
       jasmine-core (>= 1.1.0)
@@ -147,6 +160,9 @@ GEM
       hashie (~> 1.2)
       rack
     orm_adapter (0.0.5)
+    pdf-writer (1.1.8)
+      color (>= 1.4.0)
+      transaction-simple (~> 1.3)
     pg (0.11.0)
     polyglot (0.3.3)
     pry (0.9.7.4)
@@ -209,9 +225,15 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.7.0)
+    ruby2ruby (1.3.1)
+      ruby_parser (~> 2.0)
+      sexp_processor (~> 3.0)
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
     rubyzip (0.9.4)
+    ruport (1.6.3)
+      fastercsv
+      pdf-writer (= 1.1.8)
     sass (3.1.10)
     sass-rails (3.1.5)
       actionpack (~> 3.1.0)
@@ -225,6 +247,8 @@ GEM
       rubyzip
     sexp_processor (3.0.8)
     shoulda-matchers (1.0.0)
+    simple-navigation (3.6.0)
+      activesupport (>= 2.3.2)
     simple_form (1.5.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -249,6 +273,8 @@ GEM
       riddle (>= 1.5.0)
     thor (0.14.6)
     tilt (1.3.3)
+    transaction-simple (1.4.0)
+      hoe (>= 1.1.7)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
@@ -276,6 +302,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   bourbon
+  brakeman
   capybara
   client_side_validations
   coffee-rails
@@ -303,6 +330,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   shoulda-matchers
+  simple-navigation
   simple_form
   slim
   spork (~> 0.9.0.rc)

@@ -16,7 +16,10 @@
     $(this.el).html(JST['items/items']({}))
     if this.initial_load
       this.initial_load = false
-      this.renderMessage('loading')
+      if this.collection.length > 0
+        this.renderMessage('loading')
+      else
+        this.renderNoItem()
     else
       #window.scrollTo(0, $("#filter_container").offset().top)
       if this.collection.length > 0

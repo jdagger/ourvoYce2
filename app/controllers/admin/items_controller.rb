@@ -34,4 +34,10 @@ class Admin::ItemsController < Admin::ApplicationController
     flash[:success] = 'Successfully deleted item'
     redirect_to admin_items_path
   end
+
+  def lookup_by_name
+    results = Item.lookup_by_name(params[:name]).to_json
+    render :json => results
+  end
+
 end

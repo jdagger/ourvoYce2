@@ -1,0 +1,8 @@
+Skipfish:
+skipfish -W ourvoyce.wl -o output http://ourvoyce.dev/
+
+Brakeman:
+brakeman
+
+w3af:
+
