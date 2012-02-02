@@ -216,9 +216,11 @@ module Items
       item_arr = Item.get_by_ids(item_ids).to_a
       
       item_arr.each do |item|
-        item[:related_tags] = []
+        #item[:related_tags] = []
+        item.related_tags = []
         item.tag_items.each do |tag_item|
-          item[:related_tags] << {friendly_name: tag_item.tag.friendly_name, path: tag_item.tag.path}
+          #item[:related_tags] << {friendly_name: tag_item.tag.friendly_name, path: tag_item.tag.path}
+          item.related_tags << {friendly_name: tag_item.tag.friendly_name, path: tag_item.tag.path}
         end
       end
 
@@ -239,22 +241,24 @@ module Items
       unless user_votes.blank?
         sorted_arr.each do |item|
           idx = user_votes.find_index{ |x| x[:item_id].to_s == item.id.to_s }
-          item[:user_vote] = user_votes[idx][:vote] unless idx.nil?
+          #item[:user_vote] = user_votes[idx][:vote] unless idx.nil?
+          item.user_vote = user_votes[idx][:vote] unless idx.nil?
         end
       end
 
       sorted_arr.each do |item|
         idx = favorites.find_index{ |x| x[:item_id].to_s == item.id.to_s }
         if idx.blank? 
-          item[:favorite] = false
+          #item[:favorite] = false
+          item.favorite = false
         else
-          item[:favorite] = true
+          #item[:favorite] = true
+          item.favorite = true
         end
       end
 
       #Correct logo path
       sorted_arr.each do |item|
-        Rails.logger.error "#{OURVOYCE_CONFIG['image_path']}/#{item[:logo]}"
         item[:logo] = "#{OURVOYCE_CONFIG['image_path']}/#{item[:logo]}"
       end
 

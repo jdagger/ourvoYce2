@@ -1,0 +1,14 @@
+/ul.nav.nav-list
+/  li.nav-header
+/    | Item Properties
+/  li.active
+/    = link_to 'New', new_admin_item_path
+/  - unless @item.blank? || @item.new_record?
+/    li
+/      = link_to 'Edit', edit_admin_item_path(@item)
+/    li
+/      = link_to 'Show', [:admin, @item]
+/    li
+/      = link_to 'Delete', [:admin, @item], :method => :delete, :confirm => 'Are you sure?'
+/  li
+/    = link_to 'View All Items', admin_items_path

@@ -3,16 +3,20 @@ html
   head
     title ourvoYce - Admin
     = stylesheet_link_tag    "admin" 
-    = javascript_include_tag "application"
+    = javascript_include_tag "jquery"
+    = javascript_include_tag "bootstrap/bootstrap"
+    = javascript_include_tag "admin/admin"
     = csrf_meta_tags
-  body
-    #admin
-      header
-        #nav-menu
-          = render_navigation(:context => :admin)
-        #lookup
+  /40px padding to provide space for navbar
+  body(style="padding-top: 60px;") 
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = render_navigation(:context => :admin, :expand_all => true)
+    .container-fluid
+      .row-fluid
+        .span12
           = render :partial => 'admin/items/item_lookup'
           = render :partial => 'admin/tags/tag_lookup'
-      #content
-        = yield
+          = yield
     = yield :javascript

@@ -58,6 +58,16 @@ class ItemsController < ApplicationController
 
   #Load data for the specified tag
   def tag
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
     tag = params[:tag]
     filter = params[:filter] || 'all'
     sort = params[:sort] || 'default:asc'
@@ -70,6 +80,15 @@ class ItemsController < ApplicationController
 
     load_tag_items(tag, filter, sort, current_user)
 
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "#{@items.to_json}"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
 
     @base_url = "tag"
 

@@ -4,11 +4,9 @@ SimpleNavigation::Configuration.run do |navigation|
   # Specify a custom renderer if needed.
   # The default renderer is SimpleNavigation::Renderer::List which renders HTML lists.
   # The renderer can also be specified as option in the render_navigation call.
-  # navigation.renderer = Your::Custom::Renderer
+  navigation.renderer = BootstrapTopbarList
 
   # Specify the class that will be applied to active navigation items. Defaults to 'selected'
-  # navigation.selected_class = 'your_selected_class'
-
   # Specify the class that will be applied to the current leaf of
   # active navigation items. Defaults to 'simple-navigation-active-leaf'
   # navigation.active_leaf_class = 'your_active_leaf_class'
@@ -49,7 +47,10 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
-    primary.item :items, 'Items', admin_items_url
+    primary.item :items, 'Items', admin_items_url do |items|
+      items.item :new_item, 'New Item', new_admin_item_url
+      items.item :view_all_items, 'View All', admin_items_url
+    end
     primary.item :users, 'Users', admin_users_url
     primary.item :tags, 'Tags', admin_tags_url
 
@@ -68,8 +69,6 @@ SimpleNavigation::Configuration.run do |navigation|
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
     # primary.dom_id = 'menu-id'
-    # primary.dom_class = 'menu-class'
-
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false
 

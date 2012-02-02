@@ -1,5 +1,5 @@
 = flash_messages
-= simple_form_for [:admin, @item] do |f|
+= simple_form_for [:admin, @item], class: 'form-horizontal' do |f|
   = f.input :name
   /= f.input :item_type
   = f.input :description

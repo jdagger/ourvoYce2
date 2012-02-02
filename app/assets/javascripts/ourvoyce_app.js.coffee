@@ -11,6 +11,7 @@ window.OurvoyceApp =
     
     this.detail = new Detail()
     this.items = new Items(items, {base_url: base_url, tag_friendly_name: tag_friendly_name, tag_path: tag_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction, records_to_fetch: records_to_fetch})
+
     this.item_ids = item_ids
 
     this.user_vote_count = new UserVoteCount({user_vote_count: vote_count})

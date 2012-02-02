@@ -1,6 +1,3 @@
-= content_for :javascript do
-  = javascript_include_tag 'admin/tag_lookup'
-
 .search-box-container
   form(action="/admin/tags/" method="post" id="tag-lookup-search")
     input(id="tag-lookup" name="tag-lookup" type='text' placeholder='Tag Lookup' class='searchbox')

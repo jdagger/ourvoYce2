@@ -30,5 +30,11 @@ Ourvoyce::Application.configure do
   #config.after_initialize do |app|
   #app.assets.logger = Logger.new('/dev/null')
   #end
+
+  
+  config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.active_record.mass_assignment_sanitizer = :strict
+
+  config.assets.logger = false
 end
 

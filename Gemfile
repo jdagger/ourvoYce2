@@ -1,11 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.2'
+gem 'rails', '3.2.0'
 
 gem 'simple_form'
 gem 'simple-navigation'
 gem 'client_side_validations'
-gem 'will_paginate'
 gem 'flash_messages_helper'
 
 gem 'forgery'
@@ -31,6 +30,9 @@ gem 'flying-sphinx',   '0.6.1'
 
 #gem 'compass','0.12.alpha.0'
 gem 'bourbon'
+
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.
