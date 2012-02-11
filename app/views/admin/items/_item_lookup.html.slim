@@ -1,3 +1,15 @@
-.search-box-container
-  form(action="/admin/items/" method="post" id="item-lookup-search")
-    input(id="item-lookup" name="item-lookup" type='text' placeholder='Item Lookup' class='searchbox')
+- content_for :javascript do 
+  = javascript_include_tag 'admin/bootstrap-typeahead-mod'
+  = javascript_include_tag 'admin/item_lookup'
+
+.autocomplete
+  .btn-group(data-toggle="buttons-radio")
+    button.autocomplete-type.btn.btn-primary.active Items
+    button.autocomplete-type.btn.btn-primary Tags
+  = form_tag "/admin/items/find_by_autocomplete", :method=>"post", :id => 'autocomplete_form', :class => 'form-inline' do
+    input#autocomplete_url(type="hidden" value="/admin/items/suggest_by_name")
+    .input-prepend
+      span.add-on
+        i.icon-search
+      input#item-lookup.span3(type="text" name="item-lookup" placeholder="Find Items")
+    input(type="submit" value="Go" class="btn btn-success")

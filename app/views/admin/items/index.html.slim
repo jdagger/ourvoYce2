@@ -1,19 +1,40 @@
-h1 Items
-= will_paginate @items
+= render 'item_header', title: 'Index'
+
+.row.paging 
+  .span2
+    .record-count
+      = "#{number_with_delimiter(Item.count)} total records."
+    
+  .span10
+    .pull-right
+      = will_paginate @items
 table.table.table-striped.table-bordered
   thead
     tr
       th(style="width: 20px;")
-      th Name
-      th Type
       th Logo
+      th Name
+      th Website
+      th Wikipedia
+      th Tags
+      th Id
   tbody
     -  @items.each do |item|
       tr
-        td
+        td.span1
           = link_to edit_admin_item_path(item) do
               i.icon-pencil
-        td= item.name
-        td= item.item_type
-        td
+          = link_to admin_item_path(item) do
+              i.icon-info-sign
+        td.span2
           img(src="#{OURVOYCE_CONFIG['image_path']}/#{item.logo}" alt="#{item.logo}")
+        td= item.name
+        td
+          - unless item.website.blank?
+            a(href="#{item.website}" rel="tooltip" target="blank" title="#{item.website}") Website 
+        td
+          - unless item.wikipedia.blank?
+            a(href="#{item.wikipedia}" rel="tooltip" target="blank" title="#{item.wikipedia}") Wikipedia 
+        td
+          = item.tags.map{|t| "<a href='/admin/tags/#{t.id}'>#{t.friendly_name}</a>"}.join(', ').html_safe
+        td= item.id

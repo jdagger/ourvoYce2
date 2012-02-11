@@ -1,9 +1,48 @@
-= flash_messages
-= simple_form_for [:admin, @tag] do |f|
-  = f.input :path
-  = f.input :friendly_name
-  = f.input :popular
-  = f.input :hot_topic
-  = f.submit
-  = link_to 'Cancel', admin_tags_path
+- content_for :javascript do 
+  = javascript_include_tag 'admin/bootstrap-typeahead-mod'
+  coffee:
+    $ ->
+      $('#add-item-lookup').typeahead
+        source: (obj, success_callback) ->
+          $.ajax
+            url: "/admin/items/suggest_by_name",
+            dataType: 'json',
+            data: {name: obj.query},
+            success: (data) ->
+              items = $.map(data, (item) ->
+                return "#{item.name} (#{item.id})"
+              )
 
+              success_callback(obj, items)
+      return
+
+.row
+  .span6
+    .well
+      fieldset
+        legend Tag Properties
+        = simple_form_for [:admin, @tag], :html => {:class => 'form-vertical'} do |f|
+          = f.input :path
+          = f.input :friendly_name
+          = f.input :popular, :wrapper => :checkbox_inline
+          = f.input :hot_topic, :wrapper => :checkbox_inline
+          br
+          br
+          = f.submit :class => 'btn btn-primary'
+  .span6
+    - unless @tag.new_record?
+      .well
+        fieldset
+          legend Items
+          .autocomplete
+            = form_tag admin_tag_add_item_by_autocomplete_path(@tag), :method=>"post", :class => 'form-inline' do
+              .input-prepend
+                span.add-on
+                  i.icon-search
+                input#add-item-lookup.span4(type="text" name="item-lookup" placeholder="Add Item")
+              input(type="submit" value="Go" class="btn btn-success")
+          - @tag.tag_items.includes(:item).order('items.name').each do |tag_item|
+            p
+              = tag_item.item.name
+              = link_to admin_tag_item_path(tag_item), :method => :delete do
+                i.icon-remove

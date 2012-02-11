@@ -1,0 +1,4 @@
+- flash.each do |type, message|
+  div(class="alert alert-block fade in #{twitterized_type(type)}" data-alert="alert")
+    a.close(data-dismiss='alert' href="#")&times;
+    p= message

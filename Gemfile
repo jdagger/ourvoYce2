@@ -2,7 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.0'
 
-gem 'simple_form'
+#gem 'simple_form', '>= 2.0.0.rc'
+gem 'simple_form', :git => 'https://github.com/plataformatec/simple_form.git'
 gem 'simple-navigation'
 gem 'client_side_validations'
 gem 'flash_messages_helper'

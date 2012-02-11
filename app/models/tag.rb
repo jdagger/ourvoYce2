@@ -7,20 +7,13 @@ class Tag < ActiveRecord::Base
 
   scope :by_friendly_name, lambda { |friendly_name| where("lower(friendly_name) = ?", friendly_name.downcase) }
 
-  default_scope :order => 'friendly_name asc'
+  validates_uniqueness_of :path
+  validates_presence_of :path, :friendly_name
 
 
   #Thinking Sphinx Index
   define_index do
-    # fields
-    #indexes subject, :sortable => true
-    #indexes content
-    #indexes author.name, :as => :author, :sortable => true
     indexes friendly_name, :sortable => true
-
-    # attributes
-    #has author_id, created_at, updated_at
-    #has id
   end
 
   class << self

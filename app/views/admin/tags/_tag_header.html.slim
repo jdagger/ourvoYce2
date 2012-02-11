@@ -1,0 +1,20 @@
+.page-header
+  .row
+    .span6
+      h1
+        = "#{title} "
+        small Tags
+    .span6
+      .pull-right
+        ul.nav.nav-pills
+          li(class="#{action_name == 'new' ? 'active' : ''}")
+            = link_to 'New', new_admin_tag_path
+          - unless @tag.blank? || @tag.new_record?
+            li(class="#{action_name == 'edit' ? 'active' : ''}")
+              = link_to 'Edit', edit_admin_tag_path(@tag)
+            li(class="#{action_name == 'show' ? 'active' : ''}")
+              = link_to 'Show', [:admin, @tag]
+            li= link_to 'Delete', [:admin, @tag], :method => :delete, :confirm => 'Are you sure?'
+          li.divider-vertical &nbsp;
+          li(class="#{action_name == 'index' ? 'active' : ''}")
+            = link_to 'View All Tags', admin_tags_path

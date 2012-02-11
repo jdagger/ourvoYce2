@@ -10,6 +10,8 @@ class Item < ActiveRecord::Base
   has_many :favorites, :dependent => :destroy, :foreign_key => :item_id
   has_many :users, :through => :favorites, :uniq => true
 
+  validates_presence_of :name
+
   #These attributes are dynamically populated in load_items and used to render the item
   attr_accessor :favorite, :related_tags, :user_vote
 

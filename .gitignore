@@ -7,7 +7,7 @@ db/*.sqlite3
 log/searchd.development.pid
 config/development.sphinx.conf
 log/*.log
-tmp/
+tmp/*
 .sass-cache/
 .DS_Store
 ourvoYce_web2.xcodeproj/project.pbxproj

@@ -42,11 +42,18 @@ Ourvoyce::Application.routes.draw do
 
   namespace :admin do
     match "/" => "admins#index", :as => :admin
-    match "/items/lookup_by_name" => "items#lookup_by_name", :as => :item_lookup_by_name
-    match "/tags/lookup_by_name" => "tags#lookup_by_name", :as => :tag_lookup_by_name
-    resources :items
+    match "/items/suggest_by_name" => "items#suggest_by_name", :as => :item_lookup_by_name
+    match "/items/find_by_autocomplete" => "items#find_by_autocomplete", :as => :item_find_by_autocomplete
+    match "/tags/suggest_by_name" => "tags#suggest_by_name", :as => :tag_lookup_by_name
+    match "/tags/find_by_autocomplete" => "tags#find_by_autocomplete", :as => :tag_find_by_autocomplete
+    resources :items do
+      match "/add_tag_by_autocomplete" => "items#add_tag_by_autocomplete", :as => :add_tag_by_autocomplete
+    end
+    resources :tag_items
     resources :users
-    resources :tags
+    resources :tags do 
+      match "/add_item_by_autocomplete" => "tags#add_item_by_autocomplete", :as => :add_item_by_autocomplete
+    end
   end
 
   match '/ov' => 'items#default'

@@ -1,40 +1,49 @@
-/h1= @item.name
-/=render 'navigate'
-
-/img(src="OURVOYCE_CONFIG['image_path']/#{@item.logo}" alt="#{@item.logo}")
-/table
-  /thead
-    /tr
-      /th Thumbs Up
-      /th Thumbs Down
-      /th Neutral
-      /th Total
-  /tbody
-    /tr
-      /td= @item.thumbs_up_vote_count
-      /td= @item.thumbs_down_vote_count
-      /td= @item.neutral_vote_count
-      /td= @item.total_vote_count
+=render 'item_header', title: "#{@item.name}"
 
 
-/.tag-list
-  /h3 Tags
-  /- @item.tags.each do |tag|
-    /.tag
-      /= tag.friendly_name
+h2 Details
+.row
+  .span6
+    table.table.table-bordered
+      tbody
+        tr
+          th.span2 Name
+          td= @item.name
+        tr
+          th Description
+          td= @item.description
+        tr
+          th Item Type
+          td= @item.item_type
+        tr
+          th Logo
+          td
+            img(src="#{OURVOYCE_CONFIG['image_path']}/#{@item.logo}")
+            br
+            = @item.logo
+        tr
+          th Wikipedia
+          td= @item.wikipedia
+        tr
+          th Website
+          td= @item.website
+        tr
+          th Default Order
+          td= @item.default_order
+        tr
+          th Votes (tu/n/td/total)
+          td
+            = @item.thumbs_up_vote_count
+            | &nbsp;/&nbsp;
+            = @item.neutral_vote_count
+            | &nbsp;/&nbsp;
+            = @item.thumbs_down_vote_count
+            br
+            = @item.total_vote_count
+  .span6
 
-/.field
-  /.column Description:
-  /.value= @item.description
-/.field 
-  /.column Wikipedia:
-  /.value= link_to @item.wikipedia
-/.field 
-  /.column Website:
-  /.value= link_to @item.website
-/.field
-  /.column Default Order:
-  /.value= @item.default_order
-/.field
-  /.column Type: 
-  /.value = @item.item_type
+h2 Tags
+.container
+  - @item.tags.order('friendly_name asc').each do |tag|
+    .span3
+      p= link_to tag.friendly_name, admin_tag_path(tag)

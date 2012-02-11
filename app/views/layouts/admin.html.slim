@@ -4,19 +4,24 @@ html
     title ourvoYce - Admin
     = stylesheet_link_tag    "admin" 
     = javascript_include_tag "jquery"
+    = javascript_include_tag "jquery_ujs"
+    = javascript_include_tag "jquery-ui"
     = javascript_include_tag "bootstrap/bootstrap"
     = javascript_include_tag "admin/admin"
     = csrf_meta_tags
   /40px padding to provide space for navbar
-  body(style="padding-top: 60px;") 
+  body(style="padding-top: 40px;") 
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          = render_navigation(:context => :admin, :expand_all => true)
-    .container-fluid
-      .row-fluid
+          .row
+            .span4
+              = render_navigation(:context => :admin, :expand_all => true)
+            .span8.pull-right(style="text-align: right;")
+              = render :partial => 'admin/items/item_lookup'
+    .container
+      .row
         .span12
-          = render :partial => 'admin/items/item_lookup'
-          = render :partial => 'admin/tags/tag_lookup'
+          =render :partial => "admin/shared/flash_messages", :locals => {:flash => flash}
           = yield
     = yield :javascript

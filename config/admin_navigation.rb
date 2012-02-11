@@ -48,11 +48,14 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     primary.item :items, 'Items', admin_items_url do |items|
-      items.item :new_item, 'New Item', new_admin_item_url
       items.item :view_all_items, 'View All', admin_items_url
+      items.item :new_item, 'New Item', new_admin_item_url
+    end
+    primary.item :tags, 'Tags', admin_tags_url do |tags|
+      tags.item :view_all_tasg, 'View All', admin_tags_url
+      tags.item :new_tag, 'New Tag', new_admin_tag_url
     end
     primary.item :users, 'Users', admin_users_url
-    primary.item :tags, 'Tags', admin_tags_url
 
     # Add an item which has a sub navigation (same params, but with block)
     #primary.item :key_2, 'name', url, options do |sub_nav|

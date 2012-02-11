@@ -1,19 +1,31 @@
-h1= @tag.friendly_name
-=render 'navigate'
+=render 'tag_header', title: "#{@tag.friendly_name}"
+
+h2 Details
+.row
+  .span6
+    table.table.table-bordered
+      tbody
+        tr
+          th.span2 Friendly Name
+          td= @tag.friendly_name
+        tr
+          th Path
+          td= @tag.path
+        tr
+          th Popular
+          td
+            - if @tag.popular
+              i.icon-ok
+        tr
+          th Hot Topic
+          td
+            - if @tag.hot_topic
+              i.icon-ok
+  .span6
 
 
-.field
-  .column Path
-  .value= @tag.path
-.field 
-  .column Popular
-  .value= link_to @tag.popular
-.field
-  .column Hot Topic
-  .value= @tag.hot_topic
-
-.tag-list
-  h3 Items
+h2 Items
+.container
   - @tag.items.order('name asc').each do |item|
-    = item.name
-    br
+    .span3
+      p= link_to item.name, admin_item_path(item)

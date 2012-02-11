@@ -1,13 +1,49 @@
-= flash_messages
-= simple_form_for [:admin, @item], class: 'form-horizontal' do |f|
-  = f.input :name
-  /= f.input :item_type
-  = f.input :description
-  = f.input :logo
-  = f.input :wikipedia
-  = f.input :website
-  = f.input :default_order
-  = f.association :tags, :as => :check_boxes, :value_method => :id, :label_method => :friendly_name
-  = f.submit
-  = link_to 'Cancel', admin_items_path
+- content_for :javascript do 
+  = javascript_include_tag 'admin/bootstrap-typeahead-mod'
+  coffee:
+    $ ->
+      $('#tag-lookup').typeahead
+        source: (obj, success_callback) ->
+          $.ajax
+            url: "/admin/tags/suggest_by_name",
+            dataType: 'json',
+            data: {name: obj.query},
+            success: (data) ->
+              items = $.map(data, (item) ->
+                return "#{item.name} (#{item.id})"
+              )
 
+              success_callback(obj, items)
+      return
+
+.row
+  .span6
+    = simple_form_for([:admin, @item], html: {class: 'form-vertical'}) do |f|
+      .well
+        fieldset
+          legend Item Properties
+          = f.input :name, :input_html => {:class => 'span5'}
+          = f.input :description, :input_html => {:class => 'span5'}
+          = f.input :item_type, :input_html => {:class => 'span2'}
+          = f.input :logo, :input_html => {:class => 'span5'}
+          = f.input :wikipedia, :input_html => {:class => 'span5'}
+          = f.input :website, :input_html => {:class => 'span5'}
+          = f.input :default_order, :input_html => {:class => 'span1'}
+          = f.submit :class => 'btn btn-primary'
+  .span6
+    - unless @item.new_record?
+      .well
+        fieldset
+          legend Tags
+          .autocomplete
+            = form_tag admin_item_add_tag_by_autocomplete_path(@item), :method=>"post", :class => 'form-inline' do
+              .input-prepend
+                span.add-on
+                  i.icon-search
+                input#tag-lookup.span4(type="text" name="item-lookup" placeholder="Add Tag")
+              input(type="submit" value="Go" class="btn btn-success")
+          - @item.tag_items.includes(:tag).order('tags.friendly_name asc').each do |tag_item|
+            p
+              = link_to tag_item.tag.friendly_name, admin_tag_path(tag_item.tag.id)
+              = link_to  [:admin, tag_item], :method => :delete do
+                i.icon-remove

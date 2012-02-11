@@ -1,24 +1,35 @@
-#tags
-  h1 Tags
-  =will_paginate @tags
-  table
-    thead
+= render 'tag_header', title: 'Index'
+.row.paging
+  .span2
+    .record-count
+      = "#{number_with_delimiter(Tag.count)} total records"
+  .span10
+    .pull-right
+      =will_paginate @tags
+table.table.table-striped.table-bordered
+  thead
+    tr
+      th
+      th= sort_link 'Friendly Name', :friendly_name
+      th= sort_link 'Path', :path
+      th # of Items
+      th.center= sort_link 'Popular', :popular
+      th.center= sort_link 'Hot Topic', :hot_topic
+  tbody
+    -  @tags.each do |tag|
       tr
-        th
-        th Path
-        th Friendly Name
-        th Popular?
-        th Hot Topic?
-    tbody
-      -  @tags.each do |tag|
-        tr
-          td
-            = link_to 'Edit', edit_admin_tag_path(tag)
-            br
-            = link_to 'Show', [:admin, tag]
-            br
-            = link_to 'Destroy', [:admin, tag], :confirm => 'Are you sure?', :method => :delete
-          td= tag.path
-          td= tag.friendly_name
-          td= tag.popular
-          td= tag.hot_topic
+        td.span1
+          = link_to edit_admin_tag_path(tag) do
+            i.icon-edit
+          = link_to [:admin, tag] do
+            i.icon-info-sign
+        td= tag.friendly_name
+        td= tag.path
+        td.center.span1
+          = tag.items.count
+        td.center(style="width: 80px;")
+          - if tag.popular
+            i.icon-ok 
+        td.center(style="width: 80px;")
+          - if tag.hot_topic
+            i.icon-ok 
