@@ -1,28 +1,35 @@
-#users
-  h1 Users
-  =will_paginate @items
-  table
-    thead
+= render "user_header", title: 'Index'
+.row.paging
+  .span2
+    .record-count
+      = "#{number_with_delimiter(User.count)} total users"
+  .span10
+    .pull-right
+      =will_paginate @users
+table.table.table-striped.table-bordered
+  thead
+    tr
+      th.span1
+      th= sort_link 'Id', :id
+      th= sort_link 'Email', :email
+      th= sort_link 'Zip (State)', :zip
+      th= sort_link 'Birth Year', :birth_year
+      th= sort_link 'Sign In Count', :sign_in_count
+      th= sort_link 'Last Sign In', :last_sign_in_at
+      th= sort_link 'Confirmed At', :confirmed_at
+  tbody
+    -  @users.each do |user|
       tr
-        th
-        th= "Email"
-        th= "State"
-        th= "Zip"
-        th= "Birth Year"
-        th= "Confirmed?"
-        th= "Confirmed At"
-    tbody
-      -  @users.each do |user|
-        tr
-          td
-            = link_to 'Edit', edit_admin_user_path(user)
-            br
-            = link_to 'Show', [:admin, user]
-            br
-            = link_to 'Destroy', [:admin, user], :confirm => 'Are you sure?', :method => :delete
-          td= user.email
-          td= user.state
-          td= user.zip
-          td= user.birth_year
-          td= user.confirmed
-          td= user.confirmed_at
+        td.center
+          = link_to edit_admin_user_path(user) do
+            i.icon-edit
+          = link_to [:admin, user] do
+            i.icon-info-sign
+        td= user.id
+        td= user.email
+        td= "#{user.zip} (#{user.state})"
+        td= user.birth_year
+        td= user.sign_in_count
+        td= user.last_sign_in_at
+        td= user.confirmed_at
+

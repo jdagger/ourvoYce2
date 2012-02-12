@@ -2,7 +2,13 @@ class Admin::ItemsController < Admin::ApplicationController
 
   def index
     page = params[:page] || 1
+    sort_column = params[:c]
+    sort_direction = params[:d] == "up" ? "asc" : "desc"
+
     @items = Item.includes(:tags).paginate(:page => page, :per_page => 50)
+    unless sort_column.blank?
+      @items = @items.order("#{sort_column} #{sort_direction}")
+    end
   end
 
   def show 

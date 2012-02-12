@@ -1,7 +1,14 @@
 class Admin::UsersController < Admin::ApplicationController
   def index
     page = params[:page] || 1
-    @users = User.paginate(:page => page)
+    sort_column = params[:c]
+    sort_direction = params[:d] == "up" ? "asc" : "desc"
+
+    @users = User.paginate(:page => page, :per_page => 50)
+
+    unless sort_column.blank?
+      @users = @users.order("#{sort_column} #{sort_direction}")
+    end
   end
 
   def show 
@@ -13,9 +20,21 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def create
-    @user = User.create(params[:user])
-    flash[:success] = 'Successfully created user'
-    render :edit
+    @user = User.new do |u|
+      u.email = params[:user][:email]
+      u.password = params[:user][:password]
+      u.country = params[:user][:country]
+      u.zip = params[:user][:zip]
+      u.birth_year = params[:user][:birth_year]
+    end
+
+    if @user.save
+      flash[:success] = 'Successfully created user'
+      redirect_to edit_admin_user_path(@user)
+    else
+      flash[:error] = 'Failed to create user'
+      render :new
+    end
   end
 
   def edit
@@ -24,8 +43,20 @@ class Admin::UsersController < Admin::ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
-    flash[:success] = 'Successfully updated user'
+    #@user.update_attributes(params[:user])
+    @user.email = params[:user][:email]
+    unless params[:user][:password].blank?
+      @user.password = params[:user][:password]
+    end
+    @user.country = params[:user][:country]
+    @user.zip = params[:user][:zip]
+    @user.birth_year = params[:user][:birth_year]
+
+    if @user.save
+      flash[:success] = 'Successfully updated user'
+    else
+      flash[:error] = 'Failed to save user'
+    end
     render :edit
   end
 
@@ -33,5 +64,21 @@ class Admin::UsersController < Admin::ApplicationController
     User.delete(params[:id])
     flash[:success] = 'Successfully deleted user'
     redirect_to admin_users_path
+  end
+
+  def suggest_by_email
+    results = User.lookup_by_email(params[:name]).to_json
+    render :json => results
+  end
+
+  def find_by_autocomplete
+    lookup_value = params['item-lookup']
+
+    # lookup_value should have form: name (id)
+    if lookup_value =~ /.*\((?<id>\d*?)\)$/
+      redirect_to admin_user_path(Regexp.last_match(:id))
+    else
+      redirect_to request.referrer, :notice => 'Lookup not in valid format'
+    end
   end
 end

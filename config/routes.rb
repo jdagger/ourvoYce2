@@ -46,6 +46,8 @@ Ourvoyce::Application.routes.draw do
     match "/items/find_by_autocomplete" => "items#find_by_autocomplete", :as => :item_find_by_autocomplete
     match "/tags/suggest_by_name" => "tags#suggest_by_name", :as => :tag_lookup_by_name
     match "/tags/find_by_autocomplete" => "tags#find_by_autocomplete", :as => :tag_find_by_autocomplete
+    match "/users/suggest_by_email" => "users#suggest_by_email", :as => :user_lookup_by_email
+    match "/users/find_by_autocomplete" => "users#find_by_autocomplete", :as => :user_find_by_autocomplete
     resources :items do
       match "/add_tag_by_autocomplete" => "items#add_tag_by_autocomplete", :as => :add_tag_by_autocomplete
     end

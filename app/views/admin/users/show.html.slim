@@ -1,21 +1,16 @@
-h1= @user.email
-=render 'navigate'
+=render 'user_header', title: @user.email
 
-.field
-  .column Country:
-  .value= @user.country
-.field 
-  .column Zip:
-  .value= @user.zip
-.field 
-  .column State:
-  .value= @user.state
-.field 
-  .column Birth Year:
-  .value= @user.birth_year
-.field 
-  .column Member Since:
-  .value= @user.confirmed_at
-.field 
-  .column Confirmed?:
-  .value= @user.confirmed
+h2 Details
+.row
+  .span6
+    table.table.table-bordered
+      tbody
+        tr
+          th.span2 Email
+          td= @user.email
+        tr
+          th.span2 Location
+          td= "#{@user.zip}, #{@user.state}, #{@user.country}"
+        tr
+          th.span2 Birth Year
+          td= @user.birth_year

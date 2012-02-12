@@ -6,6 +6,7 @@
   .btn-group(data-toggle="buttons-radio")
     button.autocomplete-type.btn.btn-primary.active Items
     button.autocomplete-type.btn.btn-primary Tags
+    button.autocomplete-type.btn.btn-primary Users
   = form_tag "/admin/items/find_by_autocomplete", :method=>"post", :id => 'autocomplete_form', :class => 'form-inline' do
     input#autocomplete_url(type="hidden" value="/admin/items/suggest_by_name")
     .input-prepend

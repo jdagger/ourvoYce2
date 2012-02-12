@@ -10,6 +10,10 @@ $ ->
         $("#autocomplete_url").val("/admin/tags/suggest_by_name")
         $("#autocomplete_form").attr('action', "/admin/tags/find_by_autocomplete")
         $("#item-lookup").attr('placeholder', "Find Tags")
+      when "Users"
+        $("#autocomplete_url").val("/admin/users/suggest_by_email")
+        $("#autocomplete_form").attr('action', "/admin/users/find_by_autocomplete")
+        $("#item-lookup").attr('placeholder', "Find Users (email)")
       
     return
   )

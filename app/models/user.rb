@@ -3,6 +3,20 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  validates :email, :presence => true, :uniqueness => true, :email => true
+  #validates :password, :presence => true, :length => {:minimum => 6, :maximum => 8}, :on => :create #TODO - Check for updating password, as well
+  validates :country, :presence => true, :inclusion => {:in => Country::COUNTRIES }
+  validates :zip, :presence => true, :length => {:minimum => 4, :maximum => 5}, :us_zip => true
+  #validates :state, :presence => true, :state => true
+  validates :birth_year, :presence => true, :numericality => {:only_integer => true, :greater_than_or_equal_to => lambda {|x| 100.years.ago.year}, :less_than_or_equal_to => lambda {|x| 13.years.ago.year} }
+
+
+  has_many :user_tokens
+  has_many :user_votes, :dependent => :destroy
+  has_many :items, :through => :user_votes, :uniq => true
+
+  has_many :favorites, :dependent => :destroy, :foreign_key => :user_id
+  has_many :items, :through => :favorites, :uniq => true
   before_save :set_state
 
   # Setup accessible (or protected) attributes for your model
@@ -11,6 +25,10 @@ class User < ActiveRecord::Base
   #include ActiveModel::SecurePassword
   #has_secure_password
 
+  #Thinking Sphinx Index
+  define_index do
+    indexes email, :sortable => true
+  end
 
   #Allow records to be updated without specifying the password
   #def update_with_password(params={})
@@ -97,19 +115,15 @@ class User < ActiveRecord::Base
   #end
 
 
-  validates :email, :presence => true, :uniqueness => true, :email => true
-  #validates :password, :presence => true, :length => {:minimum => 6, :maximum => 8}, :on => :create #TODO - Check for updating password, as well
-  validates :country, :presence => true, :inclusion => {:in => Country::COUNTRIES }
-  validates :zip, :presence => true, :length => {:minimum => 4, :maximum => 5}, :us_zip => true
-  #validates :state, :presence => true, :state => true
-  validates :birth_year, :presence => true, :numericality => {:only_integer => true, :greater_than_or_equal_to => lambda {|x| 100.years.ago.year}, :less_than_or_equal_to => lambda {|x| 13.years.ago.year} }
 
+  class << self
+    #def do_search(value)
+      #search(value, :star => true, :order => "@relevance DESC").map{ |x| {email: x.email} }
+    #end
 
-  has_many :user_tokens
-  has_many :user_votes, :dependent => :destroy
-  has_many :items, :through => :user_votes, :uniq => true
-
-  has_many :favorites, :dependent => :destroy, :foreign_key => :user_id
-  has_many :items, :through => :favorites, :uniq => true
+    def lookup_by_email(email)
+      search(email, :star => true, :order => "@relevance DESC").map{ |x| {name: x.email, id: x.id } }
+    end
+  end
 
 end

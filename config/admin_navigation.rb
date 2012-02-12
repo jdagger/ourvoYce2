@@ -52,15 +52,19 @@ SimpleNavigation::Configuration.run do |navigation|
       items.item :new_item, 'New Item', new_admin_item_url
     end
     primary.item :tags, 'Tags', admin_tags_url do |tags|
-      tags.item :view_all_tasg, 'View All', admin_tags_url
+      tags.item :view_all_tags, 'View All', admin_tags_url
       tags.item :new_tag, 'New Tag', new_admin_tag_url
     end
-    primary.item :users, 'Users', admin_users_url
+    primary.item :users, 'Users', admin_users_url do |users|
+      users.item :view_all_users, 'View All', admin_users_url
+      users.item :new_user, 'New User', new_admin_user_url
+    end
+    primary.item :logout, 'Logout', destroy_user_session_path, :method => :delete
 
     # Add an item which has a sub navigation (same params, but with block)
     #primary.item :key_2, 'name', url, options do |sub_nav|
-      # Add an item to the sub navigation (same params again)
-      #sub_nav.item :key_2_1, 'name', url, options
+    # Add an item to the sub navigation (same params again)
+    #sub_nav.item :key_2_1, 'name', url, options
     #end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.

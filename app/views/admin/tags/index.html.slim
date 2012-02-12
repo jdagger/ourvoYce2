@@ -2,14 +2,14 @@
 .row.paging
   .span2
     .record-count
-      = "#{number_with_delimiter(Tag.count)} total records"
+      = "#{number_with_delimiter(Tag.count)} total tags"
   .span10
     .pull-right
       =will_paginate @tags
 table.table.table-striped.table-bordered
   thead
     tr
-      th
+      th.span1
       th= sort_link 'Friendly Name', :friendly_name
       th= sort_link 'Path', :path
       th # of Items
@@ -18,7 +18,7 @@ table.table.table-striped.table-bordered
   tbody
     -  @tags.each do |tag|
       tr
-        td.span1
+        td.center
           = link_to edit_admin_tag_path(tag) do
             i.icon-edit
           = link_to [:admin, tag] do

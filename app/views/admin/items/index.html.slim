@@ -3,7 +3,7 @@
 .row.paging 
   .span2
     .record-count
-      = "#{number_with_delimiter(Item.count)} total records."
+      = "#{number_with_delimiter(Item.count)} total items"
     
   .span10
     .pull-right
@@ -11,24 +11,26 @@
 table.table.table-striped.table-bordered
   thead
     tr
-      th(style="width: 20px;")
-      th Logo
-      th Name
-      th Website
-      th Wikipedia
+      th.span1
+      th= sort_link 'Logo', :logo
+      th= sort_link 'Name', :name
+      th= sort_link 'Order', :default_order
+      th= sort_link 'Website', :website
+      th= sort_link 'Wikipedia', :wikipedia
       th Tags
-      th Id
+      th= sort_link 'Id', :id
   tbody
     -  @items.each do |item|
       tr
-        td.span1
+        td.center
           = link_to edit_admin_item_path(item) do
-              i.icon-pencil
+              i.icon-edit
           = link_to admin_item_path(item) do
               i.icon-info-sign
         td.span2
           img(src="#{OURVOYCE_CONFIG['image_path']}/#{item.logo}" alt="#{item.logo}")
         td= item.name
+        td= item.default_order
         td
           - unless item.website.blank?
             a(href="#{item.website}" rel="tooltip" target="blank" title="#{item.website}") Website 
