@@ -1,2 +1,86 @@
-@import 'bootstrap/bootstrap';
-@import 'admin/admin';
+.row{
+  &.paging{
+    $paging-container-height: 72px;
+    height: $paging-container-height;
+    .span2{
+      height: 100%;
+
+      .record-count{
+        vertical-align: middle;
+        line-height: $paging-container-height;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+input.boolean{ margin-right: 5px; } 
+.nav-pills{ 
+  margin-bottom: 0px;
+  .divider-vertical{
+    width: 1px;
+    background: #ccc;
+    margin: 8px 4px;
+  }
+}
+
+
+@mixin glyphicons{
+  content: '';
+  width: 14px;
+  height: 14px;
+  margin-left: 3px;
+  position: absolute;
+  display: inline-block;
+  vertical-align: text-top;
+  background-image: image-url('bootstrap/glyphicons-halflings.png');
+  background-repeat: no-repeat;
+}
+
+.sort-link{
+  position: relative;
+
+  &.up:after{
+    @include glyphicons;
+    background-position: -288px -120px;
+  }
+
+  &.down:after{
+    @include glyphicons;
+    background-position: -313px -119px;
+  }
+}
+
+th, td{
+  &.center{text-align: center;}
+  &.left{text-align: left;}
+  &.right{text-align: right;}
+
+  i{
+    padding: 0px 3px;
+  }
+}
+
+.autocomplete{
+  margin: 6px 0px;
+  .btn-group{
+    display: inline-block;
+    margin: 0px;
+    .btn{ float: none;}
+  }
+  form{
+    display: inline;
+  }
+  
+  div{
+    margin: 0px;
+  }
+
+  .btn{
+    margin: 0px;
+  }
+  .add-on{ //Search icon
+    float: none;
+    display: inline-block;
+  }
+}
