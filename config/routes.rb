@@ -56,6 +56,9 @@ Ourvoyce::Application.routes.draw do
     resources :tags do 
       match "/add_item_by_autocomplete" => "tags#add_item_by_autocomplete", :as => :add_item_by_autocomplete
     end
+
+    match "/utility" => "utilities#index", :as => :utilities
+    match "/stats" => "stats#index", :as => :stats
   end
 
   match '/ov' => 'items#default'

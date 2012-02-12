@@ -59,6 +59,13 @@ SimpleNavigation::Configuration.run do |navigation|
       users.item :view_all_users, 'View All', admin_users_url
       users.item :new_user, 'New User', new_admin_user_url
     end
+
+    primary.item :misc, 'Misc', '' do |misc|
+      misc.item :utilities, 'Utility', admin_utilities_url 
+      misc.item :stats, 'Stat', admin_stats_url 
+    end
+
+
     primary.item :logout, 'Logout', destroy_user_session_path, :method => :delete
 
     # Add an item which has a sub navigation (same params, but with block)

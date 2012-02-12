@@ -1,0 +1,88 @@
+/Randomize vote dates
+/- sample_space = (0..90).to_a
+/- UserVote.all.each do |uv|
+  /-uv.updated_at = sample_space.sample.days.ago
+  /-uv.save
+
+
+.page-header
+  h1 Stats
+
+.row
+  .span4
+    .well
+      fieldset
+        legend Quick Counts
+        p= "#{number_with_delimiter(User.count)} users."
+        p= "#{number_with_delimiter(Item.count)} items."
+        p= "#{number_with_delimiter(Tag.count)} tags."
+        p= "#{number_with_delimiter(UserVote.count)} total votes."
+        p= "#{number_with_delimiter(UserVote.where('updated_at > ?', Date.today).count)} votes today."
+        p= "#{number_with_delimiter(UserVote.where('updated_at > ?', 30.days.ago).count)} votes past 30 days."
+
+  .span8
+    .well
+      fieldset
+        legend Top Items by Total Votes (all time)
+        table.table.table-striped.table-bordered
+          thead
+            tr
+              th Item
+              th TU
+              th N
+              th TD
+              th Total
+          tbody
+            - Item.limit(10).order('total_vote_count desc').each do |item|
+              tr
+                td= item.name
+                td= item.thumbs_up_vote_count
+                td= item.neutral_vote_count
+                td= item.thumbs_down_vote_count
+                td= item.total_vote_count
+
+h2 Popular Items
+- popular_items_base_query = Item.select("items.id, items.name, count('user_votes') as vote_count").joins(:user_votes).group('items.id, items.name').order('vote_count desc').limit(10)
+.row
+  .span4
+    .well
+      fieldset
+        legend Today
+        table.table.table-striped.table-bordered
+          thead
+            tr
+              th Item
+              th Votes
+          tbody
+            - popular_items_base_query.where('updated_at > ?', 1.days.ago).each do |item|
+              tr
+                td= item.name
+                td= item.vote_count
+  .span4
+    .well
+      fieldset
+        legend Past 7 days
+        table.table.table-striped.table-bordered
+          thead
+            tr
+              th Item
+              th Votes
+          tbody
+            - popular_items_base_query.where('updated_at > ?', 7.days.ago).each do |item|
+              tr
+                td= item.name
+                td= item.vote_count
+  .span4
+    .well
+      fieldset
+        legend Past 30 days
+        table.table.table-striped.table-bordered
+          thead
+            tr
+              th Item
+              th Votes
+          tbody
+            - popular_items_base_query.where('updated_at > ?', 30.days.ago).each do |item|
+              tr
+                td= item.name
+                td= item.vote_count
