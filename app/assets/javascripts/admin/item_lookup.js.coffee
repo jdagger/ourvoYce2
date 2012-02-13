@@ -1,19 +1,15 @@
 $ ->
   $('.autocomplete-type').on('click', (e) ->
     e.preventDefault()
-    switch $(this).text()
-      when "Items"
-        $("#autocomplete_url").val("/admin/items/suggest_by_name")
-        $("#autocomplete_form").attr('action', "/admin/items/find_by_autocomplete")
-        $("#item-lookup").attr('placeholder', "Find Items")
-      when "Tags"
-        $("#autocomplete_url").val("/admin/tags/suggest_by_name")
-        $("#autocomplete_form").attr('action', "/admin/tags/find_by_autocomplete")
-        $("#item-lookup").attr('placeholder', "Find Tags")
-      when "Users"
-        $("#autocomplete_url").val("/admin/users/suggest_by_email")
-        $("#autocomplete_form").attr('action', "/admin/users/find_by_autocomplete")
-        $("#item-lookup").attr('placeholder', "Find Users (email)")
+    $this = $(this)
+    $('.btn-group > button').removeClass('active')
+    $this.addClass('active')
+
+    search_type = $this.attr('data-search')
+
+    $("#autocomplete_url").val("/admin/#{search_type.toLowerCase()}/suggest_by_name")
+    $("#autocomplete_form").attr('action', "/admin/#{search_type.toLowerCase()}/find_by_autocomplete")
+    $("#item-lookup").attr('placeholder', "Find #{search_type}")
       
     return
   )

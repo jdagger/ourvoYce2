@@ -22,7 +22,6 @@ Ourvoyce::Application.routes.draw do
   match '/hot_topics(/:filter(/:sort))' => 'items#hot_topics', :as => :hot_topics
   match '/tag/:tag(/:filter(/:sort))' => 'items#tag', :as => :tag, :defaults => {:sort => 'default:all', :filter => 'all'}
 
-  match '/utilities/generate_random_votes(/:count)' => 'utilities#generate_random_votes', :as => :generate_random_votes, :defaults => {:count => 100}
 
   match "/search/lookup" => "searches#lookup"
   match "/search/autocomplete" => "searches#autocomplete"
@@ -46,7 +45,7 @@ Ourvoyce::Application.routes.draw do
     match "/items/find_by_autocomplete" => "items#find_by_autocomplete", :as => :item_find_by_autocomplete
     match "/tags/suggest_by_name" => "tags#suggest_by_name", :as => :tag_lookup_by_name
     match "/tags/find_by_autocomplete" => "tags#find_by_autocomplete", :as => :tag_find_by_autocomplete
-    match "/users/suggest_by_email" => "users#suggest_by_email", :as => :user_lookup_by_email
+    match "/users/suggest_by_name" => "users#suggest_by_name", :as => :user_lookup_by_name
     match "/users/find_by_autocomplete" => "users#find_by_autocomplete", :as => :user_find_by_autocomplete
     resources :items do
       match "/add_tag_by_autocomplete" => "items#add_tag_by_autocomplete", :as => :add_tag_by_autocomplete
@@ -57,7 +56,9 @@ Ourvoyce::Application.routes.draw do
       match "/add_item_by_autocomplete" => "tags#add_item_by_autocomplete", :as => :add_item_by_autocomplete
     end
 
+    match "/utility/create_seed_file" => "utilities#create_seed_file", :as => :create_seed_file
     match "/utility" => "utilities#index", :as => :utilities
+    match '/utility/generate_random_votes(/:count)' => 'utilities#generate_random_votes', :as => :generate_random_votes, :defaults => {:count => 100}
     match "/stats" => "stats#index", :as => :stats
   end
 

@@ -66,7 +66,7 @@ class Admin::UsersController < Admin::ApplicationController
     redirect_to admin_users_path
   end
 
-  def suggest_by_email
+  def suggest_by_name
     results = User.lookup_by_email(params[:name]).to_json
     render :json => results
   end

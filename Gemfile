@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.1'
 
-#gem 'simple_form', '>= 2.0.0.rc'
-gem 'simple_form', :git => 'https://github.com/plataformatec/simple_form.git'
+gem 'simple_form', '>= 2.0.0.rc'
+#gem 'simple_form', :git => 'https://github.com/plataformatec/simple_form.git'
 gem 'simple-navigation'
 gem 'client_side_validations'
 gem 'flash_messages_helper'
@@ -28,6 +28,8 @@ gem 'thin'
 
 gem 'thinking-sphinx', '2.0.10'
 gem 'flying-sphinx',   '0.6.1'
+
+gem 'rubyzip'
 
 #gem 'compass','0.12.alpha.0'
 gem 'bourbon'
