@@ -51,5 +51,8 @@ module Ourvoyce
     #Required for running Devise on Heroku
     config.assets.initialize_on_precompile = false
 
+    #config.assets.precompile += ['admin.js', 'admin.css', 'swfObject.js']
+    config.assets.precompile += ['admin.js', 'admin.css']
+
   end
 end
