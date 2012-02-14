@@ -38,10 +38,9 @@ namespace :db do
       end
 
       desc "Create random users"
-      task :create_random_users, [:users_to_create] => :environment do |t, args|
-        args.with_defaults(:users_to_create => 1000)
+      task :create_random_users => :environment do |t, args|
 
-        users_to_create = args[:users_to_create].to_i
+        users_to_create = 1000
 
         puts "Creating #{users_to_create} user records"
 

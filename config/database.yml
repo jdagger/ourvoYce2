@@ -22,7 +22,7 @@ test: &test
 production:
   adapter: postgresql
   encoding: utf8
-  host: 10.181.166.104
+  host: localhost
   username: postgres
   password: VX8dFZH2
   template: template0
