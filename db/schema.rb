@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(:version => 20111116172258) do
   create_table "favorites", :force => true do |t|
     t.integer  "user_id"
     t.integer  "item_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "items", :force => true do |t|
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(:version => 20111116172258) do
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "user_votes", :force => true do |t|
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(:version => 20111116172258) do
     t.integer  "item_id"
     t.integer  "vote"
     t.integer  "lock_version", :default => 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   add_index "user_votes", ["item_id", "user_id"], :name => "index_user_votes_on_item_id_and_user_id", :unique => true
