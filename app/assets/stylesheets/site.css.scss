@@ -757,7 +757,10 @@ form{
               text-align: center;
 
               .top {height:7px;}
-              .bottom {padding-top: 38px;}
+              .bottom {
+                padding-top: 0px;
+                //padding-top: 38px;
+              }
 
               .votenumber {
                 font-size: 16px;
@@ -770,21 +773,21 @@ form{
               color: $green-chart;
               .top {background: image-url('site/graphlg-green-top.png') no-repeat;}
               .height { background: $green-chart; }
-              .bottom {background: $green-chart image-url('site/thumbup-white.png') bottom no-repeat;}
+              //.bottom {background: $green-chart image-url('site/thumbup-white.png') bottom no-repeat;}
             }
             .neutral{
               color: $orange-chart;
               left: 33%; 
               .top {background: image-url('site/graphlg-orange-top.png') no-repeat;}
               .height { background: $orange-chart; }
-              .bottom {background:$orange-chart image-url('site/thumbneutral-white.png') bottom no-repeat;}
+              //.bottom {background:$orange-chart image-url('site/thumbneutral-white.png') bottom no-repeat;}
             }
             .thumbs-down{
               color: $red-chart;
               left: 66%; 
               .top {background: image-url('site/graphlg-red-top.png') no-repeat;}
               .height { background: $red-chart; }
-              .bottom {background:$red-chart image-url('site/thumbdown-white.png') bottom no-repeat;}
+              //.bottom {background:$red-chart image-url('site/thumbdown-white.png') bottom no-repeat;}
             }
           }
         }

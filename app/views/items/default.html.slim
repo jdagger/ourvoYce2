@@ -37,13 +37,12 @@
                 strong.bluebold= @member_since.strftime('%m/%d/%Y')
         .pullout-item
           .itemblock
-            h3
-              a(href="/ov/#!/hot_topics") Hot Topics
+            h3 Hot Topics
             #hot-topic-tags.tags
             .clear
             br
             p
-              a(href="#")
+              a href="#"
                 strong
                   ' View All
               == "&nbsp;"
@@ -56,7 +55,8 @@
             br
             p
               a href="#"
-                strong= "View All"
+                strong 
+                  ' View All
               == "&nbsp;"
               img src="/assets/site/arrow-right.png" width="7" height="13" style="padding-bottom:3px;" class="bottom"
         .pullout-item

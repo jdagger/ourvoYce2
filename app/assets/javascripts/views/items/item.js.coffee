@@ -53,14 +53,14 @@
     return
 
   vote_saving: () ->
-    this.renderVoteMessage('saving...')
+    this.renderVoteMessage('Saving...')
     return
 
   vote_saved: () ->
-    this.renderVoteMessage('saved')
+    this.renderVoteMessage('Thank you!')
     return
   vote_error: () ->
-    this.renderVoteMessage('error')
+    this.renderVoteMessage('Oops. Try again.')
     return
 
   favorite_changed: (model, val) ->
