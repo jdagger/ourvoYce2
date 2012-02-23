@@ -1,11 +1,11 @@
 <div id="filter_box">
   <div id="tag">
     <h1>
-        <span class="bluebold">Viewing: </span>
-        <span id="current_tag"></span>
+        <span class="bluebold" style="display: none">Viewing: </span>
+        <span id="current_tag" class="bluebold"></span>
     </h1>
   </div>
-  <div id="filter_fields">
+  <div id="filter_fields" style="float: right; padding-right: 20px">
     <div>
       <select id="filter" name="filter">
         <option value="all" <%= OurvoyceApp.selected_option('all', filter) %>>All Records</option>

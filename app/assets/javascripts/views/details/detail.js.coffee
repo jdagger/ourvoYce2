@@ -104,7 +104,6 @@
     return
 
   renderPlusOne: () ->
-    #title = "I just voted THUMBS UP / THUMBS DOWN on #{this.model.name()}. Where do you stand?"
     html = JST['social/plusone']({url: this.itemDetailUrl()})
     $(this.el).find('#plusone').html(html)
     gapi.plusone.go()
@@ -153,7 +152,7 @@
     max_height = Math.max(thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count, 1)
 
     #TODO: Determine actual height by examining html
-    container_height = 50
+    container_height = 80
 
     thumbs_up_element = $(this.el).find('.vote-chart .thumbs-up .height')
     neutral_element = $(this.el).find('.vote-chart .neutral .height')

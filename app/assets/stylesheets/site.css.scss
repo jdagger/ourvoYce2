@@ -741,7 +741,9 @@ form{
           }
 
           #item-detail-name{
-            height: 50px;
+          padding-top:5px;
+          padding-bottom:5px;
+            // height: 50px;
           }
 
           .vote-chart{
@@ -876,8 +878,9 @@ ul.ui-autocomplete{
 .tags {font-size:11px;padding-bottom:8px;}
 .storelogo {width:220px;vertical-align:top;padding-top:11px;}
 /* col3 */
-.description {width:191px;font-size:13px;vertical-align:middle;padding-top:11px;}
-.description a {width:191px;font-size:13px;vertical-align:middle;padding-top:11px;}
+.name {width:191px;font-size:13px;vertical-align:middle;padding-top:11px;}
+.name a {width:191px;font-size:13px;vertical-align:middle;padding-top:11px;}
+.description {width:186px;font-size:11px;color:#000;vertical-align:middle;padding-top:5px;padding-left:15px;}
 /* col4 */
 .bluebg {background-color:#b4d5e9;}
 .pulloutarrow {position:absolute;top:9px;right:11px;}
@@ -962,9 +965,19 @@ ul.ui-autocomplete{
 }
 .itemblock {
   padding:15px 16px 15px 24px;
+  // border: 1px solid green;
 }
 .pullout-col, .pullout-col2 {width:155px;float:left;}
 .pullout-col {margin-right:5px;}
+
+#hot-topic-tags{
+  .tag{
+    display: block;
+    width: 150px;
+    margin-right: 5px;
+    float: left;
+  }
+}
 
 #popular-tags{
   .tag{
@@ -974,7 +987,6 @@ ul.ui-autocomplete{
     float: left;
   }
 }
-
 
 .related-tags-container{
   ul#related-tags{

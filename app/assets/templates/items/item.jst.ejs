@@ -2,21 +2,21 @@
   <div class="voting">
     <div class="vote-container">
       <a href="#" class="vote thumbs_up">
-        <div class="thumbs-up-vote" title="Like" />
+        <div class="thumbs-up-vote" title="Thumbs Up" />
       </a>
       <a href="#" class="vote neutral">
         <div class="neutral-vote" title="Neutral" />
       </a>
       <a href="#" class="vote thumbs_down">
-        <div class="thumbs-down-vote" title="Dislike" />
+        <div class="thumbs-down-vote" title="Thumbs Down" />
       </a>
     </div>
     <div class="pins">
       <div class="favorite">
         <% if(favorite) { %>
-          <a href="#" class="selected"></a>
+          <a href="#" class="selected" title="One of your favorites!"></a>
         <% }else{ %>
-          <a href="#" class="not-selected"></a>
+          <a href="#" class="not-selected" title="Click to make this a favorite."></a>
         <% } %>
       </div>
       <div class="vote-message"></div>
@@ -27,14 +27,15 @@
       <div class="storelogo" style="float: left;">
         <img src="<%= logo %>" alt="<%= name %>" />
       </div>
-      <div class="description" style="float: left;">
+      <div class="name" style="float: left;">
         <%= name %>
-        <br />
-        <%= description %>
+        <div class="description">
+          <%= description %>
+        </div>
       </div>
     </div>
     <div class="tags">
-      <span class="tags-label">Related Tags:</span>
+      <span class="tags-label">Related:</span>
       <span class="related-tags-container"></span>
     </div>
   </div>
