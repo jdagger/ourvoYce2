@@ -1,4 +1,4 @@
-//Created: 2012-03-02 00:28:38 -0500
+//Created: 2012-03-02 11:26:07 -0500
 ##TAGS##
 //id, path, friendly_name, popular, hot_topic
 ::1::corporation::Corporation::false::false::
@@ -55,7 +55,7 @@
 ::53::west_virginia::West Virginia::false::false::
 ::54::wisconsin::Wisconsin::false::false::
 ::55::wyoming::Wyoming::false::false::
-::56::fortune500::Fortune 500::false::false::
+::56::fortune500::Fortune 500::false::true::
 ::57::agency::Agency::false::true::
 ::58::executive::Executive::false::true::
 ::59::house::House::false::true::
@@ -195,7 +195,19 @@
 ::193::usda::USDA::false::true::
 ::194::wendys::Wendy's::true::false::
 ::195::arbys::Arby's::true::false::
-::196::restaurants::Restaurants::true::false::
+::196::restaurant::Restaurant::true::false::
+::197::browser::Browser::true::false::
+::198::tech::Tech::true::false::
+::199::energy::Energy::true::false::
+::200::auto::Auto::true::false::
+::201::bank::Bank::true::false::
+::202::financial::Financial::true::false::
+::203::insurance::Insurance::true::false::
+::204::healthcare::Health Care::true::false::
+::205::retailer::Retailer::true::false::
+::206::chemical::Chemical::true::false::
+::207::grocery::Grocery::true::false::
+::208::agribusiness::Agribusiness::true::false::
 ##ITEMS##
 //id, name, description, item_type, logo, website, wikipedia, default_order, tags
 ::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::1000::4,71,181::
@@ -427,7 +439,7 @@
 ::10254::Reader's Digest::::media::media_logos/128_128/Mag_ReadersDigest.png::http://www.rd.com/::http://en.wikipedia.org/wiki/Reader%27s_Digest::1000::68,4::
 ::10255::Smithsonian::::media::media_logos/128_128/Mag_Smithsonian.png::http://www.smithsonian.com::http://en.wikipedia.org/wiki/Smithsonian_(magazine)::1000::68,4::
 ::10256::Vanity Fair::::media::media_logos/128_128/Mag_VanityFair.png::http://www.vanityfair.com::http://en.wikipedia.org/wiki/Vanity_Fair_(magazine)::1000::68,4::
-::10257::Wired::::media::media_logos/128_128/Mag_Wired.png::http://wired.com::http://en.wikipedia.org/wiki/Wired_(magazine)::1000::68,4::
+::10257::Wired::::media::media_logos/128_128/Mag_Wired.png::http://wired.com::http://en.wikipedia.org/wiki/Wired_(magazine)::1000::68,198,4::
 ::10258::Seventeen::::media::media_logos/128_128/Mag_Seventeen.png::http://www.seventeen.com::http://en.wikipedia.org/wiki/Seventeen_(magazine)::1000::68,4::
 ::10259::The Nation::::media::media_logos/128_128/Mag_TheNation.png::http://www.thenation.com::http://en.wikipedia.org/wiki/The_Nation_(U.S._periodical)::1000::68,4::
 ::10261::Mother Jones::::media::media_logos/128_128/Mag_MotherJones.png::http://www.motherjones.com::http://en.wikipedia.org/wiki/Mother_Jones_Magazine::1000::68,4::
@@ -977,23 +989,23 @@
 ::40000::McDonald's::::fortune500::corporate_logos/128_128/McDonalds.png::http://www.mcdonalds.com::http://en.wikipedia.org/wiki/McDonald's::999::56,1,196,188::
 ::40001::Starwood Hotels & Resorts::::fortune500::corporate_logos/128_128/StarwoodHotels.png::http://www.starwoodhotels.com::http://en.wikipedia.org/wiki/Starwood_Hotels_&_Resorts::1000::1::
 ::40002::CVS Caremark::::fortune500::corporate_logos/128_128/CVS_Caremark.png::http://www.caremark.com::http://en.wikipedia.org/wiki/CVS_Caremark::1000::1::
-::40003::CenterPoint Energy::::fortune500::corporate_logos/128_128/CenterPoint_Energy.png::http://www.centerpointenergy.com::http://en.wikipedia.org/wiki/CenterPoint_Energy::1000::1::
+::40003::CenterPoint Energy::::fortune500::corporate_logos/128_128/CenterPoint_Energy.png::http://www.centerpointenergy.com::http://en.wikipedia.org/wiki/CenterPoint_Energy::1000::199,1::
 ::40004::Flowserve::::fortune500::corporate_logos/128_128/Flowserve.png::http://www.flowserve.com::http://en.wikipedia.org/wiki/Flowserve::1000::1::
 ::40005::US Airways Group::::fortune500::corporate_logos/128_128/US_Airways.png::http://www.usairways.com::http://en.wikipedia.org/wiki/US_Airways_Group::1000::1::
 ::40006::Toys 'R' Us::::fortune500::corporate_logos/128_128/ToysRUs.png::http://www.toysrusinc.com::http://en.wikipedia.org/wiki/Toys_'R'_Us::1000::1::
-::40007::Public Service Enterprise Group::::fortune500::corporate_logos/128_128/PSEG.png::http://www.pseg.com::http://en.wikipedia.org/wiki/Public_Service_Enterprise_Group::1000::1::
+::40007::Public Service Enterprise Group::::fortune500::corporate_logos/128_128/PSEG.png::http://www.pseg.com::http://en.wikipedia.org/wiki/Public_Service_Enterprise_Group::1000::199,1::
 ::40008::Polo Ralph Lauren::::fortune500::corporate_logos/128_128/RalphLauren.png::http://www.ralphlauren.com::http://en.wikipedia.org/wiki/Polo_Ralph_Lauren::1000::1::
 ::40009::Lockheed Martin::::fortune500::corporate_logos/128_128/LockheedMartin.png::http://www.lockheedmartin.com::http://en.wikipedia.org/wiki/Lockheed_Martin::1000::1::
 ::40010::Alliant Techsystems::::fortune500::corporate_logos/128_128/ATK.png::http://www.atk.com::http://en.wikipedia.org/wiki/Alliant_Techsystems::1000::1::
 ::40011::MetLife::::fortune500::corporate_logos/128_128/MetLife.png::http://www.metlife.com::http://en.wikipedia.org/wiki/MetLife::1000::1::
 ::40012::DirecTV Group::::fortune500::corporate_logos/128_128/DirectTV.png::http://www.directv.com::http://en.wikipedia.org/wiki/The_DirecTV_Group::1000::1::
 ::40013::Dollar Tree::::fortune500::corporate_logos/128_128/DollarTree.png::http://www.dollartree.com::http://en.wikipedia.org/wiki/Dollar_Tree::1000::1::
-::40014::Exxon Mobil (2)::::fortune500::corporate_logos/128_128/ExxonMobil.png::http://www.exxonmobil.com::http://en.wikipedia.org/wiki/ExxonMobil::1000::1::
+::40014::Exxon Mobil::::fortune500::corporate_logos/128_128/ExxonMobil.png::http://www.exxonmobil.com::http://en.wikipedia.org/wiki/ExxonMobil::1000::199,56,1::
 ::40015::Centene::::fortune500::corporate_logos/128_128/Centene.png::http://www.centene.com/::http://en.wikipedia.org/wiki/Centene::1000::1::
 ::40016::Xerox::::fortune500::corporate_logos/128_128/Xerox.png::http://www.xerox.com::http://en.wikipedia.org/wiki/Xerox::1000::1::
 ::40017::Kohl's::::fortune500::corporate_logos/128_128/Kohls.png::http://www.kohls.com::http://en.wikipedia.org/wiki/Kohl's::1000::1::
 ::40018::Host Hotels & Resorts::::fortune500::corporate_logos/128_128/HostHotels.png::http://www.hosthotels.com::http://en.wikipedia.org/wiki/Host_Hotels_&_Resorts::1000::1::
-::40019::Texas Instruments::::fortune500::corporate_logos/128_128/TI.png::http://www.ti.com::http://en.wikipedia.org/wiki/Texas_Instruments::1000::1::
+::40019::Texas Instruments::::fortune500::corporate_logos/128_128/TI.png::http://www.ti.com::http://en.wikipedia.org/wiki/Texas_Instruments::1000::198,1::
 ::40020::Archer Daniels Midland::::fortune500::corporate_logos/128_128/ADM.png::http://www.adm.com::http://en.wikipedia.org/wiki/Archer_Daniels_Midland::1000::1::
 ::40021::PepsiCo::::fortune500::corporate_logos/128_128/Pepsico.png::http://www.pepsico.com::http://en.wikipedia.org/wiki/PepsiCo::1000::1::
 ::40022::Darden Restaurants::::fortune500::corporate_logos/128_128/Darden.png::http://www.darden.com::http://en.wikipedia.org/wiki/Darden_Restaurants::1000::1::
@@ -1002,16 +1014,16 @@
 ::40025::Ross Stores::::fortune500::corporate_logos/128_128/Ross.png::http://www.rossstores.com::http://en.wikipedia.org/wiki/Ross_Stores::1000::1::
 ::40026::Harrah's Entertainment::::fortune500::corporate_logos/128_128/Caesars.png::http://www.ceasars.com::http://en.wikipedia.org/wiki/Harrah's_Entertainment::1000::1::
 ::40027::ONEOK::::fortune500::corporate_logos/128_128/ONEOK.png::http://www.oneok.com::http://en.wikipedia.org/wiki/ONEOK::1000::1::
-::40028::Exelon::::fortune500::corporate_logos/128_128/Exelon.png::http://www.exeloncorp.com::http://en.wikipedia.org/wiki/Exelon::1000::1::
-::40029::AutoZone::::fortune500::corporate_logos/128_128/AutoZone.png::http://www.autozone.com::http://en.wikipedia.org/wiki/AutoZone::1000::1::
+::40028::Exelon::::fortune500::corporate_logos/128_128/Exelon.png::http://www.exeloncorp.com::http://en.wikipedia.org/wiki/Exelon::1000::199,1::
+::40029::AutoZone::::fortune500::corporate_logos/128_128/AutoZone.png::http://www.autozone.com::http://en.wikipedia.org/wiki/AutoZone::1000::1,200::
 ::40030::Airgas::::fortune500::corporate_logos/128_128/Airgas.png::http://www.airgas.com::http://en.wikipedia.org/wiki/Airgas::1000::1::
 ::40031::TJX::::fortune500::corporate_logos/128_128/TJX.png::http://www.tjx.com::http://en.wikipedia.org/wiki/TJX::1000::1::
 ::40032::DaVita::::fortune500::corporate_logos/128_128/DaVita.png::http://www.davita.com::http://en.wikipedia.org/wiki/DaVita::1000::1::
 ::40033::Dole Food::::fortune500::corporate_logos/128_128/Dole.png::http://www.dole.com::http://en.wikipedia.org/wiki/Dole_Food::1000::1::
 ::40034::Bristol-Myers Squibb::::fortune500::corporate_logos/128_128/Bms.png::http://www.bms.com::http://en.wikipedia.org/wiki/Bristol-Myers_Squibb::1000::1::
-::40035::Ford Motor Company (8)::::fortune500::corporate_logos/128_128/FordMotor.png::http://www.ford.com::http://en.wikipedia.org/wiki/Ford_Motor_Company::1000::1::
-::40036::CarMax::::fortune500::corporate_logos/128_128/CarMax.png::http://www.carmax.com::http://en.wikipedia.org/wiki/CarMax::1000::1::
-::40037::Northeast Utilities::::fortune500::corporate_logos/128_128/NU.png::http://www.nu.com::http://en.wikipedia.org/wiki/Northeast_Utilities::1000::1::
+::40035::Ford Motor Company::::fortune500::corporate_logos/128_128/FordMotor.png::http://www.ford.com::http://en.wikipedia.org/wiki/Ford_Motor_Company::1000::1,200::
+::40036::CarMax::::fortune500::corporate_logos/128_128/CarMax.png::http://www.carmax.com::http://en.wikipedia.org/wiki/CarMax::1000::1,200::
+::40037::Northeast Utilities::::fortune500::corporate_logos/128_128/NU.png::http://www.nu.com::http://en.wikipedia.org/wiki/Northeast_Utilities::1000::199,1::
 ::40038::Halliburton::::fortune500::corporate_logos/128_128/Halliburton.png::http://www.halliburton.com::http://en.wikipedia.org/wiki/Halliburton::1000::1::
 ::40039::Virgin Media::::fortune500::corporate_logos/128_128/Virgin_Media.png::http://www.virginmedia.com::http://en.wikipedia.org/wiki/Virgin_Media::1000::1::
 ::40040::State Farm Insurance::::fortune500::corporate_logos/128_128/StateFarm.png::http://www.statefarm.com::http://en.wikipedia.org/wiki/State_Farm_Insurance::1000::1::
@@ -1019,10 +1031,10 @@
 ::40042::Sara Lee::::fortune500::corporate_logos/128_128/SaraLee.png::http://www.saralee.com::http://en.wikipedia.org/wiki/Sara_Lee_Corporation::1000::1::
 ::40043::Supervalu::::fortune500::corporate_logos/128_128/Supervalu.png::http://www.supervalu.com::http://en.wikipedia.org/wiki/SuperValu_(United_States)::1000::1::
 ::40044::RadioShack::::fortune500::corporate_logos/128_128/RadioShack.png::http://www.radioshack.com::http://en.wikipedia.org/wiki/RadioShack::1000::1::
-::40045::Cisco Systems::::fortune500::corporate_logos/128_128/Cisco.png::http://www.cisco.com::http://en.wikipedia.org/wiki/Cisco::1000::1::
+::40045::Cisco Systems::::fortune500::corporate_logos/128_128/Cisco.png::http://www.cisco.com::http://en.wikipedia.org/wiki/Cisco::1000::198,1::
 ::40046::Discover Financial Services::::fortune500::corporate_logos/128_128/Discover.png::http://www.discover.com::http://en.wikipedia.org/wiki/Discover_Financial_Services::1000::1::
 ::40047::Avon Products::::fortune500::corporate_logos/128_128/Avon.png::http://www.avoncompany.com::http://en.wikipedia.org/wiki/Avon_Products::1000::1::
-::40048::General Electric (4)::::fortune500::corporate_logos/128_128/GeneralElectric.png::http://www.ge.com::http://en.wikipedia.org/wiki/General_Electric::1000::1::
+::40048::General Electric::::fortune500::corporate_logos/128_128/GeneralElectric.png::http://www.ge.com::http://en.wikipedia.org/wiki/General_Electric::1000::199,56,1::
 ::40049::Precision Castparts::::fortune500::corporate_logos/128_128/PrecisionCastparts.png::http://www.precast.com::http://en.wikipedia.org/wiki/Precision_Castparts::1000::1::
 ::40050::EMC::::fortune500::corporate_logos/128_128/EMC.png::http://www.emc.com::http://en.wikipedia.org/wiki/EMC_Corporation::1000::1::
 ::40051::Citigroup::::fortune500::corporate_logos/128_128/Citigroup.png::http://www.citigroup.com::http://en.wikipedia.org/wiki/Citigroup::1000::1::
@@ -1037,66 +1049,66 @@
 ::40060::WellCare Health Plans::::fortune500::corporate_logos/128_128/WellCare.png::http://www.wellcare.com::http://en.wikipedia.org/wiki/WellCare_Health_Plans::1000::1::
 ::40061::Northrop Grumman::::fortune500::corporate_logos/128_128/Northrop_Grumman.png::http://www.northropgrumman.com::http://en.wikipedia.org/wiki/Northrop_Grumman::1000::1::
 ::40062::PetSmart::::fortune500::corporate_logos/128_128/PetSmart.png::http://www.petsmart.com::http://en.wikipedia.org/wiki/PetSmart::1000::1::
-::40063::Symantec::::fortune500::corporate_logos/128_128/Symantec.png::http://www.symantec.com::http://en.wikipedia.org/wiki/Symantec::1000::1::
-::40064::Spectra Energy::::fortune500::corporate_logos/128_128/SpectraEnergy.png::http://www.spectraenergy.com::http://en.wikipedia.org/wiki/Spectra_Energy::1000::1::
+::40063::Symantec::::fortune500::corporate_logos/128_128/Symantec.png::http://www.symantec.com::http://en.wikipedia.org/wiki/Symantec::1000::198,1::
+::40064::Spectra Energy::::fortune500::corporate_logos/128_128/SpectraEnergy.png::http://www.spectraenergy.com::http://en.wikipedia.org/wiki/Spectra_Energy::1000::199,1::
 ::40065::United Technologies Corporation::::fortune500::corporate_logos/128_128/UnitedTechnologies.png::http://www.unitedtechnologies.com::http://en.wikipedia.org/wiki/United_Technologies_Corporation::1000::1::
-::40066::Intel::::fortune500::corporate_logos/128_128/Intel.png::http://www.intel.com::http://en.wikipedia.org/wiki/Intel::1000::1::
-::40067::American Electric Power::::fortune500::corporate_logos/128_128/AEP.png::http://www.aep.com::http://en.wikipedia.org/wiki/American_Electric_Power::1000::1::
+::40066::Intel::::fortune500::corporate_logos/128_128/Intel.png::http://www.intel.com::http://en.wikipedia.org/wiki/Intel::1000::198,1::
+::40067::American Electric Power::::fortune500::corporate_logos/128_128/AEP.png::http://www.aep.com::http://en.wikipedia.org/wiki/American_Electric_Power::1000::199,1::
 ::40068::DISH Network::::fortune500::corporate_logos/128_128/Dish_Network.png::http://www.dishnetwork.com::http://en.wikipedia.org/wiki/DISH_Network::1000::1::
-::40069::Duke Energy::::fortune500::corporate_logos/128_128/Duke_Energy.png::http://www.duke-energy.com::http://en.wikipedia.org/wiki/Duke_Energy::1000::1::
-::40070::Occidental Petroleum::::fortune500::corporate_logos/128_128/Oxy.png::http://www.oxy.com::http://en.wikipedia.org/wiki/Occidental_Petroleum::1000::1::
-::40071::General Motors::::fortune500::corporate_logos/128_128/GeneralMotors.png::http://www.gm.com::http://en.wikipedia.org/wiki/General_Motors::1000::1::
-::40072::Atmos Energy::::fortune500::corporate_logos/128_128/Atmos_Energy.png::http://www.atmosenergy.com::http://en.wikipedia.org/wiki/Atmos_Energy::1000::1::
-::40073::H.J. Heinz::::fortune500::corporate_logos/128_128/Heinz.png::http://www.heinz.com::http://en.wikipedia.org/wiki/H.J._Heinz::1000::1::
-::40074::Johnson & Johnson::::fortune500::corporate_logos/128_128/JohnsonJohnson.png::http://www.jnj.com::http://en.wikipedia.org/wiki/Johnson&Johnson::1000::1::
-::40075::Kraft Foods::::fortune500::corporate_logos/128_128/KraftFoods.png::http://www.kraftfoodscompany.com::http://en.wikipedia.org/wiki/Kraft_Foods::1000::1::
-::40076::Bed Bath & Beyond::::fortune500::corporate_logos/128_128/BedBathBeyond.png::http://www.bedbathandbeyond.com::http://en.wikipedia.org/wiki/Bed_Bath_&_Beyond::1000::1::
+::40069::Duke Energy::::fortune500::corporate_logos/128_128/Duke_Energy.png::http://www.duke-energy.com::http://en.wikipedia.org/wiki/Duke_Energy::1000::199,56,1::
+::40070::Occidental Petroleum::::fortune500::corporate_logos/128_128/Oxy.png::http://www.oxy.com::http://en.wikipedia.org/wiki/Occidental_Petroleum::1000::199,56,1::
+::40071::General Motors::::fortune500::corporate_logos/128_128/GeneralMotors.png::http://www.gm.com::http://en.wikipedia.org/wiki/General_Motors::1000::1,200::
+::40072::Atmos Energy::::fortune500::corporate_logos/128_128/Atmos_Energy.png::http://www.atmosenergy.com::http://en.wikipedia.org/wiki/Atmos_Energy::1000::199,1::
+::40073::H.J. Heinz::::fortune500::corporate_logos/128_128/Heinz.png::http://www.heinz.com::http://en.wikipedia.org/wiki/H.J._Heinz::1000::56,1,207,208::
+::40074::Johnson & Johnson::::fortune500::corporate_logos/128_128/JohnsonJohnson.png::http://www.jnj.com::http://en.wikipedia.org/wiki/Johnson&Johnson::1000::56,1,207,206::
+::40075::Kraft Foods::::fortune500::corporate_logos/128_128/KraftFoods.png::http://www.kraftfoodscompany.com::http://en.wikipedia.org/wiki/Kraft_Foods::1000::56,1,207,208::
+::40076::Bed Bath & Beyond::::fortune500::corporate_logos/128_128/BedBathBeyond.png::http://www.bedbathandbeyond.com::http://en.wikipedia.org/wiki/Bed_Bath_&_Beyond::1000::56,1,205::
 ::40077::The Walt Disney Company::::fortune500::corporate_logos/128_128/WaltDisney.png::http://www.disney.com::http://en.wikipedia.org/wiki/The_Walt_Disney_Company::1000::1::
-::40078::Estee Lauder::::fortune500::corporate_logos/128_128/Estee_Lauder.png::http://www.esteelauder.com::http://en.wikipedia.org/wiki/Estée_Lauder_Companies::1000::1::
+::40078::Estee Lauder::::fortune500::corporate_logos/128_128/Estee_Lauder.png::http://www.esteelauder.com::http://en.wikipedia.org/wiki/Estée_Lauder_Companies::1000::56,1,207,206,205::
 ::40079::Pitney Bowes::::fortune500::corporate_logos/128_128/PitneyBowes.png::http://www.pb.com::http://en.wikipedia.org/wiki/Pitney_Bowes::1000::1::
-::40080::Guardian Life Ins. Co. of America::::fortune500::corporate_logos/128_128/GuardianLife.png::http://www.guardianlife.com::http://en.wikipedia.org/wiki/Guardian_Life_Insurance_Company_of_America::1000::1::
+::40080::Guardian Life Ins. Co. of America::::fortune500::corporate_logos/128_128/GuardianLife.png::http://www.guardianlife.com::http://en.wikipedia.org/wiki/Guardian_Life_Insurance_Company_of_America::1000::56,1,203::
 ::40081::Henry Schein::::fortune500::corporate_logos/128_128/HenrySchein.png::http://www.henryschein.com::http://en.wikipedia.org/wiki/Henry_Schein::1000::1::
 ::40082::Southern Company::::fortune500::corporate_logos/128_128/SouthernCompany.png::http://www.southerncompany.com::http://en.wikipedia.org/wiki/Southern_Company::1000::1::
 ::40083::NCR::::fortune500::corporate_logos/128_128/NCR.png::http://www.ncr.com::http://en.wikipedia.org/wiki/NCR_Corporation::1000::1::
-::40084::DTE Energy::::fortune500::corporate_logos/128_128/DTE_Energy.png::http://www.dteenergy.com::http://en.wikipedia.org/wiki/DTE_Energy::1000::1::
-::40085::Dr Pepper Snapple Group::::fortune500::corporate_logos/128_128/DrPepperSnapple.png::http://www.drpeppersnapplegroup.com::http://en.wikipedia.org/wiki/Dr_Pepper_Snapple_Group::1000::1::
+::40084::DTE Energy::::fortune500::corporate_logos/128_128/DTE_Energy.png::http://www.dteenergy.com::http://en.wikipedia.org/wiki/DTE_Energy::1000::199,1::
+::40085::Dr Pepper Snapple Group::::fortune500::corporate_logos/128_128/DrPepperSnapple.png::http://www.drpeppersnapplegroup.com::http://en.wikipedia.org/wiki/Dr_Pepper_Snapple_Group::1000::56,1,207,208::
 ::40086::Nucor::::fortune500::corporate_logos/128_128/Nucor.png::http://www.nucor.com::http://en.wikipedia.org/wiki/Nucor::1000::1::
 ::40087::Lear::::fortune500::corporate_logos/128_128/Lear.png::http://www.lear.com::http://en.wikipedia.org/wiki/Lear::1000::1::
-::40088::Oracle::::fortune500::corporate_logos/128_128/Oracle.png::http://www.oracle.com::http://en.wikipedia.org/wiki/Oracle_Corporation::1000::1::
-::40089::Coca-Cola Enterprises::::fortune500::corporate_logos/128_128/CocaColaEnterprises.png::http://www.cokecce.com::http://en.wikipedia.org/wiki/Coca-Cola_Enterprises::1000::1::
+::40088::Oracle::::fortune500::corporate_logos/128_128/Oracle.png::http://www.oracle.com::http://en.wikipedia.org/wiki/Oracle_Corporation::1000::198,1::
+::40089::Coca-Cola Enterprises::::fortune500::corporate_logos/128_128/CocaColaEnterprises.png::http://www.cokecce.com::http://en.wikipedia.org/wiki/Coca-Cola_Enterprises::1000::56,1,207,208,205::
 ::40090::Continental Airlines::::fortune500::corporate_logos/128_128/Continental_Airlines.png::http://www.contenental.com::http://en.wikipedia.org/wiki/Continental_Airlines::1000::1::
 ::40091::Rockwell Collins::::fortune500::corporate_logos/128_128/RockwellCollins.png::http://www.rockwellcollins.com::http://en.wikipedia.org/wiki/Rockwell_Collins::1000::1::
 ::40092::Washington Post::::fortune500::corporate_logos/128_128/WPO.png::http://www.washpostco.com::http://en.wikipedia.org/wiki/Washington_Post_Company::1000::1::
 ::40093::Aflac::::fortune500::corporate_logos/128_128/Aflac.png::http://www.aflac.com::http://en.wikipedia.org/wiki/Aflac::1000::1::
-::40094::Verizon Communications::::fortune500::corporate_logos/128_128/Verizon.png::http://www.verizon.com::http://en.wikipedia.org/wiki/Verizon::1000::1::
+::40094::Verizon Communications::::fortune500::corporate_logos/128_128/Verizon.png::http://www.verizon.com::http://en.wikipedia.org/wiki/Verizon::1000::198,1::
 ::40095::Dana Holding::::fortune500::corporate_logos/128_128/Dana.png::http://www.dana.com::http://en.wikipedia.org/wiki/Dana_Corporation::1000::1::
-::40096::Pepsi Bottling::::fortune500::corporate_logos/128_128/PepsiBottling.png::http://www.pbg.com::http://en.wikipedia.org/wiki/Pepsi_Bottling::1000::1::
+::40096::Pepsi Bottling::::fortune500::corporate_logos/128_128/PepsiBottling.png::http://www.pbg.com::http://en.wikipedia.org/wiki/Pepsi_Bottling::1000::56,1,207,208,205::
 ::40097::Kinder Morgan::::fortune500::corporate_logos/128_128/KinderMorgan.png::http://www.kindermorgan.com::http://en.wikipedia.org/wiki/Kinder_Morgan::1000::1::
 ::40098::MGM Mirage::::fortune500::corporate_logos/128_128/MGM_Mirage.png::http://www.mgmresorts.com::http://en.wikipedia.org/wiki/MGM_Mirage::1000::1::
-::40099::International Business Machines::::fortune500::corporate_logos/128_128/IBM.png::http://www.ibm.com::http://en.wikipedia.org/wiki/IBM::1000::1::
+::40099::International Business Machines::::fortune500::corporate_logos/128_128/IBM.png::http://www.ibm.com::http://en.wikipedia.org/wiki/IBM::1000::198,1::
 ::40100::Sanmina-SCI::::fortune500::corporate_logos/128_128/Sanmina.png::http://www.sanmina-sci.com::http://en.wikipedia.org/wiki/Sanmina-SCI::1000::1::
 ::40101::Fluor::::fortune500::corporate_logos/128_128/Fluor.png::http://www.fluor.com::http://en.wikipedia.org/wiki/Fluor_Corp.::1000::1::
-::40102::Western Digital::::fortune500::corporate_logos/128_128/WesternDigital.png::http://www.wdc.com::http://en.wikipedia.org/wiki/Western_Digital::1000::1::
+::40102::Western Digital::::fortune500::corporate_logos/128_128/WesternDigital.png::http://www.wdc.com::http://en.wikipedia.org/wiki/Western_Digital::1000::198,1::
 ::40103::Honeywell International::::fortune500::corporate_logos/128_128/Honeywell.png::http://www.honeywell.com::http://en.wikipedia.org/wiki/Honeywell_International::1000::1::
-::40104::SunTrust Banks::::fortune500::corporate_logos/128_128/SunTrust.png::http://www.suntrust.com::http://en.wikipedia.org/wiki/SunTrust_Banks::1000::1::
+::40104::SunTrust Banks::::fortune500::corporate_logos/128_128/SunTrust.png::http://www.suntrust.com::http://en.wikipedia.org/wiki/SunTrust_Banks::1000::201,1,202::
 ::40105::Erie Insurance Group::::fortune500::corporate_logos/128_128/EIG.png::http://www.erieinsurance.com::http://en.wikipedia.org/wiki/Erie_Insurance_Group::1000::1::
-::40106::Sunoco::::fortune500::corporate_logos/128_128/Sunoco.png::http://www.sunoco.com::http://en.wikipedia.org/wiki/Sunoco::1000::1::
+::40106::Sunoco::::fortune500::corporate_logos/128_128/Sunoco.png::http://www.sunoco.com::http://en.wikipedia.org/wiki/Sunoco::1000::199,1::
 ::40107::CHS::::fortune500::corporate_logos/128_128/CHS.png::http://www.chsinc.com::http://en.wikipedia.org/wiki/CHS,_Inc.::1000::1::
-::40108::Gap::::fortune500::corporate_logos/128_128/Gap.png::http://www.gap.com::http://en.wikipedia.org/wiki/Gap_(clothing_retailer)::1000::1::
-::40109::Electronic Arts::::fortune500::corporate_logos/128_128/EA.png::http://www.ea.com::http://en.wikipedia.org/wiki/Electronic_Arts::1000::1::
+::40108::Gap::::fortune500::corporate_logos/128_128/Gap.png::http://www.gap.com::http://en.wikipedia.org/wiki/Gap_(clothing_retailer)::1000::56,1,205::
+::40109::Electronic Arts::::fortune500::corporate_logos/128_128/EA.png::http://www.ea.com::http://en.wikipedia.org/wiki/Electronic_Arts::1000::198,1::
 ::40110::BlackRock::::fortune500::corporate_logos/128_128/BlackRock.png::http://www.blackrock.com::http://en.wikipedia.org/wiki/BlackRock::1000::1::
-::40111::Tesoro::::fortune500::corporate_logos/128_128/Tesoro.png::http://www.tsocorp.com::http://en.wikipedia.org/wiki/Tesoro::1000::1::
+::40111::Tesoro::::fortune500::corporate_logos/128_128/Tesoro.png::http://www.tsocorp.com::http://en.wikipedia.org/wiki/Tesoro::1000::199,1::
 ::40112::YRC Worldwide::::fortune500::corporate_logos/128_128/YRC_Worldwide.png::http://www.yrcw.com::http://en.wikipedia.org/wiki/YRC_Worldwide::1000::1::
-::40113::Automatic Data Processing::::fortune500::corporate_logos/128_128/Automatic_Data_Processing.png::http://www.adp.com::http://en.wikipedia.org/wiki/Automatic_Data_Processing::1000::1::
-::40114::Xcel Energy::::fortune500::corporate_logos/128_128/Xcel_Energy.png::http://www.xcelenergy.com::http://en.wikipedia.org/wiki/Xcel_Energy::1000::1::
-::40115::Sysco::::fortune500::corporate_logos/128_128/Sysco.png::http://www.sysco.com::http://en.wikipedia.org/wiki/sysco::1000::1::
+::40113::Automatic Data Processing::::fortune500::corporate_logos/128_128/Automatic_Data_Processing.png::http://www.adp.com::http://en.wikipedia.org/wiki/Automatic_Data_Processing::1000::198,1::
+::40114::Xcel Energy::::fortune500::corporate_logos/128_128/Xcel_Energy.png::http://www.xcelenergy.com::http://en.wikipedia.org/wiki/Xcel_Energy::1000::199,1::
+::40115::Sysco::::fortune500::corporate_logos/128_128/Sysco.png::http://www.sysco.com::http://en.wikipedia.org/wiki/sysco::1000::56,1,207,208::
 ::40116::Kelly Services::::fortune500::corporate_logos/128_128/Kelly.png::http://www.kellyservices.com::http://en.wikipedia.org/wiki/Kelly_Services::1000::1::
 ::40117::Eli Lilly::::fortune500::corporate_logos/128_128/EliLilly.png::http://www.lilly.com::http://en.wikipedia.org/wiki/Eli_Lilly_and_Company::1000::1::
-::40118::Amazon.com::::fortune500::corporate_logos/128_128/Amazon.com.png::http://www.amazon.com::http://en.wikipedia.org/wiki/Amazon.com::1000::1::
-::40119::AT&T (7)::::fortune500::corporate_logos/128_128/ATT.png::http://www.att.com::http://en.wikipedia.org/wiki/AT&T::1000::1::
+::40118::Amazon.com::::fortune500::corporate_logos/128_128/Amazon.com.png::http://www.amazon.com::http://en.wikipedia.org/wiki/Amazon.com::1000::56,1,207,205,198::
+::40119::AT&T::::fortune500::corporate_logos/128_128/ATT.png::http://www.att.com::http://en.wikipedia.org/wiki/AT&T::1000::198,1::
 ::40120::Rite Aid::::fortune500::corporate_logos/128_128/RiteAid.png::http://www.riteaid.com::http://en.wikipedia.org/wiki/Rite_Aid::1000::1::
-::40121::Hartford Financial Services::::fortune500::corporate_logos/128_128/The_Hartford.png::http://www.thehartford.com::http://en.wikipedia.org/wiki/The_Hartford::1000::1::
-::40122::Dell::::fortune500::corporate_logos/128_128/Dell.png::http://www.dell.com::http://en.wikipedia.org/wiki/Dell::1000::1::
+::40121::Hartford Financial Services::::fortune500::corporate_logos/128_128/The_Hartford.png::http://www.thehartford.com::http://en.wikipedia.org/wiki/The_Hartford::1000::56,1,202::
+::40122::Dell::::fortune500::corporate_logos/128_128/Dell.png::http://www.dell.com::http://en.wikipedia.org/wiki/Dell::1000::198,1::
 ::40123::Safeway::::fortune500::corporate_logos/128_128/Safeway.png::http://www.safeway.com::http://en.wikipedia.org/wiki/Safeway::1000::1::
 ::40124::CenturyTel::::fortune500::corporate_logos/128_128/CenturyLink.png::http://www.centurylink.com::http://en.wikipedia.org/wiki/CenturyTel::1000::1::
 ::40125::Fortune Brands::::fortune500::corporate_logos/128_128/FortuneBrands.png::http://www.fortunebrands.com::http://en.wikipedia.org/wiki/Fortune_Brands::1000::1::
@@ -1104,53 +1116,53 @@
 ::40127::Avery Dennison::::fortune500::corporate_logos/128_128/AveryDennison.png::http://www.averydennison.com::http://en.wikipedia.org/wiki/Avery_Dennison::1000::1::
 ::40128::Cummins::::fortune500::corporate_logos/128_128/Cummins.png::http://www.cummins.com::http://en.wikipedia.org/wiki/Cummins::1000::1::
 ::40129::Health Net::::fortune500::corporate_logos/128_128/HealthNet.png::http://www.healthnet.com::http://en.wikipedia.org/wiki/Health_Net::1000::1::
-::40130::Energy Future Holdings::::fortune500::corporate_logos/128_128/Energy_Future_Holdings.png::http://www.energyfutureholdings.com::http://en.wikipedia.org/wiki/Energy_Future_Holdings::1000::1::
+::40130::Energy Future Holdings::::fortune500::corporate_logos/128_128/Energy_Future_Holdings.png::http://www.energyfutureholdings.com::http://en.wikipedia.org/wiki/Energy_Future_Holdings::1000::199,1::
 ::40131::Omnicare::::fortune500::corporate_logos/128_128/Omnicare.png::http://www.omnicare.com::http://en.wikipedia.org/wiki/Omnicare::1000::1::
 ::40132::VF::::fortune500::corporate_logos/128_128/VF.png::http://www.vfc.com::http://en.wikipedia.org/wiki/VF_Corporation::1000::1::
-::40133::Hertz Global Holdings::::fortune500::corporate_logos/128_128/Hertz.png::http://www.hertz.com::http://en.wikipedia.org/wiki/The_Hertz_Corporation::1000::1::
+::40133::Hertz Global Holdings::::fortune500::corporate_logos/128_128/Hertz.png::http://www.hertz.com::http://en.wikipedia.org/wiki/The_Hertz_Corporation::1000::56,1,202::
 ::40134::Allstate::::fortune500::corporate_logos/128_128/Allstate.png::http://www.allstate.com::http://en.wikipedia.org/wiki/Allstate::1000::1::
 ::40135::Boeing::::fortune500::corporate_logos/128_128/Boeing.png::http://www.boeing.com::http://en.wikipedia.org/wiki/Boeing::1000::1::
 ::40136::EOG Resources::::fortune500::corporate_logos/128_128/EOG.png::http://www.eogresources.com::http://en.wikipedia.org/wiki/EOG_Resources::1000::1::
 ::40137::Cigna::::fortune500::corporate_logos/128_128/Cigna.png::http://www.cigna.com::http://en.wikipedia.org/wiki/Cigna::1000::1::
 ::40138::Chubb::::fortune500::corporate_logos/128_128/Chubb.png::http://www.chubb.com::http://en.wikipedia.org/wiki/Chubb_Corp.::1000::1::
-::40139::Time Warner Cable::::fortune500::corporate_logos/128_128/TimeWarnerCable.png::http://www.timewarnercable.com::http://en.wikipedia.org/wiki/Time_Warner_Cable::1000::1::
-::40140::Core-Mark Holding::::fortune500::corporate_logos/128_128/CoreMark.png::http://www.coremark.com::http://en.wikipedia.org/wiki/Core-Mark_Holding::1000::1::
+::40139::Time Warner Cable::::fortune500::corporate_logos/128_128/TimeWarnerCable.png::http://www.timewarnercable.com::http://en.wikipedia.org/wiki/Time_Warner_Cable::1000::198,1::
+::40140::Core-Mark Holding::::fortune500::corporate_logos/128_128/CoreMark.png::http://www.coremark.com::http://en.wikipedia.org/wiki/Core-Mark_Holding::1000::56,1,202::
 ::40141::Land O'Lakes::::fortune500::corporate_logos/128_128/LandOLakes.png::http://www.landolakes.com::http://en.wikipedia.org/wiki/Land_O'Lakes::1000::1::
 ::40142::Lubrizol::::fortune500::corporate_logos/128_128/Lubrizol.png::http://www.lubrizol.com::http://en.wikipedia.org/wiki/Lubrizol::1000::1::
-::40143::Massachusetts Mutual Life Insurance::::fortune500::corporate_logos/128_128/MassMutual.png::http://www.massmutual.com::http://en.wikipedia.org/wiki/Massachusetts_Mutual_Life_Insurance::1000::1::
+::40143::Massachusetts Mutual Life Insurance::::fortune500::corporate_logos/128_128/MassMutual.png::http://www.massmutual.com::http://en.wikipedia.org/wiki/Massachusetts_Mutual_Life_Insurance::1000::56,1,203::
 ::40144::Mattel::::fortune500::corporate_logos/128_128/Mattel.png::http://www.mattel.com::http://en.wikipedia.org/wiki/Mattel::1000::1::
-::40145::Agilent Technologies::::fortune500::corporate_logos/128_128/Agilent.png::http://www.agilent.com::http://en.wikipedia.org/wiki/Agilent_Technologies::1000::1::
+::40145::Agilent Technologies::::fortune500::corporate_logos/128_128/Agilent.png::http://www.agilent.com::http://en.wikipedia.org/wiki/Agilent_Technologies::1000::198,1::
 ::40146::MeadWestvaco::::fortune500::corporate_logos/128_128/MWV.png::http://www.mwv.com::http://en.wikipedia.org/wiki/MeadWestvaco::1000::1::
 ::40147::News Corporation::::fortune500::corporate_logos/128_128/News_Corporation.png::http://www.newscorp.com::http://en.wikipedia.org/wiki/News_Corp::1000::1::
 ::40148::Qwest Communications::::fortune500::corporate_logos/128_128/Qwest.png::http://www.qwest.com::http://en.wikipedia.org/wiki/Qwest_Communications::1000::1::
 ::40149::Qualcomm::::fortune500::corporate_logos/128_128/Qualcomm.png::http://www.qualcomm.com::http://en.wikipedia.org/wiki/Qualcomm::1000::1::
 ::40150::Pacific Life::::fortune500::corporate_logos/128_128/PacificLife.png::http://www.pacificlife.com/::http://en.wikipedia.org/wiki/Pacific_Life::1000::1::
-::40151::Enbridge Energy Partners::::fortune500::corporate_logos/128_128/Enbridge.png::http://www.enbridge.com::http://en.wikipedia.org/wiki/Enbridge_Energy_Partners::1000::1::
-::40152::Anadarko Petroleum::::fortune500::corporate_logos/128_128/AnadarkoPetroleum.png::http://www.anadarko.com::http://en.wikipedia.org/wiki/Anadarko_Petroleum::1000::1::
+::40151::Enbridge Energy Partners::::fortune500::corporate_logos/128_128/Enbridge.png::http://www.enbridge.com::http://en.wikipedia.org/wiki/Enbridge_Energy_Partners::1000::199,1::
+::40152::Anadarko Petroleum::::fortune500::corporate_logos/128_128/AnadarkoPetroleum.png::http://www.anadarko.com::http://en.wikipedia.org/wiki/Anadarko_Petroleum::1000::199,1::
 ::40153::Abbott Laboratories::::fortune500::corporate_logos/128_128/AbbottLaboratories.png::http://www.abbott.com::http://en.wikipedia.org/wiki/Abbott_Laboratories::1000::1::
-::40154::Emerson Electric::::fortune500::corporate_logos/128_128/Emerson.png::http://www.emerson.com::http://en.wikipedia.org/wiki/Emerson_Electric::1000::1::
+::40154::Emerson Electric::::fortune500::corporate_logos/128_128/Emerson.png::http://www.emerson.com::http://en.wikipedia.org/wiki/Emerson_Electric::1000::199,1::
 ::40155::Huntsman::::fortune500::corporate_logos/128_128/Huntsman.png::http://www.huntsman.com::http://en.wikipedia.org/wiki/Huntsman_Corporation::1000::1::
 ::40156::OfficeMax::::fortune500::corporate_logos/128_128/OfficeMax.png::http://www.officemax.com::http://en.wikipedia.org/wiki/OfficeMax::1000::1::
 ::40157::Live Nation Entertainment::::fortune500::corporate_logos/128_128/LiveNation.png::http://www.livenation.com::http://en.wikipedia.org/wiki/Live_Nation_Entertainment::1000::1::
 ::40158::Community Health Systems::::fortune500::corporate_logos/128_128/Community_Health_Systems.png::http://www.chs.net::http://en.wikipedia.org/wiki/Community_Health_Systems::1000::1::
 ::40159::Goodrich::::fortune500::corporate_logos/128_128/Goodrich.png::http://www.goodrich.com::http://en.wikipedia.org/wiki/Goodrich_Corporation::1000::1::
 ::40160::United Services Automobile Association::::fortune500::corporate_logos/128_128/USAA.png::http://www.usaa.com::http://en.wikipedia.org/wiki/United_Services_Automobile_Association::1000::1::
-::40161::Blockbuster::::fortune500::corporate_logos/128_128/Blockbuster.png::http://www.blockbuster.com::http://en.wikipedia.org/wiki/Blockbuster_Inc.::1000::1::
+::40161::Blockbuster::::fortune500::corporate_logos/128_128/Blockbuster.png::http://www.blockbuster.com::http://en.wikipedia.org/wiki/Blockbuster_Inc.::1000::56,1,205::
 ::40162::Group 1 Automotive::::fortune500::corporate_logos/128_128/Group1Automotive.png::http://www.group1auto.com::http://en.wikipedia.org/wiki/Group_1_Automotive::1000::1::
-::40163::The Home Depot::::fortune500::corporate_logos/128_128/HomeDepot.png::http://www.homedepot.com::http://en.wikipedia.org/wiki/Home_Depot::1000::1::
+::40163::The Home Depot::::fortune500::corporate_logos/128_128/HomeDepot.png::http://www.homedepot.com::http://en.wikipedia.org/wiki/Home_Depot::1000::56,1,205::
 ::40164::Smurfit-Stone Container::::fortune500::corporate_logos/128_128/Smurfit.png::http://www.smurfit.com::http://en.wikipedia.org/wiki/Smurfit-Stone_Container::1000::1::
 ::40165::International Assets Holding::::fortune500::corporate_logos/128_128/International_Assets_Holdings.png::http://www.intlassets.com::http://en.wikipedia.org/wiki/International_Assets_Holding::1000::1::
-::40166::Best Buy::::fortune500::corporate_logos/128_128/BestBuy.png::http://www.bestbuy.com::http://en.wikipedia.org/wiki/Bestbuy::1000::1::
-::40167::Principal Financial::::fortune500::corporate_logos/128_128/Principal.png::http://www.principal.com::http://en.wikipedia.org/wiki/Principal_Financial::1000::1::
-::40168::Sprint Nextel::::fortune500::corporate_logos/128_128/Sprint_Nextel.png::http://www.sprint.com::http://en.wikipedia.org/wiki/Sprint_Nextel::1000::1::
+::40166::Best Buy::::fortune500::corporate_logos/128_128/BestBuy.png::http://www.bestbuy.com::http://en.wikipedia.org/wiki/Bestbuy::1000::56,198,1,205::
+::40167::Principal Financial::::fortune500::corporate_logos/128_128/Principal.png::http://www.principal.com::http://en.wikipedia.org/wiki/Principal_Financial::1000::56,1,202::
+::40168::Sprint Nextel::::fortune500::corporate_logos/128_128/Sprint_Nextel.png::http://www.sprint.com::http://en.wikipedia.org/wiki/Sprint_Nextel::1000::56,198,1,205::
 ::40169::Air Products & Chemicals::::fortune500::corporate_logos/128_128/AirProducts.png::http://www.airproducts.com::http://en.wikipedia.org/wiki/Air_Products_&_Chemicals::1000::1::
-::40170::Ingram Micro::::fortune500::corporate_logos/128_128/IngramMicro.png::http://www.ingrammicro.com::http://en.wikipedia.org/wiki/Ingram_Micro::1000::1::
-::40171::Tyson Foods::::fortune500::corporate_logos/128_128/Tyson.png::http://www.tyson.com::http://en.wikipedia.org/wiki/Tyson_Foods::1000::1::
-::40172::Eastman Kodak::::fortune500::corporate_logos/128_128/EastmanKodak.png::http://www.kodak.com::http://en.wikipedia.org/wiki/Eastman_Kodak::1000::1::
+::40170::Ingram Micro::::fortune500::corporate_logos/128_128/IngramMicro.png::http://www.ingrammicro.com::http://en.wikipedia.org/wiki/Ingram_Micro::1000::198,1::
+::40171::Tyson Foods::::fortune500::corporate_logos/128_128/Tyson.png::http://www.tyson.com::http://en.wikipedia.org/wiki/Tyson_Foods::1000::56,1,207,208::
+::40172::Eastman Kodak::::fortune500::corporate_logos/128_128/EastmanKodak.png::http://www.kodak.com::http://en.wikipedia.org/wiki/Eastman_Kodak::1000::198,1::
 ::40173::Telephone & Data Systems::::fortune500::corporate_logos/128_128/TDS.png::http://www.teldta.com::http://en.wikipedia.org/wiki/Telephone_&_Data_Systems::1000::1::
-::40174::Nordstrom::::fortune500::corporate_logos/128_128/Nordstrom.png::http://www.nordstrom.com::http://en.wikipedia.org/wiki/Nordstrom::1000::1::
-::40175::First Data::::fortune500::corporate_logos/128_128/First_Data.png::http://www.firstdata.com::http://en.wikipedia.org/wiki/First_Data::1000::1::
-::40176::Wisconsin Energy::::fortune500::corporate_logos/128_128/WEC.png::http://www.wisconsinenergy.com/::http://en.wikipedia.org/wiki/Wisconsin_Energy::1000::1::
+::40174::Nordstrom::::fortune500::corporate_logos/128_128/Nordstrom.png::http://www.nordstrom.com::http://en.wikipedia.org/wiki/Nordstrom::1000::56,1,205::
+::40175::First Data::::fortune500::corporate_logos/128_128/First_Data.png::http://www.firstdata.com::http://en.wikipedia.org/wiki/First_Data::1000::198,1::
+::40176::Wisconsin Energy::::fortune500::corporate_logos/128_128/WEC.png::http://www.wisconsinenergy.com/::http://en.wikipedia.org/wiki/Wisconsin_Energy::1000::199,1::
 ::40177::Medco Health Solutions::::fortune500::corporate_logos/128_128/Medco.png::http://www.medcohealth.com::http://en.wikipedia.org/wiki/Medco_Health_Solutions::1000::1::
 ::40178::L-3 Communications::::fortune500::corporate_logos/128_128/L3.png::http://www.l-3com.com::http://en.wikipedia.org/wiki/L-3_Communications::1000::1::
 ::40179::TIAA-CREF::::fortune500::corporate_logos/128_128/TIAA-CREF.png::http://www.tiaa-cref.com::http://en.wikipedia.org/wiki/TIAA-CREF::1000::1::
@@ -1158,21 +1170,21 @@
 ::40181::Danaher::::fortune500::corporate_logos/128_128/Danaher.png::http://www.danaher.com::http://en.wikipedia.org/wiki/Danaher_Corporation::1000::1::
 ::40182::Liberty Media::::fortune500::corporate_logos/128_128/LibertyMedia.png::http://www.libertymedia.com::http://en.wikipedia.org/wiki/Liberty_Media::1000::1::
 ::40183::Integrys Energy Group::::fortune500::corporate_logos/128_128/Integrys.png::http://www.integrysgroup.com::http://en.wikipedia.org/wiki/Integrys_Energy_Group::1000::1::
-::40184::Chevron (3)::::fortune500::corporate_logos/128_128/Chevron.png::http://www.chevron.com::http://en.wikipedia.org/wiki/Chevron_Corporation::1000::1::
-::40185::Macy's::::fortune500::corporate_logos/128_128/Macys.png::http://www.macys.com::http://en.wikipedia.org/wiki/Macy's::1000::1::
-::40186::Graybar Electric::::fortune500::corporate_logos/128_128/Graybar.png::http://www.graybar.com::http://en.wikipedia.org/wiki/Graybar_Electric::1000::1::
-::40187::Deere::::fortune500::corporate_logos/128_128/Deere.png::http://www.deere.com::http://en.wikipedia.org/wiki/Deere::1000::1::
-::40188::Family Dollar Stores::::fortune500::corporate_logos/128_128/FamilyDollar.png::http://www.familydollar.com::http://en.wikipedia.org/wiki/Family_Dollar_Stores::1000::1::
-::40189::Procter & Gamble::::fortune500::corporate_logos/128_128/ProcterGamble.png::http://www.pg.com::http://en.wikipedia.org/wiki/Procter&Gamble::1000::1::
+::40184::Chevron::::fortune500::corporate_logos/128_128/Chevron.png::http://www.chevron.com::http://en.wikipedia.org/wiki/Chevron_Corporation::1000::199,56,1::
+::40185::Macy's::::fortune500::corporate_logos/128_128/Macys.png::http://www.macys.com::http://en.wikipedia.org/wiki/Macy's::1000::56,1,205::
+::40186::Graybar Electric::::fortune500::corporate_logos/128_128/Graybar.png::http://www.graybar.com::http://en.wikipedia.org/wiki/Graybar_Electric::1000::56,198,1,205::
+::40187::Deere::::fortune500::corporate_logos/128_128/Deere.png::http://www.deere.com::http://en.wikipedia.org/wiki/Deere::1000::56,1,208,205::
+::40188::Family Dollar Stores::::fortune500::corporate_logos/128_128/FamilyDollar.png::http://www.familydollar.com::http://en.wikipedia.org/wiki/Family_Dollar_Stores::1000::56,1,207,205::
+::40189::Procter & Gamble::::fortune500::corporate_logos/128_128/ProcterGamble.png::http://www.pg.com::http://en.wikipedia.org/wiki/Procter&Gamble::1000::56,1,207,206,208::
 ::40190::Owens & Minor::::fortune500::corporate_logos/128_128/Owens_Minor.png::http://www.owens-minor.com::http://en.wikipedia.org/wiki/Owens_&_Minor::1000::1::
-::40191::Publix Super Markets::::fortune500::corporate_logos/128_128/Publix.png::http://www.publix.com::http://en.wikipedia.org/wiki/Publix_Super_Markets::1000::1::
+::40191::Publix Super Markets::::fortune500::corporate_logos/128_128/Publix.png::http://www.publix.com::http://en.wikipedia.org/wiki/Publix_Super_Markets::1000::56,1,207,208::
 ::40192::Domtar::::fortune500::corporate_logos/128_128/Domtar.png::http://www.domtar.com::http://en.wikipedia.org/wiki/Domtar::1000::1::
-::40193::Goodyear Tire & Rubber::::fortune500::corporate_logos/128_128/Goodyear.png::http://www.goodyear.com::http://en.wikipedia.org/wiki/Goodyear_Tire_&_Rubber::1000::1::
+::40193::Goodyear Tire & Rubber::::fortune500::corporate_logos/128_128/Goodyear.png::http://www.goodyear.com::http://en.wikipedia.org/wiki/Goodyear_Tire_&_Rubber::1000::1,200::
 ::40194::Ryder System::::fortune500::corporate_logos/128_128/Ryder.png::http://www.ryder.com::http://en.wikipedia.org/wiki/Ryder_System::1000::1::
 ::40195::Fiserv::::fortune500::corporate_logos/128_128/Fiserv.png::http://www.fiserv.com::http://en.wikipedia.org/wiki/Fiserv::1000::1::
 ::40196::KeyCorp::::fortune500::corporate_logos/128_128/KeyBank.png::http://www.key.com::http://en.wikipedia.org/wiki/KeyCorp::1000::1::
 ::40197::Comcast::::fortune500::corporate_logos/128_128/Comcast.png::http://www.comcast.com::http://en.wikipedia.org/wiki/Comcast::1000::1::
-::40198::Consol Energy::::fortune500::corporate_logos/128_128/ConsolEnergy.png::http://www.consolenergy.com::http://en.wikipedia.org/wiki/Consol_Energy::1000::1::
+::40198::Consol Energy::::fortune500::corporate_logos/128_128/ConsolEnergy.png::http://www.consolenergy.com::http://en.wikipedia.org/wiki/Consol_Energy::1000::199,1::
 ::40199::Ally Financial::::fortune500::corporate_logos/128_128/Ally.png::http://www.ally.com::http://en.wikipedia.org/wiki/Ally_Financial::1000::1::
 ::40200::NII Holdings::::fortune500::corporate_logos/128_128/NII.png::http://www.nextelinternational.com::http://en.wikipedia.org/wiki/NII_Holdings::1000::1::
 ::40201::Burlington Northern Santa Fe::::fortune500::corporate_logos/128_128/BNSF.png::http://www.bnsf.com::http://en.wikipedia.org/wiki/Burlington_Northern_Santa_Fe::1000::1::
@@ -1182,79 +1194,79 @@
 ::40205::Reynolds American::::fortune500::corporate_logos/128_128/Reynolds_American.png::http://www.reynoldsamerican.com::http://en.wikipedia.org/wiki/Reynolds_American::1000::1::
 ::40206::Pfizer::::fortune500::corporate_logos/128_128/Pfizer.png::http://www.pfizer.com::http://en.wikipedia.org/wiki/Pfizer::1000::1::
 ::40207::Boston Scientific::::fortune500::corporate_logos/128_128/Boston_Scientific.png::http://www.bostonscientific.com::http://en.wikipedia.org/wiki/Boston_Scientific::1000::1::
-::40208::Fidelity National Financial::::fortune500::corporate_logos/128_128/FNF.png::http://www.fnf.com::http://en.wikipedia.org/wiki/Fidelity_National_Financial::1000::1::
+::40208::Fidelity National Financial::::fortune500::corporate_logos/128_128/FNF.png::http://www.fnf.com::http://en.wikipedia.org/wiki/Fidelity_National_Financial::1000::56,1,202::
 ::40209::Universal Health Services::::fortune500::corporate_logos/128_128/UHS.png::http://www.uhsinc.com::http://en.wikipedia.org/wiki/Universal_Health_Services::1000::1::
 ::40210::Omnicom Group::::fortune500::corporate_logos/128_128/Omnicom_Group.png::http://www.omnicomgroup.com::http://en.wikipedia.org/wiki/Omnicom_Group::1000::1::
 ::40211::Dean Foods::::fortune500::corporate_logos/128_128/Dean.png::http://www.deanfoods.com::http://en.wikipedia.org/wiki/Dean_Foods::1000::1::
 ::40212::SAIC::::fortune500::corporate_logos/128_128/SAIC.png::http://www.saic.com::http://en.wikipedia.org/wiki/SAIC_(company)::1000::1::
-::40213::Northwestern Mutual::::fortune500::corporate_logos/128_128/NorthwesternMutual.png::http://www.northwesternmutual.com::http://en.wikipedia.org/wiki/Northwestern_Mutual::1000::1::
+::40213::Northwestern Mutual::::fortune500::corporate_logos/128_128/NorthwesternMutual.png::http://www.northwesternmutual.com::http://en.wikipedia.org/wiki/Northwestern_Mutual::1000::56,1,202,203::
 ::40214::NiSource::::fortune500::corporate_logos/128_128/NiSource.png::http://www.nisource.com::http://en.wikipedia.org/wiki/NiSource::1000::1::
-::40215::Penske Automotive Group::::fortune500::corporate_logos/128_128/Penske.png::http://www.penskeautomotive.com::http://en.wikipedia.org/wiki/Penske_Automotive_Group::1000::1::
-::40216::Kindred Healthcare::::fortune500::corporate_logos/128_128/KindredHealthcare.png::http://www.kindredhealthcare.com::http://en.wikipedia.org/wiki/Kindred_Healthcare::1000::1::
+::40215::Penske Automotive Group::::fortune500::corporate_logos/128_128/Penske.png::http://www.penskeautomotive.com::http://en.wikipedia.org/wiki/Penske_Automotive_Group::1000::1,200::
+::40216::Kindred Healthcare::::fortune500::corporate_logos/128_128/KindredHealthcare.png::http://www.kindredhealthcare.com::http://en.wikipedia.org/wiki/Kindred_Healthcare::1000::56,1,204::
 ::40217::CC Media Holdings::::fortune500::corporate_logos/128_128/ClearChannel.png::http://www.clearchannel.com::http://en.wikipedia.org/wiki/CC_Media_Holdings::1000::1::
 ::40218::SYNNEX::::fortune500::corporate_logos/128_128/SYNNEX.png::http://www.synnex.com::http://en.wikipedia.org/wiki/SYNNEX::1000::1::
 ::40219::Edison International::::fortune500::corporate_logos/128_128/Edison.png::http://www.edison.com::http://en.wikipedia.org/wiki/Edison_International::1000::1::
 ::40220::Peabody Energy::::fortune500::corporate_logos/128_128/Peabody.png::http://www.peabodyenergy.com::http://en.wikipedia.org/wiki/Peabody_Energy::1000::1::
-::40221::AES::::fortune500::corporate_logos/128_128/AES.png::http://www.aes.com::http://en.wikipedia.org/wiki/AES_Corporation::1000::1::
-::40222::SLM::::fortune500::corporate_logos/128_128/SLM.png::http://www.salliemae.com::http://en.wikipedia.org/wiki/SLM_Corporation::1000::1::
+::40221::AES::::fortune500::corporate_logos/128_128/AES.png::http://www.aes.com::http://en.wikipedia.org/wiki/AES_Corporation::1000::199,1::
+::40222::SLM::::fortune500::corporate_logos/128_128/SLM.png::http://www.salliemae.com::http://en.wikipedia.org/wiki/SLM_Corporation::1000::56,1,202::
 ::40223::C.H. Robinson Worldwide::::fortune500::corporate_logos/128_128/CH_Robinson.png::http://www.chrobinson.com::http://en.wikipedia.org/wiki/C.H._Robinson_Worldwide::1000::1::
 ::40224::UGI::::fortune500::corporate_logos/128_128/UGI.png::http://www.ugicorp.com::http://en.wikipedia.org/wiki/UGI_Corporation::1000::1::
 ::40225::Peter Kiewit Sons'::::fortune500::corporate_logos/128_128/Kiewit.png::http://www.kiewit.com::http://en.wikipedia.org/wiki/Peter_Kiewit_Sons'::1000::1::
-::40226::Staples::::fortune500::corporate_logos/128_128/Staples.png::http://www.staples.com::http://en.wikipedia.org/wiki/Staples_Inc.::1000::1::
-::40227::FirstEnergy::::fortune500::corporate_logos/128_128/FirstEnergy.png::http://www.firstenergycorp.com::http://en.wikipedia.org/wiki/FirstEnergy::1000::1::
-::40228::CMS Energy::::fortune500::corporate_logos/128_128/CMS.png::http://www.cmsenergy.com::http://en.wikipedia.org/wiki/CMS_Energy::1000::1::
+::40226::Staples::::fortune500::corporate_logos/128_128/Staples.png::http://www.staples.com::http://en.wikipedia.org/wiki/Staples_Inc.::1000::56,1,205::
+::40227::FirstEnergy::::fortune500::corporate_logos/128_128/FirstEnergy.png::http://www.firstenergycorp.com::http://en.wikipedia.org/wiki/FirstEnergy::1000::199,1::
+::40228::CMS Energy::::fortune500::corporate_logos/128_128/CMS.png::http://www.cmsenergy.com::http://en.wikipedia.org/wiki/CMS_Energy::1000::199,1::
 ::40229::Amerigroup::::fortune500::corporate_logos/128_128/Amerigroup.png::http://www.realsolutions.com::http://en.wikipedia.org/wiki/Amerigroup::1000::1::
 ::40230::Ball::::fortune500::corporate_logos/128_128/Ball.png::http://www.ball.com::http://en.wikipedia.org/wiki/Ball_Corp.::1000::1::
 ::40231::ITT::::fortune500::corporate_logos/128_128/ITT.png::http://www.itt.com::http://en.wikipedia.org/wiki/ITT_Corporation::1000::1::
-::40232::National Oilwell Varco::::fortune500::corporate_logos/128_128/NOV.png::http://www.nov.com::http://en.wikipedia.org/wiki/National_Oilwell_Varco::1000::1::
+::40232::National Oilwell Varco::::fortune500::corporate_logos/128_128/NOV.png::http://www.nov.com::http://en.wikipedia.org/wiki/National_Oilwell_Varco::1000::199,56,1::
 ::40233::MDU Resources Group::::fortune500::corporate_logos/128_128/MDU.png::http://www.mdu.com::http://en.wikipedia.org/wiki/MDU_Resources::1000::1::
-::40234::Whole Foods Market::::fortune500::corporate_logos/128_128/WholeFoods.png::http://www.wholefoodsmarket.com::http://en.wikipedia.org/wiki/Whole_Foods_Market::1000::1::
+::40234::Whole Foods Market::::fortune500::corporate_logos/128_128/WholeFoods.png::http://www.wholefoodsmarket.com::http://en.wikipedia.org/wiki/Whole_Foods_Market::1000::56,1,207,208::
 ::40235::Harris::::fortune500::corporate_logos/128_128/Harris.png::http://www.harris.com::http://en.wikipedia.org/wiki/Harris_Corporation::1000::1::
 ::40236::International Paper::::fortune500::corporate_logos/128_128/InternationalPaper.png::http://www.internationalpaper.com::http://en.wikipedia.org/wiki/International_Paper::1000::1::
 ::40237::Aon::::fortune500::corporate_logos/128_128/AON.png::http://www.aon.com::http://en.wikipedia.org/wiki/Aon_Corporation::1000::1::
-::40238::United Parcel Service::::fortune500::corporate_logos/128_128/UPS.png::http://www.ups.com::http://en.wikipedia.org/wiki/United_Parcel_Service::1000::1::
+::40238::United Parcel Service::::fortune500::corporate_logos/128_128/UPS.png::http://www.ups.com::http://en.wikipedia.org/wiki/United_Parcel_Service::1000::56,1,205::
 ::40239::XTO Energy::::fortune500::corporate_logos/128_128/XTO.png::http://www.xtoenergy.com::http://en.wikipedia.org/wiki/XTO_Energy::1000::1::
 ::40240::Assurant::::fortune500::corporate_logos/128_128/Assurant.png::http://www.assurant.com::http://en.wikipedia.org/wiki/Assurant::1000::1::
 ::40241::Avnet::::fortune500::corporate_logos/128_128/Avnet.png::http://www.avnet.com::http://en.wikipedia.org/wiki/Avnet::1000::1::
-::40242::General Mills::::fortune500::corporate_logos/128_128/GeneralMills.png::http://www.generalmills.com::http://en.wikipedia.org/wiki/General_Mills::1000::1::
-::40243::FMC Technologies::::fortune500::corporate_logos/128_128/FMC_Technologies.png::http://www.fmctechnologies.com::http://en.wikipedia.org/wiki/FMC_Technologies::1000::1::
-::40244::New York Life Insurance::::fortune500::corporate_logos/128_128/NewYorkLife.png::http://www.newyorklife.com::http://en.wikipedia.org/wiki/New_York_Life_Insurance::1000::1::
+::40242::General Mills::::fortune500::corporate_logos/128_128/GeneralMills.png::http://www.generalmills.com::http://en.wikipedia.org/wiki/General_Mills::1000::56,1,207,208::
+::40243::FMC Technologies::::fortune500::corporate_logos/128_128/FMC_Technologies.png::http://www.fmctechnologies.com::http://en.wikipedia.org/wiki/FMC_Technologies::1000::199,56,1::
+::40244::New York Life Insurance::::fortune500::corporate_logos/128_128/NewYorkLife.png::http://www.newyorklife.com::http://en.wikipedia.org/wiki/New_York_Life_Insurance::1000::56,1,203::
 ::40245::Wesco International::::fortune500::corporate_logos/128_128/Wesco.png::http://www.wesco.com::http://en.wikipedia.org/wiki/Wesco_International::1000::1::
 ::40246::Consolidated Edison::::fortune500::corporate_logos/128_128/ConEd.png::http://www.coned.com::http://en.wikipedia.org/wiki/Consolidated_Edison::1000::1::
 ::40247::Nationwide::::fortune500::corporate_logos/128_128/Nationwide.png::http://www.nationwide.com::http://en.wikipedia.org/wiki/Nationwide_Mutual_Insurance_Company::1000::1::
-::40248::Kroger::::fortune500::corporate_logos/128_128/Kroger.png::http://www.kroger.com::http://en.wikipedia.org/wiki/Kroger::1000::1::
+::40248::Kroger::::fortune500::corporate_logos/128_128/Kroger.png::http://www.kroger.com::http://en.wikipedia.org/wiki/Kroger::1000::1,207,208,205::
 ::40249::Bank of New York Mellon Corp.::::fortune500::corporate_logos/128_128/Bank_of_New_York_Mellon.png::http://www.bnymellon.com::http://en.wikipedia.org/wiki/Bank_of_New_York_Mellon_Corp.::1000::1::
 ::40250::Affiliated Computer Services::::fortune500::corporate_logos/128_128/ACS.png::http://www.acs-inc.com::http://en.wikipedia.org/wiki/Affiliated_Computer_Services::1000::1::
 ::40251::St. Jude Medical::::fortune500::corporate_logos/128_128/SJM.png::http://www.sjm.com::http://en.wikipedia.org/wiki/St._Jude_Medical::1000::1::
 ::40252::Anixter International::::fortune500::corporate_logos/128_128/Anixter.png::http://www.anixter.com::http://en.wikipedia.org/wiki/Anixter_International::1000::1::
-::40253::Ameriprise Financial::::fortune500::corporate_logos/128_128/Ameriprise.png::http://www.ameriprise.com::http://en.wikipedia.org/wiki/Ameriprise_Financial::1000::1::
-::40254::Marathon Oil::::fortune500::corporate_logos/128_128/MarathonOil.png::http://www.marathon.com::http://en.wikipedia.org/wiki/Marathon::1000::1::
+::40253::Ameriprise Financial::::fortune500::corporate_logos/128_128/Ameriprise.png::http://www.ameriprise.com::http://en.wikipedia.org/wiki/Ameriprise_Financial::1000::56,1,202::
+::40254::Marathon Oil::::fortune500::corporate_logos/128_128/MarathonOil.png::http://www.marathon.com::http://en.wikipedia.org/wiki/Marathon::1000::199,56,1::
 ::40255::McKesson::::fortune500::corporate_logos/128_128/McKesson.png::http://www.mckesson.com::http://en.wikipedia.org/wiki/McKesson_Corporation::1000::1::
 ::40256::Entergy::::fortune500::corporate_logos/128_128/Entergy.png::http://www.entergy.com::http://en.wikipedia.org/wiki/Entergy::1000::1::
-::40257::Walgreens::::fortune500::corporate_logos/128_128/Walgreens.png::http://www.walgreens.com::http://en.wikipedia.org/wiki/Walgreens::1000::1::
-::40258::Valero Energy Corporation::::fortune500::corporate_logos/128_128/Valero.png::http://www.valero.com::http://en.wikipedia.org/wiki/Valero_Energy_Corporation::1000::1::
-::40259::Plains All American Pipeline::::fortune500::corporate_logos/128_128/Plains_All_American.png::http://www.paalp.com::http://en.wikipedia.org/wiki/Plains_All_American_Pipeline::1000::1::
+::40257::Walgreens::::fortune500::corporate_logos/128_128/Walgreens.png::http://www.walgreens.com::http://en.wikipedia.org/wiki/Walgreens::1000::56,1,207,205::
+::40258::Valero Energy Corporation::::fortune500::corporate_logos/128_128/Valero.png::http://www.valero.com::http://en.wikipedia.org/wiki/Valero_Energy_Corporation::1000::199,1::
+::40259::Plains All American Pipeline::::fortune500::corporate_logos/128_128/Plains_All_American.png::http://www.paalp.com::http://en.wikipedia.org/wiki/Plains_All_American_Pipeline::1000::199,1::
 ::40260::AECOM Technology::::fortune500::corporate_logos/128_128/AECOM.png::http://www.aecom.com::http://en.wikipedia.org/wiki/AECOM_Technology::1000::1::
-::40261::Western & Southern Financial Group::::fortune500::corporate_logos/128_128/WSFG.png::http://www.westernsouthern.com::http://en.wikipedia.org/wiki/Western_&_Southern_Financial_Group::1000::1::
+::40261::Western & Southern Financial Group::::fortune500::corporate_logos/128_128/WSFG.png::http://www.westernsouthern.com::http://en.wikipedia.org/wiki/Western_&_Southern_Financial_Group::1000::56,1,202::
 ::40262::UnitedHealth Group::::fortune500::corporate_logos/128_128/UnitedHealthGroup.png::http://www.unitedhealthgroup.com::http://en.wikipedia.org/wiki/UnitedHealth_Group::1000::1::
 ::40263::Berkshire Hathaway::::fortune500::corporate_logos/128_128/BerkshireHathaway.png::http://www.berkshirehathaway.com::http://en.wikipedia.org/wiki/Berkshire_Hathaway::1000::1::
 ::40264::Ameren::::fortune500::corporate_logos/128_128/Ameren.png::http://www.ameren.com::http://en.wikipedia.org/wiki/Ameren::1000::1::
 ::40265::United States Steel::::fortune500::corporate_logos/128_128/USS.png::http://www.ussteel.com::http://en.wikipedia.org/wiki/United_States_Steel::1000::1::
 ::40266::Owens Corning::::fortune500::corporate_logos/128_128/OwensCorning.png::http://www.owenscorning.com::http://en.wikipedia.org/wiki/Owens_Corning::1000::1::
 ::40267::Cablevision Systems::::fortune500::corporate_logos/128_128/Cablevision.png::http://www.cablevision.com::http://en.wikipedia.org/wiki/Cablevision_Systems::1000::1::
-::40268::Fannie Mae::::fortune500::corporate_logos/128_128/FannieMae.png::http://www.fanniemae.com::http://en.wikipedia.org/wiki/Fannie_Mae::1000::1::
-::40269::Enterprise GP Holdings::::fortune500::corporate_logos/128_128/Enterprise_GP_Holdings.png::http://www.enterprisegp.com::http://en.wikipedia.org/wiki/Enterprise_GP_Holdings::1000::1::
-::40270::Pepco Holdings::::fortune500::corporate_logos/128_128/PepcoHoldings.png::http://www.pepcoholdings.com::http://en.wikipedia.org/wiki/Pepco_Holdings::1000::1::
-::40271::Micron Technology::::fortune500::corporate_logos/128_128/Micron.png::http://www.micron.com::http://en.wikipedia.org/wiki/Micron_Technology::1000::1::
-::40272::Nike::::fortune500::corporate_logos/128_128/Nike.png::http://www.nike.com::http://en.wikipedia.org/wiki/Nike,_Inc.::1000::1::
+::40268::Fannie Mae::::fortune500::corporate_logos/128_128/FannieMae.png::http://www.fanniemae.com::http://en.wikipedia.org/wiki/Fannie_Mae::1000::56,1,202::
+::40269::Enterprise GP Holdings::::fortune500::corporate_logos/128_128/Enterprise_GP_Holdings.png::http://www.enterprisegp.com::http://en.wikipedia.org/wiki/Enterprise_GP_Holdings::1000::56,1,202,199::
+::40270::Pepco Holdings::::fortune500::corporate_logos/128_128/PepcoHoldings.png::http://www.pepcoholdings.com::http://en.wikipedia.org/wiki/Pepco_Holdings::1000::56,1,202,208::
+::40271::Micron Technology::::fortune500::corporate_logos/128_128/Micron.png::http://www.micron.com::http://en.wikipedia.org/wiki/Micron_Technology::1000::56,198,1::
+::40272::Nike::::fortune500::corporate_logos/128_128/Nike.png::http://www.nike.com::http://en.wikipedia.org/wiki/Nike,_Inc.::1000::56,1,205::
 ::40273::Mohawk Industries::::fortune500::corporate_logos/128_128/Mohawk.png::http://mohawkind.com::http://en.wikipedia.org/wiki/Mohawk_Industries::1000::1::
 ::40274::Jarden::::fortune500::corporate_logos/128_128/Jarden.png::http://www.jarden.com::http://en.wikipedia.org/wiki/Jarden::1000::1::
 ::40275::Altria Group::::fortune500::corporate_logos/128_128/Altria.png::http://www.altria.com::http://en.wikipedia.org/wiki/Altria_Group::1000::1::
 ::40276::Biogen Idec::::fortune500::corporate_logos/128_128/BiogenIdec.png::http://www.biogenidec.com::http://en.wikipedia.org/wiki/Biogen_Idec::1000::1::
-::40277::Franklin Resources::::fortune500::corporate_logos/128_128/Franklin.png::http://www.franklintempleton.com::http://en.wikipedia.org/wiki/Franklin_Resources::1000::1::
+::40277::Franklin Resources::::fortune500::corporate_logos/128_128/Franklin.png::http://www.franklintempleton.com::http://en.wikipedia.org/wiki/Franklin_Resources::1000::56,1,202::
 ::40278::PPL::::fortune500::corporate_logos/128_128/PPL.png::http://www.pplweb.com::http://en.wikipedia.org/wiki/PPL_(utility)::1000::1::
 ::40279::Dick's Sporting Goods::::fortune500::corporate_logos/128_128/DicksSportingGoods.png::http://www.dickssportinggoods.com::http://en.wikipedia.org/wiki/Dick's_Sporting_Goods::1000::1::
-::40280::Tenet Healthcare::::fortune500::corporate_logos/128_128/Tenet_Healthcare.png::http://www.tenethealth.com::http://en.wikipedia.org/wiki/Tenet_Healthcare::1000::1::
+::40280::Tenet Healthcare::::fortune500::corporate_logos/128_128/Tenet_Healthcare.png::http://www.tenethealth.com::http://en.wikipedia.org/wiki/Tenet_Healthcare::1000::56,1,204::
 ::40281::Unisys::::fortune500::corporate_logos/128_128/Unisys.png::http://www.unisys.com::http://en.wikipedia.org/wiki/Unisys::1000::1::
 ::40282::ConAgra Foods::::fortune500::corporate_logos/128_128/ConAgra.png::http://www.conagrafoods.com::http://en.wikipedia.org/wiki/ConAgra_Foods::1000::1::
 ::40283::Calpine::::fortune500::corporate_logos/128_128/Calpine.png::http://www.calpine.com::http://en.wikipedia.org/wiki/Calpine::1000::1::
@@ -1263,28 +1275,28 @@
 ::40286::Spectrum Group International::::fortune500::corporate_logos/128_128/SGI.png::http://www.spectrumgi.com::http://en.wikipedia.org/wiki/Spectrum_Group_International::1000::1::
 ::40287::Marsh & McLennan::::fortune500::corporate_logos/128_128/Marsh_McLennan.png::http://www.mmc.com::http://en.wikipedia.org/wiki/Marsh&McLennan::1000::1::
 ::40288::Scana::::fortune500::corporate_logos/128_128/Scana.png::http://www.scana.com::http://en.wikipedia.org/wiki/Scana::1000::1::
-::40289::Progressive::::fortune500::corporate_logos/128_128/Progressive.png::http://www.progressive.com::http://en.wikipedia.org/wiki/Progressive_Corporation::1000::1::
-::40290::Arrow Electronics::::fortune500::corporate_logos/128_128/Arrow.png::http://www.arrow.com::http://en.wikipedia.org/wiki/Arrow_Electronics::1000::1::
+::40289::Progressive::::fortune500::corporate_logos/128_128/Progressive.png::http://www.progressive.com::http://en.wikipedia.org/wiki/Progressive_Corporation::1000::1,200,203::
+::40290::Arrow Electronics::::fortune500::corporate_logos/128_128/Arrow.png::http://www.arrow.com::http://en.wikipedia.org/wiki/Arrow_Electronics::1000::56,198,1::
 ::40291::Unum Group::::fortune500::corporate_logos/128_128/Unum.png::http://www.unum.com::http://en.wikipedia.org/wiki/Unum_Group::1000::1::
 ::40292::KBR::::fortune500::corporate_logos/128_128/KBR.png::http://www.kbr.com::http://en.wikipedia.org/wiki/KBR_(company)::1000::1::
-::40293::Devon Energy::::fortune500::corporate_logos/128_128/DevonEnergy.png::http://www.devonenergy.com::http://en.wikipedia.org/wiki/Devon_Energy::1000::1::
-::40294::American Express::::fortune500::corporate_logos/128_128/AmericanExpress.png::http://www.americanexpress.com::http://en.wikipedia.org/wiki/American_Express::1000::1::
+::40293::Devon Energy::::fortune500::corporate_logos/128_128/DevonEnergy.png::http://www.devonenergy.com::http://en.wikipedia.org/wiki/Devon_Energy::1000::199,56,1::
+::40294::American Express::::fortune500::corporate_logos/128_128/AmericanExpress.png::http://www.americanexpress.com::http://en.wikipedia.org/wiki/American_Express::1000::56,1,202::
 ::40295::AMR::::fortune500::corporate_logos/128_128/AMR.png::http://www.aa.com::http://en.wikipedia.org/wiki/AMR_Corporation::1000::1::
 ::40296::Baxter International::::fortune500::corporate_logos/128_128/Baxter.png::http://www.baxter.com::http://en.wikipedia.org/wiki/Baxter_International::1000::1::
 ::40297::UAL::::fortune500::corporate_logos/128_128/UnitedAirlines.png::http://www.united.com::http://en.wikipedia.org/wiki/UAL_Corporation::1000::1::
-::40298::FedEx::::fortune500::corporate_logos/128_128/FedEx.png::http://www.fedex.com::http://en.wikipedia.org/wiki/Fedex::1000::1::
+::40298::FedEx::::fortune500::corporate_logos/128_128/FedEx.png::http://www.fedex.com::http://en.wikipedia.org/wiki/Fedex::1000::56,1,205::
 ::40299::Mutual of Omaha Insurance::::fortune500::corporate_logos/128_128/MutualOfOmaha.png::http://www.mutualofomaha.com::http://en.wikipedia.org/wiki/Mutual_of_Omaha_Insurance::1000::1::
-::40300::ourvoYce::::fortune500::corporate_logos/128_128/ourvoYce.png::http://www.ourvoYce.com::http://en.wikipedia.org/wiki/ourvoYce::1000::1::
+::40300::ourvoYce::::fortune500::corporate_logos/128_128/ourvoYce.png::http://www.ourvoYce.com::http://en.wikipedia.org/wiki/ourvoYce::1000::198,1::
 ::40301::Gannett::::fortune500::corporate_logos/128_128/Gannett.png::http://www.gannett.com::http://en.wikipedia.org/wiki/Gannett::1000::1::
 ::40302::Liberty Global::::fortune500::corporate_logos/128_128/Liberty_Global.png::http://www.lgi.com::http://en.wikipedia.org/wiki/Liberty_Global::1000::1::
-::40303::J.P. Morgan Chase & Co. (9)::::fortune500::corporate_logos/128_128/JP_MorganChase.png::http://www.jpmorganchase.com::http://en.wikipedia.org/wiki/JP_Morgan_Chase::1000::1::
+::40303::J.P. Morgan Chase & Co.::::fortune500::corporate_logos/128_128/JP_MorganChase.png::http://www.jpmorganchase.com::http://en.wikipedia.org/wiki/JP_Morgan_Chase::1000::56,1,202::
 ::40304::Tenneco::::fortune500::corporate_logos/128_128/Tenneco.png::http://www.tenneco.com::http://en.wikipedia.org/wiki/Tenneco::1000::1::
-::40305::Yahoo::::fortune500::corporate_logos/128_128/Yahoo.png::http://www.yahoo.com::http://en.wikipedia.org/wiki/Yahoo::1000::1::
-::40306::American Financial Group::::fortune500::corporate_logos/128_128/AFG.png::http://www.afginc.com::http://en.wikipedia.org/wiki/American_Financial_Group::1000::1::
-::40307::Charter Communications::::fortune500::corporate_logos/128_128/Charter.png::http://www.charter.com::http://en.wikipedia.org/wiki/Charter_Communications::1000::1::
+::40305::Yahoo::::fortune500::corporate_logos/128_128/Yahoo.png::http://www.yahoo.com::http://en.wikipedia.org/wiki/Yahoo::1000::198,1::
+::40306::American Financial Group::::fortune500::corporate_logos/128_128/AFG.png::http://www.afginc.com::http://en.wikipedia.org/wiki/American_Financial_Group::1000::56,1,202::
+::40307::Charter Communications::::fortune500::corporate_logos/128_128/Charter.png::http://www.charter.com::http://en.wikipedia.org/wiki/Charter_Communications::1000::198,1::
 ::40308::Johnson Controls::::fortune500::corporate_logos/128_128/JohnsonControls.png::http://www.johnsoncontrols.com::http://en.wikipedia.org/wiki/Johnson_Controls::1000::1::
 ::40309::Mylan::::fortune500::corporate_logos/128_128/Mylan.png::http://www.mylan.com::http://en.wikipedia.org/wiki/Mylan::1000::1::
-::40310::Encom International::::fortune500::corporate_logos/128_128/Encom.png::http://www.encominternational.com::http://en.wikipedia.org/wiki/Tron_(film)::1000::1::
+::40310::Encom International::::fortune500::corporate_logos/128_128/Encom.png::http://www.encominternational.com::http://en.wikipedia.org/wiki/Tron_(film)::1000::198,1::
 ::40311::Northern Trust Corp.::::fortune500::corporate_logos/128_128/NorthernTrust.png::http://www.northerntrust.com::http://en.wikipedia.org/wiki/Northern_Trust_Corp.::1000::1::
 ::40312::Republic Services::::fortune500::corporate_logos/128_128/RepublicServices.png::http://www.republicservices.com::http://en.wikipedia.org/wiki/Republic_Services::1000::1::
 ::40313::Limited Brands::::fortune500::corporate_logos/128_128/Limited_Brands.png::http://www.limitedbrands.com::http://en.wikipedia.org/wiki/Limited_Brands::1000::1::
@@ -1292,70 +1304,70 @@
 ::40315::Owens-Illinois::::fortune500::corporate_logos/128_128/Owens_Illinois.png::http://www.o-i.com::http://en.wikipedia.org/wiki/Owens-Illinois::1000::1::
 ::40316::Stryker::::fortune500::corporate_logos/128_128/Stryker.png::http://www.stryker.com::http://en.wikipedia.org/wiki/Stryker_Corp.::1000::1::
 ::40317::PPG Industries::::fortune500::corporate_logos/128_128/PPG_Industries.png::http://www.ppg.com::http://en.wikipedia.org/wiki/PPG_Industries::1000::1::
-::40318::TRW Automotive Holdings::::fortune500::corporate_logos/128_128/TRW.png::http://www.trw.com::http://en.wikipedia.org/wiki/TRW_Automotive_Holdings::1000::1::
-::40319::PG&E Corp.::::fortune500::corporate_logos/128_128/PGE.png::http://www.pge.com::http://en.wikipedia.org/wiki/PG&E_Corp.::1000::1::
-::40320::FPL Group::::fortune500::corporate_logos/128_128/Nextera.png::http://www.nexteraenergyresources.com::http://en.wikipedia.org/wiki/NextEra_Energy_Resources::1000::1::
-::40321::SunGard Data Systems::::fortune500::corporate_logos/128_128/SunGard.png::http://www.sungard.com::http://en.wikipedia.org/wiki/SunGard_Data_Systems::1000::1::
+::40318::TRW Automotive Holdings::::fortune500::corporate_logos/128_128/TRW.png::http://www.trw.com::http://en.wikipedia.org/wiki/TRW_Automotive_Holdings::1000::1,200::
+::40319::PG&E Corp.::::fortune500::corporate_logos/128_128/PGE.png::http://www.pge.com::http://en.wikipedia.org/wiki/PG&E_Corp.::1000::199,1::
+::40320::FPL Group::::fortune500::corporate_logos/128_128/Nextera.png::http://www.nexteraenergyresources.com::http://en.wikipedia.org/wiki/NextEra_Energy_Resources::1000::199,1::
+::40321::SunGard Data Systems::::fortune500::corporate_logos/128_128/SunGard.png::http://www.sungard.com::http://en.wikipedia.org/wiki/SunGard_Data_Systems::1000::198,1::
 ::40322::Parker Hannifin::::fortune500::corporate_logos/128_128/Parker_Hannifin.png::http://www.parker.com::http://en.wikipedia.org/wiki/Parker_Hannifin::1000::1::
-::40323::Sun Microsystems::::fortune500::corporate_logos/128_128/Sun.png::http://www.oracle.com/sun::http://en.wikipedia.org/wiki/Sun_Microsystems::1000::1::
-::40324::American Family Insurance Group::::fortune500::corporate_logos/128_128/AmericanFamilyInsurance.png::http://www.amfam.com::http://en.wikipedia.org/wiki/American_Family_Insurance_Group::1000::1::
+::40323::Sun Microsystems::::fortune500::corporate_logos/128_128/Sun.png::http://www.oracle.com/sun::http://en.wikipedia.org/wiki/Sun_Microsystems::1000::198,1::
+::40324::American Family Insurance Group::::fortune500::corporate_logos/128_128/AmericanFamilyInsurance.png::http://www.amfam.com::http://en.wikipedia.org/wiki/American_Family_Insurance_Group::1000::56,1,203::
 ::40325::Global Partners::::fortune500::corporate_logos/128_128/Global_Partners.png::http://www.globalp.com::http://en.wikipedia.org/wiki/Global_Partners::1000::1::
-::40326::3M::::fortune500::corporate_logos/128_128/3M.png::http://www.3m.com::http://en.wikipedia.org/wiki/3m::1000::1::
+::40326::3M::::fortune500::corporate_logos/128_128/3M.png::http://www.3m.com::http://en.wikipedia.org/wiki/3m::1000::56,1,206::
 ::40327::Manpower::::fortune500::corporate_logos/128_128/Manpower.png::http://www.manpower.com::http://en.wikipedia.org/wiki/Manpower_Inc.::1000::1::
 ::40328::Merck::::fortune500::corporate_logos/128_128/Merck.png::http://www.merck.com::http://en.wikipedia.org/wiki/Merck&Co.::1000::1::
 ::40329::NYSE Euronext::::fortune500::corporate_logos/128_128/NYSE.png::http://www.nyse.com::http://en.wikipedia.org/wiki/NYSE_Euronext::1000::1::
 ::40330::Dover::::fortune500::corporate_logos/128_128/Dover.png::http://www.dovercorporation.com::http://en.wikipedia.org/wiki/Dover_Corporation::1000::1::
-::40331::Barnes & Noble::::fortune500::corporate_logos/128_128/BN.png::http://www.bn.com::http://en.wikipedia.org/wiki/Barnes_&_Noble::1000::1::
+::40331::Barnes & Noble::::fortune500::corporate_logos/128_128/BN.png::http://www.bn.com::http://en.wikipedia.org/wiki/Barnes_&_Noble::1000::56,1,205::
 ::40332::AGCO::::fortune500::corporate_logos/128_128/Agco.png::http://www.agcocorp.com::http://en.wikipedia.org/wiki/AGCO::1000::1::
 ::40333::Cameron International::::fortune500::corporate_logos/128_128/Cameron.png::http://www.c-a-m.com::http://en.wikipedia.org/wiki/Cameron_International::1000::1::
 ::40334::Textron::::fortune500::corporate_logos/128_128/Textron.png::http://www.textron.com::http://en.wikipedia.org/wiki/Textron::1000::1::
-::40335::Travelers Cos.::::fortune500::corporate_logos/128_128/Travelers.png::http://www.travelers.com::http://en.wikipedia.org/wiki/Travelers_Cos.::1000::1::
+::40335::Travelers Cos.::::fortune500::corporate_logos/128_128/Travelers.png::http://www.travelers.com::http://en.wikipedia.org/wiki/Travelers_Cos.::1000::56,1,203::
 ::40336::Target Corporation::::fortune500::corporate_logos/128_128/Target.png::http://www.target.com::http://en.wikipedia.org/wiki/Target_Corporation::1000::1::
-::40337::Humana::::fortune500::corporate_logos/128_128/Humana.png::http://www.humana.com::http://en.wikipedia.org/wiki/Humana::1000::1::
+::40337::Humana::::fortune500::corporate_logos/128_128/Humana.png::http://www.humana.com::http://en.wikipedia.org/wiki/Humana::1000::56,1,204::
 ::40338::Mosaic::::fortune500::corporate_logos/128_128/Mosaic.png::http://www.mosaicco.com::http://en.wikipedia.org/wiki/The_Mosaic_Company::1000::1::
 ::40339::Dillard's::::fortune500::corporate_logos/128_128/Dillards.png::http://www.dillards.com::http://en.wikipedia.org/wiki/Dillard's::1000::1::
-::40340::Eaton::::fortune500::corporate_logos/128_128/Eaton.png::http://www.eaton.com::http://en.wikipedia.org/wiki/Eaton_Corporation::1000::1::
+::40340::Eaton::::fortune500::corporate_logos/128_128/Eaton.png::http://www.eaton.com::http://en.wikipedia.org/wiki/Eaton_Corporation::1000::199,1::
 ::40341::Hess::::fortune500::corporate_logos/128_128/Hess.png::http://www.hess.com::http://en.wikipedia.org/wiki/Hess_Corporation::1000::1::
-::40342::American International Group::::fortune500::corporate_logos/128_128/AIG.png::http://www.aig.com::http://en.wikipedia.org/wiki/American_International_Group::1000::1::
-::40343::Great Atlantic & Pacific Tea::::fortune500::corporate_logos/128_128/AP.png::http://www.aptea.com::http://en.wikipedia.org/wiki/The_Great_Atlantic_&_Pacific_Tea_Company::1000::1::
+::40342::American International Group::::fortune500::corporate_logos/128_128/AIG.png::http://www.aig.com::http://en.wikipedia.org/wiki/American_International_Group::1000::56,1,202,203::
+::40343::Great Atlantic & Pacific Tea::::fortune500::corporate_logos/128_128/AP.png::http://www.aptea.com::http://en.wikipedia.org/wiki/The_Great_Atlantic_&_Pacific_Tea_Company::1000::56,1,207,208,205::
 ::40344::State Street Corp.::::fortune500::corporate_logos/128_128/StateStreet.png::http://www.statestreet.com::http://en.wikipedia.org/wiki/State_Street_Corp.::1000::1::
 ::40345::R.R. Donnelley & Sons::::fortune500::corporate_logos/128_128/RR_Donnelley.png::http://www.rrd.com::http://en.wikipedia.org/wiki/R.R._Donnelley_&_Sons::1000::1::
-::40346::Apache::::fortune500::corporate_logos/128_128/Apache.png::http://www.apachecorp.com::http://en.wikipedia.org/wiki/Apache_Corporation::1000::1::
+::40346::Apache::::fortune500::corporate_logos/128_128/Apache.png::http://www.apachecorp.com::http://en.wikipedia.org/wiki/Apache_Corporation::1000::199,1::
 ::40347::W.R. Berkley::::fortune500::corporate_logos/128_128/WR_Berkley.png::http://www.wrberkley.com::http://en.wikipedia.org/wiki/W.R._Berkley::1000::1::
-::40348::Google::::fortune500::corporate_logos/128_128/Google.png::http://www.google.com::http://en.wikipedia.org/wiki/Google::1000::1::
+::40348::Google::::fortune500::corporate_logos/128_128/Google.png::http://www.google.com::http://en.wikipedia.org/wiki/Google::1000::198,1::
 ::40349::Con-way::::fortune500::corporate_logos/128_128/Con-way.png::http://www.con-way.com::http://en.wikipedia.org/wiki/Con-way::1000::1::
 ::40350::PepsiAmericas::::fortune500::corporate_logos/128_128/PepsiAmericas.png::http://www.pepsiamericas.com::http://en.wikipedia.org/wiki/PepsiAmericas::1000::1::
-::40351::Harley-Davidson::::fortune500::corporate_logos/128_128/HarleyDavidson.png::http://www.harley-davidson.com::http://en.wikipedia.org/wiki/Harley-Davidson::1000::1::
+::40351::Harley-Davidson::::fortune500::corporate_logos/128_128/HarleyDavidson.png::http://www.harley-davidson.com::http://en.wikipedia.org/wiki/Harley-Davidson::1000::56,1,200,205::
 ::40352::Union Pacific::::fortune500::corporate_logos/128_128/UnionPacific.png::http://www.up.com::http://en.wikipedia.org/wiki/Union_Pacific::1000::1::
 ::40353::Marriott International::::fortune500::corporate_logos/128_128/Marriott.png::http://www.marriott.com::http://en.wikipedia.org/wiki/Marriott_International::1000::1::
 ::40354::Visteon::::fortune500::corporate_logos/128_128/Visteon.png::http://www.visteon.com::http://en.wikipedia.org/wiki/Visteon::1000::1::
 ::40355::H&R Block::::fortune500::corporate_logos/128_128/HR_Block.png::http://www.hrblock.com::http://en.wikipedia.org/wiki/H&R_Block::1000::1::
-::40356::Broadcom::::fortune500::corporate_logos/128_128/Broadcom.png::http://www.broadcom.com::http://en.wikipedia.org/wiki/Broadcom::1000::1::
-::40357::eBay::::fortune500::corporate_logos/128_128/EBay.png::http://www.ebay.com::http://en.wikipedia.org/wiki/EBay::1000::1::
-::40358::Sempra Energy::::fortune500::corporate_logos/128_128/Sempra_Energy.png::http://www.sempra.com::http://en.wikipedia.org/wiki/Sempra_Energy::1000::1::
-::40359::Starbucks::::fortune500::corporate_logos/128_128/Starbucks.png::http://www.starbucks.com::http://en.wikipedia.org/wiki/Starbucks::1000::1::
+::40356::Broadcom::::fortune500::corporate_logos/128_128/Broadcom.png::http://www.broadcom.com::http://en.wikipedia.org/wiki/Broadcom::1000::198,1::
+::40357::eBay::::fortune500::corporate_logos/128_128/EBay.png::http://www.ebay.com::http://en.wikipedia.org/wiki/EBay::1000::198,1::
+::40358::Sempra Energy::::fortune500::corporate_logos/128_128/Sempra_Energy.png::http://www.sempra.com::http://en.wikipedia.org/wiki/Sempra_Energy::1000::199,56,1::
+::40359::Starbucks::::fortune500::corporate_logos/128_128/Starbucks.png::http://www.starbucks.com::http://en.wikipedia.org/wiki/Starbucks::1000::56,1,190,205::
 ::40360::Freeport-McMoRan Copper & Gold::::fortune500::corporate_logos/128_128/Freeport.png::http://www.fcx.com::http://en.wikipedia.org/wiki/Freeport-McMoRan::1000::1::
-::40361::Wells Fargo::::fortune500::corporate_logos/128_128/WellsFargo.png::http://www.wellsfargo.com::http://en.wikipedia.org/wiki/Wells_Fargo::1000::1::
+::40361::Wells Fargo::::fortune500::corporate_logos/128_128/WellsFargo.png::http://www.wellsfargo.com::http://en.wikipedia.org/wiki/Wells_Fargo::1000::56,201,1,202::
 ::40362::Reliance Steel & Aluminum::::fortune500::corporate_logos/128_128/Reliance_Steel.png::http://www.rsac.com::http://en.wikipedia.org/wiki/Reliance_Steel_&_Aluminum_Co.::1000::1::
 ::40363::General Dynamics::::fortune500::corporate_logos/128_128/GeneralDynamics.png::http://www.gd.com::http://en.wikipedia.org/wiki/General_Dynamics::1000::1::
-::40364::GameStop::::fortune500::corporate_logos/128_128/GameStop.png::http://www.gamestop.com::http://en.wikipedia.org/wiki/GameStop::1000::1::
+::40364::GameStop::::fortune500::corporate_logos/128_128/GameStop.png::http://www.gamestop.com::http://en.wikipedia.org/wiki/GameStop::1000::56,198,1,205::
 ::40365::Express Scripts::::fortune500::corporate_logos/128_128/ExpressScripts.png::http://www.express-scripts.com::http://en.wikipedia.org/wiki/Express_Scripts::1000::1::
-::40366::Sherwin-Williams::::fortune500::corporate_logos/128_128/Sherwin_Williams.png::http://www.sherwin-williams.com::http://en.wikipedia.org/wiki/Sherwin-Williams::1000::1::
-::40367::AutoNation::::fortune500::corporate_logos/128_128/AutoNation.png::http://www.autonation.com::http://en.wikipedia.org/wiki/AutoNation::1000::1::
-::40368::Goldman Sachs Group::::fortune500::corporate_logos/128_128/GoldmanSachs.png::http://www.goldmansachs.com::http://en.wikipedia.org/wiki/Goldman_Sachs::1000::1::
+::40366::Sherwin-Williams::::fortune500::corporate_logos/128_128/Sherwin_Williams.png::http://www.sherwin-williams.com::http://en.wikipedia.org/wiki/Sherwin-Williams::1000::56,1,206,205::
+::40367::AutoNation::::fortune500::corporate_logos/128_128/AutoNation.png::http://www.autonation.com::http://en.wikipedia.org/wiki/AutoNation::1000::1,200::
+::40368::Goldman Sachs Group::::fortune500::corporate_logos/128_128/GoldmanSachs.png::http://www.goldmansachs.com::http://en.wikipedia.org/wiki/Goldman_Sachs::1000::56,1,202::
 ::40369::Illinois Tool Works::::fortune500::corporate_logos/128_128/ITW.png::http://www.itw.com::http://en.wikipedia.org/wiki/Illinois_Tool_Works::1000::1::
-::40370::Apple Inc.::::fortune500::corporate_logos/128_128/Apple.png::http://www.apple.com::http://en.wikipedia.org/wiki/Apple_Inc.::1000::1::
-::40371::MasterCard::::fortune500::corporate_logos/128_128/MasterCard.png::http://www.mastercard.com::http://en.wikipedia.org/wiki/MasterCard::1000::1::
+::40370::Apple Inc.::::fortune500::corporate_logos/128_128/Apple.png::http://www.apple.com::http://en.wikipedia.org/wiki/Apple_Inc.::1000::56,198,1,205::
+::40371::MasterCard::::fortune500::corporate_logos/128_128/MasterCard.png::http://www.mastercard.com::http://en.wikipedia.org/wiki/MasterCard::1000::56,1,202::
 ::40372::Celanese::::fortune500::corporate_logos/128_128/Celanese.png::http://www.celanese.com::http://en.wikipedia.org/wiki/Celanese::1000::1::
 ::40373::Interpublic Group::::fortune500::corporate_logos/128_128/IPG.png::http://www.interpublic.com::http://en.wikipedia.org/wiki/Interpublic_Group::1000::1::
-::40374::Pilgrim's Pride::::fortune500::corporate_logos/128_128/Pilgrims_Pride.png::http://www.pilgrims.com::http://en.wikipedia.org/wiki/Pilgrim's_Pride::1000::1::
+::40374::Pilgrim's Pride::::fortune500::corporate_logos/128_128/Pilgrims_Pride.png::http://www.pilgrims.com::http://en.wikipedia.org/wiki/Pilgrim's_Pride::1000::56,1,207,208::
 ::40375::Loews::::fortune500::corporate_logos/128_128/Loews.png::http://www.loews.com::http://en.wikipedia.org/wiki/Loews_Corporation::1000::1::
 ::40376::Weyerhaeuser::::fortune500::corporate_logos/128_128/Weyerhaeuser.png::http://www.weyerhaeuser.com::http://en.wikipedia.org/wiki/Weyerhaeuser::1000::1::
 ::40377::Laboratory Corp. of America::::fortune500::corporate_logos/128_128/LabCorp.png::http://www.labcorp.com::http://en.wikipedia.org/wiki/Laboratory_Corp._of_America::1000::1::
 ::40378::Lincoln National::::fortune500::corporate_logos/128_128/Lincoln_National_Corporation.png::http://www.lincolnfinancial.com::http://en.wikipedia.org/wiki/Lincoln_National_Corporation::1000::1::
 ::40379::Caterpillar::::fortune500::corporate_logos/128_128/Caterpillar.png::http://www.cat.com::http://en.wikipedia.org/wiki/Caterpillar_Inc.::1000::1::
 ::40380::Smith International::::fortune500::corporate_logos/128_128/Smith_International.png::http://www.smith.com::http://en.wikipedia.org/wiki/Smith_International::1000::1::
-::40381::Wal-Mart Stores (1)::::fortune500::corporate_logos/128_128/Walmart.png::http://www.walmart.com::http://en.wikipedia.org/wiki/Walmart::1000::1::
+::40381::Wal-Mart Stores::::fortune500::corporate_logos/128_128/Walmart.png::http://www.walmart.com::http://en.wikipedia.org/wiki/Walmart::1000::1::
 ::40382::Newmont Mining::::fortune500::corporate_logos/128_128/Newmont.png::http://www.newmont.com::http://en.wikipedia.org/wiki/Newmont_Mining::1000::1::
 ::40383::McGraw-Hill::::fortune500::corporate_logos/128_128/McGrawHill.png::http://www.mcgraw-hill.com::http://en.wikipedia.org/wiki/McGraw-Hill::1000::1::
 ::40384::Gilead Sciences::::fortune500::corporate_logos/128_128/Gilead.png::http://www.gilead.com::http://en.wikipedia.org/wiki/Gilead_Sciences::1000::1::
@@ -1366,35 +1378,35 @@
 ::40389::Allergan::::fortune500::corporate_logos/128_128/Allergan.png::http://www.allergan.com::http://en.wikipedia.org/wiki/Allergan::1000::1::
 ::40390::Waste Management::::fortune500::corporate_logos/128_128/WM.png::http://www.wm.com::http://en.wikipedia.org/wiki/Waste_Management,_Inc::1000::1::
 ::40391::First American Corp.::::fortune500::corporate_logos/128_128/FirstAmerican.png::http://www.firstam.com::http://en.wikipedia.org/wiki/First_American_Corp.::1000::1::
-::40392::Freddie Mac::::fortune500::corporate_logos/128_128/Freddie_Mac.png::http://www.freddiemac.com::http://en.wikipedia.org/wiki/Freddie_Mac::1000::1::
-::40393::O'Reilly Automotive::::fortune500::corporate_logos/128_128/OReilly.png::http://www.oreillyauto.com::http://en.wikipedia.org/wiki/O'Reilly_Automotive::1000::1::
-::40394::Auto-Owners Insurance::::fortune500::corporate_logos/128_128/AOI.png::http://www.auto-owners.com::http://en.wikipedia.org/wiki/Auto-Owners_Insurance::1000::1::
+::40392::Freddie Mac::::fortune500::corporate_logos/128_128/Freddie_Mac.png::http://www.freddiemac.com::http://en.wikipedia.org/wiki/Freddie_Mac::1000::56,1,202::
+::40393::O'Reilly Automotive::::fortune500::corporate_logos/128_128/OReilly.png::http://www.oreillyauto.com::http://en.wikipedia.org/wiki/O'Reilly_Automotive::1000::56,1,200,205::
+::40394::Auto-Owners Insurance::::fortune500::corporate_logos/128_128/AOI.png::http://www.auto-owners.com::http://en.wikipedia.org/wiki/Auto-Owners_Insurance::1000::56,1,203::
 ::40395::WellPoint::::fortune500::corporate_logos/128_128/Wellpoint.png::http://www.wellpoint.com::http://en.wikipedia.org/wiki/Wellpoint::1000::1::
 ::40396::Icahn Enterprises::::fortune500::corporate_logos/128_128/Icahn.png::http://www.icahnenterprises.com::http://en.wikipedia.org/wiki/Icahn_Enterprises::1000::1::
-::40397::Advance Auto Parts::::fortune500::corporate_logos/128_128/AdvanceAutoParts.png::http://www.advanceautoparts.com::http://en.wikipedia.org/wiki/Advance_Auto_Parts::1000::1::
-::40398::Bank of America Corporation (5)::::fortune500::corporate_logos/128_128/BankOfAmerica.png::http://www.bankofamerica.com::http://en.wikipedia.org/wiki/Bank_of_America::1000::1::
-::40399::Smithfield Foods::::fortune500::corporate_logos/128_128/Smithfield.png::http://www.smithfieldfoods.com::http://en.wikipedia.org/wiki/Smithfield_Foods::1000::1::
+::40397::Advance Auto Parts::::fortune500::corporate_logos/128_128/AdvanceAutoParts.png::http://www.advanceautoparts.com::http://en.wikipedia.org/wiki/Advance_Auto_Parts::1000::56,1,200,205::
+::40398::Bank of America Corporation::::fortune500::corporate_logos/128_128/BankOfAmerica.png::http://www.bankofamerica.com::http://en.wikipedia.org/wiki/Bank_of_America::1000::1::
+::40399::Smithfield Foods::::fortune500::corporate_logos/128_128/Smithfield.png::http://www.smithfieldfoods.com::http://en.wikipedia.org/wiki/Smithfield_Foods::1000::56,1,207,208::
 ::40400::Jabil Circuit::::fortune500::corporate_logos/128_128/Jabil.png::http://www.jabil.com::http://en.wikipedia.org/wiki/Jabil_Circuit::1000::1::
-::40401::Time Warner::::fortune500::corporate_logos/128_128/TimeWarner.png::http://www.timewarner.com::http://en.wikipedia.org/wiki/Time_Warner::1000::1::
+::40401::Time Warner::::fortune500::corporate_logos/128_128/TimeWarner.png::http://www.timewarner.com::http://en.wikipedia.org/wiki/Time_Warner::1000::56,1::
 ::40402::Clorox::::fortune500::corporate_logos/128_128/Clorox.png::http://www.thecloroxcompany.com::http://en.wikipedia.org/wiki/Clorox::1000::1::
-::40403::Motorola::::fortune500::corporate_logos/128_128/Motorola.png::http://www.motorola.com::http://en.wikipedia.org/wiki/Motorola::1000::1::
+::40403::Motorola::::fortune500::corporate_logos/128_128/Motorola.png::http://www.motorola.com::http://en.wikipedia.org/wiki/Motorola::1000::198,1::
 ::40404::Whirlpool::::fortune500::corporate_logos/128_128/Whirlpool.png::http://www.whirlpoolcorp.com::http://en.wikipedia.org/wiki/Whirlpool_Corporation::1000::1::
-::40405::Office Depot::::fortune500::corporate_logos/128_128/OfficeDepot.png::http://www.officedepot.com::http://en.wikipedia.org/wiki/Office_Depot::1000::1::
+::40405::Office Depot::::fortune500::corporate_logos/128_128/OfficeDepot.png::http://www.officedepot.com::http://en.wikipedia.org/wiki/Office_Depot::1000::56,1,205::
 ::40406::Reinsurance Group of America::::fortune500::corporate_logos/128_128/RGA.png::http://.www.rgare.com::http://en.wikipedia.org/wiki/Reinsurance_Group_of_America::1000::1::
 ::40407::Southwest Airlines::::fortune500::corporate_logos/128_128/Southwest_Airlines.png::http://www.southwest.com::http://en.wikipedia.org/wiki/Southwest_Airlines::1000::1::
-::40408::Hershey::::fortune500::corporate_logos/128_128/Hershey.png::http://www.hersheys.com::http://en.wikipedia.org/wiki/The_Hershey_Company::1000::1::
+::40408::Hershey::::fortune500::corporate_logos/128_128/Hershey.png::http://www.hersheys.com::http://en.wikipedia.org/wiki/The_Hershey_Company::1000::56,1,207,208::
 ::40409::Frontier Oil::::fortune500::corporate_logos/128_128/FrontierOil.png::http://www.frontieroil.com::http://en.wikipedia.org/wiki/Frontier_Oil::1000::1::
 ::40410::Jacobs Engineering Group::::fortune500::corporate_logos/128_128/Jacobs.png::http://www.jacobs.com::http://en.wikipedia.org/wiki/Jacobs_Engineering_Group::1000::1::
 ::40411::Shaw Group::::fortune500::corporate_logos/128_128/Shaw_Group.png::http://www.shawgrp.com::http://en.wikipedia.org/wiki/Shaw_Group::1000::1::
 ::40412::CB Richard Ellis Group::::fortune500::corporate_logos/128_128/CBRE.png::http://www.cbre.com::http://en.wikipedia.org/wiki/CB_Richard_Ellis_Group::1000::1::
-::40413::DuPont::::fortune500::corporate_logos/128_128/DuPont.png::http://www.dupont.com::http://en.wikipedia.org/wiki/DuPont::1000::1::
+::40413::DuPont::::fortune500::corporate_logos/128_128/DuPont.png::http://www.dupont.com::http://en.wikipedia.org/wiki/DuPont::1000::56,1,206::
 ::40414::General Cable::::fortune500::corporate_logos/128_128/GeneralCable.png::http://www.generalcable.com::http://en.wikipedia.org/wiki/General_Cable::1000::1::
 ::40415::Amgen::::fortune500::corporate_logos/128_128/Amgen.png::http://www.amgen.com::http://en.wikipedia.org/wiki/Amgen::1000::1::
 ::40416::Thermo Fisher Scientific::::fortune500::corporate_logos/128_128/ThermoFisher.png::http://www.thermofisher.com::http://en.wikipedia.org/wiki/Thermo_Fisher_Scientific::1000::1::
 ::40417::Corning::::fortune500::corporate_logos/128_128/Corning.png::http://www.corning.com::http://en.wikipedia.org/wiki/Corning_Incorporated::1000::1::
-::40418::Thrivent Financial for Lutherans::::fortune500::corporate_logos/128_128/Thrivent.png::http://www.thrivent.com::http://en.wikipedia.org/wiki/Thrivent_Financial_for_Lutherans::1000::1::
-::40419::Kellogg::::fortune500::corporate_logos/128_128/Kellogg.png::http://www.kelloggcompany.com::http://en.wikipedia.org/wiki/Kellogg_Company::1000::1::
-::40420::World Fuel Services::::fortune500::corporate_logos/128_128/WorldFuelServices.png::http://www.wfscorp.com::http://en.wikipedia.org/wiki/World_Fuel_Services::1000::1::
+::40418::Thrivent Financial for Lutherans::::fortune500::corporate_logos/128_128/Thrivent.png::http://www.thrivent.com::http://en.wikipedia.org/wiki/Thrivent_Financial_for_Lutherans::1000::56,1,202::
+::40419::Kellogg::::fortune500::corporate_logos/128_128/Kellogg.png::http://www.kelloggcompany.com::http://en.wikipedia.org/wiki/Kellogg_Company::1000::56,1,207,208::
+::40420::World Fuel Services::::fortune500::corporate_logos/128_128/WorldFuelServices.png::http://www.wfscorp.com::http://en.wikipedia.org/wiki/World_Fuel_Services::1000::199,56,1::
 ::40421::Rockwell Automation::::fortune500::corporate_logos/128_128/RockwellAutomation.png::http://www.rockwellautomation.com::http://en.wikipedia.org/wiki/Rockwell_Automation::1000::1::
 ::40422::Navistar International::::fortune500::corporate_logos/128_128/Navistar.png::http://www.navistar.com::http://en.wikipedia.org/wiki/Navistar_International::1000::1::
 ::40423::Norfolk Southern::::fortune500::corporate_logos/128_128/Norfolk_Southern.png::http://www.nscorp.com::http://en.wikipedia.org/wiki/Norfolk_Southern::1000::1::
@@ -1402,28 +1414,28 @@
 ::40425::Viacom::::fortune500::corporate_logos/128_128/Viacom.png::http://www.viacom.com::http://en.wikipedia.org/wiki/Viacom::1000::1::
 ::40426::Applied Materials::::fortune500::corporate_logos/128_128/Applied_Materials.png::http://www.appliedmaterials.com::http://en.wikipedia.org/wiki/Applied_Materials::1000::1::
 ::40427::Tech Data::::fortune500::corporate_logos/128_128/TechData.png::http://www.techdata.com::http://en.wikipedia.org/wiki/Tech_Data::1000::1::
-::40428::Casey's General Stores::::fortune500::corporate_logos/128_128/Caseys.png::http://www.caseys.com::http://en.wikipedia.org/wiki/Casey's_General_Stores::1000::1::
-::40429::Monsanto::::fortune500::corporate_logos/128_128/Monsanto.png::http://www.monsanto.com::http://en.wikipedia.org/wiki/Monsanto::1000::1::
+::40428::Casey's General Stores::::fortune500::corporate_logos/128_128/Caseys.png::http://www.caseys.com::http://en.wikipedia.org/wiki/Casey's_General_Stores::1000::56,1,207,208,205::
+::40429::Monsanto::::fortune500::corporate_logos/128_128/Monsanto.png::http://www.monsanto.com::http://en.wikipedia.org/wiki/Monsanto::1000::56,1,206,208::
 ::40430::Tutor Perini::::fortune500::corporate_logos/128_128/TutorPerini.png::http://www.tutorperini.com::http://en.wikipedia.org/wiki/Tutor_Perini::1000::1::
 ::40431::ArvinMeritor::::fortune500::corporate_logos/128_128/ArvinMeritor.png::http://www.arvinmeritor.com::http://en.wikipedia.org/wiki/ArvinMeritor::1000::1::
-::40432::Dominion Resources::::fortune500::corporate_logos/128_128/Dominion.png::http://www.dom.com::http://en.wikipedia.org/wiki/Dominion_Resources::1000::1::
+::40432::Dominion Resources::::fortune500::corporate_logos/128_128/Dominion.png::http://www.dom.com::http://en.wikipedia.org/wiki/Dominion_Resources::1000::199,56,1::
 ::40433::Raytheon::::fortune500::corporate_logos/128_128/Raytheon.png::http://www.raytheon.com::http://en.wikipedia.org/wiki/Raytheon::1000::1::
-::40434::Winn-Dixie Stores::::fortune500::corporate_logos/128_128/WinnDixie.png::http://www.winndixiegrocerystores.com::http://en.wikipedia.org/wiki/Winn-Dixie::1000::1::
+::40434::Winn-Dixie Stores::::fortune500::corporate_logos/128_128/WinnDixie.png::http://www.winndixiegrocerystores.com::http://en.wikipedia.org/wiki/Winn-Dixie::1000::56,1,207,208,205::
 ::40435::NRG Energy::::fortune500::corporate_logos/128_128/NRG.png::http://www.nrgenergy.com::http://en.wikipedia.org/wiki/NRG_Energy::1000::1::
 ::40436::Oshkosh::::fortune500::corporate_logos/128_128/Oshkosh.png::http://www.oshkoshcorporation.com::http://en.wikipedia.org/wiki/Oshkosh_Corporation::1000::1::
-::40437::Hormel Foods::::fortune500::corporate_logos/128_128/Hormel.png::http://www.hormel.com::http://en.wikipedia.org/wiki/Hormel_Foods::1000::1::
-::40438::U.S. Bancorp::::fortune500::corporate_logos/128_128/USBank.png::http://www.usbank.com::http://en.wikipedia.org/wiki/U.S._Bancorp::1000::1::
-::40439::Crown Holdings::::fortune500::corporate_logos/128_128/Crown_Holdings.png::http://www.crowncork.com::http://en.wikipedia.org/wiki/Crown_Holdings::1000::1::
+::40437::Hormel Foods::::fortune500::corporate_logos/128_128/Hormel.png::http://www.hormel.com::http://en.wikipedia.org/wiki/Hormel_Foods::1000::56,1,208::
+::40438::U.S. Bancorp::::fortune500::corporate_logos/128_128/USBank.png::http://www.usbank.com::http://en.wikipedia.org/wiki/U.S._Bancorp::1000::201,1,202::
+::40439::Crown Holdings::::fortune500::corporate_logos/128_128/Crown_Holdings.png::http://www.crowncork.com::http://en.wikipedia.org/wiki/Crown_Holdings::1000::56,1,202::
 ::40440::Commercial Metals::::fortune500::corporate_logos/128_128/Commercial_Metals.png::http://www.commercialmetals.com::http://en.wikipedia.org/wiki/Commercial_Metals::1000::1::
-::40441::Aetna::::fortune500::corporate_logos/128_128/Aetna.png::http://www.aetna.com::http://en.wikipedia.org/wiki/Aetna::1000::1::
-::40442::Progress Energy::::fortune500::corporate_logos/128_128/Progress_Energy.png::http://www.progress-energy.com::http://en.wikipedia.org/wiki/Progress_Energy_Inc::1000::1::
+::40441::Aetna::::fortune500::corporate_logos/128_128/Aetna.png::http://www.aetna.com::http://en.wikipedia.org/wiki/Aetna::1000::56,1,204::
+::40442::Progress Energy::::fortune500::corporate_logos/128_128/Progress_Energy.png::http://www.progress-energy.com::http://en.wikipedia.org/wiki/Progress_Energy_Inc::1000::199,1::
 ::40443::CA::::fortune500::corporate_logos/128_128/CA.png::http://www.ca.com::http://en.wikipedia.org/wiki/CA_Technologies::1000::1::
-::40444::Autoliv::::fortune500::corporate_logos/128_128/Autoliv.png::http://www.autoliv.com::http://en.wikipedia.org/wiki/Autoliv::1000::1::
-::40445::Coventry Health Care::::fortune500::corporate_logos/128_128/Coventry_Health_Care.png::http://www.cvty.com::http://en.wikipedia.org/wiki/Coventry_Health_Care::1000::1::
-::40446::The Dow Chemical Company::::fortune500::corporate_logos/128_128/DowChemical.png::http://www.dow.com::http://en.wikipedia.org/wiki/Dow_Chemical_Company::1000::1::
+::40444::Autoliv::::fortune500::corporate_logos/128_128/Autoliv.png::http://www.autoliv.com::http://en.wikipedia.org/wiki/Autoliv::1000::56,1,200::
+::40445::Coventry Health Care::::fortune500::corporate_logos/128_128/Coventry_Health_Care.png::http://www.cvty.com::http://en.wikipedia.org/wiki/Coventry_Health_Care::1000::56,1,204::
+::40446::The Dow Chemical Company::::fortune500::corporate_logos/128_128/DowChemical.png::http://www.dow.com::http://en.wikipedia.org/wiki/Dow_Chemical_Company::1000::56,1,206::
 ::40447::Kimberly-Clark::::fortune500::corporate_logos/128_128/KimberlyClark.png::http://www.kimberly-clark.com::http://en.wikipedia.org/wiki/Kimberly-Clark::1000::1::
-::40448::Avis Budget Group::::fortune500::corporate_logos/128_128/AvisBudget.png::http://www.avisbudgetgroup.com::http://en.wikipedia.org/wiki/Avis_Budget_Group::1000::1::
-::40449::Hewlett-Packard (10)::::fortune500::corporate_logos/128_128/HewlettPackard.png::http://www.hp.com::http://en.wikipedia.org/wiki/Hewlett_Packard::1000::1::
+::40448::Avis Budget Group::::fortune500::corporate_logos/128_128/AvisBudget.png::http://www.avisbudgetgroup.com::http://en.wikipedia.org/wiki/Avis_Budget_Group::1000::1,200::
+::40449::Hewlett-Packard (10)::::fortune500::corporate_logos/128_128/HewlettPackard.png::http://www.hp.com::http://en.wikipedia.org/wiki/Hewlett_Packard::1000::198,1::
 ::40450::URS::::fortune500::corporate_logos/128_128/URS.png::http://www.urscorp.com::http://en.wikipedia.org/wiki/URS_Corp.::1000::1::
 ::40451::Sealed Air::::fortune500::corporate_logos/128_128/SealedAir.png::http://www.sealedair.com::http://en.wikipedia.org/wiki/Sealed_Air::1000::1::
 ::40452::CBS::::fortune500::corporate_logos/128_128/CBS.png::http://www.cbs.com::http://en.wikipedia.org/wiki/CBS::1000::1::
@@ -1431,52 +1443,52 @@
 ::40454::Western Union::::fortune500::corporate_logos/128_128/WesternUnion.png::http://www.westernunion.com::http://en.wikipedia.org/wiki/Western_Union::1000::1::
 ::40455::Genuine Parts::::fortune500::corporate_logos/128_128/Genuine_Parts.png::http://www.genpt.com::http://en.wikipedia.org/wiki/Genuine_Parts::1000::1::
 ::40456::HCA::::fortune500::corporate_logos/128_128/HCA.png::http://www.hcahealthcare.com::http://en.wikipedia.org/wiki/Hospital_Corporation_of_America::1000::1::
-::40457::PNC Financial Services Group::::fortune500::corporate_logos/128_128/PNC.png::http://www.pnc.com::http://en.wikipedia.org/wiki/PNC_Financial_Services_Group::1000::1::
+::40457::PNC Financial Services Group::::fortune500::corporate_logos/128_128/PNC.png::http://www.pnc.com::http://en.wikipedia.org/wiki/PNC_Financial_Services_Group::1000::56,1,202::
 ::40458::J.C. Penney::::fortune500::corporate_logos/128_128/JCPenney.png::http://www.jcpenney.com::http://en.wikipedia.org/wiki/J.C._Penney::1000::1::
 ::40459::Ecolab::::fortune500::corporate_logos/128_128/Ecolab.png::http://www.ecolab.com::http://en.wikipedia.org/wiki/Ecolab::1000::1::
-::40460::Western Refining::::fortune500::corporate_logos/128_128/Western_Refining.png::http://www.wnr.com::http://en.wikipedia.org/wiki/Western_Refining::1000::1::
+::40460::Western Refining::::fortune500::corporate_logos/128_128/Western_Refining.png::http://www.wnr.com::http://en.wikipedia.org/wiki/Western_Refining::1000::199,1::
 ::40461::Morgan Stanley::::fortune500::corporate_logos/128_128/MorganStanley.png::http://www.morganstanley.com::http://en.wikipedia.org/wiki/Morgan_Stanley::1000::1::
 ::40462::Las Vegas Sands::::fortune500::corporate_logos/128_128/LasVegasSands.png::http://www.lasvegassands.com::http://en.wikipedia.org/wiki/Las_Vegas_Sands::1000::1::
-::40463::Praxair::::fortune500::corporate_logos/128_128/Praxair.png::http://www.praxair.com::http://en.wikipedia.org/wiki/Praxair::1000::1::
+::40463::Praxair::::fortune500::corporate_logos/128_128/Praxair.png::http://www.praxair.com::http://en.wikipedia.org/wiki/Praxair::1000::56,1,206,208::
 ::40464::Delta Air Lines::::fortune500::corporate_logos/128_128/Delta.png::http://www.delta.com::http://en.wikipedia.org/wiki/Delta_Air_Lines::1000::1::
-::40465::BJ's Wholesale Club::::fortune500::corporate_logos/128_128/BJs.png::http://www.bjs.com::http://en.wikipedia.org/wiki/BJ's_Wholesale_Club::1000::1::
-::40466::Fifth Third Bancorp::::fortune500::corporate_logos/128_128/Fifth_Third.png::http://www.53.com::http://en.wikipedia.org/wiki/Fifth_Third_Bancorp::1000::1::
-::40467::Lowe's::::fortune500::corporate_logos/128_128/Lowes.png::http://www.lowes.com::http://en.wikipedia.org/wiki/Lowes::1000::1::
-::40468::Sears Holdings Corporation::::fortune500::corporate_logos/128_128/SearsHoldings.png::http://www.searsholdings.com::http://en.wikipedia.org/wiki/Sears_Holdings_Corporation::1000::1::
-::40469::Campbell Soup::::fortune500::corporate_logos/128_128/CampbellSoup.png::http://www.campbellsoupcompany.com::http://en.wikipedia.org/wiki/Campbell_Soup::1000::1::
-::40470::BB&T Corp.::::fortune500::corporate_logos/128_128/BBT.png::http://www.bbt.com::http://en.wikipedia.org/wiki/BB&T_Corp.::1000::1::
-::40471::Costco Wholesale::::fortune500::corporate_logos/128_128/Costco.png::http://www.costco.com::http://en.wikipedia.org/wiki/Costco::1000::1::
-::40472::ConocoPhillips (6)::::fortune500::corporate_logos/128_128/ConocoPhillips.png::http://www.conocophillips.com::http://en.wikipedia.org/wiki/ConocoPhillips::1000::1::
-::40473::Becton Dickinson::::fortune500::corporate_logos/128_128/Becton_Dickinson.png::http://www.bd.com::http://en.wikipedia.org/wiki/Becton_Dickinson::1000::1::
-::40474::Charles Schwab::::fortune500::corporate_logos/128_128/CharlesSchwab.png::https://www.schwab.com::http://en.wikipedia.org/wiki/Charles_Schwab::1000::1::
-::40475::Health Management Associates::::fortune500::corporate_logos/128_128/HMA.png::http://www.hma.com::http://en.wikipedia.org/wiki/Health_Management_Associates_(Florida_company)::1000::1::
-::40476::Genzyme::::fortune500::corporate_logos/128_128/Genzyme.png::http://www.genzyme.com::http://en.wikipedia.org/wiki/Genzyme::1000::1::
+::40465::BJ's Wholesale Club::::fortune500::corporate_logos/128_128/BJs.png::http://www.bjs.com::http://en.wikipedia.org/wiki/BJ's_Wholesale_Club::1000::56,1,207,208,205::
+::40466::Fifth Third Bancorp::::fortune500::corporate_logos/128_128/Fifth_Third.png::http://www.53.com::http://en.wikipedia.org/wiki/Fifth_Third_Bancorp::1000::56,201,1,202::
+::40467::Lowe's::::fortune500::corporate_logos/128_128/Lowes.png::http://www.lowes.com::http://en.wikipedia.org/wiki/Lowes::1000::56,1,205::
+::40468::Sears Holdings Corporation::::fortune500::corporate_logos/128_128/SearsHoldings.png::http://www.searsholdings.com::http://en.wikipedia.org/wiki/Sears_Holdings_Corporation::1000::56,1,202,205::
+::40469::Campbell Soup::::fortune500::corporate_logos/128_128/CampbellSoup.png::http://www.campbellsoupcompany.com::http://en.wikipedia.org/wiki/Campbell_Soup::1000::56,1,207,208::
+::40470::BB&T Corp.::::fortune500::corporate_logos/128_128/BBT.png::http://www.bbt.com::http://en.wikipedia.org/wiki/BB&T_Corp.::1000::56,201,1,202::
+::40471::Costco Wholesale::::fortune500::corporate_logos/128_128/Costco.png::http://www.costco.com::http://en.wikipedia.org/wiki/Costco::1000::56,1,207,205::
+::40472::ConocoPhillips (6)::::fortune500::corporate_logos/128_128/ConocoPhillips.png::http://www.conocophillips.com::http://en.wikipedia.org/wiki/ConocoPhillips::1000::199,56,1::
+::40473::Becton Dickinson::::fortune500::corporate_logos/128_128/Becton_Dickinson.png::http://www.bd.com::http://en.wikipedia.org/wiki/Becton_Dickinson::1000::56,198,1,204::
+::40474::Charles Schwab::::fortune500::corporate_logos/128_128/CharlesSchwab.png::https://www.schwab.com::http://en.wikipedia.org/wiki/Charles_Schwab::1000::56,1,202::
+::40475::Health Management Associates::::fortune500::corporate_logos/128_128/HMA.png::http://www.hma.com::http://en.wikipedia.org/wiki/Health_Management_Associates_(Florida_company)::1000::56,1,204::
+::40476::Genzyme::::fortune500::corporate_logos/128_128/Genzyme.png::http://www.genzyme.com::http://en.wikipedia.org/wiki/Genzyme::1000::56,1,206::
 ::40477::The Coca-Cola Company::::fortune500::corporate_logos/128_128/The_Coca-Cola_Company.png::http://www.thecoca-colacompany.com::http://en.wikipedia.org/wiki/The_Coca-Cola_Company::1000::1::
 ::40478::Black & Decker::::fortune500::corporate_logos/128_128/BlackDecker.png::http://www.blackanddecker.com::http://en.wikipedia.org/wiki/Black_&_Decker::1000::1::
 ::40479::Baker Hughes::::fortune500::corporate_logos/128_128/Baker_Hughes.png::http://www.bakerhughes.com::http://en.wikipedia.org/wiki/Baker_Hughes::1000::1::
-::40480::Sonic Automotive::::fortune500::corporate_logos/128_128/Sonic_Automotive.png::http://www.sonicautomotive.com::http://en.wikipedia.org/wiki/Sonic_Automotive::1000::1::
-::40481::Microsoft::::fortune500::corporate_logos/128_128/Microsoft.png::http://www.microsoft.com::http://en.wikipedia.org/wiki/Microsoft::1000::1::
+::40480::Sonic Automotive::::fortune500::corporate_logos/128_128/Sonic_Automotive.png::http://www.sonicautomotive.com::http://en.wikipedia.org/wiki/Sonic_Automotive::1000::1,200::
+::40481::Microsoft::::fortune500::corporate_logos/128_128/Microsoft.png::http://www.microsoft.com::http://en.wikipedia.org/wiki/Microsoft::1000::198,1::
 ::40482::Quest Diagnostics::::fortune500::corporate_logos/128_128/Quest_Diagnostics.png::http://www.questdiagnostics.com::http://en.wikipedia.org/wiki/Quest_Diagnostics::1000::1::
-::40483::Philip Morris International::::fortune500::corporate_logos/128_128/PhilipMorris.png::http://www.pmi.com::http://en.wikipedia.org/wiki/Philip_Morris_International::1000::1::
-::40484::Big Lots::::fortune500::corporate_logos/128_128/BigLots.png::http://www.biglots.com::http://en.wikipedia.org/wiki/Big_Lots::1000::1::
-::40485::Colgate-Palmolive::::fortune500::corporate_logos/128_128/Colgate.png::http://www.colgate.com::http://en.wikipedia.org/wiki/Colgate-Palmolive::1000::1::
-::40486::Dollar General::::fortune500::corporate_logos/128_128/DollarGeneral.png::http://www.dg.com::http://en.wikipedia.org/wiki/Dollar_General::1000::1::
+::40483::Philip Morris International::::fortune500::corporate_logos/128_128/PhilipMorris.png::http://www.pmi.com::http://en.wikipedia.org/wiki/Philip_Morris_International::1000::56,1,207,206::
+::40484::Big Lots::::fortune500::corporate_logos/128_128/BigLots.png::http://www.biglots.com::http://en.wikipedia.org/wiki/Big_Lots::1000::56,1,207,205::
+::40485::Colgate-Palmolive::::fortune500::corporate_logos/128_128/Colgate.png::http://www.colgate.com::http://en.wikipedia.org/wiki/Colgate-Palmolive::1000::56,1,207,206,208::
+::40486::Dollar General::::fortune500::corporate_logos/128_128/DollarGeneral.png::http://www.dg.com::http://en.wikipedia.org/wiki/Dollar_General::1000::56,1,205::
 ::40487::CSX::::fortune500::corporate_logos/128_128/CSX.png::http://www.csx.com::http://en.wikipedia.org/wiki/CSX::1000::1::
 ::40488::AbitibiBowater::::fortune500::corporate_logos/128_128/AbitibiBowater.png::http://www.abitibibowater.com::http://en.wikipedia.org/wiki/AbitibiBowater::1000::1::
 ::40489::Medtronic::::fortune500::corporate_logos/128_128/Medtronic.png::http://www.medtronic.com::http://en.wikipedia.org/wiki/Medtronic::1000::1::
-::40490::Pantry::::fortune500::corporate_logos/128_128/Pantry.png::http://www.thepantry.com::http://en.wikipedia.org/wiki/The_Pantry::1000::1::
-::40491::Chesapeake Energy::::fortune500::corporate_logos/128_128/Chesapeake_Energy.png::http://www.chk.com::http://en.wikipedia.org/wiki/Chesapeake_Energy::1000::1::
-::40492::Energy Transfer Equity::::fortune500::corporate_logos/128_128/Energy_Transfer_Equity.png::http://www.energytransfer.com::http://en.wikipedia.org/wiki/Energy_Transfer_Equity::1000::1::
+::40490::Pantry::::fortune500::corporate_logos/128_128/Pantry.png::http://www.thepantry.com::http://en.wikipedia.org/wiki/The_Pantry::1000::56,1,207,205::
+::40491::Chesapeake Energy::::fortune500::corporate_logos/128_128/Chesapeake_Energy.png::http://www.chk.com::http://en.wikipedia.org/wiki/Chesapeake_Energy::1000::199,1::
+::40492::Energy Transfer Equity::::fortune500::corporate_logos/128_128/Energy_Transfer_Equity.png::http://www.energytransfer.com::http://en.wikipedia.org/wiki/Energy_Transfer_Equity::1000::199,1::
 ::40493::Williams::::fortune500::corporate_logos/128_128/Williams.png::http://www.williams.com::http://en.wikipedia.org/wiki/Williams_Companies::1000::1::
-::40494::Visa::::fortune500::corporate_logos/128_128/Visa.png::http://www.visa.com::http://en.wikipedia.org/wiki/Visa_Inc::1000::1::
+::40494::Visa::::fortune500::corporate_logos/128_128/Visa.png::http://www.visa.com::http://en.wikipedia.org/wiki/Visa_Inc::1000::56,1,202::
 ::40495::SPX::::fortune500::corporate_logos/128_128/SPX.png::http://www.spx.com::http://en.wikipedia.org/wiki/SPX_Corporation::1000::1::
-::40496::Computer Sciences::::fortune500::corporate_logos/128_128/CSC.png::http://www.csc.com::http://en.wikipedia.org/wiki/Computer_Sciences_Corporation::1000::1::
-::40497::Advanced Micro Devices::::fortune500::corporate_logos/128_128/AMD.png::http://www.amd.com::http://en.wikipedia.org/wiki/Advanced_Micro_Devices::1000::1::
-::40498::Murphy Oil::::fortune500::corporate_logos/128_128/MurphyOil.png::http://www.murphyoilcorp.com::http://en.wikipedia.org/wiki/Murphy_Oil::1000::1::
+::40496::Computer Sciences::::fortune500::corporate_logos/128_128/CSC.png::http://www.csc.com::http://en.wikipedia.org/wiki/Computer_Sciences_Corporation::1000::56,198,1::
+::40497::Advanced Micro Devices::::fortune500::corporate_logos/128_128/AMD.png::http://www.amd.com::http://en.wikipedia.org/wiki/Advanced_Micro_Devices::1000::198,1::
+::40498::Murphy Oil::::fortune500::corporate_logos/128_128/MurphyOil.png::http://www.murphyoilcorp.com::http://en.wikipedia.org/wiki/Murphy_Oil::1000::199,56,1::
 ::40499::Terex::::fortune500::corporate_logos/128_128/Terex.png::http://www.terex.com::http://en.wikipedia.org/wiki/Terex::1000::1::
 ::40500::Masco::::fortune500::corporate_logos/128_128/Masco.png::http://www.masco.com::http://en.wikipedia.org/wiki/Masco::1000::1::
-::40501::Constellation Energy::::fortune500::corporate_logos/128_128/ConstellationEnergy.png::http://www.constellation.com::http://en.wikipedia.org/wiki/Constellation_Energy::1000::1::
-::50000::Steven Chu::::executive::government_logos/executives/64_64/14_SecretaryOfEnergy.png::http://www.doe.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Energy::140::58::
+::40501::Constellation Energy::::fortune500::corporate_logos/128_128/ConstellationEnergy.png::http://www.constellation.com::http://en.wikipedia.org/wiki/Constellation_Energy::1000::199,1::
+::50000::Steven Chu::::executive::government_logos/executives/64_64/14_SecretaryOfEnergy.png::http://www.doe.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Energy::140::199,58::
 ::50001::Eric Holder::::executive::government_logos/executives/64_64/06_AttorneyGeneral.png::http://www.usdoj.gov::http://en.wikipedia.org/wiki/United_States_Attorney_General::60::58::
 ::50002::Janet Napolitano::::executive::government_logos/executives/64_64/17_SecretaryOfHomelandSecurity.png::http://www.dhs.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Homeland_Security::170::58::
 ::50003::Hilda Solis::::executive::government_logos/executives/64_64/10_SecretaryOfLabor.png::http://www.dol.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Labor::100::58::
@@ -2033,7 +2045,7 @@
 ::101042::Signature Dark Roast Coffee::Krispy Kreme Doughnuts::::product_logos/128_128/KrispyKreme_Coffee_01.png::::::1000::192,190::
 ::101043::Signature House Decaf Coffee::Krispy Kreme Doughnuts::::product_logos/128_128/KrispyKreme_Coffee_01.png::::::1000::192,190::
 ::101044::Make::::::media_logos/128_128/Mag_Make.png::http://makezine.com::http://en.wikipedia.org/wiki/Make_Magazine::1000::68,4::
-::101045::Wendy's::::restaurant::restaurants/wendys/Logo_Wendys.png::http://www.wendys.com::http://en.wikipedia.org/wiki/Wendys::1000::194,196::
+::101045::Wendy's::::restaurant::restaurants/wendys/Logo_Wendys.png::http://www.wendys.com::http://en.wikipedia.org/wiki/Wendys::1000::194,1,196::
 ::101046::Dave's Hot 'N Juicy 1/4 lb. Single::Wendy's::::restaurants/wendys/HamburgerQuarterPoundSingle.png::::::1000::194::
 ::101047::Dave's Hot 'N Juicy 1/2 lb. Double::Wendy's::::restaurants/wendys/HamburgerHalfPoundDouble.png::::::1000::194::
 ::101048::Dave's Hot 'N Juicy 3/4 lb. Triple::Wendy's::::restaurants/wendys/HamburgerThreeQuarterPoundTriple.png::::::1000::194::
@@ -2077,7 +2089,7 @@
 ::101086::Frosty Parfait::Wendy's::::restaurants/wendys/FrostyParfait.png::::::1000::194::
 ::101087::Frosty Shake::Wendy's::::restaurants/wendys/FrostyShake.png::::::1000::194::
 ::101088::Frosty Float::Wendy's::::restaurants/wendys/FrostyFloat.png::::::1000::194::
-::101089::Arby's::::restaurant::restaurants/arbys/Logo_Arbys.png::::::999::195,196::
+::101089::Arby's::::restaurant::restaurants/arbys/Logo_Arbys.png::::::999::195,1,196::
 ::101090::Egg & Cheese Biscuits::Arby's::::restaurants/arbys/BreakfastBaconEggAndCheeseBiscuit.png::::::1000::195::
 ::101091::Egg & Cheese Croissants::Arby's::::restaurants/arbys/BreakfastBaconEggAndCheeseCroissant.png::::::1000::195::
 ::101092::Chicken Biscuit::Arby's::::restaurants/arbys/BreakfastChickenBiscuit.png::::::1000::195::
@@ -2133,3 +2145,7 @@
 ::101142::Steakhouse Onion Rings::Arby's::::restaurants/arbys/SidesSteakhouseOnionRings.png::::::1000::195::
 ::101143::Roast Turkey & Swiss Wrap::Arby's::::restaurants/arbys/WrapRoastTurkeyAndSwiss.png::::::1000::195::
 ::101144::Roast Turkey Ranch & Bacon Wrap::Arby's::::restaurants/arbys/WrapRoastTurkeyRanchAndBacon.png::::::1000::195::
+::101145::Chrome::Google::::product_logos/128_128/Browser_Chrome.png::http://www.google.com/chrome::http://en.wikipedia.org/wiki/Google_Chrome::1000::197,198::
+::101146::Internet Explorer::Microsoft::::product_logos/128_128/Browser_IE.png::http://windows.microsoft.com/en-us/internet-explorer/products/ie/home::http://en.wikipedia.org/wiki/Internet_Explorer::1000::197,198::
+::101147::Safari::Applle::::product_logos/128_128/Browser_Safari.png::http://www.apple.com/safari/::http://en.wikipedia.org/wiki/Safari_(web_browser)::1000::197,198::
+::101148::Firefox::Mozilla::::product_logos/128_128/Browser_Firefox.png::http://www.mozilla.org/en-US/firefox/new/::http://en.wikipedia.org/wiki/Firefox::1000::197,198::
