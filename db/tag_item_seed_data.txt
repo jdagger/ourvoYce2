@@ -1,4 +1,4 @@
-//Created: 2012-02-29 01:37:48 -0500
+//Created: 2012-03-02 00:28:38 -0500
 ##TAGS##
 //id, path, friendly_name, popular, hot_topic
 ::1::corporation::Corporation::false::false::
@@ -194,6 +194,8 @@
 ::192::krispy_kreme::Krispy Kreme Doughnuts::false::false::
 ::193::usda::USDA::false::true::
 ::194::wendys::Wendy's::true::false::
+::195::arbys::Arby's::true::false::
+::196::restaurants::Restaurants::true::false::
 ##ITEMS##
 //id, name, description, item_type, logo, website, wikipedia, default_order, tags
 ::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::1000::4,71,181::
@@ -449,8 +451,8 @@
 ::20010::Mitch McConnell::::senate::government_logos/senators/64_64/M000355.jpg::http://mcconnell.senate.gov::http://en.wikipedia.org/wiki/Mitch_McConnell::1000::60::
 ::20011::Orrin Hatch::::senate::government_logos/senators/64_64/H000338.jpg::http://hatch.senate.gov::http://en.wikipedia.org/wiki/Orrin_Hatch::1000::60::
 ::20012::Charles Schumer::::senate::government_logos/senators/64_64/S000148.jpg::http://schumer.senate.gov::http://en.wikipedia.org/wiki/Charles_Schumer::1000::60::
-::20013::John McCain::(202) 224-2235::senate::government_logos/senators/64_64/M000303.jpg::http://mccain.senate.gov::http://en.wikipedia.org/wiki/John_McCain::1000::60,79,7::
-::20014::Jon Kyl::(202) 224-4521::senate::government_logos/senators/64_64/K000352.jpg::http://kyl.senate.gov::http://en.wikipedia.org/wiki/Jon_Kyl::1000::60,79,7::
+::20013::John McCain::(202) 224-2235::senate::government_logos/senators/64_64/M000303.jpg::http://mccain.senate.gov::http://en.wikipedia.org/wiki/John_McCain::1000::60,7,79::
+::20014::Jon Kyl::(202) 224-4521::senate::government_logos/senators/64_64/K000352.jpg::http://kyl.senate.gov::http://en.wikipedia.org/wiki/Jon_Kyl::1000::60,7,79::
 ::20015::Scott Brown::::senate::government_logos/senators/64_64/B001268.jpg::http://scottbrown.senate.gov::http://en.wikipedia.org/wiki/Scott_Brown::1000::60::
 ::20016::Patrick Leahy::::senate::government_logos/senators/64_64/L000174.jpg::http://leahy.senate.gov::http://en.wikipedia.org/wiki/Patrick_Leahy::1000::60::
 ::20017::Mark Begich::::senate::government_logos/senators/64_64/AK_2_Begich.png::http://begich.senate.gov::http://en.wikipedia.org/wiki/Mark_Begich::1000::6,60,73::
@@ -972,7 +974,7 @@
 ::30433::Nick Rahall::::house::government_logos/representatives/64_64/R000011.jpg::http://rahall.house.gov::http://en.wikipedia.org/wiki/Nick_Rahall::1000::59::
 ::30434::Jerry McNerney::::house::government_logos/representatives/64_64/M001166.jpg::http://mcnerney.house.gov::http://en.wikipedia.org/wiki/Jerry_McNerney::1000::59::
 ::30435::Bob Gibbs::::house::government_logos/representatives/64_64/OH18_Gibbs.png::http://gibbs.house.gov::http://en.wikipedia.org/wiki/Bob_Gibbs::1000::59::
-::40000::McDonald's::::fortune500::corporate_logos/128_128/McDonalds.png::http://www.mcdonalds.com::http://en.wikipedia.org/wiki/McDonald's::999::56,188,1::
+::40000::McDonald's::::fortune500::corporate_logos/128_128/McDonalds.png::http://www.mcdonalds.com::http://en.wikipedia.org/wiki/McDonald's::999::56,1,196,188::
 ::40001::Starwood Hotels & Resorts::::fortune500::corporate_logos/128_128/StarwoodHotels.png::http://www.starwoodhotels.com::http://en.wikipedia.org/wiki/Starwood_Hotels_&_Resorts::1000::1::
 ::40002::CVS Caremark::::fortune500::corporate_logos/128_128/CVS_Caremark.png::http://www.caremark.com::http://en.wikipedia.org/wiki/CVS_Caremark::1000::1::
 ::40003::CenterPoint Energy::::fortune500::corporate_logos/128_128/CenterPoint_Energy.png::http://www.centerpointenergy.com::http://en.wikipedia.org/wiki/CenterPoint_Energy::1000::1::
@@ -2031,7 +2033,7 @@
 ::101042::Signature Dark Roast Coffee::Krispy Kreme Doughnuts::::product_logos/128_128/KrispyKreme_Coffee_01.png::::::1000::192,190::
 ::101043::Signature House Decaf Coffee::Krispy Kreme Doughnuts::::product_logos/128_128/KrispyKreme_Coffee_01.png::::::1000::192,190::
 ::101044::Make::::::media_logos/128_128/Mag_Make.png::http://makezine.com::http://en.wikipedia.org/wiki/Make_Magazine::1000::68,4::
-::101045::Wendy's::::restaurant::restaurants/wendys/Logo_Wendys.png::http://www.wendys.com::http://en.wikipedia.org/wiki/Wendys::1000::194::
+::101045::Wendy's::::restaurant::restaurants/wendys/Logo_Wendys.png::http://www.wendys.com::http://en.wikipedia.org/wiki/Wendys::1000::194,196::
 ::101046::Dave's Hot 'N Juicy 1/4 lb. Single::Wendy's::::restaurants/wendys/HamburgerQuarterPoundSingle.png::::::1000::194::
 ::101047::Dave's Hot 'N Juicy 1/2 lb. Double::Wendy's::::restaurants/wendys/HamburgerHalfPoundDouble.png::::::1000::194::
 ::101048::Dave's Hot 'N Juicy 3/4 lb. Triple::Wendy's::::restaurants/wendys/HamburgerThreeQuarterPoundTriple.png::::::1000::194::
@@ -2075,3 +2077,59 @@
 ::101086::Frosty Parfait::Wendy's::::restaurants/wendys/FrostyParfait.png::::::1000::194::
 ::101087::Frosty Shake::Wendy's::::restaurants/wendys/FrostyShake.png::::::1000::194::
 ::101088::Frosty Float::Wendy's::::restaurants/wendys/FrostyFloat.png::::::1000::194::
+::101089::Arby's::::restaurant::restaurants/arbys/Logo_Arbys.png::::::999::195,196::
+::101090::Egg & Cheese Biscuits::Arby's::::restaurants/arbys/BreakfastBaconEggAndCheeseBiscuit.png::::::1000::195::
+::101091::Egg & Cheese Croissants::Arby's::::restaurants/arbys/BreakfastBaconEggAndCheeseCroissant.png::::::1000::195::
+::101092::Chicken Biscuit::Arby's::::restaurants/arbys/BreakfastChickenBiscuit.png::::::1000::195::
+::101093::Egg & Cheese Sourdoughs::Arby's::::restaurants/arbys/BreakfastHamEggAndCheeseSourdough.png::::::1000::195::
+::101094::Sausage Biscuit::Arby's::::restaurants/arbys/BreakfastSausageBiscuit.png::::::1000::195::
+::101095::Egg & Cheese Wraps::Arby's::::restaurants/arbys/BreakfastSausageEggAndCheeseWrap.png::::::1000::195::
+::101096::Sausage Gravy Biscuit::Arby's::::restaurants/arbys/BreakfastSausageGravyBiscuit.png::::::1000::195::
+::101097::Chicken Tenders::Arby's::::restaurants/arbys/ChickenTenders.png::::::1000::195::
+::101098::Apple Turnover::Arby's::::restaurants/arbys/DessertAppleTurnover.png::::::1000::195::
+::101099::Cherry Turnover::Arby's::::restaurants/arbys/DessertCherryTurnover.png::::::1000::195::
+::101100::Chocolate Chunk Cookies::Arby's::::restaurants/arbys/DessertChocolateChunkCookies.png::::::1000::195::
+::101101::Chocolate Turnover::Arby's::::restaurants/arbys/DessertChocolateTurnover.png::::::1000::195::
+::101102::Jamocha Cream Pie::Arby's::::restaurants/arbys/DessertJamochaCreamPie.png::::::1000::195::
+::101103::Outside-In Cinnamon Bites::Arby's::::restaurants/arbys/DessertOutsideInCinnamonBites.png::::::1000::195::
+::101104::Chocolate Shake::Arby's::::restaurants/arbys/DrinksChocolateShake.png::::::1000::195::
+::101105::Jamocha Shake::Arby's::::restaurants/arbys/DrinksJamochaShake.png::::::1000::195::
+::101106::Vanilla Shake::Arby's::::restaurants/arbys/DrinksVanillaShake.png::::::1000::195::
+::101107::Curly Fries::Arby's::::restaurants/arbys/FriesCurly.png::::::1000::191,195::
+::101108::Homestyle Fries::Arby's::::restaurants/arbys/FriesHomestyle.png::::::1000::191,195::
+::101109::Chopped Side Salad::Arby's::::restaurants/arbys/SaladChoppedSideSalad.png::::::1000::195::
+::101110::Crispy Chopped Farmhouse Salad::Arby's::::restaurants/arbys/SaladCrispyChoppedFarmhouseSalad.png::::::1000::195::
+::101111::Roast Chopped Farmhouse Salad::Arby's::::restaurants/arbys/SaladRoastFarmhouseSalad.png::::::1000::195::
+::101112::Arby-Q::Arby's::::restaurants/arbys/SandwichArbyQ.png::::::1000::195::
+::101113::Arby's Melt Sandwich::Arby's::::restaurants/arbys/SandwichArbysMelt.png::::::1000::195::
+::101114::Bacon Beef 'n Cheddar::Arby's::::restaurants/arbys/SandwichBaconBeefNCheddar.png::::::1000::195::
+::101115::Chicken Bacon & Swiss Sandwich::Arby's::::restaurants/arbys/SandwichChickenBaconAndSwissSandwich.png::::::1000::195::
+::101116::Chicken Cordon Bleu Sandwich::Arby's::::restaurants/arbys/SandwichChickenCordonBleu.png::::::1000::195::
+::101117::Beef 'n Cheddar::Arby's::::restaurants/arbys/SandwichClassicBeefNCheddar.png::::::1000::195::
+::101118::Roast Beef::Arby's::::restaurants/arbys/SandwichClassicRoastBeefSandwich.png::::::1000::195::
+::101119::Cravin' Chicken Sandwich::Arby's::::restaurants/arbys/SandwichCravinChickenSandwich.png::::::1000::195::
+::101120::Deluxe Bacon Cheddar::Arby's::::restaurants/arbys/SandwichDeluxeBaconCheddar.png::::::1000::195::
+::101121::French Dip & Swiss::Arby's::::restaurants/arbys/SandwichFrenchDipAndSwiss.png::::::1000::195::
+::101122::Jr Deluxe::Arby's::::restaurants/arbys/SandwichJuniorDeluxe.png::::::1000::195::
+::101123::Jr Chicken Sandwich::Arby's::::restaurants/arbys/SandwichJuniorChicken.png::::::1000::195::
+::101124::Jr Ham & Cheddar Sandwich::Arby's::::restaurants/arbys/SandwichJuniorHamAndCheddarSandwich.png::::::1000::195::
+::101125::Jr Pepper Jack::Arby's::::restaurants/arbys/SandwichJuniorPepperJack.png::::::1000::195::
+::101126::Jr Roast Beef Sandwich::Arby's::::restaurants/arbys/SandwichJuniorRoastBeefSandwich.png::::::1000::195::
+::101127::Philly::Arby's::::restaurants/arbys/SandwichPhilly.png::::::1000::195::
+::101128::Reuben::Arby's::::restaurants/arbys/SandwichReuben.png::::::1000::195::
+::101129::Roast Chicken Club Sandwich::Arby's::::restaurants/arbys/SandwichRoastChickenClubSandwich.png::::::1000::195::
+::101130::Roast Turkey & Swiss::Arby's::::restaurants/arbys/SandwichRoastTurkeyAndSwiss.png::::::1000::195::
+::101131::Roast Turkey Ranch & Bacon::Arby's::::restaurants/arbys/SandwichRoastTurkeyRanchAndBacon.png::::::1000::195::
+::101132::'Shroom & Swiss::Arby's::::restaurants/arbys/SandwichShroomAndSwiss.png::::::1000::195::
+::101133::Super Reuben::Arby's::::restaurants/arbys/SandwichSuperReuben.png::::::1000::195::
+::101134::Super Roast Beef::Arby's::::restaurants/arbys/SandwichSuperRoastBeef.png::::::1000::195::
+::101135::Three Cheese & Bacon::Arby's::::restaurants/arbys/SandwichThreeCheeseAndBacon.png::::::1000::195::
+::101136::Apple Slices::Arby's::::restaurants/arbys/SidesAppleSlices.png::::::1000::195::
+::101137::Jalapeno Bites::Arby's::::restaurants/arbys/SidesJalapenoBites.png::::::1000::195::
+::101138::KRAFT Macaroni & Cheese::Arby's::::restaurants/arbys/SidesKraftMacaroniAndCheese.png::::::1000::195::
+::101139::Loaded Potato Bites::Arby's::::restaurants/arbys/SidesLoadedPotatoBites.png::::::1000::195::
+::101140::Mozzarella Sticks::Arby's::::restaurants/arbys/SidesMozzarellaSticks.png::::::1000::195::
+::101141::Potato Cakes::Arby's::::restaurants/arbys/SidesPotatoCakes.png::::::1000::195::
+::101142::Steakhouse Onion Rings::Arby's::::restaurants/arbys/SidesSteakhouseOnionRings.png::::::1000::195::
+::101143::Roast Turkey & Swiss Wrap::Arby's::::restaurants/arbys/WrapRoastTurkeyAndSwiss.png::::::1000::195::
+::101144::Roast Turkey Ranch & Bacon Wrap::Arby's::::restaurants/arbys/WrapRoastTurkeyRanchAndBacon.png::::::1000::195::
