@@ -1,9 +1,9 @@
-//Created: 2012-03-02 11:26:07 -0500
+//Created: 2012-03-05 23:42:46 -0500
 ##TAGS##
 //id, path, friendly_name, popular, hot_topic
 ::1::corporation::Corporation::false::false::
 ::2::government::Government::false::false::
-::4::media::Media::false::true::
+::4::media::Media::false::false::
 ::5::alabama::Alabama::false::false::
 ::6::alaska::Alaska::false::false::
 ::7::arizona::Arizona::false::false::
@@ -37,7 +37,7 @@
 ::35::new_jersey::New Jersey::false::false::
 ::36::new_mexico::New Mexico::false::false::
 ::37::new_york::New York::false::false::
-::38::north_carolina::North Carolina::true::false::
+::38::north_carolina::North Carolina::false::false::
 ::39::north_dakota::North Dakota::false::false::
 ::40::ohio::Ohio::false::false::
 ::41::oklahoma::Oklahoma::false::false::
@@ -55,21 +55,21 @@
 ::53::west_virginia::West Virginia::false::false::
 ::54::wisconsin::Wisconsin::false::false::
 ::55::wyoming::Wyoming::false::false::
-::56::fortune500::Fortune 500::false::true::
-::57::agency::Agency::false::true::
-::58::executive::Executive::false::true::
-::59::house::House::false::true::
-::60::senate::Senate::false::true::
-::61::police::Police::false::false::
+::56::fortune500::Fortune 500::false::false::
+::57::agency::Agency::false::false::
+::58::executive::Executive::false::false::
+::59::house::House::false::false::
+::60::senate::Senate::false::false::
+::61::police::Police::true::false::
 ::62::american_jobs_act::American Jobs Act::false::false::
 ::63::nba_lockout::NBA Lockout::false::false::
 ::64::occupy_asheville::Occupy Asheville::false::false::
 ::65::occupy_oakland::Occupy Oakland::false::false::
 ::66::occupy_wallstreet::Occupy Wallstreet::false::false::
 ::67::super_committee::Super Committee::false::false::
-::68::magazine::Magazine::false::true::
-::69::newspaper::Newspaper::false::true::
-::70::radio::Radio::false::true::
+::68::magazine::Magazine::false::false::
+::69::newspaper::Newspaper::false::false::
+::70::radio::Radio::false::false::
 ::71::television::Television::false::false::
 ::72::ak_house::AK House::false::false::
 ::73::ak_senate::AK Senate::false::false::
@@ -173,89 +173,92 @@
 ::171::wv_senate::WV Senate::false::false::
 ::172::wy_house::WY House::false::false::
 ::173::wy_senate::WY Senate::false::false::
-::174::cnn::CNN::true::false::
-::175::foxnews::Fox News::true::false::
+::174::cnn::CNN::false::false::
+::175::foxnews::Fox News::false::false::
 ::176::hln::HLN::false::false::
-::177::msnbc::MSNBC::true::false::
-::178::nbcnews::NBC News::true::false::
-::179::cnbc::CNBC::true::false::
-::180::cbsnews::CBS News::true::false::
-::181::abcnews::ABC News::true::false::
-::182::pbs::PBS::true::false::
-::183::bloomberg::Bloomberg::true::false::
-::184::heavyhundred::Heavy Hundred (Radio)::true::false::
-::185::npr::National Public Radio::true::false::
-::186::pri::Public Radio International::true::false::
-::187::apm::American Public Media::true::false::
-::188::mcdonalds::McDonald's::true::false::
-::189::starbucks::Starbucks::true::false::
-::190::coffee::Coffee::false::true::
-::191::frenchfries::French Fries::false::true::
+::177::msnbc::MSNBC::false::false::
+::178::nbcnews::NBC News::false::false::
+::179::cnbc::CNBC::false::false::
+::180::cbsnews::CBS News::false::false::
+::181::abcnews::ABC News::false::false::
+::182::pbs::PBS::false::false::
+::183::bloomberg::Bloomberg::false::false::
+::184::heavyhundred::Heavy Hundred (Radio)::false::false::
+::185::npr::National Public Radio::false::false::
+::186::pri::Public Radio International::false::false::
+::187::apm::American Public Media::false::false::
+::188::mcdonalds::McDonald's::false::false::
+::189::starbucks::Starbucks::false::false::
+::190::coffee::Coffee::false::false::
+::191::frenchfries::French Fries::false::false::
 ::192::krispy_kreme::Krispy Kreme Doughnuts::false::false::
-::193::usda::USDA::false::true::
-::194::wendys::Wendy's::true::false::
-::195::arbys::Arby's::true::false::
-::196::restaurant::Restaurant::true::false::
-::197::browser::Browser::true::false::
-::198::tech::Tech::true::false::
-::199::energy::Energy::true::false::
-::200::auto::Auto::true::false::
-::201::bank::Bank::true::false::
-::202::financial::Financial::true::false::
-::203::insurance::Insurance::true::false::
-::204::healthcare::Health Care::true::false::
-::205::retailer::Retailer::true::false::
-::206::chemical::Chemical::true::false::
-::207::grocery::Grocery::true::false::
-::208::agribusiness::Agribusiness::true::false::
+::193::usda::USDA::false::false::
+::194::wendys::Wendy's::false::false::
+::195::arbys::Arby's::false::false::
+::196::restaurant::Restaurant::false::false::
+::197::browser::Browser::false::false::
+::198::tech::Tech::false::false::
+::199::energy::Energy::false::false::
+::200::auto::Auto::false::false::
+::201::bank::Bank::false::false::
+::202::financial::Financial::false::false::
+::203::insurance::Insurance::false::false::
+::204::healthcare::Health Care::false::false::
+::205::retailer::Retailer::false::false::
+::206::chemical::Chemical::false::false::
+::207::grocery::Grocery::false::false::
+::208::agribusiness::Agribusiness::false::false::
+::209::taco_bell::Taco Bell::false::false::
+::210::supreme_court::Supreme Court::false::false::
+::211::military::Military::false::false::
 ##ITEMS##
 //id, name, description, item_type, logo, website, wikipedia, default_order, tags
-::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::1000::4,71,181::
-::10002::CBS News::::media::media_logos/128_128/CBS.png::http://www.cbsnews.com::http://en.wikipedia.org/wiki/Cbs_news::1000::4,71,180::
-::10003::NBC News::::media::media_logos/128_128/NBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/NBC_News::1000::178,4,71::
-::10004::Fox News::::media::media_logos/128_128/FoxNews.png::http://www.foxnews.com::http://en.wikipedia.org/wiki/Fox_news::1000::175,4,71::
-::10005::CNN::::media::media_logos/128_128/CNN.png::http://www.cnn.com::http://en.wikipedia.org/wiki/Cnn::1000::174,4,71::
+::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::1000::71,4,181::
+::10002::CBS News::::media::media_logos/128_128/CBS.png::http://www.cbsnews.com::http://en.wikipedia.org/wiki/Cbs_news::1000::71,4,180::
+::10003::NBC News::::media::media_logos/128_128/NBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/NBC_News::1000::178,71,4::
+::10004::Fox News::::media::media_logos/128_128/FoxNews.png::http://www.foxnews.com::http://en.wikipedia.org/wiki/Fox_news::1000::175,71,4::
+::10005::CNN::::media::media_logos/128_128/CNN.png::http://www.cnn.com::http://en.wikipedia.org/wiki/Cnn::1000::174,71,4::
 ::10006::Heavy Hundred (Top 25)::::media::media_logos/128_128/HeavyHundred.png::http://www.talkers.com/2011hhindex.html::http://en.wikipedia.org/wiki/Talkers_Magazine::1000::70,4,184::
 ::10007::National Public Radio::::media::media_logos/128_128/NPR.png::http://www.npr.org::http://en.wikipedia.org/wiki/Npr::1000::70,4,185::
-::10013::World News::::media::media_logos/128_128/ABC_WorldNews.png::http://abcnews.go.com/wn::http://en.wikipedia.org/wiki/ABC_World_News::1000::4,71,181::
-::10014::Nightline::::media::media_logos/128_128/ABC_Nightline.png::http://abcnews.go.com/nightline::http://en.wikipedia.org/wiki/Nightline::1000::4,71,181::
-::10015::This Week::::media::media_logos/128_128/ABC_ThisWeek.png::http://abcnews.go.com/thisweek::http://en.wikipedia.org/wiki/This_Week_(ABC_TV_series)::1000::4,71,181::
-::10016::20/20::::media::media_logos/128_128/ABC_2020.png::http://abcnews.go.com/2020::http://en.wikipedia.org/wiki/20/20::1000::4,71,181::
-::10017::Good Morning America::::media::media_logos/128_128/ABC_GoodMorningAmerica.png::http://abcnews.go.com/gma::http://en.wikipedia.org/wiki/Good_Morning_America::1000::4,71,181::
-::10018::60 Minutes::::media::media_logos/128_128/CBS_60Minutes.png::http://www.cbsnews.com/60minutes::http://en.wikipedia.org/wiki/60_Minutes::1000::4,71,180::
-::10019::CBS Evening News::::media::media_logos/128_128/CBS_EveningNews.png::http://www.cbsnews.com/eveningnews::http://en.wikipedia.org/wiki/CBS_Evening_News::1000::4,71,180::
-::10020::Meet the Press::::media::media_logos/128_128/NBC_MeetThePress.png::http://mtp.msnbc.com::http://en.wikipedia.org/wiki/Meet_The_Press::1000::171,4,71::
-::10021::Dateline::::media::media_logos/128_128/NBC_Dateline.png::http://dateline.msnbc.com::http://en.wikipedia.org/wiki/Dateline_NBC::1000::171,4,71::
-::10022::Today::::media::media_logos/128_128/NBC_TodayShow.png::http://today.msnbc.com::http://en.wikipedia.org/wiki/Today_(NBC_program)::1000::171,4,71::
-::10023::America Live::::media::media_logos/128_128/Fox_AmericaLive.png::http://www.foxnews.com/on-air/america-live::http://en.wikipedia.org/wiki/America_Live_with_Megyn_Kelly::1000::175,4,71::
-::10024::America's News HQ::::media::media_logos/128_128/Fox_NewsHQ.png::http://www.foxnews.com/americasnewshq::http://en.wikipedia.org/wiki/America's_News_Headquarters::1000::175,4,71::
-::10025::America's Newsroom::::media::media_logos/128_128/Fox_Newsroom.png::http://www.foxnews.com/americasnewsroom::http://en.wikipedia.org/wiki/America's_Newsroom::1000::175,4,71::
-::10026::Cavuto::::media::media_logos/128_128/Fox_Cavuto.png::http://www.foxnews.com/on-air/your-world-cavuto::http://en.wikipedia.org/wiki/Your_World_with_Neil_Cavuto::1000::175,4,71::
-::10027::Fox News Sunday::::media::media_logos/128_128/Fox_FoxNewsSunday.png::http://www.foxnews.com/fns::http://en.wikipedia.org/wiki/Fox_News_Sunday::1000::175,4,71::
-::10028::Fox & Friends::::media::media_logos/128_128/Fox_FoxFriends.png::http://www.foxnews.com/foxfriends::http://en.wikipedia.org/wiki/Fox_and_Friends::1000::175,4,71::
-::10029::Fox News Watch::::media::media_logos/128_128/Fox_FoxNewsWatch.png::http://www.foxnews.com/foxnewswatch::http://en.wikipedia.org/wiki/Fox_News_Watch::1000::175,4,71::
-::10030::Fox Report::::media::media_logos/128_128/Fox_FoxReport.png::http://www.foxnews.com/on-air/shepard-smith::http://en.wikipedia.org/wiki/Fox_Report::1000::175,4,71::
-::10031::Geraldo at Large::::media::media_logos/128_128/Fox_Geraldo.png::http://www.foxnews.com/geraldo::http://en.wikipedia.org/wiki/Geraldo_at_Large::1000::175,4,71::
-::10032::Glenn Beck::::media::media_logos/128_128/Fox_GlennBeck.png::http://www.foxnews.com/glennbeck::http://en.wikipedia.org/wiki/Glenn_Beck_(TV_program)::1000::175,4,71::
-::10033::On the Record::::media::media_logos/128_128/Fox_OnTheRecord.png::http://www.foxnews.com/ontherecord::http://en.wikipedia.org/wiki/On_the_Record_w/_Greta_Van_Susteren::1000::175,4,71::
-::10034::Hannity::::media::media_logos/128_128/Fox_Hannity.png::http://www.foxnews.com/hannity::http://en.wikipedia.org/wiki/Hannity::1000::175,4,71::
-::10035::Happening Now::::media::media_logos/128_128/Fox_HappeningNow.png::http://www.foxnews.com/happeningnow::http://en.wikipedia.org/wiki/Happening_Now::1000::175,4,71::
-::10036::Huckabee::::media::media_logos/128_128/Fox_Huckabee.png::http://www.foxnews.com/huckabee::http://en.wikipedia.org/wiki/Huckabee::1000::175,4,71::
-::10037::Red Eye with Gutfeld::::media::media_logos/128_128/Fox_RedEye.png::http://www.foxnews.com/redeye::http://en.wikipedia.org/wiki/Red_Eye_w/_Greg_Gutfeld::1000::175,4,71::
-::10038::Special Report::::media::media_logos/128_128/Fox_SpecialReport.png::http://www.foxnews.com/on-air/special-report::http://en.wikipedia.org/wiki/Special_Report_with_Bret_Baier::1000::175,4,71::
-::10040::Studio B::::media::media_logos/128_128/Fox_StudioB.png::http://www.foxnews.com/on-air/shepard-smith::http://en.wikipedia.org/wiki/Studio_B_with_Shepard_Smith::1000::175,4,71::
-::10041::The Cost of Freedom::::media::media_logos/128_128/Fox_CostOfFreedom.png::http://www.foxnews.com/on-air/cost-of-freedom::http://en.wikipedia.org/wiki/The_Cost_of_Freedom::1000::175,4,71::
-::10042::The Journal Editorial Report::::media::media_logos/128_128/Fox_JournalEditorialReport.png::http://www.foxnews.com/journal::http://en.wikipedia.org/wiki/Journal_Editorial_Report::1000::175,4,71::
-::10043::The O'Reilly Factor::::media::media_logos/128_128/Fox_OReilly.png::http://www.foxnews.com/on-air/oreilly::http://en.wikipedia.org/wiki/The_O'Reilly_Factor::1000::175,4,71::
-::10044::War Stories::::media::media_logos/128_128/Fox_WarStories.png::http://www.foxnews.com/warstories::http://en.wikipedia.org/wiki/War_Stories_with_Oliver_North::1000::175,4,71::
-::10045::American Morning::::media::media_logos/128_128/CNN_AmericanMorning.png::http://amfix.blogs.cnn.com::::1000::174,4,71::
-::10046::Anderson Cooper 360::::media::media_logos/128_128/CNN_AndersonCooper.png::http://ac360.blogs.cnn.com::::1000::174,4,71::
-::10047::CNN Newsroom::::media::media_logos/128_128/CNN_Newsroom.png::http://newsroom.blogs.cnn.com::::1000::174,4,71::
-::10048::State of the Union::::media::media_logos/128_128/CNN_StateOfTheUnion.png::http://www.cnn.com/CNN/Programs/state.of.the.union::::1000::174,4,71::
-::10049::CNN Presents::::media::media_logos/128_128/CNN_Presents.png::http://www.cnn.com/CNN/Programs/presents::::1000::174,4,71::
-::10051::CNN Student News::::media::media_logos/128_128/CNN_StudentNews.png::http://www.cnn.com/studentnews::::1000::174,4,71::
-::10053::The Situation Room::::media::media_logos/128_128/CNN_TheSituationRoom.png::http://www.cnn.com/CNN/Programs/situation.room::::1000::174,4,71::
-::10054::Larry King Live::::media::media_logos/128_128/CNN_LarryKingLive.png::http://larrykinglive.blogs.cnn.com::::1000::174,4,71::
+::10013::World News::::media::media_logos/128_128/ABC_WorldNews.png::http://abcnews.go.com/wn::http://en.wikipedia.org/wiki/ABC_World_News::1000::71,4,181::
+::10014::Nightline::::media::media_logos/128_128/ABC_Nightline.png::http://abcnews.go.com/nightline::http://en.wikipedia.org/wiki/Nightline::1000::71,4,181::
+::10015::This Week::::media::media_logos/128_128/ABC_ThisWeek.png::http://abcnews.go.com/thisweek::http://en.wikipedia.org/wiki/This_Week_(ABC_TV_series)::1000::71,4,181::
+::10016::20/20::::media::media_logos/128_128/ABC_2020.png::http://abcnews.go.com/2020::http://en.wikipedia.org/wiki/20/20::1000::71,4,181::
+::10017::Good Morning America::::media::media_logos/128_128/ABC_GoodMorningAmerica.png::http://abcnews.go.com/gma::http://en.wikipedia.org/wiki/Good_Morning_America::1000::71,4,181::
+::10018::60 Minutes::::media::media_logos/128_128/CBS_60Minutes.png::http://www.cbsnews.com/60minutes::http://en.wikipedia.org/wiki/60_Minutes::1000::71,4,180::
+::10019::CBS Evening News::::media::media_logos/128_128/CBS_EveningNews.png::http://www.cbsnews.com/eveningnews::http://en.wikipedia.org/wiki/CBS_Evening_News::1000::71,4,180::
+::10020::Meet the Press::::media::media_logos/128_128/NBC_MeetThePress.png::http://mtp.msnbc.com::http://en.wikipedia.org/wiki/Meet_The_Press::1000::171,71,4::
+::10021::Dateline::::media::media_logos/128_128/NBC_Dateline.png::http://dateline.msnbc.com::http://en.wikipedia.org/wiki/Dateline_NBC::1000::171,71,4::
+::10022::Today::::media::media_logos/128_128/NBC_TodayShow.png::http://today.msnbc.com::http://en.wikipedia.org/wiki/Today_(NBC_program)::1000::171,71,4::
+::10023::America Live::::media::media_logos/128_128/Fox_AmericaLive.png::http://www.foxnews.com/on-air/america-live::http://en.wikipedia.org/wiki/America_Live_with_Megyn_Kelly::1000::175,71,4::
+::10024::America's News HQ::::media::media_logos/128_128/Fox_NewsHQ.png::http://www.foxnews.com/americasnewshq::http://en.wikipedia.org/wiki/America's_News_Headquarters::1000::175,71,4::
+::10025::America's Newsroom::::media::media_logos/128_128/Fox_Newsroom.png::http://www.foxnews.com/americasnewsroom::http://en.wikipedia.org/wiki/America's_Newsroom::1000::175,71,4::
+::10026::Cavuto::::media::media_logos/128_128/Fox_Cavuto.png::http://www.foxnews.com/on-air/your-world-cavuto::http://en.wikipedia.org/wiki/Your_World_with_Neil_Cavuto::1000::175,71,4::
+::10027::Fox News Sunday::::media::media_logos/128_128/Fox_FoxNewsSunday.png::http://www.foxnews.com/fns::http://en.wikipedia.org/wiki/Fox_News_Sunday::1000::175,71,4::
+::10028::Fox & Friends::::media::media_logos/128_128/Fox_FoxFriends.png::http://www.foxnews.com/foxfriends::http://en.wikipedia.org/wiki/Fox_and_Friends::1000::175,71,4::
+::10029::Fox News Watch::::media::media_logos/128_128/Fox_FoxNewsWatch.png::http://www.foxnews.com/foxnewswatch::http://en.wikipedia.org/wiki/Fox_News_Watch::1000::175,71,4::
+::10030::Fox Report::::media::media_logos/128_128/Fox_FoxReport.png::http://www.foxnews.com/on-air/shepard-smith::http://en.wikipedia.org/wiki/Fox_Report::1000::175,71,4::
+::10031::Geraldo at Large::::media::media_logos/128_128/Fox_Geraldo.png::http://www.foxnews.com/geraldo::http://en.wikipedia.org/wiki/Geraldo_at_Large::1000::175,71,4::
+::10032::Glenn Beck::::media::media_logos/128_128/Fox_GlennBeck.png::http://www.foxnews.com/glennbeck::http://en.wikipedia.org/wiki/Glenn_Beck_(TV_program)::1000::175,71,4::
+::10033::On the Record::::media::media_logos/128_128/Fox_OnTheRecord.png::http://www.foxnews.com/ontherecord::http://en.wikipedia.org/wiki/On_the_Record_w/_Greta_Van_Susteren::1000::175,71,4::
+::10034::Hannity::::media::media_logos/128_128/Fox_Hannity.png::http://www.foxnews.com/hannity::http://en.wikipedia.org/wiki/Hannity::1000::175,71,4::
+::10035::Happening Now::::media::media_logos/128_128/Fox_HappeningNow.png::http://www.foxnews.com/happeningnow::http://en.wikipedia.org/wiki/Happening_Now::1000::175,71,4::
+::10036::Huckabee::::media::media_logos/128_128/Fox_Huckabee.png::http://www.foxnews.com/huckabee::http://en.wikipedia.org/wiki/Huckabee::1000::175,71,4::
+::10037::Red Eye with Gutfeld::::media::media_logos/128_128/Fox_RedEye.png::http://www.foxnews.com/redeye::http://en.wikipedia.org/wiki/Red_Eye_w/_Greg_Gutfeld::1000::175,71,4::
+::10038::Special Report::::media::media_logos/128_128/Fox_SpecialReport.png::http://www.foxnews.com/on-air/special-report::http://en.wikipedia.org/wiki/Special_Report_with_Bret_Baier::1000::175,71,4::
+::10040::Studio B::::media::media_logos/128_128/Fox_StudioB.png::http://www.foxnews.com/on-air/shepard-smith::http://en.wikipedia.org/wiki/Studio_B_with_Shepard_Smith::1000::175,71,4::
+::10041::The Cost of Freedom::::media::media_logos/128_128/Fox_CostOfFreedom.png::http://www.foxnews.com/on-air/cost-of-freedom::http://en.wikipedia.org/wiki/The_Cost_of_Freedom::1000::175,71,4::
+::10042::The Journal Editorial Report::::media::media_logos/128_128/Fox_JournalEditorialReport.png::http://www.foxnews.com/journal::http://en.wikipedia.org/wiki/Journal_Editorial_Report::1000::175,71,4::
+::10043::The O'Reilly Factor::::media::media_logos/128_128/Fox_OReilly.png::http://www.foxnews.com/on-air/oreilly::http://en.wikipedia.org/wiki/The_O'Reilly_Factor::1000::175,71,4::
+::10044::War Stories::::media::media_logos/128_128/Fox_WarStories.png::http://www.foxnews.com/warstories::http://en.wikipedia.org/wiki/War_Stories_with_Oliver_North::1000::175,71,4::
+::10045::American Morning::::media::media_logos/128_128/CNN_AmericanMorning.png::http://amfix.blogs.cnn.com::::1000::174,71,4::
+::10046::Anderson Cooper 360::::media::media_logos/128_128/CNN_AndersonCooper.png::http://ac360.blogs.cnn.com::::1000::174,71,4::
+::10047::CNN Newsroom::::media::media_logos/128_128/CNN_Newsroom.png::http://newsroom.blogs.cnn.com::::1000::174,71,4::
+::10048::State of the Union::::media::media_logos/128_128/CNN_StateOfTheUnion.png::http://www.cnn.com/CNN/Programs/state.of.the.union::::1000::174,71,4::
+::10049::CNN Presents::::media::media_logos/128_128/CNN_Presents.png::http://www.cnn.com/CNN/Programs/presents::::1000::174,71,4::
+::10051::CNN Student News::::media::media_logos/128_128/CNN_StudentNews.png::http://www.cnn.com/studentnews::::1000::174,71,4::
+::10053::The Situation Room::::media::media_logos/128_128/CNN_TheSituationRoom.png::http://www.cnn.com/CNN/Programs/situation.room::::1000::174,71,4::
+::10054::Larry King Live::::media::media_logos/128_128/CNN_LarryKingLive.png::http://larrykinglive.blogs.cnn.com::::1000::174,71,4::
 ::10056::The Wall Street Journal::::media::media_logos/128_128/News_WallStreetJournal.png::http://www.wsj.com::http://en.wikipedia.org/wiki/Wall_street_journal::1000::4,69::
 ::10057::USA Today::::media::media_logos/128_128/News_USAToday.png::http://www.usatoday.com::http://en.wikipedia.org/wiki/Usa_today::1000::4,69::
 ::10058::The New York Times::::media::media_logos/128_128/News_TheNewYorkTimes.png::http://www.nytimes.com::http://en.wikipedia.org/wiki/New_York_Times::1000::4,69::
@@ -308,89 +311,89 @@
 ::10118::Tell Me More::::media::media_logos/128_128/NPR_TellMeMore.png::http://www.npr.org/programs/tell-me-more::http://en.wikipedia.org/wiki/Tell_Me_More::1000::70,4,185::
 ::10119::Weekend Edition Saturday::::media::media_logos/128_128/NPR_WeekendEdition.png::http://www.npr.org/programs/wesat::http://en.wikipedia.org/wiki/Weekend_Edition::1000::70,4,185::
 ::10120::Weekend Edition Sunday::::media::media_logos/128_128/NPR_WeekendEdition.png::http://www.npr.org/programs/wesun::http://en.wikipedia.org/wiki/Weekend_Edition::1000::70,4,185::
-::10121::CNBC::::media::media_logos/128_128/CNBC.png::http://www.cnbc.com::http://en.wikipedia.org/wiki/Cnbc::1000::4,71,179::
-::10122::MSNBC::::media::media_logos/128_128/MSNBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/Msnbc::1000::177,4,71::
-::10123::PBS::::media::media_logos/128_128/PBS.png::http://www.pbs.org::http://en.wikipedia.org/wiki/Public_Broadcasting_Service::1000::182,4,71::
-::10124::What Would You Do?::::media::media_logos/128_128/ABC_WWYD.png::http://abcnews.go.com/whatwouldyoudo::http://en.wikipedia.org/wiki/Primetime:_What_Would_You_Do?::1000::4,71,181::
-::10125::The Early Show::::media::media_logos/128_128/CBS_TheEarlyShow.png::http://www.cbsnews.com/earlyshow::http://en.wikipedia.org/wiki/CBS_Early_Show::1000::4,71,180::
-::10126::48 Hours Mystery::::media::media_logos/128_128/CBS_48Hours.png::http://www.cbsnews.com/48hours::http://en.wikipedia.org/wiki/48_Hours_(TV_series)::1000::4,71,180::
-::10127::Sunday Morning::::media::media_logos/128_128/CBS_SundayMorning.png::http://www.cbsnews.com/sunday::http://en.wikipedia.org/wiki/CBS_News_Sunday_Morning::1000::4,71,180::
-::10128::Face the Nation::::media::media_logos/128_128/CBS_FaceTheNation.png::http://www.cbsnews.com/ftn::http://en.wikipedia.org/wiki/Face_the_nation::1000::4,71,180::
-::10129::Up to the Minute::::media::media_logos/128_128/CBS_UpToTheMinute.png::http://www.cbsnews.com/uttm::http://en.wikipedia.org/wiki/Up_To_The_Minute::1000::4,71,180::
-::10130::Nightly News::::media::media_logos/128_128/NBC_NightlyNews.png::http://nightly.msnbc.com::http://en.wikipedia.org/wiki/Nightly_News::1000::177,4,71::
-::10131::The Rachel Maddow Show::::media::media_logos/128_128/MSNBC_Maddow.png::http://rachel.msnbc.com::http://en.wikipedia.org/wiki/The_Rachel_Maddow_Show_(TV_series)::1000::177,4,71::
-::10132::Hardball::::media::media_logos/128_128/MSNBC_Hardball.png::http://www.msnbc.com/id/3036697::http://en.wikipedia.org/wiki/Hardball_with_Chris_Matthews::1000::177,4,71::
-::10133::Squawk Box::::media::media_logos/128_128/CNBC_SquawkBox.png::http://www.cnbc.com/id/15838368::http://en.wikipedia.org/wiki/Squawk_Box::1000::4,71,179::
-::10134::Squawk on the Street::::media::media_logos/128_128/CNBC_SquawkStreet.png::http://www.cnbc.com/id/15838381::http://en.wikipedia.org/wiki/Squawk_on_the_Street::1000::4,71,179::
-::10135::The Call::::media::media_logos/128_128/CNBC_TheCall.png::http://www.cnbc.com/id/15838394::http://en.wikipedia.org/wiki/The_Call_(CNBC)::1000::4,71,179::
-::10136::The Strategy Session::::media::media_logos/128_128/CNBC_TheStrategySession.png::http://www.cnbc.com/id/37063865::http://en.wikipedia.org/wiki/The_Strategy_Session::1000::4,71,179::
-::10137::Fast Money::::media::media_logos/128_128/CNBC_FastMoney.png::http://www.cnbc.com/id/15838499::http://en.wikipedia.org/wiki/Fast_Money_(CNBC)::1000::4,71,179::
-::10138::Power Lunch::::media::media_logos/128_128/CNBC_PowerLunch.png::http://www.cnbc.com/id/15838342::http://en.wikipedia.org/wiki/Power_Lunch::1000::4,71,179::
-::10139::Street Signs::::media::media_logos/128_128/CNBC_StreetSigns.png::http://www.cnbc.com/id/15838408::http://en.wikipedia.org/wiki/Street_Signs_(CNBC)::1000::4,71,179::
-::10140::Closing Bell::::media::media_logos/128_128/CNBC_ClosingBell.png::http://www.cnbc.com/id/15838421::http://en.wikipedia.org/wiki/Closing_Bell::1000::4,71,179::
-::10141::Mad Money::::media::media_logos/128_128/CNBC_MadMoney.png::http://www.cnbc.com/id/15838459::http://en.wikipedia.org/wiki/Mad_money::1000::4,71,179::
-::10142::The Kudlow Report::::media::media_logos/128_128/CNBC_TheKudlowReport.png::http://www.cnbc.com/id/15838446::http://en.wikipedia.org/wiki/The_Kudlow_Report::1000::4,71,179::
-::10143::The Suze Orman Show::::media::media_logos/128_128/CNBC_SuzeOrman.png::http://www.cnbc.com/id/15838523::http://en.wikipedia.org/wiki/Suze_orman::1000::4,71,179::
-::10144::The Wall Street Journal Report::::media::media_logos/128_128/CNBC_WSJR.png::http://www.cnbc.com/id/15838272::http://en.wikipedia.org/wiki/The_Wall_Street_Journal_Report::1000::4,71,179::
-::10148::Worldwide Exchange::::media::media_logos/128_128/CNBC_WorldwideExchange.png::http://www.cnbc.com/id/15838355::http://en.wikipedia.org/wiki/Worldwide_Exchange::1000::4,71,179::
-::10149::Sanjay Gupta MD::::media::media_logos/128_128/CNN_SanjayGupta.png::http://www.cnn.com/CNN/Programs/sanjay.gupta.md::::1000::174,4,71::
-::10150::Fareed Zakaria GPS::::media::media_logos/128_128/CNN_FareedZakaria.png::http://www.cnn.com/CNN/Programs/fareed.zakaria.gps::::1000::174,4,71::
-::10151::John King U.S.A.::::media::media_logos/128_128/CNN_JohnKing.png::http://johnkingusa.blogs.cnn.com::::1000::174,4,71::
-::10152::Parker Spitzer::::media::media_logos/128_128/CNN_ParkerSpitzer.png::http://parkerspitzer.blogs.cnn.com::::1000::174,4,71::
-::10153::Piers Morgan Tonight::::media::media_logos/128_128/CNN_PiersMorgan.png::http://piersmorgan.blogs.cnn.com::::1000::174,4,71::
-::10154::Your Bottom Line::::media::media_logos/128_128/CNN_YourBottomLine.png::http://www.cnn.com/CNN/Programs/your.bottom.line::::1000::174,4,71::
-::10155::Your $$$$$::::media::media_logos/128_128/CNN_YourMoney.png::http://www.cnn.com/CNN/Programs/inthemoney::::1000::174,4,71::
-::10156::Clark Howard::::media::media_logos/128_128/HLN_ClarkHoward.png::http://www.cnn.com/CNN/Programs/clark.howard::::1000::176,4,71::
-::10157::Issues::::media::media_logos/128_128/HLN_Issues.png::http://www.cnn.com/CNN/Programs/issues.with.jane::::1000::176,4,71::
-::10158::Morning Express::::media::media_logos/128_128/HLN_MorningExpress.png::http://www.cnn.com/CNN/Programs/morning.express::::1000::176,4,71::
-::10159::Nancy Grace::::media::media_logos/128_128/HLN_NancyGrace.png::http://www.cnn.com/CNN/Programs/nancy.grace::::1000::176,4,71::
-::10160::Prime News::::media::media_logos/128_128/HLN_PrimeNews.png::http://www.cnn.com/CNN/Programs/prime.news::::1000::176,4,71::
-::10161::Showbiz Tonight::::media::media_logos/128_128/HLN_ShowbizTonight.png::http://www.cnn.com/CNN/Programs/showbiz.tonight::::1000::176,4,71::
-::10162::The Joy Behar Show::::media::media_logos/128_128/HLN_JoyBehar.png::http://joybehar.blogs.cnn.com::::1000::176,4,71::
-::10163::Justice with Judge Jeanine::::media::media_logos/128_128/Fox_Justice.png::http://www.foxnews.com/on-air/justice-jeanine::http://en.wikipedia.org/wiki/Jeanine_Pirro::1000::175,4,71::
-::10164::Way Too Early::::media::media_logos/128_128/MSNBC_WayTooEarly.png::http://www.msnbc.com/id/26852192::http://en.wikipedia.org/wiki/Way_Too_Early_with_Willie_Geist::1000::177,4,71::
-::10165::Morning Joe::::media::media_logos/128_128/MSNBC_MorningJoe.png::http://www.msnbc.com/id/3036789::http://en.wikipedia.org/wiki/Morning_Joe::1000::177,4,71::
-::10166::The Daily Rundown::::media::media_logos/128_128/MSNBC_TheDailyRundown.png::http://www.msnbc.com/id/34689185::http://en.wikipedia.org/wiki/The_Daily_Rundown::1000::177,4,71::
-::10167::Andrea Mitchell Reports::::media::media_logos/128_128/MSNBC_AndreaMitchellReports.png::http://www.msnbc.com/id/29974370::http://en.wikipedia.org/wiki/Andrea_Mitchell_Reports::1000::177,4,71::
-::10168::NewsNation::::media::media_logos/128_128/MSNBC_NewsNation.png::http://www.msnbc.com/id/38243831::http://en.wikipedia.org/wiki/NewsNation_with_Tamron_Hall::1000::177,4,71::
-::10169::Dylan Ratigan Show::::media::media_logos/128_128/MSNBC_DylanRatigan.png::http://www.msnbc.com/id/31510813::http://en.wikipedia.org/wiki/Dylan_Ratigan::1000::177,4,71::
-::10170::The Last Word::::media::media_logos/128_128/MSNBC_TheLastWord.png::http://thelastword.msnbc.com::http://en.wikipedia.org/wiki/The_Last_Word_with_Lawrence_O'Donnell::1000::177,4,71::
-::10171::The Ed Show::::media::media_logos/128_128/MSNBC_TheEdShow.png::http://www.msnbc.com/id/30031533::http://en.wikipedia.org/wiki/The_Ed_Show::1000::177,4,71::
-::10172::ZeitGeist::::media::media_logos/128_128/MSNBC_ZeitGeist.png::http://www.msnbc.com/id/26852192::http://en.wikipedia.org/wiki/Willie_Geist::1000::177,4,71::
-::10173::HLN::::media::media_logos/128_128/HLN.png::http://www.cnn.com/HLN/::http://en.wikipedia.org/wiki/HLN_(TV_channel)::1000::176,4,71::
-::10174::Bloomberg::::media::media_logos/128_128/Bloomberg.png::http://www.bloomberg.com/tv::http://en.wikipedia.org/wiki/Bloomberg_Television::1000::183,4,71::
-::10175::Bottom Line with Mark Crupton::::media::media_logos/128_128/BB_BottomLine.png::::::1000::183,4,71::
-::10176::Game Changers::::media::media_logos/128_128/BB_GameChangers.png::::::1000::183,4,71::
-::10177::News Asia::::media::media_logos/128_128/BB_NewsAsia.png::::::1000::183,4,71::
-::10178::Rewind::::media::media_logos/128_128/BB_Rewind.png::::::1000::183,4,71::
-::10179::Charlie Rose::::media::media_logos/128_128/BB_CharlieRose.png::::::1000::183,4,71::
-::10180::Conversations with Judy Woodruff::::media::media_logos/128_128/BB_Conversations.png::::::1000::183,4,71::
-::10181::Countdown with Maryam Nemazee::::media::media_logos/128_128/BB_Countdown.png::::::1000::183,4,71::
-::10182::Fast Forward with Lisa Murphy::::media::media_logos/128_128/BB_FastForward.png::::::1000::183,4,71::
-::10183::For the Record::::media::media_logos/128_128/BB_ForTheRecord.png::::::1000::183,4,71::
-::10184::Global Connection with Linzie Janis::::media::media_logos/128_128/BB_GlobalConnection.png::::::1000::183,4,71::
-::10185::The Mentor::::media::media_logos/128_128/BB_TheMentor.png::::::1000::183,4,71::
-::10186::InBusiness with Margaret Brennan::::media::media_logos/128_128/BB_InBusiness.png::::::1000::183,4,71::
-::10187::Innovators::::media::media_logos/128_128/BB_Innovators.png::::::1000::183,4,71::
-::10188::InsideTrack::::media::media_logos/128_128/BB_InsideTrack.png::::::1000::183,4,71::
-::10189::Intelligence Squared Debates::::media::media_logos/128_128/BB_Intelligence.png::::::1000::183,4,71::
-::10190::On the Move with Francine Lacqua::::media::media_logos/128_128/BB_OnTheMove.png::::::1000::183,4,71::
-::10191::Political Capital with Al Hunt::::media::media_logos/128_128/BB_PoliticalCapital.png::::::1000::183,4,71::
-::10192::Street Smart::::media::media_logos/128_128/BB_StreetSmart.png::::::1000::183,4,71::
-::10193::Surveillance Midday with Tom Keene::::media::media_logos/128_128/BB_Surveillance.png::::::1000::183,4,71::
-::10194::Taking Stock with Pimm Fox::::media::media_logos/128_128/BB_TakingStock.png::::::1000::183,4,71::
-::10195::The Pulse with Andrea Catherwood::::media::media_logos/128_128/BB_ThePulse.png::::::1000::183,4,71::
-::10196::Venture with Cris Valerio::::media::media_logos/128_128/BB_Venture.png::::::1000::183,4,71::
-::10197::Frontline::::media::media_logos/128_128/PBS_Frontline.png::::::1000::182,4,71::
-::10198::In the Loop with Betty Liu::::media::media_logos/128_128/BB_InTheLoop.png::::::1000::183,4,71::
-::10199::Tavis Smiley::::media::media_logos/128_128/PBS_TavisSmiley.png::::::1000::182,4,71::
-::10200::Washington Week with Gwen Ifill::::media::media_logos/128_128/PBS_WashingtonWeek.png::::::1000::182,4,71::
-::10203::Newshour::::media::media_logos/128_128/PBS_Newshour.png::::::1000::182,4,71::
-::10204::Nightly Business Report::::media::media_logos/128_128/PBS_NightlyBusinessReport.png::::::1000::182,4,71::
-::10205::Need to Know::::media::media_logos/128_128/PBS_NeedToKnow.png::::::1000::182,4,71::
-::10206::Special Investigations Unit::::media::media_logos/128_128/CNN_SpecialInvestigations.png::http://www.cnn.com/CNN/Programs/siu::::1000::174,4,71::
-::10207::Reliable Sources::::media::media_logos/128_128/CNN_ReliableSources.png::http://www.cnn.com/CNN/Programs/reliable.sources::::1000::174,4,71::
-::10208::This Week at War::::media::media_logos/128_128/CNN_ThisWeekAtWar.png::http://www.cnn.com/CNN/Programs/this.week.at.war::::1000::174,4,71::
+::10121::CNBC::::media::media_logos/128_128/CNBC.png::http://www.cnbc.com::http://en.wikipedia.org/wiki/Cnbc::1000::71,4,179::
+::10122::MSNBC::::media::media_logos/128_128/MSNBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/Msnbc::1000::177,71,4::
+::10123::PBS::::media::media_logos/128_128/PBS.png::http://www.pbs.org::http://en.wikipedia.org/wiki/Public_Broadcasting_Service::1000::182,71,4::
+::10124::What Would You Do?::::media::media_logos/128_128/ABC_WWYD.png::http://abcnews.go.com/whatwouldyoudo::http://en.wikipedia.org/wiki/Primetime:_What_Would_You_Do?::1000::71,4,181::
+::10125::The Early Show::::media::media_logos/128_128/CBS_TheEarlyShow.png::http://www.cbsnews.com/earlyshow::http://en.wikipedia.org/wiki/CBS_Early_Show::1000::71,4,180::
+::10126::48 Hours Mystery::::media::media_logos/128_128/CBS_48Hours.png::http://www.cbsnews.com/48hours::http://en.wikipedia.org/wiki/48_Hours_(TV_series)::1000::71,4,180::
+::10127::Sunday Morning::::media::media_logos/128_128/CBS_SundayMorning.png::http://www.cbsnews.com/sunday::http://en.wikipedia.org/wiki/CBS_News_Sunday_Morning::1000::71,4,180::
+::10128::Face the Nation::::media::media_logos/128_128/CBS_FaceTheNation.png::http://www.cbsnews.com/ftn::http://en.wikipedia.org/wiki/Face_the_nation::1000::71,4,180::
+::10129::Up to the Minute::::media::media_logos/128_128/CBS_UpToTheMinute.png::http://www.cbsnews.com/uttm::http://en.wikipedia.org/wiki/Up_To_The_Minute::1000::71,4,180::
+::10130::Nightly News::::media::media_logos/128_128/NBC_NightlyNews.png::http://nightly.msnbc.com::http://en.wikipedia.org/wiki/Nightly_News::1000::177,71,4::
+::10131::The Rachel Maddow Show::::media::media_logos/128_128/MSNBC_Maddow.png::http://rachel.msnbc.com::http://en.wikipedia.org/wiki/The_Rachel_Maddow_Show_(TV_series)::1000::177,71,4::
+::10132::Hardball::::media::media_logos/128_128/MSNBC_Hardball.png::http://www.msnbc.com/id/3036697::http://en.wikipedia.org/wiki/Hardball_with_Chris_Matthews::1000::177,71,4::
+::10133::Squawk Box::::media::media_logos/128_128/CNBC_SquawkBox.png::http://www.cnbc.com/id/15838368::http://en.wikipedia.org/wiki/Squawk_Box::1000::71,4,179::
+::10134::Squawk on the Street::::media::media_logos/128_128/CNBC_SquawkStreet.png::http://www.cnbc.com/id/15838381::http://en.wikipedia.org/wiki/Squawk_on_the_Street::1000::71,4,179::
+::10135::The Call::::media::media_logos/128_128/CNBC_TheCall.png::http://www.cnbc.com/id/15838394::http://en.wikipedia.org/wiki/The_Call_(CNBC)::1000::71,4,179::
+::10136::The Strategy Session::::media::media_logos/128_128/CNBC_TheStrategySession.png::http://www.cnbc.com/id/37063865::http://en.wikipedia.org/wiki/The_Strategy_Session::1000::71,4,179::
+::10137::Fast Money::::media::media_logos/128_128/CNBC_FastMoney.png::http://www.cnbc.com/id/15838499::http://en.wikipedia.org/wiki/Fast_Money_(CNBC)::1000::71,4,179::
+::10138::Power Lunch::::media::media_logos/128_128/CNBC_PowerLunch.png::http://www.cnbc.com/id/15838342::http://en.wikipedia.org/wiki/Power_Lunch::1000::71,4,179::
+::10139::Street Signs::::media::media_logos/128_128/CNBC_StreetSigns.png::http://www.cnbc.com/id/15838408::http://en.wikipedia.org/wiki/Street_Signs_(CNBC)::1000::71,4,179::
+::10140::Closing Bell::::media::media_logos/128_128/CNBC_ClosingBell.png::http://www.cnbc.com/id/15838421::http://en.wikipedia.org/wiki/Closing_Bell::1000::71,4,179::
+::10141::Mad Money::::media::media_logos/128_128/CNBC_MadMoney.png::http://www.cnbc.com/id/15838459::http://en.wikipedia.org/wiki/Mad_money::1000::71,4,179::
+::10142::The Kudlow Report::::media::media_logos/128_128/CNBC_TheKudlowReport.png::http://www.cnbc.com/id/15838446::http://en.wikipedia.org/wiki/The_Kudlow_Report::1000::71,4,179::
+::10143::The Suze Orman Show::::media::media_logos/128_128/CNBC_SuzeOrman.png::http://www.cnbc.com/id/15838523::http://en.wikipedia.org/wiki/Suze_orman::1000::71,4,179::
+::10144::The Wall Street Journal Report::::media::media_logos/128_128/CNBC_WSJR.png::http://www.cnbc.com/id/15838272::http://en.wikipedia.org/wiki/The_Wall_Street_Journal_Report::1000::71,4,179::
+::10148::Worldwide Exchange::::media::media_logos/128_128/CNBC_WorldwideExchange.png::http://www.cnbc.com/id/15838355::http://en.wikipedia.org/wiki/Worldwide_Exchange::1000::71,4,179::
+::10149::Sanjay Gupta MD::::media::media_logos/128_128/CNN_SanjayGupta.png::http://www.cnn.com/CNN/Programs/sanjay.gupta.md::::1000::174,71,4::
+::10150::Fareed Zakaria GPS::::media::media_logos/128_128/CNN_FareedZakaria.png::http://www.cnn.com/CNN/Programs/fareed.zakaria.gps::::1000::174,71,4::
+::10151::John King U.S.A.::::media::media_logos/128_128/CNN_JohnKing.png::http://johnkingusa.blogs.cnn.com::::1000::174,71,4::
+::10152::Parker Spitzer::::media::media_logos/128_128/CNN_ParkerSpitzer.png::http://parkerspitzer.blogs.cnn.com::::1000::174,71,4::
+::10153::Piers Morgan Tonight::::media::media_logos/128_128/CNN_PiersMorgan.png::http://piersmorgan.blogs.cnn.com::::1000::174,71,4::
+::10154::Your Bottom Line::::media::media_logos/128_128/CNN_YourBottomLine.png::http://www.cnn.com/CNN/Programs/your.bottom.line::::1000::174,71,4::
+::10155::Your $$$$$::::media::media_logos/128_128/CNN_YourMoney.png::http://www.cnn.com/CNN/Programs/inthemoney::::1000::174,71,4::
+::10156::Clark Howard::::media::media_logos/128_128/HLN_ClarkHoward.png::http://www.cnn.com/CNN/Programs/clark.howard::::1000::176,71,4::
+::10157::Issues::::media::media_logos/128_128/HLN_Issues.png::http://www.cnn.com/CNN/Programs/issues.with.jane::::1000::176,71,4::
+::10158::Morning Express::::media::media_logos/128_128/HLN_MorningExpress.png::http://www.cnn.com/CNN/Programs/morning.express::::1000::176,71,4::
+::10159::Nancy Grace::::media::media_logos/128_128/HLN_NancyGrace.png::http://www.cnn.com/CNN/Programs/nancy.grace::::1000::176,71,4::
+::10160::Prime News::::media::media_logos/128_128/HLN_PrimeNews.png::http://www.cnn.com/CNN/Programs/prime.news::::1000::176,71,4::
+::10161::Showbiz Tonight::::media::media_logos/128_128/HLN_ShowbizTonight.png::http://www.cnn.com/CNN/Programs/showbiz.tonight::::1000::176,71,4::
+::10162::The Joy Behar Show::::media::media_logos/128_128/HLN_JoyBehar.png::http://joybehar.blogs.cnn.com::::1000::176,71,4::
+::10163::Justice with Judge Jeanine::::media::media_logos/128_128/Fox_Justice.png::http://www.foxnews.com/on-air/justice-jeanine::http://en.wikipedia.org/wiki/Jeanine_Pirro::1000::175,71,4::
+::10164::Way Too Early::::media::media_logos/128_128/MSNBC_WayTooEarly.png::http://www.msnbc.com/id/26852192::http://en.wikipedia.org/wiki/Way_Too_Early_with_Willie_Geist::1000::177,71,4::
+::10165::Morning Joe::::media::media_logos/128_128/MSNBC_MorningJoe.png::http://www.msnbc.com/id/3036789::http://en.wikipedia.org/wiki/Morning_Joe::1000::177,71,4::
+::10166::The Daily Rundown::::media::media_logos/128_128/MSNBC_TheDailyRundown.png::http://www.msnbc.com/id/34689185::http://en.wikipedia.org/wiki/The_Daily_Rundown::1000::177,71,4::
+::10167::Andrea Mitchell Reports::::media::media_logos/128_128/MSNBC_AndreaMitchellReports.png::http://www.msnbc.com/id/29974370::http://en.wikipedia.org/wiki/Andrea_Mitchell_Reports::1000::177,71,4::
+::10168::NewsNation::::media::media_logos/128_128/MSNBC_NewsNation.png::http://www.msnbc.com/id/38243831::http://en.wikipedia.org/wiki/NewsNation_with_Tamron_Hall::1000::177,71,4::
+::10169::Dylan Ratigan Show::::media::media_logos/128_128/MSNBC_DylanRatigan.png::http://www.msnbc.com/id/31510813::http://en.wikipedia.org/wiki/Dylan_Ratigan::1000::177,71,4::
+::10170::The Last Word::::media::media_logos/128_128/MSNBC_TheLastWord.png::http://thelastword.msnbc.com::http://en.wikipedia.org/wiki/The_Last_Word_with_Lawrence_O'Donnell::1000::177,71,4::
+::10171::The Ed Show::::media::media_logos/128_128/MSNBC_TheEdShow.png::http://www.msnbc.com/id/30031533::http://en.wikipedia.org/wiki/The_Ed_Show::1000::177,71,4::
+::10172::ZeitGeist::::media::media_logos/128_128/MSNBC_ZeitGeist.png::http://www.msnbc.com/id/26852192::http://en.wikipedia.org/wiki/Willie_Geist::1000::177,71,4::
+::10173::HLN::::media::media_logos/128_128/HLN.png::http://www.cnn.com/HLN/::http://en.wikipedia.org/wiki/HLN_(TV_channel)::1000::176,71,4::
+::10174::Bloomberg::::media::media_logos/128_128/Bloomberg.png::http://www.bloomberg.com/tv::http://en.wikipedia.org/wiki/Bloomberg_Television::1000::183,71,4::
+::10175::Bottom Line with Mark Crupton::::media::media_logos/128_128/BB_BottomLine.png::::::1000::183,71,4::
+::10176::Game Changers::::media::media_logos/128_128/BB_GameChangers.png::::::1000::183,71,4::
+::10177::News Asia::::media::media_logos/128_128/BB_NewsAsia.png::::::1000::183,71,4::
+::10178::Rewind::::media::media_logos/128_128/BB_Rewind.png::::::1000::183,71,4::
+::10179::Charlie Rose::::media::media_logos/128_128/BB_CharlieRose.png::::::1000::183,71,4::
+::10180::Conversations with Judy Woodruff::::media::media_logos/128_128/BB_Conversations.png::::::1000::183,71,4::
+::10181::Countdown with Maryam Nemazee::::media::media_logos/128_128/BB_Countdown.png::::::1000::183,71,4::
+::10182::Fast Forward with Lisa Murphy::::media::media_logos/128_128/BB_FastForward.png::::::1000::183,71,4::
+::10183::For the Record::::media::media_logos/128_128/BB_ForTheRecord.png::::::1000::183,71,4::
+::10184::Global Connection with Linzie Janis::::media::media_logos/128_128/BB_GlobalConnection.png::::::1000::183,71,4::
+::10185::The Mentor::::media::media_logos/128_128/BB_TheMentor.png::::::1000::183,71,4::
+::10186::InBusiness with Margaret Brennan::::media::media_logos/128_128/BB_InBusiness.png::::::1000::183,71,4::
+::10187::Innovators::::media::media_logos/128_128/BB_Innovators.png::::::1000::183,71,4::
+::10188::InsideTrack::::media::media_logos/128_128/BB_InsideTrack.png::::::1000::183,71,4::
+::10189::Intelligence Squared Debates::::media::media_logos/128_128/BB_Intelligence.png::::::1000::183,71,4::
+::10190::On the Move with Francine Lacqua::::media::media_logos/128_128/BB_OnTheMove.png::::::1000::183,71,4::
+::10191::Political Capital with Al Hunt::::media::media_logos/128_128/BB_PoliticalCapital.png::::::1000::183,71,4::
+::10192::Street Smart::::media::media_logos/128_128/BB_StreetSmart.png::::::1000::183,71,4::
+::10193::Surveillance Midday with Tom Keene::::media::media_logos/128_128/BB_Surveillance.png::::::1000::183,71,4::
+::10194::Taking Stock with Pimm Fox::::media::media_logos/128_128/BB_TakingStock.png::::::1000::183,71,4::
+::10195::The Pulse with Andrea Catherwood::::media::media_logos/128_128/BB_ThePulse.png::::::1000::183,71,4::
+::10196::Venture with Cris Valerio::::media::media_logos/128_128/BB_Venture.png::::::1000::183,71,4::
+::10197::Frontline::::media::media_logos/128_128/PBS_Frontline.png::::::1000::182,71,4::
+::10198::In the Loop with Betty Liu::::media::media_logos/128_128/BB_InTheLoop.png::::::1000::183,71,4::
+::10199::Tavis Smiley::::media::media_logos/128_128/PBS_TavisSmiley.png::::::1000::182,71,4::
+::10200::Washington Week with Gwen Ifill::::media::media_logos/128_128/PBS_WashingtonWeek.png::::::1000::182,71,4::
+::10203::Newshour::::media::media_logos/128_128/PBS_Newshour.png::::::1000::182,71,4::
+::10204::Nightly Business Report::::media::media_logos/128_128/PBS_NightlyBusinessReport.png::::::1000::182,71,4::
+::10205::Need to Know::::media::media_logos/128_128/PBS_NeedToKnow.png::::::1000::182,71,4::
+::10206::Special Investigations Unit::::media::media_logos/128_128/CNN_SpecialInvestigations.png::http://www.cnn.com/CNN/Programs/siu::::1000::174,71,4::
+::10207::Reliable Sources::::media::media_logos/128_128/CNN_ReliableSources.png::http://www.cnn.com/CNN/Programs/reliable.sources::::1000::174,71,4::
+::10208::This Week at War::::media::media_logos/128_128/CNN_ThisWeekAtWar.png::http://www.cnn.com/CNN/Programs/this.week.at.war::::1000::174,71,4::
 ::10209::The Daily::::media::media_logos/128_128/News_TheDaily.png::::::1000::4,69::
 ::10210::Public Radio International::::media::media_logos/128_128/PRI.png::http://www.pri.org::http://en.wikipedia.org/wiki/Public_Radio_International::1000::70,186,4,185::
 ::10211::American Public Media::::media::media_logos/128_128/APM.png::http://americanpublicmedia.publicradio.org::http://en.wikipedia.org/wiki/American_Public_Media::1000::70,187,4,185::
@@ -450,7 +453,7 @@
 ::10266::This American Life::::media::media_logos/128_128/PRI_ThisAmericanLife.png::http://www.thisamericanlife.org::http://en.wikipedia.org/wiki/This_American_Life::1000::70,186,4,185::
 ::10267::Planet Money::::media::media_logos/128_128/NPR_PlanetMoney.png::http://www.npr.org/money::http://en.wikipedia.org/wiki/Planet_Money::1000::70,4,185::
 ::10268::Radiolab::::media::media_logos/128_128/NPR_Radiolab.png::http://www.radiolab.org::http://en.wikipedia.org/wiki/Radiolab::1000::70,4,185::
-::20000::Richard Shelby::::senate::government_logos/senators/64_64/S000320.jpg::http://shelby.senate.gov/::http://en.wikipedia.org/wiki/Richard_Shelby::1000::5,60,75::
+::20000::Richard Shelby::::senate::government_logos/senators/64_64/S000320.jpg::http://shelby.senate.gov/::http://en.wikipedia.org/wiki/Richard_Shelby::1000::5,75,60::
 ::20001::Michael Bennet::::senate::government_logos/senators/64_64/B001267.jpg::http://bennet.senate.gov::http://en.wikipedia.org/wiki/Michael_Bennet::1000::60::
 ::20002::Tom Udall::::senate::government_logos/senators/64_64/U000039.jpg::http://tomudall.senate.gov::http://en.wikipedia.org/wiki/Tom_Udall::1000::60::
 ::20003::Lisa Murkowski::::senate::government_logos/senators/64_64/M001153.jpg::http://murkowski.senate.gov::http://en.wikipedia.org/wiki/Lisa_Murkowski::1000::6,60,73::
@@ -481,7 +484,7 @@
 ::20028::Saxby Chambliss::::senate::government_logos/senators/64_64/C000286.jpg::http://chambliss.senate.gov::http://en.wikipedia.org/wiki/Saxby_Chambliss::1000::60::
 ::20029::Jerry Moran::::senate::government_logos/senators/64_64/KS_2_Moran.png::http://moran.senate.gov::http://en.wikipedia.org/wiki/Jerry_Moran::1000::60::
 ::20030::Ron Johnson::::senate::government_logos/senators/64_64/WI_2_Johnson.png::http://ronjohnson.senate.gov::http://en.wikipedia.org/wiki/Ron_Johnson::1000::60::
-::20031::Jefferson Sessions::::senate::government_logos/senators/64_64/S001141.jpg::http://sessions.senate.gov/::http://en.wikipedia.org/wiki/Jefferson_Sessions::1000::5,60,75::
+::20031::Jefferson Sessions::::senate::government_logos/senators/64_64/S001141.jpg::http://sessions.senate.gov/::http://en.wikipedia.org/wiki/Jefferson_Sessions::1000::5,75,60::
 ::20032::Herb Kohl::::senate::government_logos/senators/64_64/K000305.jpg::http://kohl.senate.gov::http://en.wikipedia.org/wiki/Herb_Kohl::1000::60::
 ::20033::Ron Wyden::::senate::government_logos/senators/64_64/W000779.jpg::http://wyden.senate.gov::http://en.wikipedia.org/wiki/Ron_Wyden::1000::60::
 ::20034::Lindsey Graham::::senate::government_logos/senators/64_64/G000359.jpg::http://lgraham.senate.gov::http://en.wikipedia.org/wiki/Lindsey_Graham::1000::60::
@@ -523,8 +526,8 @@
 ::20070::John Boozman::::senate::government_logos/senators/64_64/AR_1_Boozman.png::http://boozman.senate.gov::http://en.wikipedia.org/wiki/John_Boozman::1000::60::
 ::20071::Michael Enzi::::senate::government_logos/senators/64_64/E000285.jpg::http://enzi.senate.gov::http://en.wikipedia.org/wiki/Michael_Enzi::1000::60::
 ::20072::John Ensign::::senate::government_logos/senators/64_64/E000194.jpg::http://ensign.senate.gov::http://en.wikipedia.org/wiki/John_Ensign::1000::60::
-::20073::Richard Burr::::senate::government_logos/senators/64_64/B001135.jpg::http://burr.senate.gov::http://en.wikipedia.org/wiki/Richard_Burr::1000::38,60,127::
-::20074::Kay Hagan::::senate::government_logos/senators/64_64/NC_2_Hagan.png::http://hagan.senate.gov::http://en.wikipedia.org/wiki/Kay_Hagan::1000::38,60,127::
+::20073::Richard Burr::::senate::government_logos/senators/64_64/B001135.jpg::http://burr.senate.gov::http://en.wikipedia.org/wiki/Richard_Burr::1000::127,38,60::
+::20074::Kay Hagan::::senate::government_logos/senators/64_64/NC_2_Hagan.png::http://hagan.senate.gov::http://en.wikipedia.org/wiki/Kay_Hagan::1000::127,38,60::
 ::20075::Pat Roberts::::senate::government_logos/senators/64_64/R000307.jpg::http://roberts.senate.gov::http://en.wikipedia.org/wiki/Pat_Roberts::1000::60::
 ::20076::Richard Lugar::::senate::government_logos/senators/64_64/L000504.jpg::http://lugar.senate.gov::http://en.wikipedia.org/wiki/Richard_Lugar::1000::60::
 ::20077::Jack Reed::::senate::government_logos/senators/64_64/RI_1_Reed.png::http://reed.senate.gov::http://en.wikipedia.org/wiki/Jack_Reed::1000::60::
@@ -660,7 +663,7 @@
 ::30107::Randy Forbes::::house::government_logos/representatives/64_64/VA04_Forbes.png::http://forbes.house.gov::http://en.wikipedia.org/wiki/Randy_Forbes::1000::59::
 ::30108::Luis Gutierrez::::house::government_logos/representatives/64_64/G000535.jpg::http://gutierrez.house.gov::http://en.wikipedia.org/wiki/Luis_Gutierrez::1000::59::
 ::30109::Roscoe Bartlett::::house::government_logos/representatives/64_64/B000208.jpg::http://bartlett.house.gov::http://en.wikipedia.org/wiki/Roscoe_Bartlett::1000::59::
-::30110::Ed Pastor::::house::government_logos/representatives/64_64/P000099.jpg::http://pastor.house.gov::http://en.wikipedia.org/wiki/Ed_Pastor::1000::59,78,7::
+::30110::Ed Pastor::::house::government_logos/representatives/64_64/P000099.jpg::http://pastor.house.gov::http://en.wikipedia.org/wiki/Ed_Pastor::1000::78,59,7::
 ::30111::James Sensenbrenner::::house::government_logos/representatives/64_64/S000244.jpg::http://sensenbrenner.house.gov::http://en.wikipedia.org/wiki/James_Sensenbrenner::1000::59::
 ::30112::Pete King::::house::government_logos/representatives/64_64/K000210.jpg::http://king.house.gov::http://en.wikipedia.org/wiki/Pete_King::1000::59::
 ::30113::Allen West::::house::government_logos/representatives/64_64/FL22_West.png::http://west.house.gov::http://en.wikipedia.org/wiki/Allen_West_(politician)::1000::59::
@@ -710,7 +713,7 @@
 ::30157::Ron Paul::::house::government_logos/representatives/64_64/P000583.jpg::http://paul.house.gov::http://en.wikipedia.org/wiki/Ron_Paul::1000::59::
 ::30158::Mike McIntyre::::house::government_logos/representatives/64_64/M000485.jpg::http://mcintyre.house.gov::http://en.wikipedia.org/wiki/Mike_McIntyre::1000::126,38,59::
 ::30159::Sue Myrick::::house::government_logos/representatives/64_64/M001134.jpg::http://myrick.house.gov::http://en.wikipedia.org/wiki/Sue_Myrick::1000::126,38,59::
-::30160::Raul Grijalva::::house::government_logos/representatives/64_64/G000551.jpg::http://grijalva.house.gov::http://en.wikipedia.org/wiki/Raul_Grijalva::1000::59,78,7::
+::30160::Raul Grijalva::::house::government_logos/representatives/64_64/G000551.jpg::http://grijalva.house.gov::http://en.wikipedia.org/wiki/Raul_Grijalva::1000::78,59,7::
 ::30161::Jim Cooper::::house::government_logos/representatives/64_64/C000754.jpg::http://cooper.house.gov::http://en.wikipedia.org/wiki/Jim_Cooper::1000::59::
 ::30162::David Rivera::::house::government_logos/representatives/64_64/FL25_Rivera.png::http://rivera.house.gov::http://en.wikipedia.org/wiki/David_Rivera::1000::59::
 ::30163::Todd Rokita::::house::government_logos/representatives/64_64/IN04_Rokita.png::http://rokita.house.gov::http://en.wikipedia.org/wiki/Todd_Rokita::1000::59::
@@ -789,7 +792,7 @@
 ::30236::Jackie Speier::::house::government_logos/representatives/64_64/CA12_Speier.png::http://speier.house.gov::http://en.wikipedia.org/wiki/Jackie_Speier::1000::59::
 ::30237::Jo Bonner::::house::government_logos/representatives/64_64/B001244.jpg::http://bonner.house.gov::http://en.wikipedia.org/wiki/Jo_Bonner::1000::5,59,74::
 ::30238::Alcee Hastings::::house::government_logos/representatives/64_64/H000324.jpg::http://hastings.house.gov::http://en.wikipedia.org/wiki/Alcee_Hastings::1000::59::
-::30239::Paul Gosar::::house::government_logos/representatives/64_64/AZ01_Gosar.png::http://gosar.house.gov::http://en.wikipedia.org/wiki/Paul_Gosar::1000::59,78,7::
+::30239::Paul Gosar::::house::government_logos/representatives/64_64/AZ01_Gosar.png::http://gosar.house.gov::http://en.wikipedia.org/wiki/Paul_Gosar::1000::78,59,7::
 ::30240::Martin Heinrich::::house::government_logos/representatives/64_64/NM01_Heinrich.png::http://heinrich.house.gov::http://en.wikipedia.org/wiki/Martin_Heinrich::1000::59::
 ::30241::Joe Wilson::::house::government_logos/representatives/64_64/SC02_Wilson.png::http://wilson.house.gov::http://en.wikipedia.org/wiki/Joe_Wilson::1000::59::
 ::30242::Lynn Jenkins::::house::government_logos/representatives/64_64/KS02_Jenkins.png::http://jenkins.house.gov::http://en.wikipedia.org/wiki/Lynn_Jenkins::1000::59::
@@ -898,11 +901,11 @@
 ::30345::Larry Kissell::::house::government_logos/representatives/64_64/NC08_Kissell.png::http://kissell.house.gov::http://en.wikipedia.org/wiki/Larry_Kissell::1000::126,38,59::
 ::30346::Michael Michaud::::house::government_logos/representatives/64_64/M001149.jpg::http://michaud.house.gov::http://en.wikipedia.org/wiki/Michael_Michaud::1000::59::
 ::30347::Richard Nugent::::house::government_logos/representatives/64_64/FL05_Nugent.png::http://nugent.house.gov::http://en.wikipedia.org/wiki/Richard_Nugent::1000::59::
-::30348::Jeff Flake::::house::government_logos/representatives/64_64/F000444.jpg::http://flake.house.gov::http://en.wikipedia.org/wiki/Jeff_Flake::1000::59,78,7::
+::30348::Jeff Flake::::house::government_logos/representatives/64_64/F000444.jpg::http://flake.house.gov::http://en.wikipedia.org/wiki/Jeff_Flake::1000::78,59,7::
 ::30349::Steve Womack::::house::government_logos/representatives/64_64/AR03_Womack.png::http://womack.house.gov::http://en.wikipedia.org/wiki/Steve_Womack::1000::59::
 ::30350::Ed Royce::::house::government_logos/representatives/64_64/R000487.jpg::http://royce.house.gov::http://en.wikipedia.org/wiki/Ed_Royce::1000::59::
-::30351::David Schweikert::::house::government_logos/representatives/64_64/AZ05_Schweikert.png::http://schweikert.house.gov::http://en.wikipedia.org/wiki/David_Schweikert::1000::59,78,7::
-::30352::Trent Franks::::house::government_logos/representatives/64_64/F000448.jpg::http://franks.house.gov::http://en.wikipedia.org/wiki/Trent_Franks::1000::59,78,7::
+::30351::David Schweikert::::house::government_logos/representatives/64_64/AZ05_Schweikert.png::http://schweikert.house.gov::http://en.wikipedia.org/wiki/David_Schweikert::1000::78,59,7::
+::30352::Trent Franks::::house::government_logos/representatives/64_64/F000448.jpg::http://franks.house.gov::http://en.wikipedia.org/wiki/Trent_Franks::1000::78,59,7::
 ::30353::Sam Graves::::house::government_logos/representatives/64_64/G000546.jpg::http://graves.house.gov::http://en.wikipedia.org/wiki/Sam_Graves::1000::59::
 ::30354::Jim McGovern::::house::government_logos/representatives/64_64/M000312.jpg::http://mcgovern.house.gov::http://en.wikipedia.org/wiki/James_McGovern::1000::59::
 ::30355::Colleen Hanabusa::::house::government_logos/representatives/64_64/HI01_Hanabusa.png::http://hanabusa.house.gov::http://en.wikipedia.org/wiki/Colleen_Hanabusa::1000::59::
@@ -918,12 +921,12 @@
 ::30365::Steve Israel::::house::government_logos/representatives/64_64/I000057.jpg::http://israel.house.gov::http://en.wikipedia.org/wiki/Steve_Israel::1000::59::
 ::30366::John Yarmuth::::house::government_logos/representatives/64_64/Y000062.jpg::http://yarmuth.house.gov::http://en.wikipedia.org/wiki/John_Yarmuth::1000::59::
 ::30367::Jason Chaffetz::::house::government_logos/representatives/64_64/UT03_Chaffetz.png::http://chaffetz.house.gov::http://en.wikipedia.org/wiki/Jason_Chaffetz::1000::59::
-::30368::Gabrielle Giffords::::house::government_logos/representatives/64_64/G000554.jpg::http://giffords.house.gov::http://en.wikipedia.org/wiki/Gabrielle_Giffords::1000::59,78,7::
+::30368::Gabrielle Giffords::::house::government_logos/representatives/64_64/G000554.jpg::http://giffords.house.gov::http://en.wikipedia.org/wiki/Gabrielle_Giffords::1000::78,59,7::
 ::30369::Sam Farr::::house::government_logos/representatives/64_64/F000030.jpg::http://farr.house.gov::http://en.wikipedia.org/wiki/Sam_Farr::1000::59::
 ::30370::Scott Rigell::::house::government_logos/representatives/64_64/VA02_Rigell.png::http://rigell.house.gov::http://en.wikipedia.org/wiki/Scott_Rigell::1000::59::
 ::30371::Vicky Hartzler::::house::government_logos/representatives/64_64/MO04_Hartzler.png::http://hartzler.house.gov::http://en.wikipedia.org/wiki/Vicky_Hartzler::1000::59::
 ::30372::Mo Brooks::::house::government_logos/representatives/64_64/AL05_Brooks.png::http://brooks.house.gov::http://en.wikipedia.org/wiki/Mo_Brooks::1000::5,59,74::
-::30373::Ben Quayle::::house::government_logos/representatives/64_64/AZ03_Quayle.png::http://quayle.house.gov::http://en.wikipedia.org/wiki/Ben_Quayle::1000::59,78,7::
+::30373::Ben Quayle::::house::government_logos/representatives/64_64/AZ03_Quayle.png::http://quayle.house.gov::http://en.wikipedia.org/wiki/Ben_Quayle::1000::78,59,7::
 ::30374::Cory Gardner::::house::government_logos/representatives/64_64/CO04_Gardner.png::http://gardner.house.gov::http://en.wikipedia.org/wiki/Cory_Gardner::1000::59::
 ::30375::Alan Nunnelee::::house::government_logos/representatives/64_64/MS01_Nunnelee.png::http://nunnelee.house.gov::http://en.wikipedia.org/wiki/Alan_Nunnelee::1000::59::
 ::30376::Dan Burton::::house::government_logos/representatives/64_64/B001149.jpg::http://burton.house.gov::http://en.wikipedia.org/wiki/Dan_Burton::1000::59::
@@ -1027,7 +1030,7 @@
 ::40038::Halliburton::::fortune500::corporate_logos/128_128/Halliburton.png::http://www.halliburton.com::http://en.wikipedia.org/wiki/Halliburton::1000::1::
 ::40039::Virgin Media::::fortune500::corporate_logos/128_128/Virgin_Media.png::http://www.virginmedia.com::http://en.wikipedia.org/wiki/Virgin_Media::1000::1::
 ::40040::State Farm Insurance::::fortune500::corporate_logos/128_128/StateFarm.png::http://www.statefarm.com::http://en.wikipedia.org/wiki/State_Farm_Insurance::1000::1::
-::40041::Yum Brands::::fortune500::corporate_logos/128_128/Yum.png::http://www.yum.com::http://en.wikipedia.org/wiki/Yum_Brands::1000::1::
+::40041::Yum Brands::::fortune500::corporate_logos/128_128/Yum.png::http://www.yum.com::http://en.wikipedia.org/wiki/Yum_Brands::999::209,1::
 ::40042::Sara Lee::::fortune500::corporate_logos/128_128/SaraLee.png::http://www.saralee.com::http://en.wikipedia.org/wiki/Sara_Lee_Corporation::1000::1::
 ::40043::Supervalu::::fortune500::corporate_logos/128_128/Supervalu.png::http://www.supervalu.com::http://en.wikipedia.org/wiki/SuperValu_(United_States)::1000::1::
 ::40044::RadioShack::::fortune500::corporate_logos/128_128/RadioShack.png::http://www.radioshack.com::http://en.wikipedia.org/wiki/RadioShack::1000::1::
@@ -1345,7 +1348,7 @@
 ::40356::Broadcom::::fortune500::corporate_logos/128_128/Broadcom.png::http://www.broadcom.com::http://en.wikipedia.org/wiki/Broadcom::1000::198,1::
 ::40357::eBay::::fortune500::corporate_logos/128_128/EBay.png::http://www.ebay.com::http://en.wikipedia.org/wiki/EBay::1000::198,1::
 ::40358::Sempra Energy::::fortune500::corporate_logos/128_128/Sempra_Energy.png::http://www.sempra.com::http://en.wikipedia.org/wiki/Sempra_Energy::1000::199,56,1::
-::40359::Starbucks::::fortune500::corporate_logos/128_128/Starbucks.png::http://www.starbucks.com::http://en.wikipedia.org/wiki/Starbucks::1000::56,1,190,205::
+::40359::Starbucks::::fortune500::corporate_logos/128_128/Starbucks.png::http://www.starbucks.com::http://en.wikipedia.org/wiki/Starbucks::999::56,189,1,190,205::
 ::40360::Freeport-McMoRan Copper & Gold::::fortune500::corporate_logos/128_128/Freeport.png::http://www.fcx.com::http://en.wikipedia.org/wiki/Freeport-McMoRan::1000::1::
 ::40361::Wells Fargo::::fortune500::corporate_logos/128_128/WellsFargo.png::http://www.wellsfargo.com::http://en.wikipedia.org/wiki/Wells_Fargo::1000::56,201,1,202::
 ::40362::Reliance Steel & Aluminum::::fortune500::corporate_logos/128_128/Reliance_Steel.png::http://www.rsac.com::http://en.wikipedia.org/wiki/Reliance_Steel_&_Aluminum_Co.::1000::1::
@@ -1528,7 +1531,7 @@
 ::60014::Department of Defense Inspector General::::agency::government_logos/agencies/64_64/DODIG.png::http://www.dodig.mil::http://en.wikipedia.org/wiki/Office_of_the_Inspector_General,_U.S._Department_of_Defense::1000::57::
 ::60015::Public Diplomacy and Public Affairs (State Department)::::agency::government_logos/agencies/64_64/DeptOfState.png::http://www.state.gov/r::http://en.wikipedia.org/wiki/Under_Secretary_of_State_for_Public_Diplomacy_and_Public_Affairs::1000::57::
 ::60016::Joint Board for the Enrollment of Actuaries::::agency::government_logos/agencies/64_64/IRS.png::http://www.irs.gov/taxpros/actuaries::http://en.wikipedia.org/wiki/Joint_Board_for_the_Enrollment_of_Actuaries::1000::57::
-::60017::National Guard::::agency::government_logos/agencies/64_64/NationalGuard.png::http://www.nationalguard.com::http://en.wikipedia.org/wiki/National_Guard_of_the_United_States::1000::57::
+::60017::National Guard::::agency::government_logos/agencies/64_64/NationalGuard.png::http://www.nationalguard.com::http://en.wikipedia.org/wiki/National_Guard_of_the_United_States::1000::211,57::
 ::60018::Nuclear Energy, Science and Technology::::agency::government_logos/agencies/64_64/DeptOfEnergy.png::http://www.ne.doe.gov::http://en.wikipedia.org/wiki/United_States_Department_of_Energy::1000::57::
 ::60019::National Cemetery Administration (Veterans Affairs Department)::::agency::government_logos/agencies/64_64/DeptOfVA.png::http://www.cem.va.gov::http://en.wikipedia.org/wiki/National_Cemetery_Administration::1000::57::
 ::60020::Inter-American Foundation::::agency::government_logos/agencies/64_64/IAF.png::http://www.iaf.gov::http://en.wikipedia.org/wiki/Inter-American_Foundation::1000::57::
@@ -1668,7 +1671,7 @@
 ::60154::National Indian Gaming Commission::::agency::government_logos/agencies/64_64/NIGC.png::http://www.nigc.gov::http://en.wikipedia.org/wiki/National_Indian_Gaming_Commission::1000::57::
 ::60155::National Highway Traffic Safety Administration::::agency::government_logos/agencies/64_64/NHTSA.png::http://www.nhtsa.gov::http://en.wikipedia.org/wiki/National_Highway_Traffic_Safety_Administration::1000::57::
 ::60156::Office of Federal Housing Enterprise Oversight::::agency::government_logos/agencies/64_64/HEO.png::http://www.ofheo.gov::http://en.wikipedia.org/wiki/Office_of_Federal_Housing_Enterprise_Oversight::1000::57::
-::60157::Army::::agency::government_logos/agencies/64_64/Army.png::http://www.army.mil::http://en.wikipedia.org/wiki/United_States_Army::1000::57::
+::60157::Army::::agency::government_logos/agencies/64_64/Army.png::http://www.army.mil::http://en.wikipedia.org/wiki/United_States_Army::1000::211,57::
 ::60158::Morris K. Udall Foundation::::agency::government_logos/agencies/64_64/Udall.png::http://www.udall.gov::http://en.wikipedia.org/wiki/Morris_K._Udall_Foundation::1000::57::
 ::60159::Administrative Committee of the Federal Register::::agency::government_logos/agencies/64_64/NationalArchives.png::http://www.archives.gov/federal-register/acfr::http://en.wikipedia.org/wiki/National_Archives_and_Records_Administration::1000::57::
 ::60160::Farm Service Agency::::agency::government_logos/agencies/64_64/FSA.png::http://www.fsa.usda.gov::http://en.wikipedia.org/wiki/Farm_Service_Agency::1000::57::
@@ -1759,7 +1762,7 @@
 ::60245::Federal Accounting Standards Advisory Board::::agency::government_logos/agencies/64_64/FASAB.png::http://www.fasab.gov::http://en.wikipedia.org/wiki/Federal_Accounting_Standards_Advisory_Board::1000::57::
 ::60246::Citizens' Stamp Advisory Committee::::agency::government_logos/agencies/64_64/USPS.png::http://www.usps.com/communications/organization/csac.htm::http://en.wikipedia.org/wiki/Citizens'_Stamp_Advisory_Committee::1000::57::
 ::60247::Appalachian Regional Commission::::agency::government_logos/agencies/64_64/ARC.png::http://www.arc.gov::http://en.wikipedia.org/wiki/Appalachian_Regional_Commission::1000::57::
-::60248::Army Corps of Engineers::::agency::government_logos/agencies/64_64/ArmyCorpsOfEngineers.png::http://www.usace.army.mil::http://en.wikipedia.org/wiki/Army_Corps_of_Engineers::1000::57::
+::60248::Army Corps of Engineers::::agency::government_logos/agencies/64_64/ArmyCorpsOfEngineers.png::http://www.usace.army.mil::http://en.wikipedia.org/wiki/Army_Corps_of_Engineers::1000::211,57::
 ::60249::Chief Human Capital Officers Council::::agency::government_logos/agencies/64_64/DeptOfEnergy.png::http://www.chcoc.gov::http://en.wikipedia.org/wiki/List_of_United_States_federal_agencies::1000::57::
 ::60250::Defense Commissary Agency::::agency::government_logos/agencies/64_64/DCA.png::http://www.commissaries.com::http://en.wikipedia.org/wiki/Defense_Commissary_Agency::1000::57::
 ::60251::Illinois and Michigan Canal National Heritage Corridor Commission::::agency::government_logos/agencies/64_64/NPS.png::http://www.nps.gov/ilmi::http://en.wikipedia.org/wiki/National_Park_Service::1000::57::
@@ -1817,7 +1820,7 @@
 ::60303::Energy Efficiency and Renewable Energy::::agency::government_logos/agencies/64_64/DeptOfEnergy.png::http://www.eere.energy.gov::http://en.wikipedia.org/wiki/Energy_Efficiency_and_Renewable_Energy::1000::57::
 ::60304::Cooperative State Research, Education and Extension Service::::agency::government_logos/agencies/64_64/CSREES.png::http://www.csrees.usda.gov::http://en.wikipedia.org/wiki/Cooperative_State_Research,_Education,_and_Extension_Service::1000::57::
 ::60305::Congressional Research Service::::agency::government_logos/agencies/64_64/CRS.png::http://www.loc.gov/crsinfo::http://en.wikipedia.org/wiki/Congressional_Research_Service::1000::57::
-::60306::Air Force::::agency::government_logos/agencies/64_64/AirForce.png::http://www.af.mil::http://en.wikipedia.org/wiki/United_States_Air_Force::1000::57::
+::60306::Air Force::::agency::government_logos/agencies/64_64/AirForce.png::http://www.af.mil::http://en.wikipedia.org/wiki/United_States_Air_Force::1000::211,57::
 ::60307::Grain Inspection, Packers and Stockyards Administration::::agency::government_logos/agencies/64_64/USDA.png::http://www.gipsa.usda.gov/GIPSA::http://en.wikipedia.org/wiki/Grain_Inspection,_Packers_and_Stockyards_Administration::1000::57,193::
 ::60308::Federal Communications Commission (FCC)::::agency::government_logos/agencies/64_64/FCC.png::http://www.fcc.gov::http://en.wikipedia.org/wiki/Federal_Communications_Commission::1000::57::
 ::60309::Employment Standards Administration::::agency::government_logos/agencies/64_64/DeptOfLabor.png::http://www.dol.gov/esa::http://en.wikipedia.org/wiki/Employment_Standards_Administration::1000::57::
@@ -1864,13 +1867,13 @@
 ::60350::Trade and Development Agency::::agency::government_logos/agencies/64_64/USTDA.png::http://www.ustda.gov::http://en.wikipedia.org/wiki/USTDA::1000::57::
 ::60351::Economic Development Administration::::agency::government_logos/agencies/64_64/EDA.png::http://www.eda.gov::http://en.wikipedia.org/wiki/Economic_Development_Administration::1000::57::
 ::60352::Social Security Advisory Board::::agency::government_logos/agencies/64_64/SSAB.png::http://www.ssab.gov::http://en.wikipedia.org/wiki/Social_Security_(United_States)::1000::57::
-::60353::Marine Corps::::agency::government_logos/agencies/64_64/USMC.png::http://www.marines.mil::http://en.wikipedia.org/wiki/United_States_Marine_Corps::1000::57::
+::60353::Marine Corps::::agency::government_logos/agencies/64_64/USMC.png::http://www.marines.mil::http://en.wikipedia.org/wiki/United_States_Marine_Corps::1000::211,57::
 ::60354::Indian Health Service::::agency::government_logos/agencies/64_64/IHS.png::http://www.ihs.gov::http://en.wikipedia.org/wiki/Indian_Health_Service::1000::57::
 ::60355::Animal and Plant Health Inspection Service::::agency::government_logos/agencies/64_64/AnimalAndPlantHealthInspectionService.png::http://www.aphis.usda.gov::http://en.wikipedia.org/wiki/Animal_and_Plant_Health_Inspection_Service::1000::57::
 ::60356::Defense Contract Management Agency::::agency::government_logos/agencies/64_64/DCMA.png::http://www.dcma.mil::http://en.wikipedia.org/wiki/Defense_Contract_Management_Agency::1000::57::
 ::60357::Veterans' Employment and Training Service::::agency::government_logos/agencies/64_64/VETS.png::http://www.dol.gov/vets::http://en.wikipedia.org/wiki/Veterans'_Employment_and_Training_Service::1000::57::
 ::60358::Smithsonian Institution::::agency::government_logos/agencies/64_64/Smithsonian.png::http://www.si.edu::http://en.wikipedia.org/wiki/Smithsonian_Institution::1000::57::
-::60359::Navy::::agency::government_logos/agencies/64_64/Navy.png::http://www.navy.mil::http://en.wikipedia.org/wiki/United_States_Navy::1000::57::
+::60359::Navy::::agency::government_logos/agencies/64_64/Navy.png::http://www.navy.mil::http://en.wikipedia.org/wiki/United_States_Navy::1000::211,57::
 ::60360::Marketing and Regulatory Programs::::agency::government_logos/agencies/64_64/USDA.png::http://www.aphis.usda.gov/mrpbs::http://en.wikipedia.org/wiki/Under_Secretary_of_Agriculture_for_Marketing_and_Regulatory_Programs::1000::57,193::
 ::60361::American Battle Monuments Commission::::agency::government_logos/agencies/64_64/ABMC.png::http://www.abmc.gov::http://en.wikipedia.org/wiki/American_Battle_Monuments_Commission::1000::57::
 ::60362::Government Printing Office (GPO)::::agency::government_logos/agencies/64_64/GPO.png::http://www.gpo.gov::http://en.wikipedia.org/wiki/Government_Printing_Office::1000::57::
@@ -2077,7 +2080,7 @@
 ::101074::BLT Cobb Salad::Wendy's::::restaurants/wendys/SaladBLTCobbSalad.png::::::1000::194::
 ::101075::Apple Pecan Chicken Salad::Wendy's::::restaurants/wendys/SaladApplePecanChickenSalad.png::::::1000::194::
 ::101076::Spicy Chicken Caesar Salad::Wendy's::::restaurants/wendys/SaladSpicyChickenCaesarSalad.png::::::1000::194::
-::101077::Natural-Cut French Fries::Wendy's::::restaurants/wendys/FriesNaturalCutFrenchFries.png::::::1000::191,194::
+::101077::Natural-Cut French Fries::Wendy's::::restaurants/wendys/FriesNaturalCutFrenchFries.png::::::1000::194,191::
 ::101078::Garden Side Salad::Wendy's::::restaurants/wendys/SaladGardenSideSalad.png::::::1000::194::
 ::101079::Caesar Side Salad::Wendy's::::restaurants/wendys/SaladCaesarSideSalad.png::::::1000::194::
 ::101080::Sour Cream and Chive Potato::Wendy's::::restaurants/wendys/PotatoSourCreamAndChivePotato.png::::::1000::194::
@@ -2107,8 +2110,8 @@
 ::101104::Chocolate Shake::Arby's::::restaurants/arbys/DrinksChocolateShake.png::::::1000::195::
 ::101105::Jamocha Shake::Arby's::::restaurants/arbys/DrinksJamochaShake.png::::::1000::195::
 ::101106::Vanilla Shake::Arby's::::restaurants/arbys/DrinksVanillaShake.png::::::1000::195::
-::101107::Curly Fries::Arby's::::restaurants/arbys/FriesCurly.png::::::1000::191,195::
-::101108::Homestyle Fries::Arby's::::restaurants/arbys/FriesHomestyle.png::::::1000::191,195::
+::101107::Curly Fries::Arby's::::restaurants/arbys/FriesCurly.png::::::1000::195,191::
+::101108::Homestyle Fries::Arby's::::restaurants/arbys/FriesHomestyle.png::::::1000::195,191::
 ::101109::Chopped Side Salad::Arby's::::restaurants/arbys/SaladChoppedSideSalad.png::::::1000::195::
 ::101110::Crispy Chopped Farmhouse Salad::Arby's::::restaurants/arbys/SaladCrispyChoppedFarmhouseSalad.png::::::1000::195::
 ::101111::Roast Chopped Farmhouse Salad::Arby's::::restaurants/arbys/SaladRoastFarmhouseSalad.png::::::1000::195::
@@ -2149,3 +2152,43 @@
 ::101146::Internet Explorer::Microsoft::::product_logos/128_128/Browser_IE.png::http://windows.microsoft.com/en-us/internet-explorer/products/ie/home::http://en.wikipedia.org/wiki/Internet_Explorer::1000::197,198::
 ::101147::Safari::Applle::::product_logos/128_128/Browser_Safari.png::http://www.apple.com/safari/::http://en.wikipedia.org/wiki/Safari_(web_browser)::1000::197,198::
 ::101148::Firefox::Mozilla::::product_logos/128_128/Browser_Firefox.png::http://www.mozilla.org/en-US/firefox/new/::http://en.wikipedia.org/wiki/Firefox::1000::197,198::
+::101149::INITECH::::::corporate_logos/128_128/INITECH.png::http://www.bustedtees.com/initech::http://en.wikipedia.org/wiki/Office_Space::1000::198,1::
+::101150::Cruncy Taco::Taco Bell::::restaurants/taco_bell/Taco_Crunchy.png::::::1000::209::
+::101151::Taco Bell::::::restaurants/taco_bell/Logo_TacoBell.png::http://www.tacobell.com::http://en.wikipedia.org/wiki/Taco_Bell::998::1,196,209::
+::101152::Soft Taco Supreme::Taco Bell::::restaurants/taco_bell/Taco_Supreme_Soft.png::::::1000::209::
+::101153::Cruncy Taco Supreme::Taco Bell::::restaurants/taco_bell/Taco_Supreme.png::::::1000::209::
+::101154::Soft Taco::Taco Bell::::restaurants/taco_bell/Taco_Soft.png::::::1000::209::
+::101155::Volcano Taco::Taco Bell::::restaurants/taco_bell/Taco_Volcano.png::::::1000::209::
+::101156::Double Decker Taco::Taco Bell::::restaurants/taco_bell/Taco_Double_Decker.png::::::1000::209::
+::101157::Double Decker Taco Supreme::Taco Bell::::restaurants/taco_bell/Taco_Double_Decker_Supreme.png::::::1000::209::
+::101158::Grilled Steak Soft Taco::Taco Bell::::restaurants/taco_bell/Taco_Grilled_Steak_Soft.png::::::1000::209::
+::101159::Chicken Soft Taco::Taco Bell::::restaurants/taco_bell/Taco_Grilled_Chicken_Soft.png::::::1000::209::
+::101160::Crispy Potato Soft Taco::Taco Bell::::restaurants/taco_bell/Taco_Crispy_Potato_Soft.png::::::1000::209::
+::101161::Fresco Crunchy Taco::Taco Bell::::restaurants/taco_bell/Taco_Fresco_Crunchy.png::::::1000::209::
+::101162::Fresco Grilled Steak Soft Taco::Taco Bell::::restaurants/taco_bell/Taco_Fresco_Steak.png::::::1000::209::
+::101163::Fresco Soft Taco::Taco Bell::::restaurants/taco_bell/Taco_Fresco_Soft.png::::::1000::209::
+::101164::Fresco Chicken Soft Taco::Taco Bell::::restaurants/taco_bell/Taco_Fresco_Chicken.png::::::1000::209::
+::101165::Beefy Crunch Burrito::Taco Bell::::restaurants/taco_bell/Burrito_Beefy_Crunch.png::::::1000::209::
+::101166::7-Layer Burrito::Taco Bell::::restaurants/taco_bell/Burrito_7_Layer.png::::::1000::209::
+::101167::Grilled Chicken Burrito::Taco Bell::::restaurants/taco_bell/Burrito_Chicken.png::::::1000::209::
+::101168::Beefy 5-Layer Burrito::Taco Bell::::restaurants/taco_bell/Burrito_Beefy_5_Layer.png::::::1000::209::
+::101169::Volcano Burrito::Taco Bell::::restaurants/taco_bell/Burrito_Volcano.png::::::1000::209::
+::101170::1/2 LB. Combo Burrito::Taco Bell::::restaurants/taco_bell/Burrito_Combo.png::::::1000::209::
+::101171::1/2 LB. Cheesy Potato Burrito::Taco Bell::::restaurants/taco_bell/Burrito_Cheesy_Potato.png::::::1000::209::
+::101172::Bean Burrito::Taco Bell::::restaurants/taco_bell/Burrito_Bean.png::::::1000::209::
+::101173::Burrito Supreme - Beef::Taco Bell::::restaurants/taco_bell/Burrito_Supreme.png::::::1000::209::
+::101174::Fresco Bean Burrito::Taco Bell::::restaurants/taco_bell/Burrito_Fresco_Bean.png::::::1000::209::
+::101175::Fresco Burrito Supreme - Chicken::Taco Bell::::restaurants/taco_bell/Burrito_Fresco_Chicken.png::::::1000::209::
+::101176::Fresco Burrito Supreme - Steak::Taco Bell::::restaurants/taco_bell/Burrito_Fresco_Steak.png::::::1000::209::
+::101177::XXL Grilled Stuft Burrito - Beef::Taco Bell::::restaurants/taco_bell/Burrito_xxl_Beef.png::::::1000::209::
+::101178::XXL Grilled Stuft Burrito - Chicken::Taco Bell::::restaurants/taco_bell/Burrito_xxl_Chicken.png::::::1000::209::
+::101179::XXL Grilled Stuft Burrito - Steak::Taco Bell::::restaurants/taco_bell/Burrito_xxl_Steak.png::::::1000::209::
+::101180::Antonin Scalia::Supreme Court Associate Justice::::government/supreme_court/Antonin_Scalia.png::::::1000::210::
+::101181::Anthony M. Kennedy::Supreme Court Associate Justice::::government/supreme_court/Anthony_M_Kennedy.png::::::1000::210::
+::101182::Clarence Thomas::Supreme Court Associate Justice::::government/supreme_court/Clarence_Thomas.png::::::1000::210::
+::101183::Ruth Bader Ginsburg::Supreme Court Associate Justice::::government/supreme_court/Ruth_Bader_Ginsburg.png::::::1000::210::
+::101184::Stephen G. Breyer::Supreme Court Associate Justice::::government/supreme_court/Stephen_G_Breyer.png::::::1000::210::
+::101185::John G. Roberts, Jr.::Supreme Court Chief Justice::::government/supreme_court/John_G_Roberts_Jr.png::::::1000::210::
+::101186::Samuel A. Alito, Jr.::Supreme Court Associate Justice::::government/supreme_court/Samuel_A_Alito_Jr.png::::::1000::210::
+::101187::Sonia M. Sotomayor::Supreme Court Associate Justice::::government/supreme_court/Sonia_Sotomayor.png::::::1000::210::
+::101188::Elena Kagan::Supreme Court Associate Justice::::government/supreme_court/Elena_Kagan.png::::::1000::210::

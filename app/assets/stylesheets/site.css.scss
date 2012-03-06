@@ -988,6 +988,13 @@ ul.ui-autocomplete{
   }
 }
 
+.list-tag a{
+  display: block;
+  width: 150px;
+  margin-right: 5px;
+  float: left;
+}
+
 .related-tags-container{
   ul#related-tags{
     display: inline;
