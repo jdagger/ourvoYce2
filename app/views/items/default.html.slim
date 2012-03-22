@@ -78,19 +78,20 @@
           .itemblock
             h3= "Government"
             .list-tag
+              a(href='/ov/#!/tag/congress') 112th Congress
               a(href='/ov/#!/tag/agency') Agency
               a(href='/ov/#!/tag/executive') Executive Branch
-              a(href='/ov/#!/tag/house') House
               a(href='/ov/#!/tag/military') Military
-              a(href='/ov/#!/tag/senate') Senate
+              a(href='/ov/#!/tag/police') Police
               a(href='/ov/#!/tag/supreme_court') Supreme Court
             .clear
             
         .pullout-item
           .itemblock
             h3= "Suggest a Topic:"
-            input type="text" class="inputbox" name="topic" maxlength="35"
-            input type="image" name="submit" src="/assets/site/btnsubmit.gif" border="0" width="52" height="22" class="submitbtn2"
+            .list-tag
+              input type="text" class="inputbox" name="topic" maxlength="40" style="float: left; width: 250px"
+              input type="image" name="submit" src="/assets/site/btnsubmit.png" border="0" width="50" height="21" class="submitbtn2" style="padding-left: 10px"
             .clear
         .pullout-item.last
           .itemblock
