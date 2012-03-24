@@ -1,4 +1,4 @@
-//Created: 2012-03-22 00:45:10 -0400
+//Created: 2012-03-24 13:56:13 -0400
 ##TAGS##
 //id, path, friendly_name, popular, hot_topic
 ::1::corporation::Corporation::false::false::
@@ -223,18 +223,18 @@
 ::221::nfc_east::NFC East::false::false::
 ::222::nfc::NFC::false::false::
 ::223::afc::AFC::false::false::
-::224::election_2012::Election 2012::false::true::
-::225::presidential_candidate::Presidential Candidate::true::false::
+::224::election_2012::Presidential Election 2012::false::true::
 ::226::congress::112th Congress::false::false::
 ::227::ncaa::College Hoops::false::false::
 ::228::questions::The Basics::true::false::
+::229::potus::Commander in Chief::true::false::
 ##ITEMS##
 //id, name, description, item_type, logo, website, wikipedia, default_order, tags
-::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::1000::224,4,71,181::
-::10002::CBS News::::media::media_logos/128_128/CBS.png::http://www.cbsnews.com::http://en.wikipedia.org/wiki/Cbs_news::1000::224,4,71,180::
-::10003::NBC News::::media::media_logos/128_128/NBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/NBC_News::1000::224,178,4,71::
-::10004::Fox News::::media::media_logos/128_128/FoxNews.png::http://www.foxnews.com::http://en.wikipedia.org/wiki/Fox_news::1000::224,4,71,175::
-::10005::CNN::::media::media_logos/128_128/CNN.png::http://www.cnn.com::http://en.wikipedia.org/wiki/Cnn::1000::224,174,4,71::
+::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::401::224,4,71,181::
+::10002::CBS News::::media::media_logos/128_128/CBS.png::http://www.cbsnews.com::http://en.wikipedia.org/wiki/Cbs_news::402::224,4,71,180::
+::10003::NBC News::::media::media_logos/128_128/NBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/NBC_News::406::224,178,4,71::
+::10004::Fox News::::media::media_logos/128_128/FoxNews.png::http://www.foxnews.com::http://en.wikipedia.org/wiki/Fox_news::404::224,4,71,175::
+::10005::CNN::::media::media_logos/128_128/CNN.png::http://www.cnn.com::http://en.wikipedia.org/wiki/Cnn::403::224,174,4,71::
 ::10006::Heavy Hundred (Top 25)::::media::media_logos/128_128/HeavyHundred.png::http://www.talkers.com/2011hhindex.html::http://en.wikipedia.org/wiki/Talkers_Magazine::1000::4,70,184::
 ::10007::National Public Radio::::media::media_logos/128_128/NPR.png::http://www.npr.org::http://en.wikipedia.org/wiki/Npr::1000::4,70,185::
 ::10013::World News::::media::media_logos/128_128/ABC_WorldNews.png::http://abcnews.go.com/wn::http://en.wikipedia.org/wiki/ABC_World_News::1000::4,71,181::
@@ -329,7 +329,7 @@
 ::10119::Weekend Edition Saturday::::media::media_logos/128_128/NPR_WeekendEdition.png::http://www.npr.org/programs/wesat::http://en.wikipedia.org/wiki/Weekend_Edition::1000::4,70,185::
 ::10120::Weekend Edition Sunday::::media::media_logos/128_128/NPR_WeekendEdition.png::http://www.npr.org/programs/wesun::http://en.wikipedia.org/wiki/Weekend_Edition::1000::4,70,185::
 ::10121::CNBC::::media::media_logos/128_128/CNBC.png::http://www.cnbc.com::http://en.wikipedia.org/wiki/Cnbc::1000::4,71,179::
-::10122::MSNBC::::media::media_logos/128_128/MSNBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/Msnbc::1000::224,177,4,71::
+::10122::MSNBC::::media::media_logos/128_128/MSNBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/Msnbc::405::224,177,4,71::
 ::10123::PBS::::media::media_logos/128_128/PBS.png::http://www.pbs.org::http://en.wikipedia.org/wiki/Public_Broadcasting_Service::1000::4,71,182::
 ::10124::What Would You Do?::::media::media_logos/128_128/ABC_WWYD.png::http://abcnews.go.com/whatwouldyoudo::http://en.wikipedia.org/wiki/Primetime:_What_Would_You_Do?::1000::4,71,181::
 ::10125::The Early Show::::media::media_logos/128_128/CBS_TheEarlyShow.png::http://www.cbsnews.com/earlyshow::http://en.wikipedia.org/wiki/CBS_Early_Show::1000::4,71,180::
@@ -727,7 +727,7 @@
 ::30154::Scott Tipton::Representative 3 (CO)<br />202-225-4761::house::government_logos/representatives/64_64/CO03_Tipton.png::http://tipton.house.gov::http://en.wikipedia.org/wiki/Scott_Tipton::1000::10,59,82,226::
 ::30155::Adrian Smith::Representative 3 (NE)<br />202-225-6435::house::government_logos/representatives/64_64/S001172.jpg::http://smith.house.gov::http://en.wikipedia.org/wiki/Adrian_Smith::1000::32,59,130,226::
 ::30156::John Duncan::Representative 2 (TN)<br />202-225-5435::house::government_logos/representatives/64_64/D000533.jpg::http://duncan.house.gov::http://en.wikipedia.org/wiki/John_Duncan::1000::47,59,156,226::
-::30157::Ron Paul::Representative 14 (TX)<br />202-225-2831::house::government_logos/representatives/64_64/P000583.jpg::http://paul.house.gov::http://en.wikipedia.org/wiki/Ron_Paul::1000::224,226,225,48,158,59::
+::30157::Ron Paul::Representative 14 (TX)<br />202-225-2831::house::government_logos/representatives/64_64/P000583.jpg::http://paul.house.gov::http://en.wikipedia.org/wiki/Ron_Paul::81::224,226,48,158,59::
 ::30158::Mike McIntyre::Representative 7 (NC)<br />202-225-2731::house::government_logos/representatives/64_64/M000485.jpg::http://mcintyre.house.gov::http://en.wikipedia.org/wiki/Mike_McIntyre::1000::38,59,126,226::
 ::30159::Sue Myrick::Representative 9 (NC)<br />202-225-1976::house::government_logos/representatives/64_64/M001134.jpg::http://myrick.house.gov::http://en.wikipedia.org/wiki/Sue_Myrick::1000::38,59,126,226::
 ::30160::Raul Grijalva::Representative 7 (AZ)<br />202-225-2435::house::government_logos/representatives/64_64/G000551.jpg::http://grijalva.house.gov::http://en.wikipedia.org/wiki/Raul_Grijalva::1000::7,59,78,226::
@@ -1530,7 +1530,7 @@
 ::50019::Timothy Geithner::Secretary of the Treasury::executive::government_logos/executives/64_64/04_SecretaryOfTheTreasury.png::http://www.treasury.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_the_Treasury::40::58::
 ::50020::Susan Rice::Ambassador to the United Nations::executive::government_logos/executives/64_64/22_AmbassadorToTheUnitedNations.png::http://www.usunnewyork.usmission.gov::http://en.wikipedia.org/wiki/United_States_Ambassador_to_the_United_Nations::220::58::
 ::50021::Lisa Jackson::Administrator of the Environmental Protection Agency::executive::government_logos/executives/64_64/19_AdministratorOfTheEnvironmentalProtectionAgency.png::http://www.epa.gov::http://en.wikipedia.org/wiki/Administrator_of_the_Environmental_Protection_Agency::190::58::
-::50022::Barack Obama::President of the United States::executive::government_logos/executives/64_64/01_President.png::http://www.whitehouse.gov/administration/president-obama::http://en.wikipedia.org/wiki/Us_president::10::58,224,225::
+::50022::Barack Obama::President of the United States::executive::government_logos/executives/64_64/01_President.png::http://www.whitehouse.gov/administration/president-obama::http://en.wikipedia.org/wiki/Us_president::10::58,224,229::
 ::60000::Research, Education and Economics (Agriculture Department)::::agency::government_logos/agencies/64_64/USDA.png::http://www.ree.usda.gov::http://en.wikipedia.org/wiki/Under_Secretary_of_Agriculture_for_Research,_Education,_and_Economics::1000::57,193::
 ::60001::Internal Revenue Service (IRS)::::agency::government_logos/agencies/64_64/IRS.png::http://www.irs.gov::http://en.wikipedia.org/wiki/Internal_Revenue_Service::1000::57::
 ::60002::National Credit Union Administration::::agency::government_logos/agencies/64_64/NCUA.png::http://www.ncua.gov::http://en.wikipedia.org/wiki/National_Credit_Union_Administration::1000::57::
@@ -2244,21 +2244,23 @@
 ::101221::St. Louis Rams::NFL::::sports/nfl/St_Louis_Rams.png::::::1000::212,213,214,222::
 ::101222::American Football Conference::AFC::::sports/nfl/Logo_AFC.png::http://www.nfl.com/teams::http://en.wikipedia.org/wiki/American_Football_Conference::999::212,213,223::
 ::101223::National Football Conference::NFC::::sports/nfl/Logo_NFC.png::http://www.nfl.com/teams::http://en.wikipedia.org/wiki/National_Football_Conference::999::212,213,222::
-::101224::Newt Gingrich::2012 Presidential Candidate::::government/election_2012/Newt_Gingrich.png::http://www.newt.org::http://en.wikipedia.org/wiki/Newt_Gingrich::1000::224,225::
-::101225::Mitt Romney::2012 Presidential Candidate::::government/election_2012/Mitt_Romney.png::http://www.mittromney.com::http://en.wikipedia.org/wiki/Mitt_Romney::1000::224,225::
-::101226::Rick Santorum::2012 Presidential Candidate::::government/election_2012/Rick_Santorum.png::http://ricksantorum.com::http://en.wikipedia.org/wiki/Santorum::1000::224,225::
+::101224::Newt Gingrich::2012 Presidential Candidate::::government/election_2012/Newt_Gingrich.png::http://www.newt.org::http://en.wikipedia.org/wiki/Newt_Gingrich::83::224::
+::101225::Mitt Romney::2012 Presidential Candidate::::government/election_2012/Mitt_Romney.png::http://www.mittromney.com::http://en.wikipedia.org/wiki/Mitt_Romney::80::224::
+::101226::Rick Santorum::2012 Presidential Candidate::::government/election_2012/Rick_Santorum.png::http://ricksantorum.com::http://en.wikipedia.org/wiki/Santorum::82::224::
 ::101227::Leon Panetta::Secretary of Defense::::government_logos/executives/64_64/03_.png::::::1000::58,211::
 ::101228::John Bryson::Secretary of Commerce::::government_logos/executives/64_64/03_.png::::::1000::58::
 ::101229::New York Police Department::NYPD::::government/police/NewYork.png::http://www.nyc.gov/html/nypd::http://en.wikipedia.org/wiki/Nypd::1000::2,37,61::
 ::101230::Los Angeles Police Department::LAPD::::government/police/LosAngeles.png::http://www.lapdonline.org::http://en.wikipedia.org/wiki/LAPD::1000::2,9,61::
-::101231::Are you happy?::::::category/StandingMan.png::::::50::228::
+::101231::Are you happy?::::::general/basics/Happy.png::http://dictionary.reference.com/browse/happy::http://en.wikipedia.org/wiki/Happy::50::228::
 ::101232::Are you financially rich?::::::category/StandingMan.png::::::55::228::
 ::101233::Are you in a relationship?::::::category/StandingMan.png::::::56::228::
 ::101234::Are you religious?::::::category/StandingMan.png::::::58::228::
 ::101235::Should corporations be able to influence the government?::::::category/StandingMan.png::::::52::228::
 ::101236::Does the media accurately reflect your point of view?::::::category/StandingMan.png::::::51::228::
-::101237::Should cannabis be legalized?::::::category/StandingMan.png::::::57::228::
+::101237::Should cannabis be legalized?::::::general/basics/Cannabis.png::http://www.justice.gov/dea/marijuana_position.pdf::http://en.wikipedia.org/wiki/Cannabis::57::228::
 ::101238::Are you satisfied with your government?::::::category/StandingMan.png::::::53::228::
 ::101239::Have you ever read the Constitution?::::::category/StandingMan.png::::::54::228::
 ::101240::112th Congress::::::government/congress/Congress.png::::http://en.wikipedia.org/wiki/United_States_Congress::999::2,226::
 ::101241::Supreme Count of the United States::::::government/supreme_court/SupremeCourt.png::http://www.supremecourt.gov::http://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States::59::2,210::
+::101242::Super PACs::::::government/election_2012/SuperPac.png::http://www.opensecrets.org/pacs/superpacs.php::http://en.wikipedia.org/wiki/Superpac#Super_PACs::84::224::
+::101243::Do you like ourvoYce?::::::category/StandingMan.png::::::1000::228::
