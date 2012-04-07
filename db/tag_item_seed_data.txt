@@ -1,4 +1,4 @@
-//Created: 2012-03-24 23:40:23 -0400
+//Created: 2012-04-07 11:15:59 -0400
 ##TAGS##
 //id, path, friendly_name, popular, hot_topic
 ::1::corporation::Corporation::false::false::
@@ -228,6 +228,11 @@
 ::227::ncaa::College Hoops::false::false::
 ::228::questions::The Basics::true::false::
 ::229::potus::Commander in Chief::true::false::
+::230::health_care_reform::Health Care Reform::false::true::
+::231::mlb::MLB::true::false::
+::232::nba::NBA::false::false::
+::233::nhl::NHL::false::false::
+::234::american_idol::American Idol::true::false::
 ##ITEMS##
 //id, name, description, item_type, logo, website, wikipedia, default_order, tags
 ::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::401::224,4,71,181::
@@ -1793,7 +1798,7 @@
 ::60259::Tax Court::::agency::government_logos/agencies/64_64/TaxCourt.png::http://www.ustaxcourt.gov::http://en.wikipedia.org/wiki/United_States_Tax_Court::1000::57::
 ::60260::Defense Logistics Agency (DLA)::::agency::government_logos/agencies/64_64/DLA.png::http://www.dla.mil::http://en.wikipedia.org/wiki/Defense_Logistics_Agency::1000::57::
 ::60261::National Constitution Center::::agency::government_logos/agencies/64_64/ConstitutionCenter.png::http://www.constitutioncenter.org::http://en.wikipedia.org/wiki/National_Constitution_Center::1000::57::
-::60262::Supreme Court of the United States::::agency::government_logos/agencies/64_64/SupremeCourt.png::http://www.supremecourt.gov::http://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States::1000::57::
+::60262::Supreme Court of the United States::::agency::government_logos/agencies/64_64/SupremeCourt.png::http://www.supremecourt.gov::http://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States::1000::57,230::
 ::60263::General Accounting Office (GAO)::::agency::government_logos/agencies/64_64/GAO.png::http://www.gao.gov::http://en.wikipedia.org/wiki/General_Accounting_Office::1000::57::
 ::60264::Saint Lawrence Seaway Development Corporation::::agency::government_logos/agencies/64_64/Seaway.png::http://www.seaway.dot.gov::http://en.wikipedia.org/wiki/Saint_Lawrence_Seaway_Development_Corporation::1000::57::
 ::60265::National Council on Disability::::agency::government_logos/agencies/64_64/NCD.png::http://www.ncd.gov::http://en.wikipedia.org/wiki/National_Council_on_Disability::1000::57::
@@ -2251,7 +2256,7 @@
 ::101228::John Bryson::Secretary of Commerce::::government_logos/executives/64_64/03_.png::::::1000::58::
 ::101229::New York Police Department::NYPD::::government/police/NewYork.png::http://www.nyc.gov/html/nypd::http://en.wikipedia.org/wiki/Nypd::1000::2,37,61::
 ::101230::Los Angeles Police Department::LAPD::::government/police/LosAngeles.png::http://www.lapdonline.org::http://en.wikipedia.org/wiki/LAPD::1000::2,9,61::
-::101231::Are you happy?::::::general/basics/Happy.png::http://dictionary.reference.com/browse/happy::http://en.wikipedia.org/wiki/Happy::50::228::
+::101231::Are you happy?::::::general/basics/Happy.png::http://dictionary.reference.com/browse/happy::http://en.wikipedia.org/wiki/Happy::5::228::
 ::101232::Are you financially rich?::::::category/StandingMan.png::::::55::228::
 ::101233::Are you in a relationship?::::::category/StandingMan.png::::::56::228::
 ::101234::Are you religious?::::::category/StandingMan.png::::::58::228::
@@ -2259,7 +2264,7 @@
 ::101236::Does the media accurately reflect your point of view?::::::category/StandingMan.png::::::51::228::
 ::101237::Should cannabis be legalized?::::::general/basics/Cannabis.png::http://www.justice.gov/dea/marijuana_position.pdf::http://en.wikipedia.org/wiki/Cannabis::57::228::
 ::101238::Are you satisfied with your government?::::::category/StandingMan.png::::::53::228::
-::101239::Have you ever read the Constitution?::::::category/StandingMan.png::::::54::228::
+::101239::Have you read the Constitution?::::::general/basics/Constitution.png::http://www.archives.gov/exhibits/charters/constitution.html::http://en.wikipedia.org/wiki/United_States_Constitution::9::58,210,226,228,230::
 ::101240::112th Congress::::::government/congress/Congress.png::::http://en.wikipedia.org/wiki/United_States_Congress::999::2,226::
 ::101241::Supreme Count of the United States::::::government/supreme_court/SupremeCourt.png::http://www.supremecourt.gov::http://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States::59::2,210::
 ::101242::Super PACs::::::government/election_2012/SuperPac.png::http://www.opensecrets.org/pacs/superpacs.php::http://en.wikipedia.org/wiki/Superpac#Super_PACs::84::210,224::
@@ -2268,3 +2273,10 @@
 ::101245::George W. Bush::43rd President of the United States::::government/potus/George_W_Bush.png::http://www.georgewbushcenter.com::http://en.wikipedia.org/wiki/George_W._Bush::11::229::
 ::101246::Bill Clinton::42nd President of the United States::::government/potus/Bill_Clinton.png::http://www.clintonlibrary.gov::http://en.wikipedia.org/wiki/Bill_Clinton::11::229::
 ::101247::Ronald Reagan::40th President of the United States::::government/potus/Ronald_Reagan.png::http://www.reaganlibrary.com::http://en.wikipedia.org/wiki/Ronald_Reagan::14::229::
+::101248::Do you have health insurance?::::::general/basics/StandingMan.png::::::56::228::
+::101249::Major League Baseball::MLB::::sports/mlb/Logo_MLB.png::http://www.mlb.com::http://en.wikipedia.org/wiki/Mlb::998::212,231::
+::101250::National Basketball Association::NBA::::sports/nba/Logo_NBA.png::http://www.nba.com::http://en.wikipedia.org/wiki/Nba::998::212,232::
+::101251::National Hockey League::NHL::::sports/nhl/Logo_NHL.png::http://www.nhl.com/::http://en.wikipedia.org/wiki/Nhl::998::212,233::
+::101252::American Idol::::::entertainment/american_idol/Logo_AmericanIdol.png::http://www.americanidol.com/::http://en.wikipedia.org/wiki/American_idol::998::71,234::
+::101253::Should everyone have access to health care?::::::general/basics/StandingMan.png::::::1000::204,228,230::
+::101254::Should the government require you to buy health care?::::::general/basics/StandingMan.png::::::1000::204,230::
