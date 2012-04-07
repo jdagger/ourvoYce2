@@ -1,23 +1,27 @@
 #header-topbar-wrapper
   #header-topbar-left
     #header-login-form
-      .login_label
-        ' LOGIN
+
       = simple_form_for User.new, url: new_user_session_path do |f|
-        = f.input :email, label: false, input_html: {maxlength: "25", value: "email address", onblur: "if(this.value=='') this.value='email address'",  onfocus: "if(this.value =='email address' ) this.value=''"}
-        = f.input :password, label: false, input_html: {maxlength: "25"}
-        = f.submit ""
-        .input
-          input(type="checkbox" name="user[remember_me]" value="1")
-          | Remember me? 
-        //input type="checkbox" 
+        .login_label
+          ' Email address
+          = f.input :email, label: false, input_html: {maxlength: "25", value: "", onblur: "if(this.value=='') this.value=''",  onfocus: "if(this.value =='' ) this.value=''"}
+        .login_label
+          ' Password
+          = f.input :password, label: false, input_html: {maxlength: "25"}
+        .login_label
+          = f.submit ""
+        .login_label
+          .input
+            input(type="checkbox" name="user[remember_me]" value="1")
+            | Remember me 
   #header-topbar-center
-    ' Login with: 
+    /' Login with: 
     /a href="#"
       /img src="/assets/site/twitter.gif" alt="Twitter" width="32" height="22" style="vertical-align:middle"
     /== "&nbsp;"
-    a href="#"
-      img src="/assets/site/facebook.gif" alt="Facebook" width="12" height="22" style="vertical-align:middle"
+    /a href="#"
+      /img src="/assets/site/facebook.gif" alt="Facebook" width="12" height="22" style="vertical-align:middle"
   #header-topbar-right
     ul
       li

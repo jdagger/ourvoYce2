@@ -23,11 +23,12 @@
           a.imagelink(href="http://www.facebook.com/ourvoYce" target="_blank")
             = image_tag "site/facebook-red.gif", alt: "Facebook", width: "12", height: "22"
       div(class="content-col2")
-        h3.white View Our Hottest Topics:
+        h3.white View Hot Topics:
         #hot_topics
           - @hot_topics.each do |hot_topic|
             .hot_topic
               a(href="/ov/#!/#{hot_topic.path}")= hot_topic.friendly_name
+        br
         = link_to signup_path, class: 'imagelink' do 
           = image_tag "site/btnsignuptovote.gif", width: "212", height: "41", alt: "or Sign up to Vote!"
       div(class="content-col3")
@@ -60,7 +61,7 @@
         p
       div(class="content-col3")
         h2.thin.red Our Opinions Connect Us.
-        = image_tag "site/usmap.jpg", width: "199", height: "125", alt: "map of the United States"
+        /= image_tag "site/usmap.jpg", width: "199", height: "125", alt: "map of the United States"
 
         p
           | 

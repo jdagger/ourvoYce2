@@ -274,6 +274,9 @@ $header-logo-wrapper-height: 70px;
         .login_label{
           font-weight: bold;
           float: left;
+          padding-right: 15px;
+          vertical-align: bottom;
+          border: 0px solid green;
         }
         form{
           float: left;
@@ -283,22 +286,27 @@ $header-logo-wrapper-height: 70px;
             overflow: hidden;
           }
           input[type=text], input[type=password] {
-            //background: image-url('site/bg-loginbox.gif') top left no-repeat;
             padding: 3px;
-            padding-left: 10px;
+            margin-left: 2px;
             height: 12px;
-            width:150px;
-            color:#c03030;
-            font-size:12px;
-            vertical-align: middle;	
+            width: 150px;
+            color: #c03030;
+            font-size: 12px;
+            vertical-align: bottom;	
           }
-
           input[type=submit] {
-            vertical-align: middle;
-            background: image-url("site/btnarrow.gif") top left no-repeat;
-            border: none;
-            width: 17px;
-            height: 18px;
+            vertical-align: bottom;
+            background: image-url("site/btnlogin.png") top left no-repeat;
+            height: 20px;
+            width: 65px;
+          }
+          input[type=checkbox] {
+            padding: 3px;
+            margin-left: 2px;
+            color: #c03030;
+            font-size: 12px;
+            vertical-align: bottom;	
+            margin-top: 5px;
           }
         }
       }
@@ -311,7 +319,7 @@ $header-logo-wrapper-height: 70px;
     #header-topbar-right{
       float:right;
       text-align:right;
-      padding:4px 8px 0 0;
+      padding:5px 8px 0 0;
 
       ul {margin-top:4px;}
       li {
@@ -467,7 +475,7 @@ form{
     overflow: hidden;
 
     .hot_topic{
-      width: $content-col2-width / 2;
+      width: $content-col2-width;
       float: left;
 
       a{
