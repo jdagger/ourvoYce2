@@ -27,7 +27,7 @@
         #hot_topics
           - @hot_topics.each do |hot_topic|
             .hot_topic
-              a(href="/ov/#!/#{hot_topic.path}")= hot_topic.friendly_name
+              a(href="/ov/#!/tag/#{hot_topic.path}")= hot_topic.friendly_name
         br
         = link_to signup_path, class: 'imagelink' do 
           = image_tag "site/btnsignuptovote.gif", width: "212", height: "41", alt: "or Sign up to Vote!"

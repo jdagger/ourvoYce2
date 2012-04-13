@@ -98,15 +98,16 @@
             h3
               ' Number of ourvoYce users: 
               strong(class="bluebold")= "#{number_with_delimiter(@total_users)}"
-            h3
-              ' You have voted on 
-              strong.bluebold
-                span#user_vote_count
-                  | 0
-                | &nbsp;items
-            h3
-              ' Member since
-              strong.bluebold= @member_since.strftime('%m/%d/%Y')              
+            - if signed_in?
+              h3
+                ' You have voted on 
+                strong.bluebold
+                  span#user_vote_count
+                    | 0
+                  | &nbsp;items
+              h3
+                ' Member since
+                strong.bluebold= @member_since.strftime('%m/%d/%Y')              
             #footer
               ul#footerlist
               
@@ -119,12 +120,12 @@
             .whitebox
               .social
                 #facebook
-                #plusone
+                /#plusone
                 #twitter
-            ul
-              li
+              .social
+                img(src="/assets/site/star.png" width="18" height="19" alt="star")
                 a#item-detail-website(target="_blank")Website
-              li
+                img(src="/assets/site/star.png" width="18" height="19" alt="star")
                 a#item-detail-wikipedia(target="_blank")Wikipedia page
             .vote-chart
               .thumbs-up

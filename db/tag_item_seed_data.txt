@@ -1,4 +1,4 @@
-//Created: 2012-04-07 11:15:59 -0400
+//Created: 2012-04-13 02:26:46 -0400
 ##TAGS##
 //id, path, friendly_name, popular, hot_topic
 ::1::corporation::Corporation::false::false::
@@ -732,7 +732,7 @@
 ::30154::Scott Tipton::Representative 3 (CO)<br />202-225-4761::house::government_logos/representatives/64_64/CO03_Tipton.png::http://tipton.house.gov::http://en.wikipedia.org/wiki/Scott_Tipton::5504::10,59,82,226::
 ::30155::Adrian Smith::Representative 3 (NE)<br />202-225-6435::house::government_logos/representatives/64_64/S001172.jpg::http://smith.house.gov::http://en.wikipedia.org/wiki/Adrian_Smith::7604::32,59,130,226::
 ::30156::John Duncan::Representative 2 (TN)<br />202-225-5435::house::government_logos/representatives/64_64/D000533.jpg::http://duncan.house.gov::http://en.wikipedia.org/wiki/John_Duncan::9103::47,59,156,226::
-::30157::Ron Paul::Representative 14 (TX)<br />202-225-2831::house::government_logos/representatives/64_64/P000583.jpg::http://paul.house.gov::http://en.wikipedia.org/wiki/Ron_Paul::81::224,226,48,158,59::
+::30157::Ron Paul::2012 Presidential Candidate<br />Representative 14 (TX)::house-202-225-2831::government_logos/representatives/64_64/P000583.jpg::http://paul.house.gov::http://en.wikipedia.org/wiki/Ron_Paul::81::224,226,48,158,59::
 ::30158::Mike McIntyre::Representative 7 (NC)<br />202-225-2731::house::government_logos/representatives/64_64/M000485.jpg::http://mcintyre.house.gov::http://en.wikipedia.org/wiki/Mike_McIntyre::8208::38,59,126,226::
 ::30159::Sue Myrick::Representative 9 (NC)<br />202-225-1976::house::government_logos/representatives/64_64/M001134.jpg::http://myrick.house.gov::http://en.wikipedia.org/wiki/Sue_Myrick::8210::38,59,126,226::
 ::30160::Raul Grijalva::Representative 7 (AZ)<br />202-225-2435::house::government_logos/representatives/64_64/G000551.jpg::http://grijalva.house.gov::http://en.wikipedia.org/wiki/Raul_Grijalva::5208::7,59,78,226::
@@ -853,7 +853,7 @@
 ::30275::Gregg Harper::Representative 3 (MS)<br />202-225-5031::house::government_logos/representatives/64_64/MS03_Harper.png::http://harper.house.gov::http://en.wikipedia.org/wiki/Gregg_Harper::7304::29,59,122,226::
 ::30276::Cedric Richmond::Representative 2 (LA)<br />202-225-6636::house::government_logos/representatives/64_64/LA02_Richmond.png::http://richmond.house.gov::http://en.wikipedia.org/wiki/Cedric_Richmond::6703::23,59,108,226::
 ::30277::William Keating::Representative 10 (MA)<br />202-225-3111::house::government_logos/representatives/64_64/MA10_Keating.png::http://keating.house.gov::http://en.wikipedia.org/wiki/William_Keating::7011::26,59,110,226::
-::30278::Mike Rogers::Representative 3 (AL)<br />202-225-3261::house::government_logos/representatives/64_64/R000575.jpg::http://mike-rogers.house.gov::http://en.wikipedia.org/wiki/Mike_Rogers::5004::226,5,59,74::
+::30278::Mike Rogers::Representative 3 (AL)<br />202-225-3261::house::government_logos/representatives/64_64/R000575.jpg::http://mike-rogers.house.gov::http://en.wikipedia.org/wiki/Mike_Rogers::5004::5,59,74,226::
 ::30279::Morgan Griffith::Representative 9 (VA)<br />202-225-3861::house::government_logos/representatives/64_64/VA09_Griffith.png::http://griffith.house.gov::http://en.wikipedia.org/wiki/Morgan_Griffith::9510::51,59,162,226::
 ::30280::Michele Bachmann::Representative 6 (MN)<br />202-225-2331::house::government_logos/representatives/64_64/B001256.jpg::http://bachmann.house.gov::http://en.wikipedia.org/wiki/Michele_Bachmann::7207::28,59,118,226::
 ::30281::Barney Frank::Representative 4 (MA)<br />202-225-5931::house::government_logos/representatives/64_64/F000339.jpg::http://frank.house.gov::http://en.wikipedia.org/wiki/Barney_Frank::7005::26,59,110,226::
@@ -933,7 +933,7 @@
 ::30355::Colleen Hanabusa::Representative 1 (HI)<br />202-225-2726::house::government_logos/representatives/64_64/HI01_Hanabusa.png::http://hanabusa.house.gov::http://en.wikipedia.org/wiki/Colleen_Hanabusa::6002::16,59,94,226::
 ::30356::Bill Young::Representative 10 (FL)<br />202-225-5961::house::government_logos/representatives/64_64/Y000031.jpg::http://young.house.gov::http://en.wikipedia.org/wiki/C. W. Bill_Young::5811::14,59,90,226::
 ::30357::John Sarbanes::Representative 3 (MD)<br />202-225-4016::house::government_logos/representatives/64_64/S001168.jpg::http://sarbanes.house.gov::http://en.wikipedia.org/wiki/John_Sarbanes::6904::25,59,112,226::
-::30358::Mike Rogers::::house::government_logos/representatives/64_64/R000572.jpg::http://rogers.house.gov::http://en.wikipedia.org/wiki/Mike_Rogers::1000::59,226::
+::30358::Mike Rogers::Representative 8 (MI)<br />(202) 225-4872::house::government_logos/representatives/64_64/R000572.jpg::http://www.mikerogers.house.gov::http://en.wikipedia.org/wiki/Mike_Rogers_(Michigan_politician)::7109::27,59,116,226::
 ::30359::David Dreier::Representative 26 (CA)<br />202-225-2305::house::government_logos/representatives/64_64/D000492.jpg::http://dreier.house.gov::http://en.wikipedia.org/wiki/David_Dreier::5427::9,59,80,226::
 ::30360::David Price::Representative 4 (NC)<br />202-225-1784::house::government_logos/representatives/64_64/P000523.jpg::http://price.house.gov::http://en.wikipedia.org/wiki/David_Price::8205::38,59,126,226::
 ::30361::Candice Miller::Representative 10 (MI)<br />202-225-2106::house::government_logos/representatives/64_64/M001150.jpg::http://miller.house.gov::http://en.wikipedia.org/wiki/Candice_Miller::7111::27,59,116,226::
@@ -1528,13 +1528,13 @@
 ::50012::Ron Kirk::Trade Representative::executive::government_logos/executives/64_64/21_TradeRepresentative.png::http://www.ustr.gov::http://en.wikipedia.org/wiki/Office_of_the_United_States_Trade_Representative::210::58::
 ::50013::Arne Duncan::Secretary of Education::executive::government_logos/executives/64_64/15_SecretaryOfEducation.png::http://www.ed.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Education::150::58::
 ::50014::Ken Salazar::Secretary of the Interior::executive::government_logos/executives/64_64/07_SecretaryOfTheInterior.png::http://www.doi.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_the_Interior::70::58::
-::50015::Jacob Lew::White House Chief of Staff::executive::government_logos/executives/64_64/20_.png::http://www.whitehouse.gov::http://en.wikipedia.org/wiki/White_House_Chief_of_Staff::200::58::
-::50016::Austan Goolsbee::::executive::government_logos/executives/64_64/23_ChairpersonOfTheCouncilOfEconomicAdvisers.png::http://www.whitehouse.gov/administration/eop/cea::http://en.wikipedia.org/wiki/Council_of_Economic_Advisers::230::58::
+::50015::Jacob Lew::White House Chief of Staff::executive::government_logos/executives/64_64/18_WhiteHouseChiefOfStaff_Jacob_Lew.png::http://www.whitehouse.gov::http://en.wikipedia.org/wiki/White_House_Chief_of_Staff::200::58::
+::50016::Alan Krueger::Chairman of the Council of Economic Advisers::executive::government_logos/executives/64_64/23_ChairpersonOfTheCouncilOfEconomicAdvisers_Alan_Krueger.png::http://www.whitehouse.gov/administration/eop/cea::http://en.wikipedia.org/wiki/Council_of_Economic_Advisers::230::58::
 ::50017::Ray LaHood::Secretary of Transportation::executive::government_logos/executives/64_64/13_SecretaryOfTransportation.png::http://www.dot.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Transportation::130::58::
 ::50018::Robert Gates::Secretary of Defense (former)::executive::government_logos/executives/64_64/05_SecretaryOfDefense.png::http://www.defense.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Defense::50::::
 ::50019::Timothy Geithner::Secretary of the Treasury::executive::government_logos/executives/64_64/04_SecretaryOfTheTreasury.png::http://www.treasury.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_the_Treasury::40::58::
 ::50020::Susan Rice::Ambassador to the United Nations::executive::government_logos/executives/64_64/22_AmbassadorToTheUnitedNations.png::http://www.usunnewyork.usmission.gov::http://en.wikipedia.org/wiki/United_States_Ambassador_to_the_United_Nations::220::58::
-::50021::Lisa Jackson::Administrator of the Environmental Protection Agency::executive::government_logos/executives/64_64/19_AdministratorOfTheEnvironmentalProtectionAgency.png::http://www.epa.gov::http://en.wikipedia.org/wiki/Administrator_of_the_Environmental_Protection_Agency::190::58::
+::50021::Lisa Jackson::Administrator of the Environmental Protection Agency::executive::government_logos/executives/64_64/19_AdministratorOfTheEnvironmentalProtectionAgency.png::http://www.epa.gov::http://en.wikipedia.org/wiki/Administrator_of_the_Environmental_Protection_Agency::210::58::
 ::50022::Barack Obama::President of the United States::executive::government_logos/executives/64_64/01_President.png::http://www.whitehouse.gov/administration/president-obama::http://en.wikipedia.org/wiki/Us_president::10::58,224,229::
 ::60000::Research, Education and Economics (Agriculture Department)::::agency::government_logos/agencies/64_64/USDA.png::http://www.ree.usda.gov::http://en.wikipedia.org/wiki/Under_Secretary_of_Agriculture_for_Research,_Education,_and_Economics::1000::57,193::
 ::60001::Internal Revenue Service (IRS)::::agency::government_logos/agencies/64_64/IRS.png::http://www.irs.gov::http://en.wikipedia.org/wiki/Internal_Revenue_Service::1000::57::
@@ -1798,7 +1798,6 @@
 ::60259::Tax Court::::agency::government_logos/agencies/64_64/TaxCourt.png::http://www.ustaxcourt.gov::http://en.wikipedia.org/wiki/United_States_Tax_Court::1000::57::
 ::60260::Defense Logistics Agency (DLA)::::agency::government_logos/agencies/64_64/DLA.png::http://www.dla.mil::http://en.wikipedia.org/wiki/Defense_Logistics_Agency::1000::57::
 ::60261::National Constitution Center::::agency::government_logos/agencies/64_64/ConstitutionCenter.png::http://www.constitutioncenter.org::http://en.wikipedia.org/wiki/National_Constitution_Center::1000::57::
-::60262::Supreme Court of the United States::::agency::government_logos/agencies/64_64/SupremeCourt.png::http://www.supremecourt.gov::http://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States::1000::57,230::
 ::60263::General Accounting Office (GAO)::::agency::government_logos/agencies/64_64/GAO.png::http://www.gao.gov::http://en.wikipedia.org/wiki/General_Accounting_Office::1000::57::
 ::60264::Saint Lawrence Seaway Development Corporation::::agency::government_logos/agencies/64_64/Seaway.png::http://www.seaway.dot.gov::http://en.wikipedia.org/wiki/Saint_Lawrence_Seaway_Development_Corporation::1000::57::
 ::60265::National Council on Disability::::agency::government_logos/agencies/64_64/NCD.png::http://www.ncd.gov::http://en.wikipedia.org/wiki/National_Council_on_Disability::1000::57::
@@ -2251,9 +2250,9 @@
 ::101223::National Football Conference::NFC::::sports/nfl/Logo_NFC.png::http://www.nfl.com/teams::http://en.wikipedia.org/wiki/National_Football_Conference::999::212,213,222::
 ::101224::Newt Gingrich::2012 Presidential Candidate::::government/election_2012/Newt_Gingrich.png::http://www.newt.org::http://en.wikipedia.org/wiki/Newt_Gingrich::83::224::
 ::101225::Mitt Romney::2012 Presidential Candidate::::government/election_2012/Mitt_Romney.png::http://www.mittromney.com::http://en.wikipedia.org/wiki/Mitt_Romney::80::224::
-::101226::Rick Santorum::2012 Presidential Candidate::::government/election_2012/Rick_Santorum.png::http://ricksantorum.com::http://en.wikipedia.org/wiki/Santorum::82::224::
-::101227::Leon Panetta::Secretary of Defense::::government_logos/executives/64_64/03_.png::::::1000::58,211::
-::101228::John Bryson::Secretary of Commerce::::government_logos/executives/64_64/03_.png::::::1000::58::
+::101226::Rick Santorum::2012 Presidential Candidate::::government/election_2012/Rick_Santorum.png::http://ricksantorum.com::http://en.wikipedia.org/wiki/Santorum::82::::
+::101227::Leon Panetta::Secretary of Defense::::government_logos/executives/64_64/05_SecretaryOfDefense_Leon_Panetta.png::http://www.defense.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Defense::50::58,211::
+::101228::John Bryson::Secretary of Commerce::::government_logos/executives/64_64/09_SecretaryOfCommerce_John_Bryson.png::http://www.commerce.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Commerce::90::58::
 ::101229::New York Police Department::NYPD::::government/police/NewYork.png::http://www.nyc.gov/html/nypd::http://en.wikipedia.org/wiki/Nypd::1000::2,37,61::
 ::101230::Los Angeles Police Department::LAPD::::government/police/LosAngeles.png::http://www.lapdonline.org::http://en.wikipedia.org/wiki/LAPD::1000::2,9,61::
 ::101231::Are you happy?::::::general/basics/Happy.png::http://dictionary.reference.com/browse/happy::http://en.wikipedia.org/wiki/Happy::5::228::
@@ -2264,19 +2263,62 @@
 ::101236::Does the media accurately reflect your point of view?::::::category/StandingMan.png::::::51::228::
 ::101237::Should cannabis be legalized?::::::general/basics/Cannabis.png::http://www.justice.gov/dea/marijuana_position.pdf::http://en.wikipedia.org/wiki/Cannabis::57::228::
 ::101238::Are you satisfied with your government?::::::category/StandingMan.png::::::53::228::
-::101239::Have you read the Constitution?::::::general/basics/Constitution.png::http://www.archives.gov/exhibits/charters/constitution.html::http://en.wikipedia.org/wiki/United_States_Constitution::9::58,210,226,228,230::
-::101240::112th Congress::::::government/congress/Congress.png::::http://en.wikipedia.org/wiki/United_States_Congress::999::2,226::
-::101241::Supreme Count of the United States::::::government/supreme_court/SupremeCourt.png::http://www.supremecourt.gov::http://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States::59::2,210::
+::101239::Have you read the Constitution?::::::general/basics/Constitution.png::http://www.archives.gov/exhibits/charters/constitution.html::http://en.wikipedia.org/wiki/United_States_Constitution::500::210,226,228,58,230::
+::101240::112th Congress::::::government/congress/Congress.png::::http://en.wikipedia.org/wiki/United_States_Congress::200::2,226::
+::101241::Supreme Count of the United States::::::government/supreme_court/SupremeCourt.png::http://www.supremecourt.gov::http://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States::59::2,210,230::
 ::101242::Super PACs::::::government/election_2012/SuperPac.png::http://www.opensecrets.org/pacs/superpacs.php::http://en.wikipedia.org/wiki/Superpac#Super_PACs::84::210,224::
-::101243::Do you like ourvoYce so far?::::::category/StandingMan.png::::::1000::228::
+::101243::Do you like ourvoYce so far?::::::category/StandingMan.png::::::60::228::
 ::101244::George H. W. Bush::41st President of the United States::::government/potus/George_H_W_Bush.png::http://bushlibrary.tamu.edu::http://en.wikipedia.org/wiki/George_H._W._Bush::13::229::
 ::101245::George W. Bush::43rd President of the United States::::government/potus/George_W_Bush.png::http://www.georgewbushcenter.com::http://en.wikipedia.org/wiki/George_W._Bush::11::229::
 ::101246::Bill Clinton::42nd President of the United States::::government/potus/Bill_Clinton.png::http://www.clintonlibrary.gov::http://en.wikipedia.org/wiki/Bill_Clinton::11::229::
 ::101247::Ronald Reagan::40th President of the United States::::government/potus/Ronald_Reagan.png::http://www.reaganlibrary.com::http://en.wikipedia.org/wiki/Ronald_Reagan::14::229::
 ::101248::Do you have health insurance?::::::general/basics/StandingMan.png::::::56::228::
-::101249::Major League Baseball::MLB::::sports/mlb/Logo_MLB.png::http://www.mlb.com::http://en.wikipedia.org/wiki/Mlb::998::212,231::
+::101249::Major League Baseball::MLB::::sports/mlb/Logo_MLB.png::http://www.mlb.com::http://en.wikipedia.org/wiki/Mlb::1100::212,231::
 ::101250::National Basketball Association::NBA::::sports/nba/Logo_NBA.png::http://www.nba.com::http://en.wikipedia.org/wiki/Nba::998::212,232::
 ::101251::National Hockey League::NHL::::sports/nhl/Logo_NHL.png::http://www.nhl.com/::http://en.wikipedia.org/wiki/Nhl::998::212,233::
 ::101252::American Idol::::::entertainment/american_idol/Logo_AmericanIdol.png::http://www.americanidol.com/::http://en.wikipedia.org/wiki/American_idol::998::71,234::
-::101253::Should everyone have access to health care?::::::general/basics/StandingMan.png::::::1000::204,228,230::
-::101254::Should the government require you to buy health care?::::::general/basics/StandingMan.png::::::1000::204,230::
+::101253::Should everyone have access to health care?::::::general/basics/StandingMan.png::::::480::204,230::
+::101254::Should the government require you to buy health care?::::::general/basics/StandingMan.png::::::482::204,230::
+::101255::Jeffrey Zients::Director of the Office of Management and Budget::executive::government_logos/executives/64_64/ManagementAndBudget_Jeffrey_Zients.png::http://www.whitehouse.gov/omb::http://en.wikipedia.org/wiki/Office_of_Management_and_Budget::210::58::
+::101256::Karen Mills::Administrator of the Small Business Administration::executive::government_logos/executives/64_64/24_SmallBusinessAdministration_Karen_Mills.png::http://www.sba.gov/aboutsba/administrator/index.html::http://en.wikipedia.org/wiki/Administrator_of_the_Small_Business_Administration::240::58::
+::101257::Baltimore Orioles::::::sports/mlb/logo_bal.png::http://baltimore.orioles.mlb.com/NASApp/mlb/bal/homepage/bal_homepage.jsp::http://en.wikipedia.org/wiki/Baltimore_Orioles::1105::212,231::
+::101258::Boston Red Sox::::::sports/mlb/logo_bos.png::::::1110::212,231::
+::101259::New York Yankees::::::sports/mlb/logo_nyy.png::::::1115::212,231::
+::101260::Tampa Bay Rays::::::sports/mlb/logo_tb.png::::::1120::212,231::
+::101261::Toronto Blue Jays::::::sports/mlb/logo_tor.png::::::1125::212,231::
+::101262::Chicago White Sox::::::sports/mlb/logo_cws.png::::::1127::212,231::
+::101263::Cleveland Indians::::::sports/mlb/logo_cle.png::::::1128::212,231::
+::101264::Detroit Tigers::::::sports/mlb/logo_det.png::::::1130::212,231::
+::101265::Kansas City Royals::::::sports/mlb/logo_kc.png::::::1135::212,231::
+::101266::Minnesota Twins::::::sports/mlb/logo_min.png::::::1140::212,231::
+::101267::Los Angeles Angels::::::sports/mlb/logo_ana.png::::::1145::212,231::
+::101268::Oakland Athletics::::::sports/mlb/logo_oak.png::::::1150::212,231::
+::101269::Seattle Mariners::::::sports/mlb/logo_sea.png::::::1155::212,231::
+::101270::Texas Rangers::::::sports/mlb/logo_tex.png::::::1160::212,231::
+::101271::Atlanta Braves::::::sports/mlb/logo_atl.png::::::1165::212,231::
+::101272::Miami Marlins::::::sports/mlb/logo_mia.png::::::1170::212,231::
+::101273::New York Mets::::::sports/mlb/logo_nym.png::::::1175::212,231::
+::101274::Philadelphia Phillies::::::sports/mlb/logo_phi.png::::::1180::212,231::
+::101275::Washington Nationals::::::sports/mlb/logo_was.png::::::1185::212,231::
+::101276::Chicago Cubs::::::sports/mlb/logo_chc.png::::::1190::212,231::
+::101277::Cincinnati Reds::::::sports/mlb/logo_cin.png::::::1195::212,231::
+::101278::Houston Astros::::::sports/mlb/logo_hou.png::::::1200::212,231::
+::101279::Milwaukee Brewers::::::sports/mlb/logo_mil.png::::::1205::212,231::
+::101280::Pittsburgh Pirates::::::sports/mlb/logo_pit.png::::::1210::212,231::
+::101281::St. Louis Cardinals::::::sports/mlb/logo_stl.png::::::1215::212,231::
+::101282::Arizona Diamondbacks::::::sports/mlb/logo_ari.png::::::1220::212,231::
+::101283::Colorado Rockies::::::sports/mlb/logo_col.png::::::1225::212,231::
+::101284::Los Angeles Dodgers::::::sports/mlb/logo_la.png::::::1230::212,231::
+::101285::San Diego Padres::::::sports/mlb/logo_sd.png::::::1235::212,231::
+::101286::San Francisco Giants::::::sports/mlb/logo_sf.png::::::1240::212,231::
+::101287::Ryan Seacrest::American Idol Host::::entertainment/american_idol/01_Ryan_Seacrest.png::::::1280::71,234::
+::101288::Jennifer Lopez::American Idol Judge::::entertainment/american_idol/02_Jennifer_Lopez.png::::::1282::71,234::
+::101289::Steven Tyler::American Idol Judge::::entertainment/american_idol/03_Steven_Tyler.png::::::1284::71,234::
+::101290::Randy Jackson::American Idol Judge::::entertainment/american_idol/04_Randy_Jackson.png::::::1286::71,234::
+::101291::Colton Dixon::American Idol Contestant::::entertainment/american_idol/Colton_Dixon.png::::::1288::71,234::
+::101292::Elise Testone::American Idol Contestant::::entertainment/american_idol/Elise_Testone.png::::::1290::71,234::
+::101293::Hollie Cavanagh::American Idol Contestant::::entertainment/american_idol/Hollie_Cavanagh.png::::::1292::71,234::
+::101294::Jessica Sanchez::American Idol Contestant::::entertainment/american_idol/Jessica_Sanchez.png::::::1294::71,234::
+::101295::Joshua Ledet::American Idol Contestant::::entertainment/american_idol/Joshua_Ledet.png::::::1296::71,234::
+::101296::Phillip Phillips::American Idol Contestant::::entertainment/american_idol/Phillip_Phillips.png::::::1297::71,234::
+::101297::Skylar Laine::American Idol Contestant::::entertainment/american_idol/Skylar_Laine.png::::::1298::71,234::
