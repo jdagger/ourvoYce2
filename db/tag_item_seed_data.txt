@@ -1,4 +1,4 @@
-//Created: 2012-04-13 02:26:46 -0400
+//Created: 2012-04-14 11:05:17 -0400
 ##TAGS##
 //id, path, friendly_name, popular, hot_topic
 ::1::corporation::Corporation::false::false::
@@ -62,7 +62,6 @@
 ::60::senate::Senate::false::false::
 ::61::police::Police::false::false::
 ::62::american_jobs_act::American Jobs Act::false::false::
-::63::nba_lockout::NBA Lockout::false::false::
 ::64::occupy_asheville::Occupy Asheville::false::false::
 ::65::occupy_oakland::Occupy Oakland::false::false::
 ::66::occupy_wallstreet::Occupy Wallstreet::false::false::
@@ -230,9 +229,10 @@
 ::229::potus::Commander in Chief::true::false::
 ::230::health_care_reform::Health Care Reform::false::true::
 ::231::mlb::MLB::true::false::
-::232::nba::NBA::false::false::
-::233::nhl::NHL::false::false::
+::232::nba::NBA::true::false::
+::233::nhl::NHL::true::false::
 ::234::american_idol::American Idol::true::false::
+::235::wnba::WNBA::true::false::
 ##ITEMS##
 //id, name, description, item_type, logo, website, wikipedia, default_order, tags
 ::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::401::224,4,71,181::
@@ -2322,3 +2322,34 @@
 ::101295::Joshua Ledet::American Idol Contestant::::entertainment/american_idol/Joshua_Ledet.png::::::1296::71,234::
 ::101296::Phillip Phillips::American Idol Contestant::::entertainment/american_idol/Phillip_Phillips.png::::::1297::71,234::
 ::101297::Skylar Laine::American Idol Contestant::::entertainment/american_idol/Skylar_Laine.png::::::1298::71,234::
+::101298::Boston Celtics::NBA::::sports/nba/bos.png::::::1000::212,232::
+::101299::New Jersey Nets::NBA::::sports/nba/njn.png::::::1000::212,232::
+::101300::New York Knicks::NBA::::sports/nba/nyk.png::::::1000::212,232::
+::101301::Philadelphia 76ers::NBA::::sports/nba/phi.png::::::1000::212,232::
+::101302::Toronto Raptors::NBA::::sports/nba/tor.png::::::1000::212,232::
+::101303::Chicago Bulls::NBA::::sports/nba/chi.png::::::1000::212,232::
+::101304::Cleveland Cavaliers::NBA::::sports/nba/cle.png::::::1000::212,232::
+::101305::Detroit Pistons::NBA::::sports/nba/detroit.png::::::1000::212,232::
+::101306::Indiana Pacers::NBA::::sports/nba/ind.png::::::1000::212,232::
+::101307::Milwaukee Bucks::NBA::::sports/nba/mil.png::::::1000::212,232::
+::101308::Atlanta Hawks::NBA::::sports/nba/atl.png::::::1000::212,232::
+::101309::Charlotte Bobcats::NBA::::sports/nba/charlotte.png::::::1000::212,232::
+::101310::Miami Heat::NBA::::sports/nba/mia.png::::::1000::212,232::
+::101311::Orlando Magic::NBA::::sports/nba/orl.png::::::1000::212,232::
+::101312::Washington Wizards::NBA::::sports/nba/was.png::::::1000::212,232::
+::101313::Women's National Basketball Association::WNBA::::sports/wnba/Logo_WNBA.png::::::1000::212,235::
+::101314::Dallas Mavericks::NBA::::sports/nba/dal.png::::::1000::212,232::
+::101315::Houston Rockets::NBA::::sports/nba/hou.png::::::1000::212,232::
+::101316::Memphis Grizzlies::NBA::::sports/nba/mem.png::::::1000::212,232::
+::101317::New Orleans Hornets::NBA::::sports/nba/noh.png::::::1000::212,232::
+::101318::San Antonio Spurs::NBA::::sports/nba/sas.png::::::1000::212,232::
+::101319::Denver Nuggets::NBA::::sports/nba/den.png::::::1000::212,232::
+::101320::Minnesota Timberwolves::NBA::::sports/nba/min.png::::::1000::212,232::
+::101321::Portland Trail Blazers::NBA::::sports/nba/por.png::::::1000::212,232::
+::101322::Oklahoma City Thunder::NBA::::sports/nba/okc.png::::::1000::212,232::
+::101323::Utah Jazz::NBA::::sports/nba/uth.png::::::1000::212,232::
+::101324::Golden State Warriors::NBA::::sports/nba/gsw.png::::::1000::212,232::
+::101325::Los Angeles Clippers::NBA::::sports/nba/lac.png::::::1000::212,232::
+::101326::Los Angeles Lakers::NBA::::sports/nba/lal.png::::::1000::212,232::
+::101327::Phoenix Suns::NBA::::sports/nba/pho.png::::::1000::212,232::
+::101328::Sacramento Kings::NBA::::sports/nba/sac.png::::::1000::212,232::
