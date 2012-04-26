@@ -40,6 +40,15 @@ $details-pane-width: 368px;
   padding: 0px;
   white-space: wrap;
 }
+
+@mixin item-container-template{
+  border-bottom: 1px dashed #85bada;
+  clear: both;
+  display: block;
+  min-height: 60px;
+  outline: medium none;
+  position: relative;
+}
 /* css reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -201,15 +210,15 @@ a { color: #d81a1e;
 //#headernav ul li { display: inline; }
 
 //#headernav ul li a {
-  //color: $red;
-  //padding: 0 8px 0 6px;
-  //float: left;
-  //background: image-url('site/dot.gif') center right no-repeat;
+//color: $red;
+//padding: 0 8px 0 6px;
+//float: left;
+//background: image-url('site/dot.gif') center right no-repeat;
 //}
 
 //#headernav ul li a:hover {
-  //background-color:transparent;
-  //text-decoration:underline;
+//background-color:transparent;
+//text-decoration:underline;
 //}
 
 .no-padleft { padding-left:0px !important;}
@@ -585,24 +594,34 @@ form{
         position: relative;
       }
 
+      $item-width: 636px;
+      $voting-width: 105px;
+      $minichart-width: 95px;
+      $item-margin: 10px;
+      //$middle-width: $item-width - $voting-width - $minichart-width - 3 * $item-margin; //Margins: left, right, between voting, and between mini-chart
+      $middle-left: $voting-width + 2 * $item-margin;
+      $middle-right: $minichart-width + 2*$item-margin;
       .item{
-        height: $item-height;
         position: relative;
+        @include item-container-template;
+        height: $item-height;
+        margin: 0px;
+        padding: 0px;
+
         .item-container {
-          margin-left:17px;
-          width:636px;
+          width: $item-width;
           overflow: hidden;
 
           .voting{
-            float: left;
-            width:105px;
+            position: absolute;
+            left: $item-margin;
+            top: $item-margin;
+            bottom: $item-margin;
+            width: $voting-width;
             vertical-align:top;
-            margin-right: 20px;
 
             .vote-container{
               overflow: hidden;
-              margin:11px 0 9px 0;
-              width: 100%;
 
               /*Votes */
               a{
@@ -614,44 +633,143 @@ form{
                 .thumbs-down-vote { width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -120px; }
                 .thumbs-down-vote-gray { width: 30px; height: 30px; background: url(site/vote-sprite.png) 0 -150px; }
               }
+              .vote{}
             }
             .pins{
+              position: relative;
+              height: 50px;
               overflow: hidden;
-              margin: 11px 0 9px 0;
+
               .favorite{
-                float: left;
+                position: absolute;
+                top: 10px;
+                left: 0px;
+                a
+                {
+                  display: block;
+                  width: 19px;
+                  height: 19px;
+                  background: image-url('site/star_gray.gif') no-repeat;
+                }
+
+                a.selected
+                {
+                  background: image-url('site/star.gif') no-repeat;
+                }
               }
               .vote-message{
-                float: right;
+                position: absolute;
+                top: 10px;
+                right: 0px;
               }
             }
           }
           .middle{
-            height: $item-height;
+            position: absolute;
+            left: $middle-left;
+            top: $item-margin;
+            bottom: $item-margin;
+            right: $middle-right;
+            overflow: hidden;
+
+            $related-tags-height: 15px;
+            $item-details-height: $item-height - $related-tags-height - 2 * $item-margin;
+
+            .details{
+              position: relative;
+              height: $item-details-height;
+              overflow: hidden;
+              $logo-width: 220px;
+              .storelogo{
+                position: absolute;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                width:$logo-width;
+
+                margin: 0px;
+                padding: 0px;
+                vertical-align:top;
+                img{
+                  padding: 0px;
+                  margin: 0px;
+                }
+              }
+              .name{
+                position: absolute;
+                top: 0px;
+                left: $logo-width + $item-margin;
+                bottom: 0px;
+                right: 0px;
+
+                margin: 0px;
+                padding: 0px;
+
+                .description{
+                  color:#000;
+                  padding-top:5px;
+                  padding-left:15px;
+                }
+              }
+            }
             .tags{
+              @include clearfix;
               position: absolute;
+              height: $related-tags-height;
               bottom: 0px;
+              left: 0px;
+              right: 0px;
+              white-space: nowrap;
+              overflow: hidden;
+              padding: 0px;
+              margin: 0px;
+
+              .tags-label{ 
+                float: left;
+                font-size: 11px;
+              }
+              .related-tags-container{
+                float: left;
+                ul#related-tags{
+                  display: inline;
+                  li{
+                    display: inline;
+                    a{
+                      font-size: 11px;
+                    }
+                  }
+                }
+              }
+
             }
           }
           .minichart {
             position: absolute; 
-            overflow: hidden; 
-            width: 95px;
-            height: $item-height;
+            width: $minichart-width;
+            right: $item-margin;
+            top: $item-margin;
+            bottom: $item-margin;
+
+            @include border-radius(5px);
+
+            cursor: pointer;
+
             padding: 0;
-            right: 0px;
-            float: left; 
-            vertical-align: bottom;
+            overflow: hidden; 
+
             &:hover {
               background-color:#b4d5e9;
+              @include box-shadow(inset 0px 0px 10px #28a0e9);
             }
 
-            .mini-vote-chart {
+
+            .mini-vote-chart{
               position: absolute; 
               height: 45px; 
               width: 66px; 
-              left: 10px; 
-              bottom: 10px;
+              left: $item-margin;
+              bottom: $item-margin;
+
               .thumbs-up, .thumbs-down, .neutral{
                 width: 18px; 
                 padding-top: 3px; 
@@ -677,13 +795,14 @@ form{
                 background: url(/assets/site/graph-red-top.png) no-repeat;
                 div{ background-color: $red-chart; }
               }
-
             }
 
             .details-arrow{
               position: absolute; 
-              top: 10px; 
-              right: 11px; 
+              top: $item-margin;
+              right: $item-margin;
+              //top: 10px; 
+              //right: 12px; 
               height: 13px; 
               width: 7px;
               &.expanded{
@@ -695,24 +814,7 @@ form{
             }
           }
         }
-
-        .favorite
-        {
-          a
-          {
-            display: block;
-            width: 19px;
-            height: 19px;
-            background: image-url('site/star_gray.gif') no-repeat;
-          }
-
-          a.selected
-          {
-            background: image-url('site/star.gif') no-repeat;
-          }
-        }
       }
-
     }
 
     #details.fixed{
@@ -751,8 +853,8 @@ form{
           }
 
           #item-detail-name{
-          padding-top:5px;
-          padding-bottom:5px;
+            padding-top:5px;
+            padding-bottom:5px;
             // height: 50px;
           }
 
@@ -883,15 +985,8 @@ ul.ui-autocomplete{
   margin-left: 40px;
 }
 
-/* col1 */
-/* col2 */
-.tags {font-size:11px;padding-bottom:8px;}
-.storelogo {width:220px;vertical-align:top;padding-top:11px;}
-/* col3 */
-.name {width:191px;font-size:13px;vertical-align:middle;padding-top:11px;}
-.name a {width:191px;font-size:13px;vertical-align:middle;padding-top:11px;}
-.description {width:186px;font-size:11px;color:#000;vertical-align:middle;padding-top:5px;padding-left:15px;}
-/* col4 */
+//.tags {padding-bottom:8px;}
+
 .bluebg {background-color:#b4d5e9;}
 .pulloutarrow {position:absolute;top:9px;right:11px;}
 .bottom {vertical-align:bottom;}
@@ -960,14 +1055,10 @@ ul.ui-autocomplete{
   padding: 1.3em 0.5em;
 }
 
+
 /* ----------------- pullout */
-.pullout-item, .item {
-  border-bottom: 1px dashed #85bada;
-  clear: both;
-  display: block;
-  min-height: 60px;
-  outline: medium none;
-  position: relative;
+.pullout-item{
+  @include item-container-template;
 }
 
 .last {
@@ -980,7 +1071,7 @@ ul.ui-autocomplete{
 .pullout-col, .pullout-col2 {width:155px;float:left;}
 .pullout-col {margin-right:5px;}
 
-#hot-topic-tags{
+#popular-tags, #hot-topic-tags, #common-tags{
   .tag{
     display: block;
     width: 150px;
@@ -989,14 +1080,6 @@ ul.ui-autocomplete{
   }
 }
 
-#popular-tags{
-  .tag{
-    display: block;
-    width: 150px;
-    margin-right: 5px;
-    float: left;
-  }
-}
 
 .list-tag a{
   display: block;
@@ -1005,20 +1088,6 @@ ul.ui-autocomplete{
   float: left;
 }
 
-.related-tags-container{
-  ul#related-tags{
-    display: inline;
-    li{
-      display: inline;
-    }
-    //li:first-of-type:before{
-      //content: '';
-    //}
-    //li:before{
-      //content: ', ';
-    //}
-  }
-}
 
 .whitebox {
   background-color:#fff;
@@ -1037,7 +1106,7 @@ ul.ui-autocomplete{
 
 #footer {
   color:#666666;
-  font-size:11px;
+  font-size:12px;
 }
 #footer a {
 }

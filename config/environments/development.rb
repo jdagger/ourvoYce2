@@ -26,6 +26,8 @@ Ourvoyce::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+  config.assets.logger = false
+  config.assets.debug = true
   #config.after_initialize do |app|
   #app.assets.logger = Logger.new('/dev/null')
   #end
@@ -34,6 +36,5 @@ Ourvoyce::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.active_record.mass_assignment_sanitizer = :strict
 
-  config.assets.logger = false
 end
 

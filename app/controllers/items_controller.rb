@@ -122,6 +122,16 @@ class ItemsController < ApplicationController
 
   #Retrieve hot topics
   def hot_topics
+    hot_topic_count = Tag.where(hot_topic: true).count
+    if(hot_topic_count > 0)
+      hot_topic = Tag.where(hot_topic: true).first(:offset => rand(hot_topic_count)) #Select a random hot topic
+      redirect_to "/ov/#!/tag/#{hot_topic.path}"
+    else
+      tag_count = Tag.count
+      tag = Tag.first(:offset => rand(tag_count)) #Select a random tag
+      redirect_to "/ov/#!/tag/#{tag.path}"
+    end
+=begin
     filter = params[:filter] || 'all'
     sort = params[:sort] || 'default:asc'
 
@@ -139,6 +149,7 @@ class ItemsController < ApplicationController
     render :json => load_common_item_request_data.to_json
 
     #render :json => {:item_ids => @item_ids, :items => @items, :base_url => @base_url, :tag_friendly_name => 'Hot Topics', :tag_path => '', :filter => @filter, :sort_name => @sort_name, :sort_direction => @sort_direction, :authenticated => !current_user.nil?}.to_json
+=end
   end
 
   def load_common_item_request_data
