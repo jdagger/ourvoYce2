@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.3'
 
-gem 'simple_form', '>= 2.0.0.rc'
-#gem 'simple_form', :git => 'https://github.com/plataformatec/simple_form.git'
+gem 'simple_form', '2.0.1'
+gem 'country_select'
 gem 'simple-navigation'
 gem 'client_side_validations'
 gem 'flash_messages_helper'
@@ -67,9 +67,12 @@ group :development do
   #gem 'ruby-debug-ide19'
 end
 
+gem 'therubyracer'
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+
 
   gem 'database_cleaner'
   gem 'rails3-generators'

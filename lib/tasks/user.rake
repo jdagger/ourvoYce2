@@ -22,6 +22,31 @@ namespace :db do
       desc "Seeding default user"
       task :create_default_user => :environment do
         print "Seeding default User..."
+
+        user = User.new(
+          :email => 'ryan@ourvoyce.com', 
+          :password => 'test123', 
+          :zip => '28801', 
+          :birth_year => 1950,
+          :country => 'United States',
+          :state => 'NC'
+        )
+        user.confirmed_at = Time.now
+        user.member_since = Time.now
+        user.save
+
+        user = User.new(
+          :email => 'jon@ourvoyce.com', 
+          :password => 'test123', 
+          :zip => '28801', 
+          :birth_year => 1950,
+          :country => 'United States',
+          :state => 'NC'
+        )
+        user.confirmed_at = Time.now
+        user.member_since = Time.now
+        user.save
+
         user = User.new(
           :email => 'test@ourvoyce.com', 
           :password => 'test123', 
