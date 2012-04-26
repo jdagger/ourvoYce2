@@ -36,59 +36,67 @@
      
         .pullout-item
           .itemblock
-            h3= "Food"
-            .list-tag
-              a(href='/ov/#!/tag/arbys') Arby's
-              a(href='/ov/#!/tag/coffee') Coffee
-              a(href='/ov/#!/tag/frenchfries') French Fries
-              a(href='/ov/#!/tag/krispy_kreme') Krispy Kreme
-              a(href='/ov/#!/tag/mcdonalds') McDonald's
-              a(href='/ov/#!/tag/starbucks') Starbucks
-              a(href='/ov/#!/tag/taco_bell') Taco Bell
-              a(href='/ov/#!/tag/wendys') Wendy's
+            h3 Food
+            #common-tags.tags
+              ul#common-tags
+                - {"Arby's" => "/ov/#!/tag/arbys", 
+                  "Coffee" => "/ov/#!/tag/coffee", 
+                  "French Fries" => "/ov/#!/tag/frenchfries", 
+                  "Krispy Kreme" => "/ov/#!/tag/krispy_kreme", 
+                  "McDonald's" => "/ov/#!/tag/mcdonalds", 
+                  "Starbucks" => "/ov/#!/tag/starbucks", 
+                  "Taco Bell" => "/ov/#!/tag/taco_bell", 
+                  "Wendy's" => "/ov/#!/tag/wendys"}.each do |name, url|
+                  li.tag=link_to name, url, {class: 'tag'}
             .clear
 
         .pullout-item
           .itemblock
-            h3= "Media"
-            .list-tag
-              a(href='/ov/#!/tag/cbsnews') CBS News
-              a(href='/ov/#!/tag/cnn') CNN
-              a(href='/ov/#!/tag/foxnews') Fox News
-              a(href='/ov/#!/tag/hln') Headline News
-              a(href='/ov/#!/tag/magazine') Magazine
-              a(href='/ov/#!/tag/msnbc') MSNBC
-              a(href='/ov/#!/tag/newspaper') Newspaper
-              a(href='/ov/#!/tag/radio') Radio
+            h3 Media
+            #common-tags.tags
+              ul#common-tags
+              - {"CBS News" => "/ov/#!/tag/cbsnews",
+                "CNN" => "/ov/#!/tag/cnn",
+                "Fox News" => "/ov/#!/tag/foxnews",
+                "Headline News" => "/ov/#!/tag/hln",
+                "Magazine" => "/ov/#!/tag/magazine",
+                "MSNBC" => "/ov/#!/tag/msnbc",
+                "Newspaper" => "/ov/#!/tag/newspaper",
+                "Radio" => "/ov/#!/tag/radio"}.each do |name, url|
+                li.tag=link_to name, url, {class: 'tag'}
             .clear
                         
         .pullout-item
           .itemblock
-            h3= "Business"
-            .list-tag
-              a(href='/ov/#!/tag/auto') Auto
-              a(href='/ov/#!/tag/agribusiness') Agribusiness
-              a(href='/ov/#!/tag/financial') Financial
-              a(href='/ov/#!/tag/fortune500') Fortune 500
-              a(href='/ov/#!/tag/retailer') Retailer
-              a(href='/ov/#!/tag/tech') Tech
+            h3 Business
+            #common-tags.tags
+              ul#common-tags
+                - {"Auto" => "/ov/#!/tag/auto", 
+                  "Agribusiness" => "/ov/#!/tag/agribusiness", 
+                  "Financial" => "/ov/#!/tag/financial", 
+                  "Fortune 500" => "/ov/#!/tag/fortune500", 
+                  "Retailer" => "/ov/#!/tag/retailer", 
+                  "Tech" => "/ov/#!/tag/tech"}.each do |name, url|
+                  li.tag=link_to name, url, {class: 'tag'}
             .clear
             
         .pullout-item
           .itemblock
-            h3= "Government"
-            .list-tag
-              a(href='/ov/#!/tag/congress') 112th Congress
-              a(href='/ov/#!/tag/agency') Agency
-              a(href='/ov/#!/tag/executive') Executive Branch
-              a(href='/ov/#!/tag/military') Military
-              a(href='/ov/#!/tag/police') Police
-              a(href='/ov/#!/tag/supreme_court') Supreme Court
+            h3 Government
+            #common-tags.tags
+              ul#common-tags
+                - {"112th Congress" => "/ov/#!/tag/congress", 
+                  "Agency" => "/ov/#!/tag/agency", 
+                  "Executive Branch" => "/ov/#!/tag/executive", 
+                  "Military" => "/ov/#!/tag/military", 
+                  "Police" => "/ov/#!/tag/police", 
+                  "Supreme Court" => "/ov/#!/tag/supreme_court"}.each do |name, url|
+                  li.tag=link_to name, url, {class: 'tag'}
             .clear
             
         .pullout-item
           .itemblock
-            h3= "Suggest a Topic:"
+            h3 Suggest a Topic:
             .list-tag
               input type="text" class="inputbox" name="topic" maxlength="40" style="float: left; width: 250px"
               input type="image" name="submit" src="/assets/site/btnsubmit.png" border="0" width="50" height="21" class="submitbtn2" style="padding-left: 10px"
