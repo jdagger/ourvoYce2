@@ -29,4 +29,3 @@
 //
 //= require jquery.inview
 //
-//= require_tree .

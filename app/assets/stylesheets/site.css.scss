@@ -1009,6 +1009,7 @@ ul.ui-autocomplete{
   bottom: 15px;
   right: 40px;
   color: #777;
+  display: none;
 }
 
 
@@ -1195,4 +1196,31 @@ a.vote:hover{
   margin-top:10px;
   //margin-right:10px;
   margin-bottom:0px;
+}
+
+.copy-url-links{
+  label{
+    padding-right: 3px;
+  }
+  input{
+    margin: 0px;
+    padding: 4px 3px;
+    color: #777;
+    border: solid 1px #aaa;
+    border-right: solid 0px red;
+  }
+  input[type=text]{
+    @include border-radius(10px 0px 0px 10px);
+    padding-left: 10px;
+    width: 225px;
+  }
+  input[type=submit]{
+    &:hover{
+      background: #aaa;
+      cursor: pointer;
+    }
+    @include border-radius(0px 10px 10px 0px);
+    border-left: solid 0px red;
+    padding-right: 8px;
+  }
 }

@@ -2,9 +2,15 @@
   = javascript_include_tag "map_graph" 
   javascript:
     $(function(){
-      window.initializeMaps()
+      window.initializeMaps();
       window.OurvoyceApp.init('#{@base_url}', #{@user_vote_count}, '#{@tag_friendly_name}', '#{@tag_path}', '#{@filter}', '#{@sort_name}', '#{@sort_direction}', #{@popular_tags.to_json.html_safe}, #{@hot_topic_tags.to_json.html_safe}, #{@items.to_json.html_safe}, #{@item_ids.to_json.html_safe}, #{@authenticated}, #{@records_to_fetch});
     });
+  coffee:
+    $ ->
+      $('.copy-url-button').on('click', (e) ->
+        return
+      )
+      return
 
 = flash_messages
 
@@ -83,7 +89,7 @@
         .pullout-item
           .itemblock
             h3 Government
-            #common-tags.tags
+            #common-tags.tags.clearfix
               ul#common-tags
                 - {"112th Congress" => "/ov/#!/tag/congress", 
                   "Agency" => "/ov/#!/tag/agency", 
@@ -151,11 +157,19 @@
                 .top
                 .height
                 .bottom
-        .pullout-item.last
+        .pullout-item
           .itemblock
             .maps-container
               .right-align
                 a(href="#" id="refresh-map")Refresh Map
               #map
               #bar-graph
+        .pullout-item.last
+          .itemblock
+            .copy-url-links
+              p
+                label(for='copy-item-url') Item Url
+                br
+                input#copy-item-url(type='text' name='copy-item-url' disabled='disabled' value='adfafsdfsdf')
+                input(type='submit' class="copy-url-button" value="Copy Url")
 #record_counter

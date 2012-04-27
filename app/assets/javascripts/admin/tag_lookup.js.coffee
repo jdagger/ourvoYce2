@@ -22,6 +22,5 @@ $ ->
       window.location = "/admin/tags/#{ui.item.value}/edit"
       return
     change: (event, ui) ->
-      console.log 'change'
       return
   return

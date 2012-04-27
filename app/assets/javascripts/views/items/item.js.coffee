@@ -155,7 +155,6 @@
     return
 
   showDetails: (item) ->
-    console.log 'showDetails'
     if this.model.get('id') == item.get('id')
       this.toggleDetails(true)
     else

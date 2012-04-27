@@ -114,12 +114,18 @@
     $(this.el).find('#facebook').html(like_button)
     return
 
+  renderCopyLinks: () ->
+    $(this.el).find('#copy-item-url').attr('value', this.itemDetailUrl())
+    return
+
   render: () ->
     $(this.el).find('#item-detail-name').html(this.model.name())
 
     this.renderFacebookLike()
     this.renderPlusOne()
     this.renderTwitterShare()
+
+    this.renderCopyLinks()
 
     #Hide website link if doesn't contain content
     if this.model.website().length > 0
