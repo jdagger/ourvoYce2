@@ -20,4 +20,7 @@ class SitesController < ApplicationController
 
   def membership
   end
+
+  def videos
+  end
 end

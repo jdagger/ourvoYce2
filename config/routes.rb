@@ -16,6 +16,7 @@ Ourvoyce::Application.routes.draw do
   match '/terms' => 'sites#terms', :as => :terms
   match '/privacy' => 'sites#privacy_policy', :as => :privacy_policy
   match '/membership' => 'sites#membership', :as => :membership
+  match '/videos' => 'sites#videos', :as => :videos
 
   match '/item/:id' => 'items#fetch_item', :as => :fetch_item
   match '/favorites(/:filter(/:sort))' => 'items#favorites', :as => :favorites
@@ -63,6 +64,10 @@ Ourvoyce::Application.routes.draw do
   end
 
   match '/ov' => 'items#default'
+
+
+  match '/qr:id' => 'qr_lookups#index'
+
   root :to => 'defaults#index'
 
   #Point not found images to a default

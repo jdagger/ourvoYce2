@@ -225,30 +225,30 @@ a { color: #d81a1e;
 .no-padright {padding-right:0px !important;}
 .no-back { background:none !important;}
 
-#aboutlist {
+#videolist, #aboutlist {
   list-style: none;
-}
-#aboutlist li {
-margin:0 0 5px 0;}
+  li {
+  margin:0 0 5px 0;}
 
-#aboutlist ul li a {
-  font-size:18px;
-  padding-left: 15px;
-  background: image-url('site/arrow-right.png') 0px 4px no-repeat;
+  ul li a {
+    font-size:18px;
+    padding-left: 15px;
+    background: image-url('site/arrow-right.png') 0px 4px no-repeat;
+  }
+  li a:hover {
+    background: transparent image-url('site/arrow-rightblue.png') 0px 4px no-repeat;
+    text-decoration:underline;
+    color:#d81a1e;
+  }
+  ul ul {
+    padding-left: 25px;
+    margin-bottom:7px;
+    background-repeat: no-repeat;
+    background-position: 0 .5em;
+  }
+  ul ul li a {font-size:15px;}
+  .no-border {border:none !important;}
 }
-#aboutlist li a:hover {
-  background: transparent image-url('site/arrow-rightblue.png') 0px 4px no-repeat;
-  text-decoration:underline;
-  color:#d81a1e;
-}
-#aboutlist ul ul {
-  padding-left: 25px;
-  margin-bottom:7px;
-  background-repeat: no-repeat;
-  background-position: 0 .5em;
-}
-#aboutlist ul ul li a {font-size:15px;}
-.no-border {border:none !important;}
 
 /* --- Header ------------------------------------------------------------ */
 $header-topbar-height: 33px;
