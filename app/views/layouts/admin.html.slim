@@ -9,13 +9,13 @@ html
   body(style="padding-top: 40px;") 
     .navbar.navbar-fixed-top
       .navbar-inner
-        .container
+        .container.center-block
           .row
             .span6
               = render_navigation(:context => :admin, :expand_all => true)
             .span6.pull-right(style="text-align: right;")
               = render :partial => 'admin/items/item_lookup'
-    .container
+    .container.center-block
       .row
         .span12
           =render :partial => "admin/shared/flash_messages", :locals => {:flash => flash}

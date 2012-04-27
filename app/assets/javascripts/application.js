@@ -18,8 +18,6 @@
 //
 //= require ourvoyce_app
 //
-//
-//
 //= require swfobject
 //
 //= require_tree ./models
