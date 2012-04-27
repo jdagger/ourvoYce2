@@ -59,6 +59,10 @@ SimpleNavigation::Configuration.run do |navigation|
       users.item :view_all_users, 'View All', admin_users_url
       users.item :new_user, 'New User', new_admin_user_url
     end
+    primary.item :qr_lookups, 'QR', admin_qr_lookups_url do |qr_lookups|
+      qr_lookups.item :view_all_qr_lookups, 'View All', admin_qr_lookups_url
+      qr_lookups.item :new_qr_lookup, 'New QR', new_admin_qr_lookup_url
+    end
 
     primary.item :misc, 'Misc', '' do |misc|
       misc.item :utilities, 'Utility', admin_utilities_url 

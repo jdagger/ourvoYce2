@@ -1,0 +1,24 @@
+=render 'qr_lookup_header', title: "#{@qr_lookup.code}"
+
+
+h2 Details
+.row
+  .span6
+    table.table.table-bordered
+      tbody
+        tr
+          th.span2 Code
+          td= @qr_lookup.code
+        tr
+          th.span2 Destination
+          td
+            = link_to @qr_lookup.destination, @qr_lookup.destination unless @qr_lookup.destination.blank?
+        tr
+          th.span2 Notes
+          td= @qr_lookup.notes
+        tr
+          th.span2 Count
+          td= @qr_lookup.counter
+
+
+

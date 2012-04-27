@@ -1,0 +1,12 @@
+.row
+  .span6
+    = simple_form_for([:admin, @qr_lookup], html: {class: 'form-vertical'}) do |f|
+      .well
+        fieldset
+          legend QR Lookup Properties
+          = f.input :code, :input_html => {:class => 'span5'}, :hint => 'Code in url. 123 matches http://www.ourvoyce.com/qr123'
+          = f.input :destination, :input_html => {:class => 'span5'}, :hint => 'Destination (http://www.ourvoyce.com/ov/#!/tag/fortune500)'
+          = f.input :notes, :input_html => {:class => 'span5'}, :hint => 'Notes about the QR code'
+          - if ['edit', 'update'].include?(action_name)
+            = f.input :counter, :input_html => {:class => 'span5'}, :hint => 'Hit count for the url'
+          = f.submit :class => 'btn btn-primary'

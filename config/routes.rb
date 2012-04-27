@@ -51,6 +51,7 @@ Ourvoyce::Application.routes.draw do
     resources :items do
       match "/add_tag_by_autocomplete" => "items#add_tag_by_autocomplete", :as => :add_tag_by_autocomplete
     end
+    resources :qr_lookups
     resources :tag_items
     resources :users
     resources :tags do 

@@ -1,0 +1,34 @@
+= render 'qr_lookup_header', title: 'Index'
+
+.row.paging 
+  .span2
+    .record-count
+      = "#{number_with_delimiter(QrLookup.count)} total items"
+    
+  .span10
+    .pull-right
+      = will_paginate @qr_lookups
+table.table.table-striped.table-bordered
+  thead
+    tr
+      th.span1
+      th= sort_link 'Id', :id
+      th= sort_link 'Code', :code
+      th= sort_link 'Destination', :destination
+      th= sort_link 'Notes', :notes
+      th= sort_link 'Counter', :counter
+  tbody
+    -  @qr_lookups.each do |qr_lookup|
+      tr
+        td.center
+          = link_to edit_admin_qr_lookup_path(qr_lookup) do
+              i.icon-edit
+          = link_to admin_qr_lookup_path(qr_lookup) do
+              i.icon-info-sign
+        td= qr_lookup.id
+        td= qr_lookup.code
+        td
+          - unless qr_lookup.destination.blank?
+            a(href="#{qr_lookup.destination}" rel="tooltip" target="blank" title="#{qr_lookup.destination}")= qr_lookup.destination 
+        td= qr_lookup.notes
+        td= qr_lookup.counter

@@ -1,0 +1,20 @@
+.page-header
+  .row
+    .span6
+      h1
+        = "#{title} "
+        small QR Lookups
+    .span6
+      .pull-right
+        ul.nav.nav-pills
+          li(class="#{action_name == 'index' ? 'active' : ''}")
+            = link_to 'View All QR Lookups', admin_qr_lookups_path
+          li(class="#{action_name == 'new' ? 'active' : ''}")
+            = link_to 'New', new_admin_qr_lookup_path
+          - unless @qr_lookup.blank? || @qr_lookup.new_record?
+            li.divider-vertical &nbsp;
+            li(class="#{action_name == 'edit' ? 'active' : ''}")
+              = link_to 'Edit', edit_admin_qr_lookup_path(@qr_lookup)
+            li(class="#{action_name == 'show' ? 'active' : ''}")
+              = link_to 'Show', [:admin, @qr_lookup]
+            li= link_to 'Delete', [:admin, @qr_lookup], :method => :delete, :confirm => 'Are you sure?'
