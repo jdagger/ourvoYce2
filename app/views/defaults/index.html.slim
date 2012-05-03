@@ -24,9 +24,9 @@
             = image_tag "site/facebook-red.gif", alt: "Facebook", width: "12", height: "22"
       div(class="content-col2")
         h3.white View Hot Topics:
-        #hot_topics
+        #hot-topics
           - @hot_topics.each do |hot_topic|
-            .hot_topic
+            .hot-topic
               a(href="/ov/#!/tag/#{hot_topic.path}")= hot_topic.friendly_name
         br
         = link_to signup_path, class: 'imagelink' do 

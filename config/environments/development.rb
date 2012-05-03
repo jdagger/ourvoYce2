@@ -16,7 +16,7 @@ Ourvoyce::Application.configure do
   # Don't care if the mailer can't send
   config.action_mailer.delivery_method = :sendmail
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'ourvoyce.dev' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -37,4 +37,3 @@ Ourvoyce::Application.configure do
   config.active_record.mass_assignment_sanitizer = :strict
 
 end
-

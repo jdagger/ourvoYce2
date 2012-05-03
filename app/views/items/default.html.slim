@@ -7,7 +7,16 @@
     });
   coffee:
     $ ->
-      $('.copy-url-button').on('click', (e) ->
+      $('.copy-url-button').on('focus', (e) ->
+        return
+      )
+      $('#copy-page-url').val(window.location)
+      $('.copy-url-input').on("click", (e) ->
+        input = this
+        setTimeout(
+          () -> input.select(),
+          0
+        )
         return
       )
       return
@@ -32,13 +41,11 @@
           .itemblock
             h3 Hot Topics
             #hot-topic-tags.tags
-            .clear
 
         .pullout-item
           .itemblock
             h3 Popular Tags
             #popular-tags.tags
-            .clear
      
         .pullout-item
           .itemblock
@@ -54,8 +61,6 @@
                   "Taco Bell" => "/ov/#!/tag/taco_bell", 
                   "Wendy's" => "/ov/#!/tag/wendys"}.each do |name, url|
                   li.tag=link_to name, url, {class: 'tag'}
-            .clear
-
         .pullout-item
           .itemblock
             h3 Media
@@ -70,7 +75,6 @@
                 "Newspaper" => "/ov/#!/tag/newspaper",
                 "Radio" => "/ov/#!/tag/radio"}.each do |name, url|
                 li.tag=link_to name, url, {class: 'tag'}
-            .clear
                         
         .pullout-item
           .itemblock
@@ -84,12 +88,11 @@
                   "Retailer" => "/ov/#!/tag/retailer", 
                   "Tech" => "/ov/#!/tag/tech"}.each do |name, url|
                   li.tag=link_to name, url, {class: 'tag'}
-            .clear
             
         .pullout-item
           .itemblock
             h3 Government
-            #common-tags.tags.clearfix
+            #common-tags.tags
               ul#common-tags
                 - {"112th Congress" => "/ov/#!/tag/congress", 
                   "Agency" => "/ov/#!/tag/agency", 
@@ -98,32 +101,34 @@
                   "Police" => "/ov/#!/tag/police", 
                   "Supreme Court" => "/ov/#!/tag/supreme_court"}.each do |name, url|
                   li.tag=link_to name, url, {class: 'tag'}
-            .clear
             
         .pullout-item
+          #suggest-topic.itemblock
+            h3 Suggest a Topic
+            form
+              input type="text" name="topic" maxlength="100"
+              input(type="submit" name="submit" value="Submit")
+        .pullout-item
           .itemblock
-            h3 Suggest a Topic:
-            .list-tag
-              input type="text" class="inputbox" name="topic" maxlength="40" style="float: left; width: 250px"
-              input type="image" name="submit" src="/assets/site/btnsubmit.png" border="0" width="50" height="21" class="submitbtn2" style="padding-left: 10px"
-            .clear
+            .copy-url-links
+              h3 Page URL
+              input#copy-page-url.copy-url-input(type='text' name='copy-page-url' readonly='readonly' value='')
         .pullout-item.last
           .itemblock
-            h3
+            h3 Quick Stats
+            p
               ' Number of ourvoYce users: 
               strong(class="bluebold")= "#{number_with_delimiter(@total_users)}"
             - if signed_in?
-              h3
+              p
                 ' You have voted on 
                 strong.bluebold
                   span#user_vote_count
                     | 0
                   | &nbsp;items
-              h3
+              p
                 ' Member since
                 strong.bluebold= @member_since.strftime('%m/%d/%Y')              
-            #footer
-              ul#footerlist
               
       #item-details-pane
         .pullout-item
@@ -167,9 +172,7 @@
         .pullout-item.last
           .itemblock
             .copy-url-links
-              p
-                label(for='copy-item-url') Item Url
-                br
-                input#copy-item-url(type='text' name='copy-item-url' disabled='disabled' value='adfafsdfsdf')
-                input(type='submit' class="copy-url-button" value="Copy Url")
+              h3 Item URL
+              input#copy-item-url.copy-url-input(type='text' name='copy-item-url' value='')
+
 #record_counter
