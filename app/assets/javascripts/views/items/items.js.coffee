@@ -26,6 +26,7 @@
         this.collection.each(this.renderItem)
       else
         this.renderNoItem()
+    $(window).scrollTop(0)
     return this
 
   renderMessage: (message) ->

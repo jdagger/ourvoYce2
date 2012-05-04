@@ -1,10 +1,9 @@
-$item-height: 100px;
-$items-width: 653px;
-$content_width: 1024px;
-$content-col2-width: 228px;
-$filter-padding: 0px 3px; //Padding around filter box
+$column-width: 86px;
+$item-width: $column-width * 8 - 1px; //8 columns wide, 1px for outside shadow on right
+$details-width: $column-width * 4 - 3px;
+$pullout-side-margin: 16px;
+$details-item-width: $details-width - $pullout-side-margin * 2;
 
-$searchbox_height: 18px;
 $searchbox_width: 302px;
 $filter-height: 40px;
 
@@ -25,12 +24,7 @@ $red-chart: #cb2c1e;
 @mixin details-pane{
   margin:0px 0px 5px 0;
   @include border-radius(0 8px 8px 0);
-  //box-shadow: 0px 0px 7px #999;
-  //-moz-box-shadow: 0px 0px 7px #999;
-  //-webkit-box-shadow: 0px 0px 7px #999;
   @include box-shadow(0px 0px 7px #999);
-  //-webkit-box-shadow: 0px 0px 7px #999;
-  //width: $details-pane-width;
   min-height:300px;
   overflow: hidden;
   padding: 0px;
@@ -330,13 +324,6 @@ input{outline: none;} //Disable input highlighting
   }
 }
 
-.social{
-  div{
-    display: inline-block;
-    text-align: middle;
-    border: 1px solid green;
-  }
-}
 
 
 /* --- Flash Messages --------------------------------------------------- */
@@ -378,10 +365,9 @@ input{outline: none;} //Disable input highlighting
   #filter_container{
     height: $filter-height;
     z-index: 100;
-    padding-bottom: 5px;
+    padding-bottom: 4px;
 
     #filter_box{
-      div{height: $filter-height;}
 
       #filter_fields{
         text-align: right;
@@ -389,22 +375,21 @@ input{outline: none;} //Disable input highlighting
         line-height: $filter-height;
 
         select{
-          vertical-align: bottom;
           font-size: 14px;
+          padding: 0px;
+          margin: 0px;
         }
       }
     }
 
     #search {
+      position: relative;
       z-index: 100;
       text-align: right;
-      height: $filter-height;
-      line-height: $filter-height;
 
       .searchbox {
         font-size: 12px;
-        height:$searchbox_height;
-        vertical-align: bottom;
+        height: 18px;
         @include border-radius(10px 10px 10px 10px);
         width:$searchbox_width;
         text-align:left;
@@ -422,36 +407,26 @@ input{outline: none;} //Disable input highlighting
   #items_container {
     position: relative;
 
+    #items-filler{position: relative; background: white; z-index: 49;}
     #items {
-      @include box-sizing(border-box);
       background: none repeat scroll 0 0 #fff;
       @include border-radius(8px 0 0 8px);
-      //border-radius:8px 0 0 8px;
-      //-moz-border-radius:8px 0 0 8px;
-      //-webkit-border-top-left-radius:8px;
-      //-webkit-border-bottom-left-radius:8px;
       @include box-shadow(0px 0px 7px #999);
-      //box-shadow: 0px 0px 7px #999;
-      //-moz-box-shadow: 0px 0px 7px #999;
-      //-webkit-box-shadow: 0px 0px 7px #999;
-      //height: 100%;
-      //min-height: 800px;
       position: relative;
-      //width: 653px;
       z-index:50;
       color:#2158b0;
-      //@include clearfix;
+      width: $item-width;
 
       .items{
         position: relative;
       }
 
-      //$item-width: 636px;
+      $item-height: 100px;
       $voting-width: 105px;
       $minichart-width: 95px;
       $item-margin: 10px;
-      $middle-left: $voting-width + 2 * $item-margin;
-      $middle-right: $minichart-width + 2*$item-margin;
+      $middle-width: $item-width - $voting-width - $minichart-width - 4 * $item-margin;
+      $item-content-height: $item-height - 2 * $item-margin;
       .item{
         position: relative;
         @include item-container-template;
@@ -460,15 +435,15 @@ input{outline: none;} //Disable input highlighting
         padding: 0px;
 
         .item-container {
-          //width: $item-width;
           overflow: hidden;
+          position: relative;
 
           .voting{
-            position: absolute;
-            left: $item-margin;
-            top: $item-margin;
-            bottom: $item-margin;
+            position: relative;
             width: $voting-width;
+            height: $item-content-height;
+            margin: $item-margin;
+            float: left;
             vertical-align:top;
 
             .vote-container{
@@ -516,11 +491,11 @@ input{outline: none;} //Disable input highlighting
             }
           }
           .middle{
-            position: absolute;
-            left: $middle-left;
-            top: $item-margin;
-            bottom: $item-margin;
-            right: $middle-right;
+            position: relative;
+            width: $middle-width;
+            height: $item-content-height;
+            margin-top: $item-margin;
+            float: left;
             overflow: hidden;
 
             $related-tags-height: 15px;
@@ -593,11 +568,12 @@ input{outline: none;} //Disable input highlighting
             }
           }
           .minichart {
-            position: absolute; 
+            position: relative;
+            float: left;
+            height: $item-content-height;
             width: $minichart-width;
-            right: $item-margin;
-            top: $item-margin;
-            bottom: $item-margin;
+            margin-top: $item-margin;
+            margin-left: $item-margin;
 
             @include border-radius(5px);
 
@@ -670,17 +646,15 @@ input{outline: none;} //Disable input highlighting
     }
 
     #details {
-      //position: absolute;
-      //left: 653px;
-      //top: 0px;
-      @include box-sizing(border-box);
+      width: $details-width;
+      .details-container{ padding: 0px $pullout-side-margin; }
+      
       #sidebar {
         position: relative;
         #general-details {
           @include details-pane;
           background: #e1eef6 image-url('site/bg-pullout.jpg') repeat-x;
-          z-index: 48;
-          //@include clearfix;
+          z-index: 47;
 
           .show-favorites{
             vertical-align: middle;
@@ -688,21 +662,50 @@ input{outline: none;} //Disable input highlighting
             h3{
               padding: 0px; 
               margin: 0px; 
-              //line-height: 30px; 
               img{vertical-align: middle; padding-right: 4px; padding-bottom: 5px;}
             }
           }
 
         }
         #item-details-pane {
-          @include details-pane;
           position: absolute;
+          @include details-pane;
+          width: $details-width + 2px;
           top: 0px;
-          //left: -$details-pane-width; 
           background:#fff  image-url('site/bg-pullout2.jpg') repeat-x;
           visibility: hidden;
           overflow: auto;
-          z-index: 49;
+          z-index: 48;
+
+
+          table{
+            width: 100%;
+            tr{
+              td{
+                width: 50%;
+                text-align: left;
+                padding: 0px;
+                margin: 0px;
+                img{width: 20px; height: 20px;}
+              }
+            }
+          }
+
+          .whitebox {
+            background-color:#fff;
+            @include border-radius(7px);
+            padding:8px;
+            margin: 0px auto;
+            margin-bottom:15px;
+
+
+            .social{
+              div{
+                display: inline-block;
+                text-align: middle;
+              }
+            }
+          }
 
           &.details-pane-absolute{
           }
@@ -730,9 +733,7 @@ input{outline: none;} //Disable input highlighting
               text-align: center;
 
               .top {height:7px;}
-              .bottom {
-                padding-top: 0px;
-              }
+              .bottom { padding-top: 0px; }
 
               .votenumber {
                 font-size: 16px;
@@ -896,7 +897,7 @@ ul.ui-autocomplete{
 /* ----------------- pullout */
 .pullout-item{
   @include item-container-template;
-  padding:15px 16px 15px 24px;
+  padding: 15px 0px;
   @include clearfix;
 }
 
@@ -921,26 +922,14 @@ ul.ui-autocomplete{
 
 
 
-.whitebox {
-  background-color:#fff;
-  /* Do rounding (native in Opera, Firefox and Safari) */
-  border-radius:7px;
-  -webkit-border-radius:7px;
-  -moz-border-radius:7px;
-  /* text-align:center; */
-  padding:4px 0 2px 0;
-  margin: 0px auto;
-  margin-bottom:15px;
-}
-
-/* --- Footer ------------------------------------------------------------ */
 
 #footer {
+  width: $item-width; 
   color:#666666;
   margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 20px;
-  border-top: dashed 1px #aaa;
+  //border-top: dashed 1px #aaa;
 
   ul {
     text-align: center;
@@ -1003,7 +992,7 @@ a.vote:hover{
 
 
 #maps-container{
-  width:350px;
+  width: $details-item-width;
   background: image-url('site/map-rounded-back.gif') no-repeat top right;
 }
 
@@ -1023,7 +1012,7 @@ a.vote:hover{
   input[type=text]{
     @include border-radius(2px 2px 2px 2px);
     //padding-left: 4px;
-    width: 265px;
+    width: 295px;
   }
 }
 
@@ -1036,7 +1025,7 @@ a.vote:hover{
 
   input[type=text]{
     color: #555;
-    width: 200px;
+    width: 230px;
   }
 
   input[type=submit]{

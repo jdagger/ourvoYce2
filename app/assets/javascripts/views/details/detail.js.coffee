@@ -51,6 +51,7 @@
       return
     )
 
+
     #Begin orig
     #$(this.el).find('#map').css('visibility', 'visible')
     #$(this.el).find('#bar-graph').css('visibility', 'visible')
@@ -130,19 +131,24 @@
     #Hide website link if doesn't contain content
     if this.model.website().length > 0
       $(this.el).find('#item-detail-website').show()
+      $(this.el).find('#details-website-image').show()
       $(this.el).find('#item-detail-website').attr('href', this.model.website())
     else
       $(this.el).find('#item-detail-website').hide()
+      $(this.el).find('#details-website-image').hide()
 
     #Hide wikipedia link if doesn't contain content
     if this.model.wikipedia().length > 0
       $(this.el).find('#item-detail-wikipedia').show()
+      $(this.el).find('#details-wikipedia-image').show()
       $(this.el).find('#item-detail-wikipedia').attr('href', this.model.wikipedia())
     else
       $(this.el).find('#item-detail-wikipedia').hide()
+      $(this.el).find('#details-wikipedia-image').hide()
     this.renderVoteGraph()
     this.renderMap()
     this.renderAgeGraph()
+    $(this.el).scrollTop(0)
 
     return this
 
@@ -216,7 +222,8 @@
     return
 
   resizeDetailsPane: () ->
-    $(this.el).height($(window).height() - 8)
+    #$(this.el).height($(window).height() - 8)
+    $(this.el).height($(window).height() - 0)
     return
 
 

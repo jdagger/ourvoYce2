@@ -1,11 +1,12 @@
 <div id="filter_box">
-  <div class="grid_5 alpha">
+  <div class="grid_4 alpha">
     <div id="tag">
       <h1><span id="current_tag" class="bluebold"></span></h1>
     </div>
   </div>
-  <div class="grid_3">
+  <div class="grid_4">
     <div id="filter_fields"> 
+      <span>You're looking at</span>
       <select id="filter" name="filter">
         <option value="all" <%= OurvoyceApp.selected_option('all', filter) %>>all items in this tag</option>
         <option value="voted" <%= OurvoyceApp.selected_option('voted', filter) %>>items you have voted on</option>
