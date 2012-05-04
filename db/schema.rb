@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120427133539) do
+ActiveRecord::Schema.define(:version => 20120504184111) do
 
   create_table "favorites", :force => true do |t|
     t.integer  "user_id"
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(:version => 20120427133539) do
   end
 
   add_index "stats", ["item_id", "birth_year", "zip"], :name => "index_stats_on_item_id_and_birth_year_and_zip", :unique => true
+
+  create_table "suggest_topics", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "ip"
+    t.string   "topic"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "tag_items", :force => true do |t|
     t.integer "tag_id"

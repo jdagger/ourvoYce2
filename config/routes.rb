@@ -40,6 +40,8 @@ Ourvoyce::Application.routes.draw do
     match "/age" => "graphs#national_age_graph"
   end
 
+  match '/suggest_topics/submit' => 'suggest_topics#submit', :via => [:post]
+
   namespace :admin do
     match "/" => "admins#index", :as => :admin
     match "/items/suggest_by_name" => "items#suggest_by_name", :as => :item_lookup_by_name
@@ -53,6 +55,7 @@ Ourvoyce::Application.routes.draw do
     end
     resources :qr_lookups
     resources :tag_items
+    resources :suggest_topics
     resources :users
     resources :tags do 
       match "/add_item_by_autocomplete" => "tags#add_item_by_autocomplete", :as => :add_item_by_autocomplete

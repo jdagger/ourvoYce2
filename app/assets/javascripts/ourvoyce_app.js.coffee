@@ -11,6 +11,7 @@ window.OurvoyceApp =
     
     this.detail = new Detail()
     this.items = new Items(items, {base_url: base_url, tag_friendly_name: tag_friendly_name, tag_path: tag_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction, records_to_fetch: records_to_fetch})
+    this.suggest_topics = new SuggestTopic()
 
     this.item_ids = item_ids
 
@@ -24,6 +25,8 @@ window.OurvoyceApp =
     this.recordCounterView = new RecordCounterView({collection: OurvoyceApp.items})
     this.filterView = new FilterView()
     this.currentTagView = new CurrentTagView({collection: OurvoyceApp.items})
+
+    this.suggestTopicView = new SuggestTopicView({model: this.suggest_topics})
 
 
     this.router = new OurvoyceRouter()

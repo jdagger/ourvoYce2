@@ -105,9 +105,10 @@
             .pullout-item
               #suggest-topic
                 h3 Suggest a Topic
-                form
-                  input type="text" name="topic" maxlength="100"
+                form#suggest-topic-form
+                  input type="text" id="suggest-topic-input" name="topic" maxlength="100"
                   input(type="submit" name="submit" value="Submit")
+                #suggest-topic-message
             .pullout-item
               .copy-url-links
                 h3 Page URL

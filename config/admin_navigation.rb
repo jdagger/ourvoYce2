@@ -64,9 +64,11 @@ SimpleNavigation::Configuration.run do |navigation|
       qr_lookups.item :new_qr_lookup, 'New QR', new_admin_qr_lookup_url
     end
 
+
     primary.item :misc, 'Misc', '' do |misc|
       misc.item :utilities, 'Utility', admin_utilities_url 
       misc.item :stats, 'Stat', admin_stats_url 
+      misc.item :suggest_topics, 'Suggestions', admin_suggest_topics_url 
     end
 
 

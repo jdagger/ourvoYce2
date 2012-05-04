@@ -1,0 +1,27 @@
+.row.paging 
+  .span2
+    .record-count
+      = "#{number_with_delimiter(SuggestTopic.count)} total suggestions"
+    
+  .span10
+    .pull-right
+      = will_paginate @suggest_topics
+
+table.table.table-striped.table-bordered
+  thead
+    tr
+      th.span1
+      th Id
+      th User
+      th Suggestion
+      th= sort_link 'Submit Date', :updated_at
+  tbody
+    -  @suggest_topics.each do |st|
+      tr
+        td.center
+          = link_to [:admin, st], :method => :delete, :confirm => 'Are you sure?' do
+            i.icon-remove
+        td= st.id
+        td= st.user.nil? ? '' : st.user.email
+        td= st.topic
+        td= st.updated_at
