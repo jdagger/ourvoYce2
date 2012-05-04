@@ -478,7 +478,6 @@ form{
   position: relative;
   text-align: left;
   width: $content_width;
-  border: solid 1px purple; //REMOVE
   @include clearfix;
 
   #filter_container{
@@ -532,10 +531,8 @@ form{
   #items_container {
     position: relative;
     @include clearfix;
-    border: solid 1px green; //REMOVE
 
     #items {
-      border: solid 1px blue; //REMOVE
       background: none repeat scroll 0 0 #fff;
       border-radius:8px 0 0 8px;
       -moz-border-radius:8px 0 0 8px;
@@ -782,7 +779,6 @@ form{
     }
 
     #details {
-      border: solid 1px red; //REMOVE
       position: absolute;
       left: 653px;
       top: 0px;
