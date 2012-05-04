@@ -1,19 +1,16 @@
 <div id="filter_box">
-  <div id="tag">
-    <h1>
-        <span class="bluebold" style="display: none">Viewing: </span>
-        <span id="current_tag" class="bluebold"></span>
-    </h1>
+  <div class="grid_5 alpha">
+    <div id="tag">
+      <h1><span id="current_tag" class="bluebold"></span></h1>
+    </div>
   </div>
-  <div id="filter_fields" style="float: right; padding-right: 20px; padding-top: 5px">
-    <div>You're looking at
+  <div class="grid_3">
+    <div id="filter_fields"> 
       <select id="filter" name="filter">
         <option value="all" <%= OurvoyceApp.selected_option('all', filter) %>>all items in this tag</option>
         <option value="voted" <%= OurvoyceApp.selected_option('voted', filter) %>>items you have voted on</option>
         <option value="no-vote" <%= OurvoyceApp.selected_option('no-vote', filter) %>>items you haven't voted on yet</option>
       </select>
-    </div>
-    <div>
       <select id="sort" name="sort" style="display: none">
         <option value="default_order" <%= OurvoyceApp.selected_option('default_order', sort_name) %>>Default</option>
         <option value="popularity" <%= OurvoyceApp.selected_option('popularity', sort_name) %>>Popularity</option>
@@ -24,7 +21,8 @@
         <option value="asc" <%= OurvoyceApp.selected_option(sort_direction, 'asc') %>>Ascending</option>
       </select>
     </div>
-      </div>
+  </div>
+  <div class="grid_4 omega">
     <div id="search">
       <form action="/search/lookup" method="post" id="tag_search">
         <input type="text" id="search_field" name="search" 
@@ -37,5 +35,6 @@
           width="17" height="18" class='search_button' />
       </form>
     </div>
-
+  </div>
+  <div class="clear"></div>
 </div>
