@@ -23,156 +23,159 @@
 
 = flash_messages
 
-#filter_container
+.grid_12
+  #filter_container
+.clear
+
 #items_container
-  #items
-  #details
-    #sidebar
-      #general-details
-        - if signed_in?
-          .pullout-item
-            .itemblock
-              h3.redbold
-                a(href='/ov/#!/favorites')
-                  img(src="/assets/site/star.png" width="18" height="19" alt="star")
-                  == "Show Favorites (<span id='favorites_count'>#{@favorites_count}</span>)"
-
-        .pullout-item
-          .itemblock
-            h3 Hot Topics
-            #hot-topic-tags.tags
-
-        .pullout-item
-          .itemblock
-            h3 Popular Tags
-            #popular-tags.tags
-     
-        .pullout-item
-          .itemblock
-            h3 Food
-            #common-tags.tags
-              ul#common-tags
-                - {"Arby's" => "/ov/#!/tag/arbys", 
-                  "Coffee" => "/ov/#!/tag/coffee", 
-                  "French Fries" => "/ov/#!/tag/frenchfries", 
-                  "Krispy Kreme" => "/ov/#!/tag/krispy_kreme", 
-                  "McDonald's" => "/ov/#!/tag/mcdonalds", 
-                  "Starbucks" => "/ov/#!/tag/starbucks", 
-                  "Taco Bell" => "/ov/#!/tag/taco_bell", 
-                  "Wendy's" => "/ov/#!/tag/wendys"}.each do |name, url|
-                  li.tag=link_to name, url, {class: 'tag'}
-        .pullout-item
-          .itemblock
-            h3 Media
-            #common-tags.tags
-              ul#common-tags
-              - {"CBS News" => "/ov/#!/tag/cbsnews",
-                "CNN" => "/ov/#!/tag/cnn",
-                "Fox News" => "/ov/#!/tag/foxnews",
-                "Headline News" => "/ov/#!/tag/hln",
-                "Magazine" => "/ov/#!/tag/magazine",
-                "MSNBC" => "/ov/#!/tag/msnbc",
-                "Newspaper" => "/ov/#!/tag/newspaper",
-                "Radio" => "/ov/#!/tag/radio"}.each do |name, url|
-                li.tag=link_to name, url, {class: 'tag'}
-                        
-        .pullout-item
-          .itemblock
-            h3 Business
-            #common-tags.tags
-              ul#common-tags
-                - {"Auto" => "/ov/#!/tag/auto", 
-                  "Agribusiness" => "/ov/#!/tag/agribusiness", 
-                  "Financial" => "/ov/#!/tag/financial", 
-                  "Fortune 500" => "/ov/#!/tag/fortune500", 
-                  "Retailer" => "/ov/#!/tag/retailer", 
-                  "Tech" => "/ov/#!/tag/tech"}.each do |name, url|
-                  li.tag=link_to name, url, {class: 'tag'}
-            
-        .pullout-item
-          .itemblock
-            h3 Government
-            #common-tags.tags
-              ul#common-tags
-                - {"112th Congress" => "/ov/#!/tag/congress", 
-                  "Agency" => "/ov/#!/tag/agency", 
-                  "Executive Branch" => "/ov/#!/tag/executive", 
-                  "Military" => "/ov/#!/tag/military", 
-                  "Police" => "/ov/#!/tag/police", 
-                  "Supreme Court" => "/ov/#!/tag/supreme_court"}.each do |name, url|
-                  li.tag=link_to name, url, {class: 'tag'}
-            
-        .pullout-item
-          #suggest-topic.itemblock
-            h3 Suggest a Topic
-            form
-              input type="text" name="topic" maxlength="100"
-              input(type="submit" name="submit" value="Submit")
-        .pullout-item
-          .itemblock
-            .copy-url-links
-              h3 Page URL
-              input#copy-page-url.copy-url-input(type='text' name='copy-page-url' readonly='readonly' value='')
-        .pullout-item.last
-          .itemblock
-            h3 Quick Stats
-            p
-              ' Number of ourvoYce users: 
-              strong(class="bluebold")= "#{number_with_delimiter(@total_users)}"
+  .grid_8.alpha
+    #items
+    #items-filler
+  .grid_4.omega
+    #details
+      #sidebar
+        #general-details
+          .details-container
             - if signed_in?
-              p
-                ' You have voted on 
-                strong.bluebold
-                  span#user_vote_count
-                    | 0
-                  | &nbsp;items
-              p
-                ' Member since
-                strong.bluebold= @member_since.strftime('%m/%d/%Y')              
-              
-      #item-details-pane
-        .pullout-item
-          .itemblock
-            a(href="#" id="hide-details") << Hide
-            h3
-              #item-detail-name
-            .whitebox
-              .social
-                #facebook
-                /#plusone
-                #twitter
-              .social
-                img(src="/assets/site/star.png" width="18" height="19" alt="star")
-                a#item-detail-website(target="_blank")Website
-                img(src="/assets/site/star.png" width="18" height="19" alt="star")
-                a#item-detail-wikipedia(target="_blank")Wikipedia page
-            .vote-chart
-              .thumbs-up
-                .votenumber
-                .top
-                .height
-                .bottom
-              .neutral
-                .votenumber
-                .top
-                .height
-                .bottom
-              .thumbs-down
-                .votenumber
-                .top
-                .height
-                .bottom
-        .pullout-item
-          .itemblock
-            .maps-container
-              .right-align
-                a(href="#" id="refresh-map")Refresh Map
-              #map
-              #bar-graph
-        .pullout-item.last
-          .itemblock
-            .copy-url-links
-              h3 Item URL
-              input#copy-item-url.copy-url-input(type='text' name='copy-item-url' value='')
+              .pullout-item
+                .show-favorites
+                  h3.redbold
+                    a(href='/ov/#!/favorites')
+                      img(src="/assets/site/star.png" width="18" height="19" alt="star")
+                      == "Show Favorites (<span id='favorites_count'>#{@favorites_count}</span>)"
+            .pullout-item
+              h3 Hot Topics
+              #hot-topic-tags.tags
 
+            .pullout-item
+              h3 Popular Tags
+              #popular-tags.tags
+         
+            .pullout-item
+              h3 Food
+              #common-tags.tags
+                ul#common-tags
+                  - {"Arby's" => "/ov/#!/tag/arbys", 
+                    "Coffee" => "/ov/#!/tag/coffee", 
+                    "French Fries" => "/ov/#!/tag/frenchfries", 
+                    "Krispy Kreme" => "/ov/#!/tag/krispy_kreme", 
+                    "McDonald's" => "/ov/#!/tag/mcdonalds", 
+                    "Starbucks" => "/ov/#!/tag/starbucks", 
+                    "Taco Bell" => "/ov/#!/tag/taco_bell", 
+                    "Wendy's" => "/ov/#!/tag/wendys"}.each do |name, url|
+                    li.tag=link_to name, url, {class: 'tag'}
+            .pullout-item
+              h3 Media
+              #common-tags.tags
+                ul#common-tags
+                - {"CBS News" => "/ov/#!/tag/cbsnews",
+                  "CNN" => "/ov/#!/tag/cnn",
+                  "Fox News" => "/ov/#!/tag/foxnews",
+                  "Headline News" => "/ov/#!/tag/hln",
+                  "Magazine" => "/ov/#!/tag/magazine",
+                  "MSNBC" => "/ov/#!/tag/msnbc",
+                  "Newspaper" => "/ov/#!/tag/newspaper",
+                  "Radio" => "/ov/#!/tag/radio"}.each do |name, url|
+                  li.tag=link_to name, url, {class: 'tag'}
+                          
+            .pullout-item
+              h3 Business
+              #common-tags.tags
+                ul#common-tags
+                  - {"Auto" => "/ov/#!/tag/auto", 
+                    "Agribusiness" => "/ov/#!/tag/agribusiness", 
+                    "Financial" => "/ov/#!/tag/financial", 
+                    "Fortune 500" => "/ov/#!/tag/fortune500", 
+                    "Retailer" => "/ov/#!/tag/retailer", 
+                    "Tech" => "/ov/#!/tag/tech"}.each do |name, url|
+                    li.tag=link_to name, url, {class: 'tag'}
+              
+            .pullout-item
+              h3 Government
+              #common-tags.tags
+                ul#common-tags
+                  - {"112th Congress" => "/ov/#!/tag/congress", 
+                    "Agency" => "/ov/#!/tag/agency", 
+                    "Executive Branch" => "/ov/#!/tag/executive", 
+                    "Military" => "/ov/#!/tag/military", 
+                    "Police" => "/ov/#!/tag/police", 
+                    "Supreme Court" => "/ov/#!/tag/supreme_court"}.each do |name, url|
+                    li.tag=link_to name, url, {class: 'tag'}
+              
+            .pullout-item
+              #suggest-topic
+                h3 Suggest a Topic
+                form
+                  input type="text" name="topic" maxlength="100"
+                  input(type="submit" name="submit" value="Submit")
+            .pullout-item
+              .copy-url-links
+                h3 Page URL
+                input#copy-page-url.copy-url-input(type='text' name='copy-page-url' readonly='readonly' value='')
+            .pullout-item.last
+              h3 Quick Stats
+              p
+                ' Number of ourvoYce users: 
+                strong(class="bluebold")= "#{number_with_delimiter(@total_users)}"
+              - if signed_in?
+                p
+                  ' You have voted on 
+                  strong.bluebold
+                    span#user_vote_count
+                      | 0
+                    | &nbsp;items
+                p
+                  ' Member since
+                  strong.bluebold= @member_since.strftime('%m/%d/%Y')              
+                
+        #item-details-pane
+          .details-container
+            .pullout-item
+              a(href="#" id="hide-details") << Hide
+              h3
+                #item-detail-name
+              .whitebox
+                table
+                  tr
+                    td
+                      #facebook
+                      /#plusone
+                    td
+                      #twitter
+                  tr
+                    td
+                      = image_tag('site/website.png', id: "details-website-image")
+                      a#item-detail-website(target="_blank")Website
+                    td
+                      = image_tag('site/wikipedia.png', id: "details-wikipedia-image")
+                      a#item-detail-wikipedia(target="_blank")Wikipedia
+                    
+              .links
+              .vote-chart
+                .thumbs-up
+                  .votenumber
+                  .top
+                  .height
+                  .bottom
+                .neutral
+                  .votenumber
+                  .top
+                  .height
+                  .bottom
+                .thumbs-down
+                  .votenumber
+                  .top
+                  .height
+                  .bottom
+            .pullout-item
+              .maps-container
+                .right-align
+                  a(href="#" id="refresh-map")Refresh Map
+                #map
+                #bar-graph
+            .pullout-item.last
+              .copy-url-links
+                h3 Item URL
+                input#copy-item-url.copy-url-input(type='text' name='copy-item-url' value='')
+  .clear
 #record_counter

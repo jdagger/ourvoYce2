@@ -12,9 +12,16 @@ html(xmlns:fb="http://ogp.me/ns/fb#")
 
   body
     #body-background
-    #header
-      == render 'shared/header'
-      div(id="content-container")
-        = yield
-      == render 'shared/footer'
+    .container_12
+      .grid_12
+        #header
+          == render 'shared/header'
+      .clear
+      .grid_12
+        div(id="content-container")
+          = yield
+      .clear
+      .grid_12
+        == render 'shared/footer'
+      .clear
     = yield :javascript

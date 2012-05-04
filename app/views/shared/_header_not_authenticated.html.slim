@@ -1,32 +1,22 @@
 #header-topbar-wrapper
-  #header-topbar-left
-    #header-login-form
-      = simple_form_for User.new, url: new_user_session_path do |f|
-        .login_label
-          ' Email address
+  .grid_8.alpha
+    #header-topbar-left
+      #header-login-form
+        = simple_form_for User.new, url: new_user_session_path do |f|
+          = f.label :email, "Email address"
           = f.input :email, label: false, input_html: {maxlength: "25", value: "", onblur: "if(this.value=='') this.value=''",  onfocus: "if(this.value =='' ) this.value=''"}
-        .login_label
-          ' Password
+          = f.label :password, "Password"
           = f.input :password, label: false, input_html: {maxlength: "25"}
-        .login_label
           = f.submit ""
-        .login_label
-          .input
-            input(type="checkbox" name="user[remember_me]" value="1")
-            | Remember me 
-  #header-topbar-center
-    /' Login with: 
-    /a href="#"
-      /img src="/assets/site/twitter.gif" alt="Twitter" width="32" height="22" style="vertical-align:middle"
-    /== "&nbsp;"
-    /a href="#"
-      /img src="/assets/site/facebook.gif" alt="Facebook" width="12" height="22" style="vertical-align:middle"
-  #header-topbar-right
-    ul
-      li
-        a href="/reset_password" class="no-padleft"
-          | Reset Password
-      li
-        a href="/resend_verification" class="no-border no-padright"
-          | Resend Account Verfication
-.clear
+          input(type="checkbox" name="user[remember_me]" value="1")
+          | Remember me 
+        .clear
+  .grid_4.omega
+    #header-topbar-right.right-align
+      ul
+        li
+          a(href="/reset_password" class="no-padleft") Reset Password
+        li
+          a(href="/resend_verification" class="no-border no-padright") Resend Account Verfication
+      .clear
+  .clear

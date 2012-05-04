@@ -1,21 +1,17 @@
 h1.bluebold ourvoYce Videos
-#content-container2
-  .content-col1thin
-    #videolist 
-      ul
-        li
-          a(href="#whatisourvoyce")What is ourvoYce
+.grid_3.alpha
+  #videolist.padding-right
+    ul
+      li
+        a(href="#whatisourvoyce")What is ourvoYce
+.grid_9.omega
+  h2.thin.red
+    a#whatisourvoyce 
+    | What is ourvoYce?
 
-  .content-col2wider 
-    .redlinebottom.first 
-      h2.thin.red
-        a#whatisourvoyce 
-        | What is ourvoYce?
+  p
+    |
+      Some description here (?)
+  = image_tag "site/placeholder.gif", width: '348', height: '272'
 
-      p
-        |
-          Some description here (?)
-      = image_tag "site/placeholder.gif", width: '348', height: '272'
-
-  .clear
-
+.clear

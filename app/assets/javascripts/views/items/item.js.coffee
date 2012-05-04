@@ -117,7 +117,7 @@
     #console.log("Invalid vote count detected(ItemView)") if Math.min(thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count) < 0
 
     # -3 at end is for the cap height at the top of the bars
-    container_height = $(this.el).find('.mini-vote-chart').css('height').replace(/px/, "") - 3
+    container_height = $(this.el).find('.mini-vote-chart').height() - 3
 
     thumbs_up_bar = $(this.el).find('.mini-vote-chart .thumbs-up div')
     thumbs_down_bar = $(this.el).find('.mini-vote-chart .thumbs-down div')
@@ -133,6 +133,8 @@
 
 
   render: () ->
+    #There is an item-filler to provide a blind for expanding sidebar. It is set to match the total height
+    $('#items-filler').css('height', $('#general-details').height() - $('#items').height())
     $(this.el).html(JST[this.template](this.model.toJSON()))
 
     this.renderRelatedTags()

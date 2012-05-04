@@ -1,21 +1,22 @@
 #header-topbar-wrapper
-  #header-topbar-left
-    = "You are logged in as #{current_user.email}."
-  #header-topbar-right
-    .socialtop
-      span.large
-        | Follow us on
-      == '&nbsp;&nbsp;'
-      a(href="http://www.twitter.com/ourvoYce" target="_blank")
-        img(src="/assets/site/twitter.gif" alt="Twitter" width="32" height="22" style="vertical-align:middle")
-      == '&nbsp;&nbsp;'
-      a(href="http://www.facebook.com/ourvoYce" target="_blank")
-        img(src="/assets/site/facebook.gif" alt="Facebook" width="12" height="22" style="vertical-align:middle")
-    .left
+  .grid_6.alpha
+    #header-topbar-left
+      = "You are logged in as #{current_user.email}."
+  .grid_6.omega
+    #header-topbar-right.right-align
+      .socialtop
+        span.large
+          | Follow us on
+        == '&nbsp;&nbsp;'
+        a(href="http://www.twitter.com/ourvoYce" target="_blank")
+          img(src="/assets/site/twitter.gif" alt="Twitter" width="32" height="22" style="vertical-align:middle")
+        == '&nbsp;&nbsp;'
+        a(href="http://www.facebook.com/ourvoYce" target="_blank")
+          img(src="/assets/site/facebook.gif" alt="Facebook" width="12" height="22" style="vertical-align:middle")
       ul
         li
           = link_to "Settings", edit_registration_path(current_user), :class => 'no-padleft'
         li
           = link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'no-border no-padright'
-    .clear      
+      .clear
   .clear
