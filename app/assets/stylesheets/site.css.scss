@@ -528,7 +528,7 @@ input{outline: none;} //Disable input highlighting
             float: left;
             overflow: hidden;
 
-            $related-tags-height: 15px;
+            $related-tags-height: 17px;
             $item-details-height: $item-height - $related-tags-height - 2 * $item-margin;
 
             .details{
@@ -585,12 +585,12 @@ input{outline: none;} //Disable input highlighting
               }
               .related-tags-container{
                 float: left;
+                height: $related-tags-height;
                 ul#related-tags{
                   display: inline;
                   li{
                     display: inline;
-                    a{
-                    }
+                    a{ }
                   }
                 }
               }
