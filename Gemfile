@@ -43,7 +43,7 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
-  gem 'twitter-bootstrap-rails'
+  gem 'twitter-bootstrap-rails', '2.0.7'
 end
 
 gem 'jquery-rails'
