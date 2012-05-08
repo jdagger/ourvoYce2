@@ -102,7 +102,6 @@
     title = "I just voted on #{this.model.name()}. Where do you stand?"
     html = JST['social/twitter']({url: encodeURIComponent(this.itemDetailUrl()), title: encodeURIComponent(title) })
     $(this.el).find('#twitter').html(html)
-    this.createTwitterButton("script", "twitter-wjs")
     return
 
 
