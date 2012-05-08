@@ -113,6 +113,7 @@ class ItemsController < ApplicationController
 
     @base_url = "item"
     @tag_friendly_name = 'Item'
+    @is_item = true
     @tag_path = ''
 
     render :json => load_common_item_request_data.to_json
@@ -160,6 +161,7 @@ class ItemsController < ApplicationController
     args[:base_url] = @base_url
     args[:tag_friendly_name] = @tag_friendly_name
     args[:tag_path] = @tag_path
+    args[:is_item] = @is_item
     args[:filter] = @filter
     args[:sort_name] = @sort_name
     args[:sort_direction] = @sort_direction
@@ -173,6 +175,7 @@ class ItemsController < ApplicationController
     @popular_tags = Tag.popular_tags
     @hot_topic_tags = Tag.hot_topics
     @authenticated = !current_user.nil?
+    @is_item = false
     if current_user.nil?
       @favorites_count = 0
       @user_vote_count = 0

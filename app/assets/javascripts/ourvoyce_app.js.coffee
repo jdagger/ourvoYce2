@@ -3,14 +3,14 @@ window.OurvoyceApp =
   Collections: {}
   Views: {}
   Routers: {}
-  init: (base_url, vote_count, tag_friendly_name, tag_path, filter, sort_name, sort_direction, popular_tags, hot_topic_tags, items, item_ids, authenticated, records_to_fetch) ->
+  init: (base_url, vote_count, tag_friendly_name, tag_path, filter, sort_name, sort_direction, popular_tags, hot_topic_tags, items, item_ids, authenticated, records_to_fetch, is_item) ->
     this.authenticated = authenticated
 
     this.popular_tags = new PopularTags(popular_tags)
     this.hot_topic_tags = new HotTopicTags(hot_topic_tags)
     
     this.detail = new Detail()
-    this.items = new Items(items, {base_url: base_url, tag_friendly_name: tag_friendly_name, tag_path: tag_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction, records_to_fetch: records_to_fetch})
+    this.items = new Items(items, {base_url: base_url, tag_friendly_name: tag_friendly_name, tag_path: tag_path, filter: filter, sort_name: sort_name, sort_direction: sort_direction, records_to_fetch: records_to_fetch, is_item: is_item})
     this.suggest_topics = new SuggestTopic()
 
     this.item_ids = item_ids

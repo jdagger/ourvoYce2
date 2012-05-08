@@ -8,5 +8,8 @@
     return
 
   render: () ->
-    $(this.el).html(this.collection.friendly_name)
+    if this.collection.is_item
+      $(this.el).html('')
+    else
+      $(this.el).html(this.collection.friendly_name)
     return this

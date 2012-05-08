@@ -8,6 +8,7 @@
     this.friendly_name = params.tag_friendly_name
     this.base_url = params.base_url
     this.filter = params.filter
+    this.is_item = params.is_item
     this.sort_name = params.sort_name
     this.sort_direction = params.sort_direction
     this.displayed_details_item = null
@@ -19,7 +20,9 @@
     $("#record_counter").html("retrieving record...")
     this.base_url = 'item'
     this.tag = ''
-    this.friendly_name = 'Item'
+    #this.friendly_name = 'Item'
+    this.friendly_name = ''
+    this.is_item = true
     this.fetch({url: url})
     return
 
@@ -29,6 +32,7 @@
     this.base_url = 'hot_topics'
     this.tag = ''
     this.friendly_name = 'Hot Topics'
+    this.is_item = false
     this.parse_parameters filter, sort_name, sort_direction
     this.fetch({url: url, data: {filter: this.filter, sort: this.sort_details}});
     return
@@ -39,6 +43,7 @@
     this.base_url = 'favorites'
     this.tag = ''
     this.friendly_name = 'Favorites'
+    this.is_item = false
     this.parse_parameters filter, sort_name, sort_direction
     this.fetch({url: url, data: {filter: this.filter, sort: this.sort_details}});
     return
@@ -55,6 +60,7 @@
     $("#record_counter").html("retrieving records...")
     this.base_url = 'tag'
     this.tag = tag
+    this.is_item = false
     this.parse_parameters filter, sort_name, sort_direction
     url = "/items/tag/#{this.tag}"
     this.fetch({url: url, data: {filter: this.filter, sort: this.sort_details}});

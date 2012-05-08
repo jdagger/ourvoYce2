@@ -15,10 +15,10 @@
 
   items_reset: () ->
     
-    if OurvoyceApp.items.friendly_name == 'Item'
-      $('#filter_fields').hide();
-    else
-      $('#filter_fields').show();
+    #if OurvoyceApp.items.friendly_name == 'Item'
+    #$('#filter_fields').hide();
+    #else
+    $('#filter_fields').show();
     return
 
   update_sort: () ->

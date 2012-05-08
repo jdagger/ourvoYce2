@@ -32,7 +32,8 @@
 
 
   itemsReset: () ->
-    if (OurvoyceApp.items.friendly_name == 'Item') && (OurvoyceApp.items.length == 1)
+    #if (OurvoyceApp.items.friendly_name == 'Item') && (OurvoyceApp.items.length == 1)
+    if OurvoyceApp.items.is_item && (OurvoyceApp.items.length == 1)
       this.model.showDetails(OurvoyceApp.items.at(0))
     return
     
@@ -98,11 +99,12 @@
     return "#{base_url}#!/item/#{this.model.id()}"
 
   renderTwitterShare: () ->
-    title = "I just voted on #{this.model.name()}. Where do you stand?"
-    #html = JST['social/twitter']({url: encodeURIComponent('http://ourvoyce.com'), title: encodeURIComponent(title) })
+    title = "I just voted on #{this.model.name()}. Where do you stand? #{this.itemDetailUrl()}"
     html = JST['social/twitter']({url: encodeURIComponent(this.itemDetailUrl()), title: encodeURIComponent(title) })
     $(this.el).find('#twitter').html(html)
+    this.createTwitterButton("script", "twitter-wjs")
     return
+
 
   renderPlusOne: () ->
     html = JST['social/plusone']({url: this.itemDetailUrl()})

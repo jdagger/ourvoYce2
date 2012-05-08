@@ -3,14 +3,13 @@
   javascript:
     $(function(){
       window.initializeMaps();
-      window.OurvoyceApp.init('#{@base_url}', #{@user_vote_count}, '#{@tag_friendly_name}', '#{@tag_path}', '#{@filter}', '#{@sort_name}', '#{@sort_direction}', #{@popular_tags.to_json.html_safe}, #{@hot_topic_tags.to_json.html_safe}, #{@items.to_json.html_safe}, #{@item_ids.to_json.html_safe}, #{@authenticated}, #{@records_to_fetch});
+      window.OurvoyceApp.init('#{@base_url}', #{@user_vote_count}, '#{@tag_friendly_name}', '#{@tag_path}', '#{@filter}', '#{@sort_name}', '#{@sort_direction}', #{@popular_tags.to_json.html_safe}, #{@hot_topic_tags.to_json.html_safe}, #{@items.to_json.html_safe}, #{@item_ids.to_json.html_safe}, #{@authenticated}, #{@records_to_fetch}, #{@is_item});
     });
   coffee:
     $ ->
       $('.copy-url-button').on('focus', (e) ->
         return
       )
-      $('#copy-page-url').val(window.location)
       $('.copy-url-input').on("click", (e) ->
         input = this
         setTimeout(

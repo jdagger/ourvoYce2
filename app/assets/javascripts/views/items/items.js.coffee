@@ -13,6 +13,7 @@
     return
 
   render: () ->
+    $('#copy-page-url').val(window.location)
     $(this.el).html(JST['items/items']({}))
     if this.initial_load
       this.initial_load = false
