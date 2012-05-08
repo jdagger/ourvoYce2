@@ -29,3 +29,4 @@
 //
 //= require jquery.inview
 //
+//= require map_graph
