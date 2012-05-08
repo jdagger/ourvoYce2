@@ -1,8 +1,9 @@
-h2 Resend confirmation instructions
+#resend-confirmation-page
+  h2 Resend confirmation instructions
 
-= simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
-  = f.error_notification
-  = f.input :email
-  = f.button :submit, "Resend confirmation instructions"
+  = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+    = f.error_notification
+    = f.input :email
+    = f.button :submit, "Resend confirmation instructions", :class => 'large-button'
 
-= render :partial => "devise/shared/links"
+  = render :partial => "devise/shared/links"

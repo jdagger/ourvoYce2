@@ -124,6 +124,7 @@ b, strong {
   font-weight: bold;
 }
 
+
 form{
   input[type=text], input[type=password], select {
     border: solid 1px $light-blue;
@@ -146,6 +147,13 @@ form{
       background: $red + #111;
     }
   }
+
+  .large-button{
+    font-size: 1.2em;
+    padding: 6px 10px;
+  }
+
+  .help-inline{color: red;}
 
   div.submit{
     margin: 10px 0px;
@@ -345,8 +353,27 @@ input{outline: none;} //Disable input highlighting
 
 /* --- Content ------------------------------------------------------------ */
 
-#front-page{
+#front-page, #signup-page, #update-user-page, #forgot-password, #sign-in-page, #resend-confirmation-page{
   font-size: 1.2em;
+  #signup-details{
+    padding: 0px 67px 0px 0px;
+  }
+  p.blue, ol.blue li{
+    color: #2158b0;
+  }
+
+  ol.number{
+    li{padding: 0px; }
+  }
+
+  .control-group{padding-bottom: 6px;}
+  input[type=text], input[type=password]{
+    @include border-radius(20px);
+    padding: 5px 10px;
+    color: #2158b0;
+  }
+  .help-block{font-size: 0.8em; font-style: italic;}
+
   #hot-topics{
     .hot-topic{
       a{
@@ -679,6 +706,7 @@ input{outline: none;} //Disable input highlighting
           visibility: hidden;
           overflow: auto;
           z-index: 48;
+          padding-bottom: 15px;
 
 
           table{

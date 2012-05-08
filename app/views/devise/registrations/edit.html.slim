@@ -1,21 +1,22 @@
-h2= "Update #{resource_name.to_s.humanize}"
-= flash_messages
+#update-user-page
+  h2= "Update #{resource_name.to_s.humanize}"
+  = flash_messages
 
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-  = devise_error_messages!
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+    = devise_error_messages!
 
-  .inputs
-    = f.input :email, :required => true, :autofocus => true
-    = f.input :current_password, :required => true, :hint => "Provide your current password before making changes"
-    = f.input :password, :hint => "Leave blank if you don't want to change", :required => false
-    = f.input :password_confirmation, :required => false
-    = f.input :country
-    = f.input :zip
-    = f.input :birth_year
+    .inputs
+      = f.input :email, :required => true, :autofocus => true
+      = f.input :current_password, :required => true, :hint => "Provide your current password before making changes"
+      = f.input :password, :hint => "Leave blank if you don't want to change", :required => false
+      = f.input :password_confirmation, :required => false
+      = f.input :country
+      = f.input :zip
+      = f.input :birth_year
 
-  .actions
-    = f.button :submit, "Update"
+    .actions
+      = f.button :submit, "Update", :class => 'large-button'
 
-/<h3>Cancel my account</h3>
-/<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
-/= link_to "Back", :back
+  /<h3>Cancel my account</h3>
+  /<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+  /= link_to "Back", :back

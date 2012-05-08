@@ -1,10 +1,11 @@
-h2 Forgot your password?
+#forgot-password
+  h2 Forgot your password?
 
-= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| 
-  = f.error_notification 
-  = f.input :email
+  = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| 
+    = f.error_notification 
+    = f.input :email
+    br
+    = f.button :submit, "Send me reset password instructions", :class => 'large-button'
   br
-  = f.button :submit, "Send me reset password instructions"
-br
-= render :partial => "devise/shared/links" 
-br
+  = render :partial => "devise/shared/links" 
+  br

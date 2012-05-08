@@ -1,59 +1,66 @@
-.content-col1
-  h1.shadow Join. Start voting. Be counted.
-  p.blue
-    | Joining ourvoYce is quick and simple:
-    br
-    ol.number
-      li Fill in the blanks.
-      li Read the membership agreement.
-      li Vote.
+#signup-page
+  .grid_5.alpha
+    #signup-details
+      h1.shadow Join. Start voting. Be counted.
+      p.blue
+        | Joining ourvoYce is quick and simple:
+      ol.number.blue
+        li Fill in the blanks.
+        li Read the membership agreement.
+        li Vote.
 
-  #column1
-    h2.thin.red Already a member?
+      .red-divider
+
+      h2.thin.red Already a member?
+      p
+        | Visit the 
+        = link_to 'log in page', '/login'
+        | .
+      p &nbsp;
+
+      h2.thin.red Waiting for your confirmation email?
+      p 
+        Check your spam folder. It could be there. 
+        br
+        = link_to 'Resend confirmation email', '/resend_verification'
+      p &nbsp;
+
+      h2.thin.red Need help? 
+      p 
+        | Send an email to 
+        a(href="mailto:accounts@ourvoyce.com")accounts@ourvoyce.com
+        | .
+        br
+        | We'll be glad to help. 
+  .grid_1
+    | &nbsp;
+
+  .grid_6.omega
+    #newaccount
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| 
+        h2.thin.blue Your sign-in information:
+        = f.error_notification 
+        / label is class large, hint is class fineprint
+        = f.input :email, :label => "Email Address:", :required => false, :hint => "You will need to confirm your address"
+        = f.input :password, :label => "Password:", :hint => "Must be at least six characters"
+        = f.input :password_confirmation, :label => "Password confirmation:"
+
+        br
+
+        h2.thin.blue Your demographics:
+        = f.input :country, :label => "Country:", :priority => ["United States"], :required => false
+        br
+        = f.input :zip, :label => "Zip Code:", :required => false, :hint => "Just the five digits", :input_html => {:style => 'width: 80px;'}
+        = f.input :birth_year, :required => false, :label => "Year you were born:", :hint => "You must be at least 13 years old", :input_html => {:style => 'width: 80px;'}
+        div
+          = link_to "Membership agreement", membership_path, :target => '_blank'
+          = check_box_tag :membership_agreement
+        div.submit 
+          = f.submit "Sign Up", class: 'large-button'
+      /= render :partial => "devise/shared/links" 
     p
-      | Visit the 
-      = link_to 'log in page', '/login'
-      | .
-    p &nbsp;
+      strong Check your email and confirm your membership. 
+      | You will then be able to sign in just by putting in your Email Address and Password at the top of the page or from here. 
 
-    h2.thin.red Waiting for your confirmation email?
-    p 
-      Check your spam folder. It could be there. 
-      br
-      = link_to 'Resend confirmation email', '/resend_verification'
-    p &nbsp;
-
-    h2.thin.red Need help? 
-    p 
-      | Send an email to 
-      a(href="mailto:accounts@ourvoyce.com")accounts@ourvoyce.com
-      | .
-      br
-      | We'll be glad to help. 
-
-.content-col2wide
-  #newaccount
-    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| 
-      h2.thin.blue Your sign-in information:
-      = f.error_notification 
-      / label is class large, hint is class fineprint
-      = f.input :email, :label => "Email Address:", :required => false, :hint => "You will need to confirm your address"
-      = f.input :password, :label => "Password:", :hint => "Must be at least six characters"
-      = f.input :password_confirmation
-
-
-      h2.thin.blue Your demographics:
-      = f.input :country, :priority => ["United States"], :required => false
-      = f.input :zip, :label => "Zip Code:", :required => false, :hint => "Just the five digits"
-      = f.input :birth_year, :required => false, :label => "Year you were born:", :hint => "You must be at least 13 years old"
-      div
-        = link_to "Membership agreement", membership_path, :target => '_blank'
-        = check_box_tag :membership_agreement
-      div.submit 
-        = f.submit "Sign Up"
-    /= render :partial => "devise/shared/links" 
-  p
-    strong Check your email and confirm your membership. 
-    | You will then be able to sign in just by putting in your Email Address and Password at the top of the page or from here. 
-
-.pad-bottom
+  .clear
+  .pad-bottom
