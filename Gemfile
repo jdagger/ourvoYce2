@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.3'
 
-gem 'simple_form', '2.0.1'
+gem 'simple_form', '2.0.2'
 gem 'country_select'
 gem 'simple-navigation'
 gem 'client_side_validations'

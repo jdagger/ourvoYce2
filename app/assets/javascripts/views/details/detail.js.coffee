@@ -98,9 +98,9 @@
     return "#{base_url}#!/item/#{this.model.id()}"
 
   renderTwitterShare: () ->
-    title = "I just voted THUMBS UP / THUMBS DOWN on #{this.model.name()}. Where do you stand?"
-    html = JST['social/twitter']({url: encodeURIComponent('http://ourvoyce.com'), title: encodeURIComponent(title) })
-    #html = JST['social/twitter']({url: encodeURIComponent(this.itemDetailUrl()), title: encodeURIComponent(title) })
+    title = "I just voted on #{this.model.name()}. Where do you stand?"
+    #html = JST['social/twitter']({url: encodeURIComponent('http://ourvoyce.com'), title: encodeURIComponent(title) })
+    html = JST['social/twitter']({url: encodeURIComponent(this.itemDetailUrl()), title: encodeURIComponent(title) })
     $(this.el).find('#twitter').html(html)
     return
 
