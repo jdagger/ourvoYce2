@@ -99,7 +99,6 @@
     return "#{base_url}#!/item/#{this.model.id()}"
 
   renderTwitterShare: () ->
-    #title = "I just voted on #{this.model.name()}. Where do you stand? #{this.itemDetailUrl()}"
     title = "I just voted on #{this.model.name()}. Where do you stand?"
     html = JST['social/twitter']({url: encodeURIComponent(this.itemDetailUrl()), title: encodeURIComponent(title) })
     $(this.el).find('#twitter').html(html)
