@@ -11,6 +11,19 @@ class Admin::UsersController < Admin::ApplicationController
     end
   end
 
+  def confirm
+    @user = User.find(params[:user_id])
+    @user.confirmed_at = Time.now
+    if @user.save
+      flash[:success] = "Successfully confirmed user"
+      redirect_to admin_user_path(@user)
+    else
+      flash[:error] = "Failed to confirm user"
+      @user.confirmed_at = nil
+      render :edit
+    end
+  end
+
   def show 
     @user = User.find(params[:id])
   end

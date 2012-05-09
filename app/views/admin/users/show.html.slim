@@ -14,3 +14,16 @@ h2 Details
         tr
           th.span2 Birth Year
           td= @user.birth_year
+        tr
+          th.span2 Sign In Count
+          td= @user.sign_in_count
+        tr
+          th.span2 Last Sign In
+          td= @user.last_sign_in_at
+        tr
+          th.span2 Confirmed At
+          td
+            - if @user.confirmed_at.nil?
+              .red= "Not Confirmed" 
+            - else
+              .green= @user.confirmed_at

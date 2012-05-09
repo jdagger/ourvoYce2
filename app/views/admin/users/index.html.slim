@@ -31,5 +31,9 @@ table.table.table-striped.table-bordered
         td= user.birth_year
         td= user.sign_in_count
         td= user.last_sign_in_at
-        td= user.confirmed_at
+        td
+          - if user.confirmed_at.nil?
+            .red Not Confirmed
+          - else
+            .green= user.confirmed_at
 

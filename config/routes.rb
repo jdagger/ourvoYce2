@@ -56,7 +56,9 @@ Ourvoyce::Application.routes.draw do
     resources :qr_lookups
     resources :tag_items
     resources :suggest_topics
-    resources :users
+    resources :users do
+      match '/confirm' => 'users#confirm', :via => :get, :as => :confirm
+    end
     resources :tags do 
       match "/add_item_by_autocomplete" => "tags#add_item_by_autocomplete", :as => :add_item_by_autocomplete
     end
