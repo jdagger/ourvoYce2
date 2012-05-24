@@ -1,3 +1,5 @@
+#View for the Detail Pane.
+#Detail pane structure is loaded on initial page view, so no templates
 @DetailView = Backbone.View.extend
   el: '#item-details-pane'
 
@@ -9,16 +11,18 @@
     this.model.bind('hideDetails', this.hideDetails)
     this.model.bind('vote_changed', this.renderVoteGraph)
 
-
-    this.slide_speed = 250
-
+    this.slide_speed = 250 #Speed for showing/hiding details pane
 
     $(window).resize(this.resize)
 
-    OurvoyceApp.items.bind('reset', this.itemsReset)
+    #When displaying a specific item (#!/item/10001), detail pane is displayed by default
+    #Bind to collection reset so can examine if showing single item
+    OurvoyceApp.items.bind('reset', this.itemsReset) 
 
-
+    #position of the filter_container determines if the details pane should be
+    #displayed absolute or fixed
     $('#filter_container').bind('inview', this.filterInviewChange)
+
     this.resizeDetailsPane()
 
     return
@@ -28,21 +32,22 @@
     "click #refresh-map": "refreshMapClick"
 
   slideWidth: () ->
-    return $(this.el).css('width')
+    return $(this.el).css('width') #Amount details pane should slide to be hidden
 
 
   itemsReset: () ->
-    #if (OurvoyceApp.items.friendly_name == 'Item') && (OurvoyceApp.items.length == 1)
+    #If displaying a specific item, show the details pane
     if OurvoyceApp.items.is_item && (OurvoyceApp.items.length == 1)
       this.model.showDetails(OurvoyceApp.items.at(0))
     return
     
 
-  #Event handler for showDetails
   showDetails: (item) ->
     #Stop any currently running animations
     $(this.el).stop()
 
+    #Had to manually set visibility and slide into view because flash
+    #controls were destroyed when .hide()ing.
     $(this.el).find('#map').css('visibility', 'visible')
     $(this.el).find('#bar-graph').css('visibility', 'visible')
     $(this.el).css('visibility', 'visible')
@@ -52,28 +57,17 @@
       return
     )
 
-
-    #Begin orig
-    #$(this.el).find('#map').css('visibility', 'visible')
-    #$(this.el).find('#bar-graph').css('visibility', 'visible')
-    #$(this.el).css('visibility', 'visible')
-    #End orig
     return this
 
 
-  #Event handler for hideDetails
   hideDetails: () ->
-    #Begin orig
-    #$(this.el).find('#map').css('visibility', 'hidden')
-    #$(this.el).find('#bar-graph').css('visibility', 'hidden')
-    #$(this.el).css('visibility', 'hidden')
-    #End orig
     
     left = this.paneLeftPosition().replace(/px/, '') - this.slideWidth().replace(/px/, '')
 
     #Stop any currently running animations
     $(this.el).stop()
     
+    #Have to manually set visibility and slide out of view to preserve flash controls
     $(this.el).animate({ left: "#{left}px"  }, this.slide_speed, 'linear', () =>
       $(this.el).find('#map').css('visibility', 'hidden')
       $(this.el).find('#bar-graph').css('visibility', 'hidden')
@@ -82,6 +76,7 @@
     )
     return this
 
+  #Update the flash map and graph with latest data
   refreshMapClick: (e) ->
     e.preventDefault()
     this.renderMap()
@@ -94,6 +89,7 @@
     OurvoyceApp.detail.hideDetails()
     return
   
+  #Url for the item whose details are being displayed
   itemDetailUrl: () ->
     base_url = window.location.href.replace(window.location.hash, '')
     return "#{base_url}#!/item/#{this.model.id()}"
@@ -146,6 +142,7 @@
     else
       $(this.el).find('#item-detail-wikipedia').hide()
       $(this.el).find('#details-wikipedia-image').hide()
+
     this.renderVoteGraph()
     this.renderMap()
     this.renderAgeGraph()
@@ -164,17 +161,19 @@
 
     max_height = Math.max(thumbs_up_vote_count, thumbs_down_vote_count, neutral_vote_count, 1)
 
-    #TODO: Determine actual height by examining html
+    #TODO: Determine actual height by examining html. Height not available from CSS
     container_height = 80
 
     thumbs_up_element = $(this.el).find('.vote-chart .thumbs-up .height')
     neutral_element = $(this.el).find('.vote-chart .neutral .height')
     thumbs_down_element = $(this.el).find('.vote-chart .thumbs-down .height')
 
+    #Update vote counter displays
     $(this.el).find('.thumbs-up .votenumber').html(thumbs_up_vote_count)
     $(this.el).find('.neutral .votenumber').html(neutral_vote_count)
     $(this.el).find('.thumbs-down .votenumber').html(thumbs_down_vote_count)
 
+    #Update vote bar graph
     thumbs_up_element.animate
       height: Math.ceil(container_height * thumbs_up_vote_count / max_height) + "px"
     neutral_element.animate
@@ -198,6 +197,7 @@
       #console.log "Graph Error: #{error}"
     return
 
+  #Used to determine how details pane should be positioned (absolute vs fixed)
   filterInView: () ->
     $(window).scroll()
     return $('#filter_container').data('inview')
@@ -222,19 +222,19 @@
 
     return
 
+  #Maximize size of details pane based on viewport
   resizeDetailsPane: () ->
     #$(this.el).height($(window).height() - 8)
     $(this.el).height($(window).height() - 0)
     return
 
 
-  #Determines if the filter box is in view
-  #If filter box is in view, display details pane regularly
-  #Otherwise, set as fixed position
+  #User scrolled, show check pane positioning
   filterInviewChange: (e, inview) ->
     this.positionDetailsPane()
     return
 
+  #Viewport resized, show check positioning and size of details pane
   resize: () ->
     this.resizeDetailsPane()
     this.positionDetailsPane()

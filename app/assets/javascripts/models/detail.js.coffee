@@ -8,7 +8,6 @@
     return
 
   fetchDetails: (item) ->
-    #Parse if overridden, so fetch does not replace Detail model with item
     this.fetch
       url: "/items/#{item.get('id')}/details"
       success: () =>
@@ -20,14 +19,17 @@
     return
 
   parse: (data) ->
+    #When fetching, only update the item_details so can preserve the item_model
+    #TODO: Refactor. Feels a bit hackish
     this.item_details = data
-    #return data.items
     return this
 
+  #User voted on an item, so let the view know to update chart
   voteChanged: () ->
     this.trigger('vote_changed')
     return
 
+  #Entry point. Check if item's details already loaded. Fetch if not
   showDetails: (item) ->
     if this.item_details == null || (this.item_details.id != item.get('id'))
       this.fetchDetails(item)
@@ -39,6 +41,7 @@
     this.trigger('hideDetails')
     return
 
+  #Id of currently loaded item
   id: () ->
     return null if this.item_details == null
     return this.item_details.id
