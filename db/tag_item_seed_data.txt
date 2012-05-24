@@ -1,4 +1,4 @@
-//Created: 2012-05-17 18:07:25 -0400
+//Created: 2012-05-24 12:25:42 -0400
 ##TAGS##
 //id, path, friendly_name, popular, hot_topic
 ::1::corporation::Corporation::false::false::
@@ -188,7 +188,6 @@
 ::187::apm::American Public Media::false::false::
 ::188::mcdonalds::McDonald's::false::false::
 ::189::starbucks::Starbucks::false::false::
-::190::coffee::Coffee::true::false::
 ::191::frenchfries::French Fries::true::false::
 ::192::krispy_kreme::Krispy Kreme Doughnuts::false::false::
 ::193::usda::USDA::false::false::
@@ -255,7 +254,7 @@
 ::255::peets::Peet's Coffee & Tea::false::false::
 ::256::caribou::Caribou Coffee::false::false::
 ::257::dutch_bros::Dutch Bros. Coffee::false::false::
-::258::coffee_shop::Coffee Shop::false::false::
+::258::coffee::Coffee::false::false::
 ::259::coffee_beanery::Coffee Beanery::false::false::
 ::260::scooters_coffeehouse::Scooter's Coffeehouse::false::false::
 ::261::biggby::Biggby Coffee::false::false::
@@ -265,6 +264,7 @@
 ::265::port_city_java::Port City Java::false::false::
 ::266::dunn_bros::Dunn Bros Coffee::false::false::
 ::267::tim_hortons::Tim Hortons::false::false::
+::268::education::Education::false::false::
 ##ITEMS##
 //id, name, description, item_type, logo, website, wikipedia, default_order, tags
 ::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::401::4,71,181::
@@ -1043,7 +1043,7 @@
 ::30433::Nick Rahall::Representative 3 (WV)<br />202-225-3452::house::government_logos/representatives/64_64/R000011.jpg::http://rahall.house.gov::http://en.wikipedia.org/wiki/Nick_Rahall::9704::53,59,170,226::
 ::30434::Jerry McNerney::Representative 11 (CA)<br />202-225-1947::house::government_logos/representatives/64_64/M001166.jpg::http://mcnerney.house.gov::http://en.wikipedia.org/wiki/Jerry_McNerney::5412::9,59,80,226::
 ::30435::Bob Gibbs::Representative 18 (OH)<br />202-225-6265::house::government_logos/representatives/64_64/OH18_Gibbs.png::http://gibbs.house.gov::http://en.wikipedia.org/wiki/Bob_Gibbs::8419::40,59,142,226::
-::40000::McDonald's::::fortune500::corporate_logos/128_128/McDonalds.png::http://www.mcdonalds.com::http://en.wikipedia.org/wiki/McDonald's::999::1,56,188,196::
+::40000::McDonald's::::fortune500::corporate_logos/128_128/McDonalds.png::http://www.mcdonalds.com::http://en.wikipedia.org/wiki/McDonald's::999::1,56,188,196,258::
 ::40001::Starwood Hotels & Resorts::::fortune500::corporate_logos/128_128/StarwoodHotels.png::http://www.starwoodhotels.com::http://en.wikipedia.org/wiki/Starwood_Hotels_&_Resorts::1000::1,56::
 ::40002::CVS Caremark::::fortune500::corporate_logos/128_128/CVS_Caremark.png::http://www.caremark.com::http://en.wikipedia.org/wiki/CVS_Caremark::1000::1,56::
 ::40003::CenterPoint Energy::::fortune500::corporate_logos/128_128/CenterPoint_Energy.png::http://www.centerpointenergy.com::http://en.wikipedia.org/wiki/CenterPoint_Energy::1000::1,56,199::
@@ -1558,7 +1558,7 @@
 ::50010::Shaun Donovan::Secretary of Housing and Urban Development::executive::government_logos/executives/64_64/12_SecretaryOfHousingAndUrbanDevelopment.png::http://www.hud.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Housing_and_Urban_Development::120::58::
 ::50011::Tom Vilsack::Secretary of Agriculture::executive::government_logos/executives/64_64/08_SecretaryOfAgriculture.png::http://www.usda.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Agriculture::80::58,208::
 ::50012::Ron Kirk::Trade Representative::executive::government_logos/executives/64_64/21_TradeRepresentative.png::http://www.ustr.gov::http://en.wikipedia.org/wiki/Office_of_the_United_States_Trade_Representative::210::58::
-::50013::Arne Duncan::Secretary of Education::executive::government_logos/executives/64_64/15_SecretaryOfEducation.png::http://www.ed.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Education::150::58::
+::50013::Arne Duncan::Secretary of Education::executive::government_logos/executives/64_64/15_SecretaryOfEducation.png::http://www.ed.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Education::150::58,268::
 ::50014::Ken Salazar::Secretary of the Interior::executive::government_logos/executives/64_64/07_SecretaryOfTheInterior.png::http://www.doi.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_the_Interior::70::58::
 ::50015::Jacob Lew::White House Chief of Staff::executive::government_logos/executives/64_64/18_WhiteHouseChiefOfStaff_Jacob_Lew.png::http://www.whitehouse.gov::http://en.wikipedia.org/wiki/White_House_Chief_of_Staff::200::58::
 ::50016::Alan Krueger::Chairman of the Council of Economic Advisers::executive::government_logos/executives/64_64/23_ChairpersonOfTheCouncilOfEconomicAdvisers_Alan_Krueger.png::http://www.whitehouse.gov/administration/eop/cea::http://en.wikipedia.org/wiki/Council_of_Economic_Advisers::230::58::
@@ -1778,7 +1778,7 @@
 ::60207::Broadcasting Board of Governors::::agency::government_logos/agencies/64_64/BBG.png::http://www.bbg.gov::http://en.wikipedia.org/wiki/Broadcasting_Board_of_Governors::1000::57::
 ::60208::Federal Trade Commission (FTC)::::agency::government_logos/agencies/64_64/FTC.png::http://www.ftc.gov::http://en.wikipedia.org/wiki/Federal_Trade_Commission::1000::57::
 ::60209::Federal Deposit Insurance Corporation (FDIC)::::agency::government_logos/agencies/64_64/FDIC.png::http://www.fdic.gov::http://en.wikipedia.org/wiki/Federal_Deposit_Insurance_Corporation::1000::57::
-::60210::Education Department (ED)::::agency::government_logos/agencies/64_64/DeptOfEducation.png::http://www.ed.gov::http://en.wikipedia.org/wiki/United_States_Department_of_Education::1000::57::
+::60210::Education Department (ED)::::agency::government_logos/agencies/64_64/DeptOfEducation.png::http://www.ed.gov::http://en.wikipedia.org/wiki/United_States_Department_of_Education::1000::57,268::
 ::60211::Department of Transportation (DOT)::::agency::government_logos/agencies/64_64/DeptOfTransportation.png::http://www.dot.gov::http://en.wikipedia.org/wiki/United_States_Department_of_Transportation::1000::57::
 ::60212::Veterans Day National Committee::::agency::government_logos/agencies/64_64/DeptOfVA.png::http://www1.va.gov/opa/vetsday/vdnc.asp::http://en.wikipedia.org/wiki/List_of_United_States_federal_agencies::1000::57::
 ::60213::Occupational Safety & Health Administration (OSHA)::::agency::government_logos/agencies/64_64/OSHA.png::http://www.osha.gov::http://en.wikipedia.org/wiki/Occupational_Safety_and_Health_Administration::1000::57::
@@ -2024,7 +2024,7 @@
 ::100077::Powerade Mountain Berry Blast::McDonald's::restaurant::product_logos/128_128/McDonalds_089_PoweradeMountainBerryBlast.png::::::1000::188::
 ::100078::Iced Tea::McDonald's::restaurant::product_logos/128_128/McDonalds_090_IcedTea.png::::::1000::188::
 ::100079::Sweet Tea::McDonald's::restaurant::product_logos/128_128/McDonalds_091_SweetTea.png::::::1000::188::
-::100080::Premium Roast Coffee::McDonald's::restaurant::product_logos/128_128/McDonalds_092_PremiumRoastCoffee.png::::::1000::188,190::
+::100080::Premium Roast Coffee::McDonald's::restaurant::product_logos/128_128/McDonalds_092_PremiumRoastCoffee.png::::::1000::188::
 ::100081::PremiumIced Coffee::McDonald's::restaurant::product_logos/128_128/McDonalds_093_PremiumIcedCoffee.png::::::1000::188::
 ::100082::McCafe Mocha::McDonald's::restaurant::product_logos/128_128/McDonalds_100_McCafeMocha.png::::::1000::188::
 ::100083::McCafe Caramel Mocha::McDonald's::restaurant::product_logos/128_128/McDonalds_101_McCafeCaramelMocha.png::::::1000::188::
@@ -2073,12 +2073,12 @@
 ::101014::Caffe Americano::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_01_CaffeAmericano.jpg::::::1000::189::
 ::101015::Iced Caffe Latte::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_15_IcedCaffeLatte.jpg::::::1000::189::
 ::101016::Caramel Macchiato::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_06_CaramelMacchiato.jpg::::::1000::189::
-::101017::Pike Place Roast::Starbucks::restaurant::product_logos/128_128/Starbucks_Brew_07_PikePlace.jpg::::::1000::189,190::
+::101017::Pike Place Roast::Starbucks::restaurant::product_logos/128_128/Starbucks_Brew_07_PikePlace.jpg::::::1000::189::
 ::101018::Iced Flavored Latte::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_19_IcedFlavoredLatte.jpg::::::1000::189::
 ::101019::Caramel Brulee Latte (Seasonally Available)::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_05_CaramelBruleeLatte.jpg::::::1000::189::
 ::101020::Iced Skinny Flavored Latte::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_24_IcedSkinnyLatte.jpg::::::1000::189::
 ::101021::Iced Caramel Macchiato::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_17_IcedCaramelMacchiato.jpg::::::1000::189::
-::101022::Bold Pick of the Day::Starbucks::restaurant::product_logos/128_128/Starbucks_Brew_01_Bold.jpg::::::1000::189,190::
+::101022::Bold Pick of the Day::Starbucks::restaurant::product_logos/128_128/Starbucks_Brew_01_Bold.jpg::::::1000::189::
 ::101023::Espresso Con Panna::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_10_EspressoConPanna.jpg::::::1000::189::
 ::101024::Caffe Mocha::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_03_CafeMocha.jpg::::::1000::189::
 ::101025::Espresso::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_09_Espresso.jpg::::::1000::189::
@@ -2096,9 +2096,9 @@
 ::101037::Pumpkin Spice Latte::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_29_PumpkinSpiceLatte.jpg::::::1000::189::
 ::101038::Peppermint White Chocolate Mocha::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_28_PeppermintWhiteChocolateMocha.jpg::::::1000::189::
 ::101039::White Chocolate Mocha::Starbucks::restaurant::product_logos/128_128/Starbucks_Espresso_34_WhiteChocolateMocha.jpg::::::1000::189::
-::101040::Krispy Kreme Doughnuts::::::restaurants/krispy_kreme/Logo_KrispyKreme.png::http://krispykreme.com::http://en.wikipedia.org/wiki/Krispy_Kreme::1000::1,192,196::
-::101041::Signature House Blend Coffee::Krispy Kreme Doughnuts::::product_logos/128_128/KrispyKreme_Coffee_01.png::::::1000::190,192::
-::101042::Signature Dark Roast Coffee::Krispy Kreme Doughnuts::::product_logos/128_128/KrispyKreme_Coffee_01.png::::::1000::190,192::
+::101040::Krispy Kreme Doughnuts::::::restaurants/krispy_kreme/Logo_KrispyKreme.png::http://krispykreme.com::http://en.wikipedia.org/wiki/Krispy_Kreme::1000::1,192,196,258::
+::101041::Signature House Blend Coffee::Krispy Kreme Doughnuts::::product_logos/128_128/KrispyKreme_Coffee_01.png::::::1000::192::
+::101042::Signature Dark Roast Coffee::Krispy Kreme Doughnuts::::product_logos/128_128/KrispyKreme_Coffee_01.png::::::1000::192::
 ::101043::Signature House Decaf Coffee::Krispy Kreme Doughnuts::::product_logos/128_128/KrispyKreme_Coffee_01.png::::::1000::192::
 ::101044::Make::::::media_logos/128_128/Mag_Make.png::http://makezine.com::http://en.wikipedia.org/wiki/Make_Magazine::1000::4,68::
 ::101045::Wendy's::::restaurant::restaurants/wendys/Logo_Wendys.png::http://www.wendys.com::http://en.wikipedia.org/wiki/Wendys::1000::1,194,196::
@@ -2295,7 +2295,7 @@
 ::101236::Does the media accurately reflect your point of view?::::::category/StandingMan.png::::::51::228::
 ::101237::Should cannabis be legalized?::::::general/basics/Cannabis.png::http://www.justice.gov/dea/marijuana_position.pdf::http://en.wikipedia.org/wiki/Cannabis::57::228::
 ::101238::Are you satisfied with your government?::::::category/StandingMan.png::::::53::228::
-::101239::Have you read the Constitution?::::::general/basics/Constitution.png::http://www.archives.gov/exhibits/charters/constitution.html::http://en.wikipedia.org/wiki/United_States_Constitution::500::210,226,228,58,230::
+::101239::Have you read the Constitution?::::::general/basics/Constitution.png::http://www.archives.gov/exhibits/charters/constitution.html::http://en.wikipedia.org/wiki/United_States_Constitution::500::210,226,228,58::
 ::101240::112th Congress::::::government/congress/Congress.png::::http://en.wikipedia.org/wiki/United_States_Congress::200::2,226::
 ::101241::Supreme Count of the United States::::::government/supreme_court/SupremeCourt.png::http://www.supremecourt.gov::http://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States::59::2,210,230::
 ::101242::Super PACs::::::government/election_2012/SuperPac.png::http://www.opensecrets.org/pacs/superpacs.php::http://en.wikipedia.org/wiki/Superpac#Super_PACs::84::210,224::
@@ -2305,7 +2305,7 @@
 ::101246::Bill Clinton::42nd President of the United States::::government/potus/Bill_Clinton.png::http://www.clintonlibrary.gov::http://en.wikipedia.org/wiki/Bill_Clinton::11::229::
 ::101247::Ronald Reagan::40th President of the United States::::government/potus/Ronald_Reagan.png::http://www.reaganlibrary.com::http://en.wikipedia.org/wiki/Ronald_Reagan::14::229::
 ::101248::Do you have health insurance?::::::general/basics/StandingMan.png::::::56::228::
-::101249::Major League Baseball::MLB::::sports/mlb/Logo_MLB.png::http://www.mlb.com::http://en.wikipedia.org/wiki/Mlb::1100::212,231::
+::101249::Major League Baseball::MLB::::sports/mlb/Logo_MLB.png::http://www.mlb.com::http://en.wikipedia.org/wiki/Mlb::998::212,231::
 ::101250::National Basketball Association::NBA::::sports/nba/Logo_NBA.png::http://www.nba.com::http://en.wikipedia.org/wiki/Nba::998::212,232::
 ::101251::National Hockey League::NHL::::sports/nhl/Logo_NHL.png::http://www.nhl.com/::http://en.wikipedia.org/wiki/Nhl::998::212,233::
 ::101252::American Idol::::::entertainment/american_idol/Logo_AmericanIdol.png::http://www.americanidol.com/::http://en.wikipedia.org/wiki/American_idol::998::71,234::
@@ -2369,7 +2369,7 @@
 ::101310::Miami Heat::NBA::::sports/nba/mia.png::::::1000::212,232::
 ::101311::Orlando Magic::NBA::::sports/nba/orl.png::::::1000::212,232::
 ::101312::Washington Wizards::NBA::::sports/nba/was.png::::::1000::212,232::
-::101313::Women's National Basketball Association::WNBA::::sports/wnba/Logo_WNBA.png::::::1000::212,235::
+::101313::Women's National Basketball Association::WNBA::::sports/wnba/Logo_WNBA.png::::::998::212,235::
 ::101314::Dallas Mavericks::NBA::::sports/nba/dal.png::::::1000::212,232::
 ::101315::Houston Rockets::NBA::::sports/nba/hou.png::::::1000::212,232::
 ::101316::Memphis Grizzlies::NBA::::sports/nba/mem.png::::::1000::212,232::
@@ -2400,9 +2400,9 @@
 ::101341::White Castle::::restaurant::restaurants/white_castle/Logo_WhiteCastle.png::http://www.whitecastle.com::::999::1,196,245::
 ::101342::Krystal::::restaurant::restaurants/krystal/Logo_Krystal.png::http://www.krystal.com::::999::1,196,246::
 ::101343::French Fries::Kystal::::restaurants/krystal/FrenchFries.png::::::1000::191,246::
-::101344::Dunkin' Donuts::::restaurant::restaurants/dunkin_donuts/Logo_DunkinDonuts.png::http://www.dunkindonuts.com/::http://en.wikipedia.org/wiki/Dunking_Donuts::999::1,196,247::
-::101345::Hot Coffee::Dunkin' Donuts::::restaurants/dunkin_donuts/HotCoffee.png::::::1000::190,247::
-::101346::Iced Coffee::Dunkin' Donuts::::restaurants/dunkin_donuts/IcedCoffee.png::::::1000::190,247::
+::101344::Dunkin' Donuts::::restaurant::restaurants/dunkin_donuts/Logo_DunkinDonuts.png::http://www.dunkindonuts.com/::http://en.wikipedia.org/wiki/Dunking_Donuts::999::1,196,247,258::
+::101345::Hot Coffee::Dunkin' Donuts::::restaurants/dunkin_donuts/HotCoffee.png::::::1000::247::
+::101346::Iced Coffee::Dunkin' Donuts::::restaurants/dunkin_donuts/IcedCoffee.png::::::1000::247::
 ::101347::Carl's Jr.::::restaurant::restaurants/carls_jr/Logo_CarlsJr.png::http://www.carlsjr.com/::http://en.wikipedia.org/wiki/Carls_jr::999::1,196,248::
 ::101348::Natural-Cut French Fries::Carl's Jr.::::restaurants/carls_jr/FrenchFries.png::::::1000::191,248::
 ::101349::Crisscut French Fries::Carl's Jr.::::restaurants/carls_jr/CrissCutFrenchFries.png::::::1000::191,248::
@@ -2418,16 +2418,15 @@
 ::101359::French Fries::Church's Chicken::::restaurants/churchs_chicken/FrenchFries.png::::::1000::191,251::
 ::101360::Dairy Queen::::restaurant::restaurants/dairy_queen/Logo_DairyQueen.png::http://www.dairyqueen.com::http://en.wikipedia.org/wiki/Dairy_Queen::999::1,196,252::
 ::101361::French Fries::Dairy Queen::::restaurants/dairy_queen/FrenchFries.png::::::1000::191,252::
-::101362::Bruegger's::::restaurant::restaurants/brueggers/Logo_Brueggers.png::http://www.brueggers.com::http://en.wikipedia.org/wiki/Bruegger%27s::999::1,196,253::
-::101363::French Roast::Bruegger's::::restaurants/brueggers/Coffee.png::::::1000::190,253::
-::101364::Hazelnut::Bruegger's::::restaurants/brueggers/Coffee.png::::::1000::190,253::
-::101365::House Blend::Bruegger's::::restaurants/brueggers/Coffee.png::::::1000::190,253::
-::101366::Panera Bread::::restaurant::restaurants/panera_bread/Logo_PaneraBread.png::http://www.panerabread.com::http://en.wikipedia.org/wiki/Panera::999::1,196,254::
-::101367::Coffee::Panera Bread::::restaurants/panera_bread/Coffee.png::::::1000::254::
+::101362::Bruegger's::::restaurant::restaurants/brueggers/Logo_Brueggers.png::http://www.brueggers.com::http://en.wikipedia.org/wiki/Bruegger%27s::999::1,196,253,258::
+::101363::French Roast::Bruegger's::::restaurants/brueggers/Coffee.png::::::1000::253::
+::101364::Hazelnut::Bruegger's::::restaurants/brueggers/Coffee.png::::::1000::253::
+::101365::House Blend::Bruegger's::::restaurants/brueggers/Coffee.png::::::1000::253::
+::101366::Panera Bread::::restaurant::restaurants/panera_bread/Logo_PaneraBread.png::http://www.panerabread.com::http://en.wikipedia.org/wiki/Panera::999::1,196,254,258::
 ::101368::Are you in favor of a constitutional amendment to ban gay-marriage in North Carolina?::::::general/basics/StandingMan.png::::::999::38,244::
 ::101369::Do you plan to vote in the 2012 presidential election?::::::general/basics/StandingMan.png::::::85::224::
 ::101370::Is the economy an important issue to you in the 2012 presidential election?::::::general/basics/StandingMan.png::::::1000::224::
-::101371::Is education an important issue to you in the 2012 presidential election?::::::general/basics/StandingMan.png::::::1000::224::
+::101371::Is education an important issue to you in the 2012 presidential election?::::::general/basics/StandingMan.png::::::1000::224,268::
 ::101372::Is military spending an important issue to you in the 2012 presidential election?::::::general/basics/StandingMan.png::::::1000::224::
 ::101373::Is homeland security an important issue to you in the 2012 presidential election?::::::general/basics/StandingMan.png::::::1000::224::
 ::101374::Peet's Coffee & Tea::::::restaurants/peets/Logo_Peets.png::http://www.peets.com::http://en.wikipedia.org/wiki/Peets::999::1,255,258::
@@ -2441,4 +2440,7 @@
 ::101382::Tully's Coffee::::::restaurants/tullys/Logo_Tullys.png::http://www.tullys.com/::http://en.wikipedia.org/wiki/Tullys::999::1,258,264::
 ::101383::Port City Java::::::restaurants/port_city_java/Logo_PortCityJava.png::http://www.portcityjava.com::http://en.wikipedia.org/wiki/Port_City_Java::999::1,258,265::
 ::101384::Dunn Bros::::::restaurants/dunn_bros/Logo_DunnBros.png::http://www.dunnbros.com::http://en.wikipedia.org/wiki/Dunn_Bros::999::1,258,266::
-::101385::Tim Hortons::::::restaurants/tim_hortons/Logo_TimHortons.png::http://www.timhortons.com::http://en.wikipedia.org/wiki/Tim_Hortons::999::1,196,267::
+::101385::Tim Hortons::::::restaurants/tim_hortons/Logo_TimHortons.png::http://www.timhortons.com::http://en.wikipedia.org/wiki/Tim_Hortons::999::1,196,258,267::
+::101386::Is same-sex marriage an important issue to you in the 2012 presidential election?::::::general/basics/StandingMan.png::::::1000::224,244::
+::101387::Are you satisfied with the schools in your community?::::::general/basics/StandingMan.png::::::1000::268::
+::101388::Do we still need Daylight Savings Time?::::::general/basics/StandingMan.png::::::59::228::
