@@ -25,9 +25,9 @@ namespace :db do
 
         user = User.new(
           :email => 'ryan@ourvoyce.com', 
-          :password => 'test123', 
+          :password => 'vq4F3[L/Ka_u', 
           :zip => '28801', 
-          :birth_year => 1950,
+          :birth_year => 1980,
           :country => 'United States',
           :state => 'NC'
         )
@@ -37,7 +37,7 @@ namespace :db do
 
         user = User.new(
           :email => 'jon@ourvoyce.com', 
-          :password => 'test123', 
+          :password => '2c&F62YqO6pZ', 
           :zip => '28787', 
           :birth_year => 1975,
           :country => 'United States',
@@ -49,11 +49,23 @@ namespace :db do
 
         user = User.new(
           :email => 'test@ourvoyce.com', 
-          :password => 'test123', 
-          :zip => '28801', 
+          :password => 'BBw-r1eJV1p5', 
+          :zip => '28262', 
           :birth_year => 1970,
           :country => 'United States',
           :state => 'NC'
+        )
+        user.confirmed_at = Time.now
+        user.member_since = Time.now
+        user.save
+
+        user = User.new(
+          :email => 'tyler.durden@ourvoyce.com', 
+          :password => 'ovTDurden', 
+          :zip => '19886', 
+          :birth_year => 1965,
+          :country => 'United States',
+          :state => 'DE'
         )
         user.confirmed_at = Time.now
         user.member_since = Time.now
