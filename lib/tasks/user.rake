@@ -38,8 +38,8 @@ namespace :db do
         user = User.new(
           :email => 'jon@ourvoyce.com', 
           :password => 'test123', 
-          :zip => '28801', 
-          :birth_year => 1950,
+          :zip => '28787', 
+          :birth_year => 1975,
           :country => 'United States',
           :state => 'NC'
         )
@@ -65,7 +65,7 @@ namespace :db do
       desc "Create random users"
       task :create_random_users => :environment do |t, args|
 
-        users_to_create = 1000
+        users_to_create = 1274
 
         puts "Creating #{users_to_create} user records"
 
