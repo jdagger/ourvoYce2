@@ -54,23 +54,19 @@
               h3 Food
               #common-tags.tags
                 ul#common-tags
-                  - {"Arby's" => "/ov/#!/tag/arbys", 
-                    "Coffee" => "/ov/#!/tag/coffee", 
+                  - {"Coffee" => "/ov/#!/tag/coffee", 
                     "French Fries" => "/ov/#!/tag/frenchfries", 
-                    "Krispy Kreme" => "/ov/#!/tag/krispy_kreme", 
                     "McDonald's" => "/ov/#!/tag/mcdonalds", 
+                    "Restaurant" => "/ov/#!/tag/restaurant", 
                     "Starbucks" => "/ov/#!/tag/starbucks", 
-                    "Taco Bell" => "/ov/#!/tag/taco_bell", 
                     "Wendy's" => "/ov/#!/tag/wendys"}.each do |name, url|
                     li.tag=link_to name, url, {class: 'tag'}
             .pullout-item
               h3 Media
               #common-tags.tags
                 ul#common-tags
-                - {"CBS News" => "/ov/#!/tag/cbsnews",
-                  "CNN" => "/ov/#!/tag/cnn",
+                - {"CNN" => "/ov/#!/tag/cnn",
                   "Fox News" => "/ov/#!/tag/foxnews",
-                  "Headline News" => "/ov/#!/tag/hln",
                   "Magazine" => "/ov/#!/tag/magazine",
                   "MSNBC" => "/ov/#!/tag/msnbc",
                   "Newspaper" => "/ov/#!/tag/newspaper",
