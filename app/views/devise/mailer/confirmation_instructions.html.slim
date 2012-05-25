@@ -1,6 +1,8 @@
 p
-  | Welcome to ourvoYce! Thank you for participating. Please click the link below to verify your account.
+  | Welcome to ourvoYce! Please click the link below to verify your account.
 p
   = link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
 p
-  | Thank you for participating.
+  | Thank you for participating!
+p
+  | The ourvoYce Team
