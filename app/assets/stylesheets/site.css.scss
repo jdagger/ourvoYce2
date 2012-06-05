@@ -48,7 +48,7 @@ body {
 }
 
 .right-align { text-align: right; }
-.left-align { text-align: left; }
+.left-align { text-align: left; float: left }
 .center-align { text-align: center; }
 
 #body-background {
@@ -829,8 +829,8 @@ ul.ui-autocomplete{
 .padding-leftright{padding-left: 20px; padding-right: 20px;}
 .padding-left {padding-left: 20px;}
 
-.followus {margin-top:15px;}
-.red-divider{padding-bottom: 30px; margin-bottom: 20px; height: 1px; border-bottom:1px dashed #b1181c;}
+.followus {margin-top:5px;}
+.red-divider{padding-bottom: 15px; margin-bottom: 20px; height: 1px; border-bottom:1px dashed #b1181c;}
 
 #how-does-this-work {
   h3 {

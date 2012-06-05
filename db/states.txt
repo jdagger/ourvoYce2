@@ -57,3 +57,6 @@
 :: 57 :: WEST VIRGINIA                  :: WV ::
 :: 58 :: WISCONSIN                      :: WI ::
 :: 59 :: WYOMING                        :: WY ::
+:: 60 :: AA                             :: AA ::
+:: 60 :: AE                             :: AE ::
+:: 60 :: AP                             :: AP ::
