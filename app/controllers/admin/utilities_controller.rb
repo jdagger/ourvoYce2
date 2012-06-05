@@ -38,11 +38,12 @@ class Admin::UtilitiesController < Admin::ApplicationController
   def generate_random_votes
     votes_to_insert = params[:count].to_i
 
+    # If specific item is specified, apply votes to that item
+    user_specified_item = params[:item] ? params[:item].to_i : nil
+
     start_time = Time.now
 
-    #users = User.only(:id).to_a
     users = User.all.to_a
-    #items = Item.only(:id).to_a
     items = Item.select(:id).to_a
 
     setup_time = Time.now
@@ -53,19 +54,12 @@ class Admin::UtilitiesController < Admin::ApplicationController
     (1..votes_to_insert).each do |i|
       sample_start = Time.now
       user = users.sample
-      item_id = items.sample[:id]
+      item_id = user_specified_item || items.sample[:id]
+      Rails.logger.error "ItemId: #{item_id}"
       vote = [-1, -1, -1, 0, 0, 1, 1, 1, 1, 1, 1].sample
       total_sample_time = total_sample_time + (Time.now - sample_start)
 
       Vote.record_vote(user[:id], user[:state], user[:zip], user[:birth_year], item_id, vote)
-      #timings = Vote.record_vote(user[:id], user[:state], user[:zip], user[:birth_year], item_id, vote)
-      #if timings
-        #timings.keys.each do |key|
-          #total = total_times[key] || 0
-          #total = total + timings[key]
-          #total_times[key] = total
-        #end
-      #end
     end
 
     insert_time = Time.now

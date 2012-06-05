@@ -192,7 +192,8 @@
 
   renderAgeGraph: () ->
     try
-      window.sendToGraph(this.model.id(), '')
+      #window.sendToGraph(this.model.id(), '')
+      window.sendToGraph(this.model.id())
     catch error
       #console.log "Graph Error: #{error}"
     return

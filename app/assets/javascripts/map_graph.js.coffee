@@ -6,6 +6,7 @@ window.setState = (st) ->
   #Try to remove coupling to details
   window.mapState = st
   window.sendToGraph(OurvoyceApp.detail.id())
+  window.sendToMap(OurvoyceApp.detail.id())
   return
 
 window.sendToMap = (id) ->
@@ -27,14 +28,10 @@ window.thisMovie = (movieName) ->
 
 window.barEmbedded = (e) ->
   window.barLoaded = true
-  
-  #if mapLoaded && barLoaded
   return
 
 window.mapEmbedded = (e) ->
   window.mapLoaded = true
-  #if( mapLoaded && barLoaded)
-  
   return
 
 window.initializeMaps = () ->
@@ -55,8 +52,6 @@ window.initializeMaps = () ->
     barwidth: "25"
 
   swfobject.switchOffAutoHideShow()
-  #swfobject.embedSWF("/swf/map.swf", "map", "320", "247","10.0.0", "", mapvars, params, attributes, window.barEmbedded)
   swfobject.embedSWF("/swf/map.swf", "map", "300", "231","10.0.0", "", mapvars, params, attributes, window.barEmbedded)
-  #swfobject.embedSWF("/swf/bar-graph.swf", "bar-graph", "320", "200","10.0.0", "", agevars, params, attributes, window.mapEmbedded)
   swfobject.embedSWF("/swf/bar-graph.swf", "bar-graph", "300", "188","10.0.0", "", agevars, params, attributes, window.mapEmbedded)
   return

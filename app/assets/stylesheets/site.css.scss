@@ -1064,3 +1064,16 @@ a.vote:hover{
     width: 60px;
   }
 }
+
+
+// /tags
+#tag-list
+{
+  .tags{
+    @include clearfix;
+    li{
+      float: left;
+      width: 250px;
+    }
+  }
+}

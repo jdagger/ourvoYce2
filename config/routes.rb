@@ -21,6 +21,7 @@ Ourvoyce::Application.routes.draw do
   match '/item/:id' => 'items#fetch_item', :as => :fetch_item
   match '/favorites(/:filter(/:sort))' => 'items#favorites', :as => :favorites
   match '/hot_topics(/:filter(/:sort))' => 'items#hot_topics', :as => :hot_topics
+  match "/tags" => "tags#index", :as => :tags
   match '/tag/:tag(/:filter(/:sort))' => 'items#tag', :as => :tag, :defaults => {:sort => 'default:all', :filter => 'all'}
 
 
@@ -65,7 +66,7 @@ Ourvoyce::Application.routes.draw do
 
     match "/utility/create_seed_file" => "utilities#create_seed_file", :as => :create_seed_file
     match "/utility" => "utilities#index", :as => :utilities
-    match '/utility/generate_random_votes(/:count)' => 'utilities#generate_random_votes', :as => :generate_random_votes, :defaults => {:count => 100}
+    match '/utility/generate_random_votes(/:count(/:item))' => 'utilities#generate_random_votes', :as => :generate_random_votes, :defaults => {:count => 100}
     match "/stats" => "stats#index", :as => :stats
   end
 

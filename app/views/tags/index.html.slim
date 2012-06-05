@@ -1,0 +1,14 @@
+#tag-list
+  h1 Tags
+  - first_letter = nil
+  - @tags.each do |tag|
+    - if first_letter != tag.friendly_name[0]
+      - unless first_letter.nil? #First time through
+        == "</ul>" 
+        == "<br>"
+      - first_letter = tag.friendly_name[0]
+      h2= first_letter
+      == "<ul class='tags'>"
+    li= link_to tag.friendly_name, tag_path(tag.path)
+  == "</ul>"
+      
