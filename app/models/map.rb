@@ -11,7 +11,10 @@ class Map
         td = stat.thumbs_down_vote_count rescue 0
         n = stat.neutral_vote_count rescue 0
         color = votes_to_color(thumbs_up: tu, thumbs_down: td, neutral: n) 
-        @states << {name: stat[:state], color: color}
+
+        if ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'].include?(stat[:state].upcase)
+          @states << {name: stat[:state], color: color}
+        end
       end
       return @states
     end
