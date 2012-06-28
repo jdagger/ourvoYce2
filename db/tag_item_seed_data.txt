@@ -1,4 +1,4 @@
-//Created: 2012-05-24 12:25:42 -0400
+//Created: 2012-06-28 20:38:05 +0000
 ##TAGS##
 //id, path, friendly_name, popular, hot_topic
 ::1::corporation::Corporation::false::false::
@@ -188,12 +188,12 @@
 ::187::apm::American Public Media::false::false::
 ::188::mcdonalds::McDonald's::false::false::
 ::189::starbucks::Starbucks::false::false::
-::191::frenchfries::French Fries::true::false::
+::191::frenchfries::French Fries::false::true::
 ::192::krispy_kreme::Krispy Kreme Doughnuts::false::false::
 ::193::usda::USDA::false::false::
 ::194::wendys::Wendy's::false::false::
 ::195::arbys::Arby's::false::false::
-::196::restaurant::Restaurant::false::false::
+::196::restaurant::Restaurant::true::false::
 ::197::browser::Browser::false::false::
 ::198::tech::Tech::false::false::
 ::199::energy::Energy::false::false::
@@ -221,14 +221,14 @@
 ::221::nfc_east::NFC East::false::false::
 ::222::nfc::NFC::false::false::
 ::223::afc::AFC::false::false::
-::224::election_2012::Presidential Election 2012::false::true::
+::224::election_2012::Presidential Election::false::true::
 ::226::congress::112th Congress::false::false::
 ::227::ncaa::College Hoops::false::false::
 ::228::questions::The Basics::true::false::
 ::229::potus::Commander in Chief::true::false::
-::230::health_care_reform::Health Care Reform::false::true::
+::230::health_care_reform::Health Care Reform::false::false::
 ::231::mlb::MLB::true::false::
-::232::nba::NBA::true::false::
+::232::nba::NBA::false::true::
 ::233::nhl::NHL::true::false::
 ::234::american_idol::American Idol::true::false::
 ::235::wnba::WNBA::false::false::
@@ -254,7 +254,7 @@
 ::255::peets::Peet's Coffee & Tea::false::false::
 ::256::caribou::Caribou Coffee::false::false::
 ::257::dutch_bros::Dutch Bros. Coffee::false::false::
-::258::coffee::Coffee::false::false::
+::258::coffee::Coffee::false::true::
 ::259::coffee_beanery::Coffee Beanery::false::false::
 ::260::scooters_coffeehouse::Scooter's Coffeehouse::false::false::
 ::261::biggby::Biggby Coffee::false::false::
@@ -265,13 +265,33 @@
 ::266::dunn_bros::Dunn Bros Coffee::false::false::
 ::267::tim_hortons::Tim Hortons::false::false::
 ::268::education::Education::false::false::
+::269::sunlight_foundation::Sunlight Foundation::false::false::
+::270::nc_asheville::Asheville, NC::false::false::
+::271::asheville_breweries::Asheville Breweries::false::true::
+::272::asheville_brewing_company::Asheville Brewing Company::false::false::
+::273::lexington_avenue_brewery::Lexington Avenue Brewery::false::false::
+::274::mayor::Mayor::false::false::
+::275::governor::Governor::false::false::
+::276::ny_marijuana_law::NY Marijuana Law::false::false::
+::277::craggie_brewing_company::Craggie Brewing Company::false::false::
+::278::french_broad_brewing_company::French Broad Brewing Company::false::false::
+::279::green_man_brewery::Green Man Brewery::false::false::
+::280::highland_brewing::Highland Brewing::false::false::
+::281::oysterhouse_brewing::OysterHouse Brewing::false::false::
+::282::pisgah_brewing_company::Pisgah Brewing Company::false::false::
+::283::thirsty_monk::Thirsty Monk::false::false::
+::284::wedge_brewing_company::Wedge Brewing Company::false::false::
+::285::daily_show::The Daily Show::false::false::
+::286::oskar_blues_brewery::Oskar Blues Brewery::false::false::
+::287::asheville_chocolatiers::Asheville Chocolatiers::false::false::
+::288::nc_black_mountain::Black Mountain, NC::false::false::
 ##ITEMS##
 //id, name, description, item_type, logo, website, wikipedia, default_order, tags
 ::10001::ABC News::::media::media_logos/128_128/ABCNews.png::http://www.abcnews.com::http://en.wikipedia.org/wiki/Abc_news::401::4,71,181::
 ::10002::CBS News::::media::media_logos/128_128/CBS.png::http://www.cbsnews.com::http://en.wikipedia.org/wiki/Cbs_news::402::4,71,180::
-::10003::NBC News::::media::media_logos/128_128/NBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/NBC_News::406::178,4,71::
-::10004::Fox News::::media::media_logos/128_128/FoxNews.png::http://www.foxnews.com::http://en.wikipedia.org/wiki/Fox_news::404::175,4,71::
-::10005::CNN::::media::media_logos/128_128/CNN.png::http://www.cnn.com::http://en.wikipedia.org/wiki/Cnn::403::174,4,71::
+::10003::NBC News::::media::media_logos/128_128/NBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/NBC_News::406::4,71,178::
+::10004::Fox News::::media::media_logos/128_128/FoxNews.png::http://www.foxnews.com::http://en.wikipedia.org/wiki/Fox_news::404::4,71,175::
+::10005::CNN::::media::media_logos/128_128/CNN.png::http://www.cnn.com::http://en.wikipedia.org/wiki/Cnn::403::4,71,174::
 ::10006::Heavy Hundred (Top 25)::::media::media_logos/128_128/HeavyHundred.png::http://www.talkers.com/2011hhindex.html::http://en.wikipedia.org/wiki/Talkers_Magazine::1000::::
 ::10007::National Public Radio::::media::media_logos/128_128/NPR.png::http://www.npr.org::http://en.wikipedia.org/wiki/Npr::1000::4,70,185::
 ::10013::World News::::media::media_logos/128_128/ABC_WorldNews.png::http://abcnews.go.com/wn::http://en.wikipedia.org/wiki/ABC_World_News::1000::4,71,181::
@@ -366,7 +386,7 @@
 ::10119::Weekend Edition Saturday::::media::media_logos/128_128/NPR_WeekendEdition.png::http://www.npr.org/programs/wesat::http://en.wikipedia.org/wiki/Weekend_Edition::1000::4,70,185::
 ::10120::Weekend Edition Sunday::::media::media_logos/128_128/NPR_WeekendEdition.png::http://www.npr.org/programs/wesun::http://en.wikipedia.org/wiki/Weekend_Edition::1000::4,70,185::
 ::10121::CNBC::::media::media_logos/128_128/CNBC.png::http://www.cnbc.com::http://en.wikipedia.org/wiki/Cnbc::1000::4,71,179::
-::10122::MSNBC::::media::media_logos/128_128/MSNBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/Msnbc::405::177,4,71::
+::10122::MSNBC::::media::media_logos/128_128/MSNBC.png::http://www.msnbc.com::http://en.wikipedia.org/wiki/Msnbc::405::4,71,177::
 ::10123::PBS::::media::media_logos/128_128/PBS.png::http://www.pbs.org::http://en.wikipedia.org/wiki/Public_Broadcasting_Service::1000::4,71,182::
 ::10124::What Would You Do?::::media::media_logos/128_128/ABC_WWYD.png::http://abcnews.go.com/whatwouldyoudo::http://en.wikipedia.org/wiki/Primetime:_What_Would_You_Do?::1000::4,71,181::
 ::10125::The Early Show::::media::media_logos/128_128/CBS_TheEarlyShow.png::http://www.cbsnews.com/earlyshow::http://en.wikipedia.org/wiki/CBS_Early_Show::1000::4,71,180::
@@ -449,18 +469,18 @@
 ::10207::Reliable Sources::::media::media_logos/128_128/CNN_ReliableSources.png::http://www.cnn.com/CNN/Programs/reliable.sources::::1000::4,71,174::
 ::10208::This Week at War::::media::media_logos/128_128/CNN_ThisWeekAtWar.png::http://www.cnn.com/CNN/Programs/this.week.at.war::::1000::4,71,174::
 ::10209::The Daily::::media::media_logos/128_128/News_TheDaily.png::::::1000::4,69::
-::10210::Public Radio International::::media::media_logos/128_128/PRI.png::http://www.pri.org::http://en.wikipedia.org/wiki/Public_Radio_International::1000::70,186,4,185::
-::10211::American Public Media::::media::media_logos/128_128/APM.png::http://americanpublicmedia.publicradio.org::http://en.wikipedia.org/wiki/American_Public_Media::1000::70,187,4,185::
-::10212::Marketplace::::media::media_logos/128_128/APM_Marketplace.png::http://marketplace.publicradio.org::http://en.wikipedia.org/wiki/Marketplace_(radio_program)::1000::70,187,4,185::
-::10213::Marketplace Morning Report::::media::media_logos/128_128/APM_MorningReport.png::http://marketplace.publicradio.org::http://en.wikipedia.org/wiki/Marketplace_(radio_program)::1000::70,187,4,185::
-::10214::Marketplace Tech Report::::media::media_logos/128_128/APM_TechReport.png::http://marketplacemoney.publicradio.org::http://en.wikipedia.org/wiki/Marketplace_(radio_program)::1000::70,187,4,185::
-::10215::Being::::media::media_logos/128_128/APM_Being.png::http://being.publicradio.org::http://en.wikipedia.org/wiki/Being::1000::70,187,4,185::
-::10216::American RadioWorks::::media::media_logos/128_128/APM_RadioWorks.png::http://americanradioworks.publicradio.org::http://en.wikipedia.org/wiki/American_RadioWorks::1000::70,187,4,185::
-::10217::The Story::::media::media_logos/128_128/APM_TheStory.png::http://www.thestory.org::http://en.wikipedia.org/wiki/The_Story_with_Dick_Gordon::1000::70,187,4,185::
-::10218::Marketplace Money::::media::media_logos/128_128/APM_Money.png::http://marketplacemoney.publicradio.org::http://en.wikipedia.org/wiki/Marketplace_Money::1000::70,187,4,185::
-::10219::BBC Newshour::::media::media_logos/128_128/PRI_BBCNewshour.png::http://www.pri.org/bbc-newshour.html::http://en.wikipedia.org/wiki/Newshour::1000::70,186,4,185::
-::10220::BBC World Service::::media::media_logos/128_128/PRI_BBCWorldService.png::http://www.pri.org/bbc-world-service.html::http://en.wikipedia.org/wiki/BBC_World_Service::1000::70,186,4,185::
-::10221::Bob Edwards Weekend::::media::media_logos/128_128/PRI_BobEdwards.png::http://www.pri.org/bob-edwards-weekend.html::http://en.wikipedia.org/wiki/Bob_Edwards_Weekend::1000::70,186,4,185::
+::10210::Public Radio International::::media::media_logos/128_128/PRI.png::http://www.pri.org::http://en.wikipedia.org/wiki/Public_Radio_International::1000::4,70,185,186::
+::10211::American Public Media::::media::media_logos/128_128/APM.png::http://americanpublicmedia.publicradio.org::http://en.wikipedia.org/wiki/American_Public_Media::1000::4,70,185,187::
+::10212::Marketplace::::media::media_logos/128_128/APM_Marketplace.png::http://marketplace.publicradio.org::http://en.wikipedia.org/wiki/Marketplace_(radio_program)::1000::4,70,185,187::
+::10213::Marketplace Morning Report::::media::media_logos/128_128/APM_MorningReport.png::http://marketplace.publicradio.org::http://en.wikipedia.org/wiki/Marketplace_(radio_program)::1000::4,70,185,187::
+::10214::Marketplace Tech Report::::media::media_logos/128_128/APM_TechReport.png::http://marketplacemoney.publicradio.org::http://en.wikipedia.org/wiki/Marketplace_(radio_program)::1000::4,70,185,187::
+::10215::Being::::media::media_logos/128_128/APM_Being.png::http://being.publicradio.org::http://en.wikipedia.org/wiki/Being::1000::4,70,185,187::
+::10216::American RadioWorks::::media::media_logos/128_128/APM_RadioWorks.png::http://americanradioworks.publicradio.org::http://en.wikipedia.org/wiki/American_RadioWorks::1000::4,70,185,187::
+::10217::The Story::::media::media_logos/128_128/APM_TheStory.png::http://www.thestory.org::http://en.wikipedia.org/wiki/The_Story_with_Dick_Gordon::1000::4,70,185,187::
+::10218::Marketplace Money::::media::media_logos/128_128/APM_Money.png::http://marketplacemoney.publicradio.org::http://en.wikipedia.org/wiki/Marketplace_Money::1000::4,70,185,187::
+::10219::BBC Newshour::::media::media_logos/128_128/PRI_BBCNewshour.png::http://www.pri.org/bbc-newshour.html::http://en.wikipedia.org/wiki/Newshour::1000::4,70,185,186::
+::10220::BBC World Service::::media::media_logos/128_128/PRI_BBCWorldService.png::http://www.pri.org/bbc-world-service.html::http://en.wikipedia.org/wiki/BBC_World_Service::1000::4,70,185,186::
+::10221::Bob Edwards Weekend::::media::media_logos/128_128/PRI_BobEdwards.png::http://www.pri.org/bob-edwards-weekend.html::http://en.wikipedia.org/wiki/Bob_Edwards_Weekend::1000::4,70,185,186::
 ::10222::Weekend All Things Considered::::media::media_logos/128_128/NPR_AllThingsConsidered.png::http://www.npr.org/programs/atc::http://en.wikipedia.org/wiki/Weekend_All_Things_Considered::1000::4,70,185::
 ::10223::The Thom Hartmann Program::::media::media_logos/128_128/Radio_ThomHartmann.png::http://www.thomhartmann.com::http://en.wikipedia.org/wiki/The_Thom_Hartmann_Program::1000::4,70,184::
 ::10224::The Ed Schultz Show::::media::media_logos/128_128/Radio_EdSchultz.png::http://www.wegoted.com::http://en.wikipedia.org/wiki/The_Ed_Schultz_Show::1000::4,70,184::
@@ -504,76 +524,76 @@
 ::10263::The New Republic::::media::media_logos/128_128/Mag_TheNewRepublic.png::http://www.tnr.com::http://en.wikipedia.org/wiki/The_New_Republic::1000::4,68::
 ::10264::The Weekly Standard::::media::media_logos/128_128/Mag_TheWeeklyStandard.png::http://www.weeklystandard.com::http://en.wikipedia.org/wiki/The_Weekly_Standard::1000::4,68::
 ::10265::National Journal::::media::media_logos/128_128/Mag_NationalJournal.png::http://www.nationaljournal.com::http://en.wikipedia.org/wiki/The_National_Journal::1000::4,68::
-::10266::This American Life::::media::media_logos/128_128/PRI_ThisAmericanLife.png::http://www.thisamericanlife.org::http://en.wikipedia.org/wiki/This_American_Life::1000::70,186,4,185::
+::10266::This American Life::::media::media_logos/128_128/PRI_ThisAmericanLife.png::http://www.thisamericanlife.org::http://en.wikipedia.org/wiki/This_American_Life::1000::4,70,185,186::
 ::10267::Planet Money::::media::media_logos/128_128/NPR_PlanetMoney.png::http://www.npr.org/money::http://en.wikipedia.org/wiki/Planet_Money::1000::4,70,185::
 ::10268::Radiolab::::media::media_logos/128_128/NPR_Radiolab.png::http://www.radiolab.org::http://en.wikipedia.org/wiki/Radiolab::1000::4,70,185::
-::20000::Richard Shelby::Senior Senator (AL)<br />202-224-5744::senate::government_logos/senators/64_64/S000320.jpg::http://shelby.senate.gov/::http://en.wikipedia.org/wiki/Richard_Shelby::5000::60,75,226,5::
-::20001::Michael Bennet::Junior Senator (CO)<br />202-224-5852::senate::government_logos/senators/64_64/B001267.jpg::http://bennet.senate.gov::http://en.wikipedia.org/wiki/Michael_Bennet::5501::60,226,10,83::
-::20002::Tom Udall::Junior Senator (NM)<br />202-224-6621::senate::government_logos/senators/64_64/U000039.jpg::http://tomudall.senate.gov::http://en.wikipedia.org/wiki/Tom_Udall::8001::36,60,226,137::
-::20003::Lisa Murkowski::Senior Senator (AK)<br />202-224-6665::senate::government_logos/senators/64_64/M001153.jpg::http://murkowski.senate.gov::http://en.wikipedia.org/wiki/Lisa_Murkowski::5100::6,60,226,73::
-::20004::Jon Tester::Junior Senator (MT)<br />202-224-2644::senate::government_logos/senators/64_64/T000464.jpg::http://tester.senate.gov::http://en.wikipedia.org/wiki/Jon_Tester::7501::125,31,60,226::
-::20005::Maria Cantwell::Junior Senator (WA)<br />202-224-3441::senate::government_logos/senators/64_64/C000127.jpg::http://cantwell.senate.gov::http://en.wikipedia.org/wiki/Maria_Cantwell::9601::60,226,52,167::
-::20006::Mark Udall::Senior Senator (CO)<br />202-224-5941::senate::government_logos/senators/64_64/U000038.jpg::http://markudall.senate.gov::http://en.wikipedia.org/wiki/Mark_Udall::5500::60,226,10,83::
-::20007::Jeff Bingaman::Senior Senator (NM)<br />202-224-5521::senate::government_logos/senators/64_64/B000468.jpg::http://bingaman.senate.gov::http://en.wikipedia.org/wiki/Jeff_Bingaman::8000::36,60,226,137::
-::20008::Barbara Mikulski::Senior Senator (MD)<br />202-224-4654::senate::government_logos/senators/64_64/M000702.jpg::http://mikulski.senate.gov::http://en.wikipedia.org/wiki/Barbara_Mikulski::6900::60,226,25,113::
+::20000::Richard Shelby::Senior Senator (AL)<br />202-224-5744::senate::government_logos/senators/64_64/S000320.jpg::http://shelby.senate.gov/::http://en.wikipedia.org/wiki/Richard_Shelby::5000::5,60,75,226::
+::20001::Michael Bennet::Junior Senator (CO)<br />202-224-5852::senate::government_logos/senators/64_64/B001267.jpg::http://bennet.senate.gov::http://en.wikipedia.org/wiki/Michael_Bennet::5501::10,60,83,226::
+::20002::Tom Udall::Junior Senator (NM)<br />202-224-6621::senate::government_logos/senators/64_64/U000039.jpg::http://tomudall.senate.gov::http://en.wikipedia.org/wiki/Tom_Udall::8001::36,60,137,226::
+::20003::Lisa Murkowski::Senior Senator (AK)<br />202-224-6665::senate::government_logos/senators/64_64/M001153.jpg::http://murkowski.senate.gov::http://en.wikipedia.org/wiki/Lisa_Murkowski::5100::6,60,73,226::
+::20004::Jon Tester::Junior Senator (MT)<br />202-224-2644::senate::government_logos/senators/64_64/T000464.jpg::http://tester.senate.gov::http://en.wikipedia.org/wiki/Jon_Tester::7501::31,60,125,226::
+::20005::Maria Cantwell::Junior Senator (WA)<br />202-224-3441::senate::government_logos/senators/64_64/C000127.jpg::http://cantwell.senate.gov::http://en.wikipedia.org/wiki/Maria_Cantwell::9601::52,60,167,226::
+::20006::Mark Udall::Senior Senator (CO)<br />202-224-5941::senate::government_logos/senators/64_64/U000038.jpg::http://markudall.senate.gov::http://en.wikipedia.org/wiki/Mark_Udall::5500::10,60,83,226::
+::20007::Jeff Bingaman::Senior Senator (NM)<br />202-224-5521::senate::government_logos/senators/64_64/B000468.jpg::http://bingaman.senate.gov::http://en.wikipedia.org/wiki/Jeff_Bingaman::8000::36,60,137,226::
+::20008::Barbara Mikulski::Senior Senator (MD)<br />202-224-4654::senate::government_logos/senators/64_64/M000702.jpg::http://mikulski.senate.gov::http://en.wikipedia.org/wiki/Barbara_Mikulski::6900::25,60,113,226::
 ::20009::Thad Cochran::Senior Senator (MS)<br />202-224-5054::senate::government_logos/senators/64_64/C000567.jpg::http://cochran.senate.gov::http://en.wikipedia.org/wiki/Thad_Cochran::7300::29,60,123,226::
-::20010::Mitch McConnell::Senior Senator (KY)<br />202-224-2541::senate::government_logos/senators/64_64/M000355.jpg::http://mcconnell.senate.gov::http://en.wikipedia.org/wiki/Mitch_McConnell::6600::22,60,226,107::
-::20011::Orrin Hatch::Senior Senator (UT)<br />202-224-5251::senate::government_logos/senators/64_64/H000338.jpg::http://hatch.senate.gov::http://en.wikipedia.org/wiki/Orrin_Hatch::9300::60,226,161,49::
-::20012::Charles Schumer::Senior Senator (NY)<br />202-224-6542::senate::government_logos/senators/64_64/S000148.jpg::http://schumer.senate.gov::http://en.wikipedia.org/wiki/Charles_Schumer::8100::60,226,37,141::
-::20013::John McCain::Senior Senator (AZ)<br />202-224-2235::senate::government_logos/senators/64_64/M000303.jpg::http://mccain.senate.gov::http://en.wikipedia.org/wiki/John_McCain::5200::60,226,7,79::
-::20014::Jon Kyl::Junior Senator (AZ)<br />202-224-4521::senate::government_logos/senators/64_64/K000352.jpg::http://kyl.senate.gov::http://en.wikipedia.org/wiki/Jon_Kyl::5201::60,226,7,79::
-::20015::Scott Brown::Junior Senator (MA)<br />202-224-4543::senate::government_logos/senators/64_64/B001268.jpg::http://scottbrown.senate.gov::http://en.wikipedia.org/wiki/Scott_Brown::7001::26,60,226,111::
-::20016::Patrick Leahy::Senior Senator (VT)<br />202-224-4242::senate::government_logos/senators/64_64/L000174.jpg::http://leahy.senate.gov::http://en.wikipedia.org/wiki/Patrick_Leahy::9400::165,60,226,50::
-::20017::Mark Begich::Junior Senator (AK)<br />202-224-3004::senate::government_logos/senators/64_64/AK_2_Begich.png::http://begich.senate.gov::http://en.wikipedia.org/wiki/Mark_Begich::5101::6,60,226,73::
-::20018::Chuck Grassley::Senior Senator (IA)<br />202-224-3744::senate::government_logos/senators/64_64/G000386.jpg::http://grassley.senate.gov::http://en.wikipedia.org/wiki/Charles_Grassley::6400::60,226,20,97::
-::20019::Kay Hutchison::Senior Senator (TX)<br />202-224-5922::senate::government_logos/senators/64_64/H001016.jpg::http://hutchison.senate.gov::http://en.wikipedia.org/wiki/Kay_Hutchison::9200::60,226,159,48::
-::20020::Mike Crapo::Senior Senator (ID)<br />202-224-6142::senate::government_logos/senators/64_64/C000880.jpg::http://crapo.senate.gov::http://en.wikipedia.org/wiki/Mike_Crapo::6100::60,226,99,17::
-::20021::Marco Rubio::Junior Senator (FL)<br />202-224-3041::senate::government_logos/senators/64_64/FL_2_Rubio.png::http://rubio.senate.gov::http://en.wikipedia.org/wiki/Marco_Rubio::5801::14,60,226,91::
-::20022::Mike Lee::Junior Senator (UT)<br />202-224-5444::senate::government_logos/senators/64_64/UT_2_Lee.png::http://lee.senate.gov::http://en.wikipedia.org/wiki/Mike_Lee::9301::60,226,161,49::
-::20023::Barbara Boxer::Junior Senator (CA)<br />202-224-3553::senate::government_logos/senators/64_64/B000711.jpg::http://boxer.senate.gov::http://en.wikipedia.org/wiki/Barbara_Boxer::5401::60,226,9,81::
-::20024::Max Baucus::Senior Senator (MT)<br />202-224-2651::senate::government_logos/senators/64_64/B000243.jpg::http://baucus.senate.gov::http://en.wikipedia.org/wiki/Max_Baucus::7500::125,31,60,226::
-::20025::Kent Conrad::Senior Senator (ND)<br />202-224-2043::senate::government_logos/senators/64_64/C000705.jpg::http://conrad.senate.gov::http://en.wikipedia.org/wiki/Kent_Conrad::8300::129,60,226,39::
-::20026::Kelly Ayotte::Junior Senator (NH)<br />202-224-3324::senate::government_logos/senators/64_64/NH_2_Ayotte.png::http://ayotte.senate.gov::http://en.wikipedia.org/wiki/Kelly_Ayotte::7801::34,60,226,133::
-::20027::Richard Blumenthal::Junior Senator (CT)<br />202-224-2823::senate::government_logos/senators/64_64/CT_2_Blumenthal.png::http://blumenthal.senate.gov::http://en.wikipedia.org/wiki/Richard_Blumenthal::5601::85,11,60,226::
-::20028::Saxby Chambliss::Senior Senator (GA)<br />202-224-3521::senate::government_logos/senators/64_64/C000286.jpg::http://chambliss.senate.gov::http://en.wikipedia.org/wiki/Saxby_Chambliss::5900::60,93,226,15::
-::20029::Jerry Moran::Junior Senator (KS)<br />202-224-6521::senate::government_logos/senators/64_64/KS_2_Moran.png::http://moran.senate.gov::http://en.wikipedia.org/wiki/Jerry_Moran::7501::60,105,226,21::
-::20030::Ron Johnson::Junior Senator (WI)<br />202-224-5323::senate::government_logos/senators/64_64/WI_2_Johnson.png::http://ronjohnson.senate.gov::http://en.wikipedia.org/wiki/Ron_Johnson::9801::54,60,226,169::
-::20031::Jefferson Sessions::Junior Senator (AL)<br />202-224-4124::senate::government_logos/senators/64_64/S001141.jpg::http://sessions.senate.gov/::http://en.wikipedia.org/wiki/Jefferson_Sessions::5001::60,75,226,5::
-::20032::Herb Kohl::Senior Senator (WI)<br />202-224-5653::senate::government_logos/senators/64_64/K000305.jpg::http://kohl.senate.gov::http://en.wikipedia.org/wiki/Herb_Kohl::9800::54,60,226,169::
-::20033::Ron Wyden::Senior Senator (OR)<br />202-224-5244::senate::government_logos/senators/64_64/W000779.jpg::http://wyden.senate.gov::http://en.wikipedia.org/wiki/Ron_Wyden::8600::42,60,226,147::
+::20010::Mitch McConnell::Senior Senator (KY)<br />202-224-2541::senate::government_logos/senators/64_64/M000355.jpg::http://mcconnell.senate.gov::http://en.wikipedia.org/wiki/Mitch_McConnell::6600::22,60,107,226::
+::20011::Orrin Hatch::Senior Senator (UT)<br />202-224-5251::senate::government_logos/senators/64_64/H000338.jpg::http://hatch.senate.gov::http://en.wikipedia.org/wiki/Orrin_Hatch::9300::49,60,161,226::
+::20012::Charles Schumer::Senior Senator (NY)<br />202-224-6542::senate::government_logos/senators/64_64/S000148.jpg::http://schumer.senate.gov::http://en.wikipedia.org/wiki/Charles_Schumer::8100::37,60,141,226::
+::20013::John McCain::Senior Senator (AZ)<br />202-224-2235::senate::government_logos/senators/64_64/M000303.jpg::http://mccain.senate.gov::http://en.wikipedia.org/wiki/John_McCain::5200::7,60,79,226::
+::20014::Jon Kyl::Junior Senator (AZ)<br />202-224-4521::senate::government_logos/senators/64_64/K000352.jpg::http://kyl.senate.gov::http://en.wikipedia.org/wiki/Jon_Kyl::5201::7,60,79,226::
+::20015::Scott Brown::Junior Senator (MA)<br />202-224-4543::senate::government_logos/senators/64_64/B001268.jpg::http://scottbrown.senate.gov::http://en.wikipedia.org/wiki/Scott_Brown::7001::26,60,111,226::
+::20016::Patrick Leahy::Senior Senator (VT)<br />202-224-4242::senate::government_logos/senators/64_64/L000174.jpg::http://leahy.senate.gov::http://en.wikipedia.org/wiki/Patrick_Leahy::9400::50,60,165,226::
+::20017::Mark Begich::Junior Senator (AK)<br />202-224-3004::senate::government_logos/senators/64_64/AK_2_Begich.png::http://begich.senate.gov::http://en.wikipedia.org/wiki/Mark_Begich::5101::6,60,73,226::
+::20018::Chuck Grassley::Senior Senator (IA)<br />202-224-3744::senate::government_logos/senators/64_64/G000386.jpg::http://grassley.senate.gov::http://en.wikipedia.org/wiki/Charles_Grassley::6400::20,60,97,226::
+::20019::Kay Hutchison::Senior Senator (TX)<br />202-224-5922::senate::government_logos/senators/64_64/H001016.jpg::http://hutchison.senate.gov::http://en.wikipedia.org/wiki/Kay_Hutchison::9200::48,60,159,226::
+::20020::Mike Crapo::Senior Senator (ID)<br />202-224-6142::senate::government_logos/senators/64_64/C000880.jpg::http://crapo.senate.gov::http://en.wikipedia.org/wiki/Mike_Crapo::6100::17,60,99,226::
+::20021::Marco Rubio::Junior Senator (FL)<br />202-224-3041::senate::government_logos/senators/64_64/FL_2_Rubio.png::http://rubio.senate.gov::http://en.wikipedia.org/wiki/Marco_Rubio::5801::14,60,91,226::
+::20022::Mike Lee::Junior Senator (UT)<br />202-224-5444::senate::government_logos/senators/64_64/UT_2_Lee.png::http://lee.senate.gov::http://en.wikipedia.org/wiki/Mike_Lee::9301::49,60,161,226::
+::20023::Barbara Boxer::Junior Senator (CA)<br />202-224-3553::senate::government_logos/senators/64_64/B000711.jpg::http://boxer.senate.gov::http://en.wikipedia.org/wiki/Barbara_Boxer::5401::9,60,81,226::
+::20024::Max Baucus::Senior Senator (MT)<br />202-224-2651::senate::government_logos/senators/64_64/B000243.jpg::http://baucus.senate.gov::http://en.wikipedia.org/wiki/Max_Baucus::7500::31,60,125,226::
+::20025::Kent Conrad::Senior Senator (ND)<br />202-224-2043::senate::government_logos/senators/64_64/C000705.jpg::http://conrad.senate.gov::http://en.wikipedia.org/wiki/Kent_Conrad::8300::39,60,129,226::
+::20026::Kelly Ayotte::Junior Senator (NH)<br />202-224-3324::senate::government_logos/senators/64_64/NH_2_Ayotte.png::http://ayotte.senate.gov::http://en.wikipedia.org/wiki/Kelly_Ayotte::7801::34,60,133,226::
+::20027::Richard Blumenthal::Junior Senator (CT)<br />202-224-2823::senate::government_logos/senators/64_64/CT_2_Blumenthal.png::http://blumenthal.senate.gov::http://en.wikipedia.org/wiki/Richard_Blumenthal::5601::11,60,85,226::
+::20028::Saxby Chambliss::Senior Senator (GA)<br />202-224-3521::senate::government_logos/senators/64_64/C000286.jpg::http://chambliss.senate.gov::http://en.wikipedia.org/wiki/Saxby_Chambliss::5900::15,60,93,226::
+::20029::Jerry Moran::Junior Senator (KS)<br />202-224-6521::senate::government_logos/senators/64_64/KS_2_Moran.png::http://moran.senate.gov::http://en.wikipedia.org/wiki/Jerry_Moran::7501::21,60,105,226::
+::20030::Ron Johnson::Junior Senator (WI)<br />202-224-5323::senate::government_logos/senators/64_64/WI_2_Johnson.png::http://ronjohnson.senate.gov::http://en.wikipedia.org/wiki/Ron_Johnson::9801::54,60,169,226::
+::20031::Jefferson Sessions::Junior Senator (AL)<br />202-224-4124::senate::government_logos/senators/64_64/S001141.jpg::http://sessions.senate.gov/::http://en.wikipedia.org/wiki/Jefferson_Sessions::5001::5,60,75,226::
+::20032::Herb Kohl::Senior Senator (WI)<br />202-224-5653::senate::government_logos/senators/64_64/K000305.jpg::http://kohl.senate.gov::http://en.wikipedia.org/wiki/Herb_Kohl::9800::54,60,169,226::
+::20033::Ron Wyden::Senior Senator (OR)<br />202-224-5244::senate::government_logos/senators/64_64/W000779.jpg::http://wyden.senate.gov::http://en.wikipedia.org/wiki/Ron_Wyden::8600::42,60,147,226::
 ::20034::Lindsey Graham::Senior Senator (SC)<br />202-224-5972::senate::government_logos/senators/64_64/G000359.jpg::http://lgraham.senate.gov::http://en.wikipedia.org/wiki/Lindsey_Graham::8900::45,60,153,226::
-::20035::Tom Carper::Senior Senator (DE)<br />202-224-2441::senate::government_logos/senators/64_64/C000174.jpg::http://carper.senate.gov::http://en.wikipedia.org/wiki/Thomas_Carper::5700::60,226,89,12::
-::20036::Susan Collins::Junior Senator (ME)<br />202-224-2523::senate::government_logos/senators/64_64/C001035.jpg::http://collins.senate.gov::http://en.wikipedia.org/wiki/Susan_Collins::6801::115,60,226,24::
-::20037::John Rockefeller::Senior Senator (WV)<br />202-224-6472::senate::government_logos/senators/64_64/R000361.jpg::http://rockefeller.senate.gov::http://en.wikipedia.org/wiki/John_Rockefeller::9700::53,60,226,171::
-::20038::James Inhofe::Senior Senator (OK)<br />202-224-4721::senate::government_logos/senators/64_64/I000024.jpg::http://inhofe.senate.gov::http://en.wikipedia.org/wiki/James_Inhofe::8500::41,60,226,145::
-::20039::Mike Johanns::Junior Senator (NE)<br />202-224-4224::senate::government_logos/senators/64_64/J000291.jpg::http://johanns.senate.gov::http://en.wikipedia.org/wiki/Mike_Johanns::7601::60,226,32,131::
-::20040::John Cornyn::Junior Senator (TX)<br />202-224-2934::senate::government_logos/senators/64_64/C001056.jpg::http://cornyn.senate.gov::http://en.wikipedia.org/wiki/John_Cornyn::9201::60,226,159,48::
-::20041::Mary Landrieu::Senior Senator (LA)<br />202-224-5824::senate::government_logos/senators/64_64/L000550.jpg::http://landrieu.senate.gov::http://en.wikipedia.org/wiki/Mary_Landrieu::6700::23,60,226,109::
-::20042::Bernard Sanders::Junior Senator (VT)<br />202-224-5141::senate::government_logos/senators/64_64/S000033.jpg::http://sanders.senate.gov::http://en.wikipedia.org/wiki/Bernard_Sanders::9401::165,60,226,50::
-::20043::David Vitter::Junior Senator (LA)<br />202-224-4623::senate::government_logos/senators/64_64/V000127.jpg::http://vitter.senate.gov::http://en.wikipedia.org/wiki/David_Vitter::6701::23,60,226,109::
-::20044::Frank Lautenberg::Senior Senator (NJ)<br />202-224-3224::senate::government_logos/senators/64_64/L000123.jpg::http://lautenberg.senate.gov::http://en.wikipedia.org/wiki/Frank_Lautenberg::7900::35,60,226,135::
-::20045::Chris Coons::Junior Senator (DE)<br />202-224-5042::senate::government_logos/senators/64_64/DE_2_Coons.png::http://coons.senate.gov::http://en.wikipedia.org/wiki/Christopher_Coons::5701::60,226,89,12::
-::20046::Tom Harkin::Junior Senator (IA)<br />202-224-3254::senate::government_logos/senators/64_64/H000206.jpg::http://harkin.senate.gov::http://en.wikipedia.org/wiki/Tom_Harkin::6401::60,226,20,97::
-::20047::Dan Coats::Junior Senator (IN)<br />202-224-5623::senate::government_logos/senators/64_64/IN_2_Coats.png::http://coats.senate.gov::http://en.wikipedia.org/wiki/Daniel_Coats::6301::60,226,103,19::
-::20048::Olympia Snowe::Senior Senator (ME)<br />202-224-5344::senate::government_logos/senators/64_64/S000663.jpg::http://snowe.senate.gov::http://en.wikipedia.org/wiki/Olympia_Snowe::6800::115,60,226,24::
-::20049::John Kerry::Senior Senator (MA)<br />202-224-2742::senate::government_logos/senators/64_64/K000148.jpg::http://kerry.senate.gov::http://en.wikipedia.org/wiki/John_Kerry::7000::26,60,226,111::
-::20050::James Risch::Junior Senator (ID)<br />202-224-2752::senate::government_logos/senators/64_64/ID_2_Risch.png::http://risch.senate.gov::http://en.wikipedia.org/wiki/James_Risch::6101::60,226,99,17::
-::20051::Al Franken::Junior Senator (MN)<br />202-224-5641::senate::government_logos/senators/64_64/F000457.jpg::http://franken.senate.gov::http://en.wikipedia.org/wiki/Al_Franken::7201::60,226,28,119::
-::20052::Richard Durbin::Senior Senator (IL)<br />202-224-2152::senate::government_logos/senators/64_64/D000563.jpg::http://durbin.senate.gov::http://en.wikipedia.org/wiki/Richard_Durbin::6200::60,226,101,18::
-::20053::Rob Portman::Junior Senator (OH)<br />202-224-3353::senate::government_logos/senators/64_64/OH_2_Portman.png::http://portman.senate.gov::http://en.wikipedia.org/wiki/Rob_Portman::8401::40,60,226,143::
-::20054::Robert Casey::Senior Senator (PA)<br />202-224-6324::senate::government_logos/senators/64_64/C001070.jpg::http://casey.senate.gov::http://en.wikipedia.org/wiki/Robert_Casey::8700::43,60,226,149::
-::20055::Mark Warner::Junior Senator (VA)<br />202-224-2023::senate::government_logos/senators/64_64/W000805.jpg::http://warner.senate.gov::http://en.wikipedia.org/wiki/Mark_Warner::9501::60,226,51,163::
+::20035::Tom Carper::Senior Senator (DE)<br />202-224-2441::senate::government_logos/senators/64_64/C000174.jpg::http://carper.senate.gov::http://en.wikipedia.org/wiki/Thomas_Carper::5700::12,60,89,226::
+::20036::Susan Collins::Junior Senator (ME)<br />202-224-2523::senate::government_logos/senators/64_64/C001035.jpg::http://collins.senate.gov::http://en.wikipedia.org/wiki/Susan_Collins::6801::24,60,115,226::
+::20037::John Rockefeller::Senior Senator (WV)<br />202-224-6472::senate::government_logos/senators/64_64/R000361.jpg::http://rockefeller.senate.gov::http://en.wikipedia.org/wiki/John_Rockefeller::9700::53,60,171,226::
+::20038::James Inhofe::Senior Senator (OK)<br />202-224-4721::senate::government_logos/senators/64_64/I000024.jpg::http://inhofe.senate.gov::http://en.wikipedia.org/wiki/James_Inhofe::8500::41,60,145,226::
+::20039::Mike Johanns::Junior Senator (NE)<br />202-224-4224::senate::government_logos/senators/64_64/J000291.jpg::http://johanns.senate.gov::http://en.wikipedia.org/wiki/Mike_Johanns::7601::32,60,131,226::
+::20040::John Cornyn::Junior Senator (TX)<br />202-224-2934::senate::government_logos/senators/64_64/C001056.jpg::http://cornyn.senate.gov::http://en.wikipedia.org/wiki/John_Cornyn::9201::48,60,159,226::
+::20041::Mary Landrieu::Senior Senator (LA)<br />202-224-5824::senate::government_logos/senators/64_64/L000550.jpg::http://landrieu.senate.gov::http://en.wikipedia.org/wiki/Mary_Landrieu::6700::23,60,109,226::
+::20042::Bernard Sanders::Junior Senator (VT)<br />202-224-5141::senate::government_logos/senators/64_64/S000033.jpg::http://sanders.senate.gov::http://en.wikipedia.org/wiki/Bernard_Sanders::9401::50,60,165,226::
+::20043::David Vitter::Junior Senator (LA)<br />202-224-4623::senate::government_logos/senators/64_64/V000127.jpg::http://vitter.senate.gov::http://en.wikipedia.org/wiki/David_Vitter::6701::23,60,109,226::
+::20044::Frank Lautenberg::Senior Senator (NJ)<br />202-224-3224::senate::government_logos/senators/64_64/L000123.jpg::http://lautenberg.senate.gov::http://en.wikipedia.org/wiki/Frank_Lautenberg::7900::35,60,135,226::
+::20045::Chris Coons::Junior Senator (DE)<br />202-224-5042::senate::government_logos/senators/64_64/DE_2_Coons.png::http://coons.senate.gov::http://en.wikipedia.org/wiki/Christopher_Coons::5701::12,60,89,226::
+::20046::Tom Harkin::Junior Senator (IA)<br />202-224-3254::senate::government_logos/senators/64_64/H000206.jpg::http://harkin.senate.gov::http://en.wikipedia.org/wiki/Tom_Harkin::6401::20,60,97,226::
+::20047::Dan Coats::Junior Senator (IN)<br />202-224-5623::senate::government_logos/senators/64_64/IN_2_Coats.png::http://coats.senate.gov::http://en.wikipedia.org/wiki/Daniel_Coats::6301::19,60,103,226::
+::20048::Olympia Snowe::Senior Senator (ME)<br />202-224-5344::senate::government_logos/senators/64_64/S000663.jpg::http://snowe.senate.gov::http://en.wikipedia.org/wiki/Olympia_Snowe::6800::24,60,115,226::
+::20049::John Kerry::Senior Senator (MA)<br />202-224-2742::senate::government_logos/senators/64_64/K000148.jpg::http://kerry.senate.gov::http://en.wikipedia.org/wiki/John_Kerry::7000::26,60,111,226::
+::20050::James Risch::Junior Senator (ID)<br />202-224-2752::senate::government_logos/senators/64_64/ID_2_Risch.png::http://risch.senate.gov::http://en.wikipedia.org/wiki/James_Risch::6101::17,60,99,226::
+::20051::Al Franken::Junior Senator (MN)<br />202-224-5641::senate::government_logos/senators/64_64/F000457.jpg::http://franken.senate.gov::http://en.wikipedia.org/wiki/Al_Franken::7201::28,60,119,226::
+::20052::Richard Durbin::Senior Senator (IL)<br />202-224-2152::senate::government_logos/senators/64_64/D000563.jpg::http://durbin.senate.gov::http://en.wikipedia.org/wiki/Richard_Durbin::6200::18,60,101,226::
+::20053::Rob Portman::Junior Senator (OH)<br />202-224-3353::senate::government_logos/senators/64_64/OH_2_Portman.png::http://portman.senate.gov::http://en.wikipedia.org/wiki/Rob_Portman::8401::40,60,143,226::
+::20054::Robert Casey::Senior Senator (PA)<br />202-224-6324::senate::government_logos/senators/64_64/C001070.jpg::http://casey.senate.gov::http://en.wikipedia.org/wiki/Robert_Casey::8700::43,60,149,226::
+::20055::Mark Warner::Junior Senator (VA)<br />202-224-2023::senate::government_logos/senators/64_64/W000805.jpg::http://warner.senate.gov::http://en.wikipedia.org/wiki/Mark_Warner::9501::51,60,163,226::
 ::20056::Roger Wicker::Junior Senator (MS)<br />202-224-6253::senate::government_logos/senators/64_64/W000437.jpg::http://wicker.senate.gov::http://en.wikipedia.org/wiki/Roger_Wicker::7301::29,60,123,226::
-::20057::Pat Toomey::Junior Senator (PA)<br />202-224-4254::senate::government_logos/senators/64_64/PA_2_Toomey.png::http://toomey.senate.gov::http://en.wikipedia.org/wiki/Patrick_Toomey::8701::43,60,226,149::
-::20058::Debbie Stabenow::Junior Senator (MI)<br />202-224-4822::senate::government_logos/senators/64_64/S000770.jpg::http://stabenow.senate.gov::http://en.wikipedia.org/wiki/Debbie_Stabenow::7101::60,117,226,27::
-::20059::Benjamin Cardin::Junior Senator (MD)<br />202-224-4524::senate::government_logos/senators/64_64/C000141.jpg::http://cardin.senate.gov::http://en.wikipedia.org/wiki/Benjamin_Cardin::6901::60,226,25,113::
-::20060::Joe Manchin::Junior Senator (WV)<br />202-224-3954::senate::government_logos/senators/64_64/WV_2_Manchin.png::http://manchin.senate.gov::http://en.wikipedia.org/wiki/Joe_Manchin::9701::53,60,226,171::
-::20061::Patty Murray::Senior Senator (WA)<br />202-224-2621::senate::government_logos/senators/64_64/M001111.jpg::http://murray.senate.gov::http://en.wikipedia.org/wiki/Patty_Murray::9600::60,226,52,167::
-::20062::Bob Corker::Junior Senator (TN)<br />202-224-3344::senate::government_logos/senators/64_64/C001071.jpg::http://corker.senate.gov::http://en.wikipedia.org/wiki/Bob_Corker::9101::60,226,47,157::
-::20063::Ben Nelson::Senior Senator (NE)<br />202-224-6551::senate::government_logos/senators/64_64/N000180.jpg::http://bennelson.senate.gov::http://en.wikipedia.org/wiki/Ben_Nelson::7600::60,226,32,131::
-::20064::John Barrasso::Junior Senator (WY)<br />202-224-6441::senate::government_logos/senators/64_64/B001261.jpg::http://barrasso.senate.gov::http://en.wikipedia.org/wiki/John_Barrasso::9901::173,60,226,55::
-::20065::Lamar Alexander::Senior Senator (TN)<br />202-224-4944::senate::government_logos/senators/64_64/A000360.jpg::http://alexander.senate.gov::http://en.wikipedia.org/wiki/Lamar_Alexander::9100::60,226,47,157::
-::20066::John Hoeven::Junior Senator (ND)<br />202-224-2551::senate::government_logos/senators/64_64/ND_2_Hoeven.png::http://hoeven.senate.gov::http://en.wikipedia.org/wiki/John_Hoeven::8301::129,60,226,39::
+::20057::Pat Toomey::Junior Senator (PA)<br />202-224-4254::senate::government_logos/senators/64_64/PA_2_Toomey.png::http://toomey.senate.gov::http://en.wikipedia.org/wiki/Patrick_Toomey::8701::43,60,149,226::
+::20058::Debbie Stabenow::Junior Senator (MI)<br />202-224-4822::senate::government_logos/senators/64_64/S000770.jpg::http://stabenow.senate.gov::http://en.wikipedia.org/wiki/Debbie_Stabenow::7101::27,60,117,226::
+::20059::Benjamin Cardin::Junior Senator (MD)<br />202-224-4524::senate::government_logos/senators/64_64/C000141.jpg::http://cardin.senate.gov::http://en.wikipedia.org/wiki/Benjamin_Cardin::6901::25,60,113,226::
+::20060::Joe Manchin::Junior Senator (WV)<br />202-224-3954::senate::government_logos/senators/64_64/WV_2_Manchin.png::http://manchin.senate.gov::http://en.wikipedia.org/wiki/Joe_Manchin::9701::53,60,171,226::
+::20061::Patty Murray::Senior Senator (WA)<br />202-224-2621::senate::government_logos/senators/64_64/M001111.jpg::http://murray.senate.gov::http://en.wikipedia.org/wiki/Patty_Murray::9600::52,60,167,226::
+::20062::Bob Corker::Junior Senator (TN)<br />202-224-3344::senate::government_logos/senators/64_64/C001071.jpg::http://corker.senate.gov::http://en.wikipedia.org/wiki/Bob_Corker::9101::47,60,157,226::
+::20063::Ben Nelson::Senior Senator (NE)<br />202-224-6551::senate::government_logos/senators/64_64/N000180.jpg::http://bennelson.senate.gov::http://en.wikipedia.org/wiki/Ben_Nelson::7600::32,60,131,226::
+::20064::John Barrasso::Junior Senator (WY)<br />202-224-6441::senate::government_logos/senators/64_64/B001261.jpg::http://barrasso.senate.gov::http://en.wikipedia.org/wiki/John_Barrasso::9901::55,60,173,226::
+::20065::Lamar Alexander::Senior Senator (TN)<br />202-224-4944::senate::government_logos/senators/64_64/A000360.jpg::http://alexander.senate.gov::http://en.wikipedia.org/wiki/Lamar_Alexander::9100::47,60,157,226::
+::20066::John Hoeven::Junior Senator (ND)<br />202-224-2551::senate::government_logos/senators/64_64/ND_2_Hoeven.png::http://hoeven.senate.gov::http://en.wikipedia.org/wiki/John_Hoeven::8301::39,60,129,226::
 ::20067::Mark Kirk::Junior Senator (IL)<br />202-224-2854::senate::government_logos/senators/64_64/IL_2_Kirk.png::http://kirk.senate.gov::http://en.wikipedia.org/wiki/Mark_Kirk::6201::18,60,101,226::
 ::20068::Claire McCaskill::Senior Senator (MO)<br />202-224-6154::senate::government_logos/senators/64_64/M001170.jpg::http://mccaskill.senate.gov::http://en.wikipedia.org/wiki/Claire_McCaskill::7400::30,60,121,226::
 ::20069::Dan Inouye::Senior Senator (HI)<br />202-224-3934::senate::government_logos/senators/64_64/I000025.jpg::http://inouye.senate.gov::http://en.wikipedia.org/wiki/Daniel_Inouye::6000::16,60,95,226::
@@ -764,7 +784,7 @@
 ::30154::Scott Tipton::Representative 3 (CO)<br />202-225-4761::house::government_logos/representatives/64_64/CO03_Tipton.png::http://tipton.house.gov::http://en.wikipedia.org/wiki/Scott_Tipton::5504::10,59,82,226::
 ::30155::Adrian Smith::Representative 3 (NE)<br />202-225-6435::house::government_logos/representatives/64_64/S001172.jpg::http://smith.house.gov::http://en.wikipedia.org/wiki/Adrian_Smith::7604::32,59,130,226::
 ::30156::John Duncan::Representative 2 (TN)<br />202-225-5435::house::government_logos/representatives/64_64/D000533.jpg::http://duncan.house.gov::http://en.wikipedia.org/wiki/John_Duncan::9103::47,59,156,226::
-::30157::Ron Paul::2012 Presidential Candidate<br />Representative 14 (TX)::house-202-225-2831::government_logos/representatives/64_64/P000583.jpg::http://paul.house.gov::http://en.wikipedia.org/wiki/Ron_Paul::81::224,226,48,158,59::
+::30157::Ron Paul::2012 Presidential Candidate<br />Representative 14 (TX)::house-202-225-2831::government_logos/representatives/64_64/P000583.jpg::http://paul.house.gov::http://en.wikipedia.org/wiki/Ron_Paul::81::48,59,158,224,226::
 ::30158::Mike McIntyre::Representative 7 (NC)<br />202-225-2731::house::government_logos/representatives/64_64/M000485.jpg::http://mcintyre.house.gov::http://en.wikipedia.org/wiki/Mike_McIntyre::8208::38,59,126,226::
 ::30159::Sue Myrick::Representative 9 (NC)<br />202-225-1976::house::government_logos/representatives/64_64/M001134.jpg::http://myrick.house.gov::http://en.wikipedia.org/wiki/Sue_Myrick::8210::38,59,126,226::
 ::30160::Raul Grijalva::Representative 7 (AZ)<br />202-225-2435::house::government_logos/representatives/64_64/G000551.jpg::http://grijalva.house.gov::http://en.wikipedia.org/wiki/Raul_Grijalva::5208::7,59,78,226::
@@ -1045,22 +1065,22 @@
 ::30435::Bob Gibbs::Representative 18 (OH)<br />202-225-6265::house::government_logos/representatives/64_64/OH18_Gibbs.png::http://gibbs.house.gov::http://en.wikipedia.org/wiki/Bob_Gibbs::8419::40,59,142,226::
 ::40000::McDonald's::::fortune500::corporate_logos/128_128/McDonalds.png::http://www.mcdonalds.com::http://en.wikipedia.org/wiki/McDonald's::999::1,56,188,196,258::
 ::40001::Starwood Hotels & Resorts::::fortune500::corporate_logos/128_128/StarwoodHotels.png::http://www.starwoodhotels.com::http://en.wikipedia.org/wiki/Starwood_Hotels_&_Resorts::1000::1,56::
-::40002::CVS Caremark::::fortune500::corporate_logos/128_128/CVS_Caremark.png::http://www.caremark.com::http://en.wikipedia.org/wiki/CVS_Caremark::1000::1,56::
+::40002::CVS Caremark::::fortune500::corporate_logos/128_128/CVS_Caremark.png::http://www.caremark.com::http://en.wikipedia.org/wiki/CVS_Caremark::1000::1,56,205::
 ::40003::CenterPoint Energy::::fortune500::corporate_logos/128_128/CenterPoint_Energy.png::http://www.centerpointenergy.com::http://en.wikipedia.org/wiki/CenterPoint_Energy::1000::1,56,199::
 ::40004::Flowserve::::fortune500::corporate_logos/128_128/Flowserve.png::http://www.flowserve.com::http://en.wikipedia.org/wiki/Flowserve::1000::1,56::
 ::40005::US Airways Group::::fortune500::corporate_logos/128_128/US_Airways.png::http://www.usairways.com::http://en.wikipedia.org/wiki/US_Airways_Group::1000::1,56::
-::40006::Toys 'R' Us::::fortune500::corporate_logos/128_128/ToysRUs.png::http://www.toysrusinc.com::http://en.wikipedia.org/wiki/Toys_'R'_Us::1000::1,56::
+::40006::Toys 'R' Us::::fortune500::corporate_logos/128_128/ToysRUs.png::http://www.toysrusinc.com::http://en.wikipedia.org/wiki/Toys_'R'_Us::1000::1,56,205::
 ::40007::Public Service Enterprise Group::::fortune500::corporate_logos/128_128/PSEG.png::http://www.pseg.com::http://en.wikipedia.org/wiki/Public_Service_Enterprise_Group::1000::1,56,199::
 ::40008::Polo Ralph Lauren::::fortune500::corporate_logos/128_128/RalphLauren.png::http://www.ralphlauren.com::http://en.wikipedia.org/wiki/Polo_Ralph_Lauren::1000::1,56::
 ::40009::Lockheed Martin::::fortune500::corporate_logos/128_128/LockheedMartin.png::http://www.lockheedmartin.com::http://en.wikipedia.org/wiki/Lockheed_Martin::1000::1,56::
 ::40010::Alliant Techsystems::::fortune500::corporate_logos/128_128/ATK.png::http://www.atk.com::http://en.wikipedia.org/wiki/Alliant_Techsystems::1000::1,56::
 ::40011::MetLife::::fortune500::corporate_logos/128_128/MetLife.png::http://www.metlife.com::http://en.wikipedia.org/wiki/MetLife::1000::1,56::
 ::40012::DirecTV Group::::fortune500::corporate_logos/128_128/DirectTV.png::http://www.directv.com::http://en.wikipedia.org/wiki/The_DirecTV_Group::1000::1,56::
-::40013::Dollar Tree::::fortune500::corporate_logos/128_128/DollarTree.png::http://www.dollartree.com::http://en.wikipedia.org/wiki/Dollar_Tree::1000::1,56::
+::40013::Dollar Tree::::fortune500::corporate_logos/128_128/DollarTree.png::http://www.dollartree.com::http://en.wikipedia.org/wiki/Dollar_Tree::1000::1,56,205::
 ::40014::Exxon Mobil::::fortune500::corporate_logos/128_128/ExxonMobil.png::http://www.exxonmobil.com::http://en.wikipedia.org/wiki/ExxonMobil::1000::1,56,199::
 ::40015::Centene::::fortune500::corporate_logos/128_128/Centene.png::http://www.centene.com/::http://en.wikipedia.org/wiki/Centene::1000::1,56::
 ::40016::Xerox::::fortune500::corporate_logos/128_128/Xerox.png::http://www.xerox.com::http://en.wikipedia.org/wiki/Xerox::1000::1,56::
-::40017::Kohl's::::fortune500::corporate_logos/128_128/Kohls.png::http://www.kohls.com::http://en.wikipedia.org/wiki/Kohl's::1000::1,56::
+::40017::Kohl's::::fortune500::corporate_logos/128_128/Kohls.png::http://www.kohls.com::http://en.wikipedia.org/wiki/Kohl's::1000::1,56,205::
 ::40018::Host Hotels & Resorts::::fortune500::corporate_logos/128_128/HostHotels.png::http://www.hosthotels.com::http://en.wikipedia.org/wiki/Host_Hotels_&_Resorts::1000::1,56::
 ::40019::Texas Instruments::::fortune500::corporate_logos/128_128/TI.png::http://www.ti.com::http://en.wikipedia.org/wiki/Texas_Instruments::1000::1,56,198::
 ::40020::Archer Daniels Midland::::fortune500::corporate_logos/128_128/ADM.png::http://www.adm.com::http://en.wikipedia.org/wiki/Archer_Daniels_Midland::1000::1,56::
@@ -1072,14 +1092,14 @@
 ::40026::Harrah's Entertainment::::fortune500::corporate_logos/128_128/Caesars.png::http://www.ceasars.com::http://en.wikipedia.org/wiki/Harrah's_Entertainment::1000::1,56::
 ::40027::ONEOK::::fortune500::corporate_logos/128_128/ONEOK.png::http://www.oneok.com::http://en.wikipedia.org/wiki/ONEOK::1000::1,56::
 ::40028::Exelon::::fortune500::corporate_logos/128_128/Exelon.png::http://www.exeloncorp.com::http://en.wikipedia.org/wiki/Exelon::1000::1,56,199::
-::40029::AutoZone::::fortune500::corporate_logos/128_128/AutoZone.png::http://www.autozone.com::http://en.wikipedia.org/wiki/AutoZone::1000::1,56,200::
+::40029::AutoZone::::fortune500::corporate_logos/128_128/AutoZone.png::http://www.autozone.com::http://en.wikipedia.org/wiki/AutoZone::1000::1,56,200,205::
 ::40030::Airgas::::fortune500::corporate_logos/128_128/Airgas.png::http://www.airgas.com::http://en.wikipedia.org/wiki/Airgas::1000::1,56::
 ::40031::TJX::::fortune500::corporate_logos/128_128/TJX.png::http://www.tjx.com::http://en.wikipedia.org/wiki/TJX::1000::1,56::
 ::40032::DaVita::::fortune500::corporate_logos/128_128/DaVita.png::http://www.davita.com::http://en.wikipedia.org/wiki/DaVita::1000::1,56::
 ::40033::Dole Food::::fortune500::corporate_logos/128_128/Dole.png::http://www.dole.com::http://en.wikipedia.org/wiki/Dole_Food::1000::1,56::
 ::40034::Bristol-Myers Squibb::::fortune500::corporate_logos/128_128/Bms.png::http://www.bms.com::http://en.wikipedia.org/wiki/Bristol-Myers_Squibb::1000::1,56::
 ::40035::Ford Motor Company::::fortune500::corporate_logos/128_128/FordMotor.png::http://www.ford.com::http://en.wikipedia.org/wiki/Ford_Motor_Company::1000::1,56,200::
-::40036::CarMax::::fortune500::corporate_logos/128_128/CarMax.png::http://www.carmax.com::http://en.wikipedia.org/wiki/CarMax::1000::1,56,200::
+::40036::CarMax::::fortune500::corporate_logos/128_128/CarMax.png::http://www.carmax.com::http://en.wikipedia.org/wiki/CarMax::1000::1,56,200,205::
 ::40037::Northeast Utilities::::fortune500::corporate_logos/128_128/NU.png::http://www.nu.com::http://en.wikipedia.org/wiki/Northeast_Utilities::1000::1,56,199::
 ::40038::Halliburton::::fortune500::corporate_logos/128_128/Halliburton.png::http://www.halliburton.com::http://en.wikipedia.org/wiki/Halliburton::1000::1,56::
 ::40039::Virgin Media::::fortune500::corporate_logos/128_128/Virgin_Media.png::http://www.virginmedia.com::http://en.wikipedia.org/wiki/Virgin_Media::1000::1,56::
@@ -1087,7 +1107,7 @@
 ::40041::Yum Brands::::fortune500::corporate_logos/128_128/Yum.png::http://www.yum.com::http://en.wikipedia.org/wiki/Yum_Brands::999::1,56,209::
 ::40042::Sara Lee::::fortune500::corporate_logos/128_128/SaraLee.png::http://www.saralee.com::http://en.wikipedia.org/wiki/Sara_Lee_Corporation::1000::1,56::
 ::40043::Supervalu::::fortune500::corporate_logos/128_128/Supervalu.png::http://www.supervalu.com::http://en.wikipedia.org/wiki/SuperValu_(United_States)::1000::1,56::
-::40044::RadioShack::::fortune500::corporate_logos/128_128/RadioShack.png::http://www.radioshack.com::http://en.wikipedia.org/wiki/RadioShack::1000::1,56::
+::40044::RadioShack::::fortune500::corporate_logos/128_128/RadioShack.png::http://www.radioshack.com::http://en.wikipedia.org/wiki/RadioShack::1000::1,56,205::
 ::40045::Cisco Systems::::fortune500::corporate_logos/128_128/Cisco.png::http://www.cisco.com::http://en.wikipedia.org/wiki/Cisco::1000::1,56,198::
 ::40046::Discover Financial Services::::fortune500::corporate_logos/128_128/Discover.png::http://www.discover.com::http://en.wikipedia.org/wiki/Discover_Financial_Services::1000::1,56::
 ::40047::Avon Products::::fortune500::corporate_logos/128_128/Avon.png::http://www.avoncompany.com::http://en.wikipedia.org/wiki/Avon_Products::1000::1,56::
@@ -1105,7 +1125,7 @@
 ::40059::Genworth Financial::::fortune500::corporate_logos/128_128/GenworthFinancial.png::http://www.genworth.com::http://en.wikipedia.org/wiki/Genworth_Financial::1000::1,56::
 ::40060::WellCare Health Plans::::fortune500::corporate_logos/128_128/WellCare.png::http://www.wellcare.com::http://en.wikipedia.org/wiki/WellCare_Health_Plans::1000::1,56::
 ::40061::Northrop Grumman::::fortune500::corporate_logos/128_128/Northrop_Grumman.png::http://www.northropgrumman.com::http://en.wikipedia.org/wiki/Northrop_Grumman::1000::1,56::
-::40062::PetSmart::::fortune500::corporate_logos/128_128/PetSmart.png::http://www.petsmart.com::http://en.wikipedia.org/wiki/PetSmart::1000::1,56::
+::40062::PetSmart::::fortune500::corporate_logos/128_128/PetSmart.png::http://www.petsmart.com::http://en.wikipedia.org/wiki/PetSmart::1000::1,56,205::
 ::40063::Symantec::::fortune500::corporate_logos/128_128/Symantec.png::http://www.symantec.com::http://en.wikipedia.org/wiki/Symantec::1000::1,56,198::
 ::40064::Spectra Energy::::fortune500::corporate_logos/128_128/SpectraEnergy.png::http://www.spectraenergy.com::http://en.wikipedia.org/wiki/Spectra_Energy::1000::1,56,199::
 ::40065::United Technologies Corporation::::fortune500::corporate_logos/128_128/UnitedTechnologies.png::http://www.unitedtechnologies.com::http://en.wikipedia.org/wiki/United_Technologies_Corporation::1000::1,56::
@@ -1120,8 +1140,8 @@
 ::40074::Johnson & Johnson::::fortune500::corporate_logos/128_128/JohnsonJohnson.png::http://www.jnj.com::http://en.wikipedia.org/wiki/Johnson&Johnson::1000::1,56,206,207::
 ::40075::Kraft Foods::::fortune500::corporate_logos/128_128/KraftFoods.png::http://www.kraftfoodscompany.com::http://en.wikipedia.org/wiki/Kraft_Foods::1000::1,56,207,208::
 ::40076::Bed Bath & Beyond::::fortune500::corporate_logos/128_128/BedBathBeyond.png::http://www.bedbathandbeyond.com::http://en.wikipedia.org/wiki/Bed_Bath_&_Beyond::1000::1,56,205::
-::40077::The Walt Disney Company::::fortune500::corporate_logos/128_128/WaltDisney.png::http://www.disney.com::http://en.wikipedia.org/wiki/The_Walt_Disney_Company::1000::1,56::
-::40078::Estee Lauder::::fortune500::corporate_logos/128_128/Estee_Lauder.png::http://www.esteelauder.com::http://en.wikipedia.org/wiki/Estée_Lauder_Companies::1000::56,207,206,205,1::
+::40077::The Walt Disney Company::::fortune500::corporate_logos/128_128/WaltDisney.png::http://www.disney.com::http://en.wikipedia.org/wiki/The_Walt_Disney_Company::1000::1,56,205::
+::40078::Estee Lauder::::fortune500::corporate_logos/128_128/Estee_Lauder.png::http://www.esteelauder.com::http://en.wikipedia.org/wiki/Estée_Lauder_Companies::1000::1,56,205,206,207::
 ::40079::Pitney Bowes::::fortune500::corporate_logos/128_128/PitneyBowes.png::http://www.pb.com::http://en.wikipedia.org/wiki/Pitney_Bowes::1000::1,56::
 ::40080::Guardian Life Ins. Co. of America::::fortune500::corporate_logos/128_128/GuardianLife.png::http://www.guardianlife.com::http://en.wikipedia.org/wiki/Guardian_Life_Insurance_Company_of_America::1000::1,56,203::
 ::40081::Henry Schein::::fortune500::corporate_logos/128_128/HenrySchein.png::http://www.henryschein.com::http://en.wikipedia.org/wiki/Henry_Schein::1000::1,56::
@@ -1132,14 +1152,14 @@
 ::40086::Nucor::::fortune500::corporate_logos/128_128/Nucor.png::http://www.nucor.com::http://en.wikipedia.org/wiki/Nucor::1000::1,56::
 ::40087::Lear::::fortune500::corporate_logos/128_128/Lear.png::http://www.lear.com::http://en.wikipedia.org/wiki/Lear::1000::1,56::
 ::40088::Oracle::::fortune500::corporate_logos/128_128/Oracle.png::http://www.oracle.com::http://en.wikipedia.org/wiki/Oracle_Corporation::1000::1,56,198::
-::40089::Coca-Cola Enterprises::::fortune500::corporate_logos/128_128/CocaColaEnterprises.png::http://www.cokecce.com::http://en.wikipedia.org/wiki/Coca-Cola_Enterprises::1000::56,207,208,205,1::
+::40089::Coca-Cola Enterprises::::fortune500::corporate_logos/128_128/CocaColaEnterprises.png::http://www.cokecce.com::http://en.wikipedia.org/wiki/Coca-Cola_Enterprises::1000::1,56,205,207,208::
 ::40090::Continental Airlines::::fortune500::corporate_logos/128_128/Continental_Airlines.png::http://www.contenental.com::http://en.wikipedia.org/wiki/Continental_Airlines::1000::1,56::
 ::40091::Rockwell Collins::::fortune500::corporate_logos/128_128/RockwellCollins.png::http://www.rockwellcollins.com::http://en.wikipedia.org/wiki/Rockwell_Collins::1000::1,56::
 ::40092::Washington Post::::fortune500::corporate_logos/128_128/WPO.png::http://www.washpostco.com::http://en.wikipedia.org/wiki/Washington_Post_Company::1000::1,56::
 ::40093::Aflac::::fortune500::corporate_logos/128_128/Aflac.png::http://www.aflac.com::http://en.wikipedia.org/wiki/Aflac::1000::1,56::
 ::40094::Verizon Communications::::fortune500::corporate_logos/128_128/Verizon.png::http://www.verizon.com::http://en.wikipedia.org/wiki/Verizon::1000::1,56,198::
 ::40095::Dana Holding::::fortune500::corporate_logos/128_128/Dana.png::http://www.dana.com::http://en.wikipedia.org/wiki/Dana_Corporation::1000::1,56::
-::40096::Pepsi Bottling::::fortune500::corporate_logos/128_128/PepsiBottling.png::http://www.pbg.com::http://en.wikipedia.org/wiki/Pepsi_Bottling::1000::56,207,205,208,1::
+::40096::Pepsi Bottling::::fortune500::corporate_logos/128_128/PepsiBottling.png::http://www.pbg.com::http://en.wikipedia.org/wiki/Pepsi_Bottling::1000::1,56,205,207,208::
 ::40097::Kinder Morgan::::fortune500::corporate_logos/128_128/KinderMorgan.png::http://www.kindermorgan.com::http://en.wikipedia.org/wiki/Kinder_Morgan::1000::1,56::
 ::40098::MGM Mirage::::fortune500::corporate_logos/128_128/MGM_Mirage.png::http://www.mgmresorts.com::http://en.wikipedia.org/wiki/MGM_Mirage::1000::1,56::
 ::40099::International Business Machines::::fortune500::corporate_logos/128_128/IBM.png::http://www.ibm.com::http://en.wikipedia.org/wiki/IBM::1000::1,56,198::
@@ -1161,8 +1181,8 @@
 ::40115::Sysco::::fortune500::corporate_logos/128_128/Sysco.png::http://www.sysco.com::http://en.wikipedia.org/wiki/sysco::1000::1,56,207,208::
 ::40116::Kelly Services::::fortune500::corporate_logos/128_128/Kelly.png::http://www.kellyservices.com::http://en.wikipedia.org/wiki/Kelly_Services::1000::1,56::
 ::40117::Eli Lilly::::fortune500::corporate_logos/128_128/EliLilly.png::http://www.lilly.com::http://en.wikipedia.org/wiki/Eli_Lilly_and_Company::1000::1,56::
-::40118::Amazon.com::::fortune500::corporate_logos/128_128/Amazon.com.png::http://www.amazon.com::http://en.wikipedia.org/wiki/Amazon.com::1000::56,207,205,198,1::
-::40119::AT&T::::fortune500::corporate_logos/128_128/ATT.png::http://www.att.com::http://en.wikipedia.org/wiki/AT&T::1000::1,56,198::
+::40118::Amazon.com::::fortune500::corporate_logos/128_128/Amazon.com.png::http://www.amazon.com::http://en.wikipedia.org/wiki/Amazon.com::1000::1,56,198,205,207::
+::40119::AT&T::::fortune500::corporate_logos/128_128/ATT.png::http://www.att.com::http://en.wikipedia.org/wiki/AT&T::1000::1,56,198,205::
 ::40120::Rite Aid::::fortune500::corporate_logos/128_128/RiteAid.png::http://www.riteaid.com::http://en.wikipedia.org/wiki/Rite_Aid::1000::1,56::
 ::40121::Hartford Financial Services::::fortune500::corporate_logos/128_128/The_Hartford.png::http://www.thehartford.com::http://en.wikipedia.org/wiki/The_Hartford::1000::1,56,202::
 ::40122::Dell::::fortune500::corporate_logos/128_128/Dell.png::http://www.dell.com::http://en.wikipedia.org/wiki/Dell::1000::1,56,198::
@@ -1199,7 +1219,7 @@
 ::40153::Abbott Laboratories::::fortune500::corporate_logos/128_128/AbbottLaboratories.png::http://www.abbott.com::http://en.wikipedia.org/wiki/Abbott_Laboratories::1000::1,56::
 ::40154::Emerson Electric::::fortune500::corporate_logos/128_128/Emerson.png::http://www.emerson.com::http://en.wikipedia.org/wiki/Emerson_Electric::1000::1,56,199::
 ::40155::Huntsman::::fortune500::corporate_logos/128_128/Huntsman.png::http://www.huntsman.com::http://en.wikipedia.org/wiki/Huntsman_Corporation::1000::1,56::
-::40156::OfficeMax::::fortune500::corporate_logos/128_128/OfficeMax.png::http://www.officemax.com::http://en.wikipedia.org/wiki/OfficeMax::1000::1,56::
+::40156::OfficeMax::::fortune500::corporate_logos/128_128/OfficeMax.png::http://www.officemax.com::http://en.wikipedia.org/wiki/OfficeMax::1000::1,56,205::
 ::40157::Live Nation Entertainment::::fortune500::corporate_logos/128_128/LiveNation.png::http://www.livenation.com::http://en.wikipedia.org/wiki/Live_Nation_Entertainment::1000::1,56::
 ::40158::Community Health Systems::::fortune500::corporate_logos/128_128/Community_Health_Systems.png::http://www.chs.net::http://en.wikipedia.org/wiki/Community_Health_Systems::1000::1,56::
 ::40159::Goodrich::::fortune500::corporate_logos/128_128/Goodrich.png::http://www.goodrich.com::http://en.wikipedia.org/wiki/Goodrich_Corporation::1000::1,56::
@@ -1232,7 +1252,7 @@
 ::40186::Graybar Electric::::fortune500::corporate_logos/128_128/Graybar.png::http://www.graybar.com::http://en.wikipedia.org/wiki/Graybar_Electric::1000::1,56,198,205::
 ::40187::Deere::::fortune500::corporate_logos/128_128/Deere.png::http://www.deere.com::http://en.wikipedia.org/wiki/Deere::1000::1,56,205,208::
 ::40188::Family Dollar Stores::::fortune500::corporate_logos/128_128/FamilyDollar.png::http://www.familydollar.com::http://en.wikipedia.org/wiki/Family_Dollar_Stores::1000::1,56,205,207::
-::40189::Procter & Gamble::::fortune500::corporate_logos/128_128/ProcterGamble.png::http://www.pg.com::http://en.wikipedia.org/wiki/Procter&Gamble::1000::56,207,208,206,1::
+::40189::Procter & Gamble::::fortune500::corporate_logos/128_128/ProcterGamble.png::http://www.pg.com::http://en.wikipedia.org/wiki/Procter&Gamble::1000::1,56,206,207,208::
 ::40190::Owens & Minor::::fortune500::corporate_logos/128_128/Owens_Minor.png::http://www.owens-minor.com::http://en.wikipedia.org/wiki/Owens_&_Minor::1000::1,56::
 ::40191::Publix Super Markets::::fortune500::corporate_logos/128_128/Publix.png::http://www.publix.com::http://en.wikipedia.org/wiki/Publix_Super_Markets::1000::1,56,207,208::
 ::40192::Domtar::::fortune500::corporate_logos/128_128/Domtar.png::http://www.domtar.com::http://en.wikipedia.org/wiki/Domtar::1000::1,56::
@@ -1291,7 +1311,7 @@
 ::40245::Wesco International::::fortune500::corporate_logos/128_128/Wesco.png::http://www.wesco.com::http://en.wikipedia.org/wiki/Wesco_International::1000::1,56::
 ::40246::Consolidated Edison::::fortune500::corporate_logos/128_128/ConEd.png::http://www.coned.com::http://en.wikipedia.org/wiki/Consolidated_Edison::1000::1,56::
 ::40247::Nationwide::::fortune500::corporate_logos/128_128/Nationwide.png::http://www.nationwide.com::http://en.wikipedia.org/wiki/Nationwide_Mutual_Insurance_Company::1000::1,56::
-::40248::Kroger::::fortune500::corporate_logos/128_128/Kroger.png::http://www.kroger.com::http://en.wikipedia.org/wiki/Kroger::1000::56,207,205,208,1::
+::40248::Kroger::::fortune500::corporate_logos/128_128/Kroger.png::http://www.kroger.com::http://en.wikipedia.org/wiki/Kroger::1000::1,56,205,207,208::
 ::40249::Bank of New York Mellon Corp.::::fortune500::corporate_logos/128_128/Bank_of_New_York_Mellon.png::http://www.bnymellon.com::http://en.wikipedia.org/wiki/Bank_of_New_York_Mellon_Corp.::1000::1,56::
 ::40250::Affiliated Computer Services::::fortune500::corporate_logos/128_128/ACS.png::http://www.acs-inc.com::http://en.wikipedia.org/wiki/Affiliated_Computer_Services::1000::1,56::
 ::40251::St. Jude Medical::::fortune500::corporate_logos/128_128/SJM.png::http://www.sjm.com::http://en.wikipedia.org/wiki/St._Jude_Medical::1000::1,56::
@@ -1322,7 +1342,7 @@
 ::40276::Biogen Idec::::fortune500::corporate_logos/128_128/BiogenIdec.png::http://www.biogenidec.com::http://en.wikipedia.org/wiki/Biogen_Idec::1000::1,56::
 ::40277::Franklin Resources::::fortune500::corporate_logos/128_128/Franklin.png::http://www.franklintempleton.com::http://en.wikipedia.org/wiki/Franklin_Resources::1000::1,56,202::
 ::40278::PPL::::fortune500::corporate_logos/128_128/PPL.png::http://www.pplweb.com::http://en.wikipedia.org/wiki/PPL_(utility)::1000::1,56::
-::40279::Dick's Sporting Goods::::fortune500::corporate_logos/128_128/DicksSportingGoods.png::http://www.dickssportinggoods.com::http://en.wikipedia.org/wiki/Dick's_Sporting_Goods::1000::1,56::
+::40279::Dick's Sporting Goods::::fortune500::corporate_logos/128_128/DicksSportingGoods.png::http://www.dickssportinggoods.com::http://en.wikipedia.org/wiki/Dick's_Sporting_Goods::1000::1,56,205::
 ::40280::Tenet Healthcare::::fortune500::corporate_logos/128_128/Tenet_Healthcare.png::http://www.tenethealth.com::http://en.wikipedia.org/wiki/Tenet_Healthcare::1000::1,56,204::
 ::40281::Unisys::::fortune500::corporate_logos/128_128/Unisys.png::http://www.unisys.com::http://en.wikipedia.org/wiki/Unisys::1000::1,56::
 ::40282::ConAgra Foods::::fortune500::corporate_logos/128_128/ConAgra.png::http://www.conagrafoods.com::http://en.wikipedia.org/wiki/ConAgra_Foods::1000::1,56::
@@ -1379,14 +1399,14 @@
 ::40333::Cameron International::::fortune500::corporate_logos/128_128/Cameron.png::http://www.c-a-m.com::http://en.wikipedia.org/wiki/Cameron_International::1000::1,56::
 ::40334::Textron::::fortune500::corporate_logos/128_128/Textron.png::http://www.textron.com::http://en.wikipedia.org/wiki/Textron::1000::1,56::
 ::40335::Travelers Cos.::::fortune500::corporate_logos/128_128/Travelers.png::http://www.travelers.com::http://en.wikipedia.org/wiki/Travelers_Cos.::1000::1,56,203::
-::40336::Target Corporation::::fortune500::corporate_logos/128_128/Target.png::http://www.target.com::http://en.wikipedia.org/wiki/Target_Corporation::1000::1,56::
+::40336::Target Corporation::::fortune500::corporate_logos/128_128/Target.png::http://www.target.com::http://en.wikipedia.org/wiki/Target_Corporation::1000::1,56,205::
 ::40337::Humana::::fortune500::corporate_logos/128_128/Humana.png::http://www.humana.com::http://en.wikipedia.org/wiki/Humana::1000::1,56,204::
 ::40338::Mosaic::::fortune500::corporate_logos/128_128/Mosaic.png::http://www.mosaicco.com::http://en.wikipedia.org/wiki/The_Mosaic_Company::1000::1,56::
-::40339::Dillard's::::fortune500::corporate_logos/128_128/Dillards.png::http://www.dillards.com::http://en.wikipedia.org/wiki/Dillard's::1000::1,56::
+::40339::Dillard's::::fortune500::corporate_logos/128_128/Dillards.png::http://www.dillards.com::http://en.wikipedia.org/wiki/Dillard's::1000::1,56,205::
 ::40340::Eaton::::fortune500::corporate_logos/128_128/Eaton.png::http://www.eaton.com::http://en.wikipedia.org/wiki/Eaton_Corporation::1000::1,56,199::
 ::40341::Hess::::fortune500::corporate_logos/128_128/Hess.png::http://www.hess.com::http://en.wikipedia.org/wiki/Hess_Corporation::1000::1,56::
 ::40342::American International Group::::fortune500::corporate_logos/128_128/AIG.png::http://www.aig.com::http://en.wikipedia.org/wiki/American_International_Group::1000::1,56,202,203::
-::40343::Great Atlantic & Pacific Tea::::fortune500::corporate_logos/128_128/AP.png::http://www.aptea.com::http://en.wikipedia.org/wiki/The_Great_Atlantic_&_Pacific_Tea_Company::1000::56,207,208,205,1::
+::40343::Great Atlantic & Pacific Tea::::fortune500::corporate_logos/128_128/AP.png::http://www.aptea.com::http://en.wikipedia.org/wiki/The_Great_Atlantic_&_Pacific_Tea_Company::1000::1,56,205,207,208::
 ::40344::State Street Corp.::::fortune500::corporate_logos/128_128/StateStreet.png::http://www.statestreet.com::http://en.wikipedia.org/wiki/State_Street_Corp.::1000::1,56::
 ::40345::R.R. Donnelley & Sons::::fortune500::corporate_logos/128_128/RR_Donnelley.png::http://www.rrd.com::http://en.wikipedia.org/wiki/R.R._Donnelley_&_Sons::1000::1,56::
 ::40346::Apache::::fortune500::corporate_logos/128_128/Apache.png::http://www.apachecorp.com::http://en.wikipedia.org/wiki/Apache_Corporation::1000::1,56,199::
@@ -1402,7 +1422,7 @@
 ::40356::Broadcom::::fortune500::corporate_logos/128_128/Broadcom.png::http://www.broadcom.com::http://en.wikipedia.org/wiki/Broadcom::1000::1,56,198::
 ::40357::eBay::::fortune500::corporate_logos/128_128/EBay.png::http://www.ebay.com::http://en.wikipedia.org/wiki/EBay::1000::1,56,198::
 ::40358::Sempra Energy::::fortune500::corporate_logos/128_128/Sempra_Energy.png::http://www.sempra.com::http://en.wikipedia.org/wiki/Sempra_Energy::1000::1,56,199::
-::40359::Starbucks::::fortune500::corporate_logos/128_128/Starbucks.png::http://www.starbucks.com::http://en.wikipedia.org/wiki/Starbucks::999::56,189,258,1::
+::40359::Starbucks::::fortune500::corporate_logos/128_128/Starbucks.png::http://www.starbucks.com::http://en.wikipedia.org/wiki/Starbucks::999::1,56,189,258::
 ::40360::Freeport-McMoRan Copper & Gold::::fortune500::corporate_logos/128_128/Freeport.png::http://www.fcx.com::http://en.wikipedia.org/wiki/Freeport-McMoRan::1000::1,56::
 ::40361::Wells Fargo::::fortune500::corporate_logos/128_128/WellsFargo.png::http://www.wellsfargo.com::http://en.wikipedia.org/wiki/Wells_Fargo::1000::1,56,201,202::
 ::40362::Reliance Steel & Aluminum::::fortune500::corporate_logos/128_128/Reliance_Steel.png::http://www.rsac.com::http://en.wikipedia.org/wiki/Reliance_Steel_&_Aluminum_Co.::1000::1,56::
@@ -1424,7 +1444,7 @@
 ::40378::Lincoln National::::fortune500::corporate_logos/128_128/Lincoln_National_Corporation.png::http://www.lincolnfinancial.com::http://en.wikipedia.org/wiki/Lincoln_National_Corporation::1000::1,56::
 ::40379::Caterpillar::::fortune500::corporate_logos/128_128/Caterpillar.png::http://www.cat.com::http://en.wikipedia.org/wiki/Caterpillar_Inc.::1000::1,56::
 ::40380::Smith International::::fortune500::corporate_logos/128_128/Smith_International.png::http://www.smith.com::http://en.wikipedia.org/wiki/Smith_International::1000::1,56::
-::40381::Wal-Mart Stores::::fortune500::corporate_logos/128_128/Walmart.png::http://www.walmart.com::http://en.wikipedia.org/wiki/Walmart::1000::1,56::
+::40381::Wal-Mart Stores::::fortune500::corporate_logos/128_128/Walmart.png::http://www.walmart.com::http://en.wikipedia.org/wiki/Walmart::1000::1,56,205::
 ::40382::Newmont Mining::::fortune500::corporate_logos/128_128/Newmont.png::http://www.newmont.com::http://en.wikipedia.org/wiki/Newmont_Mining::1000::1,56::
 ::40383::McGraw-Hill::::fortune500::corporate_logos/128_128/McGrawHill.png::http://www.mcgraw-hill.com::http://en.wikipedia.org/wiki/McGraw-Hill::1000::1,56::
 ::40384::Gilead Sciences::::fortune500::corporate_logos/128_128/Gilead.png::http://www.gilead.com::http://en.wikipedia.org/wiki/Gilead_Sciences::1000::1,56::
@@ -1471,13 +1491,13 @@
 ::40425::Viacom::::fortune500::corporate_logos/128_128/Viacom.png::http://www.viacom.com::http://en.wikipedia.org/wiki/Viacom::1000::1,56::
 ::40426::Applied Materials::::fortune500::corporate_logos/128_128/Applied_Materials.png::http://www.appliedmaterials.com::http://en.wikipedia.org/wiki/Applied_Materials::1000::1,56::
 ::40427::Tech Data::::fortune500::corporate_logos/128_128/TechData.png::http://www.techdata.com::http://en.wikipedia.org/wiki/Tech_Data::1000::1,56::
-::40428::Casey's General Stores::::fortune500::corporate_logos/128_128/Caseys.png::http://www.caseys.com::http://en.wikipedia.org/wiki/Casey's_General_Stores::1000::56,207,208,205,1::
+::40428::Casey's General Stores::::fortune500::corporate_logos/128_128/Caseys.png::http://www.caseys.com::http://en.wikipedia.org/wiki/Casey's_General_Stores::1000::1,56,205,207,208::
 ::40429::Monsanto::::fortune500::corporate_logos/128_128/Monsanto.png::http://www.monsanto.com::http://en.wikipedia.org/wiki/Monsanto::1000::1,56,206,208::
 ::40430::Tutor Perini::::fortune500::corporate_logos/128_128/TutorPerini.png::http://www.tutorperini.com::http://en.wikipedia.org/wiki/Tutor_Perini::1000::1,56::
 ::40431::ArvinMeritor::::fortune500::corporate_logos/128_128/ArvinMeritor.png::http://www.arvinmeritor.com::http://en.wikipedia.org/wiki/ArvinMeritor::1000::1,56::
 ::40432::Dominion Resources::::fortune500::corporate_logos/128_128/Dominion.png::http://www.dom.com::http://en.wikipedia.org/wiki/Dominion_Resources::1000::1,56,199::
 ::40433::Raytheon::::fortune500::corporate_logos/128_128/Raytheon.png::http://www.raytheon.com::http://en.wikipedia.org/wiki/Raytheon::1000::1,56::
-::40434::Winn-Dixie Stores::::fortune500::corporate_logos/128_128/WinnDixie.png::http://www.winndixiegrocerystores.com::http://en.wikipedia.org/wiki/Winn-Dixie::1000::56,207,208,205,1::
+::40434::Winn-Dixie Stores::::fortune500::corporate_logos/128_128/WinnDixie.png::http://www.winndixiegrocerystores.com::http://en.wikipedia.org/wiki/Winn-Dixie::1000::1,56,205,207,208::
 ::40435::NRG Energy::::fortune500::corporate_logos/128_128/NRG.png::http://www.nrgenergy.com::http://en.wikipedia.org/wiki/NRG_Energy::1000::1,56::
 ::40436::Oshkosh::::fortune500::corporate_logos/128_128/Oshkosh.png::http://www.oshkoshcorporation.com::http://en.wikipedia.org/wiki/Oshkosh_Corporation::1000::1,56::
 ::40437::Hormel Foods::::fortune500::corporate_logos/128_128/Hormel.png::http://www.hormel.com::http://en.wikipedia.org/wiki/Hormel_Foods::1000::1,56,208::
@@ -1501,14 +1521,14 @@
 ::40455::Genuine Parts::::fortune500::corporate_logos/128_128/Genuine_Parts.png::http://www.genpt.com::http://en.wikipedia.org/wiki/Genuine_Parts::1000::1,56::
 ::40456::HCA::::fortune500::corporate_logos/128_128/HCA.png::http://www.hcahealthcare.com::http://en.wikipedia.org/wiki/Hospital_Corporation_of_America::1000::1,56::
 ::40457::PNC Financial Services Group::::fortune500::corporate_logos/128_128/PNC.png::http://www.pnc.com::http://en.wikipedia.org/wiki/PNC_Financial_Services_Group::1000::1,56,202::
-::40458::J.C. Penney::::fortune500::corporate_logos/128_128/JCPenney.png::http://www.jcpenney.com::http://en.wikipedia.org/wiki/J.C._Penney::1000::1,56::
+::40458::J.C. Penney::::fortune500::corporate_logos/128_128/JCPenney.png::http://www.jcpenney.com::http://en.wikipedia.org/wiki/J.C._Penney::1000::1,56,205::
 ::40459::Ecolab::::fortune500::corporate_logos/128_128/Ecolab.png::http://www.ecolab.com::http://en.wikipedia.org/wiki/Ecolab::1000::1,56::
 ::40460::Western Refining::::fortune500::corporate_logos/128_128/Western_Refining.png::http://www.wnr.com::http://en.wikipedia.org/wiki/Western_Refining::1000::1,56,199::
 ::40461::Morgan Stanley::::fortune500::corporate_logos/128_128/MorganStanley.png::http://www.morganstanley.com::http://en.wikipedia.org/wiki/Morgan_Stanley::1000::1,56::
 ::40462::Las Vegas Sands::::fortune500::corporate_logos/128_128/LasVegasSands.png::http://www.lasvegassands.com::http://en.wikipedia.org/wiki/Las_Vegas_Sands::1000::1,56::
 ::40463::Praxair::::fortune500::corporate_logos/128_128/Praxair.png::http://www.praxair.com::http://en.wikipedia.org/wiki/Praxair::1000::1,56,206,208::
 ::40464::Delta Air Lines::::fortune500::corporate_logos/128_128/Delta.png::http://www.delta.com::http://en.wikipedia.org/wiki/Delta_Air_Lines::1000::1,56::
-::40465::BJ's Wholesale Club::::fortune500::corporate_logos/128_128/BJs.png::http://www.bjs.com::http://en.wikipedia.org/wiki/BJ's_Wholesale_Club::1000::56,207,205,208,1::
+::40465::BJ's Wholesale Club::::fortune500::corporate_logos/128_128/BJs.png::http://www.bjs.com::http://en.wikipedia.org/wiki/BJ's_Wholesale_Club::1000::1,56,205,207,208::
 ::40466::Fifth Third Bancorp::::fortune500::corporate_logos/128_128/Fifth_Third.png::http://www.53.com::http://en.wikipedia.org/wiki/Fifth_Third_Bancorp::1000::1,56,201,202::
 ::40467::Lowe's::::fortune500::corporate_logos/128_128/Lowes.png::http://www.lowes.com::http://en.wikipedia.org/wiki/Lowes::1000::1,56,205::
 ::40468::Sears Holdings Corporation::::fortune500::corporate_logos/128_128/SearsHoldings.png::http://www.searsholdings.com::http://en.wikipedia.org/wiki/Sears_Holdings_Corporation::1000::1,56,202,205::
@@ -1528,7 +1548,7 @@
 ::40482::Quest Diagnostics::::fortune500::corporate_logos/128_128/Quest_Diagnostics.png::http://www.questdiagnostics.com::http://en.wikipedia.org/wiki/Quest_Diagnostics::1000::1,56::
 ::40483::Philip Morris International::::fortune500::corporate_logos/128_128/PhilipMorris.png::http://www.pmi.com::http://en.wikipedia.org/wiki/Philip_Morris_International::1000::1,56,206,207::
 ::40484::Big Lots::::fortune500::corporate_logos/128_128/BigLots.png::http://www.biglots.com::http://en.wikipedia.org/wiki/Big_Lots::1000::1,56,205,207::
-::40485::Colgate-Palmolive::::fortune500::corporate_logos/128_128/Colgate.png::http://www.colgate.com::http://en.wikipedia.org/wiki/Colgate-Palmolive::1000::56,207,206,208,1::
+::40485::Colgate-Palmolive::::fortune500::corporate_logos/128_128/Colgate.png::http://www.colgate.com::http://en.wikipedia.org/wiki/Colgate-Palmolive::1000::1,56,206,207,208::
 ::40486::Dollar General::::fortune500::corporate_logos/128_128/DollarGeneral.png::http://www.dg.com::http://en.wikipedia.org/wiki/Dollar_General::1000::1,56,205::
 ::40487::CSX::::fortune500::corporate_logos/128_128/CSX.png::http://www.csx.com::http://en.wikipedia.org/wiki/CSX::1000::1,56::
 ::40488::AbitibiBowater::::fortune500::corporate_logos/128_128/AbitibiBowater.png::http://www.abitibibowater.com::http://en.wikipedia.org/wiki/AbitibiBowater::1000::1,56::
@@ -2145,7 +2165,7 @@
 ::101086::Frosty Parfait::Wendy's::::restaurants/wendys/FrostyParfait.png::::::1000::194::
 ::101087::Frosty Shake::Wendy's::::restaurants/wendys/FrostyShake.png::::::1000::194::
 ::101088::Frosty Float::Wendy's::::restaurants/wendys/FrostyFloat.png::::::1000::194::
-::101089::Arby's::::restaurant::restaurants/arbys/Logo_Arbys.png::::::999::1,195,196::
+::101089::Arby's::::restaurant::restaurants/arbys/Logo_Arbys.png::http://www.arbys.com::http://en.wikipedia.org/wiki/Arby's::999::1,195,196::
 ::101090::Egg & Cheese Biscuits::Arby's::::restaurants/arbys/BreakfastBaconEggAndCheeseBiscuit.png::::::1000::195::
 ::101091::Egg & Cheese Croissants::Arby's::::restaurants/arbys/BreakfastBaconEggAndCheeseCroissant.png::::::1000::195::
 ::101092::Chicken Biscuit::Arby's::::restaurants/arbys/BreakfastChickenBiscuit.png::::::1000::195::
@@ -2285,7 +2305,7 @@
 ::101226::Rick Santorum::2012 Presidential Candidate::::government/election_2012/Rick_Santorum.png::http://ricksantorum.com::http://en.wikipedia.org/wiki/Santorum::82::::
 ::101227::Leon Panetta::Secretary of Defense::::government_logos/executives/64_64/05_SecretaryOfDefense_Leon_Panetta.png::http://www.defense.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Defense::50::58,211::
 ::101228::John Bryson::Secretary of Commerce::::government_logos/executives/64_64/09_SecretaryOfCommerce_John_Bryson.png::http://www.commerce.gov::http://en.wikipedia.org/wiki/United_States_Secretary_of_Commerce::90::58::
-::101229::New York Police Department::NYPD::::government/police/NewYork.png::http://www.nyc.gov/html/nypd::http://en.wikipedia.org/wiki/Nypd::1000::2,37,61::
+::101229::New York Police Department::NYPD::::government/police/NewYork.png::http://www.nyc.gov/html/nypd::http://en.wikipedia.org/wiki/Nypd::1000::2,37,61,276::
 ::101230::Los Angeles Police Department::LAPD::::government/police/LosAngeles.png::http://www.lapdonline.org::http://en.wikipedia.org/wiki/LAPD::1000::2,9,61::
 ::101231::Are you happy?::::::general/basics/Happy.png::http://dictionary.reference.com/browse/happy::http://en.wikipedia.org/wiki/Happy::5::228::
 ::101232::Are you financially rich?::::::category/StandingMan.png::::::55::228::
@@ -2295,7 +2315,7 @@
 ::101236::Does the media accurately reflect your point of view?::::::category/StandingMan.png::::::51::228::
 ::101237::Should cannabis be legalized?::::::general/basics/Cannabis.png::http://www.justice.gov/dea/marijuana_position.pdf::http://en.wikipedia.org/wiki/Cannabis::57::228::
 ::101238::Are you satisfied with your government?::::::category/StandingMan.png::::::53::228::
-::101239::Have you read the Constitution?::::::general/basics/Constitution.png::http://www.archives.gov/exhibits/charters/constitution.html::http://en.wikipedia.org/wiki/United_States_Constitution::500::210,226,228,58::
+::101239::Have you read the Constitution?::::::general/basics/Constitution.png::http://www.archives.gov/exhibits/charters/constitution.html::http://en.wikipedia.org/wiki/United_States_Constitution::500::58,210,226,228::
 ::101240::112th Congress::::::government/congress/Congress.png::::http://en.wikipedia.org/wiki/United_States_Congress::200::2,226::
 ::101241::Supreme Count of the United States::::::government/supreme_court/SupremeCourt.png::http://www.supremecourt.gov::http://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States::59::2,210,230::
 ::101242::Super PACs::::::government/election_2012/SuperPac.png::http://www.opensecrets.org/pacs/superpacs.php::http://en.wikipedia.org/wiki/Superpac#Super_PACs::84::210,224::
@@ -2351,7 +2371,7 @@
 ::101292::Elise Testone::American Idol Contestant::::entertainment/american_idol/Elise_Testone.png::::::1290::71::
 ::101293::Hollie Cavanagh::American Idol Contestant::::entertainment/american_idol/Hollie_Cavanagh.png::::::1292::71::
 ::101294::Jessica Sanchez::American Idol Contestant::::entertainment/american_idol/Jessica_Sanchez.png::::::1294::71,234::
-::101295::Joshua Ledet::American Idol Contestant::::entertainment/american_idol/Joshua_Ledet.png::::::1296::71,234::
+::101295::Joshua Ledet::American Idol Contestant::::entertainment/american_idol/Joshua_Ledet.png::::::1296::::
 ::101296::Phillip Phillips::American Idol Contestant::::entertainment/american_idol/Phillip_Phillips.png::::::1297::71,234::
 ::101297::Skylar Laine::American Idol Contestant::::entertainment/american_idol/Skylar_Laine.png::::::1298::71::
 ::101298::Boston Celtics::NBA::::sports/nba/bos.png::::::1000::212,232::
@@ -2444,3 +2464,46 @@
 ::101386::Is same-sex marriage an important issue to you in the 2012 presidential election?::::::general/basics/StandingMan.png::::::1000::224,244::
 ::101387::Are you satisfied with the schools in your community?::::::general/basics/StandingMan.png::::::1000::268::
 ::101388::Do we still need Daylight Savings Time?::::::general/basics/StandingMan.png::::::59::228::
+::101389::Sunlight Foundation::Making Government Transparent and Accountable::::government/sunlight_foundation/Logo_SunlightFoundation.png::http://sunlightfoundation.com::http://en.wikipedia.org/wiki/Sunlight_Foundation::999::226,269::
+::101390::#FreeTHOMAS::Should info about government legislation be available to the people?::::general/basics/StandingMan.png::http://sunlightfoundation.com/blog/2012/06/04/freethomas::https://twitter.com/#!/search/%23FreeTHOMAS::1000::269::
+::101391::Lexington Avenue Brewery (LAB)::::::local/asheville/brewery/lexington_avenue_brewery/Logo_LexingtonAvenueBrewery.png::http://www.lexavebrew.com/::::999::270,271,273::
+::101392::Asheville Brewing Company::::::local/asheville/brewery/asheville_brewing_company/Logo_AshevilleBrewingCompany.png::http://www.ashevillebrewing.com::::999::270,271,272::
+::101393::Houdini::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/Houdini.png ::http://www.ashevillebrewing.com::::1000::272::
+::101394::Shiva::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/Shiva.png::http://www.ashevillebrewing.com::::1000::272::
+::101395::Ninja::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/Ninja.png::http://www.ashevillebrewing.com::::1000::272::
+::101396::Old School::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/OldSchool.png::http://www.ashevillebrewing.com::::1000::272::
+::101397::Roland::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/Roland.png::http://www.ashevillebrewing.com::::1000::272::
+::101398::Rocket Girl::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/RocketGirl.png::http://www.ashevillebrewing.com::::1000::272::
+::101399::Scottish::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/Scottish.png::http://www.ashevillebrewing.com::::1000::272::
+::101400::Scout Stout::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/ScoutStout.png::http://www.ashevillebrewing.com::::1000::272::
+::101401::Red Light::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/RedLight.png::http://www.ashevillebrewing.com::::1000::272::
+::101402::Christmas Jam White Ale::Asheville Brewing Company::::local/asheville/brewery/asheville_brewing_company/ChristmasJam.png::http://www.ashevillebrewing.com::::1000::272::
+::101403::American Pale Ale::Lexington Avenue Brewery::::local/asheville/brewery/lexington_avenue_brewery/AmericanPaleAle.png::http://www.lexavebrew.com::::1000::273::
+::101404::Chocolate Stout::Lexington Avenue Brewery::::local/asheville/brewery/lexington_avenue_brewery/ChocolateStout.png::http://www.lexavebrew.com::::1000::273::
+::101405::Marzenbier::Lexington Avenue Brewery::::local/asheville/brewery/lexington_avenue_brewery/Marzenbier.png::http://www.lexavebrew.com::::1000::273::
+::101406::Bohemian Pilsner::Lexington Avenue Brewery::::local/asheville/brewery/lexington_avenue_brewery/BohemianPilsner.png::http://www.lexavebrew.com::::1000::273::
+::101407::LAB IPA::Lexington Avenue Brewery::::local/asheville/brewery/lexington_avenue_brewery/LabIPA.png::http://www.lexavebrew.com::::1000::273::
+::101408::Belgian White Ale::Lexington Avenue Brewery::::local/asheville/brewery/lexington_avenue_brewery/BelgianWhiteAle.png::http://www.lexavebrew.com::::1000::273::
+::101409::Andrew Cuomo::Governor (NY)<br />518-474-8390 ::::government/state/new_york/Governor_AndrewCuomo.png::http://www.governor.ny.gov::http://en.wikipedia.org/wiki/Andrew_Cuomo::900::37,275,276::
+::101410::Michael Bloomberg::Mayor (NYC)<br />212-NEW-YORK::::government/state/new_york/Mayor_MichaelBloomberg.png::http://www.nyc.gov::http://en.wikipedia.org/wiki/Michael_Bloomberg::905::37,274,276::
+::101411::Should New York allow possession of less than 25 grams of marijuana in PRIVATE as a non-criminal violation?::::::general/basics/StandingMan.png::http://www.google.com/search?q=New+York+Marijuana+Law+News::::910::37,276::
+::101412::Should New York allow possession of less than 25 grams of marijuana in PUBLIC as a non-criminal violation?::::::general/basics/StandingMan.png::http://www.google.com/search?q=New+York+Marijuana+Law+News::::915::37,276::
+::101413::Sheldon Silver::Speaker of the Assembly (NY)<br />212-312-1420::::government/state/new_york/SheldonSilver.png::http://www.assembly.state.ny.us/mem/Sheldon-Silver::http://en.wikipedia.org/wiki/Sheldon_Silver::906::37,276::
+::101414::Craggie Brewing Company::::::local/asheville/brewery/craggie_brewing_company/Logo_CraggieBrewingCompany.png::http://craggiebrewingco.com::::999::270,271,277::
+::101415::French Broad Brewing Company::::::local/asheville/brewery/french_broad_brewing_company/Logo_FrenchBroadBrewingCompany.png::http://frenchbroadbrewery.com::::999::270,271,278::
+::101416::Green Man Brewery::::::local/asheville/brewery/green_man_brewery/Logo_GreenManBrewery.png::http://greenmanbrewery.com::::999::270,271,279::
+::101417::Highland Brewing::::::local/asheville/brewery/highland_brewing/Logo_HighlandBrewing.png::http://www.highlandbrewing.com::::999::270,271,280::
+::101418::Oyster House Brewing::::::local/asheville/brewery/oyster_house_brewing/Logo_OysterHouseBrewing.png::http://oysterhousebeers.com::::999::270,271,281::
+::101419::Pisgah Brewing Company::::::local/asheville/brewery/pisgah_brewing_company/Logo_PisgahBrewingCompany.png::http://pisgahbrewing.com::::999::270,271,282::
+::101420:: Thirsty Monk::::::local/asheville/brewery/thirsty_monk/Logo_ThirstyMonk.png::http://www.monkpub.com::::999::270,271,283::
+::101421::Wedge Brewing Company::::::local/asheville/brewery/wedge_brewing_company/Logo_WedgeBrewingCompany.png::http://wedgebrewing.com::::999::270,271,284::
+::101422::Simplot::::::corporate_logos/128_128/Simplot.png::http://www.simplot.com::http://en.wikipedia.org/wiki/Simplot::600::1,17,208,285::
+::101423::Butch Otter::Governor (ID)<br />208-334-2100::::government/state/idaho/Governor_ButchOtter.png::http://gov.idaho.gov::http://en.wikipedia.org/wiki/Butch_Otter::1000::17,275::
+::101424::The Daily Show::::::entertainment/daily_show/Logo_DailyShow.png::http://www.thedailyshow.com::http://en.wikipedia.org/wiki/Daily_show::500::4,285::
+::101425::Oskar Blues Brewery::Starts brewing in December 2012::::local/asheville/brewery/oskar_blues_brewery/Logo_OskarBluesBrewery.png::http://www.oskarblues.com::::999::270,271,286::
+::101426::The Chocolate Fetish::::::general/blank.png::http://chocolatefetish.com::::999::270,287::
+::101427::French Broad Chocolates::::::general/blank.png::http://frenchbroadchocolates.com::::999::270,287::
+::101428::Chocolate Gems::::::general/blank.png::http://www.chocgems.com::::999::270,287::
+::101429::Everything Chocolate, Inc.::::::general/blank.png::http://www.everythingchocolateinc.com::::999::270,287::
+::101430::Kilwin's::Asheville, NC::::general/blank.png::https://www.kilwins.com/asheville::::999::270,287::
+::101431::Kilwin's::Black Mountain, NC::::general/blank.png::http://www.exploreasheville.com/listings/Kilwin-s-Black-Mountain::::999::287,288::
