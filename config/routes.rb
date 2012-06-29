@@ -9,10 +9,10 @@ Ourvoyce::Application.routes.draw do
   end
   #match "/auth/:provider/callback" => "sessions#create"
 
-  match '/help' => 'sites#help', :as => :help
+  #match '/help' => 'sites#help', :as => :help
   match '/about' => 'sites#about', :as => :about
   match '/contact' => 'sites#contact', :as => :contact
-  match '/donate' => 'sites#donate', :as => :donate
+  #match '/donate' => 'sites#donate', :as => :donate
   match '/terms' => 'sites#terms', :as => :terms
   match '/privacy' => 'sites#privacy_policy', :as => :privacy_policy
   match '/membership' => 'sites#membership', :as => :membership
