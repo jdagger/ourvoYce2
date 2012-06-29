@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.5'
+gem 'rails', '3.2.6'
 
 gem 'simple_form', '2.0.2'
 gem 'country_select'
@@ -18,7 +18,7 @@ gem 'rails-backbone'
 gem 'pg'
 
 #Authentication
-gem 'devise'
+gem 'devise', "2.1.2"
 gem 'omniauth'
 #gem 'omniauth-identity'
 
