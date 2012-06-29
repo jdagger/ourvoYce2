@@ -3,12 +3,13 @@
     .well
       fieldset
         legend User Properties
-        - if @user.confirmed_at.nil?
-          p.red
-            = "Not confirmed "
-            = link_to "Confirm User", admin_user_confirm_path(@user), class: 'btn btn-primary'
-        - else
-          p.green= "Confirmed"
+        - unless @user.new_record?
+          - if @user.confirmed_at.nil?
+            p.red
+              = "Not confirmed "
+              = link_to "Confirm User", admin_user_confirm_path(@user), class: 'btn btn-primary'
+          - else
+            p.green= "Confirmed"
         = simple_form_for [:admin, @user], html: {class: 'form-vertical'} do |f|
           = f.input :email
           = f.input :password
