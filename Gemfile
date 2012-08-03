@@ -58,10 +58,12 @@ gem 'unicorn'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 #
 group :development do
-  gem 'heroku'
+  gem 'heroku', '2.30.1'
+  gem 'sqlite3'  #weirdly required for taps to work: http://stackoverflow.com/questions/10723651/heroku-dbpush-gives-me-taps-load-error-no-such-file-to-load-sqlite3, can comment this out when not using taps
   gem 'pry'
   gem 'pry-doc'
   gem 'brakeman' #Security scan
+  gem 'taps'
   #gem 'ruby-debug19'
   #gem 'ruby-debug-base19'
   #gem 'ruby-debug-ide19'
