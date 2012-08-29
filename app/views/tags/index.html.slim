@@ -1,5 +1,6 @@
 #tag-list
   h1 Tags
+  ==heatmap(@histogram)
   - first_letter = nil
   - @tags.each do |tag|
     - if first_letter != tag.friendly_name[0]

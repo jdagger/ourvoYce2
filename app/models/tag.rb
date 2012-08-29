@@ -1,6 +1,7 @@
 class Tag < ActiveRecord::Base
   has_many :tag_items, :dependent => :destroy
   has_many :items, :through => :tag_items, :uniq => true
+  has_many :user_votes, :through => :items
 
   scope :popular_tags, select([:friendly_name, :path]).where(:popular => true)
   scope :hot_topics, select([:friendly_name, :path]).where(:hot_topic => true)
@@ -14,6 +15,14 @@ class Tag < ActiveRecord::Base
   #Thinking Sphinx Index
   define_index do
     indexes friendly_name, :sortable => true
+  end
+
+  def frequency
+    self.user_votes.count
+  end
+
+  def self.to_histogram
+    Tag.all.inject({}){|set, t| set[t.friendly_name] = t.frequency; set }
   end
 
   class << self
