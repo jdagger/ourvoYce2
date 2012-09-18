@@ -1,18 +1,46 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def identity
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "Omniauth callback - identity"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-  end 
 
-  def method_missing(provider)
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "Omniauth - method_missing"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
-    Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+  def facebook
+    if u = User.find_by_omniauth(auth) #if user is found with credentials, sign them in
+      flash.notice = "Signed in!"
+      sign_in_and_redirect u
+    elsif User.find_by_email(auth['info']['email']).nil?  #if email is not already registered
+      u = User.new :email => auth['info']['email'] #make new user
+      ap auth
+      ap u
+
+
+      u.save( :validate => false )
+      u.omniauth_providers.create :provider => auth['provider'], :uid => auth['uid'] 
+      sign_in_and_redirect u
+    end
+  end
+  
+  def auth
+    request.env['omniauth.auth']
+  end
+
+
+
+
+
+
+
+
+  #def identity
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "Omniauth callback - identity"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+  #end 
+
+  #def method_missing(provider)
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "Omniauth - method_missing"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
+    #Rails.logger.error "~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 =begin
     if !User.omniauth_providers.index(provider).nil?
@@ -54,9 +82,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       end
     end
 =end
-  end
+  #end
 
-    def passthru
-      render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
-    end
-  end
+    #def passthru
+      #render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+    #end
+end

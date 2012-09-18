@@ -17,11 +17,14 @@ class User < ActiveRecord::Base
 
   has_many :favorites, :dependent => :destroy, :foreign_key => :user_id
   has_many :items, :through => :favorites, :uniq => true
+  has_many :omniauth_providers, :dependent => :destroy
+
   before_save :set_state
 
   # Setup accessible (or protected) attributes for your model
   #attr_accessible :email, :remember_me, :zip, :country, :birth_year, :state
   attr_accessible :email, :zip, :country, :birth_year, :state, :password, :password_confirmation
+  
   #include ActiveModel::SecurePassword
   #has_secure_password
 
@@ -125,5 +128,10 @@ class User < ActiveRecord::Base
       search(email, :star => true, :order => "@relevance DESC").map{ |x| {name: x.email, id: x.id } }
     end
   end
+
+  def self.find_by_omniauth(auth)
+    includes(:omniauth_providers).where('omniauth_providers.provider = ?', auth['provider']).where('omniauth_providers.uid = ?', auth['uid']).first
+  end
+  
 
 end

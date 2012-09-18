@@ -20,3 +20,7 @@
           a(href="/resend_verification" class="no-border no-padright") Resend Account Verfication
       .clear
   .clear
+
+.grid_12
+  p 
+    = link_to 'signin with Facebook', user_omniauth_authorize_path(:facebook)
