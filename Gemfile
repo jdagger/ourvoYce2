@@ -3,55 +3,59 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.6'
 
 gem 'simple_form', '2.0.2'
-gem 'country_select'
-gem 'simple-navigation'
-gem 'client_side_validations'
-gem 'flash_messages_helper'
-
-gem 'forgery'
-
-gem 'slim'
+gem 'country_select', '1.0.0'
 #gem 'jquery-tmpl-rails'
-gem 'ejs'
-gem 'rails-backbone'
+gem 'simple-navigation', '3.7.0'
+gem 'client_side_validations', '3.1.4'
+gem 'flash_messages_helper', '0.2.1'
 
-gem 'pg'
+gem 'forgery', '0.5.0'
+
+gem 'slim', '1.2.2'
+
+gem 'ejs'
+gem 'rails-backbone', '0.7.2'
+
+gem 'pg', '0.14.0'
 
 #Authentication
 gem 'devise', "2.1.2"
-gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth', '1.1.0'
+gem 'omniauth-facebook', '1.4.0' #gem 1.4.1 conflicts with 
+    #note:
+    #omniauth-facebook (= 1.4.1) ruby depends on faraday (~> 0.8) ruby
+    #flying-sphinx (= 0.6.1) ruby depends on faraday (0.7.3)
+
 #gem 'omniauth-identity'
 
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '3.0.1'
 
-gem 'thin'
+gem 'thin', '1.3.1'
 
 gem 'thinking-sphinx', '2.0.10'
 gem 'flying-sphinx',   '0.6.1'
 
-gem 'rubyzip'
+gem 'rubyzip', '0.9.9'
 
 #gem 'compass','0.12.alpha.0'
-gem 'bourbon'
+gem 'bourbon', '2.1.0'
 
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
-gem 'awesome_print'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.7'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
+  gem 'coffee-rails', '3.2.2'
+  gem 'uglifier', '1.2.4'
   gem 'twitter-bootstrap-rails', '2.0.7'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.0.2'
 
 # Use unicorn as the web server
-gem 'unicorn'
+gem 'unicorn' , '4.3.1'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -60,37 +64,36 @@ gem 'unicorn'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 #
 group :development do
-  gem 'heroku', '2.30.1'
-  gem 'sqlite3'  #weirdly required for taps to work: http://stackoverflow.com/questions/10723651/heroku-dbpush-gives-me-taps-load-error-no-such-file-to-load-sqlite3, can comment this out when not using taps
-  gem 'pry'
-  gem 'pry-doc'
-  gem 'brakeman' #Security scan
-  gem 'taps'
+  gem 'heroku', '2.28.7'
+  gem 'pry', '0.9.9.6'
+  gem 'pry-doc', '0.4.2'
+  gem 'brakeman' , '1.6.2' #Security scan
   #gem 'ruby-debug19'
   #gem 'ruby-debug-base19'
   #gem 'ruby-debug-ide19'
 end
 
-gem 'therubyracer'
+gem 'therubyracer', '0.10.1'
 
 group :test do
   # Pretty printed test output
-  gem 'turn', :require => false
+  gem 'turn', '0.9.6' , :require => false
 
 
-  gem 'database_cleaner'
-  gem 'rails3-generators'
-  gem 'rspec-rails'
+  gem 'database_cleaner', '0.8.0'
+  gem 'rails3-generators', '0.17.4'
+  gem 'rspec-rails', '2.10.1'
   gem 'factory_girl_rails', '3.5.0'
-  gem 'cucumber-rails'
-  gem 'capybara'
-  gem 'launchy'
+  gem 'cucumber-rails', '1.3.0'
+  gem 'capybara', '1.1.2'
+  gem 'launchy', '>= 0.3.2'
   #gem 'rb-fsevent', :require => false if RUBY_PLATFORM=~ /darwin/i
-  gem 'shoulda-matchers'
-  gem 'guard-rspec'
-  gem 'guard-livereload'
+  gem 'shoulda-matchers', '1.2.0'
+  gem 'guard-rspec', '1.1.0'
+  gem 'guard-livereload', '1.0.0'
   gem 'spork', '~> 0.9.0.rc'
-  gem 'valid_attribute'
+  gem 'valid_attribute', '1.2.0'
 
-  gem 'jasmine'
+  gem 'jasmine', '1.2.0'
 end
+
