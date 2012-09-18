@@ -81,7 +81,7 @@ group :test do
   gem 'database_cleaner'
   gem 'rails3-generators'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '3.5.0'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'launchy'
