@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :redirect_to_edit_user_if_not_valid_user
+  append_before_filter :redirect_to_edit_user_if_not_valid_user
 
   def after_sign_in_path_for(resource)
     stored_location_for(resource) || hot_topics_path

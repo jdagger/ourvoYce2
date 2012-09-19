@@ -13,7 +13,7 @@ gem 'forgery', '0.5.0'
 
 gem 'slim', '1.2.2'
 
-gem 'ejs'
+gem 'ejs', '1.0.0'
 gem 'rails-backbone', '0.7.2'
 
 gem 'pg', '0.14.0'
@@ -46,7 +46,7 @@ gem 'bootstrap-will_paginate', '0.0.7'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'
+  gem 'sass-rails', '3.2.5'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.4'
   gem 'twitter-bootstrap-rails', '2.0.7'
@@ -91,7 +91,7 @@ group :test do
   gem 'shoulda-matchers', '1.2.0'
   gem 'guard-rspec', '1.1.0'
   gem 'guard-livereload', '1.0.0'
-  gem 'spork', '~> 0.9.0.rc'
+  gem 'spork', '0.9.0'
   gem 'valid_attribute', '1.2.0'
 
   gem 'jasmine', '1.2.0'
