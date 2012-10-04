@@ -3,5 +3,6 @@ class OmniauthProvider < ActiveRecord::Base
   validates :provider, :presence => true
   validates :uid, :presence => true
   
-  attr_accessible :provider, :uid, :user_id
+  attr_accessible :provider, :uid, :user_id, :confirmed
+
 end

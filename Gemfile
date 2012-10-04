@@ -17,6 +17,7 @@ gem 'ejs', '1.0.0'
 gem 'rails-backbone', '0.7.2'
 
 gem 'pg', '0.14.0'
+gem 'awesome_print'
 
 #Authentication
 gem 'devise', "2.1.2"

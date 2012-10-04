@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120917152222) do
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "confirmed"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

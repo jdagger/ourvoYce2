@@ -18,8 +18,10 @@ class User < ActiveRecord::Base
   has_many :favorites, :dependent => :destroy, :foreign_key => :user_id
   has_many :items, :through => :favorites, :uniq => true
   has_many :omniauth_providers, :dependent => :destroy
+  attr_accessor :current_omniauth_providor_id #set in omniauth callback on sign in
 
   before_save :set_state
+
 
   # Setup accessible (or protected) attributes for your model
   #attr_accessible :email, :remember_me, :zip, :country, :birth_year, :state
@@ -133,5 +135,20 @@ class User < ActiveRecord::Base
     includes(:omniauth_providers).where('omniauth_providers.provider = ?', auth['provider']).where('omniauth_providers.uid = ?', auth['uid']).first
   end
   
+  def password_required?
+    super && password_set?
+  end
+  def password_set?
+    encrypted_password.present?
+  end
+  def update_with_password(params, *options) #makes pw not required for users that don't have one. 
+    if !password_set?
+      update_attributes(params, *options)
+    else
+      super
+    end
+  end
+  
+
 
 end

@@ -1,26 +1,42 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
+  def confirm_provider
+  end
+
   def facebook
-    if u = User.find_by_omniauth(auth) #if user is found with credentials, sign them in
-      flash.notice = "Signed in!"
-      sign_in_and_redirect u
-    elsif User.find_by_email(auth['info']['email']).nil?  #if email is not already registered
-      u = User.new :email => auth['info']['email'] #make new user
-      ap auth
-      ap u
-
-
-      u.save( :validate => false )
-      u.omniauth_providers.create :provider => auth['provider'], :uid => auth['uid'] 
-      sign_in_and_redirect u
+    if o_user
+      if provider.confirmed
+        flash.notice = "Signed in!"
+        sign_in_via_omniauth o_user
+      else
+        render :confirm_provider_form
+      end
+    elsif user = User.find_by_email(auth['info']['email']) #email is already taken, merge accounts
+    else #if email is not already registered
+      sign_in_via_omniauth register_new_user
     end
   end
-  
-  def auth
-    request.env['omniauth.auth']
-  end
 
-
+  private
+    def auth
+      request.env['omniauth.auth']
+    end
+    def o_user
+      @o_user ||= User.find_by_omniauth(auth) 
+    end
+    def provider
+      @provider ||= o_user.omniauth_providers.find_by_provider(auth['provider'])
+    end
+    def register_new_user
+      u = User.new :email => auth['info']['email'] #make new user
+      u.save( :validate => false )
+      u.omniauth_providers.create :provider => auth['provider'], :uid => auth['uid'], :confirmed => true
+      u
+    end
+    def sign_in_via_omniauth(user)
+      user.current_omniauth_providor_id = provider.id
+      sign_in_and_redirect user
+    end
 
 
 
