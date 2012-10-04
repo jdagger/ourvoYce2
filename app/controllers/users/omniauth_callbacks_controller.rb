@@ -7,6 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.valid_password? params[:password]
       @user.omniauth_providers.create :provider => @auth['provider'], :uid => @auth['uid']
       flash.notice = "Signed in. Facebook signin has been added to your account!"
+      session.delete 'auth'
       sign_in_and_redirect @user
     else
       flash.now[:notice] = "Sorry this password is incorrect. Try again?" 
