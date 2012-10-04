@@ -6,6 +6,7 @@ Ourvoyce::Application.routes.draw do
     get "/signup" => "devise/registrations#new"
     get "/resend_verification" => "devise/confirmations#new"
     get "/reset_password" => "devise/passwords#new"
+    post 'users/omniauth_callbacks/confirm_owns_account'
   end
   #match "/auth/:provider/callback" => "sessions#create"
 

@@ -4,7 +4,7 @@ class CreateOmniauthProviders < ActiveRecord::Migration
       t.integer :user_id
       t.string :provider
       t.string :uid
-      t.boolean :confirmed
+      #t.boolean :confirmed
 
       t.timestamps
     end

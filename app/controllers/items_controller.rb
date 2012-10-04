@@ -123,6 +123,8 @@ class ItemsController < ApplicationController
 
   #Retrieve hot topics
   def hot_topics
+    flash.notice = flash.notice #preserve flash on login
+
     hot_topic_count = Tag.where(hot_topic: true).count
     if(hot_topic_count > 0)
       hot_topic = Tag.where(hot_topic: true).first(:offset => rand(hot_topic_count)) #Select a random hot topic

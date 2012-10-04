@@ -1,10 +1,9 @@
 - raw_resource = User.find resource.id
-- password_hint = raw_resource.password_set? ?  "Leave blank if you don't want to change" : nil
+- password_hint = raw_resource.password_set? ?  "Leave blank if you don't want to change" : "choose a password for your account"
 
 
 #update-user-page
   h2= "Update #{resource_name.to_s.humanize}"
-  = flash_messages
 
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
     - unless session.delete "redirect_to_edit_user_if_not_valid_user"
@@ -13,9 +12,9 @@
     .inputs
       = f.input :email, :required => true, :autofocus => true
       - if resource.password_set?
-        = f.input :current_password,     :required => true,                     :hint => "Provide your current password before making changes"
-      = f.input :password,               :required => password_hint.blank?,   :hint => password_hint
-      = f.input :password_confirmation,  :required => password_hint.blank?,   :hint => password_hint
+        = f.input :current_password,     :required => true,                         :hint => "Provide your current password before making changes"
+      = f.input :password,               :required => !raw_resource.password_set?,   :hint => password_hint
+      = f.input :password_confirmation,  :required => !raw_resource.password_set?
       = f.input :country
       = f.input :zip
       = f.input :birth_year

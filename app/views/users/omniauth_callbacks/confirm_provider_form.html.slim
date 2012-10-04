@@ -1,0 +1,16 @@
+h1
+  ' Account Confirm Required 
+
+p
+  ' The email address
+  b=' @user.email
+  ' is already registered. If you are the owner of this account, and would like to add the ability to also log into via #{session[:auth]['provider'].titleize}, please provide your account password below.
+
+h2
+  ' Password for '#{@user.email}'
+
+= form_tag users_omniauth_callbacks_confirm_owns_account_path do
+  = password_field_tag :password
+  = submit_tag :send
+
+
